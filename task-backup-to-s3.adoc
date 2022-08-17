@@ -81,7 +81,7 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 サポートされている AWS リージョン:: Cloud Backup はすべての AWS リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。
 別の AWS アカウントでバックアップを作成する場合の必須のセットアップです:: デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別の AWS アカウントを使用する場合は、が必要です link:reference-backup-multi-account-aws.html["AWS ポータルにログインして、 2 つのアカウントをリンクできます"]。
 データ暗号化にお客様が管理するキーを使用するために必要な情報:: デフォルトの Amazon S3 暗号化キーを使用する代わりに、アクティブ化ウィザードでお客様が管理するデータ暗号化キーを選択できます。この場合は、暗号化管理キーがすでに設定されている必要があります。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"^]。
-AWS 権限が必要です:: Cloud Manager に権限を提供する IAM ロールが必要です 最新の S3 権限を含める https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager ポリシー"^]。
+AWS 権限が必要です:: Cloud Manager に権限を提供する IAM ロールが必要です 最新の S3 権限を含める https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Cloud Manager ポリシー"^]。
 +
 --
 ポリシーの具体的な権限を次に示します。
@@ -110,6 +110,23 @@ AWS 権限が必要です:: Cloud Manager に権限を提供する IAM ロール
                 "s3:GetBucketPolicy",
                 "s3:PutBucketPublicAccessBlock",
                 "s3:PutEncryptionConfiguration",
+                "s3:GetObjectVersionTagging",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectVersionAcl",
+                "s3:PutObjectTagging",
+                "s3:DeleteObjectTagging",
+                "s3:GetObjectRetention",
+                "s3:DeleteObjectVersionTagging",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:ListBucketByTags",
+                "s3:DeleteObjectVersion",
+                "s3:GetObjectTagging",
+                "s3:PutBucketVersioning",
+                "s3:PutObjectVersionTagging",
+                "s3:GetBucketVersioning",
+                "s3:BypassGovernanceRetention",
+                "s3:PutObjectRetention",
+                "s3:GetObjectVersion",
                 "athena:StartQueryExecution",
                 "athena:GetQueryResults",
                 "athena:GetQueryExecution",
@@ -129,7 +146,7 @@ AWS 権限が必要です:: Cloud Manager に権限を提供する IAM ロール
 --
 
 
-バージョン 3.9.15 以降を使用してコネクタを導入した場合、これらの権限はすでに IAM ロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。検索とリストアに必要な「アテナ」と「グルー」の権限を明確に示します。
+バージョン3.9.21以降を使用してコネクタを導入した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。検索とリストアに必要な「アテナ」と「グルー」の権限を明確に示します。
 
 
 
@@ -184,10 +201,14 @@ image:screenshot_backup_provider_settings_aws.png["Cloud Volumes ONTAP システ
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
-.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["選択可能な既存のポリシーのリストが表示されます"^]。
-.. ONTAP 9.10.1 以降を使用している場合は、 S3 Glacier または S3 Glacier Deep Archive ストレージにバックアップを階層化して一定の日数後にコストを最適化することができます。 link:reference-aws-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
+.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
+.. ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
+.. ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。 link:reference-aws-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
 +
 image:screenshot_backup_policy_aws.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]
+
++
+*重要：* DataLockを使用する場合は、Cloud Backupをアクティブにするときに最初のポリシーで有効にする必要があります。
 
 
 

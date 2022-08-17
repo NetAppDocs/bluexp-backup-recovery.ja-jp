@@ -48,12 +48,12 @@ link:concept-ontap-backup-to-cloud.html#cost["Cloud Backupの使用に関連す�
 Cloud Backupについては、次の2種類のPAYGOを計画しています。
 
 * Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。
-* Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「CVO Professional」パッケージ。これには、このライセンスに基づいて Cloud Volumes ONTAP ボリュームのバックアップが無制限になることも含まれます（バックアップ容量はライセンスにはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
+* Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「CVO Professional」パッケージ。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
 
 
 ifdef::azure[]
 
-* 「CVO Edge Cache」パッケージの機能は「CVO Professional」パッケージと同じですが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["グローバルファイルキャッシュ"]。Cloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzure Marketplaceからのみ利用でき、オンプレミスのONTAP データのバックアップはできません。
+* 「CVO Edge Cache」パッケージの機能は「CVO Professional」パッケージと同じですが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["グローバルファイルキャッシュ"^]。Cloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzure Marketplaceからのみ利用でき、オンプレミスのONTAP データのバックアップはできません。
 
 
 endif::azure[]
@@ -97,7 +97,7 @@ AWSを使用している場合は、で2つの年間契約が提供されます 
 +
 このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["サブスクリプションを AWS クレデンシャルに関連付けます"^]。Cloud Manager で AWS クレデンシャルに割り当てることができるのは 1 つだけなので、この年間契約サブスクリプションを使用して Cloud Volumes ONTAP システムの料金を支払う必要があります。
 
-* Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「 CVO Professional 」プラン。これには、このライセンスに基づいて Cloud Volumes ONTAP ボリュームのバックアップが無制限になることも含まれます（バックアップ容量はライセンスにはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
+* Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「 CVO Professional 」プラン。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
 +
 を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP のライセンスに関するトピック"^] このライセンスオプションの詳細については、を参照してください。
 
@@ -126,7 +126,7 @@ endif::gcp[]
 
 ネットアップが提供するお客様所有のライセンスには、 1 年、 2 年、 3 年の期間があります。バックアップ対象のソース ONTAP ボリュームの論理使用容量（ _Before_any 効率化）で計算され、保護するデータに対してのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。
 
-BYOL Cloud Backup ライセンスは、 Cloud Manager アカウントに関連付けられたすべてのシステムで合計容量が共有されるフローティングライセンスです。ONTAP システムでは、バックアップするボリュームに対してCLIコマンド「volume show-space logical-used」を実行することで、必要な容量を概算できます。
+BYOL Cloud Backup ライセンスは、 Cloud Manager アカウントに関連付けられたすべてのシステムで合計容量が共有されるフローティングライセンスです。ONTAP システムでは、バックアップ対象のボリュームに対してCLIコマンド「volume show -fields logical-used by AFS」を実行すると、必要な容量を概算できます。
 
 Cloud Backup BYOL ライセンスがない場合は、 Cloud Manager の右下にあるチャットアイコンをクリックしてライセンスを購入してください。
 

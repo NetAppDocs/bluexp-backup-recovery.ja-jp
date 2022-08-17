@@ -227,6 +227,9 @@ Cloud Backup は、オンプレミスの作業環境からいつでも直接有�
 .手順
 . キャンバスから作業環境を選択し、右パネルのバックアップと復元サービスの横にある *Enable>Backup Volumes * をクリックします。
 +
+バックアップ先のGoogle Cloud StorageがCanvas上の作業環境として存在する場合は、クラスタをGoogle Cloud Storage作業環境にドラッグしてセットアップウィザードを開始できます。
+
++
 image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
 
 . プロバイダとして Google Cloud を選択し、 * 次へ * をクリックします。
@@ -245,7 +248,7 @@ image:screenshot_backup_onprem_to_google.png["オンプレミスのクラスタ�
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
-.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["選択可能な既存のポリシーのリストが表示されます"^]。
+.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
 +
 image:screenshot_backup_policy_gcp.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
 

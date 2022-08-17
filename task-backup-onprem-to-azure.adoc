@@ -164,6 +164,58 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 
 
 
+=== コネクタの権限を確認または追加します
+
+Cloud Backupの検索とリストア機能を使用するには、Connectorの役割に特定の権限を付与して、Azure Synapse WorkspaceとData Lakeストレージアカウントにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
+
+Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+
+.手順
+. Connector 仮想マシンに割り当てられているロールを特定します。
++
+.. Azure ポータルで、仮想マシンサービスを開きます。
+.. Connector 仮想マシンを選択します。
+.. [ 設定 ] で、 [*Identity*] を選択します。
+.. Azure の役割の割り当て * をクリックします。
+.. Connector 仮想マシンに割り当てられているカスタムロールをメモしておきます。
+
+
+. カスタムロールを更新します。
++
+.. Azure ポータルで、 Azure サブスクリプションを開きます。
+.. [* アクセス制御（ IAM ） ]>[ 役割 * ] をクリックします。
+.. カスタムロールの省略記号 (...) をクリックし、 * 編集 * をクリックします。
+.. JSON をクリックして、次の権限を追加します。
++
+[source, json]
+----
+"Microsoft.Storage/checknameavailability/read",
+"Microsoft.Storage/operations/read",
+"Microsoft.Storage/storageAccounts/listkeys/action",
+"Microsoft.Storage/storageAccounts/read",
+"Microsoft.Storage/storageAccounts/write",
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.Synapse/workspaces/write",
+"Microsoft.Synapse/workspaces/read",
+"Microsoft.Synapse/workspaces/delete",
+"Microsoft.Synapse/register/action",
+"Microsoft.Synapse/checkNameAvailability/action",
+"Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/read",
+"Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
+"Microsoft.Synapse/workspaces/operationResults/read"
+----
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
+
+.. [ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。
+
+
+
+
+
+
 === サポートされている地域
 
 すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
@@ -201,6 +253,9 @@ Cloud Backup は、オンプレミスの作業環境からいつでも直接有�
 .手順
 . キャンバスから作業環境を選択し、右パネルのバックアップと復元サービスの横にある *Enable>Backup Volumes * をクリックします。
 +
+バックアップのAzure BlobデスティネーションがCanvas上に作業環境として存在する場合は、クラスタをAzure Blob Working環境にドラッグしてセットアップウィザードを開始できます。
+
++
 image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
 
 . プロバイダとして Microsoft Azure を選択し、 * Next * をクリックします。
@@ -227,7 +282,7 @@ image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Az
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
-.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["選択可能な既存のポリシーのリストが表示されます"^]。
+.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
 .. ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したバックアップを Azure Archive ストレージに階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
 +
 image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]

@@ -190,7 +190,7 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
 
 
 .手順
-. （最新のから）次の S3 権限を確認します https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager ポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。
+. （最新のから）次の S3 権限を確認します https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Cloud Manager ポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。
 +
 [source, json]
 ----
@@ -216,6 +216,23 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
               "s3:GetBucketPolicy",
               "s3:PutBucketPublicAccessBlock",
               "s3:PutEncryptionConfiguration",
+              "s3:GetObjectVersionTagging",
+              "s3:GetBucketObjectLockConfiguration",
+              "s3:GetObjectVersionAcl",
+              "s3:PutObjectTagging",
+              "s3:DeleteObjectTagging",
+              "s3:GetObjectRetention",
+              "s3:DeleteObjectVersionTagging",
+              "s3:PutBucketObjectLockConfiguration",
+              "s3:ListBucketByTags",
+              "s3:DeleteObjectVersion",
+              "s3:GetObjectTagging",
+              "s3:PutBucketVersioning",
+              "s3:PutObjectVersionTagging",
+              "s3:GetBucketVersioning",
+              "s3:BypassGovernanceRetention",
+              "s3:PutObjectRetention",
+              "s3:GetObjectVersion",
               "athena:StartQueryExecution",
               "athena:GetQueryResults",
               "athena:GetQueryExecution",
@@ -233,7 +250,7 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
       },
 ----
 +
-バージョン 3.9.15 以降を使用してコネクタを導入した場合、これらの権限はすでに IAM ロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。検索とリストアに必要な「アテナ」と「グルー」の権限を具体的に指定します。を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS のドキュメント：「 Editing IAM policies"]。
+バージョン3.9.21以降を使用してコネクタを導入した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。検索とリストアに必要な「アテナ」と「グルー」の権限を具体的に指定します。を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS のドキュメント：「 Editing IAM policies"]。
 
 . サービスをアクティブ化すると、バックアップウィザードにアクセスキーとシークレットキーの入力を求められます。これらのクレデンシャルは、 ONTAP がデータをバックアップして S3 バケットにリストアできるように ONTAP クラスタに渡されます。そのためには、次の権限を持つ IAM ユーザを作成する必要があります。
 +
@@ -365,10 +382,14 @@ image:screenshot_backup_onprem_aws_networking.png["ONTAP システムから AWS 
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
-.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["選択可能な既存のポリシーのリストが表示されます"^]。
-.. ONTAP 9.10.1 以降を使用している場合は、 S3 Glacier または S3 Glacier Deep Archive ストレージにバックアップを階層化して一定の日数後にコストを最適化することができます。 link:reference-aws-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
+.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
+.. ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
+.. ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。 link:reference-aws-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"^]。
 +
 image:screenshot_backup_policy_aws.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]
+
++
+*重要：* DataLockを使用する場合は、Cloud Backupをアクティブにするときに最初のポリシーで有効にする必要があります。
 
 
 

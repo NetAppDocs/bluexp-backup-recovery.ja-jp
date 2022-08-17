@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-backups-ontap.html 
 keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup 
-summary: Cloud Volumes ONTAP システムとオンプレミス ONTAP システムのバックアップの管理では、バックアップスケジュールの変更、ボリュームのバックアップの有効化 / 無効化、バックアップの削除などを行うことができます。 
+summary: Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップの管理では、バックアップスケジュールの変更、新しいバックアップポリシーの作成、ボリュームのバックアップの有効化/無効化、バックアップの削除などを行うことができます。 
 ---
 = ONTAP システムのバックアップの管理
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP システムとオンプレミス ONTAP システ�
 
 
 [role="lead"]
-Cloud Volumes ONTAP システムとオンプレミス ONTAP システムのバックアップの管理では、バックアップスケジュールの変更、ボリュームのバックアップの有効化 / 無効化、バックアップの削除などを行うことができます。
+Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップの管理では、バックアップスケジュールの変更、新しいバックアップポリシーの作成、ボリュームのバックアップの有効化/無効化、バックアップの削除などを行うことができます。
 
 
 CAUTION: バックアップファイルをクラウドプロバイダ環境から直接管理したり変更したりしないでください。ファイルが破損し、サポートされていない構成になる可能性があります。
@@ -27,7 +27,7 @@ CAUTION: バックアップファイルをクラウドプロバイダ環境か�
 
 .手順
 . Cloud Managerの左側のナビゲーションメニューで、* Backup & Restore *をクリックします。
-. [* Volumes] タブをクリックして、 Cloud Volumes ONTAP およびオンプレミス ONTAP システムのボリュームのリストを表示します。
+. 「* Volumes」タブをクリックして、Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップボリュームのリストを表示します。
 +
 image:screenshot_backup_dashboard.png["バックアップファイルがあるすべての作業環境とボリュームを示すスクリーンショット。"]
 
@@ -65,20 +65,30 @@ image:screenshot_backup_manage_volumes_page.png["ボリュームの管理ペー�
 
 作業環境でボリュームに現在適用されているバックアップポリシーの属性を変更することができます。バックアップポリシーを変更すると、そのポリシーを使用している既存のすべてのボリュームが対象になります。
 
+[NOTE]
+====
+* このクラスタでクラウドバックアップをアクティブ化するときに最初のポリシーで_DataLockとRansomware Protection_inを有効にした場合、編集するポリシーはすべて同じDataLock設定（EnterpriseまたはCompliance）で設定する必要があります。また、Cloud Backupをアクティブ化する際に_DataLockとRansomware Protection_Whenを有効にしなかった場合、DataLockを今すぐ有効にすることはできません。
+* AWSでバックアップを作成するときに、Cloud Backupをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合は、バックアップポリシーの編集時にその階層だけが使用可能なアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、ポリシーの編集時に_S3 Glacierが唯一のアーカイブオプションになります。
+
+
+====
 .手順
 . [* Volumes （ボリューム） ] タブで、 [* Backup Settings （バックアップ設定） ] を選択します。
 +
 image:screenshot_backup_settings_button.png["Volumes （ボリューム）タブの Backup Settings （バックアップ設定）ボタンを示すスクリーンショット。"]
 
-. [Backup Settings_] ページで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 設定を変更する作業環境で、 [ * ポリシーの管理 * ] を選択します。
+. [Backup Settings_] ページで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] ポリシー設定を変更する作業環境で、[ポリシーの管理]を選択します。
 +
 image:screenshot_backup_modify_policy.png["[ バックアップ設定 ] ページの [ ポリシーの管理 ] オプションを示すスクリーンショット。"]
 
-. [ ポリシーの管理 ] ページで、作業環境で変更するバックアップポリシーの [ ポリシーの編集 ] をクリックします。
+. [ポリシーの管理]ページで、その作業環境で変更するバックアップポリシーの[編集]をクリックします。
++
+注：をクリックできます image:button_down_caret.png[""] をクリックすると、ポリシーのすべての詳細が表示されます。
+
 +
 image:screenshot_backup_manage_policy_page_edit.png["［ ポリシーの管理 ］ ページの ［ ポリシーの編集 ］ ボタンを示すスクリーンショット。"]
 
-. [ ポリシーの編集 ] ページで、スケジュールとバックアップの保持を変更し、 [ 保存 ] をクリックします。
+. [ポリシーの編集]ページで、をクリックします image:button_down_caret.png[""] [ラベルと保持期間]セクションを展開してスケジュールやバックアップの保持期間を変更するには'[保存]をクリックします
 +
 image:screenshot_backup_edit_policy.png["バックアップポリシーの設定を示すスクリーンショット。バックアップのスケジュールと保持の設定を変更できます。"]
 
@@ -100,6 +110,8 @@ link:reference-azure-backup-tiers.html["Azure アーカイブストレージの�
 
 endif::azure[]
 
+[+]image:screenshot_backup_modify_policy_page2.png["Cloud Backup のアーカイブストレージへの階層化設定を示すスクリーンショット。"]
+
 +アーカイブストレージに階層化されたバックアップファイルは、アーカイブへのバックアップの階層化を停止した場合、その階層に残ります。これらのファイルは自動的に標準階層に戻されません。
 
 
@@ -110,6 +122,13 @@ endif::azure[]
 
 作業環境内の特定のボリュームに新しいバックアップポリシーを適用する場合は、最初にそのバックアップポリシーを作業環境に追加する必要があります。すると <<Changing the policy assigned to existing volumes,その作業環境内のボリュームにポリシーを適用します>>。
 
+[NOTE]
+====
+* このクラスタでクラウドバックアップをアクティブ化するときに最初のポリシーで_DataLockとRansomware Protection_inを有効にした場合、追加で作成するポリシーはすべて同じDataLock設定（EnterpriseまたはCompliance）で設定する必要があります。また、Cloud Backupをアクティブ化する際に_DataLockとRansomware Protection_Whenを有効にしなかった場合、DataLockを使用する新しいポリシーを作成することはできません。
+* AWSでバックアップを作成する際に、Cloud Backupをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。
+
+
+====
 .手順
 . [* Volumes （ボリューム） ] タブで、 [* Backup Settings （バックアップ設定） ] を選択します。
 +
@@ -123,7 +142,7 @@ image:screenshot_backup_modify_policy.png["[ バックアップ設定 ] ペー�
 +
 image:screenshot_backup_manage_policy_page_add.png["[ ポリシーの管理 ] ページの [ 新しいポリシーの追加 ] ボタンを示すスクリーンショット。"]
 
-. [ 新しいポリシーの追加 ] ページで、スケジュールとバックアップの保持を定義し、 [ 保存 ] をクリックします。
+. [新しいポリシーの追加]ページで、をクリックします image:button_down_caret.png[""] [ラベルと保持期間]セクションを展開してスケジュールとバックアップの保持期間を定義するには'[保存]をクリックします
 +
 image:screenshot_backup_add_new_policy.png["バックアップポリシーの設定を示すスクリーンショット。バックアップスケジュールとバックアップの保持設定を追加できます。"]
 
@@ -172,6 +191,10 @@ image:screenshot_backup_manage_volumes_page_change.png["ボリュームの管理
 +
 image:screenshot_backup_change_policy.png["選択したボリュームに適用する新しいポリシーを選択する方法を示すスクリーンショット。"]
 
++
+
+NOTE: このクラスタに対してCloud Backupをアクティブ化するときに最初のポリシーで_DataLockとRansomware Protection_inを有効にした場合、DataLockで設定されている他のポリシーしか表示されません。また、Cloud Backupをアクティブ化する際に_DataLockとRansomware Protection_Whenを有効化しなかった場合、DataLockが設定されていない他のポリシーのみが表示されます。
+
 . [ 保存（ Save ） ] をクリックして、変更をコミットします。
 
 
@@ -210,7 +233,9 @@ image:screenshot_auto_backup.png["クラスタの今後のすべてのボリュ�
 
 バックアップ名にはタイムスタンプが含まれるため、他のスケジュールされたバックアップからオンデマンドバックアップを特定できます。
 
-アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。スナップショットの名前は'CBS-snapshot-adhoc -で始まります https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"]。
+このクラスタでCloud Backupをアクティブ化するときに_DataLockとRansomware Protection_を 有効にすると、オンデマンドバックアップもDataLockで設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェアによる保護の詳細をご確認ください"^]。
+
+アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。スナップショットの名前は'CBS-snapshot-adhoc -で始まります https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"^]。
 
 
 NOTE: オンデマンドボリュームバックアップは、データ保護ボリュームではサポートされません。
@@ -247,6 +272,34 @@ image:screenshot_backup_view_backups_button.png["1 つのボリュームで使�
 
 +
 image:screenshot_backup_view_backups.png["単一のボリュームのすべてのバックアップファイルのリストを示すスクリーンショット。"]
+
+
+
+
+
+== ボリュームバックアップでランサムウェアスキャンを実行する
+
+ネットアップランサムウェア対策ソフトウェアは、バックアップファイルをスキャンして、バックアップファイルの作成時やバックアップファイルのデータのリストア時にランサムウェア攻撃の兆候を探します。また、ランサムウェア攻撃に対する保護スキャンをオンデマンドでいつでも実行して、特定のバックアップファイルのユーザビリティを確認することができます。これは、特定のボリュームでランサムウェア問題 が実行されている場合に、そのボリュームのバックアップが影響を受けないことを確認するのに役立ちます。
+
+この機能は、ボリュームバックアップがONTAP 9.11.1以降のシステムで作成された場合、およびバックアップポリシーで_DataLockとRansomware Protection_inを有効にした場合にのみ使用できます。
+
+
+NOTE: ランサムウェアスキャンを実行するには、バックアップファイルがCloud Manager環境（Connectorがインストールされている環境）にダウンロードされている必要があります。オンプレミスにコネクタを導入している場合、これによってクラウドプロバイダからの出力コストが増加することがあります。したがって、クラウドにConnectorを導入し、バックアップの保存先のバケットと同じリージョンに配置することを推奨します。
+
+.手順
+. [* Volumes （ボリューム） ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] をソースボリュームとして選択し、 * Details & Backup List * を選択します。
++
+image:screenshot_backup_view_backups_button.png["1 つのボリュームで使用できる [ 詳細とバックアップリスト ] ボタンを示すスクリーンショット"]
+
++
+すべてのバックアップファイルのリストが表示されます。
+
+. をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] スキャンするボリュームバックアップファイルで、「*ランサムウェアスキャン*」をクリックします。
++
+image:screenshot_scan_one_backup.png["ランサムウェアスキャンを単一のバックアップファイルで実行する方法を示すスクリーンショット。"]
+
++
+Ransomware Scan列には、スキャンが進行中であることが表示されます。
 
 
 

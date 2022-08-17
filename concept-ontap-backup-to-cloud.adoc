@@ -26,8 +26,9 @@ Cloud Backup は、 ONTAP クラスタデータを保護し、長期アーカイ
 
 * データボリュームの独立したコピーを低コストのオブジェクトストレージにバックアップできます。
 * クラスタ内のすべてのボリュームに単一のバックアップポリシーを適用するか、または一意のリカバリポイント目標が設定されたボリュームに異なるバックアップポリシーを割り当てます。
-* バックアップポリシーに名前を付けておくと、各ポリシーの用途を簡単に確認できます。
-* 古いバックアップファイルをアーカイブストレージに階層化してコストを削減（ONTAP 9.10.1以降でサポート）
+* 保持期間中にロックされるように、変更不可のバックアップファイルを作成します。
+* バックアップファイルをスキャンしてランサムウェア攻撃を受ける可能性があるかを調べ、感染したバックアップを自動的に削除/置換します。
+* 古いバックアップファイルをアーカイブストレージに階層化してコストを削減します。
 * クラウドからクラウドへ、オンプレミスシステムからパブリッククラウドやプライベートクラウドへバックアップできます。
 * Cloud Volumes ONTAP システムの場合、バックアップは別のサブスクリプションやアカウントに配置することも、別のリージョンに配置することもできます。
 * バックアップデータは、転送中の AES-256 ビット暗号化と TLS 1.2 HTTPS 接続によって保護されます。
@@ -97,13 +98,26 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 
 
 
+== サポートされるボリューム
+
+Cloud Backupでは、次のタイプのボリュームをサポートしています。
+
+* FlexVol 読み書き可能ボリューム
+* SnapMirrorデータ保護（DP）デスティネーションボリューム
+* SnapLock Enterpriseボリューム（ONTAP 9.11.1以降が必要）
+
+
+FlexGroup ボリュームとSnapLock Complianceボリュームは、現在のところサポートされていません。
+
+
+
 == コスト
 
 ONTAP システムでクラウドバックアップを使用する場合、リソース料金とサービス料金の 2 種類のコストが発生します。
 
 * リソース料金 *
 
-リソースの料金は、オブジェクトストレージの容量とクラウドでの仮想マシン / インスタンスの実行についてクラウドプロバイダに支払います。
+リソース料金は、オブジェクトストレージの容量、クラウドへのバックアップファイルの書き込みと読み取りのために、クラウドプロバイダに支払われます。
 
 * バックアップでは、クラウドプロバイダにオブジェクトストレージのコストを支払います。
 +
@@ -117,6 +131,16 @@ ifdef::aws[]
 ** AWSでは、 https://aws.amazon.com/athena/faqs/["Amazon Athena"^] および https://aws.amazon.com/glue/faqs/["AWS 接着剤"^] リソースは新しいS3バケットに導入される。
 +
 endif::aws[]
+
+
+
++
+ifdef::azure[]
+
++
+** Azureのでは https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapseワークスペース"^] および https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure Data Lake Storageの略"^] データの格納と分析を行うためにストレージアカウントにプロビジョニングします。
++
+endif::azure[]
 
 
 
@@ -259,44 +283,7 @@ endif::gcp[]
 
 
 
-=== サポートされるストレージクラスまたはアクセス階層
-
-ifdef::aws[]
-
-* AWS では、バックアップは _Standard_storage クラスから開始し、 30 日後に _Standard-Infrequent Access_storage クラスに移行します。
-+
-クラスタが ONTAP 9.10.1 以降を使用している場合は、古いバックアップを S3 Glacier Deep Archive_storage のいずれかに階層化して、特定の日数が経過したらコストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
-
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Azure では、バックアップは _COOL アクセス層に関連付けられます。
-+
-クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過した古いバックアップを Azure Archive_storage に階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
-
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。
-+
-また、 lower cost_Nearline_storage クラスまたは _Coldline_or_Archive_storage クラスを使用することもできます。Google のトピックを参照してください link:https://cloud.google.com/storage/docs/storage-classes["ストレージクラス"^] ストレージクラスの変更については、を参照してください。
-
-
-
-endif::gcp[]
-
-* StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
-
-
-
-
-=== クラスタごとにカスタマイズ可能なバックアップスケジュールと保持設定
+=== カスタマイズ可能なバックアップスケジュールと保持設定
 
 作業環境で Cloud Backup を有効にすると、最初に選択したすべてのボリュームが、定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective（RPO；目標復旧時点）が異なるボリュームに対して異なるバックアップポリシーを割り当てる場合は、そのクラスタに追加のポリシーを作成し、バックアップがアクティブ化されたあとに他のボリュームに割り当てることができます。
 
@@ -329,6 +316,70 @@ TIP: データ保護ボリュームのバックアップの保持期間は、ソ
 
 
 
+=== バックアップファイルの保護設定
+
+クラスタがONTAP 9.11.1以降を使用している場合、バックアップを削除攻撃やランサムウェア攻撃から保護できます。各バックアップポリシーでは、特定の期間にわたってバックアップファイルに適用可能な_DataLockとRansomware Protection_の セクションを提供しています。_DataLock_は'バックアップファイルの変更または削除を防止します_Ransomware protection_scanバックアップファイルをスキャンして、バックアップファイルの作成時とバックアップファイルのデータのリストア時にランサムウェア攻撃が発生した証拠を探します。
+
+各バックアップポリシーについて、次の設定から選択できます。
+
+* なしDataLock保護とランサムウェア防御は無効になっています。
+* エンタープライズ：DataLockモードは_Enterprise_whereに設定されています。このモードでは、特定の権限を持つユーザが保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効
+* コンプライアンス：DataLockモードは_Compliance]に設定されています。このモードでは、保持期間中にユーザーがバックアップファイルを上書きまたは削除することはできません。ランサムウェア攻撃からの保護が有効
+
+
+保持期間は、スケジュールの保持期間と同じに14日を足したものです。たとえば、_WEEKLY_BACKUPに_5_Copiesを適用すると、各バックアップファイルが5週間ロックされます。_6_個のコピーを保持したMonthly _バックアップは、各バックアップ・ファイルを6か月ロックします。
+
+バックアップのデスティネーションがAmazon S3の場合、現在サポートされています。その他のストレージプロバイダの送信先は今後のリリースで追加される予定です。
+
+
+TIP: アーカイブストレージにバックアップを階層化する場合は、DataLockを有効にできません。
+
+を参照してください link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェアによる保護"^] DataLockとランサムウェアによる保護の仕組みの詳細については、こちらをご覧ください。
+
+
+
+=== 古いバックアップファイル用のアーカイブストレージ
+
+特定のクラウドストレージを使用している場合、一定期間経過した古いバックアップファイルを低コストのストレージクラス/アクセス階層に移動できます。DataLockを有効にした場合は、アーカイブストレージを使用できません。
+
+ifdef::aws[]
+
+* AWS では、バックアップは _Standard_storage クラスから開始し、 30 日後に _Standard-Infrequent Access_storage クラスに移行します。
++
+クラスタがONTAP 9.10.1以降を使用している場合は、古いバックアップをクラウドバックアップUIの_S3 Glacier Deep Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
+
++
+クラウドバックアップをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure では、バックアップは _COOL アクセス層に関連付けられます。
++
+クラスタがONTAP 9.10.1以降を使用している場合は、特定の日数が経過した古いバックアップをAzure Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。
++
+また、 lower cost_Nearline_storage クラスまたは _Coldline_or_Archive_storage クラスを使用することもできます。これらの他のストレージクラスはGoogleで設定します。Google のトピックを参照してください link:https://cloud.google.com/storage/docs/storage-classes["ストレージクラス"^] ストレージクラスの変更については、を参照してください。
+
+
+
+endif::gcp[]
+
+* StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
+
+
+
+
 == FabricPool 階層化ポリシーに関する考慮事項
 
 バックアップするボリュームが FabricPool アグリゲートに配置され、「 none 」以外のポリシーが割り当てられている場合に注意する必要がある点があります。
@@ -347,27 +398,23 @@ TIP: データ保護ボリュームのバックアップの保持期間は、ソ
 
 
 
-== サポートされるボリューム
-
-Cloud Backupでは、次のタイプのボリュームをサポートしています。
-
-* FlexVol 読み書き可能ボリューム
-* SnapMirrorデータ保護（DP）デスティネーションボリューム
-* SnapLock Enterpriseボリューム（ONTAP 9.11.1以降が必要）
-
-
-FlexGroup ボリュームとSnapLock Complianceボリュームは、現在のところサポートされていません。
-
-
-
 == 制限
+
+次の問題 は、今後のリリースで修正される予定です。
+
+* リストア処理の実行中に、ONTAP バージョン9.10.1以降を実行するシステムでバックアップが作成されたものの、ボリュームをリストアするシステムでONTAP バージョン9.10.0以前を実行している場合は、システムが停止しているかリストアが失敗し、場合によってはリストアが失敗します。 ただし、ボリュームが破損しています。
+
+
+
+
+=== バックアップの制限
 
 * 古いバックアップファイルをアーカイブストレージに階層化するには、クラスタでONTAP 9.10.1以降が実行されている必要があります。アーカイブストレージにあるバックアップファイルからボリュームをリストアするには、デスティネーションクラスタで ONTAP 9.10.1 以降が実行されている必要もあります。
 * ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。回避策 では、ポリシーを作成するバックアップの数を減らすことができます。その後、ポリシーを編集して、ポリシーにボリュームを割り当てたあとで最大 4 、 000 個のバックアップを作成できます。
-* データ保護（ DP ）ボリュームをバックアップする場合、次の SnapMirror ラベルが設定されている関係はクラウドにバックアップされません。
+* DP ボリュームをバックアップする場合は、次の点に注意してください。
 +
-** APP_Consistent
-** all_source_snapshot
+** SnapMirrorラベルが「app_consistent」と「all_source_snapshot」の関係は、クラウドにバックアップされません。
+** SnapMirrorデスティネーションボリュームでSnapshotのローカルコピーを作成する場合（使用するSnapMirrorラベルに関係なく）、これらのSnapshotはバックアップとしてクラウドに移動されません。この時点で、Cloud Backupでバックアップするために、必要なラベルがソースDPボリュームに設定されたSnapshotポリシーを作成する必要があります。
 
 
 * SVM-DR ボリュームバックアップは、次の制限事項でサポートされます。
@@ -376,11 +423,11 @@ FlexGroup ボリュームとSnapLock Complianceボリュームは、現在のと
 ** ボリュームに適用される Snapshot ポリシーは、日単位、週単位、月単位など、クラウドバックアップで認識されるポリシーのいずれかである必要があります。デフォルトの「 sm_created 」ポリシー（すべての Snapshot をミラー * する場合に使用） が認識されず、バックアップ可能なボリュームのリストに DP ボリュームが表示されない。
 
 
-* [ 今すぐバックアップ ] ボタンを使用したアドホック・ボリューム・バックアップは ' データ保護ボリュームではサポートされていません
+* [今すぐバックアップ]ボタンを使用したアドホック・ボリューム・バックアップは'データ保護ボリュームではサポートされていません
 * SM-BC 設定はサポートされません。
 * MetroCluster （ MCC ）バックアップは、 ONTAP セカンダリからのみサポートされます。 MCC>SnapMirror > ONTAP > Cloud Backup > オブジェクトストレージ。
 * ONTAP では、単一のボリュームから複数のオブジェクトストアへの SnapMirror 関係のファンアウトはサポートされていません。そのため、この構成は Cloud Backup ではサポートされていません。
-* オブジェクトストアでの Worm/Compliance モードはサポートされません。
+* オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3でのみサポートされています。
 
 
 

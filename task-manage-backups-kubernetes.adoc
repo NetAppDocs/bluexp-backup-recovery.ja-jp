@@ -76,11 +76,11 @@ image:screenshot_backup_modify_policy_k8s.png["[ バックアップ設定 ] ペ�
 
 . [ ポリシーの管理 ] ページで、作業環境で変更するバックアップポリシーの [ ポリシーの編集 ] をクリックします。
 +
-image:screenshot_backup_manage_policy_page_edit.png["［ ポリシーの管理 ］ ページの ［ ポリシーの編集 ］ ボタンを示すスクリーンショット。"]
+image:screenshot_backup_manage_policy_page_edit_k8s.png["［ ポリシーの管理 ］ ページの ［ ポリシーの編集 ］ ボタンを示すスクリーンショット。"]
 
 . [ ポリシーの編集 ] ページで、スケジュールとバックアップの保持を変更し、 [ 保存 ] をクリックします。
 +
-image:screenshot_backup_edit_policy.png["バックアップポリシーの設定を示すスクリーンショット。バックアップのスケジュールと保持の設定を変更できます。"]
+image:screenshot_backup_edit_policy_k8s.png["バックアップポリシーの設定を示すスクリーンショット。バックアップのスケジュールと保持の設定を変更できます。"]
 
 
 
@@ -181,7 +181,7 @@ image:screenshot_backup_view_k8s_backups_button.png["1 つのボリュームで�
 すべてのバックアップファイルのリストが表示されます。
 
 +
-image:screenshot_backup_view_backups.png["単一のボリュームのすべてのバックアップファイルのリストを示すスクリーンショット。"]
+image:screenshot_backup_view_backups_k8s.png["単一のボリュームのすべてのバックアップファイルのリストを示すスクリーンショット。"]
 
 . [ * アクション * > * すべてのバックアップを削除 * ] をクリックします。
 +
@@ -205,11 +205,11 @@ image:screenshot_backup_view_k8s_backups_button.png["1 つのボリュームで�
 すべてのバックアップファイルのリストが表示されます。
 
 +
-image:screenshot_backup_view_backups.png["単一のボリュームのすべてのバックアップファイルのリストを示すスクリーンショット。"]
+image:screenshot_backup_view_backups_k8s.png["単一のボリュームのすべてのバックアップファイルのリストを示すスクリーンショット。"]
 
 . をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 削除するボリュームバックアップファイルに対して、 * 削除 * をクリックします。
 +
-image:screenshot_delete_one_backup.png["単一のバックアップファイルを削除する方法を示すスクリーンショット。"]
+image:screenshot_delete_one_backup_k8s.png["単一のバックアップファイルを削除する方法を示すスクリーンショット。"]
 
 . 確認ダイアログボックスで、 * 削除 * をクリックします。
 

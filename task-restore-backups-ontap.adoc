@@ -51,7 +51,7 @@ image:screenshot_restore_dashboard.png["[ リストアダッシュボード ] �
 | フォルダ形式の構造を参照して、 1 つのバックアップファイル内のボリュームまたはファイルを検索します | ボリューム名またはフルボリューム名、部分的またはフルファイル名、サイズ範囲、および追加の検索フィルタを指定して、すべてのバックアップファイル * 全体でボリュームまたはファイルを検索します 
 
 
-| ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloud、NetApp StorageGRID に格納されたバックアップファイルと連携します。 | ボリュームとファイルのリストアは、Amazon S3とGoogle Cloudに格納されたバックアップファイルと連携します 
+| ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloud、NetApp StorageGRID に格納されたバックアップファイルと連携します。 | ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloudに格納されたバックアップファイルと連携します 
 
 
 | インターネットにアクセスできないサイトのStorageGRID からボリュームとファイルをリストアします | ダークサイトではサポートされない 
@@ -153,7 +153,10 @@ image:screenshot_restore_volume_selection.png["Restore Dashboard から Restore 
 +
 image:screenshot_restore_select_volume_snapshot.png["リストアする作業環境、ボリューム、およびボリュームのバックアップファイルを選択するスクリーンショット。"]
 
-. [* Continue （続行） ] をクリックします
+. 「 * 次へ * 」をクリックします。
++
+バックアップファイルに対してランサムウェア保護がアクティブになっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にしている場合）、データをリストアする前にバックアップファイルでランサムウェアスキャンを追加で実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。
+
 . [ リストア先の選択 ] ページで、ボリュームをリストアする * 作業環境 * を選択します。
 +
 image:screenshot_restore_select_work_env_volume.png["リストアするボリュームのデスティネーション作業環境の選択のスクリーンショット。"]
@@ -222,7 +225,7 @@ Cloud Backup は、選択したバックアップに基づいて新しいボリ�
 
 
 
-=== 参照と復元を使用した ONTAP ファイルの復元
+=== Browse & Restore を使用してファイルを復元します
 
 ONTAP のバックアップから数ファイルしかリストアしない場合は、ボリューム全体をリストアするのではなく、ファイルを個別にリストアすることもできます。ファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。オンプレミスの ONTAP システム上のボリュームにファイルをリストアすることもできます。
 
@@ -282,7 +285,10 @@ image:screenshot_restore_files_selection.png["リストアダッシュボード�
 +
 image:screenshot_restore_select_source.png["リストアするファイルのボリュームおよびバックアップを選択するスクリーンショット。"]
 
-. [* Continue（続行）]をクリックすると、ボリュームバックアップのフォルダとファイルのリストが表示されます。
+. 「*次へ」をクリックすると、ボリュームバックアップのフォルダとファイルのリストが表示されます。
++
+バックアップファイルに対してランサムウェア保護がアクティブになっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にしている場合）、データをリストアする前にバックアップファイルでランサムウェアスキャンを追加で実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。
+
 +
 image:screenshot_restore_select_files.png["リストアするファイルに移動できるように、ファイルの選択ページのスクリーンショット。"]
 
@@ -374,6 +380,8 @@ endif::aws[]
 
 ifdef::azure[]
 
+link:reference-azure-backup-tiers.html["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+
 endif::azure[]
 
 開始する前に、リストアするボリュームやファイルの名前や場所を把握しておく必要があります。
@@ -398,16 +406,15 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 | Amazon S3 | オンプレミスの AWS ONTAP システムに Cloud Volumes ONTAP が導入されている | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
 
 
-| Azure Blob の略 | 現在サポートされていません | endif：azure []ifdef：azure[] endif：azure[] ifdef：gCP[] 
+| Azure Blob の略 | オンプレミスの Azure ONTAP システムに Cloud Volumes ONTAP を導入 | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
 
 
 | Google クラウドストレージ | Google オンプレミス ONTAP システムの Cloud Volumes ONTAP | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
 
 
-| NetApp StorageGRID | 現在サポートされていません |  
+| NetApp StorageGRID | 現在サポートされていません | 現在サポートされていません 
 |===
-
-TIP: このサポートを利用するには、コネクタがクラウドプロバイダプラットフォームに導入されている必要があります。Connectorが社内にインストールされている場合、検索と復元はサポートされません。
+検索とリストアを使用してリストア処理を実行するには、コネクタをクラウドプロバイダ環境に導入する必要があります。
 
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
 
@@ -440,6 +447,17 @@ ifdef::aws[]
 endif::aws[]
 
 ifdef::azure[]
+
+* Azureの要件：
++
+** Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+** Cloud Managerに権限を付与するユーザーロールに、特定のAzure Synapse WorkspaceおよびData Lakeストレージアカウントの権限を追加する必要があります。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["すべての権限が正しく設定されていることを確認します"]。
++
+以前に設定したコネクタですでにCloud Backupを使用している場合は、Azure Synapse WorkspaceとData Lake Storage Accountの権限をCloud Managerユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
+
+
+
+
 
 endif::azure[]
 
@@ -494,6 +512,9 @@ ifdef::aws[]
 endif::aws[]
 
 ifdef::azure[]
+
+* Azureに保存されているバックアップの場合、Azure Synapseワークスペースとデータレイクファイルシステムをワークスペースデータを格納するコンテナとしてプロビジョニングします。
+
 
 endif::azure[]
 
