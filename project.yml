@@ -83,20 +83,38 @@ sidebar:
       url: "/task-manage-backups-kubernetes.html"
     - title: Kubernetes バックアップからリストア
       url: "/task-restore-backups-kubernetes.html"
-  - title: オンプレミスのアプリケーションデータのバックアップとリストア
+  - title: アプリケーションデータのバックアップとリストア
     entries:
-    - title: オンプレミスアプリケーションのデータを保護
-      url: "/concept-protect-app-data-to-cloud.html"
-    - title: オンプレミスアプリケーションのデータをクラウドにバックアップ
-      url: "/task-backup-app-data-to-cloud.html"
-    - title: アプリケーションの保護を管理します
-      url: "/task-manage-app-backups.html"
-    - title: アプリケーションデータをリストアする
+    - title: オンプレミスのアプリケーションデータのバックアップとリストア
       entries:
-      - title: Oracle データベースをリストアします
-        url: "/task-restore-oracle-data.html"
-      - title: SQL Server データベースをリストアする
-        url: "/task-restore-sql-data.html"
+      - title: オンプレミスアプリケーションのデータを保護
+        url: "/concept-protect-app-data-to-cloud.html"
+      - title: オンプレミスアプリケーションのデータをクラウドにバックアップ
+        url: "/task-backup-app-data-to-cloud.html"
+      - title: アプリケーションの保護を管理します
+        url: "/task-manage-app-backups.html"
+      - title: アプリケーションデータをリストアする
+        entries:
+        - title: Oracle データベースをリストアします
+          url: "/task-restore-oracle-data.html"
+        - title: SQL Server データベースをリストアする
+          url: "/task-restore-sql-data.html"
+    - title: クラウドネイティブアプリケーションデータのバックアップとリストア
+      entries:
+      - title: クラウドネイティブアプリケーションのデータを保護
+        url: "/concept-protect-cloud-app-data-to-cloud.html"
+      - title: 前提条件
+        url: "/reference-prereq-protect-cloud-native-app-data.html"
+      - title: クラウドネイティブアプリケーションのデータをバックアップ
+        entries:
+        - title: アプリケーションを検出
+          url: "/task-discover-applications.html"
+        - title: クラウドネイティブなアプリケーションデータをバックアップ
+          url: "/task-backup-cloud-native-app-data.html"
+      - title: クラウドネイティブなアプリケーションデータの保護を管理
+        url: "/task-manage-cloud-native-app-data.html"
+      - title: クラウドネイティブアプリケーションデータをリストア
+        url: "/task-restore-cloud-native-app-data.html"
   - title: 仮想マシンのデータのバックアップとリストア
     entries:
     - title: 仮想マシンのデータを保護
@@ -173,14 +191,18 @@ homepage:
     - title: Kubernetes クラスタから Google Cloud へ
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
-  - title: オンプレミスのアプリケーションデータのバックアップとリストア
+  - title: アプリケーションデータのバックアップとリストア
     links:
     - title: オンプレミスアプリケーションのデータをクラウドにバックアップ
       url: task-backup-app-data-to-cloud.html
-    - title: Oracle データベースをリストアします
+    - title: Oracleデータベースをクラウドからオンプレミスにリストア
       url: task-restore-oracle-data.html
-    - title: SQL Server データベースをリストアする
+    - title: SQL Serverデータベースをクラウドからオンプレミスにリストア
       url: task-restore-sql-data.html
+    - title: クラウドネイティブアプリケーションのデータをバックアップ
+      url: task-backup-cloud-native-app-data.html
+    - title: クラウドネイティブアプリケーションのデータをリストア
+      url: task-restore-cloud-native-app-data.html
   - title: 仮想マシンのデータのバックアップとリストア
     links:
     - title: データストアをクラウドにバックアップ

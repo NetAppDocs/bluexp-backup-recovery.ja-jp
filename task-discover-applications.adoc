@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: task-discover-applications.html 
+keywords: discover, admin role, service account, pre-canned policies 
+summary: ポリシーの割り当てとバックアップの作成を行うアプリケーションを検出します。 
+---
+= アプリケーションを検出
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ポリシーの割り当てとバックアップの作成を行うには、ホスト上のデータベースを検出する必要があります。
+
+* 必要なもの *
+
+* ONTAP 作業環境およびコネクタ用のFSXを作成しておく必要があります。
+* コネクタがFSX for ONTAP 作業環境およびOracleデータベース・ホストに接続されていることを確認します
+* Cloud Managerユーザに「Account Admin」ロールが割り当てられていることを確認します。
+* SnapCenter Plug-in for Oracleを導入しておく必要があります。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["詳細はこちら。"]。
+
+
+* 手順 *
+
+. Cloud ManagerのUIで、* Backup & Restore *>* Applications *をクリックします。
+. アプリケーションの検出をクリックします。
+. クラウドネイティブ*を選択し、*次へ*をクリックします。
++
+SnapCenter system_roleを持つサービスアカウントが作成され、このアカウントのすべてのユーザに対してスケジュールされたデータ保護処理が実行されます。
+
++
+** *Account*>*Manage Account*>*Members*をクリックして、サービスアカウントを表示します。
++
+
+NOTE: スケジュールされたバックアップ処理を実行するには、サービスアカウント（_SnapCenter -account-<accountId>>）を使用します。サービスアカウントは絶対に削除しないでください。
+
+
+
+. Specify Host Details（ホストの詳細の指定）ページで、Oracleデータベース・ホストの詳細を入力し、チェック・ボックスを選択してプラグインがホストにインストールされていることを確認し、* Discover *をクリックします。
++
+** ホスト上のすべてのデータベースが表示されます。データベースでOS認証が無効になっている場合は、* Configure *をクリックしてデータベース認証を設定する必要があります。詳細については、を参照してください <<Configure Oracle database credentials>>。
+** [アプリケーションの管理]をクリックし、[追加]を選択して新しいホストを追加するか、[更新]を選択して新しいデータベースを検出するか、[削除]をクリックしてデータベース・ホストを削除します。
+** [*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認して、要件に合わせて編集することも、新しいポリシーを作成することもできます。
+
+
+
+
+
+
+== Oracleデータベースのクレデンシャルを設定する
+
+Oracleデータベースに対してデータ保護処理を実行する際に使用するクレデンシャルを設定する必要があります。
+
+* 手順 *
+
+. データベースでOS認証が無効になっている場合は、* Configure *をクリックしてデータベース認証を設定する必要があります。
+. Database Settings（データベース設定）またはASM Settings（ASM設定）セクションで、ユーザー名、パスワード、およびポートの詳細を指定します。
++
+Oracleユーザにはsysdba権限が必要で、ASMユーザにはSYSASM権限が必要です。
+
+. [*Configure*] をクリックします。
+
+
+
+
+== ポリシーを作成する
+
+組み込みのポリシーを編集しない場合は、ポリシーを作成できます。
+
+* 手順 *
+
+. [アプリケーション]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。
+. ［*ポリシーの作成*］をクリックします。
+. ポリシー名を指定します。
+. （オプション）バックアップ名の形式を編集します。
+. スケジュールと保持の詳細を指定します。
+. [ 作成（ Create ） ] をクリックします。
+

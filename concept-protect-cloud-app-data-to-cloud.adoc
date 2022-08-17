@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: concept-protect-cloud-app-data-to-cloud.html 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites 
+summary: NetApp Cloud Manager内でCloud Backup for Applicationsを有効にすると、アプリケーションと整合性のある効率的なポリシーベースのバックアップとリストアを、Amazon FSX for NetApp ONTAP 上に存在するOracle®データベースに対して実行できます。 
+---
+= クラウドネイティブアプリケーションのデータを保護
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。NetApp Cloud Manager内でCloud Backup for Applicationsを有効にすると、アプリケーションと整合性のある効率的なポリシーベースのバックアップ、およびAmazon FSX for NetApp ONTAP 上に存在するOracleデータベースのリストアが可能になります。
+
+
+
+== アーキテクチャ
+
+Cloud Backup for Applicationsアーキテクチャには、次のコンポーネントが含まれています。
+
+* Cloud Backup for Applicationsは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスであり、Cloud Manager SaaSプラットフォームに基づいています。
++
+オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます
+
+* Cloud Backup for Applications UIは、Cloud Manager UIに統合されています。
++
+Cloud Backup for ApplicationsのUIには、複数のストレージ機能とデータ管理機能が用意されています。
+
+* Cloud Manager Connectorは、クラウドネットワークで実行されるCloud Managerのコンポーネントで、Oracleデータベースホストで実行されるAmazon FSXストレージファイルシステムおよびSnapCenter Plug-in for Oracleと通信します。
+* SnapCenter Plug-in for Oracleは、各Oracleデータベースホストで実行されるコンポーネントであり、データ保護処理の実行中、ホストで実行されるOracleデータベースと通信します。
++
+次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
+
++
+image:diagram_nativecloud_backup_app.png["Cloud Backupがさまざまなコンポーネントと通信する仕組みを示す図"]
+
++
+ユーザが開始した要求については、Cloud Backup for Applications UIがCloud Manager SaaSと通信します。Cloud Manager SaaSの検証時に、要求が同じ処理を行います。バックアップやリストアなどのワークフローの実行が要求されると、SaaSサービスによってワークフローが開始され、必要に応じてCloud Manager Connectorにコールが転送されます。このコネクタは、ワークフロータスクの実行中に、NetApp ONTAP 用のAmazon FSXとSnapCenter Plug-in for Oracleと通信します。
+
++
+コネクタは、Oracleデータベースと同じVPC内に導入することも、別のVPC内に導入することもできます。コネクタとOracleデータベースが異なるネットワークにある場合は、コネクタとOracleデータベース間のネットワーク接続を確立する必要があります。
+
+
+
+
+
+== サポートされている構成
+
+* オペレーティングシステム
++
+** RHEL 7.5以降および8.x
+** OL 7.5以降および8.x
+
+
+* ストレージシステム：ONTAP 対応のAmazon FSX
+* ストレージレイアウト：NFS v3およびv4.1（dNFSがサポートされます）、ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）
+* アプリケーション：Oracle StandardおよびOracle Enterprise–スタンドアロン（従来型およびマルチテナント–CDBおよびPDB）
+* Oracleのバージョン：12cR2、18c、19C
+
+
+
+
+== サポートされる機能
+
+* Oracleデータベースの自動検出
+* Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのバックアップ
++
+** フル（データ+制御+アーカイブログファイル）バックアップ
+** オンデマンドバックアップ
+** システム定義またはカスタムのポリシーに基づいてスケジュールされたバックアップ
++
+ポリシーでは、毎時、毎日、毎週、毎月などの異なるスケジュール頻度を指定できます。
+
+
+
+* ポリシーに基づいてバックアップを保持する
+* 指定したバックアップからOracleデータベース全体（データ・ファイル+制御ファイル）をリストアします
+* データファイルのみをリストアし、指定したバックアップからのみファイルを制御する
+* SCNまで、時間が経過するまで、使用可能なすべてのログ、およびリカバリオプションなしでOracleデータベースをリカバリする場合
+* バックアップおよびその他のジョブを監視しています
+* ダッシュボードに保護の概要を表示します
+* E メールでアラートを送信する
+
+
+
+
+== 制限
+
+* Oracleバージョン11gおよび21cはサポートされません
+* バックアップでのマウント、クローニング、カタログ化、検証の処理はサポートされていません
+* では、RACおよびData GuardでのOracleはサポートされません
+* バックアップの制限：
++
+** オンラインデータまたはログのみのバックアップはサポートしません
+** では、オフラインバックアップはサポートされません
+** は、再帰マウントポイント上に存在するOracleデータベースのバックアップをサポートしていません
+** では、FSXボリュームと重複する複数のASMディスクグループに存在するOracleデータベースの整合グループSnapshotはサポートされていません
+** OracleデータベースがASMで設定されている場合は、SVM名がFSXシステム全体で一意であることを確認します。FSXシステム間でSVM名が同じ場合は、それらのSVM上にあるOracleデータベースのバックアップはサポートされません。
+
+
+* リストアの制限事項：
++
+** 表領域とPDBのリストアなど、きめ細かなリストアはサポートしていません
+** NASおよびSANのレイアウトでは、OracleデータベースのIn Placeリストアのみがサポートされます
+** では、SANレイアウト上でのOracleデータベースの制御ファイルのみのリストアや、データファイル+制御ファイルのリストアはサポートされていません
+** SANレイアウトでは、SnapCenter Plug-in for OracleがASMディスクグループ上にあるOracleデータファイル以外の外部ファイルを検出すると、リストア処理が失敗します。外部ファイルには、次のタイプが1つ以上ある可能性があります。
++
+*** パラメータ
+*** パスワード
+*** アーカイブログ
+*** オンラインログ
+*** ASMパラメータファイル。
++
+パラメータ、パスワード、アーカイブログタイプの外部ファイルを上書きするには、強制インプレースリストアチェックボックスをオンにする必要があります。
+
++
+
+NOTE: 他の種類の外部ファイルがある場合は、リストア処理が失敗し、データベースをリカバリできません。他の種類の外部ファイルがある場合は、リストア処理を実行する前に、それらのファイルを削除するか別の場所に移動してください。
+
++
+外部ファイルがあるために表示されないエラーメッセージは、既知の問題 が原因で、UIのジョブページに表示されません。SANのリストア前の段階でエラーが発生した場合は、コネクタログで問題 の原因 を確認します。
+
+
+
+
+
+

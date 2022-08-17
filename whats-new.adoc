@@ -18,6 +18,16 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2022年8月18日
+
+
+
+=== クラウドネイティブアプリケーションデータを保護するためのサポートが追加されました
+
+Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。NetApp Cloud Manager内でCloud Backup for Applicationsを有効にすると、アプリケーションと整合性のある効率的なポリシーベースのバックアップ、およびAmazon FSX for NetApp ONTAP 上に存在するOracleデータベースのリストアが可能になります。https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["詳細はこちら。"]。
+
+
+
 == 2022年8月16日
 
 

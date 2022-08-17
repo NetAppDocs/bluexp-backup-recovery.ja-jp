@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: task-manage-cloud-native-app-data.html 
+keywords: manage, view backup, monitor jobs, monitor 
+summary: バックアップの詳細を表示し、すべてのジョブのステータスを監視します。 
+---
+= クラウドネイティブなアプリケーションデータの保護を管理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+
+== ジョブを監視する
+
+作業環境で開始されたジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。
+
+すべての処理とそのステータスのリストを表示できます。各処理またはジョブには、一意の ID とステータスがあります。ステータスは次のいずれかになります。
+
+* 成功しました
+* 実行中です
+* キューに登録され
+* 警告
+* 失敗しました
+
+
+* 手順 *
+
+. [バックアップと復元]をクリックします。
+. ［*ジョブ監視*］をクリックします
++
+ジョブの名前をクリックすると、その処理に対応する詳細を確認できます。特定のジョブを探している場合は、次の操作を実行できます。
+
++
+** ページ上部のタイムセレクタを使用して、特定の期間のジョブを表示します
+** [ 検索 ] フィールドにジョブ名の一部を入力します
+** 各列見出しのフィルタを使用して結果をソートします
+
+
+
+
+
+
+== バックアップの詳細を表示します
+
+作成されたバックアップの総数、バックアップの作成に使用されたポリシー、データベースのバージョン、およびエージェントIDを表示できます。
+
+. [ * バックアップと復元 *>* アプリケーション * ] をクリックします。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
+
+
+
+IMPORTANT: エージェントIDはコネクタに関連付けられています。Oracleデータベース・ホストの登録中に使用されたコネクタが存在しない場合は'新しいコネクタのエージェントIDが異なるため'そのアプリケーションの後続のバックアップは失敗しますエージェントIDを変更するには、* connector-update * APIを実行する必要があります。
+
+
+
+== コネクタの詳細を更新します
+
+Oracleデータベースホストの登録時に使用したコネクタが存在しなくなった場合や、AWSで破損した場合は、新しいコネクタを導入する必要があります。新しいコネクタを配置したら、* connector-update * APIを実行してコネクタの詳細を更新する必要があります。
+
+[listing]
+----
+curl --location --request PATCH 'https://snapcenter.cloudmanager.cloud.netapp.com/api/oracle/databases/connector-update' \
+--header 'x-account-id: <CM account-id>' \
+--header 'x-agent-id: <connector Agent ID >' \
+--header 'Authorization: Bearer token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"old_connector_id": "Old connector id that no longer exist",
+"new_connector_id": "New connector Id"
+}
+----
+コネクタの詳細を更新したら、Oracleデータベースホストに接続し、次の手順を実行する必要があります。
+
+. Oracleデータベースホストで実行されているプラグイン情報を取得します。「rpm -qi netapp -snapcenter plugin -oracle」のように入力します
+. プラグインをアンインストールします。「sudo /opt/NetApp/snapcenter/spl/installation/plugins/uninstall」
+. プラグインが正常にアンインストールされたことを確認します。「rpm -qi netapp -snapcenter plugin -oracle」のように入力します
+
+
+プラグインをアンインストール後に、プラグインを導入できます。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["詳細はこちら。"]。
+
+
+
+== CA署名証明書を設定します
+
+環境のセキュリティを強化する場合は、CA署名証明書を設定します。
+
+
+
+=== クライアント証明書認証用のCA署名証明書を設定します
+
+コネクタは、自己署名証明書を使用してプラグインと通信します。自己署名証明書は、インストールスクリプトによってキーストアにインポートされます。自己署名証明書をCA署名証明書に置き換えるには、次の手順を実行します。
+
+* 必要なもの *
+
+次のコマンドを実行して、_<base_mount_path>_：sudo Docker volume ls | grep scs_cloud_volume | awk｛'print$2'｝| xargs sudo Docker volume inspect | grep mountpointを取得できます
+
+* 手順 *
+
+. コネクタにログインします。
+. Connector仮想マシンの_<base_mount_path>/client/certificate__にある既存のファイルをすべて削除してください。
+. CA署名証明書とキーファイルをConnector仮想マシンの_<base_mount_path>/client/certificate_inにコピーします。
++
+ファイル名はcertificate.pemとkey.pemである必要があります。certificate.pemには、中間CAやルートCAなどの証明書のチェーン全体が含まれている必要があります。
+
+. certificate.p12という名前でPKCS12形式の証明書を作成し、_<base_mount_path>/client/certificate__に保持してください。
+. すべての中間CAおよびルートCAの証明書.p12と証明書を、_/var/opt/snapcenter/spl/etc/_のプラグインホストにコピーします。
+. プラグインホストにログインします。
+. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass SnapCenter -deststorepass SnapCenter agentcert -destalias agentcert -noprompt`
+. ルートCAと中間証明書をインポートします。keytool -import trustcacerts -keystore .JKS -storepass SnapCenter -alias trustedca-file <certificate.crt >
++
+
+NOTE: certfile.crtは、ルートCAおよび中間CAの証明書を参照します。
+
+. spl:'systemctl restart sp'を再起動します
+
+
+
+
+=== プラグインのサーバ証明書のCA署名証明書を設定します
+
+CA証明書には、Connector仮想マシンと通信するOracleプラグインホストの正確な名前を指定する必要があります。
+
+* 必要なもの *
+
+次のコマンドを実行して、_<base_mount_path>_：sudo Docker volume ls | grep scs_cloud_volume | awk｛'print$2'｝| xargs sudo Docker volume inspect | grep mountpointを取得できます
+
+* 手順 *
+
+. プラグインホストで次の手順を実行します。
++
+.. SPLのkeystore_/var/opt/snapcenter/spl/etcが格納されているフォルダに移動します。
+.. 証明書とキーの両方を持つ証明書のPKCS12形式を、alias_splkeystore._で作成します。
+.. CA証明書を追加します。keytool -importkeystore -srckeystore <CertificatePathToImport>-srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -noprompt`
+.. 証明書を確認します。keytool -list -v キーストア .jks
+.. spl:'systemctl restart sp'を再起動します
+
+
+. コネクタで次の手順を実行します。
++
+.. root以外のユーザとしてコネクタにログインします。
+.. CA証明書のチェーン全体を、_<base_mount_path>/server_.にある永続ボリュームにコピーしてください。
++
+サーバーフォルダが存在しない場合は作成します。
+
+.. cloudmanager_scs_cloudに接続し、* enableCACert * in_config.yml_to * true *を変更します。「sudo Docker exec-t cloudmanager_scs_cloud sed -i 's/enableCACert:false/enableCACert:true/g'/opt/netapp/cloudmanager-scs-cloud/config/config.yml
+.. cloudmanager_scs_cloudコンテナを再起動します。「sudo Docker restart cloudmanager_scs_cloud」
+
+
+
+
+
+
+== REST APIにアクセスできます
+
+クラウドへのアプリケーションの保護に使用できるREST APIを用意しています https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/["こちらをご覧ください"]。
+
+REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["フェデレーテッド認証を使用してユーザトークンを作成します"]。
