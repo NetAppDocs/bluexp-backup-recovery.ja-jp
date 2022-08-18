@@ -41,7 +41,7 @@ Azure Archive からデータをリストアするのにどれくらいのコス
 * * 標準 * ：読み出し速度が遅く、コストが削減されます
 
 
-各メソッドには、 GB 単位の取得料金とリクエストごとの料金が異なります。Azure リージョン別の Azure Archive の詳細な価格設定については、を参照してください https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure の料金体系のページです"]。
+各メソッドには、 GB 単位の取得料金とリクエストごとの料金が異なります。Azure リージョン別の Azure Archive の詳細な価格設定については、を参照してください https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure の料金体系のページです"^]。
 
 --
 Azure Archive にアーカイブされたデータをリストアするのにどれくらいの時間がかかりますか。:: リストア時間は次の 2 つの要素で構成されます。
@@ -56,7 +56,7 @@ Azure Archive にアーカイブされたデータをリストアするのにど
 * * リストア時間 * ： Cool ストレージ内のバックアップファイルからデータをリストアする時間。この時間は、アーカイブ層を使用しないクールストレージからの一般的なリストア処理と同じです。
 
 
-Azure Archive の読み出しオプションの詳細については、を参照してください https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["Azure に関する FAQ です"]。
+Azure Archive の読み出しオプションの詳細については、を参照してください https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["Azure に関する FAQ です"^]。
 
 --
 
