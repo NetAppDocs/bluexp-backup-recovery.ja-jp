@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-cloud-backup-policies.html 
-keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies 
+keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: このドキュメントでは、Cloud Backupのバックアップポリシーの設定について説明します。 
 ---
 = クラウドバックアップポリシーの設定
@@ -193,4 +193,55 @@ DataLockは_Compliance]に設定されており'保存期間中にユーザー�
 * クラウドバックアップ（EnterpriseまたはCompliance）をアクティブ化するときに選択するDataLockオプションは、そのクラスタのすべてのバックアップポリシーに使用する必要があります。1つのクラスタでEnterpriseモードとComplianceモードの両方のロックを使用することはできません。
 * DataLockを有効にすると、すべてのボリュームバックアップがロックされます。1つのクラスタに、ロックされたボリュームバックアップとロックされていないボリュームバックアップを混在させることはできません。
 * DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。Cloud Backupをアクティブ化したあとは、この機能を有効にできません。
+
+
+
+
+== アーカイブストレージの設定
+
+特定のクラウドストレージを使用している場合、一定期間経過した古いバックアップファイルを低コストのストレージクラス/アクセス階層に移動できます。DataLockを有効にした場合は、アーカイブストレージを使用できません。
+
+アーカイブ階層内のデータは、必要なときはすぐにアクセスできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータを復元する頻度を考慮する必要があります。
+
+AWSまたはAzureでバックアップファイルを作成する場合、各バックアップポリシーには、バックアップファイルに適用できる_Archival Policy_というセクションがあります。
+
+image:screenshot_archive_tier_settings.png["バックアップポリシーを作成するときのアーカイブポリシーの設定のスクリーンショット。"]
+
+ifdef::aws[]
+
+* AWS では、バックアップは _Standard_storage クラスから開始し、 30 日後に _Standard-Infrequent Access_storage クラスに移行します。
++
+クラスタがONTAP 9.10.1以降を使用している場合は、古いバックアップをクラウドバックアップUIの_S3 Glacier Deep Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
+
++
+クラウドバックアップをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure では、バックアップは _COOL アクセス層に関連付けられます。
++
+クラスタがONTAP 9.10.1以降を使用している場合は、特定の日数が経過した古いバックアップをAzure Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。
++
+低コストのNearline_storageクラスまたは_Coldline_or_Archive_storageクラスを使用できます。ただし、これらの他のストレージクラスについては、Cloud BackupのUIではなくGoogleで設定します。Google のトピックを参照してください link:https://cloud.google.com/storage/docs/storage-classes["ストレージクラス"^] Google Cloud Storageバケットのデフォルトストレージクラスの変更については、を参照してください。
+
+
+
+endif::gcp[]
+
+* StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
++
+現在使用できるアーカイブ階層はありません。
+
 

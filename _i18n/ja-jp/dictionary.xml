@@ -2541,4 +2541,13 @@
   <block id="3d30a92654c5a6882d28070729a841a2" category="paragraph">たとえば、週7回*、月12回*のバックアップを作成するバックアップ・ポリシーを作成したとします。</block>
   <block id="8532188e44adde5f81b7984cddff4e7d" category="paragraph">これらの機能はどちらもバックアップファイルを保護するため、ソースデータがランサムウェア攻撃を受けた場合にデータをリカバリするための有効なバックアップファイルを常に用意しています。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionが有効な場合、クラウドバックアップのアクティブ化の一環としてプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。</block>
   <block id="311552a792e16e94720630e5e49001fe" category="paragraph">ONTAP System Manager または ONTAP CLI を使用してクラスタに作成したバックアップ保護ポリシーも選択内容として表示されます。これには、カスタムのSnapMirrorラベルを使用して作成したポリシーも含まれ</block>
+  <block id="9ee754e4742a85085c00a0da15114de7" category="section-title">アーカイブストレージの設定</block>
+  <block id="96026c4e1b41892c6e751985a3886296" category="paragraph">アーカイブ階層内のデータは、必要なときはすぐにアクセスできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータを復元する頻度を考慮する必要があります。</block>
+  <block id="9530f03bca8df90d015321461fae0545" category="paragraph">AWSまたはAzureでバックアップファイルを作成する場合、各バックアップポリシーには、バックアップファイルに適用できる_Archival Policy_というセクションがあります。</block>
+  <block id="7efe72f6baeb19dc4e15e1feb217b66a" category="inline-image-macro">バックアップポリシーを作成するときのアーカイブポリシーの設定のスクリーンショット。</block>
+  <block id="bff3ba9699160e0c8d9eccbf41cf51f7" category="paragraph"><block ref="bff3ba9699160e0c8d9eccbf41cf51f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cdef4910d3a4b39e3da863cfac74b555" category="paragraph">低コストのNearline_storageクラスまたは_Coldline_or_Archive_storageクラスを使用できます。ただし、これらの他のストレージクラスについては、Cloud BackupのUIではなくGoogleで設定します。Google のトピックを参照してください <block ref="ff20b961093fec8eb39137db849f78c4" category="inline-link-macro-rx"></block> Google Cloud Storageバケットのデフォルトストレージクラスの変更については、を参照してください。</block>
+  <block id="4171d78ae1a555db73fd760355ce3da1" category="paragraph">現在使用できるアーカイブ階層はありません。</block>
+  <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">を参照してください <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 使用可能なスケジュールオプションの詳細については、を参照してください。</block>
+  <block id="330ec284275e2a903b785453c26a379b" category="paragraph">を参照してください <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 古いバックアップファイルのアーカイブの詳細については、を参照してください。</block>
 </blocks>

@@ -309,6 +309,8 @@ ONTAP System Manager または ONTAP CLI を使用してクラスタに作成し
 
 カテゴリまたは間隔のバックアップの最大数に達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます（そのため、廃止されたバックアップはクラウドのスペースを消費し続けることはありません）。
 
+を参照してください link:concept-cloud-backup-policies.html#backup-schedules["バックアップスケジュール"^] 使用可能なスケジュールオプションの詳細については、を参照してください。
+
 できることに注意してください link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time["ボリュームのオンデマンドバックアップを作成する"] スケジュールバックアップから作成されたバックアップファイルに加え、いつでも Backup Dashboard からアクセスできます。
 
 
@@ -348,9 +350,6 @@ ifdef::aws[]
 +
 クラスタがONTAP 9.10.1以降を使用している場合は、古いバックアップをクラウドバックアップUIの_S3 Glacier Deep Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
 
-+
-クラウドバックアップをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。
-
 
 
 endif::aws[]
@@ -377,6 +376,8 @@ endif::gcp[]
 
 * StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
 
+
+を参照してください link:concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定"] 古いバックアップファイルのアーカイブの詳細については、を参照してください。
 
 
 
