@@ -64,7 +64,7 @@ image:diagram_nativecloud_backup_app.png["Cloud Backupがさまざまなコン�
 
 
 
-== サポートされる機能
+== の機能
 
 * Oracleデータベースの自動検出
 * Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのバックアップ
