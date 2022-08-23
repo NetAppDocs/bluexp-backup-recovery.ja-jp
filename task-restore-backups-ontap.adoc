@@ -455,6 +455,7 @@ ifdef::azure[]
 +
 以前に設定したコネクタですでにCloud Backupを使用している場合は、Azure Synapse WorkspaceとData Lake Storage Accountの権限をCloud Managerユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
 
+** インターネットへのHTTP通信には、*プロキシサーバーなしでコネクターを設定する必要があります。コネクタにHTTPプロキシサーバを設定している場合は、検索と置換機能を使用できません。
 
 
 

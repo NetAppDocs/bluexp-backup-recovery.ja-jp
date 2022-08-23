@@ -2466,7 +2466,6 @@
   <block id="fc2b0bcc44ac9f8bef7ad04de353a902" category="list-text">ストレージレイアウト：NFS v3およびv4.1（dNFSがサポートされます）、ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）</block>
   <block id="477deb60a679be8d3ed7fc83c4ab4b80" category="list-text">アプリケーション：Oracle StandardおよびOracle Enterprise–スタンドアロン（従来型およびマルチテナント–CDBおよびPDB）</block>
   <block id="9a8f7463386e75f032fb3eacb8e8b03c" category="list-text">Oracleのバージョン：12cR2、18c、19C</block>
-  <block id="e277e42688a9f44945fa8c1919bab726" category="section-title">サポートされる機能</block>
   <block id="24952b37ce88035adf02c3d53375aee0" category="list-text">Oracleデータベースの自動検出</block>
   <block id="7758fa39945c61d871cb2e22cbfde4ac" category="list-text">Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのバックアップ</block>
   <block id="a638d70a88de180abe34c16291fad0fe" category="list-text">フル（データ+制御+アーカイブログファイル）バックアップ</block>
@@ -2550,4 +2549,5 @@
   <block id="4171d78ae1a555db73fd760355ce3da1" category="paragraph">現在使用できるアーカイブ階層はありません。</block>
   <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">を参照してください <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 使用可能なスケジュールオプションの詳細については、を参照してください。</block>
   <block id="330ec284275e2a903b785453c26a379b" category="paragraph">を参照してください <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 古いバックアップファイルのアーカイブの詳細については、を参照してください。</block>
+  <block id="7e7595ef438d9d19d857be29daa1e8d2" category="list-text">インターネットへのHTTP通信には、*プロキシサーバーなしでコネクターを設定する必要があります。コネクタにHTTPプロキシサーバを設定している場合は、検索と置換機能を使用できません。</block>
 </blocks>
