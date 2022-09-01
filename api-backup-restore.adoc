@@ -52,6 +52,10 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
     "client_id": "Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC"
 }'
 ----
++
+
+NOTE: NetApp Cloud Central のユーザトークンの有効期限が切れています。API 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。トークンを更新するには、もう一度このAPIを呼び出す必要があります。
+
 . NetApp Cloud CentralアカウントIDを取得します。
 +
 [source, http]
@@ -179,13 +183,6 @@ curl --location --request GET 'https://cloudmanager.cloud.netapp.com/account/acc
     ]
 }
 ----
-.トークンの有効期限が切れた場合はどうすればよいですか。
-****
-NetApp Cloud Central のユーザトークンの有効期限が切れています。トークンを更新するには、手順 1 から API を再度呼び出す必要があります。
-
-API 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。
-
-****
 
 
 == API リファレンス

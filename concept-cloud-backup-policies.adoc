@@ -149,7 +149,7 @@ DataLockは_Compliance]に設定されており'保存期間中にユーザー�
 
 * クラスタでONTAP 9.11.1以降が実行されている必要があります
 * Cloud Manager 3.9.21以降を使用している必要があります（この時点ではコネクタをクラウドに導入する必要があります）。
-* AWSにバックアップするには、次のS3権限がIAMロールの一部であり、コネクタに権限を付与する必要があります。
+* AWSにバックアップするには、次のS3権限がIAMロールの一部であり、コネクタに権限を付与する必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
 +
 ** S3 ： GetObjectVersionTagging
 ** S3 ： GetBucketObjectLockConfiguration
@@ -180,6 +180,9 @@ DataLockは_Compliance]に設定されており'保存期間中にユーザー�
 ** S3 ： GetObjectVersion
 +
 管理者ユーザがEnterpriseモードでロックされたバックアップファイルを上書きまたは削除できるようにするには、S3権限「s3：Bypassガバナー 保持」をCloud Managerユーザロールに追加する必要があります。
+
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
 
 
 
