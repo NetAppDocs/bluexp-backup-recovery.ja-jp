@@ -2550,4 +2550,5 @@
   <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
   <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">次のリンクからリフレッシュトークンを生成してください：https://services.cloud.netapp.com/refresh-token/リフレッシュトークンは、ユーザートークンを生成するために使用する英数字文字列です。</block>
   <block id="777d6e4cc528ea2b29b7fc6903fb67a6" category="admonition">NetApp Cloud Central のユーザトークンの有効期限が切れています。API 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。トークンを更新するには、もう一度このAPIを呼び出す必要があります。</block>
+  <block id="39d3d67728b58b0f9255268d852abfbe" category="admonition">アプリケーションインフラ向けCloud Backupは、リージョン内のアベイラビリティゾーンの障害に対して耐障害性に優れています。新しいリージョンにフェイルオーバーすることで地域的な障害にも対応できるようになり、このフェイルオーバーには約2時間のダウンタイムが伴います。</block>
 </blocks>
