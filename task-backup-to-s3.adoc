@@ -23,7 +23,7 @@ Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開�
 これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。
 
 .<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt="one "></span> 設定のサポートを確認します
-* Cloud Volumes ONTAP 9.6 以降を AWS で実行している。
+* AWSでCloud Volumes ONTAP 9.7P5以降を実行しています。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
 * に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Cloud Manager Marketplace のバックアップソリューション"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
 * Cloud Manager Connector に権限を提供する IAM ロールには、最新のからの S3 権限が含まれています https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager ポリシー"^]。
@@ -65,7 +65,7 @@ S3 へのボリュームのバックアップを開始する前に、次の要�
 
 image:diagram_cloud_backup_cvo_aws.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
 
-サポートされている ONTAP のバージョン:: ONTAP 9.6以降、ONTAP 9.8P11以降を推奨します。
+サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
 ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 AWS Marketplace で Cloud Manager サブスクリプションを購入して、 Cloud Volumes ONTAP とクラウドバックアップを導入できます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["この Cloud Manager サブスクリプションに登録してください"^] Cloud Backup を有効にする前に、Cloud Backup の請求は、このサブスクリプションを通じて行われます。
 +
 --
@@ -79,7 +79,14 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 
 --
 サポートされている AWS リージョン:: Cloud Backup はすべての AWS リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。
-別の AWS アカウントでバックアップを作成する場合の必須のセットアップです:: デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別の AWS アカウントを使用する場合は、が必要です link:reference-backup-multi-account-aws.html["AWS ポータルにログインして、 2 つのアカウントをリンクできます"]。
+別の AWS アカウントでバックアップを作成する場合の必須のセットアップです:: デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別のAWSアカウントを使用する場合は、次の作業を行う必要があります。
++
+--
+* Cloud ManagerでデスティネーションAWSアカウントのクレデンシャルを追加します
+* Cloud Managerに権限を付与するIAMロールに「s3：PutBucketPolicy」という権限を追加します
+
+
+--
 データ暗号化にお客様が管理するキーを使用するために必要な情報:: デフォルトの Amazon S3 暗号化キーを使用する代わりに、アクティブ化ウィザードでお客様が管理するデータ暗号化キーを選択できます。この場合は、暗号化管理キーがすでに設定されている必要があります。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"^]。
 AWS 権限が必要です:: Cloud Manager に権限を提供する IAM ロールが必要です 最新の S3 権限を含める https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Cloud Manager ポリシー"^]。
 +
@@ -108,6 +115,7 @@ AWS 権限が必要です:: Cloud Manager に権限を提供する IAM ロール
                 "s3:GetBucketPublicAccessBlock",
                 "s3:GetBucketAcl",
                 "s3:GetBucketPolicy",
+                "s3:PutBucketPolicy",
                 "s3:PutBucketPublicAccessBlock",
                 "s3:PutEncryptionConfiguration",
                 "s3:GetObjectVersionTagging",
@@ -189,7 +197,7 @@ image:screenshot_backup_cvo_enable.png["作業環境を選択した後に使用�
 +
 .. バックアップの格納に使用する AWS アカウント。これは、 Cloud Volumes ONTAP システムが配置されているアカウントとは異なる場合があります。
 +
-バックアップに別の AWS アカウントを使用する場合は、が必要です link:reference-backup-multi-account-aws.html["AWS ポータルにログインして、 2 つのアカウントをリンクできます"]。
+バックアップに別のAWSアカウントを使用する場合は、Cloud ManagerでデスティネーションAWSアカウントのクレデンシャルを追加し、Cloud Managerに権限を提供するIAMロールに「s3：PutBucketPolicy」権限を追加する必要があります。
 
 .. バックアップを保存するリージョン。これは、 Cloud Volumes ONTAP システムが配置されているリージョンとは異なるリージョンにすることもできます。
 .. デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択してデータの暗号化を管理するか。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自の暗号化キーの使用方法を参照してください"]）。

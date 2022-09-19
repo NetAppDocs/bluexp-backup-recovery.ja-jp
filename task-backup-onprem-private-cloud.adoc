@@ -49,7 +49,7 @@ summary: オンプレミスの ONTAP システムから NetApp StorageGRID シ�
 image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
 
 [role="quick-margin-para"]
-プロバイダとして StorageGRID を選択し、 StorageGRID サーバとサービスアカウントの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。
+プロバイダとしてStorageGRID を選択し、StorageGRID サーバとS3テナントアカウントの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。
 
 [role="quick-margin-para"]
 image:screenshot_backup_provider_settings_storagegrid.png["ONTAP クラスタから StorageGRID にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
@@ -89,7 +89,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 ONTAP の要件::
 +
 --
-* ONTAP 9.7P5以降が必要です。ONTAP 9.8P11以降が推奨されます。
+* ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
 * SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。
 +
 * 注： * Cloud Backup を使用する場合、「 Hybrid Cloud Bundle 」は必要ありません。
@@ -132,9 +132,16 @@ Cloud Backup をセットアップすると、 IPspace で使用するように�
 StorageGRID は、次の要件を満たす必要があります。を参照してください https://docs.netapp.com/us-en/storagegrid-116/["StorageGRID のドキュメント"^] を参照してください。
 
 サポートされている StorageGRID のバージョン:: StorageGRID 10.3 以降がサポートされます。
-S3 クレデンシャル:: StorageGRID へのバックアップを設定する際、サービスアカウントの S3 アクセスキーとシークレットキーを入力するようにバックアップウィザードで求められます。サービスアカウントを使用すると、 Cloud Backup でバックアップの認証を行い、バックアップの格納に使用する StorageGRID バケットにアクセスできます。StorageGRID が誰が要求を行うかを認識できるようにするには、キーが必要です。
 +
 --
+DataLockとRansomware Protectionをバックアップに使用するには、StorageGRID システムでバージョン11.6.0.3以降が実行されている必要があります。
+
+--
+S3 クレデンシャル:: StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["詳細については、StorageGRID のドキュメントを参照してください"^]。
++
+--
+StorageGRID へのバックアップを設定する際、テナントアカウントのS3アクセスキーとシークレットキーを入力するようにバックアップウィザードで求められます。テナントアカウントを使用すると、クラウドバックアップでバックアップの認証を行い、バックアップの格納に使用するStorageGRID バケットにアクセスできます。StorageGRID が誰が要求を行うかを認識できるようにするには、キーが必要です。
+
 これらのアクセスキーは、次の権限を持つユーザに関連付ける必要があります。
 
 [source, json]
@@ -147,7 +154,7 @@ S3 クレデンシャル:: StorageGRID へのバックアップを設定する�
 "s3:CreateBucket"
 ----
 --
-オブジェクトのバージョン管理:: オブジェクトストアバケットで StorageGRID オブジェクトのバージョン管理を有効にすることはできません。
+オブジェクトのバージョン管理:: オブジェクトストアバケットでは、StorageGRID オブジェクトのバージョン管理を手動で有効にしないでください。
 
 
 
@@ -208,7 +215,8 @@ image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使�
 
 . プロバイダとして * StorageGRID * を選択し、 * Next * をクリックして、プロバイダの詳細を入力します。
 +
-.. StorageGRID ゲートウェイノードのFQDNと、ONTAP がStorageGRID とのHTTPS通信に使用するポート。例：「s3.eng.company.com:8082`」
+.. StorageGRID ゲートウェイノードのFQDN。
+.. ONTAP がStorageGRID とのHTTPS通信に使用するポート。
 .. バックアップを格納するバケットへのアクセスに使用するアクセスキーとシークレットキー。
 .. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です（コネクタが「ダーク」サイトにインストールされている場合は不要です）。
 +
@@ -226,8 +234,12 @@ image:screenshot_backup_provider_settings_storagegrid.png["オンプレミスの
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
 .. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
+.. ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる攻撃からバックアップを保護するように設定できます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
 +
 image:screenshot_backup_onprem_policy.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
+
++
+*重要：* DataLockを使用する場合は、Cloud Backupをアクティブにするときに最初のポリシーで有効にする必要があります。
 
 
 

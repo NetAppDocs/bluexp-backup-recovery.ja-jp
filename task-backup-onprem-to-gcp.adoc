@@ -86,7 +86,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 ONTAP の要件::
 +
 --
-* ONTAP 9.7P5以降が必要です。ONTAP 9.8P11以降が推奨されます。
+* ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
 * SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。
 +
 * 注： * Cloud Backup を使用する場合、「 Hybrid Cloud Bundle 」は必要ありません。

@@ -64,8 +64,8 @@ Azure Blob Storage へのボリュームのバックアップを開始する前�
 
 image:diagram_cloud_backup_cvo_azure.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
 
-サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降が必要です。ONTAP 9.8P11以降が推奨されます。
-ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 Cloud Backup を有効にする前に Azure Marketplace でサブスクリプションを購入する必要があります。Cloud Backup の請求は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細 & 資格情報ページから購読できます"^]。
+サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
+ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 Cloud Backup を有効にする前に Azure Marketplace でサブスクリプションを購入する必要があります。Cloud Backup の請求は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
 Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。
@@ -125,7 +125,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 --
 サポートされている Azure リージョン:: Cloud Backup はすべての Azure リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
 別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ:: デフォルトでは、バックアップは Cloud Volumes ONTAP システムと同じサブスクリプションを使用して作成されます。バックアップに別の Azure サブスクリプションを使用する場合は、が必要です link:reference-backup-multi-account-azure.html["Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます"]。
-データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"]。
+データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
 
 
 
@@ -137,7 +137,7 @@ Cloud Backup は、作業環境ウィザードではデフォルトで有効に�
 を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
 
 
-NOTE: リソースグループの名前を選択する場合は、 Cloud Volumes ONTAP を導入する際に * disable * Cloud Backup と入力します。の手順に従います <<enabling-cloud-backup-on-an-existing-system,既存のシステムでの Cloud Backup の有効化>> Cloud Backup を有効にしてリソースグループを選択します。
+NOTE: リソースグループの名前を選択する場合は、 Cloud Volumes ONTAP を導入する際に * disable * Cloud Backup と入力します。の手順に従います ,既存のシステムでの Cloud Backup の有効化 Cloud Backup を有効にしてリソースグループを選択します。
 
 .手順
 . [ Cloud Volumes ONTAP の作成 *] をクリックします。

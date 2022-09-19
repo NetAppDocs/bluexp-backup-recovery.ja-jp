@@ -53,6 +53,8 @@ Cloud Backupは、ボリュームバックアップに対するDataLockやRansom
 
 これらの機能はどちらもバックアップファイルを保護するため、ソースデータがランサムウェア攻撃を受けた場合にデータをリカバリするための有効なバックアップファイルを常に用意しています。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionが有効な場合、クラウドバックアップのアクティブ化の一環としてプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。
 
+この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップだけです。ネットアップのソリューションを使用 https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights およびCloud Secure"^]、またはの一部 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^] ソースボリュームを保護します。
+
 [CAUTION]
 ====
 * DataLockとRansomwareによる保護を使用する場合は、最初のバックアップポリシーを作成し、そのクラスタに対してCloud Backupをアクティブ化するときにDataLockを有効にする必要があります。
@@ -66,7 +68,7 @@ Cloud Backupは、ボリュームバックアップに対するDataLockやRansom
 
 DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。この機能は、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。バックアップ・ファイルがロック（および保持）される期間をDataLockの保持期間と呼びますこの値は、定義したバックアップポリシーのスケジュールと保持の設定に加え、14日間のバッファに基づきます。30日未満のDataLock保持ポリシーは、最小30日に切り上げられます。
 
-古いバックアップは、バックアップポリシーの保持期間が過ぎても、DataLockの保持期間が過ぎると削除されるので注意してください。
+古いバックアップは、バックアップポリシーの保持期間が過ぎても、DataLockの保持期間が過ぎると削除されるのではなく、注意してください。
 
 この機能の例をいくつか見てみましょう。
 
@@ -117,39 +119,47 @@ image:screenshot_datalock_ransomware_settings.png["バックアップポリシ�
 +
 DataLock保護とランサムウェア防御は無効になっています。
 
-* エンタープライズ
+* ガバナンス（StorageGRID では使用不可）
 +
-DataLockは_Enterprise_whereに設定されている特定の権限（link:concept-cloud-backup-policies.html#requirements["以下を参照してください"]）を使用すると、保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効
+DataLockは_Governanceモードに設定されています。特定の権限を持つユーザーです（link:concept-cloud-backup-policies.html#requirements["以下を参照してください"]）を使用すると、保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効
 
 * コンプライアンス
 +
-DataLockは_Compliance]に設定されており'保存期間中にユーザーがバックアップ・ファイルを上書きまたは削除することはできませんランサムウェア攻撃からの保護が有効
+DataLockは_Compliion_modeに設定されており、保持期間中にユーザがバックアップファイルを上書きしたり削除したりすることはできません。ランサムウェア攻撃からの保護が有効
 
 
+
+
+NOTE: StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされていないため、保持設定を省略したり、保護されたバックアップを上書きしたり、バックアップを削除したりする機能はユーザにはありません。
 
 
 
 === サポートされている作業環境とオブジェクトストレージプロバイダ
 
-次のパブリッククラウドプロバイダでオブジェクトストレージを使用する場合、ONTAP ボリュームに対するDataLockとRansomwareによる保護を次の作業環境から有効にすることができます。パブリッククラウドプロバイダとプライベートクラウドプロバイダは今後のリリースで追加される予定です。
+以下のパブリッククラウドプロバイダとプライベートクラウドプロバイダでオブジェクトストレージを使用する際に、ONTAP ボリュームに対するDataLock保護とRansomware保護を有効にすることができます。クラウドプロバイダは今後のリリースで追加される予定です。
 
 [cols="45,45"]
 |===
 | ソースの作業環境 | バックアップファイルデスティネーションifdef：aws [] 
 
 
-| AWS の Cloud Volumes ONTAP | Amazon S3 endif：aws []ifdef：azure[] endif：azure[]ifdef：gCP[] endif：gcp []ifdef：aws [] ifdef：aws [] 
+| AWS の Cloud Volumes ONTAP | Amazon S3 endif：aws [] ifdef：azure[] endif：azure [] ifdef：GCP [] endif：gcp [] 
 
 
-| オンプレミスの ONTAP システム | Amazon S3 endif：aws [] ifdef：azure[] endif：azure [] ifdef：GCP [] endif：gcp [] 
+| オンプレミスの ONTAP システム | ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] endif：azure[] ifdef：gCP[] endif：GCP [] NetApp StorageGRID 
 |===
 
 
 === 要件
 
 * クラスタでONTAP 9.11.1以降が実行されている必要があります
-* Cloud Manager 3.9.21以降を使用している必要があります（この時点ではコネクタをクラウドに導入する必要があります）。
-* AWSにバックアップするには、次のS3権限がIAMロールの一部であり、コネクタに権限を付与する必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
+* Cloud Manager 3.9.21以降を使用している必要があります
+
+
+ifdef::aws[]
+
+* AWSの場合、コネクタはクラウドに導入されている必要があります
+* 次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
 +
 ** S3 ： GetObjectVersionTagging
 ** S3 ： GetBucketObjectLockConfiguration
@@ -179,11 +189,21 @@ DataLockは_Compliance]に設定されており'保存期間中にユーザー�
 ** S3 ： GetBucketLocation
 ** S3 ： GetObjectVersion
 +
-管理者ユーザがEnterpriseモードでロックされたバックアップファイルを上書きまたは削除できるようにするには、S3権限「s3：Bypassガバナー 保持」をCloud Managerユーザロールに追加する必要があります。
+「s3：Bypassガバナー 保持」は、管理者ユーザがGovernanceモードでロックされているバックアップファイルを上書きまたは削除できるようにする場合にのみ追加する必要があります。
 
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
 
+
+
+
+
+endif::aws[]
+
+* StorageGRID の場合：
++
+** コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。
+** DataLock機能を完全にサポートするには、StorageGRID 11.6.0.3以降が必要です
 
 
 
@@ -193,7 +213,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aw
 === 制限事項
 
 * バックアップポリシーでアーカイブストレージを設定している場合、DataLockとRansomwareによる保護は利用できません。
-* クラウドバックアップ（EnterpriseまたはCompliance）をアクティブ化するときに選択するDataLockオプションは、そのクラスタのすべてのバックアップポリシーに使用する必要があります。1つのクラスタでEnterpriseモードとComplianceモードの両方のロックを使用することはできません。
+* クラウドバックアップ（ガバナンスまたはコンプライアンス）をアクティブ化する際に選択するDataLockオプションは、そのクラスタのすべてのバックアップポリシーに使用する必要があります。1つのクラスタでガバナンスモードとコンプライアンスモードの両方のロックを使用することはできません。
 * DataLockを有効にすると、すべてのボリュームバックアップがロックされます。1つのクラスタに、ロックされたボリュームバックアップとロックされていないボリュームバックアップを混在させることはできません。
 * DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。Cloud Backupをアクティブ化したあとは、この機能を有効にできません。
 

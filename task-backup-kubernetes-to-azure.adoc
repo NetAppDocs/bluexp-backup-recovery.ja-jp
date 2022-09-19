@@ -125,7 +125,7 @@ spec:
 
 
 --
-ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 Cloud Backup を有効にする前に Azure Marketplace でサブスクリプションを購入する必要があります。Cloud Backup の請求は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細 & 資格情報ページから購読できます"^]。
+ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 Cloud Backup を有効にする前に Azure Marketplace でサブスクリプションを購入する必要があります。Cloud Backup の請求は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
 Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。

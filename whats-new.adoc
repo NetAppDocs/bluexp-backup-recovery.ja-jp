@@ -18,6 +18,42 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2022年9月19日
+
+
+
+=== DataLockとRansomwareによる保護は、StorageGRID システムのバックアップファイルに対して設定できます
+
+最後のリリースで導入された、Amazon S3バケットに格納されたバックアップ向けの_DataLockとRansomware Protection_forが含まれます。このリリースでは、StorageGRID システムに格納されたバックアップファイルのサポートが拡張されています。クラスタがONTAP 9.11.1以降を使用していて、StorageGRID システムがバージョン11.6.0.3以降を実行している場合、この新しいバックアップポリシーオプションを使用できます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとRansomwareによる保護でバックアップを保護する方法の詳細をご確認ください"^]。
+
+バージョン3.9.22以降のソフトウェアがインストールされたコネクタを実行する必要があります。コネクタはオンプレミスにインストールする必要があり、インターネットにアクセスできるサイトまたはインターネットに接続できないサイトにインストールできます。
+
+
+
+=== これで、バックアップファイルからフォルダレベルのリストアを実行できるようになりました
+
+フォルダ（ディレクトリまたは共有）内のすべてのファイルにアクセスする必要がある場合は、バックアップファイルからフォルダをリストアできるようになりました。フォルダをリストアする方が、ボリューム全体をリストアするよりもはるかに効率的です。この機能は、参照およびリストア方法と検索およびリストア方法の両方を使用して、リストア処理を実行する場合に使用できます。この時点では、1つのフォルダのみを選択してリストアできます。そのフォルダのファイルのみがリストアされます。サブフォルダやサブフォルダ内のファイルはリストアされません。
+
+
+
+=== アーカイブストレージに移動されたバックアップからファイルレベルのリストアを実行できるようになりました
+
+以前は、アーカイブストアに移動されたバックアップファイルからのみボリュームをリストアできました（AWSおよびAzureのみ）。これらのアーカイブ済みバックアップファイルから個々のファイルやフォルダをリストアできるようになりました。この機能は、参照およびリストア方法と検索およびリストア方法の両方を使用して、リストア処理を実行する場合に使用できます。
+
+
+
+=== ファイルレベルのリストアで、元のソースファイルを上書きするオプションが追加されました
+
+以前は、元のボリュームにリストアされたファイルは、「Restore_< file_name >」というプレフィックスの新しいファイルとして常にリストアされていました。ボリューム上の元の場所にファイルをリストアする際に、元のソースファイルを上書きできるようになりました。この機能は、参照およびリストア方法と検索およびリストア方法の両方を使用して、リストア処理を実行する場合に使用できます。
+
+
+
+=== ドラッグアンドドロップして、StorageGRID システムへのクラウドバックアップを有効にします
+
+状況に応じて https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html["StorageGRID"^] バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてバックアップセットアップウィザードを開始できます。
+
+
+
 == 2022年8月18日
 
 
@@ -28,13 +64,9 @@ Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されている�
 
 
 
-== 2022年8月16日
-
-
-
 === 検索とリストアがAzure Blobでのバックアップファイルでサポートされるようになりました
 
-Azure BLOBストレージにバックアップファイルを保存するユーザが、ボリュームとファイルのリストア方法を検索してリストアできるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["Search & Restoreを使用してボリュームとファイルをリストアする方法を参照してください"^]。
+Azure BLOBストレージにバックアップファイルを保存するユーザが、ボリュームとファイルのリストア方法を検索してリストアできるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["Search  Restoreを使用してボリュームとファイルをリストアする方法を参照してください"^]。
 
 この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェア（2022年8月）を使用して導入されたコネクタに、次の権限が含まれます。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["必要に応じて、これらの権限を追加する方法を参照してください"^]。
 
@@ -104,10 +136,6 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 
 
 
-== 2022年6月8日
-
-
-
 === Cloud Backup for Virtual Machines 1.1.0のGA版になりました
 
 SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
@@ -159,7 +187,7 @@ APIはにあります https://docs.netapp.com/us-en/cloud-manager-automation/cbs
 
 === Google Cloud Storageのバックアップファイルで検索とリストアがサポートされるようになりました
 
-ボリュームとファイルをリストアするための検索とリストアの方法は、AWSにバックアップファイルを格納するユーザ向けに4月に導入されました。Google Cloud Storageにバックアップファイルを保存するユーザーがこの機能を使用できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["Search & Restoreを使用してボリュームとファイルをリストアする方法を参照してください"]。
+ボリュームとファイルをリストアするための検索とリストアの方法は、AWSにバックアップファイルを格納するユーザ向けに4月に導入されました。Google Cloud Storageにバックアップファイルを保存するユーザーがこの機能を使用できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["Search  Restoreを使用してボリュームとファイルをリストアする方法を参照してください"]。
 
 
 
@@ -341,88 +369,3 @@ link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time[
 
 
 === 30 、 000 を超えるファイルを含むディレクトリからファイルをリストアできるようになりました
-
-
-
-== 2021 年 8 月 1 日
-
-
-
-=== Azure Blob へのセキュアなバックアップを実現するためのプライベートエンドポイント接続を定義する機能
-
-オンプレミスの ONTAP システムから Azure Blob へのバックアップを設定する場合は、アクティブ化ウィザードで Azure プライベートエンドポイントへの接続を定義できます。これにより、プライベートかつセキュアに Azure Private Link を搭載したサービスに接続するネットワークインターフェイスを使用できます。
-
-
-
-=== 毎時バックアップポリシーがサポートされるようになりました
-
-この新しいポリシーは、既存の Daily 、 Weekly 、および Monthly ポリシーに追加されています。毎時バックアップポリシーは、最小限の目標復旧時点（ RPO ）を提供します。
-
-
-
-== 2021 年 7 月 7 日
-
-
-
-=== これで、さまざまなアカウントとリージョンを使用してバックアップを作成できるようになりました
-
-Cloud Backup で、 Cloud Volumes ONTAP システムに使用するアカウントやサブスクリプションとは異なるものを使用してバックアップを作成できるようになりました。Cloud Volumes ONTAP システムの導入リージョンとは異なるリージョンにバックアップファイルを作成することもできます。
-
-この機能は、 AWS または Azure を使用している場合にのみ使用できます。既存の作業環境でバックアップを有効にする場合にのみ使用できます。新しい Cloud Volumes ONTAP 作業環境を作成する場合は使用できません。
-
-
-
-=== Azure Blob にデータをバックアップする際のデータ暗号化に使用する、お客様が管理する独自のキーを選択できるようになりました
-
-セキュリティと制御を強化するために、 Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを選択してデータを暗号化できます。オンプレミスの ONTAP システムまたは Azure の Cloud Volumes ONTAP システムからバックアップを設定する場合に使用できます。
-
-
-
-=== 単一ファイルのリストアを使用する場合、一度に最大 100 個のファイルをリストアできるようになりました
-
-
-
-== 2021 年 6 月 7 日
-
-
-
-=== ONTAP 9.8 以降を使用している場合は、 DP ボリュームの制限が解除されました
-
-データ保護（ DP ）ボリュームのバックアップに関する 2 つの既知の制限事項が解決されました。
-
-* カスケードバックアップは、 SnapMirror 関係のタイプがミラーバックアップまたはバックアップの場合にのみ機能します。関係のタイプが MirrorAllSnapshots の場合は、バックアップを作成できるようになりました。
-* Cloud Backup で、 SnapMirror ポリシーに設定されているかぎり、バックアップに任意のラベルを使用できるようになりました。名前が daily 、 weekly 、または monthly のラベルを要求するという制限はなくなりました。
-
-
-
-
-== 2021 年 5 月 5 日
-
-
-
-=== オンプレミスのクラスタデータを Google Cloud Storage または NetApp StorageGRID システムにバックアップ
-
-オンプレミスの ONTAP システムから Google Cloud Storage や NetApp StorageGRID システムへのバックアップを作成できるようになりました。を参照してください link:task-backup-onprem-to-gcp.html["Google Cloud Storage へのバックアップ"^] および link:task-backup-onprem-private-cloud.html["StorageGRID にバックアップしています"^] を参照してください。
-
-
-
-=== System Manager を使用して Cloud Backup の処理を実行できるようになりました
-
-ONTAP 9.9.1 の新機能では、 System Manager を使用して、オンプレミスの ONTAP のバックアップを Cloud Backup で設定したオブジェクトストレージに送信できます。 link:https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html["Cloud Backup を使用してボリュームをクラウドにバックアップする方法については、 System Manager の説明を参照してください。"^]
-
-
-
-=== いくつかの機能拡張により、バックアップポリシーが改善されました
-
-* 次に、日単位、週単位、月単位のバックアップを組み合わせたカスタムポリシーを作成します。
-* バックアップポリシーを変更すると、元のバックアップポリシーを使用してすべてのボリュームに環境のすべての新しいバックアップ * および * が変更されます。これまでは、新しいボリュームバックアップにのみ適用されていました。
-
-
-
-
-=== その他のバックアップおよびリストアの改善
-
-* バックアップファイルのクラウドのデスティネーションを設定する際に、 Cloud Volumes ONTAP システムが配置されているリージョンとは異なるリージョンを選択できるようになりました。
-* 単一のボリュームに作成できるバックアップファイルの数が 1 、 019 から 4 、 000 に増えました。
-* 1 つのボリュームのすべてのバックアップファイルを先に削除できるようになったほか、ボリュームのバックアップファイルを 1 つだけ削除したり、作業環境全体のバックアップファイルを必要に応じてすべて削除したりできるようになりました。
-
