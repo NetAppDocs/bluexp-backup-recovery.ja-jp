@@ -50,7 +50,7 @@ Cloud Backup の新機能をご確認ください。
 
 === ドラッグアンドドロップして、StorageGRID システムへのクラウドバックアップを有効にします
 
-状況に応じて https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html["StorageGRID"^] バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてバックアップセットアップウィザードを開始できます。
+状況に応じて https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["StorageGRID"^] バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてクラウドバックアップセットアップウィザードを開始できます。
 
 
 
