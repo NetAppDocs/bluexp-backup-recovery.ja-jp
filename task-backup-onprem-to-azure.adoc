@@ -145,6 +145,8 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
 
 
+Cloud Backupは、Connectorがクラウドに導入されている場合にのみ、Governmentクラウドリージョンでサポートされます。オンプレミスまたはダークサイトにインストールされている場合はサポートされません。
+
 
 
 === コネクタのネットワークを準備しています
@@ -157,6 +159,7 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 ** Cloud Backup Service へのアウトバウンドインターネット接続 ポート 443 （ HTTPS ）
 ** ポート 443 経由での BLOB オブジェクトストレージへの HTTPS 接続
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
+** AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure のコネクタのルール"^] を参照してください。
 
 
 . Azure ストレージへの VNet プライベートエンドポイントを有効化これは、ONTAP クラスタからVNetへのExpressRouteまたはVPN接続があり、コネクタとBLOBストレージ間の通信を仮想プライベートネットワーク（*プライベート*接続）で維持する場合に必要です。
