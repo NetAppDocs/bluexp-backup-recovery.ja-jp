@@ -18,6 +18,32 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2022年9月30日
+
+
+
+=== Cloud Backup for Applicationsの機能強化
+
+* Google Cloud Provider（GCP）とStorageGRID をサポートしており、アプリケーションと整合性のあるSnapshotをバックアップできます
+* カスタムポリシーを作成する
+* アーカイブストレージをサポートします
+* SAP HANAアプリケーションをバックアップ
+* VMware環境のOracleおよびSQLアプリケーションをバックアップする
+* オンプレミスのセカンダリストレージからアプリケーションをバックアップ
+* バックアップの非アクティブ化
+* SnapCenter サーバを登録解除します
+
+
+
+
+=== Cloud Backup for Virtual Machinesの機能拡張
+
+* では、StorageGRID を使用して1つ以上のデータストアをバックアップできます
+* カスタムポリシーを作成する
+
+
+
+
 == 2022年9月19日
 
 

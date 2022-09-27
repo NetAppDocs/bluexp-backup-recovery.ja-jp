@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task-backup-app-data-to-aws.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: アプリケーションデータをONTAP からAWSにバックアップするには、いくつかの手順を実行します。 
+---
+= オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Backup for ApplicationsをCloud ManagerとオンプレミスのSnapCenter に統合することで、ONTAP からAmazon Web Servicesにアプリケーションデータをバックアップできます。
+
+単一のポリシーを使用して、 1 つ以上のアプリケーションをクラウドで同時に保護することができます。
+
+
+IMPORTANT: Cloud Manager の GUI を使用している場合、一度に保護できるアプリケーションは 1 つだけです。ただし、 REST API を使用する場合は、複数のアプリケーションを同時に保護できます。
+
+* 手順 *
+
+. Cloud Manager UI で、 * Backup & Restore * > * Applications * の順にクリックします。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * バックアップのアクティブ化 * をクリックします。
+. [ ポリシーの割り当て ] ページで、ポリシーを選択して [ 次へ * ] をクリックします。
+. 作業環境を追加します。
++
+アプリケーションが実行されている SVM をホストする ONTAP クラスタを設定します。いずれかのアプリケーション用の作業環境を追加したら、同じ ONTAP クラスタにある他のすべてのアプリケーションでその作業環境を再利用できます。
+
++
+.. SVMを選択し、*作業環境の追加*をクリックします。
+.. 作業環境の追加ウィザードで、次の手順を実行します。
++
+... ONTAP クラスタの IP アドレスを指定します。
+... 管理クレデンシャルを指定します。
++
+Cloud Backup for Applications でサポートされているのはクラスタ管理者のみです。
+
+
+
+.. * 作業環境の追加 * をクリックします。
+
+
+. クラウドプロバイダとして「* Amazon Web Services *」を選択します。
++
+.. AWS アカウントを指定します。
+.. AWS Access Key フィールドで、キーを指定します。
+.. AWS Secret Key フィールドで、パスワードを指定します。
+.. バックアップを作成するリージョンを選択します。
+.. IPスペースを指定してください。
+.. アーカイブ階層を選択します。
++
+アーカイブ階層は1回限りのアクティビティであり、あとから設定することはできないため、設定することを推奨します。
+
+
+
+. 詳細を確認し、 * バックアップのアクティブ化 * をクリックします。
+

@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-mount-app-backup.html 
+keywords: mount, mount application backups, Oracle database, SAP HANA database 
+summary: 指定したデータベースにSAP HANAとOracleのバックアップをマウントできます 
+---
+= アプリケーションバックアップをマウント
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapCenter では、OracleおよびHANAのバックアップを代替ホストにリストアすることはできません。そのため、Cloud Backup for Applicationsでは、OracleとHANAのバックアップを特定のホストにマウントできます。
+
+* 必要なもの *
+
+セカンダリストレージからオブジェクトストアに移動されたバックアップをマウントする場合は、プライマリ作業環境の詳細を追加し、IPスペースを設定する必要があります。詳細については、を参照してください link:task-manage-app-backups.html#set-ip-space-of-the-primary-working-environment["プライマリ作業環境のIPスペースを設定します"]。
+
+* 手順 *
+
+. Cloud Manager UI で、 * Backup & Restore * > * Applications * の順にクリックします。
+. [フィルタ条件]フィールドで[*タイプ]を選択し、ドロップダウンから[* SAP HANA *]または[* Oracle*]を選択します。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] 保護されたアプリケーションに対応して、「*詳細を表示*」を選択します。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] バックアップに対応し、* Mount *を選択します。
++
+.. 次のいずれかを指定します。
++
+... NAS環境の場合は、オブジェクトストアからリストアした代替ボリュームのエクスポート先ホストのFQDNまたはIPアドレスを指定します。
+... SAN環境の場合は、代替ボリュームのLUNをオブジェクトストアからリストアしてマッピングするホストのイニシエータを指定します。
+
+
+.. 代替ボリューム名に追加するサフィックスを指定します。
+.. Snapshotがアーカイブストレージにある場合に、アーカイブストレージからデータを読み出す優先度を指定します。
+.. [ マウント ] をクリックします。
+
+
+
+
+この処理では、指定したホストにストレージのみがマウントされます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。代替ボリュームを利用したあとで、ストレージ管理者はONTAP クラスタからボリュームを削除できます。
+
+SAP HANAデータベースを起動する方法については、を参照してください。 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：『Automating SAP HANA System Copy and Clone Operations with SnapCenter 』"^]。
