@@ -16,7 +16,7 @@ summary: 仮想マシン上のデータ保護の詳細と、さまざまなポ�
 [role="lead"]
 SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
 
-データストアは、Amazon Web Services S3またはMicrosoft Azure Blobにバックアップできます。
+データストアは、Amazon Web Services S3、Microsoft Azure Blob、StorageGRID にバックアップできます。
 
 
 
@@ -40,54 +40,3 @@ SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、
 次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
 
 image:cloud_backup_vm.png["仮想マシンのクラウドバックアップのアーキテクチャの図。"]
-
-
-
-== 保護ポリシー
-
-データストアをクラウドにバックアップするには、Cloud Backup for Virtual Machineで定義されているいずれかのポリシーを使用する必要があります。
-
-
-NOTE: カスタムポリシーはサポートされません。
-
-デフォルトのポリシーを表示するには、Cloud Managerで* Backup & Restore *>* Virtual Machines *>* Policies *をクリックします。
-
-|===
-| ポリシー名 | ラベル | 保持値 
-
-
- a| 
-1 年ごとの LTR
- a| 
-毎日
- a| 
-366
-
-
-
- a| 
-5 年ごとの LTR
- a| 
-毎日
- a| 
-1830 年に
-
-
-
- a| 
-7 年ごとの LTR
- a| 
-毎週
- a| 
-370
-
-
-
- a| 
-10 年間の月単位 LTR
- a| 
-毎月
- a| 
-120
-
-|===

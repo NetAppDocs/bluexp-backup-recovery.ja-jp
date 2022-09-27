@@ -451,7 +451,6 @@
   <block id="61f9980bdbfc26a31c724b0711e0c9d7" category="list-text">SnapCenter の、 Cloud Manager の Cloud Backup for Applications ポリシーと同じラベルまたはラベルのない日次、週次、または月単位のポリシーが少なくとも 1 つ必要です。</block>
   <block id="c895d0010b397b55778718d6ccc26b78" category="inline-image-macro">Cloud Backup がオンプレミスアプリケーションやバックアップファイルの保存先ストレージと通信する仕組みを示す図。</block>
   <block id="bc983d441473b5c9a47c39b5fb57e53f" category="paragraph"><block ref="bc983d441473b5c9a47c39b5fb57e53f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1fb0ab1ae08802d159d677b839bdb6bd" category="section-title">保護ポリシー</block>
   <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">ポリシー名</block>
   <block id="b021df6aac4654c454f46c77646e745f" category="cell">ラベル</block>
   <block id="dfa56cb0ff8ac0e7087134a3d7e1f39d" category="cell">保持値</block>
@@ -1023,14 +1022,11 @@
   <block id="74530be68401a15b7ea1d28131ab97bc" category="list-text">管理クレデンシャルを指定します。</block>
   <block id="bfb822fc24423e523038a16084714363" category="paragraph">Cloud Backup for Applications でサポートされているのはクラスタ管理者のみです。</block>
   <block id="aa8af91e5428a9ebec0674a12beb38a8" category="list-text">* 作業環境の追加 * をクリックします。</block>
-  <block id="8841c3ab9e3ed16d9f9a0d43c08cc8a8" category="list-text">クラウドプロバイダを選択して設定します。</block>
-  <block id="af2a670f49a4622290f494ad6dcea729" category="open-title">Amazon Web Services を設定します</block>
   <block id="4117af0b4d26b5ba222b63a2b7e1eb27" category="list-text">AWS アカウントを指定します。</block>
   <block id="8b803eccc7b3025a4a30eb9283c44e50" category="list-text">AWS Access Key フィールドで、キーを指定します。</block>
   <block id="6e3c30245930a39c89b2820d0afecc99" category="list-text">AWS Secret Key フィールドで、パスワードを指定します。</block>
   <block id="b5d98853353bde168501864a9aa65bfd" category="list-text">バックアップを作成するリージョンを選択します。</block>
   <block id="17e71ff8be0504f2f0970de9d25aff47" category="list-text">作業環境として追加した ONTAP クラスタの IP アドレスを指定します。</block>
-  <block id="9d4e2d4af7d5004d70454172e508b2dc" category="open-title">Microsoft Azure を設定</block>
   <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">Azure サブスクリプション ID を指定します。</block>
   <block id="438d3dd7620068789776c4fbc687ceda" category="list-text">新しいリソースグループを作成するか、既存のリソースグループを使用してください。</block>
   <block id="937fe6f3b88e5f7efd348b6104efe90c" category="list-text">[ ポリシーの割り当て ] ページで、ポリシーを選択して [ 次へ * ] をクリックします。</block>
@@ -1523,9 +1519,6 @@
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアする仮想マシンに対応して、*リストア*をクリックします。</block>
   <block id="9ed4c9021fe62521b5d2326bd893b1c0" category="list-text">仮想マシンのリストアに使用するバックアップを選択し、［*次へ*］をクリックします。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VMは、バックアップの作成元と同じ場所にリストアされます。</block>
-  <block id="4d9574931c16abc6d4b59b575083bffd" category="summary">オンプレミスのONTAP からクラウドへデータストアをバックアップ</block>
-  <block id="7048662b75c8f210e59f898d992521cc" category="doc">データストアをクラウドにバックアップ</block>
-  <block id="6dd46b526b8b23de64849cb2b9161407" category="paragraph">SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、データストアをクラウドにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="9a0c42190771559c2a8da5fac845d24d" category="admonition">すべてのが満たされていることを確認します <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> データストアをクラウドにバックアップする前に、</block>
   <block id="8f2653c5938080ffdd57904f850bc430" category="section-title">SnapCenter Plug-in for VMware vSphereの登録</block>
   <block id="908b804c1d5eb33816dbfe2d033e3e43" category="paragraph">データストアと仮想マシンをCloud Managerに表示するには、SnapCenter Plug-in for VMware vSphereをCloud Managerに登録する必要があります。SnapCenter Plug-in for VMware vSphereの登録は、管理者アクセス権を持つユーザのみが実行できます。</block>
@@ -1534,11 +1527,8 @@
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">[* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。</block>
   <block id="d530421284e594531ff677ce26aca840" category="list-text">SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereのFQDNまたはIPアドレスを指定します。</block>
   <block id="0db60886ecbee2c8ae4b0a650b7ef422" category="list-text">Portフィールドで、SnapCenter Plug-in for VMware vSphereを実行しているポート番号を指定します。</block>
-  <block id="d89a3944c2a1428f7efcadcc74009254" category="paragraph">SnapCenter Plug-in for VMware vSphereとCloud Backup for Applicationsの間で通信を行うためにポートが開いていることを確認する必要があります。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。</block>
   <block id="a5f2332b8c4899ab96469750896f3abd" category="paragraph">[*バックアップとリストア&gt;仮想マシン*]をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereを使用して保護対象となるすべてのデータストアおよび仮想マシンを表示します。</block>
-  <block id="767d5a2c4b139b3eaffd11e9a1772a77" category="section-title">データストアをバックアップする</block>
-  <block id="2f95ab0bd04ff2aa6411e15c863087be" category="paragraph">単一のポリシーを使用して、1つ以上のデータストアをクラウドに同時にバックアップできます。データストアに割り当てることができるのはデフォルトのポリシーだけです。</block>
   <block id="1d419e3005bf4974f6070bbb53e5816f" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> バックアップするデータストアに対応して、*バックアップのアクティブ化*をクリックします。</block>
   <block id="2b0057ced0fbbcb82bd3aeddd916912e" category="paragraph">データストアのバックアップを検出するONTAP クラスタを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。</block>
   <block id="925e322b8ed2bad21cf3391e5e93df0a" category="list-text">SVMに対応する* Add Working Environment *をクリックします。</block>
@@ -1548,7 +1538,6 @@
   <block id="db7f740fbee2466830a1f559dba6b17b" category="list-text">新しいリソースグループを作成するか、既存のリソースグループを使用します。</block>
   <block id="ddac760f2c60fbb2375807e939befa9d" category="summary">仮想マシン上のデータ保護の詳細と、さまざまなポリシーについて理解する。</block>
   <block id="97bfb69bf5a1d719c6265b922436bbaa" category="doc">仮想マシンのデータを保護</block>
-  <block id="9dfb41ef96b06970eed334ebe8ebfdce" category="paragraph">データストアは、Amazon Web Services S3またはMicrosoft Azure Blobにバックアップできます。</block>
   <block id="bf12440e355f2cc41683d5da523c5fce" category="paragraph">データストアおよび仮想マシンを クラウド サービス にバックアップする前に、次の要件を確認し、サポートされる構成になっていることを確認してください。</block>
   <block id="d511399444cf864b695600d159b7c93b" category="list-text">VMware vSphere 4.6P1以降用のSnapCenter プラグイン</block>
   <block id="2d65c0d587a717a1de564ac474c18bc8" category="list-text">Cloud Manager 3.9以降</block>
@@ -1562,9 +1551,6 @@
   <block id="6ee2c41b7a9bfae5bb618327d9499834" category="list-text">リストア先のデータストアに、リストア処理でエラーが発生した場合に、restore_xxx_xxxxxx_filename形式の古い仮想マシンファイルが存在しないことを確認してください。リストア処理を開始する前に古いファイルを削除してください。</block>
   <block id="a059803f1ed59324d3428d6aa42a2e5d" category="inline-image-macro">仮想マシンのクラウドバックアップのアーキテクチャの図。</block>
   <block id="9b56b7a48ea1f2ae532165c49455002a" category="paragraph"><block ref="9b56b7a48ea1f2ae532165c49455002a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b8b6d4fc48cb996b1ca14cbf78ac8cae" category="paragraph">データストアをクラウドにバックアップするには、Cloud Backup for Virtual Machineで定義されているいずれかのポリシーを使用する必要があります。</block>
-  <block id="37a8959a214e35c525dec921ae5021bc" category="admonition">カスタムポリシーはサポートされません。</block>
-  <block id="af84c6f32a8cf07ced1b300921376b2a" category="paragraph">デフォルトのポリシーを表示するには、Cloud Managerで* Backup &amp; Restore *&gt;* Virtual Machines *&gt;* Policies *をクリックします。</block>
   <block id="4cfbdcb9aba741b123b3c46a8341bf59" category="sidebar">仮想マシンのデータを保護</block>
   <block id="b2736084b30c35472d74c3c29a818a95" category="sidebar">仮想マシンの保護を管理します</block>
   <block id="c2c86860cad5cd95ae9ef9c003e01d57" category="sidebar">仮想マシンのデータをリストアします</block>
@@ -2548,7 +2534,6 @@
   <block id="acf994e4904e0990a43c8101030dd5e7" category="paragraph">オブジェクトストアに移動されたバックアップをセカンダリストレージからリストアする場合は、プライマリ作業環境の詳細を追加し、IPスペースを設定する必要があります。詳細については、を参照してください <block ref="e02b8a08c7642873f6aa3b3d230cfbe4" category="inline-link-macro-rx"></block>。</block>
   <block id="39a39a3d5651d922f580216bf9d45b85" category="list-text">データベースの状態をリストアおよびリカバリ処理の実行に必要な状態に変更する場合は、「* Database State *」を選択します。</block>
   <block id="7acc08861d4ed79ef851580e5f995af3" category="list-text">Snapshotがアーカイブストレージ内にある場合に、アーカイブストレージからデータをリストアする優先度を指定します。</block>
-  <block id="e832ac1a52df9e5be90655bbbb8f4288" category="section-title">2022年9月30日</block>
   <block id="89d500a3ace67f6d47edb61231336589" category="section-title">Cloud Backup for Applicationsの機能強化</block>
   <block id="2e73884f73c53eee3aea96494fd4ff16" category="list-text">Google Cloud Provider（GCP）とStorageGRID をサポートしており、アプリケーションと整合性のあるSnapshotをバックアップできます</block>
   <block id="f617da6b50728500642eb376ab97b6f4" category="list-text">カスタムポリシーを作成する</block>
@@ -2615,4 +2600,26 @@
   <block id="81fedcf72bda3098b5ab523c2f40b979" category="list-text">（オプション）コストを最適化するために一定の日数が経過したバックアップをオブジェクトストアからアーカイブストレージに移動する場合は、「*ティアBackup to Archival *」チェックボックスを選択します。</block>
   <block id="ce5717a5ac194f2c014f6deb6616dbb5" category="paragraph">ONTAP 9.10.1以降とAmazon Web ServicesまたはAzureをクラウドプロバイダとして使用している場合にのみ、オブジェクトストアからアーカイブストレージにバックアップを移動できます。各クラウドプロバイダにアーカイブアクセス階層を設定する必要があります。</block>
   <block id="8fcec94b164f3e6b67e681668273f11f" category="paragraph">カスタマイズしたポリシーは編集、コピー、および削除できます。</block>
+  <block id="c420a910c4e7f566035c5d1b7b8aafc4" category="paragraph">データストアは、Amazon Web Services S3、Microsoft Azure Blob、StorageGRID にバックアップできます。</block>
+  <block id="c2ad71e1ba4efb575c70188690872b02" category="section-title">2022年9月27日</block>
+  <block id="0ec24d208e5df8843f6524b944c450f6" category="summary">オンプレミスのONTAP からAWSにデータストアをバックアップできます。</block>
+  <block id="1d5ad62b9217b4a3f085f517534f40bb" category="doc">データストアをAmazon Web Servicesにバックアップする</block>
+  <block id="4d14c89c6829025e6961739f67adb3b2" category="paragraph">SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、1つ以上のデータストアをAmazon Web Servicesにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Amazon Web Services *を選択してクラウドプロバイダとして設定します。</block>
+  <block id="210360badd0de9b811d995dd73e39d33" category="summary">オンプレミスのONTAP からAzureへデータストアをバックアップ</block>
+  <block id="32d2b45dd98e36ad888d7156b4532053" category="doc">データストアをMicrosoft Azureにバックアップする</block>
+  <block id="1db14c245026451badaa18ea629908ac" category="paragraph">SnapCenter Plug-in for VMware vSphereをCloud Managerと統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="8a8bca40b3d548c634cd73d37e5a630c" category="list-text">「* Microsoft Azure *」を選択して、クラウドプロバイダとして設定します。</block>
+  <block id="cf12172bd966bafd91b1daeef9357fe8" category="summary">オンプレミスのONTAP からStorageGRID へデータストアをバックアップ</block>
+  <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="doc">データストアをStorageGRID にバックアップする</block>
+  <block id="8cc3c787b878714882ebb903aea632ec" category="paragraph">SnapCenter Plug-in for VMware vSphereをCloud Managerと統合することで、1つ以上のデータストアをStorageGRID にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="cf4e6e70123f43cdec5ffd93f792c083" category="list-text">ストレージサーバのIPを指定します。</block>
+  <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">アクセスキーとシークレットキーを選択します。</block>
+  <block id="fe8f95b60b7c4092ce03adfbb31e89b4" category="doc">仮想マシンをバックアップするポリシーを作成します</block>
+  <block id="d5b610f68fa011302b80020480862b25" category="paragraph">Cloud Managerで使用可能なポリシーは、ポリシーを作成するか、次のいずれかの事前定義されたポリシーを使用して作成できます。</block>
+  <block id="43852dc1e0c3229284688eb4c01dfef0" category="paragraph">事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。</block>
+  <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">[仮想マシン]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
+  <block id="05f2a09d30545d0cfce1840fb01af78f" category="paragraph">デフォルトでは、バックアップソースがプライマリとして選択されます。</block>
+  <block id="df66edfead273223d70ca57560d01593" category="summary">SnapCenter Plug-in for VMware vSphereをCloud Managerに登録します。</block>
+  <block id="a0ba49a69c26d4de1afcac95ba435828" category="paragraph">SnapCenter Plug-in for VMware vSphereとCloud Backup for Virtual Machinesの間の通信に使用するポートが開いていることを確認する必要があります。</block>
 </blocks>

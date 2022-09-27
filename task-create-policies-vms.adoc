@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task-create-policies-vms.html 
+keywords: create policy, protection policies, predefined policies, custom policies 
+summary: オンプレミスのONTAP からAWSにデータストアをバックアップできます。 
+---
+= 仮想マシンをバックアップするポリシーを作成します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Managerで使用可能なポリシーは、ポリシーを作成するか、次のいずれかの事前定義されたポリシーを使用して作成できます。
+
+|===
+| ポリシー名 | ラベル | 保持値 
+
+
+ a| 
+1 年ごとの LTR
+ a| 
+毎日
+ a| 
+366
+
+
+
+ a| 
+5 年ごとの LTR
+ a| 
+毎日
+ a| 
+1830 年に
+
+
+
+ a| 
+7 年ごとの LTR
+ a| 
+毎週
+ a| 
+370
+
+
+
+ a| 
+10 年間の月単位 LTR
+ a| 
+毎月
+ a| 
+120
+
+|===
+事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。
+
+.手順
+. [仮想マシン]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。
+. ［*ポリシーの作成*］をクリックします。
+. ポリシー名を指定します。
+. スケジュールと保持の詳細を指定します。
++
+デフォルトでは、バックアップソースがプライマリとして選択されます。
+
+. [ 作成（ Create ） ] をクリックします。
+

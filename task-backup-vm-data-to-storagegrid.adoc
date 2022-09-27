@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task-backup-vm-data-to-storagegrid.html 
+keywords: back up, backup, backup virtual machine data, storagegrid, cloud backup, backup datastores 
+summary: オンプレミスのONTAP からStorageGRID へデータストアをバックアップ 
+---
+= データストアをStorageGRID にバックアップする
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapCenter Plug-in for VMware vSphereをCloud Managerと統合することで、1つ以上のデータストアをStorageGRID にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
+
+
+NOTE: すべてのが満たされていることを確認します link:concept-protect-vm-data.html#Requirements["要件"] データストアをクラウドにバックアップする前に、
+
+.手順
+. Cloud Manager UIで、* Backup & Restore *>* Virtual Machines *をクリックします。
+. をクリックします image:icon-action.png["アクション"] バックアップするデータストアに対応して、*バックアップのアクティブ化*をクリックします。
+. [ ポリシーの割り当て ] ページで、ポリシーを選択して [ 次へ * ] をクリックします。
+. 作業環境を追加します。
++
+データストアのバックアップを検出するONTAP クラスタを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。
+
++
+.. SVMに対応する* Add Working Environment *をクリックします。
+.. 作業環境の追加ウィザードで、次の手順を実行します。
++
+... ONTAP クラスタの IP アドレスを指定します。
+... ONTAP クラスタユーザのクレデンシャルを指定してください。
+
+
+.. * 作業環境の追加 * をクリックします。
+
+
+. 「* StorageGRID *」を選択します。
++
+.. ストレージサーバのIPを指定します。
+.. アクセスキーとシークレットキーを選択します。
+
+
+. 詳細を確認し、 * バックアップのアクティブ化 * をクリックします。
+
