@@ -178,6 +178,8 @@ homepage:
       url: whats-new.html
     - title: ライセンスをセットアップする
       url: task-licensing-cloud-backup.html
+    - title: バックアップジョブとリストアジョブのステータスを監視します
+      url: task-monitor-backup-jobs.html
   - title: ONTAP データをクラウドにバックアップ
     links:
     - title: Cloud Volumes ONTAP から Amazon S3 へ
@@ -244,11 +246,11 @@ homepage:
       url: "/task-backup-vm-data-to-storagegrid.html"
     - title: クラウドから仮想マシンをリストアします
       url: task-restore-vm-data.html
-  - title: バックアップファイルからデータをリストアする
+  - title: ONTAP バックアップファイルからデータをリストアする
     links:
     - title: ONTAP ボリュームをリストア
       url: task-restore-backups-ontap.html
-    - title: ONTAP ファイルをリストアします
+    - title: ONTAP ボリュームからファイルとフォルダをリストア
       url: task-restore-backups-ontap.html
     - title: Kubernetes ボリュームをリストア
       url: task-restore-backups-kubernetes.html
@@ -268,8 +270,6 @@ homepage:
       url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
     - title: バックアップを削除します
       url: task-manage-backups-ontap.html#deleting-backups
-    - title: バックアップジョブとリストアジョブのステータスを監視します
-      url: task-monitor-backup-jobs.html
   - title: ブログコミュニティ
     links:
     - title: ネットアップコミュニティ

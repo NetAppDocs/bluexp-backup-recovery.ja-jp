@@ -16,7 +16,7 @@ summary: Cloud Backup は、 ONTAP クラスタデータを保護し、長期ア
 [role="lead"]
 Cloud Backup は、 ONTAP クラスタデータを保護し、長期アーカイブするためのバックアップおよびリストア機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。
 
-必要に応じて、バックアップから同じ作業環境または異なる作業環境に、_volume_,aフォルダ、または1つ以上の_files_をリストアできます。
+必要に応じて、バックアップから同じ作業環境または別の作業環境に、_volume_全体、a_folder_、または1つ以上の_files_をリストアできます。
 
 
 
@@ -67,14 +67,14 @@ Cloud Backup を使用すると、以下の作業環境から次のパブリッ�
 
 | オンプレミスの ONTAP システム | ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] Azure Blob endif：azure [] ifdef：gcp [] Google Cloud Storage endif：GCP [] NetApp StorageGRID 
 |===
-ONTAP バックアップファイルから次の作業環境にボリュームまたは個々のファイルをリストアできます。
+ONTAP バックアップファイルから次の作業環境にボリューム、フォルダ、または個々のファイルをリストアできます。
 
 [cols="25,33,37"]
 |===
 | バックアップファイル 2+| デスティネーションの作業環境 
 
 
-| * 場所 * | * ボリュームの復元 * | *ファイルのリストア* ifdef：aws [] 
+| * 場所 * | * ボリュームの復元 * | *フォルダとファイルのリストア* ifdef：aws [] 
 
 
 | Amazon S3 | オンプレミスの AWS ONTAP システムに Cloud Volumes ONTAP が導入されている | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
