@@ -14,13 +14,13 @@ summary: このドキュメントでは、Cloud Backupのバックアップポ�
 
 
 [role="lead"]
-このドキュメントでは、Cloud Backupのバックアップポリシーの設定について説明します。
+このドキュメントでは、Cloud Backup Service を使用する場合のオンプレミスONTAP システムとCloud Volumes ONTAP システムのバックアップポリシーの構成設定について説明します。
 
 
 
 == バックアップスケジュール
 
-Cloud Backupでは、作業環境ごとに固有のスケジュールを設定して複数のバックアップポリシーを作成できます。RPO（目標復旧時点）が異なるボリュームには、異なるバックアップポリシーを割り当てることができます。
+Cloud Backupでは、作業環境（クラスタ）ごとに固有のスケジュールを設定して複数のバックアップポリシーを作成できます。RPO（目標復旧時点）が異なるボリュームには、異なるバックアップポリシーを割り当てることができます。
 
 各バックアップポリシーには、バックアップファイルに適用可能な_Labels & Retention__というセクションがあります。
 
@@ -28,7 +28,7 @@ image:screenshot_backup_schedule_settings.png["バックアップポリシー作
 
 スケジュールには、ラベルと保持の値の2つの部分があります。
 
-* 「* label *」は、ボリュームからバックアップファイルを作成する頻度を定義します。次のタイプのラベルを選択できます。
+* 「* label *」は、ボリュームからバックアップファイルを作成（または更新）する頻度を定義します。次のタイプのラベルを選択できます。
 +
 ** 1つまたは* hourly *、* daily *、* weekly *、* monthly *の組み合わせを選択できます。 および*年単位*の期間。
 ** システム定義のポリシーの中から、3カ月、1年、7年のバックアップと保持を提供するポリシーを1つ選択できます。
@@ -41,8 +41,8 @@ image:screenshot_backup_schedule_settings.png["バックアップポリシー作
 たとえば、週7回*、月12回*のバックアップを作成するバックアップ・ポリシーを作成したとします。
 
 * ボリュームのバックアップファイルは、週ごと、月ごとに1つずつ作成されます
-* 第8週には'第1週ごとのバックアップが第8週の週次バックアップに置き換えられます（最大7週ごとのバックアップを保持）
-* 13カ月目の月次バックアップは、13カ月目の月次バックアップに置き換えられます（バックアップは最大で12カ月分）。
+* 8週間目には、最初の週次バックアップが削除され、8週間の新しい週次バックアップが追加されます（最大7週間ごとのバックアップを保持）。
+* 13カ月目には、最初の月単位のバックアップが削除され、13カ月分に新しい月単位のバックアップが追加されます（最大12個の月単位のバックアップを保持）。
 
 
 
@@ -53,7 +53,7 @@ Cloud Backupは、ボリュームバックアップに対するDataLockやRansom
 
 これらの機能はどちらもバックアップファイルを保護するため、ソースデータがランサムウェア攻撃を受けた場合にデータをリカバリするための有効なバックアップファイルを常に用意しています。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionが有効な場合、クラウドバックアップのアクティブ化の一環としてプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。
 
-この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップだけです。ネットアップのソリューションを使用 https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights およびCloud Secure"^]、またはの一部 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^] ソースボリュームを保護します。
+この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。ネットアップのソリューションを使用 https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights およびCloud Secure"^]、またはの一部 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^] ソースボリュームを保護します。
 
 [CAUTION]
 ====
@@ -72,9 +72,9 @@ DataLockは、バックアップファイルが一定期間変更または削除
 
 この機能の例をいくつか見てみましょう。
 
-* 月単位のバックアップスケジュールを作成する場合、バックアップは、削除される（次のバックアップファイルに置き換えられて）12カ月間（14日）はロックされます。
+* 月単位のバックアップスケジュールを、保持期間が12の場合、各バックアップは、削除される12カ月（14日を足したもの）だけロックされます。
 * 30日ごと、7週間ごと、12カ月ごとのバックアップを作成するバックアップポリシーを作成すると、ロックされた保持期間が3つになります。「30日ごと」のバックアップを44日間（30日と14日のバッファ）保持し、「7週間ごと」のバックアップを9週間（7週間と14日）保持し、「12カ月ごと」のバックアップを12カ月（さらに14日）保持します。
-* 保持期間が24の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされていると考えられます。ただし、最低30日未満のため、各バックアップは44日間（30日と14日のバッファ）ロックされ、保持されます。
+* 保持期間が24回の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされると考えられることがあります。ただし、最低30日未満のため、各バックアップは44日間（30日と14日のバッファ）ロックされ、保持されます。
 +
 この最後の例では、各バックアップファイルが44日間ロックされた場合、保持期間が時間あたり24回、保持ポリシーよりも多くのバックアップファイルが作成されます。通常、Cloud Backupで25番目のバックアップファイルが作成されると、ポリシーに基づいて、最大保持期間が24になるように最も古いバックアップが削除されます。この場合、DataLockの保持設定は、バックアップポリシーの保持設定よりも優先されます。これにより、バックアップファイルがオブジェクトストアに長期間保存されるため、ストレージのコストに影響する可能性があります。
 
@@ -90,7 +90,7 @@ DataLockは、バックアップファイルが一定期間変更または削除
 
 * バックアップファイルが作成されたとき
 +
-スキャンは、クラウドストレージへの初回の書き込み時ではなく、次のバックアップファイルの書き込み時に、バックアップファイルに対して実行されます。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。
+スキャンは、クラウドストレージに初めて書き込まれたとき、*次の*バックアップファイルが書き込まれたときに、バックアップファイルに対しては実行されません。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。
 
 * バックアップファイルからデータをリストアする場合
 +
@@ -130,7 +130,7 @@ DataLockは_Compliion_modeに設定されており、保持期間中にユーザ
 
 
 
-NOTE: StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされていないため、保持設定を省略したり、保護されたバックアップを上書きしたり、バックアップを削除したりする機能はユーザにはありません。
+NOTE: StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされないため、保持設定を省略したり、保護されたバックアップを上書きしたり、ロックされたバックアップを削除したりする機能はユーザにはありません。
 
 
 
@@ -138,7 +138,7 @@ NOTE: StorageGRID S3オブジェクトロック機能は、Complianceモード�
 
 以下のパブリッククラウドプロバイダとプライベートクラウドプロバイダでオブジェクトストレージを使用する際に、ONTAP ボリュームに対するDataLock保護とRansomware保護を有効にすることができます。クラウドプロバイダは今後のリリースで追加される予定です。
 
-[cols="45,45"]
+[cols="50,50"]
 |===
 | ソースの作業環境 | バックアップファイルデスティネーションifdef：aws [] 
 
@@ -158,41 +158,45 @@ NOTE: StorageGRID S3オブジェクトロック機能は、Complianceモード�
 
 ifdef::aws[]
 
-* AWSの場合、コネクタはクラウドに導入されている必要があります
-* 次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
+* AWSの場合：
 +
-** S3 ： GetObjectVersionTagging
-** S3 ： GetBucketObjectLockConfiguration
-** S3：GetObjectVersionAcl
-** S3 ： PutObjectTagging
-** S3 ： DeleteObject
-** S3 ： DeleteObjectTagging
-** S3 ： GetObjectRetention
-** S3 ： DeleteObjectVersionTagging
-** S3 ： PutObject
-** S3 ： GetObject
-** S3 ： PutBucketObjectLockConfiguration
-** S3 ： GetLifecycleConfiguration
-** S3：ListBucketByTags
-** S3 ： GetBucketTagging
-** S3 ： DeleteObjectVersion
-** S3 ： ListBucketVersions
-** S3 ： ListBucket
-** S3 ： PutBucketTagging
-** S3 ： GetObjectTagging
-** S3 ： PutBucketVersioning
-** S3 ： PutObjectVersionTagging
-** S3 ： GetBucketVersioning
-** S3 ： GetBucketAcl
-** S3：Bypassガバナー 保持
-** S3 ： PutObjectRetention
-** S3 ： GetBucketLocation
-** S3 ： GetObjectVersion
+** コネクタはクラウドに導入する必要があります
+** 次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
++
+*** S3 ： GetObjectVersionTagging
+*** S3 ： GetBucketObjectLockConfiguration
+*** S3：GetObjectVersionAcl
+*** S3 ： PutObjectTagging
+*** S3 ： DeleteObject
+*** S3 ： DeleteObjectTagging
+*** S3 ： GetObjectRetention
+*** S3 ： DeleteObjectVersionTagging
+*** S3 ： PutObject
+*** S3 ： GetObject
+*** S3 ： PutBucketObjectLockConfiguration
+*** S3 ： GetLifecycleConfiguration
+*** S3：ListBucketByTags
+*** S3 ： GetBucketTagging
+*** S3 ： DeleteObjectVersion
+*** S3 ： ListBucketVersions
+*** S3 ： ListBucket
+*** S3 ： PutBucketTagging
+*** S3 ： GetObjectTagging
+*** S3 ： PutBucketVersioning
+*** S3 ： PutObjectVersionTagging
+*** S3 ： GetBucketVersioning
+*** S3 ： GetBucketAcl
+*** S3：Bypassガバナー 保持
+*** S3 ： PutObjectRetention
+*** S3 ： GetBucketLocation
+*** S3 ： GetObjectVersion
 +
 「s3：Bypassガバナー 保持」は、管理者ユーザがGovernanceモードでロックされているバックアップファイルを上書きまたは削除できるようにする場合にのみ追加する必要があります。
 
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
+
+
 
 
 
@@ -234,7 +238,7 @@ ifdef::aws[]
 
 * AWS では、バックアップは _Standard_storage クラスから開始し、 30 日後に _Standard-Infrequent Access_storage クラスに移行します。
 +
-クラスタがONTAP 9.10.1以降を使用している場合は、古いバックアップをクラウドバックアップUIの_S3 Glacier Deep Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
+クラスタが ONTAP 9.10.1 以降を使用している場合は、古いバックアップを S3 Glacier Deep Archive_storage のいずれかに階層化して、特定の日数が経過したらコストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
 
 +
 クラウドバックアップをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。
@@ -247,7 +251,7 @@ ifdef::azure[]
 
 * Azure では、バックアップは _COOL アクセス層に関連付けられます。
 +
-クラスタがONTAP 9.10.1以降を使用している場合は、特定の日数が経過した古いバックアップをAzure Archive_storageに階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
+クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過した古いバックアップを Azure Archive_storage に階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
 
 
 

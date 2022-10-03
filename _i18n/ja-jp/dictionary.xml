@@ -1725,7 +1725,6 @@
   <block id="19b05e78d3464eff3a0a4847f0b66324" category="list-text">GCPを使用している場合は、ネットアップからプライベートオファーをリクエストし、Cloud Backupのアクティブ化中にGoogle Cloud Marketplaceからサブスクライブするときにプランを選択できます。</block>
   <block id="cf6d8dee9b177c1138ae0ee4e07dc2f3" category="inline-link-macro">年間契約の設定方法について説明します</block>
   <block id="cc0eb7dbb8893977120a22b09b8c4ca0" category="paragraph"><block ref="f5d5ae39791d9eaf9e8591b7cfcc3b96" category="inline-link-macro-rx"></block>。</block>
-  <block id="7fc2834f67e497ab1b49f283ea0500e6" category="paragraph">作業環境で Cloud Backup を有効にすると、最初に選択したすべてのボリュームが、定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective（RPO；目標復旧時点）が異なるボリュームに対して異なるバックアップポリシーを割り当てる場合は、そのクラスタに追加のポリシーを作成し、バックアップがアクティブ化されたあとに他のボリュームに割り当てることができます。</block>
   <block id="c47b9175ecebbf21ca2cd87a3a34dc85" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、毎月、および毎年のバックアップの組み合わせを選択できます。また、システム定義のポリシーの中から、 3 カ月、 1 年、 7 年のバックアップと保持を提供するポリシーを選択することもできます。ポリシーは次のとおりです。</block>
   <block id="952a500aaf6d2c5ad8514e3fa5bd6474" category="paragraph">カテゴリまたは間隔のバックアップの最大数に達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます（そのため、廃止されたバックアップはクラウドのスペースを消費し続けることはありません）。</block>
   <block id="6cc30d6c33bfc4f65037828783c2a89d" category="paragraph">Cloud Backupでは、次のタイプのボリュームをサポートしています。</block>
@@ -1890,19 +1889,14 @@
   <block id="b376676c4c1945b60563d3f5ea93e159" category="summary">このドキュメントでは、Cloud Backupのバックアップポリシーの設定について説明します。</block>
   <block id="f06685f05a46539219fb2db68c9ade26" category="doc">クラウドバックアップポリシーの設定</block>
   <block id="1ac86f6dd27abfcb13588ec9dff9ba2a" category="section-title">バックアップスケジュール</block>
-  <block id="47af5e4e96b94681a1fda003140d66de" category="paragraph">Cloud Backupでは、作業環境ごとに固有のスケジュールを設定して複数のバックアップポリシーを作成できます。RPO（目標復旧時点）が異なるボリュームには、異なるバックアップポリシーを割り当てることができます。</block>
   <block id="4c2b90bc53de152e23fccbce641ea19e" category="paragraph">各バックアップポリシーには、バックアップファイルに適用可能な_Labels &amp; Retention__というセクションがあります。</block>
   <block id="154eb228b3f63f7705fe329177ea16b6" category="inline-image-macro">バックアップポリシー作成時のバックアップスケジュール設定のスクリーンショット。</block>
   <block id="38175fe10c317ca778ce56abf9d3ff3f" category="paragraph"><block ref="38175fe10c317ca778ce56abf9d3ff3f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dca086ae01946b6cf950f1291d93aac6" category="paragraph">スケジュールには、ラベルと保持の値の2つの部分があります。</block>
-  <block id="2b98372cf63d6e1e40baa5a92732edd0" category="list-text">「* label *」は、ボリュームからバックアップファイルを作成する頻度を定義します。次のタイプのラベルを選択できます。</block>
   <block id="5a35ddef63d61c71445e13d3c9588a2d" category="list-text">1つまたは* hourly *、* daily *、* weekly *、* monthly *の組み合わせを選択できます。 および*年単位*の期間。</block>
-  <block id="72ed362887dfa09e979a0265f8247124" category="list-text">システム定義のポリシーの中から、3カ月、1年、7年のバックアップと保持を提供するポリシーを1つ選択できます。</block>
   <block id="c3453b6163eafb5ced9753c1ce3419e7" category="list-text">ONTAP System ManagerまたはONTAP CLIを使用してクラスタにカスタムのバックアップ保護ポリシーを作成した場合は、作成したポリシーを1つ選択できます。</block>
   <block id="61b862400cd7156cb725e12fe1947d88" category="list-text">「* retention *」の値は、各ラベル（期間）に保持するバックアップ・ファイルの数を定義します。カテゴリまたは間隔内で最大数のバックアップに達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます。これにより、廃止されたバックアップではクラウドのスペースが消費され続けることがないため、ストレージコストも削減されます。</block>
   <block id="292f9f5eb65ebf40fd71fda6e8b093e7" category="list-text">ボリュームのバックアップファイルは、週ごと、月ごとに1つずつ作成されます</block>
-  <block id="b5cdfa0edd5a8bb432fe066f8fbcb82f" category="list-text">第8週には'第1週ごとのバックアップが第8週の週次バックアップに置き換えられます（最大7週ごとのバックアップを保持）</block>
-  <block id="f229fe4211204b2ac0e2c6733e936325" category="list-text">13カ月目の月次バックアップは、13カ月目の月次バックアップに置き換えられます（バックアップは最大で12カ月分）。</block>
   <block id="23433a4a1c369f850662f43bac40d8ae" category="section-title">DataLockとランサムウェアによる保護</block>
   <block id="3960b74bd00136bf9d473cf143876ec1" category="paragraph">Cloud Backupは、ボリュームバックアップに対するDataLockやRansomwareによる保護をサポートします。これらの機能を使用すると、バックアップファイルをロックしてスキャンし、バックアップファイルでランサムウェアの可能性を検出できます。この設定はオプションで、クラスタのボリュームバックアップの保護を強化する場合にバックアップポリシーで定義できます。</block>
   <block id="6c73c9d6c177001ef79643ba7b341c9e" category="list-text">DataLockとRansomwareによる保護を使用する場合は、最初のバックアップポリシーを作成し、そのクラスタに対してCloud Backupをアクティブ化するときにDataLockを有効にする必要があります。</block>
@@ -1910,15 +1904,10 @@
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">DataLockとは</block>
   <block id="dfb62b997a26ac6f842b39091a92428a" category="paragraph">DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。この機能は、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。バックアップ・ファイルがロック（および保持）される期間をDataLockの保持期間と呼びますこの値は、定義したバックアップポリシーのスケジュールと保持の設定に加え、14日間のバッファに基づきます。30日未満のDataLock保持ポリシーは、最小30日に切り上げられます。</block>
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">この機能の例をいくつか見てみましょう。</block>
-  <block id="19606e2b227c881953690cfcbb2621ad" category="list-text">月単位のバックアップスケジュールを作成する場合、バックアップは、削除される（次のバックアップファイルに置き換えられて）12カ月間（14日）はロックされます。</block>
   <block id="4f326e1a4453cc79600c1df4374d2c22" category="list-text">30日ごと、7週間ごと、12カ月ごとのバックアップを作成するバックアップポリシーを作成すると、ロックされた保持期間が3つになります。「30日ごと」のバックアップを44日間（30日と14日のバッファ）保持し、「7週間ごと」のバックアップを9週間（7週間と14日）保持し、「12カ月ごと」のバックアップを12カ月（さらに14日）保持します。</block>
-  <block id="74e291c59b5337829d6b959b562110ba" category="list-text">保持期間が24の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされていると考えられます。ただし、最低30日未満のため、各バックアップは44日間（30日と14日のバッファ）ロックされ、保持されます。</block>
-  <block id="d9d4ba4e9716540e097a3623daaf1962" category="paragraph">この最後の例では、各バックアップファイルが44日間ロックされた場合、保持期間が時間あたり24回、保持ポリシーよりも多くのバックアップファイルが作成されます。通常、Cloud Backupで25番目のバックアップファイルが作成されると、ポリシーに基づいて、最大保持期間が24になるように最も古いバックアップが削除されます。この場合、DataLockの保持設定は、バックアップポリシーの保持設定よりも優先されます。これにより、バックアップファイルがオブジェクトストアに長期間保存されるため、ストレージのコストに影響する可能性があります。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">ランサムウェアからの保護</block>
-  <block id="cad8a645661899cd5a1b0a948cae91fd" category="paragraph">ランサムウェア防御は、バックアップファイルをスキャンしてランサムウェア攻撃の兆候を探します。ランサムウェア攻撃の検出は、チェックサム比較を使用して実行されます。以前のバックアップファイルではなく、バックアップファイルでランサムウェアの可能性が特定されている場合、その新しいバックアップファイルはランサムウェア攻撃の兆候が見られない最新のバックアップファイルに置き換えられます。（ランサムウェア攻撃を受けていると特定されたファイルは、置き換えられてから1日後に削除されます）。</block>
   <block id="6178bb3c1b6a8af3ec3a7000d38df00e" category="paragraph">ランサムウェアスキャンは、バックアップとリストアのプロセスで3ポイント実行されます。</block>
   <block id="74fdca54d2260fb26943ee68a4de7888" category="list-text">バックアップファイルが作成されたとき</block>
-  <block id="07b31f5674c57b8903c6b15b2144b514" category="paragraph">スキャンは、クラウドストレージへの初回の書き込み時ではなく、次のバックアップファイルの書き込み時に、バックアップファイルに対して実行されます。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。</block>
   <block id="f656e9389b65beefa5f22506a262c68a" category="list-text">バックアップファイルからデータをリストアする場合</block>
   <block id="d71c7fafb5eead8d41c2869b8c551f6a" category="paragraph">バックアップファイルからデータをリストアする前にスキャンを実行するか、このスキャンをスキップするかを選択できます。</block>
   <block id="826c19d01b527f2701cc3460b9c889de" category="list-text">手動で実行する</block>
@@ -1974,7 +1963,6 @@
   <block id="f5ef24e218bb7a52732b62958bb89c68" category="list-text">バックアップファイルをスキャンしてランサムウェア攻撃を受ける可能性があるかを調べ、感染したバックアップを自動的に削除/置換します。</block>
   <block id="3f28b1a3a0b3b6c8294e56323ec13e18" category="list-text">古いバックアップファイルをアーカイブストレージに階層化してコストを削減します。</block>
   <block id="fe66ea47b1e195d0a8f311d62ee027d8" category="paragraph">リソース料金は、オブジェクトストレージの容量、クラウドへのバックアップファイルの書き込みと読み取りのために、クラウドプロバイダに支払われます。</block>
-  <block id="ea7f0ec7b7c9b030700a4f123edfd3eb" category="list-text">検索とリストアを使用したボリュームまたはファイルのリストアでは、特定のリソースがクラウドプロバイダによってプロビジョニングされ、検索要求でスキャンされるデータ量には1TiBあたりのコストが関連付けられます。</block>
   <block id="8006ced8739173ca22ba2b0d83f53268" category="inline-link">Azure Synapseワークスペース</block>
   <block id="31f9c16bc3570a56499294176c354ee7" category="inline-link">Azure Data Lake Storageの略</block>
   <block id="82ba9e045163c7c72098c50671704351" category="list-text">Azureのでは<block ref="a3ff4de37e7a195a145416e9f02577ac" category="inline-link-rx"></block> および<block ref="47b506e6a2508a9b210c02fa89bbdc24" category="inline-link-rx"></block> データの格納と分析を行うためにストレージアカウントにプロビジョニングします。</block>
@@ -1985,7 +1973,6 @@
   <block id="136194d46b42cb1f4c0ffea5b134879e" category="list-text">エンタープライズ：DataLockモードは_Enterprise_whereに設定されています。このモードでは、特定の権限を持つユーザが保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効</block>
   <block id="b0e2bacf658f248f5b3198bb6ec3cf68" category="list-text">コンプライアンス：DataLockモードは_Compliance]に設定されています。このモードでは、保持期間中にユーザーがバックアップファイルを上書きまたは削除することはできません。ランサムウェア攻撃からの保護が有効</block>
   <block id="307f506933fa37350a3739584fc7749a" category="paragraph">保持期間は、スケジュールの保持期間と同じに14日を足したものです。たとえば、_WEEKLY_BACKUPに_5_Copiesを適用すると、各バックアップファイルが5週間ロックされます。_6_個のコピーを保持したMonthly _バックアップは、各バックアップ・ファイルを6か月ロックします。</block>
-  <block id="5d9fc27df9d43a3f4819efb43ba8f23a" category="paragraph">バックアップのデスティネーションがAmazon S3の場合、現在サポートされています。その他のストレージプロバイダの送信先は今後のリリースで追加される予定です。</block>
   <block id="668420eb25c0657fa1ed103061b132a1" category="admonition">アーカイブストレージにバックアップを階層化する場合は、DataLockを有効にできません。</block>
   <block id="e4d473c7eaa0d5a17a8380f5a1f05a7e" category="paragraph">を参照してください <block ref="6fd60dcfbd658d3c6de952e2d3164749" category="inline-link-macro-rx"></block> DataLockとランサムウェアによる保護の仕組みの詳細については、こちらをご覧ください。</block>
   <block id="648e07eb3f255382cd68dd1ee61b6561" category="section-title">古いバックアップファイル用のアーカイブストレージ</block>
@@ -2417,16 +2404,13 @@
   <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">テクニカル以外のケースをに送信します<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
   <block id="aa254718f2c52dc147bfd8f98b0c4840" category="inline-link">Cloud Insights およびCloud Secure</block>
   <block id="86fef274eb09e789513af0922e579b5a" category="inline-link">ONTAP が提供するアンチランサムウェア防御</block>
-  <block id="f27beac3d097dd791847516307a68045" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップだけです。ネットアップのソリューションを使用<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>、またはの一部<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> ソースボリュームを保護します。</block>
   <block id="dc52d5a83e31ec66da3344056a4e4e39" category="paragraph">古いバックアップは、バックアップポリシーの保持期間が過ぎても、DataLockの保持期間が過ぎると削除されるのではなく、注意してください。</block>
   <block id="49a6926ab95494c4de6e1f26bab7e4d5" category="list-text">ガバナンス（StorageGRID では使用不可）</block>
   <block id="4e828df72a865dff97ed752d2c9c8307" category="paragraph">DataLockは_Governanceモードに設定されています。特定の権限を持つユーザーです（<block ref="6091ac16b06103b3d1b14d6f408bb364" category="inline-link-macro-rx"></block>）を使用すると、保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効</block>
   <block id="5a080c775e60ee1f55b487821cc05ac3" category="paragraph">DataLockは_Compliion_modeに設定されており、保持期間中にユーザがバックアップファイルを上書きしたり削除したりすることはできません。ランサムウェア攻撃からの保護が有効</block>
-  <block id="2d950277b1c4175f1241fd34170e963f" category="admonition">StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされていないため、保持設定を省略したり、保護されたバックアップを上書きしたり、バックアップを削除したりする機能はユーザにはありません。</block>
   <block id="189baba290165c9a7ddf7f3c3ec05a6a" category="paragraph">以下のパブリッククラウドプロバイダとプライベートクラウドプロバイダでオブジェクトストレージを使用する際に、ONTAP ボリュームに対するDataLock保護とRansomware保護を有効にすることができます。クラウドプロバイダは今後のリリースで追加される予定です。</block>
   <block id="12ffabaafd850d6e279869bb1cd0b7c8" category="cell">ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] endif：azure[] ifdef：gCP[] endif：GCP [] NetApp StorageGRID</block>
   <block id="de45b13527319d3765cb25daa45622e5" category="list-text">Cloud Manager 3.9.21以降を使用している必要があります</block>
-  <block id="57eabf5a162d469521b2a0fa9368dd35" category="list-text">AWSの場合、コネクタはクラウドに導入されている必要があります</block>
   <block id="46651d9c49a465cb6fa5e07cd6981948" category="list-text">次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。</block>
   <block id="709168c65e2b4e5806ef96ffe25ed710" category="paragraph">「s3：Bypassガバナー 保持」は、管理者ユーザがGovernanceモードでロックされているバックアップファイルを上書きまたは削除できるようにする場合にのみ追加する必要があります。</block>
   <block id="a0cfa687d678b7bdaa6e05ad4367a96d" category="list-text">StorageGRID の場合：</block>
@@ -2438,7 +2422,6 @@
   <block id="cd2965bfeacaceb11394002abe013260" category="summary">クラウドバックアップのライセンスは、従量課金制（PAYGO）または年単位のマーケットプレイスサブスクリプションをクラウドプロバイダから購入するか、ネットアップからお客様所有のライセンスを使用（BYOL）を購入することで取得できます。作業環境でCloud Backupをアクティブ化し、本番環境のデータのバックアップを作成し、本番環境のシステムにバックアップデータをリストアするには、有効なライセンスが必要です。</block>
   <block id="ca636232aaf17fe5d8fef3b105b4363c" category="list-text">ボリューム、フォルダ、または個々のファイルをソースシステムまたは別のシステムにリストアする。</block>
   <block id="ead18a75e8ad08c3fd02c4ded3f53521" category="list-text">単一ファイルのリストア用に個々のフォルダおよびファイルを選択するための、参照可能および検索可能なファイルカタログ。</block>
-  <block id="b05129b87daa8f26e20ce7f835876ea3" category="list-text">オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれます。</block>
   <block id="e831d27edb715928e8204ce285611618" category="section-title">ファイルおよびフォルダの復元の制限</block>
   <block id="79ec871c574dbe9adf17973bdb4bf029" category="paragraph">これらの制限事項は、特に明記されていない限り、ファイルとフォルダをリストアするための検索とリストアおよび参照と復元の両方の方法に適用されます。</block>
   <block id="7a6f7d393f4de35501272976e1ba9e03" category="list-text">参照と復元および検索と復元では、一度に1つのフォルダを復元できます。</block>
@@ -2662,4 +2645,25 @@
   <block id="262efb8db11032d91af39217fa610e82" category="paragraph">ONTAP バックアップファイルから次の作業環境にボリューム、フォルダ、または個々のファイルをリストアできます。</block>
   <block id="5a885bd71d1142c7d1b89fcfcf197a41" category="sidebar">ONTAP バックアップファイルからデータをリストアする</block>
   <block id="ba9a6951ecf97e593c2140f66a8574bf" category="sidebar">ONTAP ボリュームからファイルとフォルダをリストア</block>
+  <block id="855a635321caeb08d8525de5eea56651" category="list-text">検索とリストアを使用してデータをリストアする場合、クラウドプロバイダによって特定のリソースがプロビジョニングされ、検索要求でスキャンされるデータ量には1TiBあたりのコストが関連付けられます。（これらのリソースは参照と復元には必要ありません）。</block>
+  <block id="c03019f9be2cb226dc19ca939f4d2a98" category="paragraph">作業環境で Cloud Backup を有効にすると、最初に選択したすべてのボリュームが、定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective（RPO；目標復旧時点）が異なるボリュームに異なるバックアップポリシーを割り当てる場合は、そのクラスタ用のポリシーを追加で作成し、そのポリシーをCloud Backupがアクティブ化されたあとに他のボリュームに割り当てることができます。</block>
+  <block id="887b3715a8c6b9f979173f9bb78db138" category="paragraph">バックアップのデスティネーションがAmazon S3またはNetApp StorageGRID の場合、現在サポートされています。その他のストレージプロバイダの送信先は今後のリリースで追加される予定です。</block>
+  <block id="eec8499000c8f659d98df740f918b905" category="list-text">オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれ、Cloud Backupの設定を使用して管理する必要があります。</block>
+  <block id="5116aee7e891450dd457789d0b3857e4" category="paragraph">このドキュメントでは、Cloud Backup Service を使用する場合のオンプレミスONTAP システムとCloud Volumes ONTAP システムのバックアップポリシーの構成設定について説明します。</block>
+  <block id="f576f81f502b655c924b76cc045e8946" category="paragraph">Cloud Backupでは、作業環境（クラスタ）ごとに固有のスケジュールを設定して複数のバックアップポリシーを作成できます。RPO（目標復旧時点）が異なるボリュームには、異なるバックアップポリシーを割り当てることができます。</block>
+  <block id="3b190b83ddc2ee9e610caa6dc209fbaf" category="list-text">「* label *」は、ボリュームからバックアップファイルを作成（または更新）する頻度を定義します。次のタイプのラベルを選択できます。</block>
+  <block id="42f0dfacb9775e138cb12f277162bec2" category="list-text">システム定義のポリシーの中から、3カ月、1年、7年のバックアップと保持を提供するポリシーを1つ選択できます。</block>
+  <block id="cc52989062051281d16ab44b8c24cbef" category="list-text">8週間目には、最初の週次バックアップが削除され、8週間の新しい週次バックアップが追加されます（最大7週間ごとのバックアップを保持）。</block>
+  <block id="1d7733f94633408426a8b5de97f97f13" category="list-text">13カ月目には、最初の月単位のバックアップが削除され、13カ月分に新しい月単位のバックアップが追加されます（最大12個の月単位のバックアップを保持）。</block>
+  <block id="105cf1dd74d7a9079245d031f91df8b0" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。ネットアップのソリューションを使用<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>、またはの一部<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> ソースボリュームを保護します。</block>
+  <block id="f88d31c8fba76a471a02f0b65a9ac963" category="list-text">月単位のバックアップスケジュールを、保持期間が12の場合、各バックアップは、削除される12カ月（14日を足したもの）だけロックされます。</block>
+  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">保持期間が24回の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされると考えられることがあります。ただし、最低30日未満のため、各バックアップは44日間（30日と14日のバッファ）ロックされ、保持されます。</block>
+  <block id="681e74daf8a2c7a6316ddee6727d3b7f" category="paragraph">この最後の例では、各バックアップファイルが44日間ロックされた場合、保持期間が時間あたり24回、保持ポリシーよりも多くのバックアップファイルが作成されます。通常、Cloud Backupで25番目のバックアップファイルが作成されると、ポリシーに基づいて、最大保持期間が24になるように最も古いバックアップが削除されます。この場合、DataLockの保持設定は、バックアップポリシーの保持設定よりも優先されます。これにより、バックアップファイルがオブジェクトストアに長期間保存されるため、ストレージのコストに影響する可能性があります。</block>
+  <block id="e81b2d9a99c319820fe2a1d0b0d7f2bf" category="paragraph">ランサムウェア防御は、バックアップファイルをスキャンしてランサムウェア攻撃の兆候を探します。ランサムウェア攻撃の検出は、チェックサム比較を使用して実行されます。以前のバックアップファイルではなく、バックアップファイルでランサムウェアの可能性が特定されている場合、その新しいバックアップファイルはランサムウェア攻撃の兆候が見られない最新のバックアップファイルに置き換えられます。（ランサムウェア攻撃を受けていると特定されたファイルは、置き換えられてから1日後に削除されます）。</block>
+  <block id="c545a26c4ed6190e3a8c71826161a528" category="paragraph">スキャンは、クラウドストレージに初めて書き込まれたとき、*次の*バックアップファイルが書き込まれたときに、バックアップファイルに対しては実行されません。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。</block>
+  <block id="e3ab630e3f610a8213d19aed9bf024c4" category="admonition">StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされないため、保持設定を省略したり、保護されたバックアップを上書きしたり、ロックされたバックアップを削除したりする機能はユーザにはありません。</block>
+  <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">AWSの場合：</block>
+  <block id="f8a98c701370ca7b2e41192ca7baaa6b" category="list-text">コネクタはクラウドに導入する必要があります</block>
+  <block id="d82ac33ca1171e71de283e404129a0c4" category="paragraph">クラスタが ONTAP 9.10.1 以降を使用している場合は、古いバックアップを S3 Glacier Deep Archive_storage のいずれかに階層化して、特定の日数が経過したらコストをさらに最適化することができます。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dfe42849739012935ae4b966fa89d76" category="paragraph">クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過した古いバックアップを Azure Archive_storage に階層化して、コストをさらに最適化することができます。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
 </blocks>
