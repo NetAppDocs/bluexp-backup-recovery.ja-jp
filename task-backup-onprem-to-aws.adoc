@@ -90,7 +90,7 @@ AWS VPCまたはオンプレミスにすでにコネクタが導入されてい�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
 
 
-Cloud Backupは、コネクタがクラウドに導入されている場合にのみGovCloudリージョンでサポートされます。オンプレミスまたはダークサイトにインストールされている場合はサポートされません。
+コネクタがクラウドに導入されている場合、Cloud BackupはGovCloudリージョンでサポートされます。オンプレミスまたはダークサイトにインストールされている場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。Connectorは、Cloud Manager SaaS Webサイトからは政府機関の地域には導入できません。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region["AWS GovCloudリージョンでコネクタを作成する方法について説明します"]。
 
 
 

@@ -145,7 +145,7 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
 
 
-Cloud Backupは、Connectorがクラウドに導入されている場合にのみ、Governmentクラウドリージョンでサポートされます。オンプレミスまたはダークサイトにインストールされている場合はサポートされません。
+Cloud Backupは、Connectorがクラウドに導入されているAzure Governmentリージョンでサポートされます。オンプレミス環境やダークサイトにインストールされている環境ではサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。Connectorは、Cloud Manager SaaS Webサイトからは政府機関の地域には導入できません。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["Azure Governmentリージョンでのコネクタの作成方法をご確認ください"]。
 
 
 
