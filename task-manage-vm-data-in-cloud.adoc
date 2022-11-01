@@ -14,7 +14,7 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 
 [role="lead"]
-データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、 Cloud Manager UI から更新情報を更新できます。
+データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。
 
 
 
@@ -22,7 +22,7 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 デフォルトの組み込みポリシーをすべて表示できます。各ポリシーについて詳細を表示すると、関連付けられているすべてのCloud Backup for Virtual Machinesポリシーと関連するすべての仮想マシンが表示されます。
 
-. [バックアップと復元]>[仮想マシン*]をクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . [* 設定 *] ドロップダウンから、 [* ポリシー *] をクリックします。
 . 詳細を表示するポリシーに対応する *View Details* をクリックします。
 
@@ -42,7 +42,7 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 
 .手順
-. Cloud Manager UIで、* Backup & Restore *>* Virtual Machines *>* Settings *>* SnapCenter Plug-in for VMware vSphere *をクリックします。
+. BlueXP UIで、*Protection*>* Backup and recovery*>* Virtual Machines *>* Settings*>* SnapCenter Plug-in for VMware vSphere*の順にクリックします。
 . データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereをクリックします。
 
 
@@ -50,10 +50,10 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 == SnapCenter Plug-in for VMware vSphereインスタンスを編集します
 
-SnapCenter Plug-in for VMware vSphereの詳細をCloud Managerで編集できます
+BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます
 
 .手順
-. Cloud Manager UIで、* Backup & Restore *>* Virtual Machines *>* Settings *>* SnapCenter Plug-in for VMware vSphere *をクリックします。
+. BlueXP UIで、*Protection*>* Backup and recovery*>* Virtual Machines *>* Settings*>* SnapCenter Plug-in for VMware vSphere*の順にクリックします。
 . をクリックし、*編集*を選択します
 . 必要に応じて詳細を変更します
 . [ 保存（ Save ） ] をクリックします。
@@ -65,7 +65,7 @@ SnapCenter Plug-in for VMware vSphereの詳細をCloud Managerで編集できま
 
 新しいボリュームがデータベースに追加された場合やポリシーまたはリソースグループに変更があった場合は、保護を更新する必要があります。
 
-. [バックアップと復元]>[仮想マシン*]をクリックします。
+. [*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . [*設定*]ドロップダウンから、[* SnapCenter Plug-in for VMware vSphere*]をクリックします。
 . をクリックします image:icon-action.png["アクション"] 仮想マシンをホストしているSnapCenter Plug-in for VMware vSphereに対応しており、*更新*をクリックします。
 +
@@ -80,7 +80,7 @@ SnapCenter Plug-in for VMware vSphereの詳細をCloud Managerで編集できま
 
 すべてのクラウドバックアップ処理に対してジョブが作成されます。すべてのジョブと、各タスクの一部として実行されるすべてのサブタスクを監視できます。
 
-. [バックアップと復元]>[ジョブの監視*]をクリックします。
+. [*バックアップとリカバリ*>*ジョブ監視*]をクリックします。
 +
 処理を開始すると、ジョブが開始されたことを示すウィンドウが表示されます。リンクをクリックするとジョブを監視できます。
 

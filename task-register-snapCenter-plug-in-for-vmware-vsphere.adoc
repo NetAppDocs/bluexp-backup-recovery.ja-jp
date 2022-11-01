@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html 
 keywords: register, registration, SnapCenter Plug-in for VMware vSphere 
-summary: SnapCenter Plug-in for VMware vSphereをCloud Managerに登録します。 
+summary: BlueXPでSnapCenter Plug-in for VMware vSphereを登録します。 
 ---
 = SnapCenter Plug-in for VMware vSphereの登録
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: SnapCenter Plug-in for VMware vSphereをCloud Managerに登録します
 
 
 [role="lead"]
-データストアと仮想マシンをCloud Managerに表示するには、SnapCenter Plug-in for VMware vSphereをCloud Managerに登録する必要があります。SnapCenter Plug-in for VMware vSphereの登録は、管理者アクセス権を持つユーザのみが実行できます。
+BlueXPにデータストアと仮想マシンを表示するには、SnapCenter Plug-in for VMware vSphereをBlueXPに登録する必要があります。SnapCenter Plug-in for VMware vSphereの登録は、管理者アクセス権を持つユーザのみが実行できます。
 
 
 NOTE: 複数のSnapCenter Plug-in for VMware vSphereを登録できます。ただし、一度登録すると、SnapCenter Plug-in for VMware vSphereを削除できなくなります。
 
 .手順
-. Cloud Manager UIで、* Backup & Restore *>* Virtual Machines *をクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . [*設定*]ドロップダウンから、[* SnapCenter Plug-in for VMware vSphere*]をクリックします。
 . [* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。
 . 次の情報を指定します。
@@ -38,4 +38,4 @@ SnapCenter Plug-in for VMware vSphereとCloud Backup for Virtual Machinesの間�
 
 * 終了後 *
 
-[*バックアップとリストア>仮想マシン*]をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereを使用して保護対象となるすべてのデータストアおよび仮想マシンを表示します。
+[*バックアップとリカバリ*>*仮想マシン*]をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereを使用した保護の対象となるすべてのデータストアおよび仮想マシンを表示します。

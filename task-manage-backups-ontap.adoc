@@ -26,7 +26,7 @@ CAUTION: バックアップファイルをクラウドプロバイダ環境か�
 バックアップダッシュボードには、現在バックアップ中のすべてのボリュームのリストが表示されます。
 
 .手順
-. Cloud Managerの左側のナビゲーションメニューで、* Backup & Restore *をクリックします。
+. BlueXPメニューから、*Protection > Backup and recovery*を選択します。
 . 「* Volumes」タブをクリックして、Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップボリュームのリストを表示します。
 +
 image:screenshot_backup_dashboard.png["バックアップファイルがあるすべての作業環境とボリュームを示すスクリーンショット。"]
@@ -223,7 +223,7 @@ image:screenshot_auto_backup.png["クラスタの今後のすべてのボリュ�
 
 
 
-このバックアップポリシーは、Cloud Manager、System Manager、またはONTAP CLIを使用して、この作業環境で作成した新しいボリュームに適用されます。
+このバックアップポリシーは、BlueXP、System Manager、またはONTAP CLIを使用して、この作業環境で作成された新しいボリュームに適用されます。
 
 
 
@@ -284,7 +284,7 @@ image:screenshot_backup_view_backups.png["単一のボリュームのすべて�
 この機能は、ボリュームバックアップがONTAP 9.11.1以降のシステムで作成された場合、およびバックアップポリシーで_DataLockとRansomware Protection_inを有効にした場合にのみ使用できます。
 
 
-NOTE: ランサムウェアスキャンを実行するには、バックアップファイルがCloud Manager環境（Connectorがインストールされている環境）にダウンロードされている必要があります。オンプレミスにコネクタを導入している場合、これによってクラウドプロバイダからの出力コストが増加することがあります。したがって、クラウドにConnectorを導入し、バックアップの保存先のバケットと同じリージョンに配置することを推奨します。
+NOTE: ランサムウェアスキャンを実行するには、バックアップファイルをBlueXP環境(コネクタがインストールされている環境)にダウンロードする必要があります。オンプレミスにコネクタを導入している場合、これによってクラウドプロバイダからの出力コストが増加することがあります。したがって、クラウドにConnectorを導入し、バックアップの保存先のバケットと同じリージョンに配置することを推奨します。
 
 .手順
 . [* Volumes （ボリューム） ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] をソースボリュームとして選択し、 * Details & Backup List * を選択します。

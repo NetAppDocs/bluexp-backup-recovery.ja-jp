@@ -30,7 +30,7 @@ IMPORTANT: single File Restore（SFR；単一ファイルリストア）はサ�
 
 * 手順 *
 
-. Cloud Manager UI で、 * Backup & Restore * > * Applications * の順にクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . [ * フィルター条件 * ] フィールドで、フィルター * タイプ * を選択し、ドロップダウンから [* Oracle* ] を選択します。
 . リストアするデータベースに対応する *View Details* をクリックし、 *Restore* をクリックします。
 . [ リストアタイプ ] ページで、次の操作を実行します。

@@ -14,13 +14,13 @@ summary: オンプレミスのONTAP からAzureへデータストアをバック
 
 
 [role="lead"]
-SnapCenter Plug-in for VMware vSphereをCloud Managerと統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
+SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
 
 
 NOTE: すべてのが満たされていることを確認します link:concept-protect-vm-data.html#Requirements["要件"] データストアをクラウドにバックアップする前に、
 
 .手順
-. Cloud Manager UIで、* Backup & Restore *>* Virtual Machines *をクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . をクリックします image:icon-action.png["アクション"] バックアップするデータストアに対応して、*バックアップのアクティブ化*をクリックします。
 . [ ポリシーの割り当て ] ページで、ポリシーを選択して [ 次へ * ] をクリックします。
 . 作業環境を追加します。

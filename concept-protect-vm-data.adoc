@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-vm-data.html 
-keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in 
+keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in, Cloud Manager, BlueXP 
 summary: 仮想マシン上のデータ保護の詳細と、さまざまなポリシーについて理解する。 
 ---
 = 仮想マシンのデータを保護
@@ -14,7 +14,7 @@ summary: 仮想マシン上のデータ保護の詳細と、さまざまなポ�
 
 
 [role="lead"]
-SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
+SnapCenter Plug-in for VMware vSphereとBlueXP（旧Cloud Manager）を統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
 
 データストアは、Amazon Web Services S3、Microsoft Azure Blob、StorageGRID にバックアップできます。
 
@@ -26,9 +26,9 @@ SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、
 
 * VMware vSphere 4.6P1以降用のSnapCenter プラグイン
 * ONTAP 9.8 以降
-* Cloud Manager 3.9以降
+* BlueXP 3.9以降
 * VMware vSphere 4.6P1向けSnapCenter プラグインでは、少なくとも1つのバックアップを作成しておく必要があります。
-* SnapCenter Plug-in for VMware vSphereで、Cloud ManagerのCloud Backup for Virtual Machinesポリシーと同じラベルまたは同じラベルの日単位、週単位、または月単位のポリシーが少なくとも1つ必要です。
+* SnapCenter Plug-in for VMware vSphereで、BlueXPのCloud Backup for Virtual Machinesポリシーと同じラベルまたはラベルがない日単位、週単位、または月単位のポリシーが少なくとも1つあります。
 * 組み込みのポリシーの場合は、スケジュール階層はSnapCenter Plug-in for VMware vSphereとクラウドのデータストアで同じである必要があります。
 * FlexGroup ボリュームのバックアップとリストアはサポートされていないため、データストアにFlexGroup ボリュームがないことを確認してください。
 * 暗号化されたボリュームのリストアはサポートされていないため、暗号化されたボリュームがないことを確認してください。

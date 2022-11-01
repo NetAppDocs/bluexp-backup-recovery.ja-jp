@@ -28,7 +28,7 @@ summary: バックアップは、特定の時点のデータをリストアで�
 
 == リストアダッシュボード
 
-リストアダッシュボードを使用して、ボリューム、フォルダ、およびファイルのリストア処理を実行できます。リストアダッシュボードにアクセスするには、Cloud Managerの左側のナビゲーションメニューから*バックアップとリストア*をクリックし、*リストア*タブをクリックします。をクリックすることもできます image:screenshot_gallery_options.gif["[ 詳細 ] ボタン"] > * サービス・パネルからバックアップ / リストア・サービスのリストア・ダッシュボード * を表示します。
+リストアダッシュボードを使用して、ボリューム、フォルダ、およびファイルのリストア処理を実行できます。復元ダッシュボードにアクセスするには、BlueXPメニューの「*バックアップと復元*」をクリックし、次に「*復元*」タブをクリックします。をクリックすることもできます image:screenshot_gallery_options.gif["[ 詳細 ] ボタン"] > * サービス・パネルからバックアップ / リストア・サービスのリストア・ダッシュボード * を表示します。
 
 
 NOTE: 少なくとも 1 つの作業環境に対して Cloud Backup をアクティブ化しておく必要があります。また、初期バックアップファイルが存在する必要があります。
@@ -145,7 +145,7 @@ image:diagram_browse_restore_volume.png["ブラウズおよびリストアを使
 
 video::9Og5agUWyRk[youtube,width=848,height=480,end=164]
 .手順
-. Backup & Restore * サービスを選択します。
+. BlueXPメニューから、*Protection > Backup and recovery*を選択します。
 . [* Restore * （復元） ] タブをクリックすると、 [Restore Dashboard （復元ダッシュボード） ] が表示されます。
 . [_Browse & Restore_] セクションで、 [* Restore Volume] をクリックします。
 +
@@ -285,7 +285,7 @@ ONTAP ボリュームのバックアップからボリュームにフォルダ�
 
 video::9Og5agUWyRk[youtube,width=848,height=480,start=165]
 .手順
-. Backup & Restore * サービスを選択します。
+. BlueXPメニューから、*Protection > Backup and recovery*を選択します。
 . [* Restore * （復元） ] タブをクリックすると、 [Restore Dashboard （復元ダッシュボード） ] が表示されます。
 . [参照と復元]セクションで、[*ファイルまたはフォルダの復元*]をクリックします。
 +
@@ -457,7 +457,7 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 ** ONTAP のバージョンは 9.8 以降である必要があります。
 ** ボリュームが配置されている Storage VM （ SVM ）に設定済みのデータ LIF が必要です。
 ** ボリュームで NFS が有効になっている必要があります。
-** SVM で SnapDiff RPC サーバをアクティブ化する必要があります。作業環境でインデックスの作成を有効にすると、 Cloud Manager によって自動的にインデックス作成が実行されます。
+** SVM で SnapDiff RPC サーバをアクティブ化する必要があります。作業環境でインデックス作成を有効にすると'BlueXPによって自動的に実行されます
 
 
 
@@ -466,9 +466,9 @@ ifdef::aws[]
 
 * AWS の要件：
 +
-** Cloud Manager に権限を付与するユーザロールに、 Amazon Athena 、 AWS Glue 、および AWS S3 の特定の権限を追加する必要があります。 link:task-backup-onprem-to-aws.html#set-up-s3-permissions["すべての権限が正しく設定されていることを確認します"]。
+** BlueXPに権限を付与するユーザロールに、Amazon Athena、AWS Glue、およびAWS S3の特定の権限を追加する必要があります。 link:task-backup-onprem-to-aws.html#set-up-s3-permissions["すべての権限が正しく設定されていることを確認します"]。
 +
-以前に設定したコネクタで Cloud Backup をすでに使用している場合は、ここで Athena 権限と Glue 権限を Cloud Manager ユーザロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
+以前に設定したコネクタでCloud Backupをすでに使用している場合は、Athena権限とGlue権限をBlueXPユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
 
 
 
@@ -481,9 +481,9 @@ ifdef::azure[]
 * Azureの要件：
 +
 ** Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
-** Cloud Managerに権限を付与するユーザーロールに、特定のAzure Synapse WorkspaceおよびData Lakeストレージアカウントの権限を追加する必要があります。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["すべての権限が正しく設定されていることを確認します"]。
+** 特定のAzure Synapse WorkspaceおよびData Lakeストレージアカウントの権限を、BlueXPに権限を付与するユーザーロールに追加する必要があります。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["すべての権限が正しく設定されていることを確認します"]。
 +
-以前に設定したコネクタですでにCloud Backupを使用している場合は、Azure Synapse WorkspaceとData Lake Storage Accountの権限をCloud Managerユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
+以前に設定したコネクタでCloud Backupをすでに使用している場合は、Azure Synapse WorkspaceとData Lake Storage Accountの権限をBlueXPユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
 
 ** インターネットへのHTTP通信には、*プロキシサーバーなしでコネクターを設定する必要があります。コネクタにHTTPプロキシサーバを設定している場合は、検索と置換機能を使用できません。
 
@@ -496,9 +496,9 @@ ifdef::gcp[]
 
 * Google Cloudの要件：
 +
-** 特定のGoogle BigQuery権限は、Cloud Managerに権限を付与するユーザーロールに追加する必要があります。 link:task-backup-onprem-to-gcp.html#verify-or-add-permissions-to-the-connector["すべての権限が正しく設定されていることを確認します"]。
+** 特定のGoogle BigQuery権限は、BlueXPに権限を付与するユーザーロールに追加する必要があります。 link:task-backup-onprem-to-gcp.html#verify-or-add-permissions-to-the-connector["すべての権限が正しく設定されていることを確認します"]。
 +
-以前に設定したコネクタでCloud Backupをすでに使用している場合は、ここでBigQuery権限をCloud Managerユーザロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
+以前に設定したコネクタでCloud Backupをすでに使用している場合は、今すぐBigQuery権限をBlueXPユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
 
 
 
@@ -577,7 +577,7 @@ image:screenshot_restore_enable_indexing.png["インデックスカタログを�
 お先にどうぞ  the Indexed Catalog for each working environment,作業環境のインデックス作成を有効にしましたでは、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。
 
 .手順
-. Backup & Restore * サービスを選択します。
+. BlueXPメニューから、*Protection > Backup and recovery*を選択します。
 . [* Restore * （復元） ] タブをクリックすると、 [Restore Dashboard （復元ダッシュボード） ] が表示されます。
 . [ 検索と復元 ] セクションで、 [ * 検索と復元 * ] をクリックします。
 +

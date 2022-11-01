@@ -41,12 +41,12 @@ Kubernetes バックアップファイルから次の作業環境にボリュー
 
 == Kubernetes バックアップファイルからのボリュームのリストア
 
-バックアップファイルから永続ボリュームをリストアすると、 Cloud Manager はバックアップのデータを使用して _new_volume を作成します。データは、同じ Kubernetes クラスタ内のボリューム、またはソースの Kubernetes クラスタと同じクラウドアカウントにある別の Kubernetes クラスタにリストアできます。
+バックアップファイルから永続ボリュームを復元すると、BlueXPはバックアップのデータを使用して_new_volumeを作成します。データは、同じ Kubernetes クラスタ内のボリューム、またはソースの Kubernetes クラスタと同じクラウドアカウントにある別の Kubernetes クラスタにリストアできます。
 
 開始する前に、リストアするボリュームの名前と、新規にリストアされたボリュームの作成に使用するバックアップファイルの日付を確認しておく必要があります。
 
 .手順
-. Backup & Restore * サービスを選択します。
+. BlueXPメニューから、*Protection > Backup and recovery*を選択します。
 . [*Kubernetes *] タブをクリックすると、 [Kubernetes Dashboard] が表示されます。
 +
 image:screenshot_backup_view_k8s_backups_button.png["Kubernetes ダッシュボードのスクリーンショットで、バックアップ対象のすべての Kubernetes クラスタとボリュームのリストを示しています。"]
@@ -66,4 +66,4 @@ image:screenshot_restore_k8s_volume.png["永続ボリュームのリストア先
 . リストア * をクリックすると、 Kubernetes ダッシュボードに戻り、リストア処理の進捗状況を確認できます。
 
 
-選択したバックアップに基づいて、 Cloud Manager が Kubernetes クラスタに新しいボリュームを作成します。可能です link:task-manage-backups-kubernetes.html["この新しいボリュームのバックアップ設定を管理します"] 必要に応じて。
+BlueXPは、選択したバックアップに基づいて、Kubernetesクラスタに新しいボリュームを作成します。可能です link:task-manage-backups-kubernetes.html["この新しいボリュームのバックアップ設定を管理します"] 必要に応じて。

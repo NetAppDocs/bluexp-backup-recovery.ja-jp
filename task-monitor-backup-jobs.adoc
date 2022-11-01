@@ -32,7 +32,7 @@ summary: 作業環境で開始したバックアップジョブとリストア�
 
 
 .手順
-. [ バックアップと復元 *] タブをクリックします。
+. BlueXPメニューから、*Protection > Backup and recovery*を選択します。
 . ［ * ジョブ監視 * ］ タブをクリックします。
 +
 image:screenshot_backup_job_monitor.png["ジョブ監視ダッシュボードのバックアップジョブとリストアジョブを示すスクリーンショット。"]

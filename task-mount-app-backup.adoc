@@ -22,7 +22,7 @@ SnapCenter では、OracleおよびHANAのバックアップを代替ホスト�
 
 * 手順 *
 
-. Cloud Manager UI で、 * Backup & Restore * > * Applications * の順にクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . [フィルタ条件]フィールドで[*タイプ]を選択し、ドロップダウンから[* SAP HANA *]または[* Oracle*]を選択します。
 . をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] 保護されたアプリケーションに対応して、「*詳細を表示*」を選択します。
 . をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] バックアップに対応し、* Mount *を選択します。

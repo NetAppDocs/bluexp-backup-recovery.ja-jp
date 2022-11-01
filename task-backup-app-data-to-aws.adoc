@@ -14,16 +14,16 @@ summary: アプリケーションデータをONTAP からAWSにバックアッ�
 
 
 [role="lead"]
-Cloud Backup for ApplicationsをCloud ManagerとオンプレミスのSnapCenter に統合することで、ONTAP からAmazon Web Servicesにアプリケーションデータをバックアップできます。
+ONTAP からAmazon Web Servicesにアプリケーションデータをバックアップするには、Cloud Backup for ApplicationsをBlueXPおよびオンプレミスSnapCenter と統合します。
 
 単一のポリシーを使用して、 1 つ以上のアプリケーションをクラウドで同時に保護することができます。
 
 
-IMPORTANT: Cloud Manager の GUI を使用している場合、一度に保護できるアプリケーションは 1 つだけです。ただし、 REST API を使用する場合は、複数のアプリケーションを同時に保護できます。
+IMPORTANT: BlueXP GUIを使用している場合は、一度に保護できるアプリケーションは1つだけです。ただし、 REST API を使用する場合は、複数のアプリケーションを同時に保護できます。
 
 * 手順 *
 
-. Cloud Manager UI で、 * Backup & Restore * > * Applications * の順にクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * バックアップのアクティブ化 * をクリックします。
 . [ ポリシーの割り当て ] ページで、ポリシーを選択して [ 次へ * ] をクリックします。
 . 作業環境を追加します。

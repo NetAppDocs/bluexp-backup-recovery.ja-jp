@@ -74,7 +74,7 @@ Header:
 ----
 [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
 ----
-. Cloud Manager Connector IDが含まれているx-agent-idを取得します。
+. BlueXPコネクタIDを含むx-agent-idを取得します。
 +
 [source, http]
 ----
@@ -101,7 +101,7 @@ Header:
 
 次の例は、AzureクラウドのEast-US-2リージョンで、daily、hourly、weeklyのラベルを設定したあと180日後にアーカイブした新しいポリシーを使用して、Working Environmentでバックアップをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのみバックアップが有効になりますが、ボリュームはバックアップされません。「auto-backup-enabled」を選択すると、システムにすでに存在するすべてのボリュームと、以降に追加されたボリュームがバックアップされます。
 
-Cloud CentralアカウントID「account-DpTFcxN3」、Cloud Manager Connector ID「iZwFFeVCZjWnzGw8RgD0QNANZvpP7Iclients」、ユーザートークン「Bearer eJhbGciJIJzIZI1I1IKUSCUZUZUZ56UZUZUZUSCH56UZUZUZUZUZUZUZUVZUGZUGZUGZ4WISZUGVC5WISLKUZWISLKUx4Q」が使用されています。
+Cloud CentralアカウントID「account-DpTFcxN3」、BlueXPコネクタID「iZwFFeVCZjWnzGlw8RgD0QNANZvpP7Iclients」、ユーザートークン「Bearer eJhbGciJiJzIZI1I1IKUSCUZUZ56UZW56UZUZUZUZUZUSCH56ZUZUZUZUZUGZUZUZUZUx486VZWISZUGZWISZUGZWISLZ」が使用されています。
 
 [source, http]
 ----

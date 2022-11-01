@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites 
-summary: NetApp Cloud Manager内でCloud Backup for Applicationsを有効にすると、アプリケーションと整合性のある効率的なポリシーベースのバックアップとリストアを、Amazon FSX for NetApp ONTAP 上に存在するOracle®データベースに対して実行できます。 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Manager, BlueXP 
+summary: Cloud Backup for ApplicationsをNetApp BlueXPで使用すると、アプリケーションと整合性のある効率的なポリシーベースのバックアップとリストアを、Amazon FSX for NetApp ONTAP 上に存在するOracle®データベースで実行できます。 
 ---
 = クラウドネイティブアプリケーションのデータを保護
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Cloud Manager内でCloud Backup for Applicationsを有効にす�
 
 
 [role="lead"]
-Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。NetApp Cloud Manager内でCloud Backup for Applicationsを有効にすると、アプリケーションと整合性のある効率的なポリシーベースのバックアップ、およびAmazon FSX for NetApp ONTAP 上に存在するOracleデータベースのリストアが可能になります。
+Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。NetApp BlueXP（formerlt Cloud Manager）で有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、ポリシーベースのバックアップを効率的に実行し、Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースをリストアします。
 
 
 
@@ -22,15 +22,15 @@ Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されている�
 
 Cloud Backup for Applicationsアーキテクチャには、次のコンポーネントが含まれています。
 
-* Cloud Backup for Applicationsは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスであり、Cloud Manager SaaSプラットフォームに基づいています。
+* Cloud Backup for Applicationsは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームをベースにしています。
 +
 オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます
 
-* Cloud Backup for Applications UIは、Cloud Manager UIに統合されています。
+* Cloud Backup for Applications UIは、BlueXP UIと統合されています。
 +
 Cloud Backup for ApplicationsのUIには、複数のストレージ機能とデータ管理機能が用意されています。
 
-* Cloud Manager Connectorは、クラウドネットワークで実行されるCloud Managerのコンポーネントで、Oracleデータベースホストで実行されるAmazon FSXストレージファイルシステムおよびSnapCenter Plug-in for Oracleと通信します。
+* BlueXP Connectorは、クラウドネットワーク内で動作し、Oracleデータベースホスト上で動作するAmazon FSXストレージファイルシステムおよびSnapCenter Plug-in for Oracleと通信するBlueXPのコンポーネントです。
 * SnapCenter Plug-in for Oracleは、各Oracleデータベースホストで実行されるコンポーネントであり、データ保護処理の実行中、ホストで実行されるOracleデータベースと通信します。
 +
 次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
@@ -39,7 +39,7 @@ Cloud Backup for ApplicationsのUIには、複数のストレージ機能とデ�
 image:diagram_nativecloud_backup_app.png["Cloud Backupがさまざまなコンポーネントと通信する仕組みを示す図"]
 
 +
-ユーザが開始した要求については、Cloud Backup for Applications UIがCloud Manager SaaSと通信します。Cloud Manager SaaSの検証時に、要求が同じ処理を行います。バックアップやリストアなどのワークフローの実行が要求されると、SaaSサービスによってワークフローが開始され、必要に応じてCloud Manager Connectorにコールが転送されます。このコネクタは、ワークフロータスクの実行中に、NetApp ONTAP 用のAmazon FSXとSnapCenter Plug-in for Oracleと通信します。
+ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップや復元などのワークフローを実行するよう要求された場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中に、NetApp ONTAP 用のAmazon FSXとSnapCenter Plug-in for Oracleと通信します。
 
 +
 コネクタは、Oracleデータベースと同じVPC内に導入することも、別のVPC内に導入することもできます。コネクタとOracleデータベースが異なるネットワークにある場合は、コネクタとOracleデータベース間のネットワーク接続を確立する必要があります。

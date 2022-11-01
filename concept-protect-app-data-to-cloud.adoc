@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database 
-summary: Cloud Backup for Applications を Cloud Manager とオンプレミスの SnapCenter と統合して、アプリケーションと整合性のある Snapshot をオンプレミスの ONTAP からクラウドにバックアップします。 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP 
+summary: クラウドバックアップアプリケーションとBlueXPおよびオンプレミスSnapCenter を統合して、アプリケーションと整合性のあるスナップショットをオンプレミスのONTAP からクラウドにバックアップします。 
 ---
 = オンプレミスアプリケーションのデータを保護
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Cloud Backup for Applications を Cloud Manager とオンプレミス�
 
 
 [role="lead"]
-Cloud Backup for Applications を Cloud Manager とオンプレミスの SnapCenter に統合することで、アプリケーションと整合性のある Snapshot をオンプレミスの ONTAP からクラウドにバックアップできます。必要に応じて、クラウドからオンプレミスの SnapCenter サーバにリストアできます。
+Cloud Backup for ApplicationsをBlueXP（旧Cloud Manager）やオンプレミスSnapCenter と統合することで、オンプレミスのONTAP からクラウドにアプリケーションと整合性のあるSnapshotをバックアップできます。必要に応じて、クラウドからオンプレミスの SnapCenter サーバにリストアできます。
 
-オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。
+オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。
 
 
 NOTE: SnapCenter ソフトウェア4.6以降を使用している必要があります。
@@ -34,7 +34,7 @@ Cloud Backup for Applications の詳細については、以下を参照して�
 アプリケーションデータを クラウド サービス にバックアップする前に、次の要件を参照して、サポートされる構成になっていることを確認してください。
 
 * ONTAP 9.8 以降
-* Cloud Manager 3.9
+* BlueXP 3.9
 * SnapCenter Server 4.6以降次の機能を使用する場合は、SnapCenter Server 4.7以降を使用する必要があります。
 +
 ** オンプレミスのセカンダリストレージからバックアップを保護
@@ -46,7 +46,7 @@ Cloud Backup for Applications の詳細については、以下を参照して�
 
 
 * SnapCenter サーバでは、各アプリケーションに使用可能なバックアップを少なくとも 1 つ用意する必要があります
-* SnapCenter の、 Cloud Manager の Cloud Backup for Applications ポリシーと同じラベルまたはラベルのない日次、週次、または月単位のポリシーが少なくとも 1 つ必要です。
+* BlueXPのクラウドバックアップアプリケーションポリシーとラベルまたはラベルがないSnapCenter では、1日、1週間、または1か月のポリシーが少なくとも1つあります。
 
 
 

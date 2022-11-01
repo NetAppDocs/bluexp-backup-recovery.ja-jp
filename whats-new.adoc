@@ -24,7 +24,7 @@ Cloud Backup の新機能をご確認ください。
 
 === Cloud Backup for Applicationsの機能強化
 
-* Google Cloud Provider（GCP）とStorageGRID をサポートしており、アプリケーションと整合性のあるSnapshotをバックアップできます
+* Google Cloud Platform（GCP）とStorageGRID をサポートし、アプリケーションと整合性のあるスナップショットをバックアップします
 * カスタムポリシーを作成する
 * アーカイブストレージをサポートします
 * SAP HANAアプリケーションをバックアップ
@@ -86,7 +86,7 @@ Cloud Backup の新機能をご確認ください。
 
 === クラウドネイティブアプリケーションデータを保護するためのサポートが追加されました
 
-Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。Cloud Managerで有効になっているアプリケーション向けのCloud Backupは、Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースを、アプリケーションと整合性のある効率的なポリシーベースのバックアップおよびリストアを実現します。https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["詳細はこちら。"^]。
+Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXPで有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、効率的でポリシーベースのバックアップとリストアを実現します。Amazon FSX for NetApp ONTAP 上にあるOracleデータベースのバックアップとリストアを実行できます。https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["詳細はこちら。"^]。
 
 
 
@@ -156,7 +156,7 @@ Cloud Backupを使用して、SnapLock Enterpriseボリュームをパブリッ�
 
 === インターネットにアクセスできないサイトのオンプレミスONTAP クラスタデータをバックアップするサポートが追加されました
 
-オンプレミスのONTAP クラスタが、インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）にある場合は、Cloud Backupを使用して、同じサイトにあるNetApp StorageGRID システムにボリュームデータをバックアップできるようになりました。この機能を使用するには、Cloud Manager Connector（バージョン3.9.19以降）もオフラインサイトに導入する必要があります。
+オンプレミスのONTAP クラスタが、インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）にある場合は、Cloud Backupを使用して、同じサイトにあるNetApp StorageGRID システムにボリュームデータをバックアップできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.19以降)もオフラインサイトに配置する必要があります。
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["オフラインサイトのStorageGRID にONTAP データをバックアップする方法を参照してください"]。
 
@@ -164,7 +164,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 
 === Cloud Backup for Virtual Machines 1.1.0のGA版になりました
 
-SnapCenter Plug-in for VMware vSphereとCloud Managerを統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
+SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
 
 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-vm-data.html["仮想マシンをクラウドに保護する方法については、こちらをご覧ください"]。
 
@@ -282,7 +282,7 @@ link:concept-protect-app-data-to-cloud.html["オンプレミスアプリケー�
 
 === 新しいオプションを使用すると、新規に作成されたボリュームにデフォルトのバックアップポリシーを自動的に適用できます
 
-以前は、 Cloud Backup をアクティブ化したあとに作業環境で作成した新しいボリュームには、バックアップポリシーを手動で適用する必要がありました。これで、 Cloud Manager 、 System Manager 、 CLI 、または API を使用してボリュームを作成したかどうかに関係なく、 Cloud Backup はボリュームを検出し、デフォルトポリシーとして選択したバックアップポリシーを適用します。
+以前は、 Cloud Backup をアクティブ化したあとに作業環境で作成した新しいボリュームには、バックアップポリシーを手動で適用する必要がありました。これで、ボリュームがBlueXP、System Manager、CLI、またはAPIを使用して作成されたかどうかに関係なく、Cloud Backupはボリュームを検出し、デフォルトポリシーとして選択したバックアップポリシーを適用します。
 
 このオプションは、新しい作業環境でバックアップを有効にする場合、または既存の作業環境で _ ボリュームの管理 _ ページから有効にする場合に使用できます。
 
@@ -344,7 +344,7 @@ Amazon S3 または Azure Blob にあるバックアップファイルからオ�
 
 === Cloud Backup BYOL ライセンスが、 Digital Wallet の Data Services Licenses タブに移動しました
 
-Cloud Backup の BYOL ライセンスが、 Cloud Manager Digital Wallet の Cloud Backup Licenses タブから Data Services Licenses タブに移動しました。
+Cloud BackupのBYOLライセンスが、Cloud Backup LicensesタブからBlueXP Digital WalletのData Services Licensesタブに移動しました。
 
 
 

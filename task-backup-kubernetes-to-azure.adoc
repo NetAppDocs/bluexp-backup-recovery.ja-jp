@@ -23,7 +23,7 @@ AKS Kubernetes クラスタ上の永続ボリュームから Azure BLOB スト�
 これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。
 
 .<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt="one "></span> 前提条件を確認します
-* Kubernetes クラスタを Cloud Manager の作業環境として検出しておきます。
+* KubernetesクラスタがBlueXP作業環境として検出されました。
 +
 ** Trident がクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以降である必要があります。
 ** バックアップする永続ボリュームの作成に使用されるすべての PVC で、「 snapshotPolicy 」が「 default 」に設定されている必要があります。
@@ -65,7 +65,7 @@ image:diagram_cloud_backup_k8s_cvo_azure.png["Cloud Backup が、ソースシス
 Kubernetes クラスタの要件::
 +
 --
-* Kubernetes クラスタを Cloud Manager の作業環境として検出しておきます。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-azure.html["Kubernetes クラスタの検出方法を参照してください"^]。
+* KubernetesクラスタがBlueXP作業環境として検出されました。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-azure.html["Kubernetes クラスタの検出方法を参照してください"^]。
 * Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["Trident のインストール方法"^] または https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["Trident バージョンをアップグレードする方法"^]。
 * クラスタのバックエンドストレージに Azure 上の Cloud Volumes ONTAP が使用されている必要があります。
 * Cloud Volumes ONTAP システムはKubernetesクラスタと同じAzureリージョンに配置する必要があり、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。

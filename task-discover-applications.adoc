@@ -20,13 +20,13 @@ summary: ポリシーの割り当てとバックアップの作成を行うア�
 
 * ONTAP 作業環境およびコネクタ用のFSXを作成しておく必要があります。
 * コネクタがFSX for ONTAP 作業環境およびOracleデータベース・ホストに接続されていることを確認します
-* Cloud Managerユーザに「Account Admin」ロールが割り当てられていることを確認します。
+* BlueXPユーザーに「アカウント管理者」の役割があることを確認します。
 * SnapCenter Plug-in for Oracleを導入しておく必要があります。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["詳細はこちら。"]。
 
 
 * 手順 *
 
-. Cloud ManagerのUIで、* Backup & Restore *>* Applications *をクリックします。
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . アプリケーションの検出をクリックします。
 . クラウドネイティブ*を選択し、*次へ*をクリックします。
 +

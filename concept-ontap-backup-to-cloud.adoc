@@ -94,7 +94,7 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 
 === インターネットに接続されていないサイトをサポート
 
-インターネットに接続されていないサイト（「オフライン」または「ダーク」サイトとも呼ばれる）で Cloud Backup を使用して、ローカルのオンプレミス ONTAP システムからローカルの NetApp StorageGRID システムにボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにCloud Manager Connector（バージョン3.9.20以上）を導入する必要があります。を参照してください link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データの StorageGRID へのバックアップ"] を参照してください。
+インターネットに接続されていないサイト（「オフライン」または「ダーク」サイトとも呼ばれる）で Cloud Backup を使用して、ローカルのオンプレミス ONTAP システムからローカルの NetApp StorageGRID システムにボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにBlueXPコネクタ(バージョン3.9.20)を配備する必要があります。を参照してください link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データの StorageGRID へのバックアップ"] を参照してください。
 
 
 
@@ -190,7 +190,7 @@ Cloud Backupには次の消費モデルがあります。
 
 BYOL は期間ベース（ 12 カ月、 24 カ月、 36 カ月）の _ 容量ベースであり、 1TiB 単位で提供されます。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量を指定した場合は「 10TiB 」とします。
 
-サービスを有効にするために、 Cloud Manager のデジタルウォレットのページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["Cloud Manager アカウント"^]。
+サービスを有効にするために、BlueXP Digital Walletページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["BlueXPアカウント"^]。
 
 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
@@ -251,30 +251,30 @@ image:diagram_cloud_backup_general.png["Cloud Backup が、ソースシステム
 
 === バックアップの保管場所バックアップノバショ
 
-バックアップコピーは、 Cloud Manager がクラウドアカウントで作成するオブジェクトストアに格納されます。クラスタ / 作業環境ごとに 1 つのオブジェクトストアがあり、 Cloud Manager は「 NetApp-backup-clusteruuid 」のようにオブジェクトストアに名前を付けます。このオブジェクトストアは削除しないでください。
+バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPは「NetApp-backup-clusteruuid」のようにオブジェクトストアに名前を付けます。このオブジェクトストアは削除しないでください。
 
 ifdef::aws[]
 
-* AWS では、 Cloud Manager によってが有効になります https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
+* AWSでは、BlueXPによってが有効になります https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure では、 Cloud Manager は BLOB コンテナのストレージアカウントを持つ新規または既存のリソースグループを使用します。クラウドマネージャ https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
+* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* GCP では、 Cloud Manager は Google Cloud Storage バケット用のストレージアカウントを持つ新規または既存のプロジェクトを使用します。
+* GCPでは、Google Cloud Storageバケット用のストレージアカウントを持つ新規または既存のプロジェクトを使用します。
 
 
 endif::gcp[]
 
-* StorageGRID では、 Cloud Manager はオブジェクトストアバケットに既存のストレージアカウントを使用します。
+* StorageGRID では、オブジェクトストアバケットに既存のストレージアカウントが使用されます。
 
 
 あとでクラスタのデスティネーションオブジェクトストアを変更する場合は、が必要になります link:task-manage-backups-ontap.html#unregistering-cloud-backup-for-a-working-environment["作業環境の Cloud Backup の登録を解除します"^]をクリックし、新しいクラウドプロバイダ情報を使用して Cloud Backup を有効にします。
@@ -439,7 +439,7 @@ endif::gcp[]
 * 検索とリストアでは、一度に1つのファイルをリストアできます。
 * 参照と復元および検索と復元では、一度に1つのフォルダを復元できます。
 * リストアするファイルは、デスティネーションボリュームの言語と同じ言語を使用している必要があります。言語が異なる場合は、エラーメッセージが表示されます。
-* 異なるサブネットにある異なる Cloud Manager で同じアカウントを使用する場合、ファイルレベルのリストアはサポートされません。
+* 異なるサブネットに異なるBlueXPシステムを持つ同じアカウントを使用している場合、ファイルレベルの復元はサポートされません。
 * バックアップファイルがアーカイブストレージにある場合は、個々のフォルダをリストアできません。
 * インターネットにアクセスできないサイト（ダークサイト）にコネクタがインストールされている場合は、検索とリストアを使用したファイルレベルのリストアはサポートされません。
 

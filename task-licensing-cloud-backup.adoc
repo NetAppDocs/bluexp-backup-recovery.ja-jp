@@ -18,8 +18,8 @@ summary: クラウドバックアップのライセンスは、従量課金制�
 
 さらに読む前に、いくつかのメモを記入してください。
 
-* クラウドプロバイダの Cloud Volumes ONTAP システム市場で Cloud Manager の従量課金制（ PAYGO ）サブスクリプションにすでに登録している場合は、 Cloud Backup にも自動的に登録されます。再度登録する必要はありません。
-* Cloud Backup Bring Your Own License （ BYOL ；お客様所有のライセンス）は、 Cloud Manager アカウントに関連付けられたすべてのシステムで使用できるフローティングライセンスです。したがって、既存のBYOLライセンスで使用できるバックアップ容量が十分にある場合、別のBYOLライセンスを購入する必要はありません。
+* クラウドプロバイダのCloud Volumes ONTAP システム市場で従量課金制（PAYGO）サブスクリプションをすでに登録している場合は、Cloud Backupにも自動的に登録されます。再度登録する必要はありません。
+* Cloud Backup Bring Your Own License（BYOL）は、BlueXPアカウントに関連付けられたすべてのシステムで使用できるフローティングライセンスです。したがって、既存のBYOLライセンスで使用できるバックアップ容量が十分にある場合、別のBYOLライセンスを購入する必要はありません。
 * BYOLライセンスを使用している場合は、PAYGOサブスクリプションもサブスクライブすることを推奨します。BYOLライセンスで許可されている数を超えるデータをバックアップした場合、従量課金制サブスクリプションでバックアップが続行されるため、サービスが中断されることはありません。
 * オンプレミスの ONTAP データを StorageGRID にバックアップする場合は、 BYOL ライセンスが必要ですが、クラウドプロバイダのストレージスペースは無償です。
 
@@ -96,14 +96,14 @@ AWSを使用している場合は、で2つの年間契約が提供されます 
 
 * Cloud Volumes ONTAP データとオンプレミスの ONTAP データをバックアップできる「クラウドバックアップ」プラン。
 +
-このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["サブスクリプションを AWS クレデンシャルに関連付けます"^]。Cloud Manager で AWS クレデンシャルに割り当てることができるのは 1 つだけなので、この年間契約サブスクリプションを使用して Cloud Volumes ONTAP システムの料金を支払う必要があります。
+このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["サブスクリプションを AWS クレデンシャルに関連付けます"^]。BlueXPでAWS資格情報に割り当てることができるのは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAP システムの料金を支払う必要があります。
 
 * Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「 CVO Professional 」プラン。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
 +
 を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP のライセンスに関するトピック"^] このライセンスオプションの詳細については、を参照してください。
 
 +
-このオプションを使用する場合は、 Cloud Volumes ONTAP の作業環境を作成するときに年間契約を設定し、 Cloud Manager から AWS Marketplace に登録するように求められます。
+このオプションを使用する場合は、Cloud Volumes ONTAP 作業環境を作成するときに年間契約を設定し、AWS Marketplaceに登録するように要求するBlueXPを設定できます。
 
 
 
@@ -127,21 +127,21 @@ endif::gcp[]
 
 ネットアップが提供するお客様所有のライセンスには、 1 年、 2 年、 3 年の期間があります。バックアップ対象のソース ONTAP ボリュームの論理使用容量（ _Before_any 効率化）で計算され、保護するデータに対してのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。
 
-BYOL Cloud Backup ライセンスは、 Cloud Manager アカウントに関連付けられたすべてのシステムで合計容量が共有されるフローティングライセンスです。ONTAP システムでは、バックアップ対象のボリュームに対してCLIコマンド「volume show -fields logical-used by AFS」を実行すると、必要な容量を概算できます。
+BYOL Cloud Backupライセンスは、合計容量がBlueXPアカウントに関連付けられたすべてのシステムで共有されるフローティングライセンスです。ONTAP システムの場合は、CLIコマンドを実行して、必要な容量を概算できます `volume show -fields logical-used-by-afs` をクリックします。
 
-Cloud Backup BYOL ライセンスがない場合は、 Cloud Manager の右下にあるチャットアイコンをクリックしてライセンスを購入してください。
+Cloud Backup BYOLライセンスをお持ちでない場合は、BlueXPの右下にあるチャットアイコンをクリックしてライセンスを購入してください。
 
 必要に応じて、使用しない Cloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、ドル同等かつ同じ有効期限で Cloud Backup ライセンスに変換できます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["詳細については、こちらをご覧ください"^]。
 
-BYOLライセンスを管理するには、Cloud ManagerのDigital Walletページを使用します。新しいライセンスの追加、既存のライセンスの更新、およびDigital Walletからのライセンスステータスの表示を行うことができます。
+BYOLライセンスを管理するには、BlueXPのDigital Walletページを使用します。新しいライセンスの追加、既存のライセンスの更新、およびDigital Walletからのライセンスステータスの表示を行うことができます。
 
 
 
 === Cloud Backup ライセンスファイルを取得します
 
-Cloud Backupライセンスを購入したあと、Cloud Managerでライセンスをアクティブ化するには、Cloud Backupのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードします。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。
+Cloud Backupライセンスを購入した後、Cloud Backupのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードして、BlueXPでライセンスを有効にします。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。
 
-インターネットにアクセスできないオンプレミスサイトで Cloud Backup を実行している場合は、オフラインのオンプレミスサイトのホストに Cloud Manager Connector を導入しているため、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。シリアル番号と NSS アカウントを使用してライセンスをアクティブ化することは、オフライン（ダークサイト）でのインストールには利用できません。
+インターネットにアクセスできないオンプレミスサイトでCloud Backupを実行している場合は、オフラインのオンプレミスサイトのホストにBlueXPコネクタを導入しているため、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。シリアル番号と NSS アカウントを使用してライセンスをアクティブ化することは、オフライン（ダークサイト）でのインストールには利用できません。
 
 .手順
 . にサインインします https://mysupport.netapp.com["ネットアップサポートサイト"^] [ システム ] 、 [ ソフトウェアライセンス ] の順にクリックします。
@@ -150,12 +150,12 @@ Cloud Backupライセンスを購入したあと、Cloud Managerでライセン�
 image:screenshot_cloud_backup_license_step1.gif["シリアル番号で検索したあとのライセンスの一覧を示すスクリーンショット。"]
 
 . [* License Key] 列で、 [* Get NetApp License File* ] をクリックします。
-. Cloud Manager アカウント ID （サポートサイトではテナント ID と呼ばれます）を入力し、 * Submit * をクリックしてライセンスファイルをダウンロードします。
+. BlueXPアカウントID (これはサポートサイトではテナントIDと呼ばれます)を入力し'[*Submit*]をクリックしてライセンスファイルをダウンロードします
 +
 image:screenshot_cloud_backup_license_step2.gif["ライセンスの取得ダイアログボックスを示すスクリーンショット。テナント ID を入力し、送信をクリックしてライセンスファイルをダウンロードします。"]
 
 +
-Cloud Manager アカウント ID は、 Cloud Manager の上部にある「 * Account * 」ドロップダウンを選択し、アカウントの横にある「 * Manage Account * 」をクリックすると確認できます。アカウント ID は、 [ 概要 ] タブにあります。
+BlueXPアカウントIDを確認するには、BlueXPの上部にある[*Account*]ドロップダウンを選択し、アカウントの横にある[*Manage Account*]をクリックします。アカウント ID は、 [ 概要 ] タブにあります。
 
 
 
@@ -163,16 +163,16 @@ Cloud Manager アカウント ID は、 Cloud Manager の上部にある「 * Ac
 
 === Cloud Backup BYOL ライセンスをアカウントに追加します
 
-ネットアップアカウント用の Cloud Backup ライセンスを購入したら、 Cloud Manager にライセンスを追加する必要があります。
+ネットアップアカウント用のCloud Backupライセンスを購入したら、ライセンスをBlueXPに追加する必要があります。
 
 .手順
-. Cloud Managerの左側のナビゲーションメニューで、* Digital Wallet *をクリックし、* Data Services Licenses *タブを選択します。
+. BlueXPメニューから、「ガバナンス」>「デジタルウォレット」をクリックし、「*データサービスライセンス*」タブを選択します。
 . [ ライセンスの追加 ] をクリックします。
 . _ ライセンスの追加 _ ダイアログで、ライセンス情報を入力し、 * ライセンスの追加 * をクリックします。
 +
 ** バックアップライセンスのシリアル番号があり、 NSS アカウントを知っている場合は、 * シリアル番号を入力 * オプションを選択してその情報を入力します。
 +
-お使いのネットアップサポートサイトのアカウントがドロップダウンリストにない場合は、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["NSS アカウントを Cloud Manager に追加します"^]。
+お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["NSSアカウントをBlueXPに追加します"^]。
 
 ** バックアップライセンスファイル（ダークサイトにインストールする場合に必要）がある場合は、 * ライセンスファイルのアップロード * オプションを選択し、プロンプトに従ってファイルを添付します。
 +
@@ -182,7 +182,7 @@ image:screenshot_services_license_add2.png["Cloud Backup BYOL ライセンスを
 
 
 
-Cloud Manager でライセンスが追加されて、 Cloud Backup がアクティブになります。
+BlueXPでは、Cloud Backupがアクティブになるようにライセンスが追加されています。
 
 
 
@@ -195,11 +195,11 @@ image:screenshot_services_license_expire.png["Digital Wallet ページに期限�
 Cloud Backup のライセンスは有効期限が切れる前に更新できるため、データのバックアップとリストアを中断することなく実行できます。
 
 .手順
-. Cloud Manager の右下にあるチャットアイコンをクリックするか、サポートにお問い合わせください。特定のシリアル番号について Cloud Backup ライセンスの期間延長または容量の追加を申請することができます。
+. BlueXPの右下にあるチャットアイコンをクリックするか、サポートに連絡して、特定のシリアル番号のCloud Backupライセンスの期間延長または追加容量をリクエストします。
 +
-ライセンスの支払いが完了し、ネットアップサポートサイトに登録されると、 Cloud Manager はデジタルウォレットとデータサービスのライセンスページのライセンスを自動的に更新し、 5 分から 10 分で変更が反映されます。
+ライセンスの支払いが完了し、NetApp Support Site に登録されると、BlueXPは自動的にデジタルウォレットのライセンスを更新し、[データサービスのライセンス]ページには5～10分で変更が反映されます。
 
-. Cloud Manager がライセンスを自動更新できない場合（ダークサイトにインストールした場合など）は、ライセンスファイルを手動でアップロードする必要があります。
+. BlueXPがライセンスを自動的に更新できない場合(たとえば、ダークサイトにインストールされている場合)は、ライセンスファイルを手動でアップロードする必要があります。
 +
 .. 可能です  your Cloud Backup license file,ライセンスファイルをネットアップサポートサイトから入手します。
 .. [ デジタルウォレット ] ページの [ データサービスライセンス ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。
@@ -211,19 +211,19 @@ image:screenshot_services_license_update1.png["特定のサービスの [ ライ
 
 
 
-Cloud Manager によってライセンスが更新され、 Cloud Backup は引き続きアクティブになります。
+ライセンスが更新され、Cloud Backupが引き続きアクティブになります。
 
 
 
 === BYOL ライセンスに関する考慮事項
 
-Cloud Backup BYOL ライセンスを使用している場合、バックアップするすべてのデータのサイズが容量の上限に近づいているかライセンスの有効期限に近づいているときに、 Cloud Manager のユーザインターフェイスに警告が表示されます。次の警告が表示されます。
+Cloud Backup BYOLライセンスを使用している場合、バックアップするすべてのデータのサイズが容量の上限に近づいているか、ライセンスの有効期限に近づいているときに、BlueXPのユーザーインターフェイスに警告が表示されます。次の警告が表示されます。
 
 * バックアップがライセンスで許可された容量の 80% に達したとき、および制限に達したときに再度実行されます
 * ライセンスの有効期限が切れる 30 日前と、ライセンスの有効期限が切れたあとに再度有効になります
 
 
-Cloud Manager インターフェイスの右下にあるチャットアイコンを使用して、警告が表示されたときにライセンスを更新してください。
+これらの警告が表示された場合は、BlueXPインターフェイスの右下にあるチャットアイコンを使用してライセンスを更新してください。
 
 BYOLライセンスの期限が切れると、次の2つのことが起こります。
 
@@ -231,6 +231,6 @@ BYOLライセンスの期限が切れると、次の2つのことが起こりま
 * 使用しているアカウントにMarketplaceアカウントがない場合、バックアップサービスは引き続き実行されますが、警告は引き続き表示されます。
 
 
-BYOL サブスクリプションを更新すると、 Cloud Manager によってライセンスが自動的に更新されます。Cloud Manager がセキュアなインターネット接続経由でライセンスファイルにアクセスできない場合（ダークサイトにインストールされている場合など）は、手動でファイルを入手して Cloud Manager にアップロードできます。手順については、を参照してください link:task-licensing-cloud-backup.html#update-a-cloud-backup-byol-license["Cloud Backup ライセンスを更新する方法"]。
+BYOLサブスクリプションを更新すると、BlueXPによってライセンスが自動的に更新されます。BlueXPが安全なインターネット接続経由でライセンスファイルにアクセスできない場合(たとえば、ダークサイトにインストールされている場合)は、自分でファイルを取得してBlueXPに手動でアップロードできます。手順については、を参照してください link:task-licensing-cloud-backup.html#update-a-cloud-backup-byol-license["Cloud Backup ライセンスを更新する方法"]。
 
 PAYGO ライセンスに切り替えられたシステムは、自動的に BYOL ライセンスに戻されます。ライセンスなしで実行されていたシステムでは、警告が表示されなくなります。

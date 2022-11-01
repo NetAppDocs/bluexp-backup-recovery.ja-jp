@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-prereq-protect-cloud-native-app-data.html 
-keywords: Cloud Manager, FSx for ONTAP, working environment, Connector, AWS, deploy Oracle plug-in 
+keywords: Cloud Manager, FSx for ONTAP, working environment, Connector, AWS, deploy Oracle plug-in, BlueXP 
 summary: バックアップを作成する前に前提条件を完了します。 
 ---
 = 前提条件
@@ -14,13 +14,13 @@ summary: バックアップを作成する前に前提条件を完了します�
 
 
 [role="lead"]
-Cloud Managerへのアクセス、Cloud Managerアカウントの作成、作業環境とコネクタの作成、およびSnapCenter Plug-in for Oracleの導入が完了している必要があります。
+BlueXPにアクセスし'BlueXPアカウントを作成して作業環境とコネクタを作成し'Oracle向けSnapCenter プラグインを導入している必要があります
 
 
 
-== Cloud Manager にアクセスします
+== BlueXPにアクセスします
 
-お勧めします link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-signing-up.html["NetApp Cloud Central に登録"]、 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Cloud Manager にログインします"]をクリックし、を設定します link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html["ネットアップアカウント"]。
+お勧めします link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-signing-up.html["NetApp BlueXP Webサイトに登録します"]、 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["BlueXPにログインします"]をクリックし、を設定します link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html["ネットアップアカウント"]。
 
 
 
@@ -28,15 +28,15 @@ Cloud Managerへのアクセス、Cloud Managerアカウントの作成、作業
 
 データベースがホストされているONTAP 環境用のAmazon FSXを作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSX for ONTAP の利用を開始しましょう"] および link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Amazon FSX for ONTAP 作業環境の作成と管理"]。
 
-NetApp FSXは、Cloud ManagerまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、Cloud ManagerでONTAP システムのFSXを検出する必要があります。
+NetApp FSXは、BlueXPまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、BlueXPのONTAP システム用FSXを検出する必要があります。
 
 
 
 == コネクタを作成します
 
-アカウント管理者は、Cloud Managerがパブリッククラウド環境内のリソースとプロセスを管理できるようにするために、AWSにConnectorを導入する必要があります。
+アカウント管理者は、AWSにConnectorを導入する必要があります。これにより、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理できるようになります。
 
-詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["AWS で Cloud Manager からコネクタを作成する"]。
+詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["BlueXPからAWSでコネクタを作成する"]。
 
 * FSX作業環境とOracleデータベースの両方を管理する場合には、同じコネクタを使用する必要があります。
 * FSX作業環境とOracleデータベースが同じVPC内にある場合は、同じVPC内にコネクタを導入できます。
@@ -52,7 +52,7 @@ NOTE: NAS（NFS）ワークロードを使用する場合は、Oracleデータ�
 
 
 
-コネクタを作成したら、* Canvas *>* Add Working Environment *をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。
+コネクターを作成したら、*ストレージ*>*キャンバス*>*作業環境*>*作業環境の追加*をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。
 
 
 IMPORTANT: コネクタを作成したら、[コネクタ（Connector）]>[コネクタの管理（Manage Connectors）]*をクリックし、コネクタ名を選択してコネクタIDをコピーします。
