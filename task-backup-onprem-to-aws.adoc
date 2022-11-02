@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-onprem-to-aws.html 
-keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3 
+keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3, govcloud, government 
 summary: オンプレミスの ONTAP システムから Amazon S3 ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = オンプレミスの ONTAP データの Amazon S3 へのバックアップ
@@ -88,9 +88,11 @@ AWS VPCまたはオンプレミスにすでにコネクタが導入されてい�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["コネクタの使用を開始する"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["AWSにコネクタをインストールする"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region["AWS GovCloudリージョンへのコネクタのインストール"^]
++
+コネクタをクラウドに導入した場合はGovCloudリージョンでCloud Backupがサポートされ、オンプレミスにインストールした場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。政府機関の地域では、BlueXP SaaS WebサイトからConnectorを展開することはできません。
 
 
-コネクタがクラウドに導入されている場合、Cloud BackupはGovCloudリージョンでサポートされます。オンプレミスまたはダークサイトにインストールされている場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。政府機関の地域では、BlueXP SaaS WebサイトからConnectorを展開することはできません。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region["AWS GovCloudリージョンでコネクタを作成する方法について説明します"]。
 
 
 
@@ -218,6 +220,7 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
               "s3:GetBucketAcl",
               "s3:GetBucketPolicy",
               "s3:PutBucketPolicy",
+              "s3:PutBucketOwnershipControls"
               "s3:PutBucketPublicAccessBlock",
               "s3:PutEncryptionConfiguration",
               "s3:GetObjectVersionTagging",
@@ -397,21 +400,27 @@ image:screenshot_backup_policy_aws.png["クラウドバックアップの設定�
 
 
 
-. Select Volumes （ボリュームの選択）ページで、デフォルトのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
+. Select Volumes（ボリュームの選択）ページで、定義済みのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
 +
-** すべてのボリュームをバックアップするには、タイトル行（image:button_backup_all_volumes.png[""]）。
+** すべての既存ボリュームと今後追加されるすべてのボリュームをバックアップするには、[既存および将来のすべてのボリュームをバックアップ...]チェックボックスをオンにします。このオプションは、すべてのボリュームをバックアップし、新しいボリュームのバックアップを有効にする必要がないようにすることを推奨します。
+** 既存のボリュームのみをバックアップする場合は、タイトル行（image:button_backup_all_volumes.png[""]）。
 ** 個々のボリュームをバックアップするには、各ボリュームのボックス（image:button_backup_1_volume.png[""]）。
 +
 image:screenshot_backup_select_volumes.png["バックアップするボリュームを選択するスクリーンショット。"]
 
+** この作業環境で、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致するボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
-
-+
-今後追加されるすべてのボリュームでバックアップを有効にする場合は、「今後のボリュームを自動的にバックアップ ... 」チェックボックスをオンのままにします。この設定を無効にした場合は、以降のボリュームのバックアップを手動で有効にする必要があります。
 
 . Activate Backup * をクリックすると、ボリュームの初期バックアップの作成が開始されます。
 
 
-Cloud Backup が起動し、選択した各ボリュームの初期バックアップの作成が開始されます。 Volume Backup Dashboard が表示され、バックアップの状態を監視できます。
+S3 バケットは、入力した S3 アクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
 
-可能です link:task-manage-backups-ontap.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-ontap.html["ボリューム全体または個々のファイルをバックアップファイルからリストアする"^] AWS の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。
+
+
+== 次の手順
+
+* 可能です link:task-manage-backups-ontap.html["バックアップファイルとバックアップポリシーを管理"^]。バックアップの開始と停止、バックアップの削除、バックアップスケジュールの追加と変更などが含まれます。
+* 可能です link:task-manage-backup-settings-ontap.html["クラスタレベルのバックアップの設定を管理します"^]。これには、クラウドストレージへのアクセスにONTAP で使用するストレージキーの変更、オブジェクトストレージへのバックアップのアップロードに使用できるネットワーク帯域幅の変更、将来のボリュームに対する自動バックアップ設定の変更などが含まれます。
+* また可能です link:task-restore-backups-ontap.html["ボリューム、フォルダ、または個々のファイルをバックアップファイルからリストアする"^] AWS の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。
+

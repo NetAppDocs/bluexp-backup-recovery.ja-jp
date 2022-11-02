@@ -62,6 +62,8 @@ sidebar:
       url: "/task-backup-onprem-private-cloud.html"
     - title: ONTAP バックアップを管理します
       url: "/task-manage-backups-ontap.html"
+    - title: クラスタレベルのバックアップの設定を管理します
+      url: "/task-manage-backup-settings-ontap.html"
     - title: ONTAP バックアップからリストアする
       url: "/task-restore-backups-ontap.html"
   - title: Kubernetes データのバックアップとリストア

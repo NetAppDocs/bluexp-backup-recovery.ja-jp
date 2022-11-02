@@ -126,7 +126,7 @@ spec:
 
 
 --
-ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 AWS Marketplace で Cloud Manager サブスクリプションを購入して、 Cloud Volumes ONTAP とクラウドバックアップを導入できます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["この Cloud Manager サブスクリプションに登録してください"^] Cloud Backup を有効にする前に、Cloud Backup の請求は、このサブスクリプションを通じて行われます。
+ライセンス要件:: Cloud Backup従量課金制のライセンスの場合は、AWS Marketplaceでサブスクリプションを購入して、Cloud Volumes ONTAP とクラウドバックアップを導入できます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["この Cloud Manager サブスクリプションに登録してください"^] Cloud Backup を有効にする前に、Cloud Backup の請求は、このサブスクリプションを通じて行われます。
 +
 --
 Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace のページ"^] 次に https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["サブスクリプションを AWS クレデンシャルに関連付けます"^]。

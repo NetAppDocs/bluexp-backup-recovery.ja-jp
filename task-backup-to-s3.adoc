@@ -26,7 +26,7 @@ Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開�
 * AWSでCloud Volumes ONTAP 9.7P5以降を実行しています。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
 * に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Cloud Manager Marketplace のバックアップソリューション"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
-* BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://mysupport.netapp.com/site/info/cloud-manager-policies["BlueXPポリシー"^]。
+* BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXPポリシー"^]。
 
 
 .<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span> 新規または既存のシステムで Cloud Backup を有効にします
@@ -48,6 +48,9 @@ image:screenshot_backup_provider_settings_aws.png["Cloud Volumes ONTAP システ
 
 [role="quick-margin-para"]
 バックアップはデフォルトで S3 Standard ストレージに格納されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、 S3 Glacier または S3 Glacier Deep Archive ストレージにバックアップを階層化して、コストをさらに最適化することができます。
+
+[role="quick-margin-para"]
+ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
 image:screenshot_backup_policy_aws.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
@@ -83,7 +86,7 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 +
 --
 * デスティネーションAWSアカウントのクレデンシャルをBlueXPに追加します
-* 権限「s3：PutBucketPolicy」を、BlueXPに権限を付与するIAMロールに追加します
+* 権限「s3：PutBucketPolicy」と「s3：PutOwnershipControls」を、BlueXPコネクタに権限を付与するIAM Bucketロール に追加します
 
 
 --
@@ -116,6 +119,7 @@ AWS 権限が必要です:: BlueXPに権限を付与するIAMロールには、�
                 "s3:GetBucketAcl",
                 "s3:GetBucketPolicy",
                 "s3:PutBucketPolicy",
+                "s3:PutBucketOwnershipControls"
                 "s3:PutBucketPublicAccessBlock",
                 "s3:PutEncryptionConfiguration",
                 "s3:GetObjectVersionTagging",
@@ -177,8 +181,6 @@ image:screenshot_backup_to_gcp.png["に、作業環境ウィザードの Cloud B
 
 Cloud Backup はシステムで有効になり、ボリュームを毎日バックアップして、最新の 30 個のバックアップコピーを保持します。
 
-可能です link:task-manage-backups-ontap.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-ontap.html["ボリューム全体または個々のファイルをバックアップファイルからリストアする"^] AWS の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。
-
 
 
 == 既存のシステムでの Cloud Backup の有効化
@@ -197,7 +199,7 @@ image:screenshot_backup_cvo_enable.png["作業環境を選択した後に使用�
 +
 .. バックアップの格納に使用する AWS アカウント。これは、 Cloud Volumes ONTAP システムが配置されているアカウントとは異なる場合があります。
 +
-バックアップに別のAWSアカウントを使用する場合は、デスティネーションのAWSアカウントクレデンシャルをBlueXPに追加し、権限「s3：PutBucketPolicy」をBlueXPに権限を提供するIAMロールに追加する必要があります。
+バックアップに別のAWSアカウントを使用する場合は、デスティネーションのAWSアカウントのクレデンシャルをBlueXPに追加し、「s3：PutBucketPolicy」および「s3：PutOwnerBucketshipControls」権限をBlueXPに付与するIAMロールに追加する必要があります。
 
 .. バックアップを保存するリージョン。これは、 Cloud Volumes ONTAP システムが配置されているリージョンとは異なるリージョンにすることもできます。
 .. デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択してデータの暗号化を管理するか。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自の暗号化キーの使用方法を参照してください"]）。
@@ -220,19 +222,27 @@ image:screenshot_backup_policy_aws.png["クラウドバックアップの設定�
 
 
 
-. Select Volumes （ボリュームの選択）ページで、デフォルトのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
+. Select Volumes（ボリュームの選択）ページで、定義済みのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
++
+** すべての既存ボリュームと今後追加されるすべてのボリュームをバックアップするには、[既存および将来のすべてのボリュームをバックアップ...]チェックボックスをオンにします。このオプションは、すべてのボリュームをバックアップし、新しいボリュームのバックアップを有効にする必要がないようにすることを推奨します。
+** 既存のボリュームのみをバックアップする場合は、タイトル行（image:button_backup_all_volumes.png[""]）。
+** 個々のボリュームをバックアップするには、各ボリュームのボックス（image:button_backup_1_volume.png[""]）。
 +
 image:screenshot_backup_select_volumes.png["バックアップするボリュームを選択するスクリーンショット。"]
 
-+
-** すべてのボリュームをバックアップするには、タイトル行（image:button_backup_all_volumes.png[""]）。
-** 個々のボリュームをバックアップするには、各ボリュームのボックス（image:button_backup_1_volume.png[""]）。
+** この作業環境で、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致するボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
-. 今後追加されるすべてのボリュームでバックアップを有効にする場合は、「今後のボリュームを自動的にバックアップ ... 」チェックボックスをオンのままにします。この設定を無効にした場合は、以降のボリュームのバックアップを手動で有効にする必要があります。
 . Activate Backup * をクリックすると、選択した各ボリュームの初期バックアップの実行が開始されます。
 
 
-Cloud Backup が起動し、選択した各ボリュームの初期バックアップの作成が開始されます。 Volume Backup Dashboard が表示され、バックアップの状態を監視できます。
+S3 バケットは、入力した S3 アクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
 
-可能です link:task-manage-backups-ontap.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-ontap.html["ボリューム全体または個々のファイルをバックアップファイルからリストアする"^] AWS の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。
+
+
+== 次の手順
+
+* 可能です link:task-manage-backups-ontap.html["バックアップファイルとバックアップポリシーを管理"^]。バックアップの開始と停止、バックアップの削除、バックアップスケジュールの追加と変更などが含まれます。
+* 可能です link:task-manage-backup-settings-ontap.html["クラスタレベルのバックアップの設定を管理します"^]。これには、クラウドストレージへのアクセスにONTAP で使用するストレージキーの変更、オブジェクトストレージへのバックアップのアップロードに使用できるネットワーク帯域幅の変更、将来のボリュームに対する自動バックアップ設定の変更などが含まれます。
+* また可能です link:task-restore-backups-ontap.html["ボリューム、フォルダ、または個々のファイルをバックアップファイルからリストアする"^] AWS の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。
+

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-onprem-to-azure.html 
-keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob 
+keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
 summary: オンプレミスの ONTAP システムから Azure BLOB ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = オンプレミスの ONTAP データを Azure BLOB ストレージにバックアップする
@@ -58,7 +58,7 @@ image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Az
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
-デフォルトでは、バックアップは Cool アクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。
+デフォルトでは、バックアップは Cool アクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
 image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
@@ -143,9 +143,11 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["コネクタの使用を開始する"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Azureにコネクタをインストールしています"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["Azure Governmentリージョンへのコネクタのインストール"^]
++
+Connectorがクラウドに導入されている場合、Cloud BackupはAzure Governmentのリージョンでサポートされます。オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。政府機関の地域では、BlueXP SaaS WebサイトからConnectorを展開することはできません。
 
 
-Cloud Backupは、Connectorがクラウドに導入されているAzure Governmentリージョンでサポートされます。オンプレミス環境やダークサイトにインストールされている環境ではサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。政府機関の地域では、BlueXP SaaS WebサイトからConnectorを展開することはできません。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["Azure Governmentリージョンでのコネクタの作成方法をご確認ください"]。
 
 
 
@@ -292,21 +294,27 @@ image:screenshot_backup_policy_azure.png["クラウドバックアップの設�
 
 
 
-. Select Volumes （ボリュームの選択）ページで、デフォルトのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
+. Select Volumes（ボリュームの選択）ページで、定義済みのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
 +
-** すべてのボリュームをバックアップするには、タイトル行（image:button_backup_all_volumes.png[""]）。
+** すべての既存ボリュームと今後追加されるすべてのボリュームをバックアップするには、[既存および将来のすべてのボリュームをバックアップ...]チェックボックスをオンにします。このオプションは、すべてのボリュームをバックアップし、新しいボリュームのバックアップを有効にする必要がないようにすることを推奨します。
+** 既存のボリュームのみをバックアップする場合は、タイトル行（image:button_backup_all_volumes.png[""]）。
 ** 個々のボリュームをバックアップするには、各ボリュームのボックス（image:button_backup_1_volume.png[""]）。
 +
 image:screenshot_backup_select_volumes.png["バックアップするボリュームを選択するスクリーンショット。"]
 
+** この作業環境で、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致するボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
-
-+
-今後追加されるすべてのボリュームでバックアップを有効にする場合は、「今後のボリュームを自動的にバックアップ ... 」チェックボックスをオンのままにします。この設定を無効にした場合は、以降のボリュームのバックアップを手動で有効にする必要があります。
 
 . Activate Backup * をクリックすると、ボリュームの初期バックアップの作成が開始されます。
 
 
-Cloud Backup が起動し、選択した各ボリュームの初期バックアップの作成が開始されます。 Volume Backup Dashboard が表示され、バックアップの状態を監視できます。
+BLOBストレージコンテナは、入力したリソースグループに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
 
-可能です link:task-manage-backups-ontap.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-ontap.html["ボリューム全体または個々のファイルをバックアップファイルからリストアする"^] Azure 内の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムへの接続に使用できます。
+
+
+== 次の手順
+
+* 可能です link:task-manage-backups-ontap.html["バックアップファイルとバックアップポリシーを管理"^]。バックアップの開始と停止、バックアップの削除、バックアップスケジュールの追加と変更などが含まれます。
+* 可能です link:task-manage-backup-settings-ontap.html["クラスタレベルのバックアップの設定を管理します"^]。これには、バックアップをオブジェクトストレージにアップロードするためのネットワーク帯域幅の変更、将来のボリュームに対する自動バックアップ設定の変更などが含まれます。
+* また可能です link:task-restore-backups-ontap.html["ボリューム、フォルダ、または個々のファイルをバックアップファイルからリストアする"^] Azure 内の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムへの接続に使用できます。
+

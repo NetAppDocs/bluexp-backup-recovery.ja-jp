@@ -45,6 +45,8 @@ image:screenshot_backup_schedule_settings.png["バックアップポリシー作
 * 13カ月目には、最初の月単位のバックアップが削除され、13カ月分に新しい月単位のバックアップが追加されます（最大12個の月単位のバックアップを保持）。
 
 
+毎年のバックアップは、オブジェクトストレージに転送されたあとにソースシステムから自動的に削除されます。このデフォルト動作は変更できます link:task-manage-backup-settings-ontap#change-whether-yearly-snapshots-are-removed-from-the-source-system["[詳細設定]ページで設定します"] を参照してください。
+
 
 
 == DataLockとランサムウェアによる保護
