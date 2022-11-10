@@ -2644,7 +2644,6 @@
   <block id="8fa9fc7dcc8c23904d4a616698a7a223" category="paragraph">すべてのバックアップおよびリストア処理とそれらの現在のステータスのリストは、*ジョブ監視*タブで確認できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。ステータスは次のいずれかになります。</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="e26263e363fecef775843a8d72ae75f8" category="paragraph">特定のジョブを検索する場合は、次の操作を実行できます。</block>
-  <block id="b4c7b1f52d0a6c15993076d79d22628c" category="list-text">ページ上部のタイムセレクタを使用して、一定期間のジョブを表示します</block>
   <block id="d9adc9312afedb38a2612892c29f9ec2" category="list-text">各列見出しのフィルタを使用して結果をソートします。たとえば、「workloads」列のフィルタを使用すると、次のカテゴリのジョブを表示できます。</block>
   <block id="3919b07e397df4ea5f1ccc5ad0f35b8a" category="list-text">ボリューム（Cloud Volumes ONTAP とオンプレミスONTAP ボリューム）</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">アプリケーション</block>
@@ -2657,10 +2656,6 @@
   <block id="b58d9a206bdb4f66bef72d876e8c275e" category="section-title">通知センターを使用して、バックアップとリストアに関するアラートを確認します</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知ベル</block>
   <block id="01d7db5ac182c0b2dc523448e4c1a34b" category="paragraph">通知センターでは、開始したバックアップジョブとリストアジョブの進捗状況が追跡されるので、操作が正常に完了したかどうかを確認できます。通知を表示するには、（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>)を選択します。また、通知を電子メールで送信するようにBlueXPを構成することもできます。これにより、システムにログインしていないときでも重要なシステムアクティビティを通知できます。</block>
-  <block id="9d06bbee27c7c52aee4ed8f45598a47e" category="paragraph">現時点では、Eメールアラートは次の3つのイベントによってトリガーされます。</block>
-  <block id="0f217a680c2fae12a2aef1605523e63b" category="list-text">バックアップのアクティブ化に失敗しました</block>
-  <block id="bd05c05b26ad99e0b7734e77c6615dbc" category="list-text">リストアに失敗しました</block>
-  <block id="0d1bc1ce0ffc15450740c0c168790109" category="list-text">アドホック（オンデマンド）バックアップの失敗</block>
   <block id="cef1c38108b72f8eb8fba5c231923d9c" category="paragraph">既定では、BlueXPアカウント管理者は、すべての「重大」および「推奨」アラートに関する電子メールを受信します。他のすべてのユーザと受信者は、通知メールを受信しないようにデフォルトで設定されています。ネットアップクラウドアカウントを使用しているBlueXPユーザや、バックアップとリストアのアクティビティに注意が必要なその他の受信者にEメールを送信できます。</block>
   <block id="a1c41906d0e1e81a4ce819d12975d647" category="paragraph">クラウドバックアップのEメールアラートを受信するには、通知タイプとして「Critical」と「Error」を選択する必要があります。</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">通知センターの詳細と、バックアップおよびリストア・ジョブに関するアラート・メールの送信方法について説明します</block>
@@ -2715,7 +2710,6 @@
   <block id="aa561ba34fe652162fed2a07f12593c1" category="list-text">バックアップをオブジェクトストレージにアップロードするために割り当てられるネットワーク帯域幅を変更する</block>
   <block id="11fdb6dde8ff715d780c091b4866b526" category="list-text">アーカイブストレージクラスの変更（AWSのみ）</block>
   <block id="54ccc53455625170e0d9225f1d12c305" category="list-text">以降のボリュームの自動バックアップ設定（およびポリシー）を変更する</block>
-  <block id="da83f4088cfea6a8c07863d1dd3a06f0" category="list-text">Snapshotコピーの履歴を最初のベースラインバックアップファイルに含めるかどうかを変更します</block>
   <block id="90262b49b516aea0770d54c5389860ab" category="list-text">「年次」スナップショットをソースシステムから削除するかどうかを変更します</block>
   <block id="0b1dbe1ca2e686301ad63250cc03207d" category="section-title">クラスタレベルのバックアップの設定を表示します</block>
   <block id="ed0a9603eb52469e5089b682941c8579" category="paragraph">それぞれの作業環境について、クラスタレベルのバックアップ設定を確認することができます。</block>
@@ -2737,7 +2731,6 @@
   <block id="69f49af99be101331b7adf45a31d1ff9" category="section-title">オブジェクトストレージに接続されているONTAP IPspaceを変更します</block>
   <block id="6e1bb784e48dbc68cd86c7478f6a1d16" category="paragraph">オブジェクトストレージに接続されているONTAP IPspaceを変更できます。このオプションは、オンプレミスのONTAP システムからのみデータをバックアップする場合に使用できます。Cloud Volumes ONTAP システムでは使用できません。</block>
   <block id="fe2348305cb832db0607d4941ba06ff1" category="paragraph">このオプションは、ボリュームデータをオブジェクトストレージにアクティブにバックアップするシステムでは使用しないでください。このオプションは、オンプレミスのONTAP システムでバックアップを最初にアクティブ化するときに誤ったIPspaceが選択された場合にのみ使用してください。</block>
-  <block id="2ec8522fb627c9277002b72183b02c88" category="paragraph">ONTAP 構成が新しいIPspaceに対して正しく設定されていることを確認するには、オンプレミスのONTAP システムからクラウドプロバイダへのデータのバックアップに関するスタートアップガイドを参照してください。例：</block>
   <block id="7a81527905d341365c1c48c1c2df82f7" category="list-text">クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。</block>
   <block id="b61284a9f89e31d7eca6523e6a26baf1" category="list-text">ONTAP がオブジェクトストレージへの接続に使用するIPspaceにLIFを関連付ける必要があります。</block>
   <block id="8373574988dfec20642b8146055e60ea" category="list-text">ノードのクラスタ間LIFがオブジェクトストアにアクセスできる必要があります。</block>
@@ -2746,10 +2739,8 @@
   <block id="7782aa7e3e532fc975c4c9fd409a0cd1" category="paragraph"><block ref="7782aa7e3e532fc975c4c9fd409a0cd1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9f4a0a8969226290161358177e49f679" category="paragraph">新しいIPspaceを選択し、*適用*をクリックします。バックアップするボリュームをそのIPspaceのアグリゲートから選択できます。</block>
   <block id="5fb03dafd6274ec459f4ae7b73182f44" category="section-title">バックアップをオブジェクトストレージにアップロードするためのネットワーク帯域幅を変更する</block>
-  <block id="8a75fbddacee811141e1743b04ce7747" category="paragraph">作業環境に対してCloud Backupをアクティブ化すると、デフォルトではONTAP で無制限の帯域幅を使用して、作業環境からオブジェクトストレージにデータを転送できます。転送時に使用されるネットワーク帯域幅の量を調整する必要がある場合は、最大転送速度として1 ~ 1、000Mbpsの値を選択します。</block>
   <block id="1f93761cc5827e33d0eab0b81e59533a" category="inline-image-macro">Advanced SettingsページのMaximum Transfer Rateエントリのスクリーンショット。</block>
   <block id="b6b92ac68c60c85a484c906db8777124" category="paragraph"><block ref="b6b92ac68c60c85a484c906db8777124" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="74cc52c7c289df31888fc04f6bdb8413" category="paragraph">制限がないことを示すラジオボタン* Unlimited *を選択するか、* Limited *オプションボタンを選択して、使用できる最大帯域幅を入力します。</block>
   <block id="0e90335213cfc4fed49846f4e44e57d3" category="section-title">アーカイブストレージクラスを変更します</block>
   <block id="8d45cbf2cc7abced70e253acc8c53957" category="paragraph">バックアップファイルが一定期間（通常は30日以上）保存されているときに使用されるアーカイブストレージクラスを変更する場合は、ここで変更を行うことができます。アーカイブストレージを使用しているバックアップポリシーは、この新しいストレージクラスを使用するようにすぐに変更されます。</block>
   <block id="5028cfaccc8708e90dc537ae32bd3cf2" category="paragraph">このオプションは、Amazon S3にバックアップファイルを書き込む場合に、オンプレミスのONTAP システムおよびCloud Volumes ONTAP システムで使用できます（ONTAP 9.10.1以降を使用）。</block>
@@ -2767,8 +2758,6 @@
   <block id="82bdb7270f3d2ffc39f1a3ee094d5e8a" category="paragraph"><block ref="82bdb7270f3d2ffc39f1a3ee094d5e8a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8c6367e42cd8d2e09365265f2ef8621b" category="paragraph">有効にすると、このバックアップポリシーは、BlueXP、System Manager、ONTAP CLI、またはAPIを使用して、この作業環境で作成された新しいボリュームに適用されます。</block>
   <block id="260734931fc90337787f8eab9f95f6af" category="section-title">履歴Snapshotコピーをバックアップファイルとしてエクスポートするかどうかを変更します</block>
-  <block id="27c37010bd2f00bedab738367c01ec45" category="paragraph">この作業環境で使用しているバックアップスケジュールラベルと一致する、ボリュームのローカルSnapshotコピーがこの作業環境にある場合は（日次、週次など）、それらの履歴Snapshotをバックアップファイルとしてオブジェクトストレージにエクスポートできます。これにより、古いSnapshotコピーをベースラインバックアップコピーに移動することで、クラウドでバックアップを初期化できます。</block>
-  <block id="8f3eb38987d6f48885d716830b4c0240" category="paragraph">このオプションは、データ保護（DP）ボリュームではサポートされていません。</block>
   <block id="e1260315a439b823ca53a44a12cdbed4" category="inline-image-macro">詳細設定ページの既存のSnapshotコピーのエクスポートエントリのスクリーンショット。</block>
   <block id="4c55333e1e917a54978d32ab7a324b08" category="paragraph"><block ref="4c55333e1e917a54978d32ab7a324b08" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51a3a396e404f898f2e45dad30b6b1da" category="paragraph">既存のSnapshotコピーをエクスポートするかどうかを選択し、*適用*をクリックします。</block>
@@ -2811,4 +2800,20 @@
   <block id="95bdcffb51de388c8d204ebc69a73e61" category="section-title">AWSのクロスアカウントバックアップの機能拡張</block>
   <block id="ae3795f53c6086a9639e4652dbff318b" category="paragraph">Cloud Volumes ONTAP バックアップにソースボリュームに使用しているものとは異なるAWSアカウントを使用する場合は、デスティネーションのAWSアカウントクレデンシャルをBlueXPに追加し、「s3：PutBucketPolicy」および「s3：PutBucketOwnershipControls」権限をBlueXPに権限を提供するIAMロールに追加する必要があります。これまでは、AWSコンソールで多数の設定を行う必要がありましたが、これはもう必要ありません。</block>
   <block id="ef88ffe6f484bdfc25f97445be29df28" category="sidebar">クラスタレベルのバックアップの設定を管理します</block>
+  <block id="749775c831a251b1841492d6cd64446b" category="paragraph">このスクリーンショットは、デフォルトの列とフィールドの見出しを示しています。をクリックできます <block ref="835a7e197f8f78cae39058ebe9f7b1c4" category="inline-image-macro-rx" type="image"></block> 列見出しの表示と非表示を切り替えたり、「ユーザー名」と「タイプ」に2つの見出しを追加したりすることができます。</block>
+  <block id="9596c723878bfc4072c4881a7877ce59" category="list-text">ページの左上にあるタイムセレクタを使用して、一定期間のジョブを表示します</block>
+  <block id="8c8d15cbcb23d4d9a941a520eed8f594" category="list-text">特定のステータスについては、「ジョブの表示」をクリックします。たとえば、「失敗」では、失敗したジョブのみを表示します</block>
+  <block id="aa72dffd28e8e8bc6bede04c2bfb9b8a" category="paragraph">現時点では、Eメールアラートは次の4つのイベントによってトリガーされます。</block>
+  <block id="86adb6c119fde87f974199cf61935f54" category="list-text">クラウドバックアップのアクティブ化が作業環境で失敗しました</block>
+  <block id="17d0a830cae7a9ee38e63d4d74257685" category="list-text">クラウドバックアップのリストア処理に失敗しました</block>
+  <block id="4a4cfe5483874f73014159f5baca5462" category="list-text">アドホック（オンデマンド）ボリュームのバックアップに失敗しました</block>
+  <block id="01c236efa847517aec154a45e404d759" category="list-text">潜在的なランサムウェア攻撃がシステムで検出されました</block>
+  <block id="30dae49f6de63e85b78b96b2080bb0bb" category="paragraph">ソースボリュームを削除する必要はありません。ボリュームのバックアップ関係を削除し、ソースボリュームを保持することができます。この場合、ボリュームのバックアップはあとで「アクティブ化」できます。この場合も元のベースラインバックアップコピーが引き続き使用されます。新しいベースラインバックアップコピーは作成されず、クラウドにエクスポートされません。バックアップ関係を再アクティブ化すると、ボリュームにデフォルトのバックアップポリシーが割り当てられます。</block>
+  <block id="495f64bce7d9d754a435527baf769353" category="paragraph">この機能は、システムでONTAP 9.12.1以降が実行されている場合にのみ使用できます。</block>
+  <block id="228129642e2d421577991251a19c55f5" category="list-text">将来のボリュームの最初のベースラインバックアップファイルに履歴Snapshotコピーが含まれているかどうかを変更します</block>
+  <block id="886fd7da3e081fa21e258a3d2c55adaa" category="paragraph">ONTAP のセットアップが新しいIPspaceに対して正しく行われていることを確認するには、オンプレミスのONTAP システムから特定のクラウドプロバイダにデータをバックアップするためのスタートアップガイドを参照してください。例：</block>
+  <block id="12ada5b9617c3b45c33107e57c89ecb9" category="paragraph">作業環境に対してCloud Backupをアクティブ化すると、デフォルトでは、ONTAP は、作業環境内のボリュームからオブジェクトストレージにバックアップデータを転送するために、無制限の帯域幅を使用できます。バックアップトラフィックが通常のユーザワークロードに影響していることに気付いた場合は、転送時に使用するネットワーク帯域幅の量を調整できます。最大転送速度として、1~1、000Mbpsの値を選択できます。</block>
+  <block id="057d6c600d485e4ee55de2a7a7001dc5" category="paragraph">[*Limited*]ラジオボタンを選択して使用できる最大帯域幅を入力するか、[*Unlimited *]を選択して制限がないことを示します。</block>
+  <block id="45d792202c91671265c4a5c1b4b44f68" category="paragraph">この作業環境で使用しているバックアップスケジュールラベル（日次、週次など）に一致するボリュームのローカルSnapshotコピーがある場合は、それらの履歴Snapshotをバックアップファイルとしてオブジェクトストレージにエクスポートできます。これにより、古いSnapshotコピーをベースラインバックアップコピーに移動することで、クラウドでバックアップを初期化できます。</block>
+  <block id="6e5adfd3f87f76739bd90a17c2764063" category="paragraph">このオプションは、新しいボリュームの環境 新しいバックアップファイルにのみ使用でき、データ保護（DP）ボリュームではサポートされません。</block>
 </blocks>
