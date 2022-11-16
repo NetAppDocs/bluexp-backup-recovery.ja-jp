@@ -187,9 +187,9 @@ bigquery.tables.create
 
 === ライセンス要件を確認
 
-* クラスタでCloud Backupをアクティブ化するには、事前に従量課金制（PAYGO）のCloud Manager Marketplace製品をGoogleから購入するか、ネットアップからCloud Backup BYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
+* クラスタでCloud Backupをアクティブ化するには、従量課金制（PAYGO）のBlueXP Marketplace製品をGoogleから購入するか、ネットアップからCloud Backup BYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
 +
-** Cloud Backup PAYGO ライセンスの場合は、へのサブスクリプションが必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google"^] Cloud Backupを使用するためのCloud Manager Marketplaceのサービス。Cloud Backup の請求は、このサブスクリプションを通じて行われます。
+** Cloud Backup PAYGO ライセンスの場合は、へのサブスクリプションが必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google"^] Cloud Backupを使用するBlueXP Marketplaceを提供しています。Cloud Backup の請求は、このサブスクリプションを通じて行われます。
 ** Cloud Backup BYOL ライセンスを利用するには、ライセンスの期間と容量に応じてサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 
@@ -244,7 +244,7 @@ image:screenshot_backup_onprem_to_google.png["オンプレミスのクラスタ�
 
 
 
-. アカウントにCloud Backupの既存のライセンスがない場合は、使用する課金方法を選択するよう求められます。Googleが提供する従量課金制（PAYGO）Cloud Manager Marketplaceサービスにサブスクライブする（または複数のサブスクリプションを選択する必要がある場合）か、ネットアップが提供するCloud Backup BYOLライセンスを購入してアクティブ化することができます。 link:task-licensing-cloud-backup.html["Cloud Backupライセンスの設定方法について説明します。"]
+. アカウントにCloud Backupの既存のライセンスがない場合は、使用する課金方法を選択するよう求められます。Googleが提供する従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか（複数のサブスクリプションを選択する必要がある場合は1つを選択）、ネットアップが提供するCloud Backup BYOLライセンスを購入してアクティブ化することができます。 link:task-licensing-cloud-backup.html["Cloud Backupライセンスの設定方法について説明します。"]
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
@@ -269,6 +269,8 @@ image:screenshot_backup_select_volumes.png["バックアップするボリュー
 
 
 Google Cloud Storageバケットは、入力したGoogleアクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
+
+バックアップは、デフォルトで_Standard_storageクラスに関連付けられています。低コストのNearlineクラス、_Coldline_クラス、または_Archive_storageクラスを使用できます。ただし、ストレージクラスはCloud BackupのUIではなくGoogleで設定します。Google のトピックを参照してください https://cloud.google.com/storage/docs/changing-default-storage-class["バケットのデフォルトのストレージクラスを変更する"^] を参照してください。
 
 
 

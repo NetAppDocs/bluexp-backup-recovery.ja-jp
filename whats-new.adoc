@@ -36,7 +36,7 @@ Cloud Backup の新機能をご確認ください。
 
 
 
-=== Cloud BackupのアラートをEメールまたは通知センターで受信するためのサポートが追加されました
+=== Cloud BackupのアラートをEメールおよび通知センターで受信するためのサポートが追加されました
 
 Cloud Backupは、BlueXP Notificationサービスに統合されています。Cloud Backup通知を表示するには、BlueXPメニューバーの通知ベルをクリックします。また、通知を電子メールで送信するようにBlueXPを構成することもできます。これにより、システムにログインしていないときでも重要なシステムアクティビティを通知できます。このEメールは、バックアップとリストアのアクティビティに注意する必要があるすべての受信者に送信できます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#use-the-job-monitor-to-view-backup-and-restore-job-status["詳細をご確認ください"]。
 
@@ -59,11 +59,11 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-manage-backup-se
 
 
 
-=== オンプレミスコネクタを使用している場合に、検索とリストアを使用してパブリッククラウドからバックアップファイルをリストアできるようになりました
+=== オンプレミスコネクタを使用している場合に、検索とリストアを使用してバックアップファイルをリストアできるようになりました
 
-以前のリリースでは、Connectorをオンプレミスに導入すると、バックアップファイルをパブリッククラウドに作成するためのサポートが追加されていました。このリリースでは、Connectorがオンプレミスに導入されている場合、Search & Restoreを使用してAmazon S3またはAzure Blobからバックアップをリストアできるようになりました。
+以前のリリースでは、Connectorをオンプレミスに導入すると、バックアップファイルをパブリッククラウドに作成するためのサポートが追加されていました。このリリースでは、Connectorがオンプレミスに導入されている場合、Search & Restoreを使用してAmazon S3またはAzure Blobからバックアップをリストアできるようになりました。検索とリストアでは、StorageGRID システムからオンプレミスのONTAP システムへのバックアップのリストアもサポートされています。
 
-現時点では、Google Cloud Storageからバックアップをリストアするために検索とリストアを使用する場合、ConnectorをGoogle Cloud Platformに導入する必要があります。検索とリストアはStorageGRID システムではサポートされていません。この場合は、参照とリストアを使用する必要があります。
+現時点では、Google Cloud Storageからバックアップをリストアするために検索とリストアを使用する場合、ConnectorをGoogle Cloud Platformに導入する必要があります。
 
 
 

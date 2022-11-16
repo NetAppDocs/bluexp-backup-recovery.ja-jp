@@ -24,7 +24,7 @@ NOTE: SnapCenter ソフトウェア4.6以降を使用している必要があり
 Cloud Backup for Applications の詳細については、以下を参照してください。
 
 * https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["クラウドバックアップと SnapCenter を使用したアプリケーション対応バックアップ"^]
-* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["アプリケーション向けのクラウドバックアップ"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["「Cloud Backup for Applications」ポッドキャストをお聞きください"^]
 
 
 

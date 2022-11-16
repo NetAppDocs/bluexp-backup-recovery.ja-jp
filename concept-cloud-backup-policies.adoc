@@ -263,7 +263,7 @@ ifdef::gcp[]
 
 * GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。
 +
-低コストのNearline_storageクラスまたは_Coldline_or_Archive_storageクラスを使用できます。ただし、これらの他のストレージクラスについては、Cloud BackupのUIではなくGoogleで設定します。Google のトピックを参照してください link:https://cloud.google.com/storage/docs/storage-classes["ストレージクラス"^] Google Cloud Storageバケットのデフォルトストレージクラスの変更については、を参照してください。
+低コストのNearline_storageクラスまたは_Coldline_or_Archive_storageクラスを使用できます。ただし、これらの他のストレージクラスについては、Cloud BackupのUIではなくGoogleで設定します。Google のトピックを参照してください https://cloud.google.com/storage/docs/storage-classes["ストレージクラス"^] Google Cloud Storageバケットのデフォルトストレージクラスの変更については、を参照してください。
 
 
 

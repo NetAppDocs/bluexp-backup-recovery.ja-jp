@@ -53,7 +53,7 @@ image:screenshot_restore_dashboard.png["[ リストアダッシュボード ] �
 | フォルダ形式の構造を参照して、1つのバックアップファイル内のボリューム、フォルダ、またはファイルを検索します | すべてのバックアップファイル*のボリューム、フォルダ、ファイルを、ボリューム名またはボリューム名の一部または全部、サイズの範囲、および追加の検索フィルタで検索します 
 
 
-| ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloud、NetApp StorageGRID に格納されたバックアップファイルと連携します。 | ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloudに格納されたバックアップファイルと連携します 
+| ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloud、NetApp StorageGRID に格納されたバックアップファイルと連携します | ボリュームとファイルのリストアは、Amazon S3、Azure Blob、Google Cloud、NetApp StorageGRID に格納されたバックアップファイルと連携します 
 
 
 | インターネットにアクセスできないサイトのStorageGRID からボリューム、フォルダ、およびファイルをリストアします | ダークサイトではサポートされない 
@@ -119,12 +119,36 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 | Azure Blob の略 | オンプレミスの Azure ONTAP システムに Cloud Volumes ONTAP を導入 | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
 
 
-| Google クラウドストレージ | Google オンプレミス ONTAP システムの Cloud Volumes ONTAP | GoogleのCloud Volumes ONTAP （^1 ^）オンプレミスONTAP システム（^1 ^）endif：gcp [] 
+| Google クラウドストレージ | Google オンプレミス ONTAP システムの Cloud Volumes ONTAP | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
 
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム | オンプレミスの ONTAP システム 
 |===
-（^1 ^）_このサポートを受けるには、Google Cloud Platform VPCにコネクタを導入する必要があります。_
+参照と復元の場合、コネクタは次の場所にインストールできます。
+
+ifdef::aws[]
+
+* Amazon S3の場合、ConnectorはAWSまたは自社運用のどちらにも導入できます
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure Blobの場合は、Azureまたは自社運用環境に導入できます
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud Storageの場合、ConnectorをGoogle Cloud Platform VPCに導入する必要があります
+
+
+endif::gcp[]
+
+* StorageGRID の場合は、コネクタがオンプレミスに導入されている必要があります
+
 
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
 
@@ -277,7 +301,7 @@ image:diagram_browse_restore_file.png["ブラウズおよびリストアを使�
 
 
 
-==== Browse & Restoreを使用してフォルダとファイルを復元する
+==== フォルダとファイルのリストア
 
 ONTAP ボリュームのバックアップからボリュームにフォルダまたはファイルをリストアするには、次の手順を実行します。フォルダまたはファイルのリストアに使用するボリュームの名前とバックアップファイルの日付を確認しておく必要があります。この機能では、ライブブラウズを使用して、各バックアップファイル内のディレクトリとファイルのリストを表示できます。
 
@@ -442,10 +466,33 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 | Google クラウドストレージ | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
 
 
-| NetApp StorageGRID | 現在サポートされていません 
+| NetApp StorageGRID | オンプレミスの ONTAP システム 
 |===
+検索と復元の場合、コネクタは次の場所にインストールできます。
 
-TIP: 検索とリストアでは、Amazon S3またはAzure Blobからバックアップをリストアする際に、Connectorをクラウドプロバイダまたは社内に導入できます。Google Cloud Storageからバックアップをリストアするときは、クラウドにConnectorを導入する必要があります。
+ifdef::aws[]
+
+* Amazon S3の場合、ConnectorはAWSまたは自社運用のどちらにも導入できます
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure Blobの場合は、Azureまたは自社運用環境に導入できます
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud Storageの場合、ConnectorをGoogle Cloud Platform VPCに導入する必要があります
+
+
+endif::gcp[]
+
+* StorageGRID の場合は、インターネットに接続された社内にコネクタを導入する必要があります
+
 
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
 
@@ -507,6 +554,20 @@ ifdef::gcp[]
 
 endif::gcp[]
 
+* StorageGRID の要件：
++
+構成に応じて、検索とリストアの2つの方法が実装されています。
+
++
+** アカウントにクラウドプロバイダの資格情報がない場合は、インデックスカタログの情報がコネクタに保存されます。
+** ある場合 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS クレデンシャル"^] または https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。
++
+この実装を使用する場合は、前述のAWSとAzureの要件を参照してください。オンプレミスコネクタを使用している場合でも、コネクタ権限とクラウドプロバイダリソースの両方についてクラウドプロバイダの要件を満たしている必要があります。
+
+
+
+
+
 
 
 === 検索とリストアのプロセス
@@ -556,6 +617,9 @@ ifdef::gcp[]
 
 
 endif::gcp[]
+
+* StorageGRID に格納されたバックアップ用に、コネクタまたはクラウドプロバイダの環境にスペースがプロビジョニングされます。
+
 
 作業環境でインデックス作成がすでに有効になっている場合は ' 次のセクションに進んでデータをリストアしてください
 
@@ -634,6 +698,9 @@ ifdef::gcp[]
 
 
 endif::gcp[]
+
+* StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームが配置されているONTAP クラスタのIPspaceを入力します。
+
 
 ボリューム、フォルダ、またはファイルがリストアされ、リストアダッシュボードに戻り、リストア処理の進捗状況を確認できます。また、*ジョブ監視*タブをクリックしてリストアの進捗状況を確認することもできます。
 

@@ -32,7 +32,7 @@ AKS Kubernetes クラスタ上の永続ボリュームから Azure BLOB スト�
 
 
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Cloud Manager Marketplace のバックアップソリューション"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
+* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
 
 
 [role="quick-margin-para"]
@@ -171,4 +171,4 @@ image:screenshot_backup_select_volumes_k8s.png["バックアップする永続�
 
 Kubernetes ダッシュボードが表示され、バックアップの状態を監視できます。
 
-可能です link:task-managing-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] Azure 内の同じまたは別の Kubernetes クラスタ（同じリージョン内）に新しいボリュームとして配置する必要があります。
+可能です link:task-manage-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] Azure 内の同じまたは別の Kubernetes クラスタ（同じリージョン内）に新しいボリュームとして配置する必要があります。

@@ -25,7 +25,7 @@ Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開�
 .<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt="one "></span> 設定のサポートを確認します
 * AWSでCloud Volumes ONTAP 9.7P5以降を実行しています。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Cloud Manager Marketplace のバックアップソリューション"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
+* に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplaceバックアップ製品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
 * BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXPポリシー"^]。
 
 
@@ -69,7 +69,7 @@ S3 へのボリュームのバックアップを開始する前に、次の要�
 image:diagram_cloud_backup_cvo_aws.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
 
 サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
-ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 AWS Marketplace で Cloud Manager サブスクリプションを購入して、 Cloud Volumes ONTAP とクラウドバックアップを導入できます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["この Cloud Manager サブスクリプションに登録してください"^] Cloud Backup を有効にする前に、Cloud Backup の請求は、このサブスクリプションを通じて行われます。
+ライセンス要件:: Cloud Backup PAYGOライセンスの場合は、Cloud Volumes ONTAP とクラウドバックアップを導入できるAWS MarketplaceでBlueXPサブスクリプションが提供されます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["このBlueXPサブスクリプションを購読します"^] Cloud Backup を有効にする前に、Cloud Backup の請求は、このサブスクリプションを通じて行われます。
 +
 --
 Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace のページ"^] 次に https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["サブスクリプションを AWS クレデンシャルに関連付けます"^]。
