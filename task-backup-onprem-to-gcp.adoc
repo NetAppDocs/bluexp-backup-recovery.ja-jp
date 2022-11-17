@@ -38,10 +38,10 @@ summary: オンプレミスの ONTAP システムから Google Cloud Storage へ
 
 
 [role="quick-margin-para"]
-作業環境を選択し、右パネルのバックアップと復元サービスの横にある *Enable>Backup Volumes] をクリックして、セットアップ・ウィザードに従います。
+作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
 
 [role="quick-margin-para"]
 プロバイダとして Google Cloud を選択し、プロバイダの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。
@@ -67,11 +67,11 @@ Select Volumes （ボリュームの選択）ページで、デフォルトの�
 * プライベート接続- VPNまたはGoogle Cloud Interconnectを使用して、プライベートIPアドレスを使用するプライベートGoogle Accessインターフェイス経由でトラフィックをルーティングします。
 
 
-次の図は、*パブリック接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。オンプレミスにインストールしたコネクタ、またはGoogle Cloud Platform VPCに導入したコネクタを使用できます。
+次の図は、*パブリック接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。コネクターはGoogle Cloud Platform VPCに展開する必要があります。
 
 image:diagram_cloud_backup_onprem_gcp_public.png["Cloud Backupがパブリック接続を介してクラスタ上のボリュームおよびバックアップファイルが配置されているGoogle Cloudストレージと通信する仕組みを示す図。"]
 
-次の図は、*プライベート接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。オンプレミスにインストールしたコネクタ、またはGoogle Cloud Platform VPCに導入したコネクタを使用できます。
+次の図は、*プライベート接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。コネクターはGoogle Cloud Platform VPCに展開する必要があります。
 
 image:diagram_cloud_backup_onprem_gcp_private.png["Cloud Backupがプライベート接続を介してクラスタ上のボリュームおよびバックアップファイルが配置されているGoogle Cloudストレージと通信する仕組みを示す図。"]
 
@@ -126,12 +126,11 @@ Cloud Backup をセットアップすると、 IPspace で使用するように�
 
 === コネクタの作成または切り替え
 
-Google Cloud Platform VPCまたは自社運用環境に既にConnectorが導入されている場合は、すべて設定されます。そうでない場合は、これらの場所のいずれかにコネクタを作成して、ONTAP データをGoogle Cloudストレージにバックアップする必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。
+Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダまたはオンプレミスに導入されているコネクタは使用できません。
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["コネクタの使用を開始する"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["コネクタをGCPにインストールする"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
 
 
 
@@ -158,7 +157,7 @@ Google Cloud Platform VPCまたは自社運用環境に既にConnectorが導入�
 
 === コネクタの権限を確認または追加します
 
-Cloud Backupの検索とリストア機能を使用するには、Connectorの役割に特定の権限を付与して、Google Cloud BigQueryサービスにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
+Cloud Backupの「検索と復元」機能を使用するには、Connectorの役割に特定の権限を付与して、Google Cloud BigQueryサービスにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
 .手順
 . インチ link:https://console.cloud.google.com["Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
@@ -225,12 +224,12 @@ Cloud Backup でキーを入力する必要があるのは、あとでバック�
 Cloud Backup は、オンプレミスの作業環境からいつでも直接有効にできます。
 
 .手順
-. キャンバスから作業環境を選択し、右パネルのバックアップと復元サービスの横にある *Enable>Backup Volumes * をクリックします。
+. キャンバスから作業環境を選択し、右パネルのバックアップとリカバリサービスの横にある*Enable>Backup Volumes]をクリックします。
 +
 バックアップ先のGoogle Cloud StorageがCanvas上の作業環境として存在する場合は、クラスタをGoogle Cloud Storage作業環境にドラッグしてセットアップウィザードを開始できます。
 
 +
-image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
 
 . プロバイダとして Google Cloud を選択し、 * 次へ * をクリックします。
 . プロバイダの詳細を入力し、 * 次へ * をクリックします。

@@ -37,7 +37,7 @@ GKE Kubernetes クラスタ上の永続ボリュームから Google Cloud スト
 
 
 [role="quick-margin-para"]
-作業環境を選択し、右パネルの [ バックアップと復元 ] サービスの横にある [*Enable] をクリックして、セットアップ・ウィザードに従います。
+作業環境を選択し、右パネルでバックアップ/リカバリサービスの横にある*有効化*をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
 image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できる Cloud Backup Enable ボタンを示すスクリーンショット。"]
@@ -145,7 +145,7 @@ GCP サービスアカウント:: 事前定義された Storage Admin ロール�
 Kubernetesの作業環境からCloud Backupをいつでも直接有効にできます。
 
 .手順
-. 作業環境を選択し、右パネルの [ バックアップと復元 ] サービスの横にある [*Enable] をクリックします。
+. 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化*をクリックします。
 +
 image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できるクラウドバックアップ設定ボタンを示すスクリーンショット。"]
 

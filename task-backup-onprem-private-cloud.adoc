@@ -43,10 +43,10 @@ summary: オンプレミスの ONTAP システムから NetApp StorageGRID シ�
 
 
 [role="quick-margin-para"]
-作業環境を選択し、右パネルのバックアップと復元サービスの横にある *Enable>Backup Volumes] をクリックして、セットアップ・ウィザードに従います。
+作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
 
 [role="quick-margin-para"]
 プロバイダとしてStorageGRID を選択し、StorageGRID サーバとS3テナントアカウントの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。
@@ -209,12 +209,12 @@ TIP: PAYGO ライセンスは、ファイルを StorageGRID にバックアッ�
 Cloud Backup は、オンプレミスの作業環境からいつでも直接有効にできます。
 
 .手順
-. キャンバスからオンプレミスの作業環境を選択し、右パネルのバックアップと復元サービスの横にある *Enable> バックアップボリューム * をクリックします。
+. キャンバスからオンプレミスの作業環境を選択し、右パネルのバックアップおよびリカバリサービスの横にある*Enable>バックアップボリューム*をクリックします。
 +
 バックアップ先のStorageGRID がキャンバス上の作業環境として存在する場合、クラスタをStorageGRID 作業環境にドラッグしてセットアップウィザードを開始できます。
 
 +
-image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる [ バックアップと復元を有効にする ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
 
 . プロバイダとして * StorageGRID * を選択し、 * Next * をクリックして、プロバイダの詳細を入力します。
 +

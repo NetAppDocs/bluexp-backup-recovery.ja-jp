@@ -30,7 +30,7 @@ Cloud Volumes ONTAP から Azure Blob Storage へのデータのバックアッ�
 
 .<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span> 新規または既存のシステムで Cloud Backup を有効にします
 * 新しいシステム： Cloud Backup は、作業環境ウィザードではデフォルトで有効になっています。このオプションは必ず有効にしておいてください。
-* 既存のシステム：作業環境を選択し、右パネルのバックアップと復元サービスの横にある * 有効化 * をクリックして、セットアップウィザードに従います。
+* 既存のシステム：作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable*をクリックして、セットアップ・ウィザードに従います。
 +
 image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できる Cloud Backup Enable ボタンを示すスクリーンショット。"]
 
@@ -160,7 +160,7 @@ Cloud Backup はシステムで有効になり、ボリュームを毎日バッ�
 作業環境から Cloud Backup をいつでも直接有効にできます。
 
 .手順
-. 作業環境を選択し、右パネルの [ バックアップと復元 ] サービスの横にある [*Enable] をクリックします。
+. 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化*をクリックします。
 +
 バックアップのAzure BlobデスティネーションがCanvas上に作業環境として存在する場合は、クラスタをAzure Blob Working環境にドラッグしてセットアップウィザードを開始できます。
 
