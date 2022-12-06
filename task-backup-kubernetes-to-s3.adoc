@@ -22,7 +22,8 @@ EKS Kubernetes クラスタ上の永続ボリュームから Amazon S3 ストレ
 
 これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。
 
-.<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt="one "></span> 前提条件を確認します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 前提条件を確認する
+[role="quick-margin-list"]
 * KubernetesクラスタがBlueXP作業環境として検出されました。
 +
 ** Trident がクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以降である必要があります。
@@ -36,18 +37,21 @@ EKS Kubernetes クラスタ上の永続ボリュームから Amazon S3 ストレ
 * BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]。
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 既存のKubernetesクラスタでCloud Backupを有効にします
 [role="quick-margin-para"]
 作業環境を選択し、右パネルでバックアップ/リカバリサービスの横にある*有効化*をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
 image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できる Cloud Backup Enable ボタンを示すスクリーンショット。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] バックアップポリシーを定義
 [role="quick-margin-para"]
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、または毎月のバックアップに変更するか、システム定義のポリシーの中からオプションを追加する 1 つを選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
 image:screenshot_backup_policy_k8s_aws.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] バックアップするボリュームを選択します
 [role="quick-margin-para"]
 Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。S3 バケットは、 Cloud Volumes ONTAP システムと同じ AWS アカウントおよびリージョンに自動的に作成され、バックアップファイルが格納されます。
 
@@ -209,8 +213,10 @@ image:screenshot_backup_select_volumes_k8s.png["バックアップする永続�
 . Activate Backup * をクリックすると、選択した各ボリュームの初期バックアップの実行が開始されます。
 
 
+.結果
 S3 バケットは、 Cloud Volumes ONTAP システムと同じ AWS アカウントおよびリージョンに自動的に作成され、バックアップファイルが格納されます。
 
 Kubernetes ダッシュボードが表示され、バックアップの状態を監視できます。
 
+.次の手順
 可能です link:task-manage-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] AWS の同じまたは別の Kubernetes クラスタ（同じリージョン内）上の新しいボリュームとして。

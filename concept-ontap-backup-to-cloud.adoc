@@ -71,24 +71,21 @@ Cloud Backup を使用すると、以下の作業環境から次のパブリッ�
 |===
 ONTAP バックアップファイルから次の作業環境にボリューム、フォルダ、または個々のファイルをリストアできます。
 
-[cols="25,33,37"]
+[cols="50,50"]
 |===
-| バックアップファイル 2+| デスティネーションの作業環境 
+| バックアップファイルの場所 | デスティネーション作業環境ifdef：aws [] 
 
 
-| * 場所 * | * ボリュームの復元 * | *フォルダとファイルのリストア* ifdef：aws [] 
+| Amazon S3 | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
 
 
-| Amazon S3 | オンプレミスの AWS ONTAP システムに Cloud Volumes ONTAP が導入されている | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
+| Azure Blob の略 | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
 
 
-| Azure Blob の略 | オンプレミスの Azure ONTAP システムに Cloud Volumes ONTAP を導入 | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
+| Google クラウドストレージ | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
 
 
-| Google クラウドストレージ | Google オンプレミス ONTAP システムの Cloud Volumes ONTAP | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
-
-
-| NetApp StorageGRID | オンプレミスの ONTAP システム | オンプレミスの ONTAP システム 
+| NetApp StorageGRID | オンプレミスの ONTAP システム 
 |===
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
 
@@ -107,10 +104,25 @@ Cloud Backupでは、次のタイプのボリュームをサポートしてい�
 * FlexVol 読み書き可能ボリューム
 * SnapMirrorデータ保護（DP）デスティネーションボリューム
 * SnapLock Enterpriseボリューム（ONTAP 9.11.1以降が必要）
++
+** SnapLock Complianceボリュームは、現在のところサポートされていません。
 
 
-FlexGroup ボリュームとSnapLock Complianceボリュームは、現在のところサポートされていません。
+* FlexGroup ボリューム（ONTAP 9.12.1以降が必要）
 
+
+[NOTE]
+====
+* FlexGroup 制限*：
+
+* オンプレミスのONTAP システムでは、フルボリュームリストアがサポートされています。Cloud Volumes ONTAP システムは現在サポートされていません。
+* ファイルレベルのリストアは、オンプレミスのONTAP システムとCloud Volumes ONTAP システムの両方でサポートされています。
+* ディレクトリ/フォルダのリストアは現在サポートされていません。
+* バックアップをアーカイブストレージに移動できません。
+* バックアップではDataLockとRansomwareによる保護は使用できません。
+
+
+====
 
 
 == コスト
@@ -162,7 +174,7 @@ endif::gcp[]
 
 サービス料金はネットアップに支払われ、バックアップの作成時とリストア時のボリューム、またはファイルに対する費用の両方が含まれます。保護するデータの料金は、オブジェクトストレージにバックアップされる ONTAP のソースの使用済み論理容量（ _Before_ONTAP 効率化）で計算されます。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。
 
-バックアップサービスの料金を支払う方法は 3 通りあります。1 つ目は、クラウドプロバイダを利用して月額料金を支払う方法です。2つ目のオプションは、年間契約を取得することです。3 つ目のオプションは、ネットアップからライセンスを直接購入することです。を参照してください ,ライセンス 詳細については、を参照してください
+バックアップサービスの料金を支払う方法は 3 通りあります。1 つ目は、クラウドプロバイダを利用して月額料金を支払う方法です。2つ目のオプションは、年間契約を取得することです。3 つ目のオプションは、ネットアップからライセンスを直接購入することです。を参照してください <<ライセンス,ライセンス>> 詳細については、を参照してください
 
 
 
@@ -240,7 +252,7 @@ link:task-licensing-cloud-backup.html#use-an-annual-contract["年間契約の設
 
 == Cloud Backup の仕組み
 
-Cloud Volumes ONTAP またはオンプレミスの ONTAP システムでクラウドバックアップを有効にすると、サービスはデータのフルバックアップを実行します。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。Cloud Backupはの上に構築されています https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror Cloudテクノロジ"]。
+Cloud Volumes ONTAP またはオンプレミスの ONTAP システムでクラウドバックアップを有効にすると、サービスはデータのフルバックアップを実行します。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。Cloud Backupはの上に構築されています https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror Cloudテクノロジ"^]。
 
 
 CAUTION: クラウドプロバイダ環境からバックアップファイルの管理や変更を直接行うと、ファイルが破損してサポートされない構成になる可能性があります。
@@ -359,9 +371,9 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。
+* GCP では、バックアップは _Standard_storage クラスに関連付けられます。
 +
-また、 lower cost_Nearline_storage クラスまたは _Coldline_or_Archive_storage クラスを使用することもできます。これらの他のストレージクラスはGoogleで設定します。Google のトピックを参照してください link:https://cloud.google.com/storage/docs/storage-classes["ストレージクラス"^] ストレージクラスの変更については、を参照してください。
+オンプレミスクラスタがONTAP 9.12.1以降を使用している場合、コストをさらに最適化するために、特定の日数後に、Cloud Backup UIで古いバックアップを_Archive_storageに階層化することを選択できます。（この機能は現在、Cloud Volumes ONTAP システムでは使用できません）。 link:reference-google-backup-tiers.html["Googleアーカイブストレージの詳細をご覧ください"^]。
 
 
 
@@ -417,9 +429,9 @@ endif::gcp[]
 ** ボリュームに適用される Snapshot ポリシーは、日単位、週単位、月単位など、クラウドバックアップで認識されるポリシーのいずれかである必要があります。デフォルトの「 sm_created 」ポリシー（すべての Snapshot をミラー * する場合に使用） が認識されず、バックアップ可能なボリュームのリストに DP ボリュームが表示されない。
 
 
+* MetroCluster （ MCC ）バックアップは、 ONTAP セカンダリからのみサポートされます。 MCC>SnapMirror > ONTAP > Cloud Backup > オブジェクトストレージ。
 * [今すぐバックアップ]ボタンを使用したアドホック・ボリューム・バックアップは'データ保護ボリュームではサポートされていません
 * SM-BC 設定はサポートされません。
-* MetroCluster （ MCC ）バックアップは、 ONTAP セカンダリからのみサポートされます。 MCC>SnapMirror > ONTAP > Cloud Backup > オブジェクトストレージ。
 * ONTAP では、単一のボリュームから複数のオブジェクトストアへの SnapMirror 関係のファンアウトはサポートされていません。そのため、この構成は Cloud Backup ではサポートされていません。
 * オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれ、Cloud Backupの設定を使用して管理する必要があります。
 
@@ -435,6 +447,6 @@ endif::gcp[]
 * 参照と復元および検索と復元では、一度に1つのフォルダを復元できます。
 * リストアするファイルは、デスティネーションボリュームの言語と同じ言語を使用している必要があります。言語が異なる場合は、エラーメッセージが表示されます。
 * 異なるサブネットに異なるBlueXPシステムを持つ同じアカウントを使用している場合、ファイルレベルの復元はサポートされません。
-* バックアップファイルがアーカイブストレージにある場合は、個々のフォルダをリストアできません。
+* バックアップファイルがアーカイブストレージにある場合、個 々 のフォルダをリストアすることはできません。
 * インターネットにアクセスできないサイト（ダークサイト）にコネクタがインストールされている場合は、検索とリストアを使用したファイルレベルのリストアはサポートされません。
 

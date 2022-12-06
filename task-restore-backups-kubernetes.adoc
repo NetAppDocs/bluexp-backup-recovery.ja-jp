@@ -66,4 +66,5 @@ image:screenshot_restore_k8s_volume.png["永続ボリュームのリストア先
 . リストア * をクリックすると、 Kubernetes ダッシュボードに戻り、リストア処理の進捗状況を確認できます。
 
 
+.結果
 BlueXPは、選択したバックアップに基づいて、Kubernetesクラスタに新しいボリュームを作成します。可能です link:task-manage-backups-kubernetes.html["この新しいボリュームのバックアップ設定を管理します"] 必要に応じて。

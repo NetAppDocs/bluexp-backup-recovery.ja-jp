@@ -160,6 +160,8 @@ sidebar:
       url: "/reference-aws-backup-tiers.html"
     - title: サポートされている Azure アーカイブアクセス層
       url: "/reference-azure-backup-tiers.html"
+    - title: サポートされているGoogleアーカイブストレージ階層
+      url: "/reference-google-backup-tiers.html"
     - title: Azure でマルチアカウントアクセス用にバックアップを設定
       url: "/reference-backup-multi-account-azure.html"
   - title: 知識とサポート

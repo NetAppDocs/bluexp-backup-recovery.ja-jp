@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: reference-backup-cbs-db-in-dark-site.html 
+keywords: backup database, recover database 
+summary: インターネットにアクセスできないサイトでクラウドバックアップを使用する場合は、問題 にBlueXP Connectorホストシステムがインストールされている場合に、重要なクラウドバックアップファイルを定期的にバックアップする必要があります。これにより、新しいコネクタを導入し、重要なクラウドバックアップデータをリストアできるようになります。 
+---
+= ダークサイトでCloud Backupのデータのバックアップとリストアを行う
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+インターネットにアクセスできないサイトでクラウドバックアップを使用する場合は、問題 にBlueXP Connectorホストシステムがインストールされている場合に、重要なクラウドバックアップファイルを定期的にバックアップする必要があります。これにより、新しいコネクタを導入し、重要なクラウドバックアップデータをリストアできるようになります。
+
+BlueXP Connectorがクラウドプロバイダまたはインターネットにアクセス可能な独自のホストシステムに導入されているSaaS環境でCloud Backupを使用すると、重要なすべてのCloud Backup設定データがバックアップされ、クラウドに保存されます。インターネットアクセスのないサイト（「ダークサイト」とも呼ばれる）でCloud Backupを使用している場合、このクラウドバックアップ情報はローカルコネクタシステムにのみ保存されます。
+
+ここでは、接続されているStorageGRID システムに重要なクラウドバックアップデータをバックアップする方法について説明します。また、必要に応じて新しいコネクタにデータをリストアする方法についても説明します。
+
+
+NOTE: このCloud Backupデータは定期的にバックアップするように計画して、最新のデータに常時アクセスできるようにしてください。
+
+
+
+== 重要なクラウドバックアップデータをバックアップ
+
+バックアップが必要なデータには、次の2種類があります。
+
+* Cloud Backupデータベース
+* インデックスカタログファイル（検索とリストア機能に使用）
+
+
+ボリュームデータがCloud Backupデータベースまたはインデックスカタログファイルに含まれることはありません。
+
+
+
+=== Cloud Backupデータベースをバックアップします
+
+Cloud Backupデータベースには、すべてのボリューム、バックアップファイル、バックアップポリシー、および構成情報のリストが含まれています。
+
+.手順
+. 適切なクレデンシャルを使用してコネクタホストシステムにログインします。
+. 次のコマンドを入力して、MySQLコンテナシェルを入力します。
++
+[source, cli]
+----
+docker exec -it ds_mysql_1 sh
+----
+. コンテナシェルで、「env」を導入します。
+. MySQL DBのパスワードが必要なので、キー「mysql_root_password」の値をコピーします。
+. 次のコマンドを入力して、Cloud BackupのMySQL DBをバックアップします。
++
+[source, cli]
+----
+mysqldump --user root --password -p cloud_backup --result-file=mysql.dump.cloud_backup.sql
+----
+. 次のコマンドを入力して、MySQL DockerコンテナからMySQL DBのバックアップをコピーします。
++
+[source, cli]
+----
+docker cp ds_mysql_1:/mysql.dump.cloud_backup.sql .
+----
+. バックアップをネットワーク内の安全な場所にコピーします。ローカルStorageGRID システムは、その場所へのONTAP ボリュームのバックアップを作成する場合に使用できます。
+
+
+
+
+=== インデックス付けされたカタログファイルをバックアップします
+
+インデックスカタログは、検索と復元機能に使用されます。このファイルには、すべてのボリュームとすべてのバックアップファイルに関する情報が含まれているため、ボリュームのデータをリストアする際に、検索を迅速かつ効率的に実行できます。
+
+. Connectorホストシステムで、ディレクトリを「/tmp」に変更します。
+. [インデックスカタログ]フォルダを探します。文字列* catalog *から始まります。
+. 次のコマンドを入力して、「catalog <_xxxxxx_>」フォルダを圧縮します。
++
+[source, cli]
+----
+zip -r catalogxxxxxx.zip catalogxxxxxx
+----
+. 圧縮されたバックアップをネットワーク内の安全な場所にコピーします。
+
+
+
+
+== Cloud Backupのデータを新しいコネクタにリストアします
+
+オンプレミスコネクタに重大な障害が発生した場合は、新しいコネクタを取り付け、Cloud Backupデータを新しいコネクタにリストアする必要があります。
+
+Cloud Backupシステムを稼働状態に戻すには、次の4つのタスクを実行する必要があります。
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["新しいオンプレミスLinuxホストに新しいコネクタをインストールします"^]
+* Cloud Backupデータベースをリストアします
+* インデックス付けされたカタログファイルを復元します
+* すべてのオンプレミスONTAP システムをBlueXP UIに再検出します
+
+
+システムが正常に動作していることを確認したら、新しいバックアップファイルを作成することをお勧めします。
+
+
+
+=== Cloud Backupデータベースをリストアします
+
+. 新しいコネクタをインストールしたら、適切なクレデンシャルを使用してコネクタホストシステムにログインします。
+. MySQLのバックアップを安全な場所から新しいコネクタホストにコピーします。
+. 次のコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。
++
+[source, cli]
+----
+docker cp mysql.dump.cloud_backup.sql ds_mysql_1:/.
+----
+. 次のコマンドを使用してMySQLコンテナシェルを入力します。
++
+[source, cli]
+----
+docker exec -it ds_mysql_1 sh
+----
+. コンテナシェルで、「env」を導入します。
+. MySQL DBのパスワードが必要なので、キー「mysql_root_password」の値をコピーします。
+. 次のコマンドを使用して、Cloud Backup MySQL DBをリストアします。
++
+[source, cli]
+----
+mysql -u root -p cloud_backup < mysql.dump.cloud_backup.sql
+----
+. 次のSQLコマンドを使用して、Cloud Backup MySQL DBが正しくリストアされたことを確認します。
++
+[source, cli]
+----
+# mysql -u root -p cloud_backup
+----
++
+パスワードを入力します。
+
++
+[source, cli]
+----
+mysql> show tables;
+mysql> select * from volume;
+----
++
+表示されているボリュームが、元の環境に存在していたボリュームと同じかどうかを確認します。
+
+
+
+
+
+=== インデックス付けされたカタログファイルを復元します
+
+. Indexed Catalogバックアップzipファイルを'セキュアな場所から'/tmpフォルダ内の新しいコネクタ・ホストにコピーします
+. 次のコマンドを使用して、「catalxxxxxx.zip」ファイルを解凍します。
++
+[source, cli]
+----
+unzip catalogxxxxxx.zip
+----
+. 「*ls *」コマンドを実行して、サブフォルダ「changes」と「snapshots」を含むフォルダ「catalogxxxxxx」が作成されていることを確認します。
+
+
+
+
+=== クラスタを検出し、Cloud Backupの設定を確認します
+
+. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discovering-clusters-from-the-canvas-page["オンプレミスのONTAP 作業環境をすべて検出できます"^] 以前の環境で使用できていたものです。
+. 必要に応じて、 https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["StorageGRID システムを検出"^]。
+. 各ONTAP 作業環境を選択し、右パネルのバックアップ/リカバリ・サービスの横にある*バックアップの表示*をクリックします。
++
+ボリュームに対して作成されたすべてのバックアップが表示されます。
+
+. リストア・ダッシュボードの[検索とリストア]セクションで、[*インデックス設定*]をクリックします。
++
+前の手順でインデックスカタログを有効にした作業環境が有効なままであることを確認してください。
+
+. [検索と復元]ページで、いくつかのカタログ検索を実行して、インデックス付けされたカタログの復元が正常に完了したことを確認します。
+

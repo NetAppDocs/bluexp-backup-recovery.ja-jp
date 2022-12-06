@@ -182,6 +182,7 @@ image:screenshot_services_license_add2.png["Cloud Backup BYOL ライセンスを
 
 
 
+.結果
 BlueXPでは、Cloud Backupがアクティブになるようにライセンスが追加されています。
 
 
@@ -201,7 +202,7 @@ Cloud Backup のライセンスは有効期限が切れる前に更新できる�
 
 . BlueXPがライセンスを自動的に更新できない場合(たとえば、ダークサイトにインストールされている場合)は、ライセンスファイルを手動でアップロードする必要があります。
 +
-.. 可能です  your Cloud Backup license file,ライセンスファイルをネットアップサポートサイトから入手します。
+.. 可能です <<Cloud Backup ライセンスファイルを取得します,ライセンスファイルをネットアップサポートサイトから入手します>>。
 .. [ デジタルウォレット ] ページの [ データサービスライセンス ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。
 +
 image:screenshot_services_license_update1.png["特定のサービスの [ ライセンスの更新 ] ボタンを選択するスクリーンショット。"]
@@ -211,6 +212,7 @@ image:screenshot_services_license_update1.png["特定のサービスの [ ライ
 
 
 
+.結果
 ライセンスが更新され、Cloud Backupが引き続きアクティブになります。
 
 

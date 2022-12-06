@@ -24,7 +24,8 @@ summary: オンプレミスの ONTAP システムから Azure BLOB ストレー�
 
 これらの手順を実行すると、すぐに作業を開始できます。また、残りのセクションまでスクロールして詳細を確認することもできます。
 
-.<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt="one "></span> 設定のサポートを確認します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
+[role="quick-margin-list"]
 * オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタで ONTAP 9.7P5 以降が実行されています。
@@ -36,24 +37,28 @@ summary: オンプレミスの ONTAP システムから Azure BLOB ストレー�
 * バックアップを配置するオブジェクトストレージスペース用の有効な Azure サブスクリプションが必要です。
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムで Cloud Backup を有効にします
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] クラウドプロバイダを選択し、プロバイダの詳細を入力します
 [role="quick-margin-para"]
 プロバイダとして Microsoft Azure を選択し、プロバイダの詳細を入力します。バックアップを作成する Azure サブスクリプションとリージョンを選択する必要があります。また、 Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを選択してデータを暗号化することもできます。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_to_azure.png["オンプレミスクラスタから Azure Blob Storage にボリュームをバックアップする場合のクラウドプロバイダの詳細を示すスクリーンショット。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] クラスタ IPspace とプライベート VNet エンドポイントのオプションの使用を選択します
 [role="quick-margin-para"]
 ボリュームが配置されている ONTAP クラスタ内の IPspace を選択します。また、既存の Azure プライベートエンドポイントを使用して、オンプレミスのデータセンターから VNet へのよりセキュアな接続を実現することもできます。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Azure BLOB ストレージにボリュームをバックアップする場合のネットワークの詳細を示すスクリーンショット。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] デフォルトのバックアップポリシーを定義
 [role="quick-margin-para"]
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
@@ -63,6 +68,7 @@ image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Az
 [role="quick-margin-para"]
 image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] バックアップするボリュームを選択します
 [role="quick-margin-para"]
 Select Volumes （ボリュームの選択）ページで、デフォルトのバックアップポリシーを使用してバックアップするボリュームを特定します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、あとから追加のポリシーを作成してボリュームに適用できます。
 
@@ -173,6 +179,7 @@ Connectorがクラウドに導入されている場合、Cloud BackupはAzure Go
 
 Cloud Backupの検索とリストア機能を使用するには、Connectorの役割に特定の権限を付与して、Azure Synapse WorkspaceとData Lakeストレージアカウントにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
+.を開始する前に
 Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
 
 .手順
@@ -302,12 +309,13 @@ image:screenshot_backup_policy_azure.png["クラウドバックアップの設�
 +
 image:screenshot_backup_select_volumes.png["バックアップするボリュームを選択するスクリーンショット。"]
 
-** この作業環境で、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致するボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
+** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
 . Activate Backup * をクリックすると、ボリュームの初期バックアップの作成が開始されます。
 
 
+.結果
 BLOBストレージコンテナは、入力したリソースグループに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
 
 

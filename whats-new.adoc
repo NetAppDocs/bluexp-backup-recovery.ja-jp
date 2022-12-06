@@ -18,6 +18,32 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2022年12月6日
+
+
+
+=== Googleアーカイブストレージクラスがサポートされるようになりました
+
+バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。より古いバックアップをGoogle Archiveストレージに階層化して、コストをさらに最適化できるようになりました。
+
+この機能は、現在、ONTAP 9.12.1以降を使用するオンプレミスONTAP クラスタでサポートされています。現在、Cloud Volumes ONTAP システムでは使用できません。
+
+
+
+=== FlexGroup ボリュームのサポート
+
+Cloud BackupでFlexGroup ボリュームがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#supported-volumes["サポートされるボリュームタイプの一覧を参照してください"]。
+
+
+
+=== バックアップのデータをCloud Volumes ONTAP システムの特定のアグリゲートにリストアする機能
+
+以前のリリースでは、データをオンプレミスのONTAP システムにリストアする場合にのみアグリゲートを選択できました。この機能は、Cloud Volumes ONTAP システムにデータをリストアする場合に使用できるようになりました。
+
+
+
 == 2022年11月2日
 
 
@@ -38,7 +64,7 @@ Cloud Backup の新機能をご確認ください。
 
 === Cloud BackupのアラートをEメールおよび通知センターで受信するためのサポートが追加されました
 
-Cloud Backupは、BlueXP Notificationサービスに統合されています。Cloud Backup通知を表示するには、BlueXPメニューバーの通知ベルをクリックします。また、通知を電子メールで送信するようにBlueXPを構成することもできます。これにより、システムにログインしていないときでも重要なシステムアクティビティを通知できます。このEメールは、バックアップとリストアのアクティビティに注意する必要があるすべての受信者に送信できます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#use-the-job-monitor-to-view-backup-and-restore-job-status["詳細をご確認ください"]。
+Cloud Backupは、BlueXP Notificationサービスに統合されています。Cloud Backup通知を表示するには、BlueXPメニューバーの通知ベルをクリックします。また、システムにログインしていないときでも重要なシステムアクティビティを通知できるように、メールで通知を送信するようにBlueXPを構成することもできます。このEメールは、バックアップとリストアのアクティビティに注意する必要があるすべての受信者に送信できます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#use-the-job-monitor-to-view-backup-and-restore-job-status["詳細をご確認ください"]。
 
 
 

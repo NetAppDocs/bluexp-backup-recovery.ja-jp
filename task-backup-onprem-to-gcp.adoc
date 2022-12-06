@@ -24,7 +24,8 @@ summary: オンプレミスの ONTAP システムから Google Cloud Storage へ
 
 これらの手順を実行すると、すぐに作業を開始できます。また、残りのセクションまでスクロールして詳細を確認することもできます。
 
-.<span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt="one "></span> 設定のサポートを確認します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
+[role="quick-margin-list"]
 * オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタで ONTAP 9.7P5 以降が実行されています。
@@ -37,21 +38,28 @@ summary: オンプレミスの ONTAP システムから Google Cloud Storage へ
 * ONTAP クラスタがデータをバックアップおよびリストアできるように、アクセスキーとシークレットキーを持つ Google アカウントを用意しておきます。
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムで Cloud Backup を有効にします
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] クラウドプロバイダを選択し、プロバイダの詳細を入力します
 [role="quick-margin-para"]
 プロバイダとして Google Cloud を選択し、プロバイダの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] デフォルトのバックアップポリシーを定義
 [role="quick-margin-para"]
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
+バックアップはデフォルトでStandardストレージに格納されます。クラスタでONTAP 9.12.1以降を使用している場合は、特定の日数が経過した後にGoogleアーカイブストレージにバックアップを階層化して、コストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+
+[role="quick-margin-para"]
 image:screenshot_backup_policy_gcp.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップするボリュームを選択します
 [role="quick-margin-para"]
 Select Volumes （ボリュームの選択）ページで、デフォルトのバックアップポリシーを使用してバックアップするボリュームを特定します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、あとから追加のポリシーを作成してボリュームに適用できます。
 
@@ -115,6 +123,9 @@ Cloud Backup をセットアップすると、 IPspace で使用するように�
 
 * ノードのクラスタ間 LIF からオブジェクトストアにアクセスできます。
 * ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
++
+Private Google AccessまたはPrivate Service Connectを使用している場合は、DNSサーバーがstorage.googleapis.comを正しい内部（プライベート）IPアドレスに指定するように設定されていることを確認します。
+
 * をデフォルトとは異なる IPspace を使用している場合は、オブジェクトストレージへのアクセスを取得するために静的ルートの作成が必要になることがあります。
 * 必要に応じてファイアウォールルールを更新し、 ONTAP からオブジェクトストレージへのポート 443 経由の Cloud Backup Service 接続と、ポート 53 （ TCP / UDP ）経由での Storage VM から DNS サーバへの名前解決トラフィックを許可します。
 
@@ -126,7 +137,7 @@ Cloud Backup をセットアップすると、 IPspace で使用するように�
 
 === コネクタの作成または切り替え
 
-Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダまたはオンプレミスに導入されているコネクタは使用できません。
+Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダやオンプレミスに導入されているコネクタは使用できません。
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["コネクタの使用を開始する"^]
@@ -147,9 +158,9 @@ Google Cloud Platform VPCにコネクタがすでに導入されている場合�
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
 
 
-. Connector を配置するサブネットで Private Google Access を有効にします。 https://cloud.google.com/vpc/docs/configure-private-google-access["プライベート Google アクセス"^] ONTAP クラスタからVPCへの直接接続が確立されており、ConnectorとGoogle Cloud Storage間の通信を仮想プライベートネットワーク（*プライベート*接続）のままにする場合は、が必要です。
+. Connectorを展開するサブネットでプライベートGoogleアクセス（またはプライベートサービス接続）を有効にします。 https://cloud.google.com/vpc/docs/configure-private-google-access["プライベート Google アクセス"^] または https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises["Private Service Connectの略"^] ONTAP クラスタからVPCへの直接接続が確立されていて、ConnectorとGoogle Cloud Storage間の通信を仮想プライベートネットワーク（*プライベート*接続）のままにする場合に必要です。
 +
-プライベート Google アクセスは、内部（プライベート） IP アドレスのみ（外部 IP アドレスは使用しない）を持つ VM インスタンスで機能します。
+Googleの指示に従って、プライベートアクセスオプションを設定します。DNSサーバが、www.googleapis.comおよびstorage.googleapis.comを正しい内部（プライベート）IPアドレスに指すように設定されていることを確認します。
 
 
 
@@ -248,6 +259,7 @@ image:screenshot_backup_onprem_to_google.png["オンプレミスのクラスタ�
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
 .. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
+.. ONTAP 9.12.1以降を使用している場合は、特定の日数を経過したバックアップをアーカイブストレージに階層化して、さらにコストを最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
 +
 image:screenshot_backup_policy_gcp.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
 
@@ -261,15 +273,14 @@ image:screenshot_backup_policy_gcp.png["クラウドバックアップの設定�
 +
 image:screenshot_backup_select_volumes.png["バックアップするボリュームを選択するスクリーンショット。"]
 
-** この作業環境で、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致するボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
+** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
 . Activate Backup * をクリックすると、ボリュームの初期バックアップの作成が開始されます。
 
 
+.結果
 Google Cloud Storageバケットは、入力したGoogleアクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
-
-バックアップは、デフォルトで_Standard_storageクラスに関連付けられています。低コストのNearlineクラス、_Coldline_クラス、または_Archive_storageクラスを使用できます。ただし、ストレージクラスはCloud BackupのUIではなくGoogleで設定します。Google のトピックを参照してください https://cloud.google.com/storage/docs/changing-default-storage-class["バケットのデフォルトのストレージクラスを変更する"^] を参照してください。
 
 
 

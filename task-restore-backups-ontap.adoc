@@ -74,9 +74,9 @@ image:screenshot_restore_dashboard.png["[ リストアダッシュボード ] �
 
 使用するリストア処理のタイプに応じた要件とリストア手順を確認します。
 
-*  volumes using Browse  Restore,ブラウズおよびリストアを使用してボリュームをリストアします
-*  folders and files using Browse  Restore,ブラウズおよびリストアを使用して'フォルダとファイルをリストアします
-*  ONTAP data using Search  Restore,検索とリストアを使用して'ボリューム'フォルダ'およびファイルをリストアします
+* <<Restoring volumes using Browse & Restore,ブラウズおよびリストアを使用してボリュームをリストアします>>
+* <<Restoring folders and files using Browse & Restore,ブラウズおよびリストアを使用して'フォルダとファイルをリストアします>>
+* <<Restoring ONTAP data using Search & Restore,検索とリストアを使用して'ボリューム'フォルダ'およびファイルをリストアします>>
 
 
 
@@ -85,7 +85,7 @@ image:screenshot_restore_dashboard.png["[ リストアダッシュボード ] �
 
 ボリューム、フォルダ、またはファイルのリストアを開始する前に、リストアするボリュームの名前、ボリュームが存在する作業環境の名前、およびリストア元のバックアップファイルのおおよその日付を確認しておく必要があります。
 
-*注：リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降）にある場合、リストア処理にはより長い時間がかかり、コストが発生します。また、ボリュームリストアの場合はONTAP 9.10.1以降、ファイルリストアの場合は9.11.1も、デスティネーションクラスタで実行されている必要があります。
+*注：リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降）にある場合、リストア処理にはより長い時間がかかり、コストが発生します。また、ボリュームリストアの場合はONTAP 9.10.1以降、ファイルリストアの場合は9.11.1、Google Archiveの場合は9.12.1以降がデスティネーションクラスタで実行されている必要があります。
 
 ifdef::aws[]
 
@@ -99,30 +99,30 @@ link:reference-azure-backup-tiers.html["Azure アーカイブストレージか�
 
 endif::azure[]
 
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+
+endif::gcp[]
+
 
 
 === サポートされている作業環境とオブジェクトストレージプロバイダの参照とリストア
 
 ONTAP バックアップファイルから次の作業環境にボリューム、フォルダ、または個々のファイルをリストアできます。
 
-[cols="30,35,35"]
+[cols="50,50"]
 |===
-| バックアップファイルの場所 2+| デスティネーションの作業環境 
+| バックアップファイルの場所デスティネーション作業環境定義：aws [] | Amazon S3 
 
 
-|  | * ボリュームの復元 * | *フォルダとファイルのリストア* ifdef：aws [] 
+| AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] | Azure Blob の略 
 
 
-| Amazon S3 | オンプレミスの AWS ONTAP システムに Cloud Volumes ONTAP が導入されている | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
+| AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] | Google クラウドストレージ 
 
 
-| Azure Blob の略 | オンプレミスの Azure ONTAP システムに Cloud Volumes ONTAP を導入 | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
-
-
-| Google クラウドストレージ | Google オンプレミス ONTAP システムの Cloud Volumes ONTAP | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
-
-
-| NetApp StorageGRID | オンプレミスの ONTAP システム | オンプレミスの ONTAP システム 
+| GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] | NetApp StorageGRID 
 |===
 参照と復元の場合、コネクタは次の場所にインストールできます。
 
@@ -215,12 +215,9 @@ endif::gcp[]
 
 * StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームを配置するONTAP クラスタのIPspaceを選択します。
 +
-.. リストアしたボリュームに使用する名前を入力し、ボリュームを配置する Storage VM を選択します。デフォルトでは、 * <source_volume_name> _ Restore * がボリューム名として使用されます。
+.. リストアしたボリュームに使用する名前を入力し、ボリュームを配置するStorage VMとアグリゲートを選択します。デフォルトでは、 * <source_volume_name> _ Restore * がボリューム名として使用されます。
 +
 image:screenshot_restore_new_vol_name.png["リストアする新しいボリュームの名前を入力するスクリーンショット。"]
-
-+
-ボリュームの容量に使用するアグリゲートは、オンプレミスのONTAP システムにボリュームをリストアする場合にのみ選択できます。
 
 +
 また、（ ONTAP 9.10.1 以降で使用可能な）アーカイブストレージ階層にあるバックアップファイルからボリュームをリストアする場合は、リストア優先度を選択できます。
@@ -242,9 +239,16 @@ link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["Azu
 
 endif::azure[]
 
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。
+
+endif::gcp[]
+
 . リストアの進行状況を確認できるように、 * リストア * をクリックするとリストアダッシュボードに戻ります。
 
 
+.結果
 Cloud Backup は、選択したバックアップに基づいて新しいボリュームを作成します。可能です link:task-manage-backups-ontap.html["この新しいボリュームのバックアップ設定を管理します"] 必要に応じて。
 
 アーカイブストレージにあるバックアップファイルからボリュームをリストアする場合は、アーカイブ階層とリストアの優先順位によって数分から数時間かかることがあります。［*ジョブ監視*］タブをクリックすると、リストアの進行状況を確認できます。
@@ -271,12 +275,7 @@ ONTAP のバックアップから数ファイルしかリストアしない場�
 ==== 前提条件
 
 * FILE _ RESTORE処理を実行するには、ONTAP のバージョンが9.6以降である必要があります。
-* リストア処理を実行するには、ONTAP のバージョンが9.11.1以降である必要があります。
-
-
-ifdef::aws[]
-
-* AWS のクロスアカウントリストアを実行するには、 AWS コンソールで手動の操作が必要です。AWS のトピックを参照してください https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html["クロスアカウントバケットの権限を付与しています"^] を参照してください。
+* リストア処理を実行するには、ONTAP のバージョンが9.11.1以降である必要があります。ifdef：aws []
 
 
 endif::aws[]
@@ -337,6 +336,12 @@ ifdef::azure[]
 link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
 
 endif::azure[]
+
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。
+
+endif::gcp[]
 
 +ランサムウェアからの保護がバックアップファイルに対して有効になっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にしている場合）、データをリストアする前にバックアップファイルでランサムウェアスキャンを実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。
 
@@ -420,7 +425,7 @@ image:screenshot_restore_select_dest.png["リストアするファイルのボ�
 
 フォルダやファイルは、元のボリュームの場所、同じ作業環境内の別のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。
 
-リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降で使用可能）にある場合、リストア処理にはより長い時間がかかり、追加コストが発生します。ボリュームリストアの場合はONTAP 9.10.1以降、ファイルリストアの場合は9.11.1も、デスティネーションクラスタで9.10.1以降が実行されている必要があります。
+リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降で使用可能）にある場合、リストア処理にはより長い時間がかかり、追加コストが発生します。ボリュームリストアの場合はONTAP 9.10.1以降、ファイルリストアの場合は9.11.1、Google Archiveの場合は9.12.1以降がデスティネーションクラスタで実行されている必要があります。
 
 ifdef::aws[]
 
@@ -433,6 +438,12 @@ ifdef::azure[]
 link:reference-azure-backup-tiers.html["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
 
 endif::azure[]
+
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+
+endif::gcp[]
 
 [NOTE]
 ====
@@ -639,7 +650,7 @@ image:screenshot_restore_enable_indexing.png["インデックスカタログを�
 
 === 検索とリストアを使用したボリューム、フォルダ、およびファイルのリストア
 
-お先にどうぞ  the Indexed Catalog for each working environment,作業環境のインデックス作成を有効にしましたでは、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。
+お先にどうぞ <<各作業環境のインデックスカタログを有効にする,作業環境のインデックス作成を有効にしました>>では、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。
 
 .手順
 . BlueXPメニューから、*Protection > Backup and recovery*を選択します。
@@ -679,7 +690,7 @@ image:screenshot_restore_step2_search_restore.png["検索条件に一致する�
 ifdef::aws[]
 
 +
-*** Amazon S3 からリストアする場合、デスティネーションボリュームを配置する ONTAP クラスタ内の IPspace を選択し、 ONTAP クラスタに S3 バケットへのアクセスを許可するために作成したユーザのアクセスキーとシークレットキーを入力します。 さらに、必要に応じて、セキュアなデータ転送を行うためのプライベート VPC エンドポイントを選択できます。
+*** Amazon S3 からリストアする場合、デスティネーションボリュームを配置する ONTAP クラスタ内の IPspace を選択し、 ONTAP クラスタに S3 バケットへのアクセスを許可するために作成したユーザのアクセスキーとシークレットキーを入力します。 さらに、必要に応じて、セキュアなデータ転送を行うためのプライベート VPC エンドポイントを選択できます。 link:task-backup-onprem-to-aws.html#cluster-networking-requirements["これらの要件の詳細を参照してください"]。
 
 
 
@@ -690,21 +701,22 @@ endif::aws[]
 
 ifdef::azure[]
 
-* Azure Blobからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceを選択し、VNetとサブネットを選択してデータ転送を保護するプライベートエンドポイントを必要に応じて選択します。
+* Azure Blobからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceを選択し、VNetとサブネットを選択してデータ転送を保護するプライベートエンドポイントを必要に応じて選択します。 link:task-backup-onprem-to-azure.html#requirements["これらの要件の詳細を参照してください"]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Google Cloud Storageからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceと、オブジェクトストレージにアクセスするためのアクセスキーとシークレットキーを選択します。
+* Google Cloud Storageからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceと、オブジェクトストレージにアクセスするためのアクセスキーとシークレットキーを選択します。 link:task-backup-onprem-to-gcp.html#requirements["これらの要件の詳細を参照してください"]。
 
 
 endif::gcp[]
 
-* StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームが配置されているONTAP クラスタのIPspaceを入力します。
+* StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームが配置されているONTAP クラスタのIPspaceを入力します。 link:task-backup-onprem-private-cloud.html#requirements["これらの要件の詳細を参照してください"]。
 
 
+.結果
 ボリューム、フォルダ、またはファイルがリストアされ、リストアダッシュボードに戻り、リストア処理の進捗状況を確認できます。また、*ジョブ監視*タブをクリックしてリストアの進捗状況を確認することもできます。
 
 リストアしたボリュームに対しては、を実行できます link:task-manage-backups-ontap.html["この新しいボリュームのバックアップ設定を管理します"] 必要に応じて。
