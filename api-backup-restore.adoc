@@ -32,12 +32,12 @@ Cloud Backup Service には、次の8つのエンドポイントカテゴリが�
 
 == はじめに
 
-Cloud Backup APIを使用するには、ユーザトークン、Cloud CentralアカウントID、およびCloud Connector IDを取得する必要があります。
+Cloud Backup APIを使い始めるには、ユーザトークン、BlueXPアカウントID、BlueXPコネクタIDを取得する必要があります。
 
-API呼び出しを行うときは、Authorizationヘッダーにユーザトークンを、x-agent-idヘッダーにCloud Connector IDを追加します。APIでCloud CentralアカウントIDを使用してください。
+API呼び出しを行うときは、Authorizationヘッダーにユーザートークンを、x-agent-idヘッダーにBlueXPコネクタIDを追加します。APIでBlueXPアカウントIDを使用する必要があります。
 
 .手順
-. NetApp Cloud Central からユーザトークンを取得します。
+. NetApp BlueXP Webサイトからユーザートークンを取得します
 +
 次のリンクからリフレッシュトークンを生成してください：https://services.cloud.netapp.com/refresh-token/リフレッシュトークンは、ユーザートークンを生成するために使用する英数字文字列です。
 
@@ -54,9 +54,9 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
 ----
 +
 
-NOTE: NetApp Cloud Central のユーザトークンの有効期限が切れています。API 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。トークンを更新するには、もう一度このAPIを呼び出す必要があります。
+NOTE: BlueXP Webサイトのユーザートークンには有効期限がありますAPI 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。トークンを更新するには、もう一度このAPIを呼び出す必要があります。
 
-. NetApp Cloud CentralアカウントIDを取得します。
+. BlueXPアカウントIDを取得します
 +
 [source, http]
 ----
@@ -99,10 +99,12 @@ Header:
 
 == APIを使用した例
 
-次の例は、AzureクラウドのEast-US-2リージョンで、daily、hourly、weeklyのラベルを設定したあと180日後にアーカイブした新しいポリシーを使用して、Working Environmentでバックアップをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのみバックアップが有効になりますが、ボリュームはバックアップされません。「auto-backup-enabled」：trueを選択すると、システムにすでに存在するすべてのボリュームと、以降に追加されたボリュームがバックアップされます。
+次の例は、AzureクラウドのEast-US-2リージョンで、daily、hourly、weeklyのラベルが設定された新しいポリシーを使用して、作業環境でCloud Backupをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。
+
+「auto-backup-enabled」：「true」を選択すると、システムにすでに存在するすべてのボリュームと、以降のボリュームもバックアップされます。
 
 .API要求
-Cloud CentralアカウントIDが使用されていることがわかります `account-DpTFcxN3`、BlueXPコネクタID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`およびユーザートークン `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` をクリックします。
+BlueXPアカウントIDが使用されていることがわかります `account-DpTFcxN3`、BlueXPコネクタID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`およびユーザートークン `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` をクリックします。
 
 [source, http]
 ----

@@ -1407,10 +1407,6 @@
   <block id="cddd2b11445e1c8453ea0da106dab7a6" category="list-text">single file-level restore（SFR；単一ファイルレベルリストア）</block>
   <block id="d9a2a68e5e36f917b84ad2543b9d7eb9" category="list-text">作業環境</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">はじめに</block>
-  <block id="cb8eae28208af8da6d1790f12f05d13a" category="paragraph">Cloud Backup APIを使用するには、ユーザトークン、Cloud CentralアカウントID、およびCloud Connector IDを取得する必要があります。</block>
-  <block id="6f1f68c4600a11c04b4d3eaa5313820c" category="list-text">NetApp Cloud Central からユーザトークンを取得します。</block>
-  <block id="8006289517e097344c5132b125d48612" category="list-text">NetApp Cloud CentralアカウントIDを取得します。</block>
-  <block id="80e7fa6f7ec235f2ec73e616228b4d5a" category="paragraph">このAPIは、次のような応答を返します。アカウントIDを取得するには、*[0].[accountPublicId]*の出力を解析します。</block>
   <block id="b3080cdc3d4f3f5baa6015e73aeff8f4" category="paragraph">このAPIは、次のような応答を返します。エージェントIDを取得するには、*occcm.[0].[agent].[AgentID]*の出力を解析します。</block>
   <block id="b62dbbecd6533f9627427d34160e7d75" category="section-title">APIを使用した例</block>
   <block id="8243464aa42a67375338d8b893252d77" category="listing-title">応答は、監視可能なジョブIDです。</block>
@@ -1754,8 +1750,6 @@
   <block id="c81ea6f9f60a10281bd1aa698a50e3e7" category="paragraph">クラスタがONTAP 9.10.1以降を使用している場合は、古いバックアップをクラウドバックアップUIの_S3 Glacier Deep Archive_storageに階層化して、コストをさらに最適化することができます。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
   <block id="e978c3a1389a8a8755aae6236e595807" category="paragraph">クラウドバックアップをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。</block>
   <block id="c370775a8bc883ada27fec0c9380c141" category="paragraph">クラスタがONTAP 9.10.1以降を使用している場合は、特定の日数が経過した古いバックアップをAzure Archive_storageに階層化して、コストをさらに最適化することができます。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
-  <block id="081b49cd285a64a7dc21891cb3b85f4e" category="paragraph">次の問題 は、今後のリリースで修正される予定です。</block>
-  <block id="edd8bdf579117f85e813a9cfb5e571e1" category="list-text">リストア処理の実行中に、ONTAP バージョン9.10.1以降を実行するシステムでバックアップが作成されたものの、ボリュームをリストアするシステムでONTAP バージョン9.10.0以前を実行している場合は、システムが停止しているかリストアが失敗し、場合によってはリストアが失敗します。 ただし、ボリュームが破損しています。</block>
   <block id="c84ee35eef49d3ea170dc5583bae97eb" category="section-title">バックアップの制限</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">DP ボリュームをバックアップする場合は、次の点に注意してください。</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">SnapMirrorラベルが「app_consistent」と「all_source_snapshot」の関係は、クラウドにバックアップされません。</block>
@@ -2023,7 +2017,6 @@
   <block id="7b2b7c08da06dd437ae98c50b4ace20f" category="inline-link">必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します</block>
   <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
   <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">次のリンクからリフレッシュトークンを生成してください：https://services.cloud.netapp.com/refresh-token/リフレッシュトークンは、ユーザートークンを生成するために使用する英数字文字列です。</block>
-  <block id="777d6e4cc528ea2b29b7fc6903fb67a6" category="admonition">NetApp Cloud Central のユーザトークンの有効期限が切れています。API 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。トークンを更新するには、もう一度このAPIを呼び出す必要があります。</block>
   <block id="39d3d67728b58b0f9255268d852abfbe" category="admonition">アプリケーションインフラ向けCloud Backupは、リージョン内のアベイラビリティゾーンの障害に対して耐障害性に優れています。新しいリージョンにフェイルオーバーすることで地域的な障害にも対応できるようになり、このフェイルオーバーには約2時間のダウンタイムが伴います。</block>
   <block id="da101cda60f537d813b60a33b665c8f8" category="paragraph">プロバイダとしてStorageGRID を選択し、StorageGRID サーバとS3テナントアカウントの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。</block>
   <block id="80b09eca2711141a189a78c7b481d5cb" category="list-text">ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。</block>
@@ -2340,7 +2333,6 @@
   <block id="855a635321caeb08d8525de5eea56651" category="list-text">検索とリストアを使用してデータをリストアする場合、クラウドプロバイダによって特定のリソースがプロビジョニングされ、検索要求でスキャンされるデータ量には1TiBあたりのコストが関連付けられます。（これらのリソースは参照と復元には必要ありません）。</block>
   <block id="c03019f9be2cb226dc19ca939f4d2a98" category="paragraph">作業環境で Cloud Backup を有効にすると、最初に選択したすべてのボリュームが、定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective（RPO；目標復旧時点）が異なるボリュームに異なるバックアップポリシーを割り当てる場合は、そのクラスタ用のポリシーを追加で作成し、そのポリシーをCloud Backupがアクティブ化されたあとに他のボリュームに割り当てることができます。</block>
   <block id="887b3715a8c6b9f979173f9bb78db138" category="paragraph">バックアップのデスティネーションがAmazon S3またはNetApp StorageGRID の場合、現在サポートされています。その他のストレージプロバイダの送信先は今後のリリースで追加される予定です。</block>
-  <block id="eec8499000c8f659d98df740f918b905" category="list-text">オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれ、Cloud Backupの設定を使用して管理する必要があります。</block>
   <block id="5116aee7e891450dd457789d0b3857e4" category="paragraph">このドキュメントでは、Cloud Backup Service を使用する場合のオンプレミスONTAP システムとCloud Volumes ONTAP システムのバックアップポリシーの構成設定について説明します。</block>
   <block id="f576f81f502b655c924b76cc045e8946" category="paragraph">Cloud Backupでは、作業環境（クラスタ）ごとに固有のスケジュールを設定して複数のバックアップポリシーを作成できます。RPO（目標復旧時点）が異なるボリュームには、異なるバックアップポリシーを割り当てることができます。</block>
   <block id="3b190b83ddc2ee9e610caa6dc209fbaf" category="list-text">「* label *」は、ボリュームからバックアップファイルを作成（または更新）する頻度を定義します。次のタイプのラベルを選択できます。</block>
@@ -2900,10 +2892,7 @@
   <block id="0d1c0309cd5a222639167f043ad2659c" category="inline-link-macro">Googleアーカイブストレージの使用方法については、こちらをご覧ください</block>
   <block id="ca8f2417237c1ca946e8895448c8a806" category="paragraph"><block ref="0ebbe78b3d1a38928eec5f9d045a7c89" category="inline-link-macro-rx"></block>。（ONTAP 9.12.1が必要です）。</block>
   <block id="273a0c18ae7ae64c7f1016a71ed51d1e" category="paragraph">+アーカイブストレージに階層化されたバックアップファイルは、アーカイブへのバックアップの階層化を停止した場合、その階層に残ります。これらのファイルは自動的に標準階層に戻されません。新しいボリュームバックアップのみが標準階層に配置されます。</block>
-  <block id="702200e406214ec2d341f851f3e5e0b0" category="paragraph">API呼び出しを行うときは、Authorizationヘッダーにユーザトークンを、x-agent-idヘッダーにCloud Connector IDを追加します。APIでCloud CentralアカウントIDを使用してください。</block>
-  <block id="ef852916d56255b8dc79b6f7e695865f" category="paragraph">次の例は、AzureクラウドのEast-US-2リージョンで、daily、hourly、weeklyのラベルを設定したあと180日後にアーカイブした新しいポリシーを使用して、Working Environmentでバックアップをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのみバックアップが有効になりますが、ボリュームはバックアップされません。「auto-backup-enabled」：trueを選択すると、システムにすでに存在するすべてのボリュームと、以降に追加されたボリュームがバックアップされます。</block>
   <block id="7d9faab09c1d85e60360dfca30ab77cc" category="paragraph-title">API要求</block>
-  <block id="91d8ce7a0dd4ae47d0a99b9912f413a7" category="paragraph">Cloud CentralアカウントIDが使用されていることがわかります<block ref="50deb7e0fbc66ff8a640c6692b57f062" prefix=" " category="inline-code"></block>、BlueXPコネクタID<block ref="4c8927d7befc11ec79983636b1168c7e" prefix=" " category="inline-code"></block>およびユーザートークン<block ref="4def1da2868e8cb4ae96d8dc41f88f59" prefix=" " category="inline-code"></block> をクリックします。</block>
   <block id="c57b731ee494dd2c5422da75f8283d02" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> システムで Cloud Backup を有効にします</block>
   <block id="4c9a0feab9499a53c704c9db0adc3926" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> クラウドプロバイダを選択し、プロバイダの詳細を入力します</block>
   <block id="3b39c09e2f4aebd9e4dafe73f9fdeabe" category="paragraph">バックアップはデフォルトでStandardストレージに格納されます。クラスタでONTAP 9.12.1以降を使用している場合は、特定の日数が経過した後にGoogleアーカイブストレージにバックアップを階層化して、コストをさらに最適化することができます。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
@@ -2957,4 +2946,15 @@
   <block id="373e31603b5a78ab3bc84cbe57c892b5" category="paragraph">各バックアップポリシーには、バックアップファイルに適用できる_Archival Policy_に関するセクションがあります。</block>
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">サポートされているGoogleアーカイブストレージ階層</block>
   <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">新機能</block>
+  <block id="442630401ddd0f14988d739183c35505" category="list-text">オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれ、Cloud Backupの設定を使用して管理する必要があります。</block>
+  <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">FlexGroup ボリュームからFlexVol ボリューム、またはFlexVol ボリュームからFlexGroup ボリュームへのリストアはサポートされていません。</block>
+  <block id="c911798e68210cf43e7a5a85f31ebebe" category="paragraph">Cloud Backup APIを使い始めるには、ユーザトークン、BlueXPアカウントID、BlueXPコネクタIDを取得する必要があります。</block>
+  <block id="30bc6b6cbbb254a1299f2544d8a09731" category="paragraph">API呼び出しを行うときは、Authorizationヘッダーにユーザートークンを、x-agent-idヘッダーにBlueXPコネクタIDを追加します。APIでBlueXPアカウントIDを使用する必要があります。</block>
+  <block id="710f97f519c3a0c08777096972387f3c" category="list-text">NetApp BlueXP Webサイトからユーザートークンを取得します</block>
+  <block id="061a5fbf692c14aa8949bc11c7758ccb" category="admonition">BlueXP Webサイトのユーザートークンには有効期限がありますAPI 応答には、トークンの有効期限を示す「 expires_in 」フィールドが含まれています。トークンを更新するには、もう一度このAPIを呼び出す必要があります。</block>
+  <block id="8ce9552d4501ab462ee2bb5bc9e6477c" category="list-text">BlueXPアカウントIDを取得します</block>
+  <block id="8249fee34290d25027be632b8f27da68" category="paragraph">このAPIは、次のような応答を返します。アカウントIDを取得するには、*[0].[accountPublicId]*の出力を解析します。</block>
+  <block id="3d230e49f0e908474dc66b75f9fe1a42" category="paragraph">次の例は、AzureクラウドのEast-US-2リージョンで、daily、hourly、weeklyのラベルが設定された新しいポリシーを使用して、作業環境でCloud Backupをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。</block>
+  <block id="f8d12ed26ccbabf790e2b8039b322046" category="paragraph">「auto-backup-enabled」：「true」を選択すると、システムにすでに存在するすべてのボリュームと、以降のボリュームもバックアップされます。</block>
+  <block id="056e3b6ecd6329a08267381680ade8b7" category="paragraph">BlueXPアカウントIDが使用されていることがわかります<block ref="50deb7e0fbc66ff8a640c6692b57f062" prefix=" " category="inline-code"></block>、BlueXPコネクタID<block ref="4c8927d7befc11ec79983636b1168c7e" prefix=" " category="inline-code"></block>およびユーザートークン<block ref="4def1da2868e8cb4ae96d8dc41f88f59" prefix=" " category="inline-code"></block> をクリックします。</block>
 </blocks>
