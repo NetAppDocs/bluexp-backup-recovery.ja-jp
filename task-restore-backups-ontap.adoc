@@ -113,16 +113,19 @@ ONTAP バックアップファイルから次の作業環境にボリューム�
 
 [cols="50,50"]
 |===
-| バックアップファイルの場所デスティネーション作業環境定義：aws [] | Amazon S3 
+| バックアップファイルの場所 | デスティネーション作業環境ifdef：aws [] 
 
 
-| AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] | Azure Blob の略 
+| Amazon S3 | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
 
 
-| AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] | Google クラウドストレージ 
+| Azure Blob の略 | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
 
 
-| GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] | NetApp StorageGRID 
+| Google クラウドストレージ | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
+
+
+| NetApp StorageGRID | オンプレミスの ONTAP システム 
 |===
 参照と復元の場合、コネクタは次の場所にインストールできます。
 

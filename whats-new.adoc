@@ -22,9 +22,27 @@ Cloud Backup の新機能をご確認ください。
 
 
 
-=== Googleアーカイブストレージクラスがサポートされるようになりました
+=== 必須コネクターアウトバウンドインターネットアクセスエンドポイントの変更
 
-バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。より古いバックアップをGoogle Archiveストレージに階層化して、コストをさらに最適化できるようになりました。
+Cloud Backupの処理が変更されたため、クラウドバックアップの処理を成功させるには、次のコネクタエンドポイントを変更する必要があります。
+
+[cols="50,50"]
+|===
+| 古いエンドポイント | 新しいエンドポイント 
+
+
+| https://cloudmanager.cloud.netapp.com[] | https://api.bluexp.netapp.com[] 
+
+
+| https://*.cloudmanager.cloud.netapp.com[] | https://*.api.bluexp.netapp.com[] 
+|===
+のすべてのエンドポイントのリストを参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access["Google Cloud"^]または https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access["Azure"^] クラウド環境：
+
+
+
+=== UIでのGoogleアーカイブストレージクラスの選択がサポートされます
+
+バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。Cloud Backup UIを使用して、特定の日数が経過した古いバックアップをGoogle Archiveストレージに階層化し、コストをさらに最適化できるようになりました。
 
 この機能は、現在、ONTAP 9.12.1以降を使用するオンプレミスONTAP クラスタでサポートされています。現在、Cloud Volumes ONTAP システムでは使用できません。
 
