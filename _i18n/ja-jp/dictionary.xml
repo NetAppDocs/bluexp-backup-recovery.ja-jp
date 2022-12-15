@@ -557,17 +557,7 @@
   <block id="586301717819197e24001cac47efdaaa" category="section-title">2022 年 1 月 2 日</block>
   <block id="8b0675f2bcc5bb7f00dbceec71509372" category="paragraph">AKS クラスタに NetApp Astra Trident がインストールされていて、クラスタのバックエンドストレージとして Cloud Volumes ONTAP for Azure を使用している場合、 Azure BLOB ストレージとのボリュームをバックアップおよびリストアできます。 <block ref="dedf276821ed6d29dbf4b6c6ac7e23c3" category="inline-link-macro-rx"></block>。</block>
   <block id="8f26fba202051bdab8552c6642789714" category="paragraph">バックアップファイルのサイズに基づいてネットアップに容量を支払う代わりに、バックアップ対象のソース ONTAP ボリュームの論理使用容量（ ONTAP の効率化前）で計算された、保護対象のデータにのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。</block>
-  <block id="14311cc96cac23e1709c359110a5b7f1" category="paragraph">EKS クラスタに NetApp Astra Trident がインストールされていて、クラスタのバックエンドストレージとして Cloud Volumes ONTAP for AWS を使用している場合、 Amazon S3 との間でボリュームをバックアップおよびリストアできます。 <block ref="c1364db2c360144190c55a3c78bff6b7" category="inline-link-macro-rx"></block>。</block>
-  <block id="91b001577242864121cd5bc710161e53" category="inline-link-macro">制限事項</block>
-  <block id="c3952b163e8769f9c892f1921127899a" category="paragraph">Cloud Backup で、 SVM-DR 関係のターゲット ONTAP システムに存在する DP ボリュームのバックアップの作成がサポートされるようになりました。いくつかの制限事項があります。を参照してください <block ref="06a75d4d3a3c786253d04f8ea1e7ee58" category="inline-link-macro-rx"></block> を参照してください。</block>
-  <block id="30ba5fd5ccdd0c02bffa75b47be23a3b" category="paragraph">Amazon S3 または Azure Blob にあるバックアップファイルからオンプレミスの ONTAP システムにボリュームをリストアする場合、オンプレミスシステムに接続するプライベートかつセキュアなプライベートエンドポイントを選択できるようになりました。</block>
-  <block id="b5c8a322e1974db22259a3266a467868" category="inline-link-macro">AWS S3 アーカイブストレージクラス</block>
-  <block id="28adc803d48e2bb3e36e538080dfaa7f" category="inline-link-macro">Azure BLOB アーカイブアクセス層</block>
-  <block id="d1ddbe1a2b846fcb593cc918a3e89011" category="paragraph">クラスタで ONTAP 9.10.1 以降が実行されており、 AWS または Azure クラウドストレージを使用している場合に、アーカイブストレージへのバックアップの階層化を有効にすることができます。詳細については、を参照してください <block ref="81a47028e5300e8284480e386f5c858b" category="inline-link-macro-rx"></block> および <block ref="dcf621b23bcce9bd9dd0dcef7d3820cf" category="inline-link-macro-rx"></block>。</block>
-  <block id="ab2ccc498a90c5f6b10b5303b9c5aeb0" category="paragraph">これは、不要な大容量のバックアップファイルを削除する場合や、バックアップファイルのサイズを比較して、悪意のあるソフトウェア攻撃の結果として発生する可能性のある異常なバックアップファイルを特定する場合に便利です。</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">こちらをご覧ください</block>
-  <block id="6cafa6353a950cc8e48d24ad8242894f" category="paragraph">総所有コスト計算ツールを使用すると、 Cloud Backup の総所有コストを把握し、これらのコストを従来のバックアップソリューションと比較して、削減可能なコストを見積もることができます。ご確認ください<block ref="267ef58c9e8a275651a89e967489b2ea" category="inline-link-rx"></block>。</block>
-  <block id="1ce6a0928d40a829b28d1101d636b814" category="inline-link-macro">作業環境での Cloud Backup の登録を解除します</block>
   <block id="ee0db59fec59c2b3e6c6583a61bf12b6" category="doc">バックアップジョブとリストアジョブのステータスを監視しています</block>
   <block id="30ae8fff8898dc197acd49d9c0797d20" category="list-text">成功しました</block>
   <block id="c9413dd7682a45da9ecc9efa8cea47d7" category="list-text">実行中です</block>
@@ -1070,9 +1060,6 @@
   <block id="ea002f9386d9cd059f69c6d59dbea06c" category="list-text">Kubernetes の永続ボリュームのバックアップとリストア <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
   <block id="7a6c8511ba9b6f1392c7f34fbd81508d" category="list-text">クラウドバックアップアプリケーションを使用して、アプリケーションと整合性のある Snapshot をオンプレミスの ONTAP からクラウドにバックアップできます。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
   <block id="983a4e7f5913304ec713a249baf7be47" category="section-title">2022 年 3 月 3 日</block>
-  <block id="f61163b681442ac500a8018c87241770" category="section-title">2021 年 11 月 28 日</block>
-  <block id="efaa7c999dedec2704fc2db580ad4967" category="section-title">2021 年 11 月 5 日</block>
-  <block id="d1c47d8bf748c203ff983262e6c108cb" category="section-title">2021 年 10 月 4 日</block>
   <block id="2af55e36133bee199e6856aa4e468486" category="paragraph">元の作業環境、同じクラウドアカウントを使用している別の作業環境、またはオンプレミスの ONTAP システムに * ボリューム * を（新しいボリュームとして）リストアできます。</block>
   <block id="49b3fb49db06a6317743033ac39be690" category="paragraph">* files * は、元の作業環境内のボリューム、同じクラウドアカウントを使用している別の作業環境内のボリューム、またはオンプレミスの ONTAP システム上のボリュームにリストアできます。</block>
   <block id="91c3ddf19f416d0a8c7658b15c646d42" category="paragraph">バックアップファイルからボリュームをリストアすると、 Cloud Backup はバックアップのデータを使用して _new_volume を作成します。データは、元の作業環境のボリューム、またはソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。</block>
@@ -1101,15 +1088,6 @@
   <block id="739f8a5ac1453fdcd33ce781cd333914" category="section-title">すべてのバックアップジョブとリストアジョブの処理中ステータスを確認するには、新しいジョブモニタを使用できます</block>
   <block id="3d83253385058dc12afb77a2f730e4c2" category="section-title">AKS Kubernetes クラスタから Azure BLOB ストレージに永続ボリュームをバックアップする機能</block>
   <block id="14c8359231c23d6f5c54ca5cd66b7645" category="section-title">このリリースでは、業界標準に合わせて Cloud Backup Service の料金が変更されています</block>
-  <block id="b5c2ad917e264edc78b0158ca8c897d5" category="section-title">EKS Kubernetes クラスタから Amazon S3 に永続ボリュームをバックアップできます</block>
-  <block id="151590d072c7f32fec2f799d5964e33c" category="section-title">DP ボリュームのバックアップ機能が強化されました</block>
-  <block id="c3818c4b8a96f82d4bebb0918fc1b597" category="section-title">オンプレミスの ONTAP システムにボリュームをリストアする際にプライベートエンドポイントを選択できます</block>
-  <block id="ec32b3a1a3a36906705157ba56f50dfd" category="section-title">古いバックアップファイルを数日後にアーカイブストレージに階層化してコストを削減できるようになりました</block>
-  <block id="813e4252a1c42f8fa7f1acba4edd2e1b" category="section-title">Cloud Backup BYOL ライセンスが、 Digital Wallet の Data Services Licenses タブに移動しました</block>
-  <block id="a05ccfe2ea9142cc4c62c30ade767c4d" category="section-title">ボリュームまたはファイルのリストアを実行するときに、バックアップページでバックアップファイルのサイズを確認できるようになりました</block>
-  <block id="0291c827997378f8a61d7de93338ce33" category="section-title">クラウドバックアップのコストを比較するための TCO 計算ツールが用意されています</block>
-  <block id="5a16be7cae3c94196da65eaa95fffe75" category="section-title">作業環境に対する Cloud Backup の登録を解除する機能</block>
-  <block id="7f1507cc6bbfa80c60fbfee0fb32d1b1" category="paragraph">これで、簡単に実現できます <block ref="ef65217602cb0772d3c6774a441a359f" category="inline-link-macro-rx"></block> その作業環境でバックアップ機能を使用しない（または課金される）場合。</block>
   <block id="cd1b53810620b8c77681a96dd010c21c" category="list-text">Cloud Backup BYOL ライセンスを利用するには、ライセンスの期間と容量に応じてサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 <block ref="47744e5312ce42ad8130a5365d7fb0d0" category="inline-link-macro-rx"></block>。</block>
   <block id="cbc540ff279c66e1f0e285002a107926" category="list-text">クラウドバックアップは従量課金制のライセンスで、を使用したサブスクリプション<block ref="92655de6fae7d07ed3897ce19d51b88d" category="inline-link-rx"></block> は、 Cloud Backup を有効にする前に必要です。Cloud Backup の請求は、このサブスクリプションを通じて行われます。<block ref="2dcb14e4aff486ad01ca943b2718d3a3" category="inline-link-rx"></block>。</block>
   <block id="c1d703bdf53bad5718c774b5ba1504f9" category="paragraph">StorageGRID は、次の要件を満たす必要があります。を参照してください<block ref="a9591d68f190d64ce21caf15a77d51e9" category="inline-link-rx"></block> を参照してください。</block>
@@ -2122,7 +2100,6 @@
   <block id="189baba290165c9a7ddf7f3c3ec05a6a" category="paragraph">以下のパブリッククラウドプロバイダとプライベートクラウドプロバイダでオブジェクトストレージを使用する際に、ONTAP ボリュームに対するDataLock保護とRansomware保護を有効にすることができます。クラウドプロバイダは今後のリリースで追加される予定です。</block>
   <block id="12ffabaafd850d6e279869bb1cd0b7c8" category="cell">ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] endif：azure[] ifdef：gCP[] endif：GCP [] NetApp StorageGRID</block>
   <block id="46651d9c49a465cb6fa5e07cd6981948" category="list-text">次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。</block>
-  <block id="709168c65e2b4e5806ef96ffe25ed710" category="paragraph">「s3：Bypassガバナー 保持」は、管理者ユーザがGovernanceモードでロックされているバックアップファイルを上書きまたは削除できるようにする場合にのみ追加する必要があります。</block>
   <block id="a0cfa687d678b7bdaa6e05ad4367a96d" category="list-text">StorageGRID の場合：</block>
   <block id="00913a42b009e85b8960c2fdad53a54a" category="list-text">コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。</block>
   <block id="6d77a031f2c449f19db709bc8ae95649" category="list-text">DataLock機能を完全にサポートするには、StorageGRID 11.6.0.3以降が必要です</block>
@@ -2331,7 +2308,6 @@
   <block id="c545a26c4ed6190e3a8c71826161a528" category="paragraph">スキャンは、クラウドストレージに初めて書き込まれたとき、*次の*バックアップファイルが書き込まれたときに、バックアップファイルに対しては実行されません。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。</block>
   <block id="e3ab630e3f610a8213d19aed9bf024c4" category="admonition">StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされないため、保持設定を省略したり、保護されたバックアップを上書きしたり、ロックされたバックアップを削除したりする機能はユーザにはありません。</block>
   <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">AWSの場合：</block>
-  <block id="f8a98c701370ca7b2e41192ca7baaa6b" category="list-text">コネクタはクラウドに導入する必要があります</block>
   <block id="d82ac33ca1171e71de283e404129a0c4" category="paragraph">クラスタが ONTAP 9.10.1 以降を使用している場合は、古いバックアップを S3 Glacier Deep Archive_storage のいずれかに階層化して、特定の日数が経過したらコストをさらに最適化することができます。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
   <block id="3dfe42849739012935ae4b966fa89d76" category="paragraph">クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過した古いバックアップを Azure Archive_storage に階層化して、コストをさらに最適化することができます。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">お客様レベルのアカウントをお持ちの場合は、1つ以上のNSSアカウントを追加することもできます。</block>
@@ -2460,12 +2436,10 @@
   <block id="c942722bc0e73e01d3d202c22535adb7" category="list-text">Cloud Backup for Applications UIは、BlueXP UIと統合されています。</block>
   <block id="2a69bdfb7c47a37bcaa300a79a3edcdb" category="list-text">BlueXP Connectorは、クラウドネットワーク内で動作し、Oracleデータベースホスト上で動作するAmazon FSXストレージファイルシステムおよびSnapCenter Plug-in for Oracleと通信するBlueXPのコンポーネントです。</block>
   <block id="b48ac281f41818a7c46c37cd8f01ddff" category="paragraph">ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップや復元などのワークフローを実行するよう要求された場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中に、NetApp ONTAP 用のAmazon FSXとSnapCenter Plug-in for Oracleと通信します。</block>
-  <block id="344c10c4954bccab612b8dcf9b357678" category="admonition">ランサムウェアスキャンを実行するには、バックアップファイルをBlueXP環境(コネクタがインストールされている環境)にダウンロードする必要があります。オンプレミスにコネクタを導入している場合、これによってクラウドプロバイダからの出力コストが増加することがあります。したがって、クラウドにConnectorを導入し、バックアップの保存先のバケットと同じリージョンに配置することを推奨します。</block>
   <block id="033f9aa227c492833c2f1af28d01f134" category="list-text">BlueXP 3.9.21以上を使用している必要があります</block>
   <block id="a8db6f5de8da7da9d3f1b9e9e4dfc251" category="list-text">BlueXPコネクタIDを含むx-agent-idを取得します。</block>
   <block id="6c5b6689ac55433faa02a7b00a324c53" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="fe9c905e0ac5679eb2b5a96bea671a0a" category="inline-link-rx"></block>。</block>
   <block id="d23034ecc8c41806d59e0a80e72171aa" category="paragraph">インターネットに接続されていないサイト（「オフライン」または「ダーク」サイトとも呼ばれる）で Cloud Backup を使用して、ローカルのオンプレミス ONTAP システムからローカルの NetApp StorageGRID システムにボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにBlueXPコネクタ(バージョン3.9.20)を配備する必要があります。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。</block>
-  <block id="011682c1cb2ab599a543ee540e04e7e0" category="list-text">異なるサブネットに異なるBlueXPシステムを持つ同じアカウントを使用している場合、ファイルレベルの復元はサポートされません。</block>
   <block id="de91611ef7d87d7277497c9a2076d470" category="list-text">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>。</block>
   <block id="ddbe1a27c8679d52220657402cc89453" category="paragraph">データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。</block>
   <block id="9330e7377c5511f70bfc35493714892a" category="list-text">BlueXP UIで、*Protection*&gt;* Backup and recovery*&gt;* Virtual Machines *&gt;* Settings*&gt;* SnapCenter Plug-in for VMware vSphere*の順にクリックします。</block>
@@ -2495,7 +2469,6 @@
   <block id="314d64b29803a4017e18c95e19a18a09" category="paragraph">オンプレミスのONTAP クラスタが、インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）にある場合は、Cloud Backupを使用して、同じサイトにあるNetApp StorageGRID システムにボリュームデータをバックアップできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.19以降)もオフラインサイトに配置する必要があります。</block>
   <block id="a1bf67f5d2f66348eff06c9dbdb7636d" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。</block>
   <block id="f464a9820cae6a24053ca10aad54bbb6" category="paragraph">以前は、 Cloud Backup をアクティブ化したあとに作業環境で作成した新しいボリュームには、バックアップポリシーを手動で適用する必要がありました。これで、ボリュームがBlueXP、System Manager、CLI、またはAPIを使用して作成されたかどうかに関係なく、Cloud Backupはボリュームを検出し、デフォルトポリシーとして選択したバックアップポリシーを適用します。</block>
-  <block id="bc40ad8bde426b31489df30cd5aa9e82" category="paragraph">Cloud BackupのBYOLライセンスが、Cloud Backup LicensesタブからBlueXP Digital WalletのData Services Licensesタブに移動しました。</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">BlueXPに関する注意事項</block>
   <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXPブログ</block>
@@ -2864,7 +2837,6 @@
   <block id="992f6f150ac0b46aba4a6eeb1d21d085" category="paragraph">BlueXPバージョン3.9.23以降を使用してCloud Volumes ONTAP 作業環境を作成した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。</block>
   <block id="c269cfa936d5eedb205fef775576a187" category="paragraph">バックアップはデフォルトでCoolアクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="bf49a2af93184828c602f30985ab7b3e" category="paragraph-title">を開始する前に</block>
-  <block id="cb6c73eacff63264b079860a4631f4fb" category="paragraph">ボリュームのバックアップを非アクティブ化して、追加のバックアップが生成されないようにすることができます。これにより、バックアップファイルからボリュームデータをリストアする機能も無効になります。基本的には、すべてのバックアップおよびリストア処理を一時停止できます。既存のバックアップは削除されないため、バックアップが使用する容量のオブジェクトストレージのコストは引き続きクラウドプロバイダに課金されます <block ref="51e759ad1e13bff2c7b32edcd8077a91" category="inline-xref-macro-rx"></block>。</block>
   <block id="0d1c0309cd5a222639167f043ad2659c" category="inline-link-macro">Googleアーカイブストレージの使用方法については、こちらをご覧ください</block>
   <block id="ca8f2417237c1ca946e8895448c8a806" category="paragraph"><block ref="0ebbe78b3d1a38928eec5f9d045a7c89" category="inline-link-macro-rx"></block>。（ONTAP 9.12.1が必要です）。</block>
   <block id="273a0c18ae7ae64c7f1016a71ed51d1e" category="paragraph">+アーカイブストレージに階層化されたバックアップファイルは、アーカイブへのバックアップの階層化を停止した場合、その階層に残ります。これらのファイルは自動的に標準階層に戻されません。新しいボリュームバックアップのみが標準階層に配置されます。</block>
@@ -2892,7 +2864,6 @@
   <block id="5c0fff562b33dc0a5a3acac30ed2d313" category="section-title">2022年12月6日</block>
   <block id="738d31d37e16df450b2af9540e98c7d4" category="paragraph">この機能は、現在、ONTAP 9.12.1以降を使用するオンプレミスONTAP クラスタでサポートされています。現在、Cloud Volumes ONTAP システムでは使用できません。</block>
   <block id="4547c4a9db890b3449aca4e706555007" category="section-title">FlexGroup ボリュームのサポート</block>
-  <block id="dd7d3cf5e78a510a4d10a46ebb784dc8" category="paragraph">Cloud BackupでFlexGroup ボリュームがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。</block>
   <block id="cce3f2ac0edcb49693caf11399223d89" category="inline-link">サポートされるボリュームタイプの一覧を参照してください</block>
   <block id="2750ec6dc42d79b24b9902d41543b6fd" category="paragraph"><block ref="0b2b94d5062b1eb6747bf9cb58e01b77" category="inline-link-rx"></block>。</block>
   <block id="d1c49eec91984b5c0c7c8ff6998bb65d" category="section-title">バックアップのデータをCloud Volumes ONTAP システムの特定のアグリゲートにリストアする機能</block>
@@ -2962,11 +2933,14 @@
   <block id="06c42f4f82e29b4e90570ef70b538ed4" category="paragraph">Cloud Backupの処理が変更されたため、クラウドバックアップの処理を成功させるには、次のコネクタエンドポイントを変更する必要があります。</block>
   <block id="eb75f7332becd8b3fbb2a59ea0bd0536" category="cell">古いエンドポイント</block>
   <block id="afcce2fe2d959c0f4554e7815a50e8e4" category="cell">新しいエンドポイント</block>
-  <block id="c4d1d84171458f4e2b69163203db5d8a" category="cell"><block ref="c4d1d84171458f4e2b69163203db5d8a" category="inline-link-rx"></block></block>
-  <block id="4122f436cdd6caafddd779363c085012" category="cell"><block ref="4122f436cdd6caafddd779363c085012" category="inline-link-rx"></block></block>
-  <block id="fb5182328f54790471e76bed4fb4cadd" category="cell"><block ref="fb5182328f54790471e76bed4fb4cadd" category="inline-link-rx"></block></block>
-  <block id="819a13756c5141d19acea431a1fce1e5" category="cell"><block ref="819a13756c5141d19acea431a1fce1e5" category="inline-link-rx"></block></block>
   <block id="0e40b9cba041560c9517bc49757da3c7" category="paragraph">のすべてのエンドポイントのリストを参照してください<block ref="4c9e3e17ba20f553394e5bc78e402946" category="inline-link-rx"></block>、<block ref="cd3c6f623ccf3e34f9d46b28c47f2a3d" category="inline-link-rx"></block>または<block ref="80755100f97c37f8aa8e3d999b0a43d9" category="inline-link-rx"></block> クラウド環境：</block>
   <block id="e3a84cf85e2ede3f349ff73485707901" category="section-title">UIでのGoogleアーカイブストレージクラスの選択がサポートされます</block>
   <block id="862c6bfd630667f5b535d9741b4f08fc" category="paragraph">バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。Cloud Backup UIを使用して、特定の日数が経過した古いバックアップをGoogle Archiveストレージに階層化し、コストをさらに最適化できるようになりました。</block>
+  <block id="115781a0043a85f8707c5c99fd02dc75" category="cell">\ https://cloudmanager.cloud.netapp.com</block>
+  <block id="e1095ff19466581c5274f67123c95036" category="cell">\ https://api.bluexp.netapp.com</block>
+  <block id="9e434ddc2ad4b9de005368b77254223d" category="cell">\ https://*.cloudmanager.cloud.netapp.com</block>
+  <block id="37ba276f010f4ea07f1196b487811443" category="cell">\ https://*.api.bluexp.netapp.com</block>
+  <block id="f337eb9be5f215d07b89436adc58d486" category="paragraph">Cloud BackupでFlexGroup ボリュームのバックアップとリストアがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。</block>
+  <block id="c8f317ca882b28cad077a2e7d0f600ca" category="paragraph">ボリュームのバックアップを非アクティブ化して、追加のバックアップが生成されないようにすることができます。これにより、バックアップファイルからボリュームデータをリストアする機能も無効になります。基本的には、すべてのバックアップおよびリストア処理を一時停止できます。既存のバックアップは削除されないため、バックアップが使用する容量のオブジェクトストレージのコストは引き続きクラウドプロバイダに課金されます <block ref="51e759ad1e13bff2c7b32edcd8077a91" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ff6afa40de385c3c2ebed9d79cd8c944" category="list-text">コネクタは、クラウドまたはオンプレミスに導入できます</block>
 </blocks>

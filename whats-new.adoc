@@ -31,10 +31,10 @@ Cloud Backupの処理が変更されたため、クラウドバックアップ�
 | 古いエンドポイント | 新しいエンドポイント 
 
 
-| https://cloudmanager.cloud.netapp.com[] | https://api.bluexp.netapp.com[] 
+| \ https://cloudmanager.cloud.netapp.com | \ https://api.bluexp.netapp.com 
 
 
-| https://*.cloudmanager.cloud.netapp.com[] | https://*.api.bluexp.netapp.com[] 
+| \ https://*.cloudmanager.cloud.netapp.com | \ https://*.api.bluexp.netapp.com 
 |===
 のすべてのエンドポイントのリストを参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access["Google Cloud"^]または https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access["Azure"^] クラウド環境：
 
@@ -50,7 +50,7 @@ Cloud Backupの処理が変更されたため、クラウドバックアップ�
 
 === FlexGroup ボリュームのサポート
 
-Cloud BackupでFlexGroup ボリュームがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。
+Cloud BackupでFlexGroup ボリュームのバックアップとリストアがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。
 
 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#supported-volumes["サポートされるボリュームタイプの一覧を参照してください"]。
 
@@ -418,63 +418,3 @@ AKS クラスタに NetApp Astra Trident がインストールされていて、
 === このリリースでは、業界標準に合わせて Cloud Backup Service の料金が変更されています
 
 バックアップファイルのサイズに基づいてネットアップに容量を支払う代わりに、バックアップ対象のソース ONTAP ボリュームの論理使用容量（ ONTAP の効率化前）で計算された、保護対象のデータにのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。
-
-
-
-== 2021 年 11 月 28 日
-
-
-
-=== EKS Kubernetes クラスタから Amazon S3 に永続ボリュームをバックアップできます
-
-EKS クラスタに NetApp Astra Trident がインストールされていて、クラスタのバックエンドストレージとして Cloud Volumes ONTAP for AWS を使用している場合、 Amazon S3 との間でボリュームをバックアップおよびリストアできます。 link:task-backup-kubernetes-to-s3.html["詳細については、こちらをご覧ください"]。
-
-
-
-=== DP ボリュームのバックアップ機能が強化されました
-
-Cloud Backup で、 SVM-DR 関係のターゲット ONTAP システムに存在する DP ボリュームのバックアップの作成がサポートされるようになりました。いくつかの制限事項があります。を参照してください link:concept-ontap-backup-to-cloud.html#limitations["制限事項"] を参照してください。
-
-
-
-== 2021 年 11 月 5 日
-
-
-
-=== オンプレミスの ONTAP システムにボリュームをリストアする際にプライベートエンドポイントを選択できます
-
-Amazon S3 または Azure Blob にあるバックアップファイルからオンプレミスの ONTAP システムにボリュームをリストアする場合、オンプレミスシステムに接続するプライベートかつセキュアなプライベートエンドポイントを選択できるようになりました。
-
-
-
-=== 古いバックアップファイルを数日後にアーカイブストレージに階層化してコストを削減できるようになりました
-
-クラスタで ONTAP 9.10.1 以降が実行されており、 AWS または Azure クラウドストレージを使用している場合に、アーカイブストレージへのバックアップの階層化を有効にすることができます。詳細については、を参照してください link:reference-aws-backup-tiers.html["AWS S3 アーカイブストレージクラス"] および link:reference-azure-backup-tiers.html["Azure BLOB アーカイブアクセス層"]。
-
-
-
-=== Cloud Backup BYOL ライセンスが、 Digital Wallet の Data Services Licenses タブに移動しました
-
-Cloud BackupのBYOLライセンスが、Cloud Backup LicensesタブからBlueXP Digital WalletのData Services Licensesタブに移動しました。
-
-
-
-== 2021 年 10 月 4 日
-
-
-
-=== ボリュームまたはファイルのリストアを実行するときに、バックアップページでバックアップファイルのサイズを確認できるようになりました
-
-これは、不要な大容量のバックアップファイルを削除する場合や、バックアップファイルのサイズを比較して、悪意のあるソフトウェア攻撃の結果として発生する可能性のある異常なバックアップファイルを特定する場合に便利です。
-
-
-
-=== クラウドバックアップのコストを比較するための TCO 計算ツールが用意されています
-
-総所有コスト計算ツールを使用すると、 Cloud Backup の総所有コストを把握し、これらのコストを従来のバックアップソリューションと比較して、削減可能なコストを見積もることができます。ご確認くださいhttps://cloud.netapp.com/cloud-backup-service-tco-calculator["こちらをご覧ください"^]。
-
-
-
-=== 作業環境に対する Cloud Backup の登録を解除する機能
-
-これで、簡単に実現できます link:task_manage_backups.html#unregistering-cloud-backup-for-a-working-environment["作業環境での Cloud Backup の登録を解除します"] その作業環境でバックアップ機能を使用しない（または課金される）場合。

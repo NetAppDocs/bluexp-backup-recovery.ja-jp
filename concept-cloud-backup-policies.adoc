@@ -105,9 +105,6 @@ DataLockは、バックアップファイルが一定期間変更または削除
 
 
 
-CAUTION: ランサムウェアスキャンを実行するには、バックアップファイルをBlueXP環境(コネクタがインストールされている環境)にダウンロードする必要があります。オンプレミスにコネクタを導入している場合、これによってクラウドプロバイダからの出力コストが増加することがあります。したがって、クラウドにConnectorを導入し、バックアップの保存先のバケットと同じリージョンに配置することを推奨します。
-
-
 
 === DataLockとRansomware Protectionの設定
 
@@ -162,7 +159,7 @@ ifdef::aws[]
 
 * AWSの場合：
 +
-** コネクタはクラウドに導入する必要があります
+** コネクタは、クラウドまたはオンプレミスに導入できます
 ** 次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
 +
 *** S3 ： GetObjectVersionTagging
@@ -192,9 +189,6 @@ ifdef::aws[]
 *** S3 ： PutObjectRetention
 *** S3 ： GetBucketLocation
 *** S3 ： GetObjectVersion
-+
-「s3：Bypassガバナー 保持」は、管理者ユーザがGovernanceモードでロックされているバックアップファイルを上書きまたは削除できるようにする場合にのみ追加する必要があります。
-
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
 
