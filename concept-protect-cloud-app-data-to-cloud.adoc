@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Manager, BlueXP 
-summary: Cloud Backup for ApplicationsをNetApp BlueXPで使用すると、アプリケーションと整合性のある効率的なポリシーベースのバックアップとリストアを、Amazon FSX for NetApp ONTAP 上に存在するOracle®データベースで実行できます。 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP 
+summary: BlueXPを使用すると、アプリケーションと整合性のある、Amazon FSX for NetApp ONTAP またはCloud Volumes ONTAP 上にあるOracle®データベースの効率的でポリシーベースのバックアップとリストアを実行できます。 
 ---
 = クラウドネイティブアプリケーションのデータを保護
 :hardbreaks:
@@ -14,7 +14,11 @@ summary: Cloud Backup for ApplicationsをNetApp BlueXPで使用すると、ア�
 
 
 [role="lead"]
-Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。NetApp BlueXP（旧Cloud Manager）でクラウドバックアップ機能を使用すると、アプリケーションと整合性のある効率的なポリシーベースのバックアップが可能になり、Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのリストアが可能になります。
+Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXP（旧Cloud Manager）で有効になっているCloud Backup for Applicationsは、アプリケーションと整合性のある効率的なポリシーベースの保護機能を提供します。
+
+* Amazon FSX for NetApp ONTAP およびCloud Volumes ONTAP 上に存在するOracleデータベース
+* Azure NetApp Files （ANF）上にあるSAP HANAシステム
+
 
 
 
@@ -26,32 +30,35 @@ Cloud Backup for Applicationsアーキテクチャには、次のコンポーネ
 +
 オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます
 
-* Cloud Backup for Applications UIは、BlueXP UIと統合されています。
+* Cloud Backup for Applications UIには、BlueXP UIからアクセスできます。
 +
-Cloud Backup for ApplicationsのUIには、複数のストレージ機能とデータ管理機能が用意されています。
+Cloud Backup for Applications UIは、アプリケーションにデータ保護機能を提供します。
 
-* BlueXP Connectorは、クラウドネットワーク内で動作し、Oracleデータベースホスト上で動作するAmazon FSXストレージファイルシステムおよびSnapCenter Plug-in for Oracleと通信するBlueXPのコンポーネントです。
-* SnapCenter Plug-in for Oracleは、各Oracleデータベースホストで実行されるコンポーネントであり、データ保護処理の実行中、ホストで実行されるOracleデータベースと通信します。
-+
+* BlueXP Connectorは、ユーザーのクラウドネットワークで動作し、ストレージシステムおよびアプリケーション固有のプラグインと通信するコンポーネントです。
+* アプリケーション固有のプラグインは、各アプリケーションホストで実行され、データ保護処理の実行中にホストで実行されるデータベースと通信するコンポーネントです。
+
+
 次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
 
-+
-image:diagram_nativecloud_backup_app.png["Cloud Backupがさまざまなコンポーネントと通信する仕組みを示す図"]
+image:diagram_nativecloud_backup_app.png["各コンポーネントと接続の準備を行う方法を示す図。"]
 
-+
-ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップや復元などのワークフローを実行するよう要求された場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中に、NetApp ONTAP 用のAmazon FSXとSnapCenter Plug-in for Oracleと通信します。
+ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。
 
-+
-コネクタは、Oracleデータベースと同じVPC内に導入することも、別のVPC内に導入することもできます。コネクタとOracleデータベースが異なるネットワークにある場合は、コネクタとOracleデータベース間のネットワーク接続を確立する必要があります。
+このコネクタは、アプリケーションと同じVPCまたはVNetに導入することも、別のVPCまたはVNetに導入することもできます。コネクタとアプリケーションが異なるネットワーク上にある場合は、コネクタとアプリケーションの間にネットワーク接続を確立する必要があります。
 
 
+NOTE: 1つのBlueXPコネクタは、複数のストレージシステムおよび複数のアプリケーションプラグインと通信できます。コネクタとアプリケーションホストの間に接続がある限り、アプリケーションを管理するには単一のコネクタが必要です。
 
 
-IMPORTANT: アプリケーションインフラ向けCloud Backupは、リージョン内のアベイラビリティゾーンの障害に対して耐障害性に優れています。新しいリージョンにフェイルオーバーすることで地域的な障害にも対応できるようになり、このフェイルオーバーには約2時間のダウンタイムが伴います。
+IMPORTANT: Cloud Backup for Applications SaaSインフラは、リージョン内のアベイラビリティゾーン障害に対して耐障害性に優れています。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。
 
 
 
-== サポートされている構成
+== Oracleデータベースを保護します
+
+
+
+=== サポートされている構成
 
 * オペレーティングシステム
 +
@@ -59,18 +66,32 @@ IMPORTANT: アプリケーションインフラ向けCloud Backupは、リージ
 ** OL 7.5以降および8.x
 
 
-* ストレージシステム：ONTAP 対応のAmazon FSX
-* ストレージレイアウト：NFS v3およびv4.1（dNFSがサポートされます）、ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）
-* アプリケーション：Oracle StandardおよびOracle Enterprise–スタンドアロン（従来型およびマルチテナント–CDBおよびPDB）
-* Oracleのバージョン：12cR2、18c、19C
+* ストレージシステム：
++
+** ONTAP 対応の Amazon FSX
+** Cloud Volumes ONTAP
+
+
+* ストレージレイアウト：
++
+** NFS v3およびv4.1（dNFSを含む）
+** ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）
+
+
+* データベースレイアウト：Oracle StandardおよびOracle Enterprise Standalone（従来型およびマルチテナントCDBおよびPDB）
+* データベースバージョン：12cR2、18c、19C、および21c
 
 
 
 
-== の機能
+=== の機能
+
+* ホストを追加してプラグインを導入
++
+プラグインは、手動、スクリプト、または自動で導入できます。
 
 * Oracleデータベースの自動検出
-* Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのバックアップ
+* Oracleデータベースのバックアップ
 +
 ** フル（データ+制御+アーカイブログファイル）バックアップ
 ** オンデマンドバックアップ
@@ -84,51 +105,83 @@ IMPORTANT: アプリケーションインフラ向けCloud Backupは、リージ
 * 指定したバックアップからOracleデータベース全体（データ・ファイル+制御ファイル）をリストアします
 * データファイルのみをリストアし、指定したバックアップからのみファイルを制御する
 * SCNまで、時間が経過するまで、使用可能なすべてのログ、およびリカバリオプションなしでOracleデータベースをリカバリする場合
-* バックアップおよびその他のジョブを監視しています
+* ソースホストまたは代替ターゲットホスト上のOracleデータベースのクローニング
++
+** 基本的なワンクリッククローン
+** カスタムクローン仕様ファイルを使用した高度なクローニング
+** クローンエンティティ名は、自動生成することも、ソースと同一にすることもできます
+** クローン階層を表示します
+** クローンデータベースの削除
+
+
+* バックアップ、リストア、クローニングなどのジョブを監視しています
 * ダッシュボードに保護の概要を表示します
 * E メールでアラートを送信する
 
 
 
 
-== 制限
+=== 制限
 
-* Oracleバージョン11gおよび21cはサポートされません
-* バックアップでのマウント、クローニング、カタログ化、検証の処理はサポートされていません
+* Oracle 11gはサポートされません
+* バックアップに対するマウント、カタログ化、検証の処理はサポートされていません
 * では、RACおよびData GuardでのOracleはサポートされません
-* バックアップの制限：
+* Cloud Volumes ONTAP HAでは、ネットワークインターフェイスのIPアドレスのうち1つだけが使用されます。IPの接続がダウンした場合やIPにアクセスできない場合は、処理が失敗します。
+* NetApp ONTAP またはCloud Volumes ONTAP 用のAmazon FSXのネットワークインターフェイスIPアドレスは、BlueXPのアカウントとリージョン内で一意である必要があります。
+
+
+
+
+== SAP HANAデータベースを保護
+
+
+
+=== サポートされている構成
+
+* オペレーティングシステム
 +
-** オンラインデータまたはログのみのバックアップはサポートしません
-** では、オフラインバックアップはサポートされません
-** は、再帰マウントポイント上に存在するOracleデータベースのバックアップをサポートしていません
-** では、FSXボリュームと重複する複数のASMディスクグループに存在するOracleデータベースの整合グループSnapshotはサポートされていません
-** OracleデータベースがASMで設定されている場合は、SVM名がFSXシステム全体で一意であることを確認します。FSXシステム間でSVM名が同じ場合は、それらのSVM上にあるOracleデータベースのバックアップはサポートされません。
+** SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム
+** SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています
 
 
-* リストアの制限事項：
+* ストレージシステム：Azure NetApp Files （ANF）
+* ストレージレイアウト：データとログについては、AzureでNFSv4.1のみがサポートされます。
+* データベースレイアウト：
 +
-** 表領域とPDBのリストアなど、きめ細かなリストアはサポートしていません
-** NASおよびSANのレイアウトでは、OracleデータベースのIn Placeリストアのみがサポートされます
-** では、SANレイアウト上でのOracleデータベースの制御ファイルのみのリストアや、データファイル+制御ファイルのリストアはサポートされていません
-** SANレイアウトでは、SnapCenter Plug-in for OracleがASMディスクグループ上にあるOracleデータファイル以外の外部ファイルを検出すると、リストア処理が失敗します。外部ファイルには、次のタイプが1つ以上ある可能性があります。
+** シングルコンテナバージョン1.0SPS12
+** SAP HANA Multitenant Database Container（MDC）2.0SPS4、2.0SPS5、2.0SPS6（シングルテナントまたは複数テナント）
+** SAP HANAシングルホストシステム、SAP HANAマルチホストシステム（スタンバイホストなし）、HANAシステムレプリケーション
+
+
+* データベースホスト上のSAP HANAプラグイン
+
+
+
+
+=== の機能
+
+* SAP HANAシステムを手動で追加
+* SAP HANAデータベースのバックアップ
 +
-*** パラメータ
-*** パスワード
-*** アーカイブログ
-*** オンラインログ
-*** ASMパラメータファイル。
+** オンデマンドバックアップ（ファイルベースおよびSnapshotコピーベース）
+** システム定義またはカスタムのポリシーに基づいてスケジュールされたバックアップ
 +
-パラメータ、パスワード、アーカイブログタイプの外部ファイルを上書きするには、強制インプレースリストアチェックボックスをオンにする必要があります。
+ポリシーでは、毎時、毎日、毎週、毎月などの異なるスケジュール頻度を指定できます。
 
-+
-
-NOTE: 他の種類の外部ファイルがある場合は、リストア処理が失敗し、データベースをリカバリできません。他の種類の外部ファイルがある場合は、リストア処理を実行する前に、それらのファイルを削除するか別の場所に移動してください。
-
-+
-外部ファイルがあるために表示されないエラーメッセージは、既知の問題 が原因で、UIのジョブページに表示されません。SANのリストア前の段階でエラーが発生した場合は、コネクタログで問題 の原因 を確認します。
+** HANA System Replication（HSR；システムレプリケーション）対応
 
 
+* ポリシーに基づいてバックアップを保持する
+* 指定したバックアップからのSAP HANAデータベース全体のリストア
+* HANA非データボリュームとグローバル非データボリュームのバックアップとリストア
+* プリスクリプトとポストスクリプトでは、バックアップ処理とリストア処理に環境変数を使用できます
+* 終了前のオプションを使用して、障害シナリオのアクションプランを作成します
 
 
 
+
+=== 制限
+
+* HSR構成では、2ノードのHSRのみがサポートされます（1プライマリおよび1セカンダリ）。
+* リストア処理中にポストスクリプトが失敗した場合、保持はトリガーされません
 

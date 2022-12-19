@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task-deploy-snapcenter-plugin-for-sap-hana.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, deploy 
+summary: 各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。 
+---
+= SnapCenter Plug-in for SAP HANAを導入
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。
+
+
+NOTE: 各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。
+
+
+
+== root以外のユーザを設定します
+
+プラグインを導入するには、root以外のユーザを作成する必要があります。
+
+* 手順 *
+
+. Connector VMにログインします。
+. Linuxホストのプラグインバイナリをダウンロードします。
+`sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'``
+. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. から1～16の行をコピーします `oracle_checksum_scs.txt`` ファイルの場所 `base_mount_path/version/sc-linux-host-plugin/`
+. SAP HANAデータベースホストにログインし、次の手順を実行します。
++
+.. root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。
+.. 手順4でコピーした行をに貼り付けます `/etc/sudoers` visudo Linuxユーティリティを使用したファイル。
++
+上の行で、<LINUXUSER> を作成したroot以外のユーザに置き換え、visoodユーティリティで保存します。
+
+
+
+
+
+
+
+== プラグインを手動で導入します
+
+HANAホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入する必要があります。
+
+* 手順 *
+
+. Connector VMにログインします。
+. Linuxホストのプラグインバイナリをダウンロードします。
+`# sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'``
+. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint``
+. ダウンロードしたプラグインのバイナリパスを取得します。
+`sudo ls <base_mount_path> $(sudo docker ps|grep -Po "cloudmanager_scs_cloud:.*? "|sed -e 's/ *$//'|cut -f2 -d":")/sc-linux-host-plugin/snapcenter_linux_host_plugin_scs.bin``
+. コピー `snapcenter_linux_host_plugin_scs.bin`` scpまたはその他の代替方法を使用して、各SAP HANAデータベースホストに接続します。
+. SAP HANAデータベースホストで、次のコマンドを実行してバイナリの実行権限を有効にします。
+`chmod +x snapcenter_linux_host_plugin_scs.bin`
+. sudoのroot以外のユーザとしてSAP HANAプラグインを導入します。``./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>``
+. コピー プラグインホスト。
++
+.. /var/opt/snapcenter/spl/etcに移動します`` and execute the keytool command to import the certificate.
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt``
+.. SPLを再起動します。 `systemctl restart spl``
+
+
+
+
+
+
+== SSHキーベースの認証を使用してプラグインを導入します
+
+HANAホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。
+
+* 手順 *
+
+. Connector VMにログインします。
+. ベースマウントパスを取得します。
+`# sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+. プラグインを導入します。
+`# sudo <base_mount_path>/scripts/hana_plugin_copy_and_install.sh --host <host_name> --sshkey <ssh_key_file> --username <user_name> --port <ssh_port> --pluginport <plugin_port> --installdir <install_dir>`
++
+** host_nameはHANAホストの名前で、これは必須パラメータです。
+** ssh_key_fileは、HANAホストへの接続に使用するSSHキーです。これは必須パラメータです。
+** user_name：HANAホストに対するSSH権限を持つユーザ。これはオプションパラメータです。デフォルト値はazureuserです。
+** ssh_port：HANAホスト上のSSHポート。これはオプションパラメータです。デフォルト値は22です。
+** plugin_port：プラグインで使用するポート。これはオプションパラメータです。デフォルト値は8145です。
+** install_dir：プラグインが配置されるディレクトリ。これはオプションのパラメータです。デフォルト値は/optです。
+
+
+

@@ -1025,8 +1025,6 @@
   <block id="adaaf019398836f6a1361e1e363a6562" category="sidebar">Google Cloud にバックアップ</block>
   <block id="0db08849969b0dfb5d043b27de16d4d9" category="sidebar">Kubernetes のバックアップを管理</block>
   <block id="17e5b396f3c069ca62608e4b9e3c1767" category="sidebar">Kubernetes バックアップからリストア</block>
-  <block id="a46033978f070978d19c56a083f9252f" category="sidebar">オンプレミスのアプリケーションデータのバックアップとリストア</block>
-  <block id="71a8e6ad0ed30bfd1b2342d750c5bdd1" category="sidebar">アプリケーションデータをリストアする</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">参照</block>
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">サポート対象の AWS アーカイブストレージ階層</block>
   <block id="9f442565cfeffa804173efd111c4d74c" category="sidebar">サポートされている Azure アーカイブアクセス層</block>
@@ -1292,17 +1290,14 @@
   <block id="3e99ccad833881d9a8aeec4e2665baae" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> データストアに対応し、*更新保護*をクリックして変更に対するクラウド保護を有効にします。</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">仮想マシンはクラウドからオンプレミスのSnapCenter にリストアできます。</block>
   <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">クラウドから仮想マシンをリストアします</block>
-  <block id="f88ada8e94660fca714cd251aa019028" category="paragraph">仮想マシンをクラウドからオンプレミスのvCenterにリストアできます。バックアップは、作成された場所とまったく同じ場所にリストアされます。他の場所にバックアップをリストアすることはできません。仮想マシンはデータストアまたはVMビューからリストアできます。</block>
   <block id="d464a140825c1e9f8813a3b52ebddc03" category="admonition">データストア全体にまたがっている仮想マシンはリストアできません。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">要件</block>
   <block id="1344fa03cfc0e1e9c9a94eebf3e3c1a9" category="paragraph">すべてのが満たされていることを確認します <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> 仮想マシンをクラウドからリストアする前に、</block>
   <block id="d97e3ee694bea96c30606b68a9d786db" category="list-text">データストアからリストアするには：</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアするデータストアに対応し、*詳細の表示*をクリックします。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">リストアするバックアップに対応する* Restore *をクリックします。</block>
-  <block id="0ff9c86e6cb7e9150a24770fd6ae4e8d" category="list-text">バックアップからリストアする仮想マシンを選択し、* Next *（次へ）をクリックします。</block>
   <block id="cbf0f67cafb8adff0e22d1448f5921f1" category="list-text">仮想マシンからリストアするには：</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアする仮想マシンに対応して、*リストア*をクリックします。</block>
-  <block id="9ed4c9021fe62521b5d2326bd893b1c0" category="list-text">仮想マシンのリストアに使用するバックアップを選択し、［*次へ*］をクリックします。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VMは、バックアップの作成元と同じ場所にリストアされます。</block>
   <block id="9a0c42190771559c2a8da5fac845d24d" category="admonition">すべてのが満たされていることを確認します <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> データストアをクラウドにバックアップする前に、</block>
   <block id="8f2653c5938080ffdd57904f850bc430" category="section-title">SnapCenter Plug-in for VMware vSphereの登録</block>
@@ -1328,8 +1323,6 @@
   <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">必要なリソースグループで「*_ recent *」を無効にします。リソースグループに対して「*_ recent *」が有効になっている場合、これらのリソースグループのバックアップをクラウドへのデータ保護に使用できず、それ以降はリストア処理に使用できません。</block>
   <block id="391eb750d98c55b72607ff6ec6311db2" category="list-text">仮想マシンのリストア先のデータストアに、VMDK、VMX、VMSDなどのすべての仮想マシンファイルのコピーを格納できるだけの十分なスペースがあることを確認してください。</block>
   <block id="6ee2c41b7a9bfae5bb618327d9499834" category="list-text">リストア先のデータストアに、リストア処理でエラーが発生した場合に、restore_xxx_xxxxxx_filename形式の古い仮想マシンファイルが存在しないことを確認してください。リストア処理を開始する前に古いファイルを削除してください。</block>
-  <block id="a059803f1ed59324d3428d6aa42a2e5d" category="inline-image-macro">仮想マシンのクラウドバックアップのアーキテクチャの図。</block>
-  <block id="9b56b7a48ea1f2ae532165c49455002a" category="paragraph"><block ref="9b56b7a48ea1f2ae532165c49455002a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4cfbdcb9aba741b123b3c46a8341bf59" category="sidebar">仮想マシンのデータを保護</block>
   <block id="b2736084b30c35472d74c3c29a818a95" category="sidebar">仮想マシンの保護を管理します</block>
   <block id="c2c86860cad5cd95ae9ef9c003e01d57" category="sidebar">仮想マシンのデータをリストアします</block>
@@ -1752,14 +1745,6 @@
   <block id="fe3d15e8bd4366923e66dfe06213a1c5" category="paragraph">ジョブの名前をクリックすると、その処理に対応する詳細を確認できます。特定のジョブを探している場合は、次の操作を実行できます。</block>
   <block id="e645e09bf2ae6466ce5a92513bf9c99b" category="section-title">バックアップの詳細を表示します</block>
   <block id="2026cd9f3452451ebd9f1826ae957f07" category="paragraph">作成されたバックアップの総数、バックアップの作成に使用されたポリシー、データベースのバージョン、およびエージェントIDを表示できます。</block>
-  <block id="8307ee93b8170aa8987b3d6f8e51aac8" category="admonition">エージェントIDはコネクタに関連付けられています。Oracleデータベース・ホストの登録中に使用されたコネクタが存在しない場合は'新しいコネクタのエージェントIDが異なるため'そのアプリケーションの後続のバックアップは失敗しますエージェントIDを変更するには、* connector-update * APIを実行する必要があります。</block>
-  <block id="f9b1747cec7918dca1e5047effaf3259" category="section-title">コネクタの詳細を更新します</block>
-  <block id="134a60e3938317ff562685b10b8fee90" category="paragraph">Oracleデータベースホストの登録時に使用したコネクタが存在しなくなった場合や、AWSで破損した場合は、新しいコネクタを導入する必要があります。新しいコネクタを配置したら、* connector-update * APIを実行してコネクタの詳細を更新する必要があります。</block>
-  <block id="2905997274c538c5d6fbdf755bc6d755" category="paragraph">コネクタの詳細を更新したら、Oracleデータベースホストに接続し、次の手順を実行する必要があります。</block>
-  <block id="c95619f13c61aceb9ca308ac5737d119" category="list-text">Oracleデータベースホストで実行されているプラグイン情報を取得します。「rpm -qi netapp -snapcenter plugin -oracle」のように入力します</block>
-  <block id="2db8ac6fb57f3dfda7f67af0f01e9870" category="list-text">プラグインをアンインストールします。「sudo /opt/NetApp/snapcenter/spl/installation/plugins/uninstall」</block>
-  <block id="84021a7592384dc15cd1c59ce7051645" category="list-text">プラグインが正常にアンインストールされたことを確認します。「rpm -qi netapp -snapcenter plugin -oracle」のように入力します</block>
-  <block id="204818d35e6544dbc49720fa428fc2b7" category="paragraph">プラグインをアンインストール後に、プラグインを導入できます。 <block ref="7a9fe936bc0ede19b4e4e3b90573cf6b" category="inline-link-macro-rx"></block>。</block>
   <block id="f713a5b618a13e567bd48c7c23bc1831" category="section-title">CA署名証明書を設定します</block>
   <block id="134db136339131109beaeb48cea408f5" category="paragraph">環境のセキュリティを強化する場合は、CA署名証明書を設定します。</block>
   <block id="1be049720f3ffb604fc52816a938bb11" category="section-title">クライアント証明書認証用のCA署名証明書を設定します</block>
@@ -1778,7 +1763,6 @@
   <block id="0921a876e3fa3f2a29244d7daddce0fa" category="admonition">certfile.crtは、ルートCAおよび中間CAの証明書を参照します。</block>
   <block id="22dfbb640fee5a33dc6e592f121a4423" category="list-text">spl:'systemctl restart sp'を再起動します</block>
   <block id="e597c85c46a1bdddfd490c7ba2439138" category="section-title">プラグインのサーバ証明書のCA署名証明書を設定します</block>
-  <block id="0b941bbfead62c679ca6504257b497f7" category="paragraph">CA証明書には、Connector仮想マシンと通信するOracleプラグインホストの正確な名前を指定する必要があります。</block>
   <block id="b4d963286fa28cbb5370437141cd0168" category="list-text">プラグインホストで次の手順を実行します。</block>
   <block id="7b852943c0907b3e2fc8ff580b6818ca" category="list-text">SPLのkeystore_/var/opt/snapcenter/spl/etcが格納されているフォルダに移動します。</block>
   <block id="7dc3629efca54d7a3c55707ca70b7456" category="list-text">証明書とキーの両方を持つ証明書のPKCS12形式を、alias_splkeystore._で作成します。</block>
@@ -1794,7 +1778,6 @@
   <block id="e9d91293c5b15aa3d5a1944f0f3de884" category="paragraph">クラウドへのアプリケーションの保護に使用できるREST APIを用意しています<block ref="34be8f96bca8ea568f4cd28ef35bb6b3" category="inline-link-rx"></block>。</block>
   <block id="4512b12288e7290cb279f814b15ba5dc" category="inline-link">フェデレーテッド認証を使用してユーザトークンを作成します</block>
   <block id="8753ca0304fc4dd31beb83f4a57f7b41" category="paragraph">REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください<block ref="0eb587a835d0db317e25e938408a4ed2" category="inline-link-rx"></block>。</block>
-  <block id="4547c1343318e001ea786267b3cf7b84" category="summary">バックアップを作成する前に前提条件を完了します。</block>
   <block id="bea93ac0c50dbd01324ebd42ff666cd8" category="section-title">ONTAP 作業環境用のFSXを作成します</block>
   <block id="bf7ec532103402eaed4653738655f6ad" category="inline-link-macro">Amazon FSX for ONTAP の利用を開始しましょう</block>
   <block id="fdd19953ce3013e133d600a251e48a61" category="inline-link-macro">Amazon FSX for ONTAP 作業環境の作成と管理</block>
@@ -1807,42 +1790,23 @@
   <block id="4a2c2d38801ece7b96f22f796f2462e0" category="list-text">NAS（NFS）ワークロードを使用しないようにSANワークロードだけを設定している場合は、FSXシステムが作成されたVPCにコネクタを作成する必要があります。</block>
   <block id="ba6b286f0b29e48621c9d0bf4a77e627" category="admonition">NAS（NFS）ワークロードを使用する場合は、OracleデータベースVPCとFSX VPCの間に転送ゲートウェイを設定する必要があります。フローティングIPアドレスであるNFS IPアドレスには、転送ゲートウェイ経由でのみ別のVPCからアクセスできます。VPCをピアリングしてフローティングIPアドレスにアクセスすることはできません。</block>
   <block id="b45b202ba2cef5a8e5349896310f7f9d" category="admonition">コネクタを作成したら、[コネクタ（Connector）]&gt;[コネクタの管理（Manage Connectors）]*をクリックし、コネクタ名を選択してコネクタIDをコピーします。</block>
-  <block id="5e61bf82718531b748f39eb54b38c9be" category="section-title">SnapCenter Plug-in for Oracleを導入します</block>
-  <block id="e3582eb6307d182c5a2887fd0369d1bd" category="paragraph">SnapCenter Plug-in for Oracleは、各Oracleデータベースホストに導入する必要があります。OracleホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。</block>
-  <block id="62dd90a4b8081cb4845caa73814d10a0" category="admonition">各OracleデータベースホストにJava 8がインストールされ、JAVA_HOME変数が適切に設定されていることを確認します。</block>
-  <block id="8bc030f1e919bad0129c5b3d55584aba" category="section-title">SSHキーベースの認証を使用するプラグインの導入</block>
-  <block id="8e838fded7b6768a9db83ab9aae95068" category="paragraph">OracleホストでSSHキーベースの認証が有効になっている場合、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。</block>
-  <block id="d521743e97719d8ad5608d4bc9d5a2e7" category="list-text">Connector VMにroot以外のユーザとしてログインします。</block>
   <block id="da60bfd3c8edf7a67f3978209e164121" category="list-text">ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」</block>
-  <block id="b53dbefef323a5c9bc3bba42f6ed328f" category="list-text">プラグインを導入します。</block>
-  <block id="619078802916ca61a0299d0ee6490aa7" category="paragraph">sudo &lt;base_mount_path&gt;/scripts/oracle_plugin_copy_and_install.sh --host &lt;host_name&gt;--sshkey &lt;ssh_key_file&gt;--username &lt;user_name&gt;--port &lt;ssh_port&gt;--plugin port &lt;plugin_port&gt;--installdir &lt;install_dir&gt;</block>
   <block id="d633b044fd8a9ca45f4d615327cbf109" category="list-text">host_nameはOracleホストの名前です。これは必須パラメータです。</block>
-  <block id="246e8001a4e784b85b078008797310ff" category="list-text">ssh_key_fileは、Oracleホストへの接続に使用するSSHキーで、これは必須パラメータです。</block>
-  <block id="6dfc5d97de9ba63a607347a005f0ae81" category="list-text">user_name：OracleホストでSSH権限を持つユーザ。これはオプションパラメータです。デフォルト値はec2-userです。</block>
   <block id="3dbc2a858555e80cf398377571556499" category="list-text">ssh_port：Oracleホスト上のSSHポート。これはオプションパラメータです。デフォルト値は22です</block>
   <block id="e5a8e97642efe29ef958c3cafde091c8" category="list-text">plugin_port：プラグインで使用するポート。これはオプションパラメータです。デフォルト値は8145です</block>
   <block id="5e0c9d9b775ad3565e6649bfa8ec9800" category="list-text">install_dir：プラグインが配置されるディレクトリ。これはオプションのパラメータです。デフォルト値は/optです。</block>
-  <block id="1f4958a9fbdaa34d782046987faf9553" category="paragraph">たとえば、「sudo /var/lib/docker/volumes/service-manager--2 _ cloudmanager_scs_cloud_volume/_data/scripts/oracle_plugin_copy_and_install.sh -- host xxx.xxx.xxx.xxx -- key/keys/NetApp-ssh.pk`」のように指定します</block>
-  <block id="19ce75ba7f615466dfa40bd305eda913" category="section-title">プラグインの手動導入</block>
   <block id="1744dd19db9c80afac565572fb28289c" category="paragraph">OracleホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入する必要があります。</block>
   <block id="e67d4d64b1a45fd340729c74de84b847" category="list-text">Connector VMにログインします。</block>
   <block id="274f1ac526644b363a1660f91b59759a" category="list-text">SnapCenter Linuxホストプラグインバイナリをダウンロードします。「sudo Docker exec-it cloudmanager_scs_cloud curl -X get <block ref="b6b73f503ca62442f11ad4b84cc2f0bc" category="inline-link-rx"></block></block>
   <block id="5f46deee08d4b3d1d62d6ffaf5f1db1c" category="list-text">ダウンロードしたプラグインのバイナリパスを取得します。sudo ls &lt;base_mount_path&gt;$（sudo Docker PS | grep -Po " cloudmanager_scs_cloud：*？"|sed -e '/*$//'/|cut -f2 -d ":")/sc-linux -host-plugin/snapcenter linux _host_plugin_bbin</block>
   <block id="b63053825a0c4e3a09fd276fe30a743b" category="list-text">scpまたはその他の代替方法を使用して、Oracleデータベースホストのそれぞれにcopy_snapcenter linux_host_plugin_scs.bin _をコピーします。</block>
-  <block id="24d579b70f755c08c217e309587abc2c" category="list-text">Oracleデータベース・ホストで、次のコマンドを実行してバイナリの実行権限を有効にします。chmod +x snapcenter linux_host_plugin_sbin`</block>
-  <block id="c510a3598a8d1d8d28dc58297002b1f2" category="list-text">Oracleプラグインをrootユーザとして導入します。snapcenter_linux_host_plugin_scs.bin -私は黙っている</block>
   <block id="e83ebe810e7607148882f52b5e3b71fd" category="list-text">connector VMのcopy_certificate.p12_from_&lt;base_mount_path&gt;/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。</block>
   <block id="7550e76395e0f500b3d970b6fa0ec73f" category="list-text">_/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass SnapCenter -deststorepass SnapCenter agentcert -destalias agentcert -noprompt`</block>
-  <block id="c02273a1ac5db69a391d107c30235e7c" category="summary">ポリシーを割り当て、データベースをバックアップします。</block>
-  <block id="7e51ebaa71d2b6cbf4e46bba9bf8da43" category="doc">クラウドネイティブなアプリケーションデータをバックアップ</block>
-  <block id="4e7585fe5b33c787cec609e7fe6c85fb" category="paragraph">組み込みポリシーを割り当てるか、ポリシーを作成してデータベースに割り当てることができます。ポリシーを割り当てると、ポリシーで定義されたスケジュールに従ってバックアップが作成されます。オンデマンドバックアップを作成することもできます。</block>
-  <block id="6aa308344acc0039bf47948542fd4e82" category="admonition">Oracle用のASMディスクグループを作成する場合は、複数のディスクグループにまたがるボリュームがないことを確認してください。各ディスクグループには専用のボリュームを含める必要があります。</block>
   <block id="aeec20fb97ec5b367b439351c1c00204" category="list-text">[アプリケーション]ページで、データベースがポリシーを使用して保護されていない場合は、[*ポリシーの割り当て*]をクリックします。</block>
   <block id="114872d03378e25021c3cc928e318e8a" category="paragraph">データベースが1つ以上のポリシーを使用して保護されている場合は、をクリックして複数のポリシーを割り当てることができます <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> &gt;*ポリシーの割り当て*。</block>
   <block id="3c7ba9b9e3e6cc576a0786913d32d5df" category="list-text">ポリシーを選択し、* assign *をクリックします。</block>
   <block id="098e4b45417a1ec0fafb90bed28e6424" category="paragraph">バックアップは、ポリシーで定義されたスケジュールに従って作成されます。</block>
   <block id="7ab4624b685848aa66b27397a83a5988" category="admonition">サービスアカウント（_SnapCenter -account-&lt;account_id&gt;_）は、スケジュールされたバックアップ処理の実行に使用されます。</block>
-  <block id="c91ff5b89781f9b20673d63d2fbc4481" category="section-title">オンデマンドバックアップを作成</block>
   <block id="556daa2892e6c333b040f2f9ed98a222" category="paragraph">ポリシーを割り当てたら、アプリケーションのオンデマンドバックアップを作成できます。</block>
   <block id="ca46a9979585fdf43309efe203535615" category="list-text">[アプリケーション]ページで、をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> アプリケーションに対応して、*オンデマンドバックアップ*をクリックします。</block>
   <block id="7fd7a0a5300dbc1f2454a34738c54d80" category="list-text">アプリケーションに複数のポリシーが割り当てられている場合は、ポリシー、保持値を選択し、*バックアップの作成*をクリックします。</block>
@@ -1851,28 +1815,18 @@
   <block id="f1019737785319ac86fe55929c140c9b" category="paragraph">ステータスコード500でエラーが発生しました。エラー{\"error\"：{\"コード\"：\"APP_INTERNAL ERROR \"、\"message\"：\"スナップショットの作成に失敗しました。理由：Snapshotでバックアップされたクローンが原因で、Snapshot処理を実行できません。しばらくしてからもう一度お試しください</block>
   <block id="fe0a0332700b9a067272058245b48946" category="inline-link">Snapshotでバックアップされたクローンが原因で、Snapshot処理を実行できません</block>
   <block id="d78d082537913dac6697dabddff374dc" category="paragraph">この問題 の修正方法については、以下を参照してください。<block ref="66c6329b50c8e15e4ce55612532f0653" category="inline-link-rx"></block>。</block>
-  <block id="a6c7c4de1c97d05aea18992c4dcc7774" category="summary">ポリシーの割り当てとバックアップの作成を行うアプリケーションを検出します。</block>
-  <block id="b6a000d0b1cdbc32d0bef6d0258fa2f0" category="doc">アプリケーションを検出</block>
-  <block id="b26de0535d797545cac86720fd096445" category="paragraph">ポリシーの割り当てとバックアップの作成を行うには、ホスト上のデータベースを検出する必要があります。</block>
-  <block id="f0ddc428cd7c3cf4949f9edfb049cb33" category="list-text">ONTAP 作業環境およびコネクタ用のFSXを作成しておく必要があります。</block>
-  <block id="5ff3ca14a716aed6cd7b9b8433daa620" category="list-text">コネクタがFSX for ONTAP 作業環境およびOracleデータベース・ホストに接続されていることを確認します</block>
-  <block id="b284b4e1502b1e8b45eca415d2efe3b2" category="list-text">SnapCenter Plug-in for Oracleを導入しておく必要があります。 <block ref="7a9fe936bc0ede19b4e4e3b90573cf6b" category="inline-link-macro-rx"></block>。</block>
   <block id="fe4137061bd2c33fe1c02ad6b9570b0e" category="list-text">アプリケーションの検出をクリックします。</block>
   <block id="d20aa4d7347d2818451332f0d49b2253" category="list-text">クラウドネイティブ*を選択し、*次へ*をクリックします。</block>
   <block id="63000a0fa2dbdc9bced04917b9fb5014" category="paragraph">SnapCenter system_roleを持つサービスアカウントが作成され、このアカウントのすべてのユーザに対してスケジュールされたデータ保護処理が実行されます。</block>
   <block id="2f1527fabf6b15b2c246b08aca9ef8a4" category="list-text">*Account*&gt;*Manage Account*&gt;*Members*をクリックして、サービスアカウントを表示します。</block>
   <block id="0e0ba396f0687ce7517d861db155fb10" category="admonition">スケジュールされたバックアップ処理を実行するには、サービスアカウント（_SnapCenter -account-&lt;accountId&gt;&gt;）を使用します。サービスアカウントは絶対に削除しないでください。</block>
-  <block id="60b7fc487a9e8ffb8c92bd61f1e6f991" category="list-text">Specify Host Details（ホストの詳細の指定）ページで、Oracleデータベース・ホストの詳細を入力し、チェック・ボックスを選択してプラグインがホストにインストールされていることを確認し、* Discover *をクリックします。</block>
   <block id="0f450d6f93fc8c049d1423515f582f2d" category="list-text">ホスト上のすべてのデータベースが表示されます。データベースでOS認証が無効になっている場合は、* Configure *をクリックしてデータベース認証を設定する必要があります。詳細については、を参照してください <block ref="eb69440615f98753d53a91f4eeab39c2" category="inline-xref-macro-rx"></block>。</block>
-  <block id="3b8ee60b6a282d08697fd8cf49f22e98" category="list-text">[アプリケーションの管理]をクリックし、[追加]を選択して新しいホストを追加するか、[更新]を選択して新しいデータベースを検出するか、[削除]をクリックしてデータベース・ホストを削除します。</block>
   <block id="16ed5cca317a8c59c781bc402c31999b" category="list-text">[*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認して、要件に合わせて編集することも、新しいポリシーを作成することもできます。</block>
   <block id="fd9cc0fdcc5cde5efec19c54d871da3a" category="section-title">Oracleデータベースのクレデンシャルを設定する</block>
   <block id="94c3f93d78fcc4e31f273d4f220cd703" category="paragraph">Oracleデータベースに対してデータ保護処理を実行する際に使用するクレデンシャルを設定する必要があります。</block>
   <block id="7809974cdd1cd4eb76ad1dcf91a3f425" category="list-text">データベースでOS認証が無効になっている場合は、* Configure *をクリックしてデータベース認証を設定する必要があります。</block>
-  <block id="f285aa5a9da3baa99905c087902b8e87" category="list-text">Database Settings（データベース設定）またはASM Settings（ASM設定）セクションで、ユーザー名、パスワード、およびポートの詳細を指定します。</block>
   <block id="8c204149f6ffccc490e6b851431463a6" category="paragraph">Oracleユーザにはsysdba権限が必要で、ASMユーザにはSYSASM権限が必要です。</block>
   <block id="3b5c5ae54533da138be94559c533a510" category="list-text">[*Configure*] をクリックします。</block>
-  <block id="af4141cf3fb8179af4deac9547c01278" category="section-title">ポリシーを作成する</block>
   <block id="91808c1a7549a55c53468ea4a50927d4" category="paragraph">組み込みのポリシーを編集しない場合は、ポリシーを作成できます。</block>
   <block id="0afc66e0d31a963ebe19ebef4f887a60" category="list-text">[アプリケーション]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
   <block id="ab899735d36938b4c6cb8edd18a222e5" category="list-text">［*ポリシーの作成*］をクリックします。</block>
@@ -1884,21 +1838,11 @@
   <block id="2d242bb36ec91b32005f9296ff03a912" category="section-title">アーキテクチャ</block>
   <block id="5e106a25aff8402c9cb720536f4f9763" category="paragraph">Cloud Backup for Applicationsアーキテクチャには、次のコンポーネントが含まれています。</block>
   <block id="5aa6aa9ade143b785fa0243d0138a6b5" category="paragraph">オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます</block>
-  <block id="64293a907ed741e8f0a2b7508ac14fb6" category="paragraph">Cloud Backup for ApplicationsのUIには、複数のストレージ機能とデータ管理機能が用意されています。</block>
-  <block id="5c4f5775352fba72f33e34817f09707e" category="list-text">SnapCenter Plug-in for Oracleは、各Oracleデータベースホストで実行されるコンポーネントであり、データ保護処理の実行中、ホストで実行されるOracleデータベースと通信します。</block>
-  <block id="8fd81e906c023a2c3e318d13769fd642" category="inline-image-macro">Cloud Backupがさまざまなコンポーネントと通信する仕組みを示す図</block>
-  <block id="c078c5cf04e16bf64233c82b0f994bcf" category="paragraph"><block ref="c078c5cf04e16bf64233c82b0f994bcf" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ce820eb6e1b6a8cd96fc07f753a32646" category="paragraph">コネクタは、Oracleデータベースと同じVPC内に導入することも、別のVPC内に導入することもできます。コネクタとOracleデータベースが異なるネットワークにある場合は、コネクタとOracleデータベース間のネットワーク接続を確立する必要があります。</block>
   <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">サポートされている構成</block>
   <block id="0f0f84cb9775a6f4ad6b4796bfcedfe9" category="list-text">オペレーティングシステム</block>
   <block id="70cfb8b329ca692c676669ef294b37c0" category="list-text">RHEL 7.5以降および8.x</block>
   <block id="0d9cfc701256d81666be8cc96e8482b8" category="list-text">OL 7.5以降および8.x</block>
-  <block id="3a9b89e47751d4cfc28a55ca7c5efa97" category="list-text">ストレージシステム：ONTAP 対応のAmazon FSX</block>
-  <block id="fc2b0bcc44ac9f8bef7ad04de353a902" category="list-text">ストレージレイアウト：NFS v3およびv4.1（dNFSがサポートされます）、ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）</block>
-  <block id="477deb60a679be8d3ed7fc83c4ab4b80" category="list-text">アプリケーション：Oracle StandardおよびOracle Enterprise–スタンドアロン（従来型およびマルチテナント–CDBおよびPDB）</block>
-  <block id="9a8f7463386e75f032fb3eacb8e8b03c" category="list-text">Oracleのバージョン：12cR2、18c、19C</block>
   <block id="24952b37ce88035adf02c3d53375aee0" category="list-text">Oracleデータベースの自動検出</block>
-  <block id="7758fa39945c61d871cb2e22cbfde4ac" category="list-text">Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのバックアップ</block>
   <block id="a638d70a88de180abe34c16291fad0fe" category="list-text">フル（データ+制御+アーカイブログファイル）バックアップ</block>
   <block id="f689f1139e089e78a96f2e9b69a62df4" category="list-text">オンデマンドバックアップ</block>
   <block id="4384c9d45fd41e6afb3574ea75e591da" category="list-text">システム定義またはカスタムのポリシーに基づいてスケジュールされたバックアップ</block>
@@ -1907,33 +1851,22 @@
   <block id="e3252f42a980c18b105121b0076b45f4" category="list-text">指定したバックアップからOracleデータベース全体（データ・ファイル+制御ファイル）をリストアします</block>
   <block id="be778790451ccfabb8b767b1ff36bbb6" category="list-text">データファイルのみをリストアし、指定したバックアップからのみファイルを制御する</block>
   <block id="87f86331009f36ac6fc42b85e89dc536" category="list-text">SCNまで、時間が経過するまで、使用可能なすべてのログ、およびリカバリオプションなしでOracleデータベースをリカバリする場合</block>
-  <block id="60d9a229099000fec5710894db8b263b" category="list-text">バックアップおよびその他のジョブを監視しています</block>
   <block id="083c7158412d040e003ac1e9a9528d97" category="list-text">ダッシュボードに保護の概要を表示します</block>
   <block id="2dbc045edb5a2f6faf0c411d7f5f750f" category="list-text">E メールでアラートを送信する</block>
-  <block id="73dc94ffcc0a567690b7ed44ade89743" category="list-text">Oracleバージョン11gおよび21cはサポートされません</block>
-  <block id="4f3dd1c11e04e3e830625603ea3a0656" category="list-text">バックアップでのマウント、クローニング、カタログ化、検証の処理はサポートされていません</block>
   <block id="9c1f3568b85ef3ac4da7fc528340d6ba" category="list-text">では、RACおよびData GuardでのOracleはサポートされません</block>
-  <block id="1814ab6cc8fc9cc32c4f16d1da6094aa" category="list-text">バックアップの制限：</block>
   <block id="9be91e24e83b7b8d24aef393ff8a2381" category="list-text">オンラインデータまたはログのみのバックアップはサポートしません</block>
   <block id="d190910a195191d85f25127df0bbb86a" category="list-text">では、オフラインバックアップはサポートされません</block>
   <block id="45f390722d9189860abe14e4e14ebb87" category="list-text">は、再帰マウントポイント上に存在するOracleデータベースのバックアップをサポートしていません</block>
   <block id="5a9da4bd1ffdd301898f827c866a6242" category="list-text">では、FSXボリュームと重複する複数のASMディスクグループに存在するOracleデータベースの整合グループSnapshotはサポートされていません</block>
   <block id="ce28a32d76b140c048ecb6813395af67" category="list-text">OracleデータベースがASMで設定されている場合は、SVM名がFSXシステム全体で一意であることを確認します。FSXシステム間でSVM名が同じ場合は、それらのSVM上にあるOracleデータベースのバックアップはサポートされません。</block>
-  <block id="a0ff33890b3fd2f4c96ec82fd7574fa7" category="list-text">リストアの制限事項：</block>
   <block id="4ef14390cecf5f2e8db0ad715ba85c82" category="list-text">表領域とPDBのリストアなど、きめ細かなリストアはサポートしていません</block>
-  <block id="f1efd5bb401cc568920943debec0ceaa" category="list-text">NASおよびSANのレイアウトでは、OracleデータベースのIn Placeリストアのみがサポートされます</block>
-  <block id="670750d3f8fb7d80a85c296423b52da5" category="list-text">では、SANレイアウト上でのOracleデータベースの制御ファイルのみのリストアや、データファイル+制御ファイルのリストアはサポートされていません</block>
-  <block id="4984eae824218c2ee5b053a837308d1c" category="list-text">SANレイアウトでは、SnapCenter Plug-in for OracleがASMディスクグループ上にあるOracleデータファイル以外の外部ファイルを検出すると、リストア処理が失敗します。外部ファイルには、次のタイプが1つ以上ある可能性があります。</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="list-text">パラメータ</block>
   <block id="dc647eb65e6711e155375218212b3964" category="list-text">パスワード</block>
   <block id="9358ddcf018549ad07e3696f1dff8b4c" category="list-text">アーカイブログ</block>
   <block id="bb139ed204a522e52c14c36896034ef9" category="list-text">オンラインログ</block>
   <block id="84e9072345f79cd7577657ba68cc442b" category="list-text">ASMパラメータファイル。</block>
-  <block id="64fe13c3daed1e3027d8bb4b94298917" category="paragraph">パラメータ、パスワード、アーカイブログタイプの外部ファイルを上書きするには、強制インプレースリストアチェックボックスをオンにする必要があります。</block>
-  <block id="7315764c2569272b1e380ace938a3acf" category="admonition">他の種類の外部ファイルがある場合は、リストア処理が失敗し、データベースをリカバリできません。他の種類の外部ファイルがある場合は、リストア処理を実行する前に、それらのファイルを削除するか別の場所に移動してください。</block>
   <block id="290277c5012b9ace7fefb7c22949f0d8" category="paragraph">外部ファイルがあるために表示されないエラーメッセージは、既知の問題 が原因で、UIのジョブページに表示されません。SANのリストア前の段階でエラーが発生した場合は、コネクタログで問題 の原因 を確認します。</block>
   <block id="bc75c7043b8e7365f3c8207f2cc978cc" category="summary">データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。</block>
-  <block id="2f82b783d7870b8b5a512057018fe6a5" category="doc">クラウドネイティブアプリケーションデータをリストア</block>
   <block id="c48a955b9e2bd6b7c7d520e85a16d929" category="paragraph">データ損失が発生した場合は、データファイル、制御ファイル、またはその両方をリストアして、データベースをリカバリできます。</block>
   <block id="878f99c91be407d0f28af03c6c58cc11" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアするデータベースに対応して、*詳細の表示*をクリックします。</block>
   <block id="0b666df245a6202aced91c7640467d2f" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアに使用するデータ・バックアップに対応して、*リストア*をクリックします。</block>
@@ -1946,7 +1879,6 @@
   <block id="d05b716bffd64ec8e96499377d58a7b2" category="paragraph">[*すべてのデータファイル*]および[*制御ファイル*]を選択します。</block>
   <block id="ad174c635135b0241d2c6d4374969f66" category="admonition">制御ファイルを含むデータファイルのリストアや制御ファイルのみのリストアは、ASMレイアウトのiSCSIではサポートされていません。</block>
   <block id="7d2ceeaac74ba98c2f8e824aabd0befa" category="paragraph">また、［*強制的にインプレースリストア*］チェックボックスをオンにすることもできます。</block>
-  <block id="47834d28e751dd7e5975a028525b14e9" category="paragraph">[*強制インプレースリストア*]オプションを使用すると、データファイル、パスワードファイル、アーカイブログファイルがデータディスクグループから上書きされます。[強制的にインプレースリストア*]オプションを選択した場合は、最新のバックアップを使用する必要があります。</block>
   <block id="be7f025709fbae3f80cb8db551628640" category="list-text">リカバリ範囲セクションで、次の操作を実行します。</block>
   <block id="a536fe88f851033ec6d2f5f6c128564d" category="paragraph">[システム変更番号まで（Until System Change Number）]*を選択し、SCNを指定します。</block>
   <block id="263cdfe5686f3877131daa2473fd6436" category="paragraph">特定の日時にリカバリする</block>
@@ -1954,11 +1886,6 @@
   <block id="1c4f2e7b048fcee5d429a4ba9afe4175" category="paragraph">リカバリ後にデータベースを読み取り/書き込みモードで開く場合は、チェックボックスを選択します。</block>
   <block id="4b077d1c7e93e91ee6d4fb4a8eacdf33" category="list-text">「*次へ*」をクリックして詳細を確認します。</block>
   <block id="357a35aedd0c37deb3a881df778a9bb4" category="list-text">[* リストア ] をクリックします。</block>
-  <block id="4a5a82686ba9941f1667cdca6777b901" category="sidebar">アプリケーションデータのバックアップとリストア</block>
-  <block id="084829803f52f86aee9d787cb2c3581d" category="sidebar">クラウドネイティブアプリケーションデータのバックアップとリストア</block>
-  <block id="b5604ed88817894a6aea9dc218c45b8e" category="sidebar">クラウドネイティブアプリケーションのデータをバックアップ</block>
-  <block id="e8a9eeac14cf83695d7d066f82b9ba23" category="sidebar">Oracleデータベースをクラウドからオンプレミスにリストア</block>
-  <block id="0affc637f33b3e47ec0c95c6c88db865" category="sidebar">SQL Serverデータベースをクラウドからオンプレミスにリストア</block>
   <block id="3a3684473cd3bbadce768d553de06b92" category="sidebar">クラウドネイティブアプリケーションのデータをリストア</block>
   <block id="e7f0bd203723dde56c408349b772431e" category="paragraph">Cloud Backupでランサムウェアセーフバックアップのオブジェクトロックがサポートされるようになりました。クラスタがONTAP 9.11.1以降を使用していて、バックアップのデスティネーションがAmazon S3の場合、_DataLockという新しいバックアップポリシーオプションとランサムウェア防御_が利用可能になりました。DataLockはバックアップファイルの変更や削除を防止します。ランサムウェア対策はバックアップファイルをスキャンして、ランサムウェアによるバックアップファイルへの攻撃の証拠を探します。<block ref="3f7eaa3e30bb5eb7a46ecb7c423ee7ad" category="inline-link-rx"></block>。</block>
   <block id="4a13f748ffea2bf384ee164062e7e17f" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェアを使用して展開されたコネクタには、これらの権限が含まれています。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="b51546833a3c96ab5b8c4e49b196cd94" category="inline-link-rx"></block>。</block>
@@ -1980,7 +1907,6 @@
   <block id="7b2b7c08da06dd437ae98c50b4ace20f" category="inline-link">必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します</block>
   <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
   <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">次のリンクからリフレッシュトークンを生成してください：https://services.cloud.netapp.com/refresh-token/リフレッシュトークンは、ユーザートークンを生成するために使用する英数字文字列です。</block>
-  <block id="39d3d67728b58b0f9255268d852abfbe" category="admonition">アプリケーションインフラ向けCloud Backupは、リージョン内のアベイラビリティゾーンの障害に対して耐障害性に優れています。新しいリージョンにフェイルオーバーすることで地域的な障害にも対応できるようになり、このフェイルオーバーには約2時間のダウンタイムが伴います。</block>
   <block id="da101cda60f537d813b60a33b665c8f8" category="paragraph">プロバイダとしてStorageGRID を選択し、StorageGRID サーバとS3テナントアカウントの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。</block>
   <block id="80b09eca2711141a189a78c7b481d5cb" category="list-text">ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。</block>
   <block id="22c37949858e0a6877e1770be16db62b" category="paragraph">DataLockとRansomware Protectionをバックアップに使用するには、StorageGRID システムでバージョン11.6.0.3以降が実行されている必要があります。</block>
@@ -2234,7 +2160,6 @@
   <block id="81fedcf72bda3098b5ab523c2f40b979" category="list-text">（オプション）コストを最適化するために一定の日数が経過したバックアップをオブジェクトストアからアーカイブストレージに移動する場合は、「*ティアBackup to Archival *」チェックボックスを選択します。</block>
   <block id="ce5717a5ac194f2c014f6deb6616dbb5" category="paragraph">ONTAP 9.10.1以降とAmazon Web ServicesまたはAzureをクラウドプロバイダとして使用している場合にのみ、オブジェクトストアからアーカイブストレージにバックアップを移動できます。各クラウドプロバイダにアーカイブアクセス階層を設定する必要があります。</block>
   <block id="8fcec94b164f3e6b67e681668273f11f" category="paragraph">カスタマイズしたポリシーは編集、コピー、および削除できます。</block>
-  <block id="c420a910c4e7f566035c5d1b7b8aafc4" category="paragraph">データストアは、Amazon Web Services S3、Microsoft Azure Blob、StorageGRID にバックアップできます。</block>
   <block id="0ec24d208e5df8843f6524b944c450f6" category="summary">オンプレミスのONTAP からAWSにデータストアをバックアップできます。</block>
   <block id="1d5ad62b9217b4a3f085f517534f40bb" category="doc">データストアをAmazon Web Servicesにバックアップする</block>
   <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Amazon Web Services *を選択してクラウドプロバイダとして設定します。</block>
@@ -2248,7 +2173,6 @@
   <block id="fe8f95b60b7c4092ce03adfbb31e89b4" category="doc">仮想マシンをバックアップするポリシーを作成します</block>
   <block id="43852dc1e0c3229284688eb4c01dfef0" category="paragraph">事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。</block>
   <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">[仮想マシン]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
-  <block id="05f2a09d30545d0cfce1840fb01af78f" category="paragraph">デフォルトでは、バックアップソースがプライマリとして選択されます。</block>
   <block id="a0ba49a69c26d4de1afcac95ba435828" category="paragraph">SnapCenter Plug-in for VMware vSphereとCloud Backup for Virtual Machinesの間の通信に使用するポートが開いていることを確認する必要があります。</block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">サポート登録の概要</block>
   <block id="192054ad7601240a3e8be54cc5cc548e" category="paragraph">サポート資格を有効にする登録には、次の2つの形式があります。</block>
@@ -2369,9 +2293,7 @@
   <block id="4222162492898e3a8b9e4698a4abb67a" category="paragraph">SnapCenter Plug-in for VMware vSphereとBlueXPを統合することで、1つ以上のデータストアをAmazon Web Servicesにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="a9bb4a4ebd2695e50a673d0b706564b1" category="list-text">BlueXP UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*仮想マシン*]をクリックします。</block>
   <block id="abe7d23d1826e9db79e6c78593403413" category="paragraph">データストアのバックアップを検出するONTAP クラスタを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。</block>
-  <block id="1e32c2329234deef7077d261aa8b2501" category="paragraph">SnapCenter Plug-in for VMware vSphereとBlueXP（旧Cloud Manager）を統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。</block>
   <block id="52764b554e9bba6804ede67b5b8f970e" category="list-text">BlueXP 3.9以降</block>
-  <block id="54b9cf78f57f81918b174b7e67507098" category="list-text">SnapCenter Plug-in for VMware vSphereで、BlueXPのCloud Backup for Virtual Machinesポリシーと同じラベルまたはラベルがない日単位、週単位、または月単位のポリシーが少なくとも1つあります。</block>
   <block id="3e6a014c15570f7f51f7fcdad349babc" category="summary">ポリシーとバックアップを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。</block>
   <block id="bc297099626ec7a9aaf08998c859562c" category="paragraph">アプリケーションの保護を管理するには、BlueXP UIとは異なる操作を実行します。</block>
   <block id="d4073377354088504201b6621befe095" category="list-text">[*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
@@ -2421,21 +2343,15 @@
   <block id="ed1a69b750cb694ed724bc2c1447f5d7" category="paragraph">以前に設定したコネクタでCloud Backupをすでに使用している場合は、Azure Synapse WorkspaceとData Lake Storage Accountの権限をBlueXPユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。</block>
   <block id="a6e5e96ba9eebf564c1d0ef4d770658f" category="list-text">特定のGoogle BigQuery権限は、BlueXPに権限を付与するユーザーロールに追加する必要があります。 <block ref="1401fe87dc595535076f05f545f8275e" category="inline-link-macro-rx"></block>。</block>
   <block id="8a0b3def9f0e476db975754e72ab3c91" category="paragraph">以前に設定したコネクタでCloud Backupをすでに使用している場合は、今すぐBigQuery権限をBlueXPユーザーロールに追加する必要があります。これらは新しい機能で、検索とリストアに必要です。</block>
-  <block id="532c5a08ea04f1e8333532034c9ce816" category="paragraph">BlueXPにアクセスし'BlueXPアカウントを作成して作業環境とコネクタを作成し'Oracle向けSnapCenter プラグインを導入している必要があります</block>
   <block id="1a21a1a2d4f828ab8b7b8e03358484e8" category="section-title">BlueXPにアクセスします</block>
   <block id="253b7edb57d157e0cff45ddb9e389aa4" category="inline-link-macro">BlueXPにログインします</block>
   <block id="21465eddb0676f3918f9041ef059c735" category="paragraph">NetApp FSXは、BlueXPまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、BlueXPのONTAP システム用FSXを検出する必要があります。</block>
   <block id="91381cdaf1cff61a625d6355a34abc10" category="paragraph">アカウント管理者は、AWSにConnectorを導入する必要があります。これにより、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理できるようになります。</block>
   <block id="71e064246e91e058534eb9c47cbeadcf" category="inline-link-macro">BlueXPからAWSでコネクタを作成する</block>
   <block id="d15bab64d8286860a0c772cefded5f73" category="paragraph">詳細については、を参照してください <block ref="3fdf2a62e687b222e52b805dde381364" category="inline-link-macro-rx"></block>。</block>
-  <block id="b724f76260140d552e6e5de152846536" category="paragraph">コネクターを作成したら、*ストレージ*&gt;*キャンバス*&gt;*作業環境*&gt;*作業環境の追加*をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。</block>
   <block id="4f72fd7ca712acaf47fd9055c7bd40b5" category="list-text">BlueXP UIで、*Protection*&gt;* Backup and recovery*&gt;* Virtual Machines *&gt;* SnapCenter Plug-in for VMware vSphere*をクリックし、仮想マシンをリストアするSnapCenter Plug-in for VMware vSphereを選択します。</block>
   <block id="fcbd686b41684a3ab6f265cc8de940c9" category="admonition">ソース仮想マシンが別の場所（vMotion）に移動され、ユーザーがその仮想マシンのリストアをBlueXPから実行した場合、仮想マシンはバックアップが作成された元の場所にリストアされます。</block>
-  <block id="4c1e6a15b11a1e2752116c662fede79c" category="summary">Cloud Backup for ApplicationsをNetApp BlueXPで使用すると、アプリケーションと整合性のある効率的なポリシーベースのバックアップとリストアを、Amazon FSX for NetApp ONTAP 上に存在するOracle®データベースで実行できます。</block>
   <block id="c50c64e55455dd7f429be9192a7ad6a2" category="list-text">Cloud Backup for Applicationsは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームをベースにしています。</block>
-  <block id="c942722bc0e73e01d3d202c22535adb7" category="list-text">Cloud Backup for Applications UIは、BlueXP UIと統合されています。</block>
-  <block id="2a69bdfb7c47a37bcaa300a79a3edcdb" category="list-text">BlueXP Connectorは、クラウドネットワーク内で動作し、Oracleデータベースホスト上で動作するAmazon FSXストレージファイルシステムおよびSnapCenter Plug-in for Oracleと通信するBlueXPのコンポーネントです。</block>
-  <block id="b48ac281f41818a7c46c37cd8f01ddff" category="paragraph">ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップや復元などのワークフローを実行するよう要求された場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中に、NetApp ONTAP 用のAmazon FSXとSnapCenter Plug-in for Oracleと通信します。</block>
   <block id="033f9aa227c492833c2f1af28d01f134" category="list-text">BlueXP 3.9.21以上を使用している必要があります</block>
   <block id="a8db6f5de8da7da9d3f1b9e9e4dfc251" category="list-text">BlueXPコネクタIDを含むx-agent-idを取得します。</block>
   <block id="6c5b6689ac55433faa02a7b00a324c53" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="fe9c905e0ac5679eb2b5a96bea671a0a" category="inline-link-rx"></block>。</block>
@@ -2443,10 +2359,8 @@
   <block id="de91611ef7d87d7277497c9a2076d470" category="list-text">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>。</block>
   <block id="ddbe1a27c8679d52220657402cc89453" category="paragraph">データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。</block>
   <block id="9330e7377c5511f70bfc35493714892a" category="list-text">BlueXP UIで、*Protection*&gt;* Backup and recovery*&gt;* Virtual Machines *&gt;* Settings*&gt;* SnapCenter Plug-in for VMware vSphere*の順にクリックします。</block>
-  <block id="397eff7534de85acb7b12957a905e293" category="paragraph">BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます</block>
   <block id="8fc5a6acddf8678dc2c340b6dfae42a9" category="list-text">[*バックアップとリカバリ*&gt;*仮想マシン*]をクリックします。</block>
   <block id="2b36d2f46a4c7d47c05352e78b2ebe53" category="doc">オンプレミスアプリケーションのデータをGoogle Cloud Platformにバックアップ</block>
-  <block id="7a497013d67b1778c79772f53b72e376" category="paragraph">Cloud Backup for ApplicationsをBlueXPおよびオンプレミスSnapCenter と統合することで、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップできます。</block>
   <block id="6377d35d48dc41c64b0bc564bd70b156" category="summary">クラウドバックアップアプリケーションとBlueXPおよびオンプレミスSnapCenter を統合して、アプリケーションと整合性のあるスナップショットをオンプレミスのONTAP からクラウドにバックアップします。</block>
   <block id="e045b743710ac143d9dfab9ccaa12d74" category="paragraph">Cloud Backup for ApplicationsをBlueXP（旧Cloud Manager）やオンプレミスSnapCenter と統合することで、オンプレミスのONTAP からクラウドにアプリケーションと整合性のあるSnapshotをバックアップできます。必要に応じて、クラウドからオンプレミスの SnapCenter サーバにリストアできます。</block>
   <block id="ded90f27fe65ac910c74189d47b689e7" category="paragraph">オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。</block>
@@ -2683,8 +2597,6 @@
   <block id="2c4eed705dd3e0adf6e7194858d8dff7" category="inline-link">AWS クレデンシャル</block>
   <block id="71cf9cd60037f691ceec3200a6f0acf1" category="inline-link">Azure のクレデンシャル</block>
   <block id="ed77c9fb4fb9e8b7732cbf982dea2036" category="list-text">StorageGRID に格納されたバックアップ用に、コネクタまたはクラウドプロバイダの環境にスペースがプロビジョニングされます。</block>
-  <block id="c39a8c8b1202471a2fce8fdd3c4867d3" category="paragraph">お勧めします<block ref="43f8a47ebf7ff2837137c71011d4fdfe" category="inline-link-rx"></block>をクリックし、を設定します<block ref="4aa1c3f57d195559cab186a77b7b9ae0" category="inline-link-rx"></block>。</block>
-  <block id="401c5fad36fd7e91c67f706848e47eda" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。NetApp BlueXP（旧Cloud Manager）でクラウドバックアップ機能を使用すると、アプリケーションと整合性のある効率的なポリシーベースのバックアップが可能になり、Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのリストアが可能になります。</block>
   <block id="98958857b2d6171af3531a2bf950b03f" category="list-text">に登録しておきます<block ref="b82eb11d49725bb5c7ee9cfd96e7991d" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="ffeae9fe9c2c70b1456fd5a26459ab0c" category="inline-link-macro-rx"></block> NetApp の Cloud Backup BYOL ライセンス。</block>
   <block id="89ce585822673d5d7686dea8a0c5e90d" category="paragraph">可能です <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。また可能です <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> Azure 内の同じまたは別の Kubernetes クラスタ（同じリージョン内）に新しいボリュームとして配置する必要があります。</block>
   <block id="eac61b6439854c7845f4f16689ad363e" category="list-text">に登録しておきます<block ref="0f3e5f4110c169fa97f2cec0c13d22d7" category="inline-link-rx"></block>、<block ref="564c46d47e4fef703ab2a0ee02042ed6" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="ae025f92701c4e4e5ee318b9155a4737" category="inline-link-macro-rx"></block> NetApp の Cloud Backup BYOL ライセンス。</block>
@@ -2943,4 +2855,515 @@
   <block id="f337eb9be5f215d07b89436adc58d486" category="paragraph">Cloud BackupでFlexGroup ボリュームのバックアップとリストアがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。</block>
   <block id="c8f317ca882b28cad077a2e7d0f600ca" category="paragraph">ボリュームのバックアップを非アクティブ化して、追加のバックアップが生成されないようにすることができます。これにより、バックアップファイルからボリュームデータをリストアする機能も無効になります。基本的には、すべてのバックアップおよびリストア処理を一時停止できます。既存のバックアップは削除されないため、バックアップが使用する容量のオブジェクトストレージのコストは引き続きクラウドプロバイダに課金されます <block ref="51e759ad1e13bff2c7b32edcd8077a91" category="inline-xref-macro-rx"></block>。</block>
   <block id="ff6afa40de385c3c2ebed9d79cd8c944" category="list-text">コネクタは、クラウドまたはオンプレミスに導入できます</block>
+  <block id="08c4a2a6be7b139c5a5d2a6cad19ac2b" category="summary">FSX for ONTAP 作業環境とコネクターを作成します</block>
+  <block id="0288e4d3c832d3a63fc406f64d777726" category="doc">ONTAP のFSXを設定します</block>
+  <block id="42b641e435d9781c95ad795db19333cf" category="paragraph">ONTAP 作業環境およびコネクタ用のFSXを作成する必要があります。</block>
+  <block id="839bd9c4189b78503bd77127fcecbb39" category="paragraph">コネクターを作成したら、*ストレージ*&gt;*キャンバス*&gt;*作業環境*&gt;*作業環境の追加*をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。</block>
+  <block id="1f32eed19bf38ccd50dd00a18fd2d95c" category="summary">Cloud Volumes ONTAP 作業環境とコネクタを作成します</block>
+  <block id="ef1b9121ab9ea469ad904cedd07f94d3" category="doc">Cloud Volumes ONTAP を設定します</block>
+  <block id="949d1a8fb61abab43d418c2faa10e87a" category="paragraph">Cloud Volumes ONTAP の作業環境とコネクタを作成する必要があります。</block>
+  <block id="add0d0ec5591795d2933dd7c1f3e9950" category="section-title">Cloud Volumes ONTAP 作業環境を作成します</block>
+  <block id="5838355f0487c8b48bcad7c6bcae87af" category="inline-link-macro">既存のCloud Volumes ONTAP システムをBlueXPに追加する</block>
+  <block id="8a4f79c770877a1f6dc14d8c5fa17702" category="paragraph">既存のCloud Volumes ONTAP システムを検出し、BlueXPに追加できます。詳細については、を参照してください <block ref="c0cbe78c27219d64a20527a549b6f27b" category="inline-link-macro-rx"></block>。</block>
+  <block id="366e0912552436338ce1a442f0fa8f9d" category="paragraph">クラウド環境向けCloud Volumes ONTAP の導入は、いくつかの手順で開始できます。詳細については、次のいずれかを参照してください。</block>
+  <block id="486388bbe4cda183a0e74df6ada2a454" category="inline-link-macro">AWS での Cloud Volumes ONTAP のクイックスタート</block>
+  <block id="d76b143ce1cb466792de0e0337e820e7" category="list-text"><block ref="d76b143ce1cb466792de0e0337e820e7" category="inline-link-macro-rx"></block></block>
+  <block id="6b9ec885733dcee16db8c4d8dde6312a" category="inline-link-macro">Azure での Cloud Volumes ONTAP のクイックスタート</block>
+  <block id="1a4dc7b45f8328469b28b4e49fc22125" category="list-text"><block ref="1a4dc7b45f8328469b28b4e49fc22125" category="inline-link-macro-rx"></block></block>
+  <block id="c816d65f45a034b0842bc039567fcb6b" category="inline-link-macro">Google Cloud の Cloud Volumes ONTAP のクイックスタート</block>
+  <block id="d6758ec75f0ff2bab6d8a4d6b6f79cf1" category="list-text"><block ref="d6758ec75f0ff2bab6d8a4d6b6f79cf1" category="inline-link-macro-rx"></block></block>
+  <block id="b17b13eda5e5c4b8269c7548d0ba563d" category="paragraph">CVOの作業環境とOracleデータベースの両方を同じコネクタで管理する必要があります。</block>
+  <block id="32f728d4e9f57d17ae1f55b724020fe1" category="list-text">CVO作業環境があり、同じVPCまたはVNetにOracleデータベースがある場合は、同じVPCまたはVNetにコネクタを導入できます。</block>
+  <block id="33451f9e43cebb6f11479ad0351645da" category="list-text">CVO作業環境があり、異なるVPCまたはVNet内のOracleデータベースがある場合は、VPCまたはVNetのピア関係が確立されていることを確認してください。</block>
+  <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">（オプション）コストを最適化するために一定の日数が経過したあとにバックアップをオブジェクトストアからアーカイブストレージに移動する場合は、「* Tier Backups to Archival *」チェックボックスをオンにし、バックアップをアーカイブするまでの日数を入力します。</block>
+  <block id="2918bd1eb41f17cc6bbd51b50460f7dc" category="admonition">仮想マシンに関連付けられているポリシーを編集または削除することはできません。</block>
+  <block id="d5b842bb75f6d0fd358e7a35f06b5354" category="summary">Oracleデータベースのバックアップをスケジュール設定またはオンデマンドで作成します。</block>
+  <block id="b83d0a6a6920d792bf1e5421f574e4d8" category="doc">クラウドネイティブのOracleデータベースをバックアップ</block>
+  <block id="b46b8ff17ee3d12a35e1f4c95a1c4b3a" category="paragraph">作成した組み込みのポリシーまたはポリシーを割り当ててから、バックアップを作成する必要があります。</block>
+  <block id="2881f8946d594a0e0b584aac39952202" category="section-title">Oracleデータベースを保護するためのポリシーを作成します</block>
+  <block id="436faef9b95757e54b257ab16a914324" category="section-title">Oracleデータベースのバックアップを作成します</block>
+  <block id="64fdd98c3f2496dfbbb2e63478269d01" category="paragraph">組み込みポリシーを割り当てるか、ポリシーを作成してデータベースに割り当てることができます。ポリシーを割り当てると、ポリシーで定義されたスケジュールに従ってバックアップが作成されます。</block>
+  <block id="5d178c4bbc0ebb31ac103026213cc803" category="admonition">Oracleの場合、ASMディスクグループを作成するときは、複数のディスクグループに共通のボリュームがないことを確認します。各ディスクグループには専用のボリュームを含める必要があります。</block>
+  <block id="531369e846100ce5d91871e142c23ed8" category="section-title">Oracleデータベースのオンデマンドバックアップを作成する</block>
+  <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされるアーカイブ層はAzure Archive Blob Storageです。</block>
+  <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">アーカイブ階層を選択します。</block>
+  <block id="aead5ccad47d982e42806d38753de835" category="paragraph">BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます。</block>
+  <block id="98c5d692e015a6f029128bd692f9ac3d" category="paragraph">Cloud Backup for ApplicationsをCloud ManagerとオンプレミスのSnapCenter に統合することで、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップできます。</block>
+  <block id="367df4ef9103973813086656b7424c40" category="summary">各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。</block>
+  <block id="d5df46302dfdd7579521694fb4b06495" category="doc">SnapCenter Plug-in for SAP HANAを導入</block>
+  <block id="0aa4c98c108fd4eb123ca5d3e22561e8" category="paragraph">SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。</block>
+  <block id="dd115af180e43b9284746f0724f2e436" category="admonition">各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。</block>
+  <block id="16ca5309d737224096c304c6dff4de3a" category="section-title">root以外のユーザを設定します</block>
+  <block id="fd80eea6ceaa6f2785bf097c10501f77" category="paragraph">プラグインを導入するには、root以外のユーザを作成する必要があります。</block>
+  <block id="3da705d20fefcaa363e1a0e752088951" category="list-text">Linuxホストのプラグインバイナリをダウンロードします。<block ref="ce472feff4087c82ce4785670823a2c6" prefix=" " category="inline-code"></block></block>
+  <block id="72411f66d7a910409821e1bcc85cd7e2" category="list-text">から1～16の行をコピーします<block ref="7b4e9d2a49411c09092744048a7a3590" prefix=" " category="inline-code"></block> ファイルの場所<block ref="dca5cd789ecd3e8ac3b24e72d56f2c0f" prefix=" " category="inline-code"></block></block>
+  <block id="3ebdbfe737c7aead22c3f4a0051261a7" category="list-text">SAP HANAデータベースホストにログインし、次の手順を実行します。</block>
+  <block id="089e0745e03208bd82005bf60f52e3c2" category="list-text">root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。</block>
+  <block id="bdacf8a8beaec8b190c600a860c2b532" category="list-text">手順4でコピーした行をに貼り付けます<block ref="6c109d6e94c97fb519007c1f06880582" prefix=" " category="inline-code"></block> visudo Linuxユーティリティを使用したファイル。</block>
+  <block id="e3092b913d71bf2b71c0b3838c675913" category="paragraph">上の行で、&lt;LINUXUSER&gt; を作成したroot以外のユーザに置き換え、visoodユーティリティで保存します。</block>
+  <block id="6fb496880c72d81f141594926d685434" category="section-title">プラグインを手動で導入します</block>
+  <block id="81669171fb08f882a32669c2772c3fd8" category="paragraph">HANAホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入する必要があります。</block>
+  <block id="44842eaccc8d9ac024cdeb786c3b2382" category="list-text">Linuxホストのプラグインバイナリをダウンロードします。<block ref="54100f92b766845f7cb17b203ad277b6" prefix=" " category="inline-code"></block></block>
+  <block id="946c28bd864e4a1d39dcdca5ab7a6e02" category="list-text">ベースマウントパスを取得します。<block ref="8c2d1b6562f39055e6a81df4c634188f" prefix=" " category="inline-code"></block></block>
+  <block id="9da191302d9d8dfb2df7b060b13d9c90" category="list-text">ダウンロードしたプラグインのバイナリパスを取得します。<block ref="a0067d0adfd541d442025186a58f7ea1" prefix=" " category="inline-code"></block></block>
+  <block id="68ee4760b3cb53f23379cdc61285d6b2" category="list-text">コピー<block ref="02da1abc4fd80b01258e10fae2406b69" prefix=" " category="inline-code"></block> scpまたはその他の代替方法を使用して、各SAP HANAデータベースホストに接続します。</block>
+  <block id="ec3a94350310fa8818e0df3a82aa2b54" category="list-text">SAP HANAデータベースホストで、次のコマンドを実行してバイナリの実行権限を有効にします。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
+  <block id="cdcde9580f8d05670c6fe4b0fc228614" category="list-text">sudoのroot以外のユーザとしてSAP HANAプラグインを導入します。<block ref="a9b0283be469b80a16d7090f132ac831" prefix="" category="inline-code"></block></block>
+  <block id="76bc46d4058e42cf664f2c64e3347fa7" category="list-text">コピー<block ref="ac4a4bea05c1e7f4d53eb9facf96ce35" prefix=" " category="inline-code"></block> プラグインホスト。</block>
+  <block id="d3d75d5cff48e68fca680398fc575090" category="list-text">/var/opt/snapcenter/spl/etcに移動します<block ref="822d673a652a4f30ec0a6c1fc62fc638" prefix="" category="inline-code"></block></block>
+  <block id="3ce3a82ffa96a506c51b55f8d777cf41" category="list-text">SPLを再起動します。<block ref="ef8b5dcffcfaaff95bf3e24981a4f1f2" prefix=" " category="inline-code"></block></block>
+  <block id="4b2f93895b0dedb56a23d712ea814846" category="section-title">SSHキーベースの認証を使用してプラグインを導入します</block>
+  <block id="7a62668b5fa6466acb8d9535915852a1" category="paragraph">HANAホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。</block>
+  <block id="e0fee89e5366ab3052030779fe81997d" category="list-text">ベースマウントパスを取得します。<block ref="f3835e30f35d2401357edbf1ae1edad1" prefix=" " category="inline-code"></block></block>
+  <block id="05f4f6d1d1fa0d79af058bfe4c7ab5f3" category="list-text">プラグインを導入します。<block ref="f0196852286a7ac852b0067f18f23cff" prefix=" " category="inline-code"></block></block>
+  <block id="3352ee0a37b61fb3d0296f8c93c41093" category="list-text">host_nameはHANAホストの名前で、これは必須パラメータです。</block>
+  <block id="b09a47888cf48f658aae42058e0fccb4" category="list-text">ssh_key_fileは、HANAホストへの接続に使用するSSHキーです。これは必須パラメータです。</block>
+  <block id="adfea869b651ffdb9777ad64fe2f2959" category="list-text">user_name：HANAホストに対するSSH権限を持つユーザ。これはオプションパラメータです。デフォルト値はazureuserです。</block>
+  <block id="f8f44998d38ddf47bc963ea603712bec" category="list-text">ssh_port：HANAホスト上のSSHポート。これはオプションパラメータです。デフォルト値は22です。</block>
+  <block id="3494162360ef582c322e879b76204a63" category="list-text">plugin_port：プラグインで使用するポート。これはオプションパラメータです。デフォルト値は8145です。</block>
+  <block id="c0059925e8e1885f24373e5bdd9baa66" category="list-text">install_dir：プラグインが配置されるディレクトリ。これはオプションのパラメータです。デフォルト値は/optです。</block>
+  <block id="87f7d3321134d426b2518c004c972cc2" category="summary">オンプレミスのONTAP からGoogle Cloud Platformにデータストアをバックアップ</block>
+  <block id="eb1ab874b09a7eab583845e8576be828" category="doc">データストアをGoogle Cloud Platformにバックアップする</block>
+  <block id="ff71a97178182c75d3a25f7342156533" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、1つ以上のデータストアをGoogle Cloud Platformにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">Google Cloud Platform *を選択して、クラウドプロバイダとして構成します。</block>
+  <block id="e29eef6ae64d545134f2b42984845a94" category="section-title">2022年12月19日</block>
+  <block id="0a286ad90f3a25f45e443367036a8789" category="list-text">SAP HANAデータベース</block>
+  <block id="feb69ad1d8975111fe86bbc94b823a7f" category="list-text">Azure NetApp Files （ANF）上にあるSAP HANAデータベースのポリシーベースのバックアップとリストアをサポート</block>
+  <block id="d5a365014bbbc5172b423043fb2a2501" category="list-text">カスタムポリシーをサポート</block>
+  <block id="5ffbe0deb5b41148dc58e63a20df8411" category="list-text">Oracleデータベース</block>
+  <block id="aa6dc7e308fa4a4875c447c8e7fa4a19" category="list-text">ホストを追加してプラグインを自動的に導入</block>
+  <block id="defa9120f4acf33ddb7a4e571c70938b" category="list-text">Cloud Volumes ONTAP 上にあるOracleデータベースのポリシーベースのバックアップ、リストア、およびクローニングをサポートします</block>
+  <block id="2c35eeb424b768876f1774567e7bf2f5" category="list-text">Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのポリシーベースのバックアップおよびリストアをサポートします</block>
+  <block id="88094c6c8ad963e6131e3c23988917d4" category="list-text">Connect and Copy方式を使用したOracleデータベースのリストアをサポートします</block>
+  <block id="7d6f6d1efeae8c573a74a091cc119cb9" category="list-text">Oracle 21cをサポートします</block>
+  <block id="35d9afe1e1e85a29b0de625fd2a9a44a" category="list-text">クラウドネイティブのOracleデータベースのクローニングをサポートします</block>
+  <block id="2b02d4e6e1f394b4dc9da1cac8c404a3" category="section-title">Cloud Backupの機能拡張</block>
+  <block id="137f19e6e2dc1219f33553b812627bc2" category="list-text">仮想マシン</block>
+  <block id="c2452add37f94598e06d237edc68078b" category="list-text">オンプレミスのセカンダリストレージから仮想マシンをバックアップ</block>
+  <block id="8e21c62b69b7c01b40ec93ceb9c4b5cd" category="list-text">では、Google Cloud Platform（GCP）をサポートしており、1つ以上のデータストアのバックアップに使用できます</block>
+  <block id="6480beff3c438303fc8c6d8b4009f381" category="list-text">Glacier、Deep Glacier、Azure Archiveなどの低コストのクラウドストレージをサポートします</block>
+  <block id="4dbebe33c4927d0c2034e3f9d520ba42" category="summary">ソースまたは代替ホストにデータベースをクローニングします。</block>
+  <block id="027ad436d33a0bd111ed11873f94c74b" category="doc">クラウドネイティブのOracleデータベースをクローニングします</block>
+  <block id="0b5992955627a4d221dfaf4d434b9596" category="paragraph">データベースのバックアップを使用して、ソースデータベースホストまたは代替ホストにOracleデータベースをクローニングすることができます。</block>
+  <block id="91af1a160d0e82dc6915ed84b13cb026" category="paragraph">データベースをクローニングする理由には次のものがあります。</block>
+  <block id="f808e6b1f9f18d3401fa365d39ab80f4" category="list-text">アプリケーション開発のライフサイクルで、実装が必要な機能を、現在のデータベースの構造およびコンテンツを使用してテストするため。</block>
+  <block id="13cbbb0028f34d717a11d65823bd8d4e" category="list-text">データの抽出と操作を行うツールを使用してデータウェアハウスにデータを取り込むため。</block>
+  <block id="8ba43f81e3062260324e4cf645922897" category="list-text">誤って削除または変更されたデータをリカバリするため。</block>
+  <block id="2bdf78df80a3a268b552c78d67dc51ab" category="paragraph">データベースをクローニングする前に、クローンの概念を理解し、すべての要件を満たしていることを確認する必要があります。 <block ref="a2073481d9155048f35e591f7a25e6c2" category="inline-link-macro-rx"></block>。</block>
+  <block id="b8e3d100cddb7d2f7a1934e42960ed8d" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> クローニングするデータベースに対応し、*詳細の表示*をクリックします。</block>
+  <block id="3c8d16b2f56fd9c7199f47056698006d" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> データバックアップに対応し、* Clone *をクリックします。</block>
+  <block id="a91c8385f2085c419e0b3671b15fe8d3" category="list-text">Clone Detailsページで、いずれかのクローンオプションを選択します。</block>
+  <block id="f5c1b2624984a409319694e7ddb05e0e" category="list-text">選択したオプションに応じて、次の操作を実行します。</block>
+  <block id="7ae089fbf80f6b18bf1973d9ae3af6c8" category="cell">選択した項目</block>
+  <block id="2a3fe530fd9092b80163caebfef76c4a" category="paragraph">* 基本 *</block>
+  <block id="5c5e502307b26b69e405ec3f39819cc0" category="list-text">クローンホストを選択します。</block>
+  <block id="aeebb52b63a67a1c227c86664f5a8a20" category="paragraph">代替ホスト上にクローンを作成する場合は、ソース・データベース・ホストと同じバージョンの Oracle および OS を持つホストを選択します。</block>
+  <block id="0f033f18e4243669df37e74e3ec98d76" category="list-text">クローンの SID を指定します。</block>
+  <block id="a5eeded3baf0b85f67b091f527e77a4f" category="list-text">クローンの命名方式を選択します。</block>
+  <block id="ddd45a9966ec157f54b6fdd7296b1010" category="paragraph">データベースをソースホストにクローニングすると、クローンの命名規則が自動生成されます。データベースを代替ホストにクローニングすると、クローンの命名規則が同一になります。</block>
+  <block id="e7357ad33e2f446c18ed21dc5b199dfc" category="list-text">Oracleホームパスを指定します。</block>
+  <block id="4ded62efc8a08af8493e813e0f1d9e6a" category="list-text">（任意）データベースクレデンシャルを指定します。</block>
+  <block id="362834cd63101f4432620d4d94d0c218" category="list-text">データベースクレデンシャル：OSユーザ認証が無効な場合は、ターゲットホストでシステムユーザを定義するためのパスワードを指定する必要があります。</block>
+  <block id="3b107344c27ff1cd5762e5d053c8c045" category="list-text">ASMクレデンシャル：ターゲットホストでOSユーザ認証が無効になっている場合は、ターゲットホストのASMインスタンスに接続するために、SYSASM特権ユーザのクレデンシャルを指定する必要があります。</block>
+  <block id="8215bd5d2f1e1b1cb3002f32795c762e" category="list-text">[* Clone* ] をクリックします。</block>
+  <block id="096918bd0a28373b57b8d6c8bfada3a4" category="paragraph">*仕様ファイル*</block>
+  <block id="c731cfb3535b188b1076ce4074b07a3e" category="list-text">[ファイルのダウンロード（Download File）]をクリックして、仕様ファイルをダウンロードします。</block>
+  <block id="b44a2ec7d100bd7fbbcef764a835ae72" category="paragraph">「*自動生成*」を選択した場合は、サフィックスを指定する必要があります。</block>
+  <block id="01fc6bc870eb60d107c41c724b7c0f61" category="list-text">要件に応じて仕様ファイルを編集し、*参照*ボタンをクリックしてアップロードします。</block>
+  <block id="46630b95005d23b3ccd9d9af01eed5bc" category="list-text">をクリックします <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> [*フィルタ]の横にある[*クローニング・オプション*&gt;*クローン*]を選択して、クローンを表示します。</block>
+  <block id="3d580f21069642f6846c9301b0b69c5a" category="doc">クラウドネイティブのOracleデータベースをリストアする</block>
+  <block id="ee222130a21c6d223914258bafa2324f" category="paragraph">Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースをリストアするには、次のコマンドを実行する必要があります。<block ref="b103c9762e1add9bf6d591f4e3ec3d6a" prefix=" " category="inline-code"></block></block>
+  <block id="72ec364974b7acfa78aac57b443cca2c" category="paragraph">SANレイアウトでは、SnapCenter Plug-in for OracleがASMディスクグループ上にOracleデータファイル以外の外部ファイルを検出すると、接続リストアとコピーリストアの方法が実行されます。外部ファイルには、次のタイプが1つ以上ある可能性があります。</block>
+  <block id="69eb10e6fd10e7913d2a8eeccd333a93" category="paragraph">[*強制インプレースリストア*]オプションは、パラメータ、パスワード、アーカイブ・ログ・タイプの外部ファイルを上書きします。[強制的にインプレースリストア*]オプションを選択した場合は、最新のバックアップを使用する必要があります。</block>
+  <block id="bc317611378cb3ac4abd7ba3de49ed5d" category="list-text">一部のディスクグループに外部ファイルが含まれている場合は、In Placeリストア方式とConnect and Copyリストア方式の両方が使用されます。ただし、両方の方法を同時に使用したリストアの実行はサポートされていないため、リストア処理は失敗します。データベースはマウントされた状態のままになります。データベースを手動でオープン状態にする必要があります。</block>
+  <block id="09685971b3e1f16bca6b8635b76dffd8" category="summary">データベースをクローニングする前に、クローンの概念を確認しておきます。</block>
+  <block id="a8f2e4a80d44f8a4e219ce28808a0be5" category="doc">クローンの概念と要件</block>
+  <block id="c1dadedda11f09139fb7ac18e939f6bf" category="paragraph">データベースのバックアップを使用して、ソースデータベースホストまたは代替ホストにOracleデータベースをクローニングすることができます。バックアップはプライマリストレージシステムからクローニングできます。</block>
+  <block id="e92f2ac4c03e2f08faf6ebb74ac92b92" category="paragraph">データベースをクローニングする前に、クローンの概念を理解し、すべての要件を満たしていることを確認する必要があります。</block>
+  <block id="c3f3510a6fc8f24504e19e3fa075dcd8" category="section-title">Oracle データベースをクローニングするための要件</block>
+  <block id="23257e3404df9a371ee4e65b5f6db441" category="paragraph">Oracle データベースをクローニングする前に、前提条件を満たしていることを確認する必要があります。</block>
+  <block id="09f1d1f823f331273c9f9168e938ca4c" category="list-text">データベースのバックアップを作成しておく必要があります。クローニング処理を正常に実行するには、オンラインデータとログバックアップが正常に作成されている必要があります。</block>
+  <block id="e58324c707c9aa4d8c247dee8032f73a" category="list-text">ASM_diskstringパラメータでは、ASMFDを使用する場合はAFD:*を構成し、ASMlibを使用する場合はORCL:*を構成します。</block>
+  <block id="6770d02cdfcce5e5a328bcdb59e80669" category="list-text">代替ホストでクローンを作成する場合、代替ホストは次の要件を満たす必要があります。</block>
+  <block id="dd5573cd0ec44ba6bcccb05787a7a35c" category="list-text">プラグインは代替ホストにインストールする必要があります。</block>
+  <block id="265d24d6313ca80f6923b9392fe9d12a" category="list-text">iSCSI SANストレージ上にあるデータベースのクローニングを行う場合は、クローンホストでストレージからLUNを検出できる必要があります。代替ホストにクローニングする場合は、ストレージと代替ホストの間にiSCSIセッションが確立されていることを確認します。</block>
+  <block id="b6002df6af7fac27dc362f546398ad42" category="list-text">ソースデータベースが ASM データベースの場合は、次の手順を実行します。</block>
+  <block id="201c11864b685f8dcf2d90b5b22cd818" category="list-text">クローンを実行するホスト上で、 ASM インスタンスが稼働している必要があります。</block>
+  <block id="0e3377e6f6bde7f6f64a7aa432ef56d7" category="list-text">クローニングしたデータベースのアーカイブログファイルを専用のASMディスクグループに配置する場合は、クローン処理の前にASMディスクグループをプロビジョニングする必要があります。</block>
+  <block id="dbd658614118b2a7330de570395fcf9b" category="list-text">データディスクグループの名前は設定できますが、クローンを実行するホスト上の他のASMディスクグループに名前が使用されていないことを確認してください。</block>
+  <block id="541ab81da8ccbee4ad4f5435dd87dd37" category="list-text">ASMディスクグループにあるデータファイルは、クローンワークフローの一環としてプロビジョニングされます。</block>
+  <block id="81eb21a03d5ee9fbe847337ca76b57dc" category="section-title">クローンの制限事項</block>
+  <block id="dd77243d81852ff56f94f7cf67b24e68" category="list-text">スケジュールされたクローン（クローンライフサイクル管理）はサポートされません。</block>
+  <block id="4a24edf5ed74b2519cbcb1da8f8d570a" category="list-text">クローンデータベースのクローニングはサポートされていません。</block>
+  <block id="c9678113a1e81890dc2853fd5d53924d" category="list-text">qtreeにあるデータベースのクローニングはサポートされていません。</block>
+  <block id="0d296b92c09b34ffa602cfd268c9bde2" category="list-text">アーカイブログのバックアップのクローニングはサポートされていません。</block>
+  <block id="04fb330b10f40d5af9608c34b130220e" category="list-text">クローンデータベースのバックアップはサポートされていません。</block>
+  <block id="4f90df11080deefa141a31b35702b138" category="section-title">クローンメソッド</block>
+  <block id="0936cf2452e02976d45de5926adf61f5" category="paragraph">基本的な方法またはクローン仕様ファイルを使用して、クローンを作成できます。</block>
+  <block id="2a2ee8bf97e1df597f8eac6b883a137c" category="section-title">基本的な方法でクローニングします</block>
+  <block id="1e497338e3bb65c77b7654a70961c57a" category="paragraph">ソースデータベースと選択したバックアップを基に、デフォルトの設定でクローンを作成できます。</block>
+  <block id="f938af99958fff577dfc5d289d31d1ea" category="list-text">データベースパラメータ、ホーム、およびOSユーザは、デフォルトでソースデータベースに設定されます。</block>
+  <block id="b7f83afd0fb0f2a20f0d2d73d2a0c712" category="list-text">データファイルパスの名前は、選択した名前スキームに基づいて決まります。</block>
+  <block id="7fd430d7c7fa4152affadb8ee5d9e8d7" category="list-text">プリスクリプト、ポストスクリプト、およびSQLステートメントは指定できません。</block>
+  <block id="0c5b2cc4e0ca336f5015ebb37d20bb63" category="list-text">リカバリ・オプションは'デフォルトでは* Until cancel *であり'データ・バックアップに関連付けられたログ・バックアップをリカバリに使用します</block>
+  <block id="5a1ac83c5d7cef9f6cfd70aae31f4faf" category="section-title">仕様ファイルを使用してクローニングする</block>
+  <block id="1474d6fccd85c7c3e8a741aa13622142" category="paragraph">クローン仕様ファイルで設定を定義し、それを使用してデータベースをクローニングできます。仕様ファイルをダウンロードし、要件に合わせて変更してから、ファイルをアップロードできます。 <block ref="bd181677c608b839500c05eaf9508988" category="inline-link-macro-rx"></block>。</block>
+  <block id="970311e995d1f2e261577da3ee960132" category="paragraph">仕様ファイルに定義されているさまざまなパラメーターと、変更可能なパラメーターは次のとおりです。</block>
+  <block id="d98137bd230dac4372cf20a2e7839463" category="paragraph">control_files</block>
+  <block id="4b367b59e00fb1408513f9bb31e4cc42" category="paragraph">クローンデータベースの制御ファイルの場所。</block>
+  <block id="fcdf727dda1b955739b7eac11d9c7ff8" category="paragraph">制御ファイルの数はソースデータベースと同じになります。制御ファイルのパスを無効にする場合は、別の制御ファイルのパスを指定します。ファイルシステムまたはASMディスクグループがホストに存在する必要があります。</block>
+  <block id="8a37acf157b63efbfe8af6c860575d20" category="paragraph">REDOログ</block>
+  <block id="135a28dbc5a3a4402f8250f9d899c4e4" category="paragraph">REDOログの場所、サイズ、Redoグループの数。</block>
+  <block id="ba9eba184a85f4c4f0dabb9839c08c9d" category="paragraph">データベースをクローニングするには、少なくとも 2 つの REDO ロググループが必要です。REDOログファイルのパスを上書きする場合は、ソースデータベースとは別のファイルシステムにREDOログファイルのパスをカスタマイズできます。ファイルシステムまたはASMディスクグループはホストに存在する必要があります。</block>
+  <block id="2445e8a9ad11a1d6748e15cee897ac1d" category="paragraph">ORACLE_VERSION</block>
+  <block id="87458570f14f608236354a40cf5bfb35" category="paragraph">ターゲット・ホスト上のOracleのバージョン。</block>
+  <block id="29500a76a789bbd0a9dfcd6a8bc5658d" category="paragraph">ORACLE_HOMEを参照してください</block>
+  <block id="3b6be073de289db726024401ee6d1a79" category="paragraph">ターゲット・ホストのOracleホーム</block>
+  <block id="c6329774936cbe62912cf2ace1f81cf6" category="paragraph">enable_archive_log_mode</block>
+  <block id="3410f665826aa805809a269dfe2573f1" category="paragraph">クローンデータベースのアーカイブログモードを制御します</block>
+  <block id="d1f7314ed6231e891f5bd3c368e072c2" category="paragraph">databE_parameters</block>
+  <block id="3b8205acb5c6c6f435c208b92bf33946" category="paragraph">クローンデータベースのデータベースパラメータ</block>
+  <block id="f3062f54978baa3116d2c52bde2b0b3e" category="paragraph">SQL_statements</block>
+  <block id="65b8e161a23e44527f706ecb06a75009" category="paragraph">クローニング後にデータベースで実行するSQLステートメント</block>
+  <block id="823e337809aa720bdf8c6e18e957be30" category="paragraph">os_user_detail</block>
+  <block id="ea62ea9eaa99c6f92a79b5d5c2e42ce0" category="paragraph">ターゲットクローンデータベースのOracle OSユーザ</block>
+  <block id="cec249816fdd869ecbd381c2d6ee06c8" category="paragraph">databa_port</block>
+  <block id="b78f96bd09d50b781dddc389b2129b5b" category="paragraph">ホストでOS認証が無効な場合に、データベースとの通信に使用するポート。</block>
+  <block id="b5c74990d50d5501e7c2e6ec0ec1eae6" category="paragraph">asm_portのようになります</block>
+  <block id="27311ac6b983d75d6c3b30c64337ad51" category="paragraph">Create Clone入力にクレデンシャルが指定されている場合に、ASMデータベースとの通信に使用するポート。</block>
+  <block id="2c425310c973799c954c77aa415653ad" category="paragraph">skip_recovery</block>
+  <block id="d8151f6295723724677641a464d6222d" category="paragraph">はリカバリ処理を実行しません。</block>
+  <block id="22e14d5a080e61ad59c372e961d8dfac" category="paragraph">Until SCN</block>
+  <block id="e1b2f0f8725f6872203fc86f65ce7de0" category="paragraph">指定したSystem Change Number（SCN）までデータベースをリカバリします。</block>
+  <block id="e17b236565589ca6390907119e8d2ed1" category="paragraph">until _ time</block>
+  <block id="38942e72238ce7a01a0fbca2feff2d3f" category="paragraph">指定した日時までデータベースをリカバリします。</block>
+  <block id="f2111b260261500b218c5e3510d4f927" category="paragraph">指定できる形式は、_mm/dd/yyyy hh：mm：ss_です。</block>
+  <block id="ded8ec13d688f2722b2e576d2ac224d7" category="paragraph">until _ cancel</block>
+  <block id="4fc18de0a2aced9ab7d289678e2a21e0" category="paragraph">クローニング対象として選択したデータバックアップに関連付けられたログバックアップをマウントすることでリカバリできます。</block>
+  <block id="c3c871809fc5c3e8fd7df85ddee56930" category="paragraph">クローンデータベースは、欠落または破損したログファイルまでリカバリされます。</block>
+  <block id="b885c415034cc83254b435cb6ae61a24" category="paragraph">LOG_PATHS</block>
+  <block id="60c7e0d9b106a4e8b31010e268b68277" category="paragraph">クローンデータベースのリカバリに使用するアーカイブログパスの追加場所。</block>
+  <block id="ce7516f01c071c789b65e0e815838391" category="paragraph">source_locationのコマンドを使用します</block>
+  <block id="784d2fa5ec2ab83ba955ec0ab5e52550" category="paragraph">ソースデータベースホスト上のディスクグループまたはマウントポイントの場所。</block>
+  <block id="8164afe1904e9d8c6a0c1a0c3e3dc84d" category="paragraph">clone_location</block>
+  <block id="02eafc0f54fa76d8533a4f144b380f46" category="paragraph">ソースの場所に対応するターゲットホストに作成する必要があるディスクグループまたはマウントポイントの場所。</block>
+  <block id="9b28124246c2dcf147a64db783956c63" category="paragraph">location_type</block>
+  <block id="b2532ad9966e509da8a1a8a8931d48ac" category="paragraph">asm_diskgroupまたはmountpointを指定できます。</block>
+  <block id="26d8da837926693085a3f79622fa2bdb" category="paragraph">値は、ファイルのダウンロード時に自動的に入力されます。このパラメータは編集しないでください。</block>
+  <block id="7f06bca222009c971154031a5d0f1084" category="paragraph">pre_script</block>
+  <block id="1c030dca40e7678fe6b780902451ab23" category="paragraph">クローンを作成する前にターゲットホストで実行するスクリプト。</block>
+  <block id="db337aae51cc91bfb1c4181f1553b3c8" category="paragraph">post_script</block>
+  <block id="4993151534aaf6dacede04ddf674ab8f" category="paragraph">クローン作成後にターゲットホストで実行するスクリプト。</block>
+  <block id="d6fe1d0be6347b8ef2427fa629c04485" category="paragraph">パス</block>
+  <block id="5e4307afb6d7b81a7b0ed337e71a8406" category="paragraph">クローンホスト上のスクリプトの絶対パス。</block>
+  <block id="990b56214299bd426520a7e978cc9bec" category="paragraph">スクリプトは、/var/opt/snapcenter/spl/scriptsまたはこのパス内の任意のフォルダに保存してください。</block>
+  <block id="90272dda245ae1fb3cf197e91a8689dc" category="paragraph">タイムアウト</block>
+  <block id="8eac385e3bf374f3a015473c59036227" category="paragraph">ターゲットホストで実行されているスクリプトに対して指定されたタイムアウト時間。</block>
+  <block id="dbc11caa5bda99f77e6fb4dabd882e7d" category="paragraph">引数</block>
+  <block id="51a39a76b831e74c6bff41cbb0ef46c4" category="paragraph">スクリプトに指定された引数。</block>
+  <block id="c166b0e47479635ec88ab3694a94244a" category="section-title">クローンの命名方式</block>
+  <block id="80b6410444b119244882e504e4f36eb1" category="paragraph">クローンの命名スキームは、マウントポイントの場所と、クローニングされたデータベースのディスクグループの名前を定義します。「*同一*」または「*自動生成*」のいずれかを選択できます。</block>
+  <block id="73daefb2fc40ed611db4fc9e6fe4b164" category="section-title">同一の命名方式</block>
+  <block id="cd6496b5a6479b31da593daf5904342f" category="paragraph">クローンの命名方式として「* identical *」を選択した場合、クローニングされたデータベースのマウントポイントの場所とディスクグループの名前は、ソースデータベースと同じになります。</block>
+  <block id="b0d2718e7786583867aeb7b476c22ce0" category="paragraph">たとえば、ソースデータベースのマウントポイントが、クローンデータベースの________oursourcedb/data_1、+DATA1_DG_である場合、SANのNFSとASMの両方のマウントポイントは同じままです。</block>
+  <block id="e7043b12f136280202a4f942dc58e2f3" category="list-text">制御ファイルやREDOファイルの数やパスなどの構成はソースと同じになります。</block>
+  <block id="af6ba30eba2f00947ef1fd3a764f16a8" category="admonition">REDOログまたは制御ファイルのパスがデータボリューム以外に存在する場合は、ターゲットホストにASMディスクグループまたはマウントポイントをプロビジョニングしておく必要があります。</block>
+  <block id="96a8acf72397e6c5eb2e1eec3ffa51df" category="list-text">Oracle OSユーザとOracleバージョンはソースデータベースと同じになります。</block>
+  <block id="c74dcf3cdec8fc8f244689ed737169d3" category="list-text">クローンストレージボリューム名は、sourceVolNameSCS_Clone_CurrentTimeStampNumberという形式になります。</block>
+  <block id="9d1e8db5c5513ba1e380be173bfe943a" category="paragraph">たとえば、ソースデータベース上のボリューム名が_sourceVolName_の場合、クローンボリューム名は_sourceVolNameSCS_Clone_1661420020304608825_になります。</block>
+  <block id="4c39a98f63c172a0f1f516379767640a" category="admonition">CurrentTimeStampNumber_はボリューム名に一意性を示します。</block>
+  <block id="76fbbcab41a218d428077878fdffe387" category="section-title">自動生成される命名方式</block>
+  <block id="0e6fcef1616c5d86cbfd8760ef27fec4" category="paragraph">クローニングスキームとして*自動生成*を選択した場合、マウントポイントの場所とクローニングされたデータベースのディスクグループの名前にはサフィックスが付加されます。*基本的なクローン方式を選択した場合は、サフィックスが* Clone SID *になります。*スペシフィケーション・ファイル・メソッドを選択した場合'サフィックスは'クローン仕様ファイルのダウンロード中に指定された*サフィックス*になります</block>
+  <block id="85ad7e9cd2258729935819b5b8d12c0c" category="paragraph">たとえば、ソースデータベースのマウントポイントが_/NetApp_sourcedb/data_1_and the * Clone SID * or * Suffix * is_HR_の場合、クローンデータベースのマウントポイントは_/NetApp_sourcedb/data_1_HR_に なります。</block>
+  <block id="ede76157ac7c5bfe761f851611ff031e" category="list-text">制御ファイルとREDOログファイルの数がソースと同じになります。</block>
+  <block id="950f79de2cdec1225a95d6167045afaf" category="list-text">すべてのREDOログファイルと制御ファイルは、クローニングされたデータマウントポイントまたはデータASMディスクグループのいずれかに配置されます。</block>
+  <block id="41adcaacfb5f8ac865d2b82a85eb5a88" category="list-text">NASマウントポイントの形式は、_SourceNASMountPoint_suffix_です。</block>
+  <block id="15047b1fa7d6d7c78c1a5731c85581e2" category="list-text">ASMディスクグループの形式は、_SourceDiskgroup_suffix_です。</block>
+  <block id="244cd1535fbe852eab91b7a090a5a9db" category="admonition">クローンディスクグループ内の文字数が25文字を超える場合は、_SC_hashCode_suffix_が付けられます。</block>
+  <block id="fc814366560363c83857b84a52c79708" category="section-title">データベースパラメータ</block>
+  <block id="ff0279aab0af8f4ea822168a4cbe1e5a" category="paragraph">次のデータベース・パラメータの値は、クローンの命名方式に関係なく、ソース・データベースの値と同じになります。</block>
+  <block id="ba2bb07fa8e2b21e06fdb1fb322549c7" category="list-text">LOG_ARCH_FORMATの略</block>
+  <block id="b3e96b02bf8dcd70659c641d128b275e" category="list-text">audit_trail</block>
+  <block id="530968b205d33b3869aa32e2933fbfad" category="list-text">プロセス</block>
+  <block id="3e2fd323f42b8ee44c97ac20666288d0" category="list-text">PGAアグリゲート・ターゲット</block>
+  <block id="0673a41c8c37236e2271fb45dbbf0f18" category="list-text">remote_login_passwordfileを指定します</block>
+  <block id="2b9add0d5288dfce393afba8214a0775" category="list-text">undo_tablespace</block>
+  <block id="18ba0c2ebcfaadfac02360d7411970be" category="list-text">オープンカーソル</block>
+  <block id="b53e78fc7d83233ecbbe6552ac2c1a7d" category="list-text">SGAターゲット</block>
+  <block id="1e139c7e3d7ef19754d932b512b877ac" category="list-text">DB_BLOBK_SIZE</block>
+  <block id="e3e7d549b9207f5859dfd3349b264fbb" category="paragraph">次のデータベースパラメータの値には、クローンのSIDに基づくサフィックスが付加されます。</block>
+  <block id="95aa587de35b93d3c9f7de7380353a43" category="list-text">audit_file_dest =｛sourcedatabase-parameteralue｝サフィックス</block>
+  <block id="527a8811e25848a76623b2d6387e4216" category="list-text">LOG_ARCHIVE _ dest_1 =｛sourcedatabase-oraclehome｝サフィックス</block>
+  <block id="e7ab22ab9d418a26cff7bdca6a6647e0" category="section-title">特定のプリスクリプトとポストスクリプトのクローニングでサポートされる事前定義された環境変数</block>
+  <block id="06a96b2b2b28a25794a8261f94c39fc6" category="paragraph">データベースのクローニングの実行時にプリスクリプトとポストスクリプトを実行する場合は、サポートされる事前定義された環境変数を使用できます。</block>
+  <block id="e87e314499c25cf9618d3791cce84c7b" category="list-text">sc_original_SIDには、ソースデータベースのSIDを指定します。このパラメータは、アプリケーションボリュームに対して入力されます。例： NFSB32</block>
+  <block id="a42b0d64bb86dc8bba77ca98b4e4b1b6" category="list-text">sc_original_hostは、ソースホストの名前を指定します。このパラメータは、アプリケーションボリュームに対して入力されます。例： asmrac1.gdl.englab.netapp.com</block>
+  <block id="09b80a67296dd44f45348b325d926cfb" category="list-text">SC_ORACLE_HOMEは'ターゲット・データベースのOracleホーム・ディレクトリのパスを指定します例： /ora01/app/oracle/product/18.1.0/db_1</block>
+  <block id="2809642d185224fad33e06a1819b7d12" category="list-text">SC_backup_name」はバックアップ名ですこのパラメータは、アプリケーションボリュームに対して入力されます。例</block>
+  <block id="2d820d67f260b19aedd98b510f6eba81" category="list-text">データベースがARCHIVELOGモードで実行されていない場合：DATA @RG2_scspr2417819002_07-020-202021 _ 116.9267_0 | LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267 _1</block>
+  <block id="e991baba49b0181bdf7d8feb182a5965" category="list-text">データベースがARCHIVELOGモードで実行されている場合：DATA @RG2_scspr2417819002_07-020-20-220_1120_116.9267_0 | LOG @RG2_scspr2417819002_07-07-20-20-220_112_112.16.48.9267_1、Rg2_scspr24002_06_24002_0.262.16002_0.262.16002_0.7_2.168.262.162.168.261_2.24002_0.21_2.168.262.168.262.168.262_0.7_2.24002_0.262.168.</block>
+  <block id="f2710c74d1edac8422521766f08b326f" category="list-text">sc_original_os_userは、ソースデータベースのオペレーティングシステム所有者を指定します。例： oracle</block>
+  <block id="657d3c2406bbdbee84648c9c8df1b0b8" category="list-text">sc_original_os_groupは、ソースデータベースのオペレーティングシステムグループを指定します。例： oinstall</block>
+  <block id="2714328a2f2feb6b547f4da4138ccec9" category="list-text">sc_target_sid」は、クローンデータベースのSIDを指定します。PDB クローンワークフローの場合、このパラメータの値は事前定義されていません。このパラメータは、アプリケーションボリュームに対して入力されます。例： clonedb</block>
+  <block id="350ef6986de20ddd28ed1eb93d160e2e" category="list-text">sc_target_hostは、データベースをクローニングするホストの名前を指定します。このパラメータは、アプリケーションボリュームに対して入力されます。例： asmrac1.gdl.englab.netapp.com</block>
+  <block id="ccf99e2c490366aaec8ad010c0fdadaa" category="list-text">sc_target_os_userは、クローンデータベースのオペレーティングシステムの所有者を指定します。PDB クローンワークフローの場合、このパラメータの値は事前定義されていません。例： oracle</block>
+  <block id="aa3a098de3de23115cd2f937d623e3e0" category="list-text">sc_target_os_groupには、クローンデータベースのオペレーティングシステムグループを指定します。PDB クローンワークフローの場合、このパラメータの値は事前定義されていません。例： oinstall</block>
+  <block id="4bc7a22ae4868fdb102c8d43339ac0fe" category="list-text">sc_target_db_portは、クローンデータベースのデータベースポートを指定します。PDB クローンワークフローの場合、このパラメータの値は事前定義されていません。例： 1521</block>
+  <block id="30af2aec0ac4580bce16816e7e129a6a" category="section-title">サポートされるデリミタ</block>
+  <block id="9bc04b83e994e96133d24116c5a25bf5" category="list-text">@は、データベース名からデータを分離し、キーから値を分離するために使用されます。例：data@RG2_scspr2417819002_07-08-202021 _116.48.9267_0|LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267 _1</block>
+  <block id="08d3131fcf6d963372785be681e343e9" category="list-text">|は、SC_backup_nameパラメータに2つのエンティティ間でデータを分離するために使用します。例：DATA@RG2_scspr2417819002_07-20-2021_12.16.48.9267 _0 | LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267 _1</block>
+  <block id="1dc2b43d41c36670d82fe3076115def6" category="list-text">は、同じキーに対して一連の変数を区切るために使用します。例：data@RG2_scspr2417819002_07-02-20-20-220_116.9267_0|log@RG2_scspr2417819002_07-07-20-20-220_116.9267_1, RG2_scspr2417819002_07-02-21-2202.16_222.168.261_222.168.262_002_0.24002_0.262_0.261_2.168.262_0.172.168.262_0.264_002_0.172.168.262_0.7_122_0.262_0.262_0.262_0.262_0.262_</block>
+  <block id="2b4cd4d5e8c08204b572f3a126cb5509" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。</block>
+  <block id="9506c95f9ad8061d2b32d45700688c83" category="paragraph">仮想マシンをクラウドからオンプレミスのvCenterにリストアできます。バックアップは、作成された場所とまったく同じ場所にリストアされます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
+  <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">バックアップからリストアする仮想マシンを選択します。</block>
+  <block id="0b204b102ed08f6af904a33d81026023" category="list-text">[* Archival Restore Priority]を選択し、[* Next]をクリックします。</block>
+  <block id="8088e5c36e0c98125d876c46d3a81440" category="paragraph">このオプションは、アーカイブ設定が設定されているポリシーを使用して仮想マシンが保護されている場合にのみ使用できます。Amazon Web Servicesでサポートされているアーカイブリストアの優先度は、高、標準、および低です。また、Microsoft Azureでサポートされているアーカイブリストアの優先度は高および標準です。</block>
+  <block id="071df86763e0e93af80e50596aa0710c" category="list-text">仮想マシンのリストアに使用するバックアップを選択します。</block>
+  <block id="d4f871b7d459c4ece286a475f033ca49" category="summary">SAP HANAデータベースのバックアップをスケジュール設定またはオンデマンドで作成します。</block>
+  <block id="fd8f5388e72a984af8274823defe28fc" category="doc">クラウドネイティブのSAP HANAデータベースをバックアップ</block>
+  <block id="4177041af0a361a0920a41b55631aa87" category="paragraph">SAP HANAデータベースのバックアップを作成する前に、SAP HANAデータベースホストを追加し、組み込みのポリシーまたは作成したポリシーを割り当てる必要があります。</block>
+  <block id="613bbcbbbc87937c088f5ca502714159" category="section-title">SAP HANAデータベースホストを追加します</block>
+  <block id="54f922a09b59b7f2fce83cc984324d03" category="paragraph">ポリシーを割り当ててバックアップを作成するには、SAP HANAデータベースホストを手動で追加する必要があります。SAP HANAデータベースホストの自動検出はサポートされていません。</block>
+  <block id="2d401a77c81793a9ece97156d2f30373" category="list-text">作業環境を追加し、コネクタを作成しておく必要があります。</block>
+  <block id="fdb89fa76e003bcdaa62dc781c75080d" category="list-text">コネクタが作業環境に接続されていることを確認します</block>
+  <block id="0c6caad59b974bed7b5a027d2727752f" category="list-text">SnapCenter Plug-in for SAP HANAを導入しておく必要があります。 <block ref="4495130e78dd5770e2665c50d9b867ed" category="inline-link-macro-rx"></block></block>
+  <block id="19ba3d8b0889a939f5ec8733d64f1d60" category="list-text">SAP HANAデータベースホストを追加する場合は、HDBユーザストアキーを追加する必要があります。HDBセキュアユーザストアキーは、SAP HANAデータベースホストの接続情報をクライアントにセキュアに格納し、HDBSQLクライアントでセキュアなユーザストアキーを使用してSAP HANAデータベースホストに接続するために使用されます。</block>
+  <block id="eb8c7136dc3f88489deecb383a3e2159" category="list-text">HANA System Replication（HSR；システムレプリケーション）の場合、HANAシステムを保護するには、プライマリとセカンダリの両方のHANAシステムを手動で登録する必要があります。</block>
+  <block id="8b0c466fdb979630c3d45c5c1cdb2441" category="list-text">BlueXP* UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
+  <block id="bbff424da8a31c1b4e098004a31a8d16" category="list-text">[*アプリケーションの検出*]をクリックします。</block>
+  <block id="2f17daad641775cccb25673e3b31136b" category="list-text">Cloud Native *&gt;* SAP HANA *を選択し、* Next *をクリックします。</block>
+  <block id="0e53671fc8cff81722b57059b60e55f3" category="list-text">[*アプリケーション*]ページで、[*システムの追加*]をクリックします。</block>
+  <block id="5b0cc95a598bb6ede67addc2262b79e2" category="list-text">[システムの詳細*]ページで、次の操作を実行します。</block>
+  <block id="32403f6c910a8a0d4190a977cd4bb5a5" category="list-text">システムタイプとしてMulti-tenantデータベースコンテナまたはSingle Containerを選択します。</block>
+  <block id="e898199c829d90ae41784a78cdd2d6d9" category="list-text">SAP HANAシステムの名前を入力します。</block>
+  <block id="a3df030ad26d42c5af0fcbd0e6f513d7" category="list-text">SAP HANA システムの SID を指定します。</block>
+  <block id="121e320e4d12817554a75b07f657e47d" category="list-text">（オプション）HDBSQL OSユーザを指定します。</block>
+  <block id="2c3f5c6b3c901543e2ee52841d3ba291" category="list-text">プラグインホストを選択します。（オプション）ホストが追加されていない場合、または複数のホストを追加する場合は、*プラグインホストの追加*をクリックします。</block>
+  <block id="d800d8f61fa1a641d5224e310e459b0c" category="list-text">HANAシステムがHANAシステムレプリケーションで構成されている場合は、* HANA System Replication（HSR）System *を有効にします。</block>
+  <block id="802a79f8e4284baac3abc3713a39791d" category="list-text">ユーザーストアキーの詳細を追加するには、[*HDB Secure User Store Keys*]テキストボックスをクリックします。</block>
+  <block id="2145a09d2b376e7f0609f6fb4c6b5be5" category="paragraph">キー名、システムの詳細、ユーザー名、パスワードを指定し、*キーの追加*をクリックします。</block>
+  <block id="b53a101b6e60770ada5a46695bb46566" category="paragraph">ユーザストアキーは削除または変更できます。</block>
+  <block id="50606df711052c72cb3650915aa18292" category="list-text">[ストレージ容量*]ページで、[*ストレージの追加]をクリックして、次の操作を実行します。</block>
+  <block id="0b4d4df45dec0f187977abf3a0e77fca" category="list-text">作業環境を選択し、ネットアップアカウントを指定します。</block>
+  <block id="f338ba0747a9b1926962438feb3b1f6a" category="paragraph">新しい作業環境を追加するには、[* Canvas *（キャンバス*）]ページに移動します</block>
+  <block id="d253da62a1a7bf3e4d5c1adf904b607a" category="list-text">必要なボリュームを選択します。</block>
+  <block id="160c15dad3c86fc7f11c9d0f725a510f" category="list-text">[ ストレージの追加 ] をクリックします。</block>
+  <block id="5d74f0257578ebb70b128ed79394919f" category="list-text">すべての詳細を確認し、*システムの追加*をクリックします。</block>
+  <block id="9fe2df056cff7628eed8ae5fb976572a" category="admonition">特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます</block>
+  <block id="4148e65f8b838776211e91df17561a94" category="paragraph">REST APIを使用してSAP HANAシステムを変更および削除できます。HANAシステムを削除する前に、関連付けられているバックアップをすべて削除し、保護を解除してください。</block>
+  <block id="718c7b6c3378e6331dfacc19082eceda" category="section-title">非データボリュームを追加します</block>
+  <block id="c1d37ffb98838b18cccda19785198d15" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムの非データボリュームを追加できます。</block>
+  <block id="70ece8b209ed1c9476f13c0fa00e2a77" category="list-text">[*アプリケーション*]ページで、をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 非データボリュームを追加するシステムに対応し、*システム管理*&gt;*非データボリューム*を選択します。</block>
+  <block id="1c5bc62ec06d77a94bd950001c20bf5c" category="section-title">グローバルな非データボリュームを追加します</block>
+  <block id="e84d0cbc8756fa7ba2af158f670486a8" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバル非データボリュームを追加できます。</block>
+  <block id="01f13da2dfcf737f54346ebf7f44db6f" category="list-text">System Type（システムタイプ）ドロップダウンから、* Global Non-Data Volume（グローバル非データボリューム）*を選択します。</block>
+  <block id="5d9b8dbd580deb48e76c53d62ab7c6f3" category="list-text">SAP HANAシステムの関連付けられたSIDを指定します。</block>
+  <block id="9c40bb6f28c1548e2bec94c55bf9bf96" category="list-text">プラグインホストを選択します</block>
+  <block id="b5e87b76d37fdb904487f6bc0c10bef7" category="paragraph">（オプション）複数のホストを追加するには、*プラグインホストの追加*をクリックし、ホスト名とポートを指定して、*ホストの追加*をクリックします。</block>
+  <block id="7322146fa0278b7076d42a67da3ca68f" category="section-title">プリスクリプトとポストスクリプト</block>
+  <block id="b3716aa17e229f5a48546a80e870a997" category="paragraph">ポリシーの作成時にプリスクリプト、ポストスクリプト、および終了スクリプトを指定できます。これらのスクリプトは、バックアップの作成時にHANAホストで実行されます。</block>
+  <block id="6185a8cfc72f93e3f8af600e5e7f9606" category="paragraph">サポートされているスクリプトの形式は、.sh、Pythonスクリプト、perlスクリプトなどです。</block>
+  <block id="d36dcc27103f15cf7156e649498bba14" category="paragraph">プリスクリプトとポストスクリプトは、ホスト管理者がに登録する必要があります<block ref="198c786822c306ff1d8e3ae0098bbf6c" prefix=" " category="inline-code"></block></block>
+  <block id="3c91acc7806c6fcfd2da29720998df5d" category="paragraph"><block ref="8a0444f402186e75dfce312a113251e3" prefix="" category="inline-code"></block></block>
+  <block id="50283e8d57278ed79d15d9dbb7c56561" category="section-title">環境変数</block>
+  <block id="3e2882dbce286b81b8650600aa1d8086" category="paragraph">リストアワークフローでは、プリスクリプトとポストスクリプトの一部として次の環境変数を使用できます。</block>
+  <block id="f3670fbc9c2d7c628bcf279a3a361291" category="cell">環境変数</block>
+  <block id="1c2684566717c78cd97248bd9b26c55b" category="paragraph">SID</block>
+  <block id="7df397f9cd31e7114c7e2e05342b965c" category="paragraph">リストア用に選択したHANAデータベースのシステムID</block>
+  <block id="27270ec9408a912b9c11a0b35fc632bd" category="paragraph">BackupNameの略</block>
+  <block id="0e9861886ed376baff184ef221615791" category="paragraph">リストア処理用に選択されたバックアップ名</block>
+  <block id="c4a33e2279609818c96965bcd9bab5ec" category="paragraph">UserStoreKeyNames</block>
+  <block id="013fb0477224b7ab876a95e421f05039" category="paragraph">HANAデータベース用にユーザストアキーを設定しました</block>
+  <block id="d382482c2670da5c01adffcdf501543c" category="paragraph">OSDBUser</block>
+  <block id="3095515c706eb4c594092d1ee1c3ae9a" category="paragraph">HANAデータベース用にOSDBUserを設定</block>
+  <block id="3ce248d24933b7902d76adc1396159db" category="paragraph">実行します</block>
+  <block id="9efcb68627558971adca6566b3dab494" category="paragraph">スケジュールされたバックアップの場合のみ</block>
+  <block id="183ea2e1e5cda6eb1abec65a89a6959c" category="paragraph">schedule_type</block>
+  <block id="77f43e8ae334ff3c3206210a3e9294f5" category="section-title">SAP HANAデータベースを保護するためのポリシーを作成します</block>
+  <block id="efacffdbe75d7b1d536e135e08f12feb" category="paragraph">組み込みポリシーを使用または編集しない場合は、ポリシーを作成できます。</block>
+  <block id="30ca1c0b30eeb1e981b018064c3097f6" category="list-text">[*アプリケーション*]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
+  <block id="78ba2f5b165a9466c243c7ee05da78ac" category="list-text">（オプション）Snapshotコピー名の形式を編集します。</block>
+  <block id="808bacecc5ae86450915402dea0afd9a" category="list-text">ポリシータイプを選択します。</block>
+  <block id="d47a69e45ac10064eed780e92117e540" category="list-text">（任意）スクリプトを指定します。</block>
+  <block id="01ca810bd15c48e8c9ab7589db8498ca" category="section-title">SAP HANAデータベースのバックアップを作成します</block>
+  <block id="9fbab2932a5b265f7d6778bc72aaa745" category="paragraph">HANA System Replication（HSR；システムレプリケーション）の場合、スケジュールされたバックアップジョブはプライマリHANAシステムに対してのみトリガーされ、システムがセカンダリHANAシステムにフェイルオーバーすると、既存のスケジュールが現在のプライマリHANAシステムでバックアップをトリガーします。両方のHANAシステムにポリシーが割り当てられていない場合、フェイルオーバー後にスケジュールは失敗します。</block>
+  <block id="e0a1b2dffc713527405b0a710a4c3c77" category="paragraph">HSRシステムに異なるポリシーが割り当てられている場合、システムとセカンダリHANAシステムのバックアップの両方に対してスケジュールされたバックアップがトリガーされます。</block>
+  <block id="5ba78e62e90557138a1a676da2a8bc55" category="section-title">SAP HANAデータベースのオンデマンドバックアップを作成する</block>
+  <block id="40e405b765cba773754049b119c1a226" category="list-text">[*アプリケーション*]ページで、をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> アプリケーションに対応して、*オンデマンドバックアップ*をクリックします。</block>
+  <block id="c60813983d53f8ff0fb6ddeaeb071b53" category="list-text">オンデマンドバックアップタイプを選択します。</block>
+  <block id="9871d0ae1d97717aec81fbea0b6bf6f2" category="list-text">ポリシーベースのバックアップの場合、ポリシーと保持階層を選択し、*バックアップの作成*をクリックします。</block>
+  <block id="9485e27db83792a419e609ccf4407206" category="list-text">Snapshotコピーベースを1回選択するか、ファイルベースを選択して、次の手順を実行します。</block>
+  <block id="bed4b15b9a8b4a107d1b08a0950b9588" category="list-text">保持値を選択し、バックアップ名を指定します。</block>
+  <block id="34cdaf3eb96811f5c751a65473724ab9" category="list-text">（任意）スクリプトおよびスクリプトのパスを指定します。</block>
+  <block id="3c384d2eeea22869be9b66e36dec9d6e" category="list-text">[ バックアップの作成 *] をクリックします。</block>
+  <block id="33519237272d7d2506e4b23467569d7f" category="summary">各OracleデータベースホストにSnapCenter Plug-in for Oracleを導入します。</block>
+  <block id="5513c7a4fb1a461c9910fea9e8c7a3df" category="doc">ホストを追加し、Oracleデータベースを検出します</block>
+  <block id="0046bf9daf0e3a3d63572328eb09710c" category="paragraph">ポリシーを割り当ててバックアップを作成するには、ホストを追加し、ホスト上のデータベースを検出する必要があります。プラグインを導入済みのときにホストを手動で追加するか、SSHを使用してホストを追加することができます。</block>
+  <block id="031ed57adfb7acf180fc66b9bac25dcf" category="paragraph">ホストを追加する前に、前提条件を満たしていることを確認する必要があります。</block>
+  <block id="00346be4bfc4c310cf2dbead933dff7c" category="list-text">作業環境とコネクタを作成しておきます。</block>
+  <block id="150cd80aa8da7e8a0e1532db17acbab2" category="list-text">コネクタが作業環境とOracleデータベースホストに接続されていることを確認してください。</block>
+  <block id="b3a8552d8ed438ec3ca2f066908ea2d4" category="list-text">Java 11（64ビット）のOracle JavaまたはOpenJDKが各Oracleデータベースホストにインストールされていて、JAVA_HOME変数が適切に設定されていることを確認します。</block>
+  <block id="5206371c2969f80deb7370081781fc8b" category="list-text">root以外のユーザを作成しておく必要があります。詳細については、を参照してください <block ref="218c9ff3f0827d13a63195c67e07e241" category="inline-xref-macro-rx"></block>。</block>
+  <block id="419e9f180bcb9992797f0d63e5108d02" category="inline-xref">手動で実行する</block>
+  <block id="6082f779360f7aa7eae37c198973c6a2" category="inline-xref">スクリプトを使用</block>
+  <block id="a0b4d571b248f50b94b7633e3babe462" category="list-text">ホストを手動で追加する場合は、最初にプラグインを導入してください。プラグインを導入できます <block ref="71f9c0626648fc2ad6935845122647e8" category="inline-xref-macro-rx"></block> または <block ref="d5731cdfa534d1a5d7ccf2070fa3f2fc" category="inline-xref-macro-rx"></block>。</block>
+  <block id="9528b4fc4cc8c4ea29cdf1b307031b98" category="paragraph">このプラグインは、各Oracleデータベースホストに導入する必要があります。</block>
+  <block id="882fd9db70a37f6582163f4e6d1c4fde" category="paragraph">プラグインを導入するようにroot以外のユーザを設定する必要があります。</block>
+  <block id="c3af1031c174f35d8fbd1d63764549d3" category="list-text">1～16の行を、*_base_mount_path/_version_/sc-linux-host-plugin/*にある*ORACLE_checksum_scs.txt *ファイルからコピーします。</block>
+  <block id="941c84084e1d6a473d4b06951513646e" category="list-text">Oracleデータベース・ホストにログインし、次の手順を実行します。</block>
+  <block id="20ba94819b2688b9ce1be17cd8c67f00" category="inline-link">ユーザアカウントを作成します</block>
+  <block id="dc77642a9db95bfa3d7cfad2feac68d7" category="list-text">root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。詳細については、を参照してください<block ref="fda0d36f41d4c9e30e06c472b1bf9e0c" category="inline-link-rx"></block>。</block>
+  <block id="e0a6bb364ca10aed658b56d5c7220ce6" category="list-text">手順4でコピーした行を、visudo Linuxユーティリティを使用して、/etc/sudoers_fileに貼り付けます。</block>
+  <block id="e0ec6c3418190a65b388f2ec3b545b73" category="paragraph">上記の行で、&lt;LINUXUSER&gt; を作成したroot以外のユーザーに置き換え、visudoユーティリティでファイルを保存します。</block>
+  <block id="ad15ac1aed6665420aee6da3d2599843" category="paragraph">_snapcenter _ linux_host_plugin_scs.bin_は、root以外のユーザがアクセスできる場所にコピーする必要があります。</block>
+  <block id="1140247d0922f07c1db2936f25736b76" category="list-text">root以外のユーザアカウントを使用してOracleデータベースホストにログインし、次のコマンドを実行してバイナリの実行権限を有効にします。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
+  <block id="448fb639b2dbccf2171b5c8f9a70a09a" category="list-text">Oracleプラグインをsudoのroot以外のユーザとして導入します。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
+  <block id="d00dc5124d9367c0c08e4ba45796fdd4" category="section-title">スクリプトを使用してプラグインを導入します</block>
+  <block id="7f4f03eee9cd1fb77b091d1f31a63e75" category="paragraph">root以外のユーザに対してOracleホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。</block>
+  <block id="5db771567067dd09af5564e02cf7ed87" category="list-text">コネクタに用意されているヘルパースクリプトを使用して、プラグインを導入します。<block ref="1d1dd7c5683a80bd4fd769dadbf81b09" prefix=" " category="inline-code"></block></block>
+  <block id="0fe1e69c4c87559df8ff5fba40419445" category="list-text">ssh_key_fileは、root以外のユーザのSSHキーであり、Oracleホストへの接続に使用します。これは必須パラメータです。</block>
+  <block id="d9997864ce67719ea93cc0b0cff9c006" category="list-text">user_name：OracleホストでSSH権限を持つroot以外のユーザ。これはオプションパラメータです。デフォルト値はec2-userです。</block>
+  <block id="6ae7d9f8527d1ed6cd28c1fe9cc17109" category="paragraph">例：<block ref="f2458f3042d087542cd1b232a3f7c978" prefix=" " category="inline-code"></block></block>
+  <block id="af7f8976f175216d1e12ff5be8b68be4" category="section-title">ホストを追加します</block>
+  <block id="c45737224c5ab40ea9affadd8962c6e7" category="paragraph">ホストを追加し、Oracleデータベースを検出する必要があります。</block>
+  <block id="e4bed981c8dc4fe15a706f0b93160836" category="list-text">BlueXP UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
+  <block id="254d235472af71154481e0a6f56b2535" category="list-text">[Add Host]ページで、次のいずれかを実行します。</block>
+  <block id="2958f19f58f0ca8d9d63b20360a0d39d" category="paragraph">どちらかのプラグインを導入しておきます <block ref="71f9c0626648fc2ad6935845122647e8" category="inline-xref-macro-rx"></block> または <block ref="d5731cdfa534d1a5d7ccf2070fa3f2fc" category="inline-xref-macro-rx"></block></block>
+  <block id="f56876c150285cea7b724cbb95594046" category="list-text">[* Manual*]を選択します。</block>
+  <block id="96d18284484330f0461bebeeedf28b93" category="list-text">プラグインを導入するホストのFQDNまたはIPアドレスを指定します。</block>
+  <block id="4b9c5e10e240cdb44f786ad97e92d363" category="paragraph">FQDNまたはIPアドレスを使用して、コネクタがデータベースホストと通信できることを確認します。</block>
+  <block id="1aac7d6557fe6e967f4f601d31a5391d" category="list-text">プラグインポートを指定します。</block>
+  <block id="acb4159eef3e5ecd5b233216c18d4d45" category="paragraph">デフォルトポートは8145です。</block>
+  <block id="91128bbc82eb724ccb4b4532f152c3da" category="list-text">コネクタを選択します。</block>
+  <block id="74a99b6dc2ef8f1a612ef62e0fbae84d" category="list-text">チェックボックスを選択して、プラグインがホストにインストールされていることを確認します</block>
+  <block id="8443ac4c22417245b61f0c033b4ea3d2" category="paragraph">プラグインを自動的に導入する</block>
+  <block id="044408c01f4556451a3907257fc21382" category="list-text">SSHを使用して*を選択します。</block>
+  <block id="21c7549ba6f4014b1d2c113aff7f95aa" category="list-text">プラグインをインストールするホストのFQDNまたはIPアドレスを指定します。</block>
+  <block id="067a9635a80c1edff88c622203fa7ce1" category="inline-xref">root以外のユーザ</block>
+  <block id="0b2581c6c2b040b10360f2182f95a26e" category="list-text">ユーザ名を指定します（<block ref="b860729b45208ea0c8184e39fd0d4fa7" category="inline-xref-macro-rx"></block>）を使用して、プラグインパッケージをホストにコピーします。</block>
+  <block id="791d63ac899b8ad7fc56dc931d1fd29a" category="list-text">SSHとプラグインポートを指定します。</block>
+  <block id="505ce6fed4446b13324d0562a28bb6ba" category="paragraph">デフォルトのSSHポートは22で、プラグインポートは8145です。</block>
+  <block id="11f3ace264fde67c71154e15a9b49b51" category="paragraph">プラグインをインストールしたら、アプリケーションホスト上のSSHポートを閉じることができます。SSHポートは、他のプラグイン処理には必要ありません。</block>
+  <block id="7494e5d74f494202f9ecbc9e400d55b4" category="list-text">（オプション）コネクタとホストの間でキーレス認証が有効になっていない場合は、ホストとの通信に使用するSSH秘密鍵を指定する必要があります。</block>
+  <block id="df73a8d3cb21154a0c4e8b0154f1be54" category="admonition">SSH秘密鍵はアプリケーション内のどこにも保存されず、他の操作には使用されません。</block>
+  <block id="800f2a703c9ddfa1dee1e01e4dc27484" category="list-text">すべてのホストを表示するには、[*設定*]をクリックし、[*ホスト*]を選択します。データベース・ホストを削除するには'[* Remove *]をクリックします</block>
+  <block id="fd8b783cdb511cc4699a202fd9e6fa19" category="admonition">特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。</block>
+  <block id="4f3297cde92a5de45c2448cbe652c2a3" category="list-text">ユーザ名、パスワード、およびポートの詳細を指定します。</block>
+  <block id="4bee6fec011c2f7ac751849f160f0a3f" category="paragraph">データベースがASMにある場合は、ASMも設定する必要があります。</block>
+  <block id="83fcc800acbb114328da04dc6ed73b8f" category="summary">BlueXPにアクセスします</block>
+  <block id="035e6d59b1caedb3017d4559881471b2" category="inline-link-macro">NetApp BlueXP Webサイトに登録します</block>
+  <block id="ab26432294c471f0aa2bb50434ef5822" category="paragraph">お勧めします <block ref="f8ff5153376f519ebb8fe9e2c5ab9cd8" category="inline-link-macro-rx"></block>、 <block ref="9f5c210a6685dd250338a699e76589de" category="inline-link-macro-rx"></block>をクリックし、を設定します <block ref="8a2a59f9ec508dc199624b6dfabe5c9f" category="inline-link-macro-rx"></block>。</block>
+  <block id="013e38cfdb2c6d0bb3f17b59760240ff" category="summary">BlueXPを使用すると、アプリケーションと整合性のある、Amazon FSX for NetApp ONTAP またはCloud Volumes ONTAP 上にあるOracle®データベースの効率的でポリシーベースのバックアップとリストアを実行できます。</block>
+  <block id="7105ab20f187c4c6345342e06cd1748d" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXP（旧Cloud Manager）で有効になっているCloud Backup for Applicationsは、アプリケーションと整合性のある効率的なポリシーベースの保護機能を提供します。</block>
+  <block id="9b029537d0b8df0bfe13af02e2f4b676" category="list-text">Amazon FSX for NetApp ONTAP およびCloud Volumes ONTAP 上に存在するOracleデータベース</block>
+  <block id="0fb238fbf40ffb66b4fc526838e26664" category="list-text">Azure NetApp Files （ANF）上にあるSAP HANAシステム</block>
+  <block id="0e9f5823c929b9fb9d64f8929519166d" category="list-text">Cloud Backup for Applications UIには、BlueXP UIからアクセスできます。</block>
+  <block id="97c81decba97f11a1ed9821a4ddbc39d" category="paragraph">Cloud Backup for Applications UIは、アプリケーションにデータ保護機能を提供します。</block>
+  <block id="a900fc2ba3036431f83eaa95438d5c78" category="list-text">BlueXP Connectorは、ユーザーのクラウドネットワークで動作し、ストレージシステムおよびアプリケーション固有のプラグインと通信するコンポーネントです。</block>
+  <block id="aad0e4f379abbcb6d97deaa2a9b6fa44" category="list-text">アプリケーション固有のプラグインは、各アプリケーションホストで実行され、データ保護処理の実行中にホストで実行されるデータベースと通信するコンポーネントです。</block>
+  <block id="31521768c2e3383a2144ce0e8a7d8853" category="inline-image-macro">各コンポーネントと接続の準備を行う方法を示す図。</block>
+  <block id="e3b72f702a3b0c42e864fe0ad9eb9453" category="paragraph"><block ref="e3b72f702a3b0c42e864fe0ad9eb9453" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="debcd4d08561911b884d33c7e223a5d1" category="paragraph">ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。</block>
+  <block id="2c9139d12cc7ddacb93c941d4bf412a2" category="paragraph">このコネクタは、アプリケーションと同じVPCまたはVNetに導入することも、別のVPCまたはVNetに導入することもできます。コネクタとアプリケーションが異なるネットワーク上にある場合は、コネクタとアプリケーションの間にネットワーク接続を確立する必要があります。</block>
+  <block id="e3a2981d750d1d4a623860068a07cc70" category="admonition">1つのBlueXPコネクタは、複数のストレージシステムおよび複数のアプリケーションプラグインと通信できます。コネクタとアプリケーションホストの間に接続がある限り、アプリケーションを管理するには単一のコネクタが必要です。</block>
+  <block id="ffba5da344eb452b5de446ab9607ed77" category="admonition">Cloud Backup for Applications SaaSインフラは、リージョン内のアベイラビリティゾーン障害に対して耐障害性に優れています。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。</block>
+  <block id="11db7b880ef2ebba3ee0a02b685e8da0" category="section-title">Oracleデータベースを保護します</block>
+  <block id="97f57db88b58d6204d212c21b763df78" category="list-text">ストレージシステム：</block>
+  <block id="18cf072964a583150dd247485ba75b92" category="list-text">ONTAP 対応の Amazon FSX</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
+  <block id="09417dd7907c94abc22203ab06dade6c" category="list-text">ストレージレイアウト：</block>
+  <block id="d991e9a50dc0cf6a926e5fc91c5466f6" category="list-text">NFS v3およびv4.1（dNFSを含む）</block>
+  <block id="65191ea76e528516c2b69ba9b5993929" category="list-text">ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）</block>
+  <block id="e7c148fd9db2c4b380f00535117a8e6c" category="list-text">データベースレイアウト：Oracle StandardおよびOracle Enterprise Standalone（従来型およびマルチテナントCDBおよびPDB）</block>
+  <block id="ec92fe8b7e318dfcde8d78c9bfe9eeb4" category="list-text">データベースバージョン：12cR2、18c、19C、および21c</block>
+  <block id="f9b0b398cc489e9b9c51d5f0a02d79ef" category="list-text">ホストを追加してプラグインを導入</block>
+  <block id="2b28a537f2a6d5472a43cbc2186639a1" category="paragraph">プラグインは、手動、スクリプト、または自動で導入できます。</block>
+  <block id="a9607bf3dab7465c9c9a69c73e765ba3" category="list-text">Oracleデータベースのバックアップ</block>
+  <block id="c301db0a72f03fbc084326a0aee213cc" category="list-text">ソースホストまたは代替ターゲットホスト上のOracleデータベースのクローニング</block>
+  <block id="f1ad14bba418337bd66224d583d964a4" category="list-text">基本的なワンクリッククローン</block>
+  <block id="3588abe13a84fd4299889022e29bf1cc" category="list-text">カスタムクローン仕様ファイルを使用した高度なクローニング</block>
+  <block id="39a105e4b2d5cc257bd57caf40b786b8" category="list-text">クローンエンティティ名は、自動生成することも、ソースと同一にすることもできます</block>
+  <block id="ae49d45975e4905391dec601e3055a7b" category="list-text">クローン階層を表示します</block>
+  <block id="0abd64356d55cfaf15f95c49a52874cb" category="list-text">クローンデータベースの削除</block>
+  <block id="5669d4dde41a20620530fdebbd1d9492" category="list-text">バックアップ、リストア、クローニングなどのジョブを監視しています</block>
+  <block id="9518d577aae2b3d43b6dd0f41fb999e1" category="list-text">Oracle 11gはサポートされません</block>
+  <block id="d67615cd9765a283fd8a9d06cd5d44a1" category="list-text">バックアップに対するマウント、カタログ化、検証の処理はサポートされていません</block>
+  <block id="67245dc7deca2afa286f3ad858663b9b" category="list-text">Cloud Volumes ONTAP HAでは、ネットワークインターフェイスのIPアドレスのうち1つだけが使用されます。IPの接続がダウンした場合やIPにアクセスできない場合は、処理が失敗します。</block>
+  <block id="e6b20bc1a90e8604fa89447bb6b7d1c6" category="list-text">NetApp ONTAP またはCloud Volumes ONTAP 用のAmazon FSXのネットワークインターフェイスIPアドレスは、BlueXPのアカウントとリージョン内で一意である必要があります。</block>
+  <block id="9317a56cfedd80231a539c42f44d9c8d" category="section-title">SAP HANAデータベースを保護</block>
+  <block id="494c3084e3990387ac3b46cb5749bb65" category="list-text">SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム</block>
+  <block id="504d22b0e020e0b365851eef08a1e4ca" category="list-text">SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています</block>
+  <block id="bf8209cf9b7524db25e82e107aec699b" category="list-text">ストレージシステム：Azure NetApp Files （ANF）</block>
+  <block id="4181f6e16bb30e02b42299eaabaccd5e" category="list-text">ストレージレイアウト：データとログについては、AzureでNFSv4.1のみがサポートされます。</block>
+  <block id="c7325743e6b1be5853672e4ed19d279b" category="list-text">データベースレイアウト：</block>
+  <block id="4f3c431044df2a4101e620b1add959d6" category="list-text">シングルコンテナバージョン1.0SPS12</block>
+  <block id="d2175dc4d931807281b7620ca72ae84c" category="list-text">SAP HANA Multitenant Database Container（MDC）2.0SPS4、2.0SPS5、2.0SPS6（シングルテナントまたは複数テナント）</block>
+  <block id="5682f0abdba997874b11dbf9e7941de0" category="list-text">SAP HANAシングルホストシステム、SAP HANAマルチホストシステム（スタンバイホストなし）、HANAシステムレプリケーション</block>
+  <block id="b31ef80025021b4e1a3674d3c6f7edd6" category="list-text">データベースホスト上のSAP HANAプラグイン</block>
+  <block id="06f6598cf881ccbc6674a22fbae124a7" category="list-text">SAP HANAシステムを手動で追加</block>
+  <block id="4142e62814a391bb005b24bff331ca70" category="list-text">SAP HANAデータベースのバックアップ</block>
+  <block id="3dc86f2b70bbc136def08777345230b3" category="list-text">オンデマンドバックアップ（ファイルベースおよびSnapshotコピーベース）</block>
+  <block id="bcfd0546b5f4cd2c6303870c4e6e0dd6" category="list-text">HANA System Replication（HSR；システムレプリケーション）対応</block>
+  <block id="b577b9fd997dc71012de9893ab56f718" category="list-text">指定したバックアップからのSAP HANAデータベース全体のリストア</block>
+  <block id="65dc2f9e917928b3e6002544cad8ee43" category="list-text">HANA非データボリュームとグローバル非データボリュームのバックアップとリストア</block>
+  <block id="896e37ce57d4f643fdc73c4e55e1657f" category="list-text">プリスクリプトとポストスクリプトでは、バックアップ処理とリストア処理に環境変数を使用できます</block>
+  <block id="e2086982eebdf5e70180dcd16ab743e1" category="list-text">終了前のオプションを使用して、障害シナリオのアクションプランを作成します</block>
+  <block id="85b4745a4d1440f87a65d816457ed9c6" category="list-text">HSR構成では、2ノードのHSRのみがサポートされます（1プライマリおよび1セカンダリ）。</block>
+  <block id="277fd7b361991606890ebf27911b589f" category="list-text">リストア処理中にポストスクリプトが失敗した場合、保持はトリガーされません</block>
+  <block id="5cca45bd52ac035de73ec0e76f0e5043" category="summary">データファイルをリストアし、データベースをリカバリします。</block>
+  <block id="e648f70e1fb5d17870bf65097e43c5a6" category="doc">クラウドネイティブのSAP HANAデータベースをリストア</block>
+  <block id="26661dc24144ed594be15c07b300db39" category="paragraph">データ損失が発生した場合は、データファイルと非データファイルをリストアしてから、データベースをリカバリできます。</block>
+  <block id="209bbbd2ef26cf13ac9d3e2ab4a48795" category="paragraph">ポリシーの作成時にプリスクリプト、ポストスクリプト、および終了スクリプトを指定できます。これらのスクリプトは、リストア処理の実行中にHANAホストで実行されます。</block>
+  <block id="8e193dde313806673c3561148f67d074" category="paragraph">プリスクリプトとポストスクリプトは、ホスト管理者がに登録する必要があります<block ref="3b233c9e75b7e3c86773366e24bbc002" prefix=" " category="inline-code"></block></block>
+  <block id="43b21c00ad4299ac7f4d7e1dafb5f387" category="paragraph">*必要なもの*</block>
+  <block id="f8988e398a707101924ea388677409fc" category="list-text">SAP HANAシステムは停止状態である必要があります。</block>
+  <block id="e7112ed1470e71e600498d1a4b34ac26" category="list-text">SAP HANAシステムを停止するプリスクリプトを用意できます。</block>
+  <block id="864ef826ca9afa5b1d7e1e3468c6f957" category="list-text">[* Restore System*（システムの復元）]ページで、スクリプトを入力します。</block>
+  <block id="8f0f4ecd6bb49079fb488435d58bf611" category="list-text">リストアが完了したら、SAP HANAシステムを手動でリカバリするか、ポストスクリプトを指定してSAP HANAシステムのリカバリを実行します。</block>
+  <block id="aafa017aee26c3860dee1aac06cc22e5" category="section-title">非データボリュームをリストアします</block>
+  <block id="b78066905c05d49abb8f4df49665ed37" category="list-text">[*Applications*]ページで、ドロップダウンボックスから[Non-Data Volume]を選択します。</block>
+  <block id="3aac3c41e91764884ee0c38b65b46f08" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアするバックアップに対応して、*リストア*をクリックします。</block>
+  <block id="b2e006d02046a3f5e702a7cc2433d9dd" category="section-title">グローバルな非データボリュームをリストアします</block>
+  <block id="cb2767bdb3d5e1b97916847c0a3526d3" category="list-text">[*アプリケーション]ページで、リストアするグローバル非データ・ボリュームをクリックします。</block>
+  <block id="929d6dd73b50a8d75013d755514fa9af" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアするグローバル非データボリュームに対応し、*リストア*をクリックします。</block>
+  <block id="0cb116a62e576abe2d47dfa6c902b9c8" category="summary">Azure NetApp Files 作業環境とコネクタを作成します</block>
+  <block id="00130c4c20e30be7264c0ff0d085261b" category="doc">Azure NetApp Files を設定します</block>
+  <block id="461b076f874ae9da8450c5b60ee28c5a" category="paragraph">Azure NetApp Files の作業環境とコネクタを作成する必要があります。</block>
+  <block id="c6927bf583958e84094bc7e9d4328c6f" category="section-title">Azure NetApp Files 作業環境を作成します</block>
+  <block id="8b53faee27870b72e0be69261d54a7ee" category="inline-link-macro">Azure NetApp Files の詳細をご覧ください</block>
+  <block id="c5c12e22be965b4ae0e9fc5e1618bdbe" category="inline-link-macro">Azure NetApp Files 作業環境を作成します</block>
+  <block id="bf91af894eb3580afdb33ab6ce5ab06f" category="paragraph">データベースがホストされているAzure NetApp Files （ANF）作業環境を作成する必要があります。詳細については、を参照してください <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> および <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
+  <block id="e7a9cd1dc4bf0c230d0684e18369d70d" category="section-title">コネクタを作成します</block>
+  <block id="7c258ce888390955a0508e6bf64eec18" category="paragraph">アカウント管理者は、ANFにConnectorを導入して、BlueXPがパブリッククラウド環境内でリソースとプロセスを管理できるようにする必要があります。</block>
+  <block id="bca25b5056d8715db55e6e28a72ddea0" category="admonition">UIから新しいconnector_idを更新することはできません。</block>
+  <block id="e12fb4f30abef516bf6f5e0e9a5b72b7" category="inline-link-macro">BlueXPからAzureにコネクタを作成します</block>
+  <block id="3717a56f9d9c162dfd0127cd325c0a2f" category="paragraph">詳細については、を参照してください <block ref="88ddfb8e0cf0e729a2d90f978111b93e" category="inline-link-macro-rx"></block>。</block>
+  <block id="ecada0c15940b97b88394b4302d947ef" category="section-title">監査データ</block>
+  <block id="6280ecb98fbab7faa4501dcb7db5af0d" category="paragraph">APIを直接実行するか、UIを使用して、外部で公開されているCloud Backup for ApplicationsのAPIを呼び出した場合は、ヘッダー、ロール、要求の本文、また、API情報はBlueXPタイムラインに記録され、監査エントリは永久にタイムラインに保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。</block>
+  <block id="582464d9a1c21b8cb83acfbac9580e66" category="paragraph">Cloud Backup for Applicationsは、ホストIP、要求本文、処理名、トリガーしたユーザ、一部のヘッダーなどのエントリをログに記録します。APIの動作状態を確認する必要があります。</block>
+  <block id="fc4c50f01a83d265b6fd7e197792d3d1" category="admonition">エージェントIDはコネクタに関連付けられています。SAP HANAホストの登録時に使用したコネクタが存在しない場合、新しいコネクタのエージェントIDが異なるため、そのアプリケーションの以降のバックアップは失敗します。ホストのコネクタIDを変更する必要があります。</block>
+  <block id="12ed4152d6bd08ebcd4e8d515069f7a5" category="section-title">クローンを削除します</block>
+  <block id="d4c01092ac785d3b48d07b3524e8861d" category="paragraph">不要になったクローンは削除できます。</block>
+  <block id="f93b1b2cbf09d2de621c348bf4acc294" category="list-text">をクリックします <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> [*フィルターの基準]の隣にある[*複製オプション*&gt;*親の複製*]を選択します。</block>
+  <block id="53cfd7fa3290c6e484ae2c692a63d3a7" category="list-text">Database Details（データベースの詳細）ページで、をクリックします <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> [*フィルターの基準]の隣にある[*クローン*]を選択します。</block>
+  <block id="0939e02b7faf70738951c4d3dac49c2d" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 削除するクローンに対応し、* Delete *をクリックします。</block>
+  <block id="6c2d45f01ff62f51f26b2e2555360189" category="list-text">（オプション）* force delete *チェックボックスを選択します。</block>
+  <block id="d6920e9ed9ae34ee88e8e5109cbc01a3" category="section-title">SAP HANAデータベースホストのConnector Detailsを更新します</block>
+  <block id="f6c6e3e6b442f04060f7a2523e527fee" category="paragraph">アプリケーションホストの登録時に使用したコネクタが存在しなくなったり破損したりした場合は、新しいコネクタを導入する必要があります。新しいコネクタを導入したら、* connector-update * APIを実行して、古いコネクタを使用して登録されているすべてのホストのコネクタの詳細を更新する必要があります。</block>
+  <block id="d13044a4ef6b89541aeb5868baab390c" category="paragraph">すべてのホストにSnapCenter Plug-in for SAP HANAサービスがインストールされて実行されている場合、およびすべてのホストが新しいコネクタからアクセスできる場合、コネクタの詳細は正しく更新されます。</block>
+  <block id="d3b0d850de511531fb3f574a27d6a468" category="paragraph">CA証明書には、Connector仮想マシンと通信するプラグインホストの正確な名前を指定する必要があります。</block>
+  <block id="7d83d5d5ce1c46e87b0f8c0f37208dfa" category="paragraph">SnapCenter Plug-in for VMware vSphereとBlueXP（旧Cloud Manager）を統合することで、仮想マシン上のデータを保護できます。データストアはオンプレミスのプライマリストレージやセカンダリストレージからクラウドにバックアップでき、仮想マシンはオンプレミスのSnapCenter Plug-in for VMware vSphereに簡単にリストアできます。</block>
+  <block id="b8104f51ae1e5a69311d6b01f5409c0e" category="paragraph">データストアは、Amazon Web Services S3（サポートされているアーカイブ階層はGlacierとDeep Glacier）、Microsoft Azure Blob（サポートされているアーカイブ階層はAzure Archive）、Google Cloud Platform、およびStorageGRID にバックアップできます。</block>
+  <block id="0fbf3afea399595219e31836afabacc9" category="list-text">VMware vSphere 4.7P1以降でSnapCenter Plug-inを使用して、オンプレミスのセカンダリストレージから仮想マシンをバックアップする必要があります。</block>
+  <block id="9a3ae5d8e3738351dd9a586e8215632a" category="list-text">SnapCenter Plug-in for VMware vSphereで、BlueXPの仮想マシンポリシーと同じラベルまたは同じラベルの日単位、週単位、または月単位のポリシーが少なくとも1つ適用されます。</block>
+  <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">アーキテクチャ図</block>
+  <block id="955c6f1851b4039bd20ae31d5f14d338" category="paragraph"><block ref="955c6f1851b4039bd20ae31d5f14d338" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be41623d6af59568cef623d3c728763c" category="sidebar">アプリケーションデータを保護</block>
+  <block id="f10f628c5eed2a77ff5260d73cc9f787" category="sidebar">オンプレミスアプリケーションのデータを保護</block>
+  <block id="d1444f985888131065bf58d488e5a34f" category="sidebar">オンプレミスアプリケーションのデータをリストア</block>
+  <block id="8ec2a58b030af0e72d591e2b1f3ad96f" category="sidebar">クラウドネイティブアプリケーションのデータを保護</block>
+  <block id="06f2bfcddae385f62d2bf5540f00b244" category="sidebar">クラウドネイティブアプリケーションデータをバックアップ</block>
+  <block id="1c157808ae21e883235bd19d5c13f45e" category="sidebar">Oracleデータベースをバックアップする</block>
+  <block id="b0c92f6f27a434824e7723b42147cce3" category="sidebar">SAP HANAデータベースをバックアップする</block>
+  <block id="ba15b3fff6acda3793db1b2ef5d2ca2a" category="sidebar">クラウドネイティブアプリケーションデータのクローニング</block>
 </blocks>

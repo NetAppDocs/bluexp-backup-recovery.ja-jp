@@ -83,9 +83,9 @@ sidebar:
       url: "/task-manage-backups-kubernetes.html"
     - title: Kubernetes バックアップからリストア
       url: "/task-restore-backups-kubernetes.html"
-  - title: アプリケーションデータのバックアップとリストア
+  - title: アプリケーションデータを保護
     entries:
-    - title: オンプレミスのアプリケーションデータのバックアップとリストア
+    - title: オンプレミスアプリケーションのデータを保護
       entries:
       - title: オンプレミスアプリケーションのデータを保護
         url: "/concept-protect-app-data-to-cloud.html"
@@ -106,7 +106,7 @@ sidebar:
         url: "/task-backup-app-data-to-storagegrid.html"
       - title: アプリケーションの保護を管理します
         url: "/task-manage-app-backups.html"
-      - title: アプリケーションデータをリストアする
+      - title: オンプレミスアプリケーションのデータをリストア
         entries:
         - title: Oracle データベースをリストアします
           url: "/task-restore-oracle-data.html"
@@ -114,22 +114,55 @@ sidebar:
           url: "/task-restore-sql-data.html"
       - title: アプリケーションバックアップをマウント
         url: "/task-mount-app-backup.html"
-    - title: クラウドネイティブアプリケーションデータのバックアップとリストア
+    - title: クラウドネイティブアプリケーションのデータを保護
       entries:
       - title: クラウドネイティブアプリケーションのデータを保護
         url: "/concept-protect-cloud-app-data-to-cloud.html"
-      - title: 前提条件
-        url: "/reference-prereq-protect-cloud-native-app-data.html"
-      - title: クラウドネイティブアプリケーションのデータをバックアップ
+      - title: クラウドネイティブアプリケーションデータをバックアップ
         entries:
-        - title: アプリケーションを検出
-          url: "/task-discover-applications.html"
-        - title: クラウドネイティブなアプリケーションデータをバックアップ
-          url: "/task-backup-cloud-native-app-data.html"
+        - title: クラウドネイティブのOracleデータベースをバックアップ
+          entries:
+          - title: BlueXPにアクセスします
+            url: "/reference-access-bluexp.html"
+          - title: ONTAP のFSXを設定します
+            url: "/reference-configure-fsx-for-ontap.html"
+          - title: Cloud Volumes ONTAP を設定します
+            url: "/reference-configure-cloud-volumes-ontap.html"
+          - title: ホストを追加し、Oracleデータベースを検出します
+            url: "/task-add-host-discover-oracle-databases.html"
+          - title: Oracleデータベースをバックアップする
+            url: "/task-backup-cloud-native-oracle-data.html"
+        - title: クラウドネイティブのSAP HANAデータベースをバックアップ
+          entries:
+          - title: BlueXPにアクセスします
+            flavor: azure
+            url: "/reference-access-bluexp.html"
+          - title: Azure NetApp Files を設定します
+            flavor: azure
+            url: "/reference-configure-azure-netapp-files.html"
+          - title: SnapCenter Plug-in for SAP HANAを導入
+            flavor: azure
+            url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
+          - title: SAP HANAデータベースをバックアップする
+            flavor: azure
+            url: "/task-backup-cloud-native-sap-hana-data.html"
+      - title: クラウドネイティブアプリケーションのデータをリストア
+        entries:
+        - title: クラウドネイティブのOracleデータベースをリストアする
+          url: "/task-restore-cloud-native-oracle-data.html"
+        - title: クラウドネイティブのSAP HANAデータベースをリストア
+          flavor: azure
+          url: "/task-restore-cloud-native-sap-hana-data.html"
+      - title: クラウドネイティブアプリケーションデータのクローニング
+        entries:
+        - title: クラウドネイティブのOracleデータベースをクローニングします
+          entries:
+          - title: クローンの概念と要件
+            url: "/concept-clone-cloud-native-oracle-concepts.html"
+          - title: クラウドネイティブのOracleデータベースをクローニングします
+            url: "/task-clone-cloud-native-oracle-data.html"
       - title: クラウドネイティブなアプリケーションデータの保護を管理
         url: "/task-manage-cloud-native-app-data.html"
-      - title: クラウドネイティブアプリケーションデータをリストア
-        url: "/task-restore-cloud-native-app-data.html"
   - title: 仮想マシンのデータのバックアップとリストア
     entries:
     - title: 仮想マシンのデータを保護
@@ -144,6 +177,9 @@ sidebar:
     - title: データストアをMicrosoft Azureにバックアップする
       flavor: azure
       url: "/task-backup-vm-data-to-azure.html"
+    - title: データストアをGoogle Cloud Platformにバックアップする
+      flavor: gcp
+      url: "/task-backup-vm-data-to-gcp.html"
     - title: データストアをStorageGRID にバックアップする
       url: "/task-backup-vm-data-to-storagegrid.html"
     - title: 仮想マシンの保護を管理します
@@ -217,7 +253,7 @@ homepage:
     - title: Kubernetes クラスタから Google Cloud へ
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
-  - title: アプリケーションデータのバックアップとリストア
+  - title: アプリケーションデータを保護
     links:
     - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
       flavor: aws
@@ -230,14 +266,10 @@ homepage:
       url: "/task-backup-app-data-to-gcp.html"
     - title: オンプレミスのアプリケーションデータをStorageGRID にバックアップ
       url: "/task-backup-app-data-to-storagegrid.html"
-    - title: Oracleデータベースをクラウドからオンプレミスにリストア
-      url: task-restore-oracle-data.html
-    - title: SQL Serverデータベースをクラウドからオンプレミスにリストア
-      url: task-restore-sql-data.html
-    - title: クラウドネイティブアプリケーションのデータをバックアップ
-      url: task-backup-cloud-native-app-data.html
-    - title: クラウドネイティブアプリケーションのデータをリストア
-      url: task-restore-cloud-native-app-data.html
+    - title: クラウドネイティブのOracleデータベースをバックアップ
+      url: task-backup-cloud-native-oracle-data.html
+    - title: クラウドネイティブのSAP HANAデータベースをバックアップ
+      url: task-backup-cloud-native-sap-hana-data.html
   - title: 仮想マシンのデータのバックアップとリストア
     links:
     - title: データストアをAmazon Web Servicesにバックアップする
@@ -246,6 +278,9 @@ homepage:
     - title: データストアをMicrosoft Azureにバックアップする
       flavor: azure
       url: "/task-backup-vm-data-to-azure.html"
+    - title: データストアをGoogle Cloud Platformにバックアップする
+      flavor: gcp
+      url: "/task-backup-vm-data-to-gcp.html"
     - title: データストアをStorageGRID にバックアップする
       url: "/task-backup-vm-data-to-storagegrid.html"
     - title: クラウドから仮想マシンをリストアします

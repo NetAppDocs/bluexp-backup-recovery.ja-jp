@@ -14,7 +14,7 @@ summary: ONTAP からGCPにアプリケーションデータをバックアッ�
 
 
 [role="lead"]
-Cloud Backup for ApplicationsをBlueXPおよびオンプレミスSnapCenter と統合することで、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップできます。
+Cloud Backup for ApplicationsをCloud ManagerとオンプレミスのSnapCenter に統合することで、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップできます。
 
 単一のポリシーを使用して、 1 つ以上のアプリケーションをクラウドで同時に保護することができます。
 

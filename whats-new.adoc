@@ -18,6 +18,47 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2022年12月19日
+
+
+
+=== Cloud Backup for Applicationsの機能強化
+
+* SAP HANAデータベース
++
+** Azure NetApp Files （ANF）上にあるSAP HANAデータベースのポリシーベースのバックアップとリストアをサポート
+** カスタムポリシーをサポート
+
+
+* Oracleデータベース
++
+** ホストを追加してプラグインを自動的に導入
+** カスタムポリシーをサポート
+** Cloud Volumes ONTAP 上にあるOracleデータベースのポリシーベースのバックアップ、リストア、およびクローニングをサポートします
+** Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのポリシーベースのバックアップおよびリストアをサポートします
+** Connect and Copy方式を使用したOracleデータベースのリストアをサポートします
+** Oracle 21cをサポートします
+** クラウドネイティブのOracleデータベースのクローニングをサポートします
+
+
+
+
+
+
+=== Cloud Backupの機能拡張
+
+* 仮想マシン
++
+** オンプレミスのセカンダリストレージから仮想マシンをバックアップ
+** カスタムポリシーをサポート
+** では、Google Cloud Platform（GCP）をサポートしており、1つ以上のデータストアのバックアップに使用できます
+** Glacier、Deep Glacier、Azure Archiveなどの低コストのクラウドストレージをサポートします
+
+
+
+
+
+
 == 2022年12月6日
 
 

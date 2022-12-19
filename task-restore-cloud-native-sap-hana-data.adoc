@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: task-restore-cloud-native-sap-hana-data.html 
+keywords: cloud native, application data, restore, data files, SAP HANA, database, recovery, Cloud Manager, BlueXP 
+summary: データファイルをリストアし、データベースをリカバリします。 
+---
+= クラウドネイティブのSAP HANAデータベースをリストア
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+データ損失が発生した場合は、データファイルと非データファイルをリストアしてから、データベースをリカバリできます。
+
+
+
+== プリスクリプトとポストスクリプト
+
+ポリシーの作成時にプリスクリプト、ポストスクリプト、および終了スクリプトを指定できます。これらのスクリプトは、リストア処理の実行中にHANAホストで実行されます。
+
+サポートされているスクリプトの形式は、.sh、Pythonスクリプト、perlスクリプトなどです。
+
+プリスクリプトとポストスクリプトは、ホスト管理者がに登録する必要があります `/opt/NetApp/snapcenter/scc/etc/allowed_commands.config file``
+
+`[root@scspa2622265001 etc]# cat allowed_commands.config
+command: mount
+command: umount
+command: /mnt/scripts/pre_script.sh
+command: /mnt/scripts/post_script.sh`
+
+
+
+== 環境変数
+
+リストアワークフローでは、プリスクリプトとポストスクリプトの一部として次の環境変数を使用できます。
+
+|===
+| 環境変数 | 説明 
+
+
+ a| 
+SID
+ a| 
+リストア用に選択したHANAデータベースのシステムID
+
+
+
+ a| 
+BackupNameの略
+ a| 
+リストア処理用に選択されたバックアップ名
+
+
+
+ a| 
+UserStoreKeyNames
+ a| 
+HANAデータベース用にユーザストアキーを設定しました
+
+
+
+ a| 
+OSDBUser
+ a| 
+HANAデータベース用にOSDBUserを設定
+
+|===
+
+
+== クラウドネイティブのSAP HANAデータベースをリストア
+
+*必要なもの*
+
+. SAP HANAシステムは停止状態である必要があります。
+. SAP HANAシステムを停止するプリスクリプトを用意できます。
+
+
+* 手順 *
+
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] リストアするデータベースに対応して、*詳細の表示*をクリックします。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] リストアに使用するデータ・バックアップに対応して、*リストア*をクリックします。
+. [* Restore System*（システムの復元）]ページで、スクリプトを入力します。
+. [* リストア ] をクリックします。
+
+
+* 終了後 *
+
+* リストアが完了したら、SAP HANAシステムを手動でリカバリするか、ポストスクリプトを指定してSAP HANAシステムのリカバリを実行します。
+
+
+
+
+== 非データボリュームをリストアします
+
+. [*Applications*]ページで、ドロップダウンボックスから[Non-Data Volume]を選択します。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] リストアするバックアップに対応して、*リストア*をクリックします。
+
+
+
+
+== グローバルな非データボリュームをリストアします
+
+* 手順 *
+
+. [*アプリケーション]ページで、リストアするグローバル非データ・ボリュームをクリックします。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] リストアするグローバル非データボリュームに対応し、*リストア*をクリックします。
+

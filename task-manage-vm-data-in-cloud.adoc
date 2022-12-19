@@ -50,7 +50,7 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 == SnapCenter Plug-in for VMware vSphereインスタンスを編集します
 
-BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます
+BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます。
 
 .手順
 . BlueXP UIで、*Protection*>* Backup and recovery*>* Virtual Machines *>* Settings*>* SnapCenter Plug-in for VMware vSphere*の順にクリックします。

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-cloud-native-app-data.html 
-keywords: manage, view backup, monitor jobs, monitor 
+keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
 summary: バックアップの詳細を表示し、すべてのジョブのステータスを監視します。 
 ---
 = クラウドネイティブなアプリケーションデータの保護を管理
@@ -45,6 +45,14 @@ summary: バックアップの詳細を表示し、すべてのジョブのス�
 
 
 
+== 監査データ
+
+APIを直接実行するか、UIを使用して、外部で公開されているCloud Backup for ApplicationsのAPIを呼び出した場合は、ヘッダー、ロール、要求の本文、また、API情報はBlueXPタイムラインに記録され、監査エントリは永久にタイムラインに保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。
+
+Cloud Backup for Applicationsは、ホストIP、要求本文、処理名、トリガーしたユーザ、一部のヘッダーなどのエントリをログに記録します。APIの動作状態を確認する必要があります。
+
+
+
 == バックアップの詳細を表示します
 
 作成されたバックアップの総数、バックアップの作成に使用されたポリシー、データベースのバージョン、およびエージェントIDを表示できます。
@@ -54,34 +62,40 @@ summary: バックアップの詳細を表示し、すべてのジョブのス�
 
 
 
-IMPORTANT: エージェントIDはコネクタに関連付けられています。Oracleデータベース・ホストの登録中に使用されたコネクタが存在しない場合は'新しいコネクタのエージェントIDが異なるため'そのアプリケーションの後続のバックアップは失敗しますエージェントIDを変更するには、* connector-update * APIを実行する必要があります。
+IMPORTANT: エージェントIDはコネクタに関連付けられています。SAP HANAホストの登録時に使用したコネクタが存在しない場合、新しいコネクタのエージェントIDが異なるため、そのアプリケーションの以降のバックアップは失敗します。ホストのコネクタIDを変更する必要があります。
 
 
 
-== コネクタの詳細を更新します
+== クローンを削除します
 
-Oracleデータベースホストの登録時に使用したコネクタが存在しなくなった場合や、AWSで破損した場合は、新しいコネクタを導入する必要があります。新しいコネクタを配置したら、* connector-update * APIを実行してコネクタの詳細を更新する必要があります。
+不要になったクローンは削除できます。
+
+. をクリックします image:button_plus_sign_square.png["アイコンをクリックして操作を選択します"] [*フィルターの基準]の隣にある[*複製オプション*>*親の複製*]を選択します。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
+. Database Details（データベースの詳細）ページで、をクリックします image:button_plus_sign_square.png["アイコンをクリックして操作を選択します"] [*フィルターの基準]の隣にある[*クローン*]を選択します。
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] 削除するクローンに対応し、* Delete *をクリックします。
+. （オプション）* force delete *チェックボックスを選択します。
+
+
+
+
+== SAP HANAデータベースホストのConnector Detailsを更新します
+
+アプリケーションホストの登録時に使用したコネクタが存在しなくなったり破損したりした場合は、新しいコネクタを導入する必要があります。新しいコネクタを導入したら、* connector-update * APIを実行して、古いコネクタを使用して登録されているすべてのホストのコネクタの詳細を更新する必要があります。
 
 [listing]
 ----
-curl --location --request PATCH 'https://snapcenter.cloudmanager.cloud.netapp.com/api/oracle/databases/connector-update' \
+curl --location --request PATCH
+'https://snapcenter.cloudmanager.cloud.netapp.com/api/saphana/hosts/connector/update' \
 --header 'x-account-id: <CM account-id>' \
---header 'x-agent-id: <connector Agent ID >' \
 --header 'Authorization: Bearer token' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-"old_connector_id": "Old connector id that no longer exist",
+"old_connector_id": "Old connector id that no longer exists",
 "new_connector_id": "New connector Id"
 }
 ----
-コネクタの詳細を更新したら、Oracleデータベースホストに接続し、次の手順を実行する必要があります。
-
-. Oracleデータベースホストで実行されているプラグイン情報を取得します。「rpm -qi netapp -snapcenter plugin -oracle」のように入力します
-. プラグインをアンインストールします。「sudo /opt/NetApp/snapcenter/spl/installation/plugins/uninstall」
-. プラグインが正常にアンインストールされたことを確認します。「rpm -qi netapp -snapcenter plugin -oracle」のように入力します
-
-
-プラグインをアンインストール後に、プラグインを導入できます。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["詳細はこちら。"]。
+すべてのホストにSnapCenter Plug-in for SAP HANAサービスがインストールされて実行されている場合、およびすべてのホストが新しいコネクタからアクセスできる場合、コネクタの詳細は正しく更新されます。
 
 
 
@@ -123,7 +137,7 @@ NOTE: certfile.crtは、ルートCAおよび中間CAの証明書を参照しま�
 
 === プラグインのサーバ証明書のCA署名証明書を設定します
 
-CA証明書には、Connector仮想マシンと通信するOracleプラグインホストの正確な名前を指定する必要があります。
+CA証明書には、Connector仮想マシンと通信するプラグインホストの正確な名前を指定する必要があります。
 
 * 必要なもの *
 

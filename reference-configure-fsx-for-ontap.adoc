@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: reference-configure-fsx-for-ontap.html 
+keywords: Cloud Manager, FSx for ONTAP, working environment, Connector, BlueXP 
+summary: FSX for ONTAP 作業環境とコネクターを作成します 
+---
+= ONTAP のFSXを設定します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP 作業環境およびコネクタ用のFSXを作成する必要があります。
+
+
+
+== ONTAP 作業環境用のFSXを作成します
+
+データベースがホストされているONTAP 環境用のAmazon FSXを作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSX for ONTAP の利用を開始しましょう"] および link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Amazon FSX for ONTAP 作業環境の作成と管理"]。
+
+NetApp FSXは、BlueXPまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、BlueXPのONTAP システム用FSXを検出する必要があります。
+
+
+
+== コネクタを作成します
+
+アカウント管理者は、AWSにConnectorを導入する必要があります。これにより、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理できるようになります。
+
+詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["BlueXPからAWSでコネクタを作成する"]。
+
+* FSX作業環境とOracleデータベースの両方を管理する場合には、同じコネクタを使用する必要があります。
+* FSX作業環境とOracleデータベースが同じVPC内にある場合は、同じVPC内にコネクタを導入できます。
+* FSX作業環境および異なるVPC内のOracleデータベースがある場合：
++
+** FSX上にNAS（NFS）ワークロードが設定されている場合、どちらのVPCにもコネクタを作成できます。
+** NAS（NFS）ワークロードを使用しないようにSANワークロードだけを設定している場合は、FSXシステムが作成されたVPCにコネクタを作成する必要があります。
++
+
+NOTE: NAS（NFS）ワークロードを使用する場合は、OracleデータベースVPCとFSX VPCの間に転送ゲートウェイを設定する必要があります。フローティングIPアドレスであるNFS IPアドレスには、転送ゲートウェイ経由でのみ別のVPCからアクセスできます。VPCをピアリングしてフローティングIPアドレスにアクセスすることはできません。
+
+
+
+
+
+コネクターを作成したら、*ストレージ*>*キャンバス*>*作業環境*>*作業環境の追加*をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。
+
+
+IMPORTANT: コネクタを作成したら、[コネクタ（Connector）]>[コネクタの管理（Manage Connectors）]*をクリックし、コネクタ名を選択してコネクタIDをコピーします。

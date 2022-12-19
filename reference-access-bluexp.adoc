@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: reference-access-bluexp.html 
+keywords: Cloud Manager, BlueXP 
+summary: BlueXPにアクセスします 
+---
+= BlueXPにアクセスします
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+お勧めします link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-signing-up.html["NetApp BlueXP Webサイトに登録します"]、 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["BlueXPにログインします"]をクリックし、を設定します link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html["ネットアップアカウント"]。

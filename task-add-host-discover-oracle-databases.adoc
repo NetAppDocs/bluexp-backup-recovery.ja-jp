@@ -1,0 +1,209 @@
+---
+sidebar: sidebar 
+permalink: task-add-host-discover-oracle-databases.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for Oracle, Oracle, database, host, deploy, add host, discover 
+summary: 各OracleデータベースホストにSnapCenter Plug-in for Oracleを導入します。 
+---
+= ホストを追加し、Oracleデータベースを検出します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ポリシーを割り当ててバックアップを作成するには、ホストを追加し、ホスト上のデータベースを検出する必要があります。プラグインを導入済みのときにホストを手動で追加するか、SSHを使用してホストを追加することができます。
+
+
+
+== 前提条件
+
+ホストを追加する前に、前提条件を満たしていることを確認する必要があります。
+
+* 作業環境とコネクタを作成しておきます。
+* コネクタが作業環境とOracleデータベースホストに接続されていることを確認してください。
+* BlueXPユーザーに「アカウント管理者」の役割があることを確認します。
+* Java 11（64ビット）のOracle JavaまたはOpenJDKが各Oracleデータベースホストにインストールされていて、JAVA_HOME変数が適切に設定されていることを確認します。
+* root以外のユーザを作成しておく必要があります。詳細については、を参照してください <<root以外のユーザを設定します>>。
+* ホストを手動で追加する場合は、最初にプラグインを導入してください。プラグインを導入できます <<プラグインを手動で導入します,手動で実行する>> または <<スクリプトを使用してプラグインを導入します,スクリプトを使用>>。
++
+このプラグインは、各Oracleデータベースホストに導入する必要があります。
+
+
+
+
+
+=== root以外のユーザを設定します
+
+プラグインを導入するようにroot以外のユーザを設定する必要があります。
+
+* 手順 *
+
+. Connector VMにログインします。
+. SnapCenter Linuxホストプラグインバイナリをダウンロードします。「sudo Docker exec-it cloudmanager_scs_cloud curl -X get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
+. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. 1～16の行を、*_base_mount_path/_version_/sc-linux-host-plugin/*にある*ORACLE_checksum_scs.txt *ファイルからコピーします。
+. Oracleデータベース・ホストにログインし、次の手順を実行します。
++
+.. root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。詳細については、を参照してください https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html#create-user-account["ユーザアカウントを作成します"^]。
+.. 手順4でコピーした行を、visudo Linuxユーティリティを使用して、/etc/sudoers_fileに貼り付けます。
++
+上記の行で、<LINUXUSER> を作成したroot以外のユーザーに置き換え、visudoユーティリティでファイルを保存します。
+
+
+
+
+
+
+
+=== プラグインを手動で導入します
+
+OracleホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入する必要があります。
+
+* 手順 *
+
+. Connector VMにログインします。
+. SnapCenter Linuxホストプラグインバイナリをダウンロードします。「sudo Docker exec-it cloudmanager_scs_cloud curl -X get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
+. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. ダウンロードしたプラグインのバイナリパスを取得します。sudo ls <base_mount_path>$（sudo Docker PS | grep -Po " cloudmanager_scs_cloud：*？"|sed -e '/*$//'/|cut -f2 -d ":")/sc-linux -host-plugin/snapcenter linux _host_plugin_bbin
+. scpまたはその他の代替方法を使用して、Oracleデータベースホストのそれぞれにcopy_snapcenter linux_host_plugin_scs.bin _をコピーします。
++
+_snapcenter _ linux_host_plugin_scs.bin_は、root以外のユーザがアクセスできる場所にコピーする必要があります。
+
+. root以外のユーザアカウントを使用してOracleデータベースホストにログインし、次のコマンドを実行してバイナリの実行権限を有効にします。
+`chmod +x snapcenter_linux_host_plugin_scs.bin`
+. Oracleプラグインをsudoのroot以外のユーザとして導入します。
+`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
+. connector VMのcopy_certificate.p12_from_<base_mount_path>/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。
+. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass SnapCenter -deststorepass SnapCenter agentcert -destalias agentcert -noprompt`
+. spl:'systemctl restart sp'を再起動します
+
+
+
+
+=== スクリプトを使用してプラグインを導入します
+
+root以外のユーザに対してOracleホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。
+
+* 手順 *
+
+. Connector VMにログインします。
+. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. コネクタに用意されているヘルパースクリプトを使用して、プラグインを導入します。
+`sudo <base_mount_path>/scripts/oracle_plugin_copy_and_install.sh --host <host_name> --sshkey <ssh_key_file> --username <user_name> --port <ssh_port> --pluginport <plugin_port> --installdir <install_dir>`
++
+** host_nameはOracleホストの名前です。これは必須パラメータです。
+** ssh_key_fileは、root以外のユーザのSSHキーであり、Oracleホストへの接続に使用します。これは必須パラメータです。
+** user_name：OracleホストでSSH権限を持つroot以外のユーザ。これはオプションパラメータです。デフォルト値はec2-userです。
+** ssh_port：Oracleホスト上のSSHポート。これはオプションパラメータです。デフォルト値は22です
+** plugin_port：プラグインで使用するポート。これはオプションパラメータです。デフォルト値は8145です
+** install_dir：プラグインが配置されるディレクトリ。これはオプションのパラメータです。デフォルト値は/optです。
+
+
+
+
+例：
+`sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/oracle_plugin_copy_and_install.sh --host xxx.xx.x.x --sshkey /keys/netapp-ssh.ppk`
+
+
+
+== ホストを追加します
+
+ホストを追加し、Oracleデータベースを検出する必要があります。
+
+* 手順 *
+
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
+. アプリケーションの検出をクリックします。
+. クラウドネイティブ*を選択し、*次へ*をクリックします。
++
+SnapCenter system_roleを持つサービスアカウントが作成され、このアカウントのすべてのユーザに対してスケジュールされたデータ保護処理が実行されます。
+
++
+** *Account*>*Manage Account*>*Members*をクリックして、サービスアカウントを表示します。
++
+
+NOTE: スケジュールされたバックアップ処理を実行するには、サービスアカウント（_SnapCenter -account-<accountId>>）を使用します。サービスアカウントは絶対に削除しないでください。
+
+
+
+. [Add Host]ページで、次のいずれかを実行します。
++
+|===
+| 状況 | 手順 
+
+
+ a| 
+どちらかのプラグインを導入しておきます <<プラグインを手動で導入します,手動で実行する>> または <<スクリプトを使用してプラグインを導入します,スクリプトを使用>>
+ a| 
+.. [* Manual*]を選択します。
+.. プラグインを導入するホストのFQDNまたはIPアドレスを指定します。
++
+FQDNまたはIPアドレスを使用して、コネクタがデータベースホストと通信できることを確認します。
+
+.. プラグインポートを指定します。
++
+デフォルトポートは8145です。
+
+.. コネクタを選択します。
+.. チェックボックスを選択して、プラグインがホストにインストールされていることを確認します
+.. [*アプリケーションの検出*]をクリックします。
+
+
+
+
+ a| 
+プラグインを自動的に導入する
+ a| 
+.. SSHを使用して*を選択します。
+.. プラグインをインストールするホストのFQDNまたはIPアドレスを指定します。
+.. ユーザ名を指定します（<<root以外のユーザを設定します,root以外のユーザ>>）を使用して、プラグインパッケージをホストにコピーします。
+.. SSHとプラグインポートを指定します。
++
+デフォルトのSSHポートは22で、プラグインポートは8145です。
+
++
+プラグインをインストールしたら、アプリケーションホスト上のSSHポートを閉じることができます。SSHポートは、他のプラグイン処理には必要ありません。
+
+.. コネクタを選択します。
+.. （オプション）コネクタとホストの間でキーレス認証が有効になっていない場合は、ホストとの通信に使用するSSH秘密鍵を指定する必要があります。
++
+
+NOTE: SSH秘密鍵はアプリケーション内のどこにも保存されず、他の操作には使用されません。
+
+.. 「 * 次へ * 」をクリックします。
+
+
+|===
++
+** ホスト上のすべてのデータベースが表示されます。データベースでOS認証が無効になっている場合は、* Configure *をクリックしてデータベース認証を設定する必要があります。詳細については、を参照してください <<Oracleデータベースのクレデンシャルを設定する>>。
+** すべてのホストを表示するには、[*設定*]をクリックし、[*ホスト*]を選択します。データベース・ホストを削除するには'[* Remove *]をクリックします
++
+
+NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。
+
+** [*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認して、要件に合わせて編集することも、新しいポリシーを作成することもできます。
+
+
+
+
+
+
+== Oracleデータベースのクレデンシャルを設定する
+
+Oracleデータベースに対してデータ保護処理を実行する際に使用するクレデンシャルを設定する必要があります。
+
+* 手順 *
+
+. データベースでOS認証が無効になっている場合は、* Configure *をクリックしてデータベース認証を設定する必要があります。
+. ユーザ名、パスワード、およびポートの詳細を指定します。
++
+データベースがASMにある場合は、ASMも設定する必要があります。
+
++
+Oracleユーザにはsysdba権限が必要で、ASMユーザにはSYSASM権限が必要です。
+
+. [*Configure*] をクリックします。
+

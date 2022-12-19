@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-backup-vm-data-to-aws.html 
-keywords: back up, backup, backup virtual machine data, aws, Amazon Web Services, cloud backup, backup datastores 
-summary: オンプレミスのONTAP からAWSにデータストアをバックアップできます。 
+permalink: task-backup-vm-data-to-gcp.html 
+keywords: back up, backup, backup virtual machine data, gcp, google cloud platform, cloud backup, backup datastores 
+summary: オンプレミスのONTAP からGoogle Cloud Platformにデータストアをバックアップ 
 ---
-= データストアをAmazon Web Servicesにバックアップする
+= データストアをGoogle Cloud Platformにバックアップする
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,7 @@ summary: オンプレミスのONTAP からAWSにデータストアをバック�
 
 
 [role="lead"]
-SnapCenter Plug-in for VMware vSphereとBlueXPを統合することで、1つ以上のデータストアをAmazon Web Servicesにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
-
-データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。
+SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、1つ以上のデータストアをGoogle Cloud Platformにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
 
 
 NOTE: すべてのが満たされていることを確認します link:concept-protect-vm-data.html#Requirements["要件"] データストアをクラウドにバックアップする前に、
@@ -40,17 +38,13 @@ NOTE: すべてのが満たされていることを確認します link:concept-
 .. * 作業環境の追加 * をクリックします。
 
 
-. Amazon Web Services *を選択してクラウドプロバイダとして設定します。
+. Google Cloud Platform *を選択して、クラウドプロバイダとして構成します。
 +
-.. AWS アカウントを指定します。
-.. AWS Access Keyフィールドで、データ暗号化のキーを指定します。
-.. AWS Secret Keyフィールドで、データ暗号化のパスワードを指定します。
+.. バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project を選択します。
+.. Google Cloud Access Keyフィールドで、キーを指定します。
+.. Google Cloud Secret Keyフィールドで、パスワードを指定します。
 .. バックアップを作成するリージョンを選択します。
-.. 作業環境として追加した ONTAP クラスタの IP アドレスを指定します。
-.. アーカイブ階層を選択します。
-+
-アーカイブ階層は1回限りのアクティビティであり、あとから設定することはできないため、設定することを推奨します。
-
+.. IPスペースを指定してください。
 
 
 . 詳細を確認し、 * バックアップのアクティブ化 * をクリックします。

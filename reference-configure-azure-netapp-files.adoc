@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: reference-configure-azure-netapp-files.html 
+keywords: Cloud Manager, Azure NetApp Files, working environment, Connector, BlueXP 
+summary: Azure NetApp Files 作業環境とコネクタを作成します 
+---
+= Azure NetApp Files を設定します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Azure NetApp Files の作業環境とコネクタを作成する必要があります。
+
+
+
+== Azure NetApp Files 作業環境を作成します
+
+データベースがホストされているAzure NetApp Files （ANF）作業環境を作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html["Azure NetApp Files の詳細をご覧ください"] および link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-working-env.html["Azure NetApp Files 作業環境を作成します"]。
+
+
+
+== コネクタを作成します
+
+アカウント管理者は、ANFにConnectorを導入して、BlueXPがパブリッククラウド環境内でリソースとプロセスを管理できるようにする必要があります。
+
+
+NOTE: UIから新しいconnector_idを更新することはできません。
+
+詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["BlueXPからAzureにコネクタを作成します"]。
