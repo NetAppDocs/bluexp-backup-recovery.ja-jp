@@ -18,6 +18,36 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2023年1月9日
+
+
+
+=== StorageGRID システムからAWS S3アーカイブストレージに古いバックアップファイルを移動する機能
+
+これにより、StorageGRID システムの古いバックアップファイルをAWS S3のアーカイブストレージに階層化できるようになりました。これにより、StorageGRID システムのスペースを解放し、古いバックアップファイルには低コストのストレージクラスを使用することでコストを削減できます。AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。
+
+この機能は、クラスタでONTAP 9.12.1以降を使用していて、StorageGRID システムで11.3以降を使用している場合に使用できます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["詳細はこちらをご覧ください"]。
+
+
+
+=== Google Cloudのデータ暗号化に、お客様が管理する独自のキーを選択できます
+
+ONTAP システムからGoogle Cloud Storageにデータをバックアップする際に、Googleが管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを選択してデータを暗号化できるようになりました。まずお客様が管理する暗号化キーを設定し、次にCloud Backupをアクティブ化する際に詳細を入力します。
+
+
+
+=== 「ストレージ管理者」ロールは、サービスアカウントがGoogle Cloud Storageでバックアップを作成するために必要なくなりました
+
+以前のリリースでは、Cloud BackupがGoogle Cloud Storageバケットにアクセスできるようにするサービスアカウントには「Storage Admin」ロールが必要でした。これで、一連の権限を減らしてサービスアカウントに割り当てるカスタムロールを作成できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Google Cloud Storageでバックアップを準備する方法をご覧ください"]。
+
+
+
+=== ジョブ監視結果ページを.csvレポートとしてダウンロードできるようになりました
+
+[ジョブ監視]ページをフィルタリングして、必要なジョブとアクションを表示したら、そのデータの.csvファイルを生成してダウンロードできるようになりました。次に、情報を分析したり、組織内の他のユーザーにレポートを送信したりできます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["「ジョブ監視レポートを生成する方法」を参照してください"]。
+
+
+
 == 2022年12月19日
 
 
@@ -45,7 +75,7 @@ Cloud Backup の新機能をご確認ください。
 
 
 
-=== Cloud Backupの機能拡張
+=== Cloud Backup for Virtual Machinesの機能拡張
 
 * 仮想マシン
 +
@@ -159,7 +189,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-manage-backup-se
 * 「ワークロード」の列を使用して、ページをフィルタして、ボリューム、アプリケーション、仮想マシン、Kubernetesの各バックアップサービスのジョブを表示できます。
 * 特定のバックアップジョブの詳細を表示するには、「ユーザ名」と「ジョブタイプ」の列を新たに追加します。
 * [ジョブの詳細]ページには、メインジョブを完了するために実行中のすべてのサブジョブが表示されます。
-* このページは15分ごとに自動的に更新されるので、常に最新のジョブステータスの結果が表示されます。また、[*更新*]ボタンをクリックすると、ページをすぐに更新できます。
+* このページは15分ごとに自動的に更新されるため、常に最新のジョブステータスの結果が表示されます。また、[*更新*]ボタンをクリックすると、ページをすぐに更新できます。
 
 
 
@@ -284,7 +314,7 @@ Cloud Backupでランサムウェアセーフバックアップのオブジェ�
 
 === SnapLock Enterpriseボリュームのバックアップがサポートされるようになりました
 
-Cloud Backupを使用して、SnapLock Enterpriseボリュームをパブリッククラウドとプライベートクラウドにバックアップできるようになりました。この機能を使用するには、ONTAP システムでONTAP 9.11.1以降が実行されている必要があります。ただし、SnapLock Complianceボリュームは現在サポートされていません。
+Cloud Backupを使用して、SnapLock Enterpriseボリュームをパブリッククラウドとプライベートクラウドにバックアップできるようになりました。この機能を使用するには、ONTAP システムでONTAP 9.11.1以降が実行されている必要があります。ただし、SnapLock Complianceボリュームは、現在のところサポートされていません。
 
 
 

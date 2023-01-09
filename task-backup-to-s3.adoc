@@ -24,7 +24,7 @@ Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* AWSでCloud Volumes ONTAP 9.7P5以降を実行しています。
+* AWSでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
 * に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplaceバックアップ製品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
 * BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXPポリシー"^]。

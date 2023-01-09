@@ -255,7 +255,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。
+* GCP では、バックアップは _Standard_storage クラスに関連付けられます。
 +
 オンプレミスクラスタがONTAP 9.12.1以降を使用している場合、コストをさらに最適化するために、特定の日数後に、Cloud Backup UIで古いバックアップを_Archive_storageに階層化することを選択できます。（この機能は現在、Cloud Volumes ONTAP システムでは使用できません）。 link:reference-google-backup-tiers.html["Googleアーカイブストレージの詳細をご覧ください"^]。
 
@@ -265,6 +265,6 @@ endif::gcp[]
 
 * StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
 +
-現在使用できるアーカイブ階層はありません。
+オンプレミスクラスタでONTAP 9.12.1以降を使用しており、StorageGRID システムで11.3以上を使用している場合は、古いバックアップファイルをパブリッククラウドのアーカイブストレージにアーカイブできます。アーカイブストレージは、現時点ではAWS S3ストレージクラスでのみサポートされています。AWS_S3 Glacier Deep Archive_storageへのバックアップの階層化は、特定の日数後に選択できます。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。
 
 

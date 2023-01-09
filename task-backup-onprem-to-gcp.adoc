@@ -26,9 +26,9 @@ summary: オンプレミスの ONTAP システムから Google Cloud Storage へ
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
+* オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
-** クラスタで ONTAP 9.7P5 以降が実行されています。
+** クラスタでONTAP 9.7P5以降が実行されている（ONTAP 9.8P13以降を推奨）。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
 ** クラスタから Google ストレージおよびコネクタへの必要なネットワーク接続が確立されている必要があります。
 
@@ -47,7 +47,10 @@ image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] クラウドプロバイダを選択し、プロバイダの詳細を入力します
 [role="quick-margin-para"]
-プロバイダとして Google Cloud を選択し、プロバイダの詳細を入力します。また、ボリュームが配置されている ONTAP クラスタ内の IPspace を指定する必要があります。
+プロバイダとして Google Cloud を選択し、プロバイダの詳細を入力します。ボリュームが配置されているONTAP クラスタのIPspaceを指定する必要があります。また、Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを選択してデータを暗号化することもできます。
+
+[role="quick-margin-para"]
+image:screenshot_backup_onprem_to_google.png["オンプレミスのONTAP システムからGoogle Cloud Storageバケットにボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] デフォルトのバックアップポリシーを定義
 [role="quick-margin-para"]
@@ -124,10 +127,10 @@ Cloud Backup をセットアップすると、 IPspace で使用するように�
 * ノードのクラスタ間 LIF からオブジェクトストアにアクセスできます。
 * ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
 +
-Private Google AccessまたはPrivate Service Connectを使用している場合は、DNSサーバーがstorage.googleapis.comを正しい内部（プライベート）IPアドレスに指定するように設定されていることを確認します。
+Private Google AccessまたはPrivate Service Connectを使用している場合は、DNSサーバーがポイントするように設定されていることを確認します `storage.googleapis.com` を正しい内部（プライベート）IPアドレスに割り当てます。
 
 * をデフォルトとは異なる IPspace を使用している場合は、オブジェクトストレージへのアクセスを取得するために静的ルートの作成が必要になることがあります。
-* 必要に応じてファイアウォールルールを更新し、 ONTAP からオブジェクトストレージへのポート 443 経由の Cloud Backup Service 接続と、ポート 53 （ TCP / UDP ）経由での Storage VM から DNS サーバへの名前解決トラフィックを許可します。
+* ファイアウォールルールを必要に応じて更新して、ONTAP からオブジェクトストレージへのクラウドバックアップ接続にポート443を使用するように設定し、Storage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。
 
 
 --
@@ -160,7 +163,7 @@ Google Cloud Platform VPCにコネクタがすでに導入されている場合�
 
 . Connectorを展開するサブネットでプライベートGoogleアクセス（またはプライベートサービス接続）を有効にします。 https://cloud.google.com/vpc/docs/configure-private-google-access["プライベート Google アクセス"^] または https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises["Private Service Connectの略"^] ONTAP クラスタからVPCへの直接接続が確立されていて、ConnectorとGoogle Cloud Storage間の通信を仮想プライベートネットワーク（*プライベート*接続）のままにする場合に必要です。
 +
-Googleの指示に従って、プライベートアクセスオプションを設定します。DNSサーバが、www.googleapis.comおよびstorage.googleapis.comを正しい内部（プライベート）IPアドレスに指すように設定されていることを確認します。
+Googleの指示に従って、プライベートアクセスオプションを設定します。DNSサーバが参照するように設定されていることを確認します `www.googleapis.com` および `storage.googleapis.com` を正しい内部（プライベート）IPアドレスに割り当てます。
 
 
 
@@ -171,7 +174,7 @@ Googleの指示に従って、プライベートアクセスオプションを�
 Cloud Backupの「検索と復元」機能を使用するには、Connectorの役割に特定の権限を付与して、Google Cloud BigQueryサービスにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
 .手順
-. インチ link:https://console.cloud.google.com["Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
+. を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
 . ページ上部のドロップダウンリストを使用して、編集するロールを含むプロジェクトまたは組織を選択します。
 . カスタムロールをクリックします。
 . 役割の権限を更新するには、 * 役割の編集 * をクリックします。
@@ -195,6 +198,79 @@ bigquery.tables.create
 
 
 
+=== Google Cloud Storage でバックアップを準備しています
+
+バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、 Cloud Backup でバックアップの格納に使用する Cloud Storage バケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
+
+.手順
+. を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["新しいロールを作成します"^] 次の権限が必要です。
++
+[source, json]
+----
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
+----
+. Google Cloud コンソールで、 https://console.cloud.google.com/iam-admin/serviceaccounts["[ サービスアカウント ] ページに移動します"^]。
+. クラウドプロジェクトを選択します。
+. ［*サービスアカウントの作成*］をクリックして、必要な情報を入力します。
++
+.. * サービスアカウントの詳細 * ：名前と説明を入力します。
+.. *このサービスアカウントにプロジェクトへのアクセス権を付与*:作成したカスタムロールを選択します。
+.. [ 完了（ Done ） ] をクリックします。
+
+
+. に進みます https://console.cloud.google.com/storage/settings["GCP Storage Settings （ GCP ストレージ設定）"^] サービスアカウントのアクセスキーを作成します。
++
+.. プロジェクトを選択し、 * 互換性 * をクリックします。まだ有効にしていない場合は、 * 相互運用アクセスを有効にする * をクリックします。
+.. [ サービスアカウントのアクセスキー *] で、 [ サービスアカウントのキーの作成 *] をクリックし、作成したサービスアカウントを選択して、 [ キーの作成 *] をクリックします。
++
+Cloud Backup でキーを入力する必要があるのは、あとでバックアップサービスを設定するときです。
+
+
+
+
+
+
+
+==== 顧客管理暗号化キー（CMEK）の使用
+
+Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合は、アクティブ化ウィザードでこの情報を追加できるように、キーリングとキー名を設定する必要があります。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
+
+また、CMEKが機能するためには、コネクタの役割に必要な権限を追加する必要があります。
+
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* CMEKの考慮事項：*
+
+* HSM（ハードウェアバックアップ）およびソフトウェア生成キーの両方がサポートされます。
+* 新しく作成またはインポートしたCloud KMSキーは両方サポートされます。
+* リージョンキーのみがサポートされています。グローバルキーはサポートされていません。
+* 現在、「対称暗号化/復号化」の目的のみがサポートされています。
+* ストレージアカウントに関連付けられたサービスエージェントには、Cloud BackupのIAMロール「CryptoKey encrypter/Decrypter（役割/ Cloudkms.cryptoKeyEncrypterDecrypter）」が割り当てられます。
+
+
+
+
 === ライセンス要件を確認
 
 * クラスタでCloud Backupをアクティブ化するには、従量課金制（PAYGO）のBlueXP Marketplace製品をGoogleから購入するか、ネットアップからCloud Backup BYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
@@ -206,25 +282,6 @@ bigquery.tables.create
 * バックアップを格納するオブジェクトストレージスペース用の Google サブスクリプションが必要です。
 +
 すべての地域で、オンプレミスシステムからGoogle Cloud Storageへのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
-
-
-
-
-
-=== Google Cloud Storage でバックアップを準備しています
-
-バックアップを設定するときは、 Storage Admin の権限があるサービスアカウントにストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、 Cloud Backup でバックアップの格納に使用する Cloud Storage バケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
-
-.手順
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["事前定義されたストレージ管理者を含むサービスアカウントを作成します ロール"^]。
-. に進みます https://console.cloud.google.com/storage/settings["GCP Storage Settings （ GCP ストレージ設定）"^] サービスアカウントのアクセスキーを作成します。
-+
-.. プロジェクトを選択し、 * 互換性 * をクリックします。まだ有効にしていない場合は、 [ 相互運用アクセスを有効にする *] をクリックします。
-.. [ サービスアカウントのアクセスキー *] で、 [ サービスアカウントのキーの作成 *] をクリックし、作成したサービスアカウントを選択して、 [ キーの作成 *] をクリックします。
-+
-Cloud Backup でキーを入力する必要があるのは、あとでバックアップサービスを設定するときです。
-
-
 
 
 
@@ -245,10 +302,11 @@ image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使�
 . プロバイダとして Google Cloud を選択し、 * 次へ * をクリックします。
 . プロバイダの詳細を入力し、 * 次へ * をクリックします。
 +
-.. バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project 。（プロジェクトには、事前定義された Storage Admin ロールを持つサービスアカウントが必要です）。
+.. バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project 。（プロジェクトには、特定の権限を持つカスタムロールを持つサービスアカウントが必要です- <<Google Cloud Storage でバックアップを準備しています,ここで説明するようにします>>. ）
 .. バックアップの保存に使用する Google Access Key および Secret Key 。
 .. バックアップが保存される Google リージョン。
 .. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
+.. Googleが管理するデフォルトの暗号化キーを使用する場合でも、お客様が管理する独自のキーを選択してデータの暗号化を管理する場合でも、CMEKを使用するには、キーリングとキー名が必要です。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
 +
 image:screenshot_backup_onprem_to_google.png["オンプレミスのクラスタから Google Cloud Storage にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
 

@@ -28,7 +28,7 @@ summary: オンプレミスの ONTAP システムから Azure BLOB ストレー�
 [role="quick-margin-list"]
 * オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
-** クラスタで ONTAP 9.7P5 以降が実行されています。
+** クラスタでONTAP 9.7P5以降が実行されている（ONTAP 9.8P13以降を推奨）。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
 ** クラスタは、 BLOB ストレージとコネクタへの必要なネットワーク接続を備えている必要があります。
 
@@ -167,6 +167,7 @@ Connectorがクラウドに導入されている場合、Cloud BackupはAzure Go
 ** Cloud Backup Service へのアウトバウンドインターネット接続 ポート 443 （ HTTPS ）
 ** ポート 443 経由での BLOB オブジェクトストレージへの HTTPS 接続
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
+** Cloud Backupの検索とリストア機能を使用するには、ConnectorとAzure Synapse SQLサービス間の通信用にポート1433を開いておく必要があります。
 ** AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure のコネクタのルール"^] を参照してください。
 
 
@@ -214,9 +215,11 @@ Azure Synapse Analyticsリソースプロバイダーをサブスクリプショ
 "Microsoft.Synapse/register/action",
 "Microsoft.Synapse/checkNameAvailability/action",
 "Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/write",
 "Microsoft.Synapse/workspaces/firewallRules/read",
 "Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
-"Microsoft.Synapse/workspaces/operationResults/read"
+"Microsoft.Synapse/workspaces/operationResults/read",
+"Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]

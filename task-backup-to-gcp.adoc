@@ -24,7 +24,7 @@ Cloud Volumes ONTAP から Google Cloud Storage へのデータのバックア�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* GCP で Cloud Volumes ONTAP 9.7P5 以降を実行しています。
+* GCPでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを保存するストレージスペースの有効な GCP サブスクリプションがあります。
 * Google Cloud Project に、事前定義された Storage Admin ロールを持つサービスアカウントがあります。
 * に登録しておきます https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
@@ -41,7 +41,7 @@ image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] プロバイダの詳細を入力します
 [role="quick-margin-para"]
-バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project を選択します。
+バックアップ用にGoogle Cloud Storageバケットを作成するGoogle Cloud Projectとリージョンを選択します。また、Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを選択してデータを暗号化することもできます。
 
 [role="quick-margin-para"]
 image:screenshot_backup_provider_settings_gcp.png["GCP にインストールされた Cloud Volumes ONTAP システムから Google Cloud Storage バケットにボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
@@ -104,6 +104,32 @@ bigquery.tables.create
 
 
 --
+顧客が管理する暗号化キー（CMEK）の使用に必要な情報:: Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合は、アクティブ化ウィザードでこの情報を追加できるように、キーリングとキー名を設定する必要があります。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
++
+--
+また、CMEKが機能するためには、コネクタの役割に必要な権限を追加する必要があります。
+
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* CMEKの考慮事項：*
+
+* HSM（ハードウェアバックアップ）およびソフトウェア生成キーの両方がサポートされます。
+* 新しく作成またはインポートしたCloud KMSキーは両方サポートされます。
+* リージョンキーのみがサポートされています。グローバルキーはサポートされていません。
+* 現在、「対称暗号化/復号化」の目的のみがサポートされています。
+* ストレージアカウントに関連付けられたサービスエージェントには、Cloud BackupのIAMロール「CryptoKey encrypter/Decrypter（役割/ Cloudkms.cryptoKeyEncrypterDecrypter）」が割り当てられます。
+
+
+--
 
 
 
@@ -158,12 +184,17 @@ Cloud Backup は、作業環境からいつでも直接有効にすることが�
 +
 image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できるクラウドバックアップ設定ボタンを示すスクリーンショット。"]
 
-. Google Cloud Storage バケットをバックアップ用に作成する Google Cloud Project とリージョンを選択し、 * Next * をクリックします。
+. プロバイダの詳細を選択し、 * 次へ * ：
++
+.. バックアップ用にGoogle Cloud Storageバケットを作成するGoogle Cloud Projectとリージョン。
+.. Googleが管理するデフォルトの暗号化キーを使用する場合でも、お客様が管理する独自のキーを選択してデータの暗号化を管理する場合でも、CMEKを使用するには、キーリングとキー名が必要です。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
 +
 image:screenshot_backup_provider_settings_gcp.png["GCP にインストールされた Cloud Volumes ONTAP システムから Google Cloud Storage バケットにボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
 
 +
 プロジェクトには、事前定義された Storage Admin ロールを持つサービスアカウントが必要です。
+
+
 
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
