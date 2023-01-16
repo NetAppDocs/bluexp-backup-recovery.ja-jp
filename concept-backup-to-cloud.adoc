@@ -18,7 +18,7 @@ Cloud Backupは、BlueXP（旧Cloud Manager）作業環境向けのサービス�
 
 必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAP データをバックアップする場合は、バックアップから同じ作業環境または別の作業環境に 1 つ以上の _ ファイル _ をリストアすることもできます。
 
-https://cloud.netapp.com/cloud-backup-service["Cloud Backup の詳細については、こちらをご覧ください"^]。
+https://bluexp.netapp.com/cloud-backup["Cloud Backup の詳細については、こちらをご覧ください"^]。
 
 バックアップとリストアは、次の目的で使用できます。
 
