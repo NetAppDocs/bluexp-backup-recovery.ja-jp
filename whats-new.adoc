@@ -42,6 +42,14 @@ ONTAP システムからGoogle Cloud Storageにデータをバックアップす
 
 
 
+=== インターネットにアクセスできないサイトで検索とリストアを使用してデータをリストアする機能がサポートされるようになりました
+
+インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）のオンプレミスのONTAP クラスタからStorageGRID にデータをバックアップする場合は、必要に応じて検索とリストアのリストアオプションを使用してデータをリストアできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.25以上)がオフラインサイトに配置されている必要があります。
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["検索とリストアを使用してONTAP データをリストアする方法を参照してください"]。https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。
+
+
+
 === ジョブ監視結果ページを.csvレポートとしてダウンロードできるようになりました
 
 [ジョブ監視]ページをフィルタリングして、必要なジョブとアクションを表示したら、そのデータの.csvファイルを生成してダウンロードできるようになりました。次に、情報を分析したり、組織内の他のユーザーにレポートを送信したりできます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["「ジョブ監視レポートを生成する方法」を参照してください"]。

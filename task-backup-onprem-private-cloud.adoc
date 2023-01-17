@@ -216,7 +216,7 @@ NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれていま�
 * StorageGRID で11.3以降を使用している必要があります
 * StorageGRID はである必要があります https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]
 * アーカイブストレージは、現時点ではAWS S3ストレージクラスでのみサポートされています。AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。 link:reference-aws-backup-tiers.html["AWSアーカイブ階層の詳細は、こちらをご覧ください"^]。
-* バックアップを格納するストレージスペースに対するAWS S3サブスクリプションに登録する必要があります。
+* バックアップを格納するストレージスペースには、Amazon S3アカウントを登録する必要があります。
 
 
 --
