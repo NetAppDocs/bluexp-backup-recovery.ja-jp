@@ -24,7 +24,7 @@ Cloud Backupでは、次の9つのエンドポイントカテゴリが定義さ�
 * ジョブ- BlueXPデータベースのジョブ詳細エントリを管理します
 * ライセンス-作業環境のライセンスの有効性をBlueXPから取得します
 * Ransomware scan -ランサムウェアスキャンを特定のバックアップファイルで開始します
-* Restore -ボリュームレベルおよびファイルレベルのリストア処理を実行できます
+* Restore -ボリューム、ファイル、およびフォルダレベルのリストア処理を実行できます
 * SFR -単一ファイルレベルのリストア処理（参照とリストア）用にバックアップファイルからファイルを取得します。
 * 作業環境-バックアップポリシーを管理し、作業環境に関連付けられたデスティネーションオブジェクトストアを設定します
 
@@ -71,10 +71,7 @@ Header:
 このAPIは、次のような応答を返します。アカウントIDを取得するには、*[0].[accountPublicId]*の出力を解析します。
 
 +
-[source, text]
-----
-[{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
-----
+ [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
 . BlueXPコネクタIDを含むx-agent-idを取得します。
 +
 [source, http]
@@ -90,10 +87,7 @@ Header:
 このAPIは、次のような応答を返します。エージェントIDを取得するには、*occcm.[0].[agent].[AgentID]*の出力を解析します。
 
 +
-[source, text]
-----
-{"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
-----
+ {"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
 
 
 
@@ -145,7 +139,7 @@ curl --location --request POST 'https://api.bluexp.netapp.com/account/account-Dp
 [source, text]
 ----
 {
-    "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
+ "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
 }
 ----
 .応答を監視します。

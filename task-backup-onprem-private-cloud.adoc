@@ -207,7 +207,7 @@ NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれていま�
 
 === 古いバックアップファイルをパブリッククラウドストレージにアーカイブする準備をしています
 
-古いバックアップファイルをアーカイブストレージに階層化すると、不要なバックアップに低コストのストレージクラスを使用することで、コストを削減できます。StorageGRID は、アーカイブストレージを提供しないオンプレミス（プライベートクラウド）の解決策 ですが、古いバックアップファイルをパブリッククラウドのアーカイブストレージに移動できます。
+古いバックアップファイルをアーカイブストレージに階層化すると、不要なバックアップに低コストのストレージクラスを使用することで、コストを削減できます。StorageGRID は、アーカイブストレージを提供しないオンプレミス（プライベートクラウド）の解決策 ですが、古いバックアップファイルをパブリッククラウドのアーカイブストレージに移動できます。この方法で使用した場合、クラウドストレージに階層化されたデータ、またはクラウドストレージから復元されたデータは、StorageGRID とクラウドストレージの間を移動します。BlueXPはこのデータ転送には関与しません。
 
 要件::
 +
@@ -217,6 +217,18 @@ NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれていま�
 * StorageGRID はである必要があります https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]
 * アーカイブストレージは、現時点ではAWS S3ストレージクラスでのみサポートされています。AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。 link:reference-aws-backup-tiers.html["AWSアーカイブ階層の詳細は、こちらをご覧ください"^]。
 * バックアップを格納するストレージスペースには、Amazon S3アカウントを登録する必要があります。
+* StorageGRID には、バケットへのフルコントロールアクセスが必要です (`s3:*`）。ただし、これができない場合は、バケットポリシーで次のS3権限をStorageGRID に付与する必要があります。
++
+** `s3:AbortMultipartUpload`
+** `s3:DeleteObject`
+** `s3:GetObject`
+** `s3:ListBucket`
+** `s3:ListBucketMultipartUploads`
+** `s3:ListMultipartUploadParts`
+** `s3:PutObject`
+** `s3:RestoreObject`
+
+
 
 
 --

@@ -2359,7 +2359,6 @@
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">BlueXPに関する注意事項</block>
   <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXPブログ</block>
-  <block id="e4f8a35ee8df8b5c247f6e3286e42891" category="sidebar">BlueXPのユースケース</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">BlueXPのすべてのマニュアル</block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">AWS GovCloudリージョンへのコネクタのインストール</block>
   <block id="9ead7424c07e39075bc88d26cf29486d" category="list-text"><block ref="9ead7424c07e39075bc88d26cf29486d" category="inline-link-rx"></block></block>
@@ -2785,7 +2784,6 @@
   <block id="bbc08f31565cf18b34651c7d285d9911" category="list-text">ジョブ- BlueXPデータベースのジョブ詳細エントリを管理します</block>
   <block id="24a0195c713a5929a91f430eefb31465" category="list-text">ライセンス-作業環境のライセンスの有効性をBlueXPから取得します</block>
   <block id="f3e008a63710b1317b4340caf4a574bd" category="list-text">Ransomware scan -ランサムウェアスキャンを特定のバックアップファイルで開始します</block>
-  <block id="383364de1ac57828a17c795ac72c6b9c" category="list-text">Restore -ボリュームレベルおよびファイルレベルのリストア処理を実行できます</block>
   <block id="50091c079ab0009fa21807b8bbc81cfd" category="list-text">SFR -単一ファイルレベルのリストア処理（参照とリストア）用にバックアップファイルからファイルを取得します。</block>
   <block id="96fa87fed0ba1143a920c3c8d44c8754" category="list-text">作業環境-バックアップポリシーを管理し、作業環境に関連付けられたデスティネーションオブジェクトストアを設定します</block>
   <block id="73358bf2a9d2d2c32dbbab5b76681d7f" category="section-title">必須コネクターアウトバウンドインターネットアクセスエンドポイントの変更</block>
@@ -3352,9 +3350,7 @@
   <block id="b17d2155a07524d0e8a3d1eb73a257c3" category="section-title">StorageGRID システムからAWS S3アーカイブストレージに古いバックアップファイルを移動する機能</block>
   <block id="76592785cd14862cf74d11289e50ed92" category="paragraph">これにより、StorageGRID システムの古いバックアップファイルをAWS S3のアーカイブストレージに階層化できるようになりました。これにより、StorageGRID システムのスペースを解放し、古いバックアップファイルには低コストのストレージクラスを使用することでコストを削減できます。AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。</block>
   <block id="ec9614a46239aa59499c4a94e919963a" category="inline-link">詳細はこちらをご覧ください</block>
-  <block id="481c6a107a47fcbb610d4e79b7d8bc01" category="paragraph">この機能は、クラスタでONTAP 9.12.1以降を使用していて、StorageGRID システムで11.3以降を使用している場合に使用できます。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
   <block id="5baabb9bbca503ea382779d0fce7e9c5" category="section-title">Google Cloudのデータ暗号化に、お客様が管理する独自のキーを選択できます</block>
-  <block id="d42d3ab595b05475b681bcec25a25c6b" category="paragraph">ONTAP システムからGoogle Cloud Storageにデータをバックアップする際に、Googleが管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを選択してデータを暗号化できるようになりました。まずお客様が管理する暗号化キーを設定し、次にCloud Backupをアクティブ化する際に詳細を入力します。</block>
   <block id="b9395c2030b2a8ad48d31ad52bd9f6e9" category="section-title">「ストレージ管理者」ロールは、サービスアカウントがGoogle Cloud Storageでバックアップを作成するために必要なくなりました</block>
   <block id="d7cf6019b64afefeee4361ce4c22ce30" category="inline-link">Google Cloud Storageでバックアップを準備する方法をご覧ください</block>
   <block id="121b4934193e6ec77a35338afd1028bb" category="paragraph">以前のリリースでは、Cloud BackupがGoogle Cloud Storageバケットにアクセスできるようにするサービスアカウントには「Storage Admin」ロールが必要でした。これで、一連の権限を減らしてサービスアカウントに割り当てるカスタムロールを作成できるようになりました。<block ref="cdc0823dc4910df979845484c27cfc1d" category="inline-link-rx"></block>。</block>
@@ -3414,7 +3410,6 @@
   <block id="f8436f6242c5e270dd0e25a1a05d34a4" category="inline-link-macro">ダークサイトでCloud Backupのデータをバックアップする方法をご覧ください</block>
   <block id="02bf1c0a02190999eeab71bbe7fff71c" category="paragraph">コネクタがインターネットに接続されていないサイトにインストールされている場合は、Cloud Backup設定データのローカルバックアップを定期的に作成することを強く推奨します。 <block ref="07f517d916bbf45a47c5d9dc6a000920" category="inline-link-macro-rx"></block>。</block>
   <block id="89d604768fdd7e6fda1e2bdb512ac56e" category="section-title">古いバックアップファイルをパブリッククラウドストレージにアーカイブする準備をしています</block>
-  <block id="483f68b62cb5a3e5d608257045622894" category="paragraph">古いバックアップファイルをアーカイブストレージに階層化すると、不要なバックアップに低コストのストレージクラスを使用することで、コストを削減できます。StorageGRID は、アーカイブストレージを提供しないオンプレミス（プライベートクラウド）の解決策 ですが、古いバックアップファイルをパブリッククラウドのアーカイブストレージに移動できます。</block>
   <block id="9da2e088609ab78eb6aa7a0ffe0637b3" category="list-text">クラスタでONTAP 9.12.1以降が使用されている必要があります</block>
   <block id="7bbe58a850cc71a0ff06edd40213c29c" category="list-text">StorageGRID で11.3以降を使用している必要があります</block>
   <block id="170d42742a62bce031fc4ab2cfd0c056" category="inline-link">BlueXP Canvasで検出され、使用可能になりました</block>
@@ -3437,9 +3432,23 @@
   <block id="3c6238f54517e5cf7923ae4c33a5eff9" category="list-text">StorageGRID の場合は、インターネットアクセスを使用するかどうかに関係なく、コネクタを社内に導入する必要があります</block>
   <block id="cd1cceb157b5982d899b66d18217af64" category="list-text">ダークサイトでコネクタを使用している場合は、インデックスカタログ情報がコネクタに保存されます（コネクタバージョン3.9.25以上が必要です）。</block>
   <block id="e083799711dc9b588bbb440525564506" category="section-title">インターネットにアクセスできないサイトで検索とリストアを使用してデータをリストアする機能がサポートされるようになりました</block>
-  <block id="7582bcce7533bd53ab590d04904ea75b" category="paragraph">インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）のオンプレミスのONTAP クラスタからStorageGRID にデータをバックアップする場合は、必要に応じて検索とリストアのリストアオプションを使用してデータをリストアできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.25以上)がオフラインサイトに配置されている必要があります。</block>
   <block id="c9ec78264dce9938676b736265201e28" category="inline-link">検索とリストアを使用してONTAP データをリストアする方法を参照してください</block>
   <block id="74aacc002c6d6d85e9786012bf71af08" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。</block>
   <block id="4f60787e5fe87ac0aa425be67237edec" category="list-text">FlexGroup ボリュームのバックアップをアーカイブストレージに移動したり、DataLockやRansomwareによる保護を使用したりすることはできません。</block>
   <block id="1f973e0276bdcc7629141de9466f59f2" category="list-text">オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれ、クラウドプロバイダのインターフェイスではなく、Cloud Backupの設定を使用して管理する必要があります。</block>
+  <block id="0c1029565d47087d49e25dbc4e2a20e9" category="list-text">Restore -ボリューム、ファイル、およびフォルダレベルのリストア処理を実行できます</block>
+  <block id="b7027e7163ab44680c3c69296db41564" category="paragraph">この機能は、オンプレミスクラスタでONTAP 9.12.1以降を使用し、StorageGRID システムで11.3以上を使用している場合に使用できます。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
+  <block id="0b17a5b6850808b4455bcd3d8bf54966" category="paragraph">ONTAP システムからGoogle Cloud Storageにデータをバックアップする際に、Googleが管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを選択してデータを暗号化できるようになりました。まずGoogleでお客様管理の暗号化キーを設定し、次にCloud Backupをアクティブ化する際に詳細を入力します。</block>
+  <block id="a282fca785a0e402e0b5cdde4c380d6d" category="paragraph">インターネットアクセスのないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）のオンプレミスのONTAP クラスタからStorageGRID にデータをバックアップする場合は、必要に応じて検索とリストアのオプションを使用してデータをリストアできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.25以上)がオフラインサイトに配置されている必要があります。</block>
+  <block id="d0729ea313d81752ff62b4b9a3f956b7" category="paragraph">古いバックアップファイルをアーカイブストレージに階層化すると、不要なバックアップに低コストのストレージクラスを使用することで、コストを削減できます。StorageGRID は、アーカイブストレージを提供しないオンプレミス（プライベートクラウド）の解決策 ですが、古いバックアップファイルをパブリッククラウドのアーカイブストレージに移動できます。この方法で使用した場合、クラウドストレージに階層化されたデータ、またはクラウドストレージから復元されたデータは、StorageGRID とクラウドストレージの間を移動します。BlueXPはこのデータ転送には関与しません。</block>
+  <block id="a4a085a9787be2fa9b79bdf6aa072546" category="list-text">StorageGRID には、バケットへのフルコントロールアクセスが必要です <block ref="08fd47fd7b45cb2848f70fc30872fe0d" prefix="(" category="inline-code"></block>）。ただし、これができない場合は、バケットポリシーで次のS3権限をStorageGRID に付与する必要があります。</block>
+  <block id="9ba767f0be9f0bee0980958cc583e14c" category="list-text"><block ref="e24d90c482d00361a495cd937be3bb7b" prefix="" category="inline-code"></block></block>
+  <block id="abd3980be6419b43c4ada2fde9c93bd1" category="list-text"><block ref="ec68e11afcd3e390ebf5080e8af5b735" prefix="" category="inline-code"></block></block>
+  <block id="94ab3733a115c1db662684796c5e5f70" category="list-text"><block ref="53cfd5032381d05f65cbc6d64e0004f5" prefix="" category="inline-code"></block></block>
+  <block id="c51afd34d09e8287bb3c293b4c19f57a" category="list-text"><block ref="05cce54a3c6e4b27fe1202c73065ac29" prefix="" category="inline-code"></block></block>
+  <block id="f4f5a5034e34b12200aaca19a2871aea" category="list-text"><block ref="2fadb459df3bdee0dccfda5cc625c37b" prefix="" category="inline-code"></block></block>
+  <block id="80ce9d537bd04197e7c7cc4227525715" category="list-text"><block ref="9c6f56f3012c2178f15d4346495a0a67" prefix="" category="inline-code"></block></block>
+  <block id="4014cba1d3679d7444ccb96338d9ee36" category="list-text"><block ref="8e0864f8129f5d2b658668b9103e83a5" prefix="" category="inline-code"></block></block>
+  <block id="139e90f4554bdc4681ca70203e695cd5" category="list-text"><block ref="28e5f48e9f12d4928897b706c15e527a" prefix="" category="inline-code"></block></block>
+  <block id="7eca941847083ddad64a04d3dca6b3b8" category="sidebar">Cloud Backupのユースケース</block>
 </blocks>
