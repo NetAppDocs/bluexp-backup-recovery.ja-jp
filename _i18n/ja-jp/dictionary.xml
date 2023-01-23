@@ -1908,7 +1908,6 @@
   <block id="7e9e3d210bbdc9a1da52aaf1ad227746" category="section-title">Browse &amp; Restoreを使用してフォルダとファイルを復元する</block>
   <block id="27816218998e04ffd3077d0806e7798b" category="paragraph">ONTAP のバックアップから数ファイルしかリストアしない場合は、ボリューム全体をリストアするのではなく、フォルダまたは個々のファイルをリストアするように選択できます。フォルダとファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
   <block id="ced64378309b598ee856f94695ccdd3a" category="paragraph">この時点では、1つのフォルダのみを選択してリストアできます。また、そのフォルダのファイルのみがリストアされます。サブフォルダやサブフォルダ内のファイルはリストアされません。</block>
-  <block id="8d2050d73759f67297630e3e686d074f" category="list-text">バックアップファイルがアーカイブストレージにある場合、フォルダレベルのリストアは現在サポートされていません。この場合、アーカイブされていない新しいバックアップファイルからフォルダをリストアするか、アーカイブされたバックアップからボリューム全体をリストアして、必要なフォルダとファイルにアクセスできます。</block>
   <block id="502b9bcf8737b06b486f332278870bbf" category="list-text">FILE _ RESTORE処理を実行するには、ONTAP のバージョンが9.6以降である必要があります。</block>
   <block id="cee5f78cfda5fc2f3b24ce19bdf5119a" category="section-title">フォルダおよびファイルのリストアプロセス</block>
   <block id="f3c6f7e9aebf0c7de403d55832a37318" category="list-text">ボリュームのバックアップからフォルダまたは1つ以上のファイルを復元する場合は、*復元*タブをクリックし、_参照&amp;復元_の下の*ファイルまたはフォルダの復元*をクリックします。</block>
@@ -3451,4 +3450,6 @@
   <block id="4014cba1d3679d7444ccb96338d9ee36" category="list-text"><block ref="8e0864f8129f5d2b658668b9103e83a5" prefix="" category="inline-code"></block></block>
   <block id="139e90f4554bdc4681ca70203e695cd5" category="list-text"><block ref="28e5f48e9f12d4928897b706c15e527a" prefix="" category="inline-code"></block></block>
   <block id="7eca941847083ddad64a04d3dca6b3b8" category="sidebar">Cloud Backupのユースケース</block>
+  <block id="66d2847cfd42bf73060fb82fb4345a9a" category="list-text">バックアップファイルにDataLockとRansomwareが設定されている場合、フォルダレベルのリストアは現在サポートされていません。この場合、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。</block>
+  <block id="5571d67bc301ab9246278c7b368f2013" category="list-text">バックアップファイルがアーカイブストレージにある場合、フォルダレベルのリストアは現在サポートされていません。この場合、アーカイブされていない新しいバックアップファイルからフォルダをリストアするか、アーカイブされたバックアップからボリューム全体をリストアして、必要なフォルダとファイルにアクセスできます。</block>
 </blocks>
