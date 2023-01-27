@@ -739,7 +739,6 @@
   <block id="2acfaf00d1f43b0bc630fdcf43c20bb3" category="paragraph">この表は、 2 つの方法の比較を示しています。</block>
   <block id="1181e345cf6d2eaef5900c975d430d7d" category="cell">参照と復元</block>
   <block id="7d0014a7ab187c6931fc2183a6074420" category="cell">検索とリストア</block>
-  <block id="fa6009564cbbb803ab9e939ec7396236" category="cell">では、名前が変更されたファイルや削除されたファイルは処理されません</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">新しく作成 / 削除 / 名前変更されたディレクトリと新しく作成 / 削除 / 名前変更されたファイルを処理します</block>
   <block id="8425d41c6f9d3b6f077b56c4d49651a4" category="paragraph">いずれかのリストア方式を使用する前に、固有のリソース要件に対応するように環境を設定しておく必要があります。これらの要件については、以降のセクションで説明します。</block>
   <block id="91679e5e03d41aefa89ddfa7649b05d2" category="paragraph">使用するリストア処理のタイプに応じた要件とリストア手順を確認します。</block>
@@ -3452,4 +3451,13 @@
   <block id="7eca941847083ddad64a04d3dca6b3b8" category="sidebar">Cloud Backupのユースケース</block>
   <block id="66d2847cfd42bf73060fb82fb4345a9a" category="list-text">バックアップファイルにDataLockとRansomwareが設定されている場合、フォルダレベルのリストアは現在サポートされていません。この場合、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。</block>
   <block id="5571d67bc301ab9246278c7b368f2013" category="list-text">バックアップファイルがアーカイブストレージにある場合、フォルダレベルのリストアは現在サポートされていません。この場合、アーカイブされていない新しいバックアップファイルからフォルダをリストアするか、アーカイブされたバックアップからボリューム全体をリストアして、必要なフォルダとファイルにアクセスできます。</block>
+  <block id="0375f4855be072c7d856a0233cc21de9" category="section-title">クラウドプロバイダソリューションのサポート</block>
+  <block id="be845c219bb74b14349ffa6e27e7aef3" category="paragraph">BlueXPに統合した次のクラウドプロバイダソリューションのテクニカルサポートについては、その製品のBlueXPマニュアルの「困ったときは」を参照してください。</block>
+  <block id="5bf5309465f91318228a7f956b826348" category="list-text"><block ref="5bf5309465f91318228a7f956b826348" category="inline-link-macro-rx"></block></block>
+  <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files の特長</block>
+  <block id="0e2bc9c853e0af52ead12823c025e58b" category="list-text"><block ref="0e2bc9c853e0af52ead12823c025e58b" category="inline-link-macro-rx"></block></block>
+  <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service for Google Cloud</block>
+  <block id="02efcbea18b9485a78a41871dce1e64d" category="list-text"><block ref="02efcbea18b9485a78a41871dce1e64d" category="inline-link-macro-rx"></block></block>
+  <block id="67b74e19355f9340daf7f62ceb8233d5" category="list-text">コネクタとAzure Synapse SQLサービス間の通信には、ポート1433が開いている必要があります。</block>
+  <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">ファイルが削除または名前変更されており、元のファイル名がわからない場合は、はファイルリカバリを処理しません</block>
 </blocks>

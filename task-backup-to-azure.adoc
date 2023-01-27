@@ -82,24 +82,25 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 +
 --
 .を開始する前に
-Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
-
+* Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+* コネクタとAzure Synapse SQLサービス間の通信には、ポート1433が開いている必要があります。
++
 .手順
-. Connector 仮想マシンに割り当てられているロールを特定します。
+.. Connector 仮想マシンに割り当てられているロールを特定します。
 +
-.. Azure ポータルで、仮想マシンサービスを開きます。
-.. Connector 仮想マシンを選択します。
-.. [ 設定 ] で、 [*Identity*] を選択します。
-.. Azure の役割の割り当て * をクリックします。
-.. Connector 仮想マシンに割り当てられているカスタムロールをメモしておきます。
+... Azure ポータルで、仮想マシンサービスを開きます。
+... Connector 仮想マシンを選択します。
+... [ 設定 ] で、 [*Identity*] を選択します。
+... Azure の役割の割り当て * をクリックします。
+... Connector 仮想マシンに割り当てられているカスタムロールをメモしておきます。
 
 
-. カスタムロールを更新します。
+.. カスタムロールを更新します。
 +
-.. Azure ポータルで、 Azure サブスクリプションを開きます。
-.. [* アクセス制御（ IAM ） ]>[ 役割 * ] をクリックします。
-.. カスタムロールの省略記号 (...) をクリックし、 * 編集 * をクリックします。
-.. JSON をクリックして、次の権限を追加します。
+... Azure ポータルで、 Azure サブスクリプションを開きます。
+... [* アクセス制御（ IAM ） ]>[ 役割 * ] をクリックします。
+... カスタムロールの省略記号 (...) をクリックし、 * 編集 * をクリックします。
+... JSON をクリックして、次の権限を追加します。
 +
 [source, json]
 ----
@@ -125,7 +126,9 @@ Azure Synapse Analyticsリソースプロバイダーをサブスクリプショ
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
 
-.. [ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。
+... [ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。
+
+
 
 
 
