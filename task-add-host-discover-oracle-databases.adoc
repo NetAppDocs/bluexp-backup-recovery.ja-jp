@@ -42,8 +42,10 @@ summary: 各OracleデータベースホストにSnapCenter Plug-in for Oracleを
 * 手順 *
 
 . Connector VMにログインします。
-. SnapCenter Linuxホストプラグインバイナリをダウンロードします。「sudo Docker exec-it cloudmanager_scs_cloud curl -X get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
-. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. SnapCenter Linuxホストプラグインバイナリをダウンロードします。
+`sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
+. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 . 1～16の行を、*_base_mount_path/_version_/sc-linux-host-plugin/*にある*ORACLE_checksum_scs.txt *ファイルからコピーします。
 . Oracleデータベース・ホストにログインし、次の手順を実行します。
 +
@@ -65,7 +67,8 @@ root以外のユーザに対してOracleホストでSSHキーベースの認証�
 * 手順 *
 
 . Connector VMにログインします。
-. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 . コネクタに用意されているヘルパースクリプトを使用して、プラグインを導入します。
 `sudo <base_mount_path>/scripts/oracle_plugin_copy_and_install.sh --host <host_name> --sshkey <ssh_key_file> --username <user_name> --port <ssh_port> --pluginport <plugin_port> --installdir <install_dir>`
 +
@@ -91,9 +94,12 @@ OracleホストでSSHキーベースの認証が有効になっていない場�
 * 手順 *
 
 . Connector VMにログインします。
-. SnapCenter Linuxホストプラグインバイナリをダウンロードします。「sudo Docker exec-it cloudmanager_scs_cloud curl -X get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
-. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
-. ダウンロードしたプラグインのバイナリパスを取得します。sudo ls <base_mount_path>$（sudo Docker PS | grep -Po " cloudmanager_scs_cloud：*？"|sed -e '/*$//'/|cut -f2 -d ":")/sc-linux -host-plugin/snapcenter linux _host_plugin_bbin
+. SnapCenter Linuxホストプラグインバイナリをダウンロードします。
+`sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
+. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+. ダウンロードしたプラグインのバイナリパスを取得します。
+`sudo ls <base_mount_path> $(sudo docker ps|grep -Po "cloudmanager_scs_cloud:.*? "|sed -e 's/ *$//'|cut -f2 -d":")/sc-linux-host-plugin/snapcenter_linux_host_plugin_scs.bin`
 . scpまたはその他の代替方法を使用して、Oracleデータベースホストのそれぞれにcopy_snapcenter linux_host_plugin_scs.bin _をコピーします。
 +
 _snapcenter _ linux_host_plugin_scs.bin_は、root以外のユーザがアクセスできる場所にコピーする必要があります。
@@ -103,8 +109,9 @@ _snapcenter _ linux_host_plugin_scs.bin_は、root以外のユーザがアクセ
 . Oracleプラグインをsudoのroot以外のユーザとして導入します。
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
 . connector VMのcopy_certificate.p12_from_<base_mount_path>/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。
-. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass SnapCenter -deststorepass SnapCenter agentcert -destalias agentcert -noprompt`
-. spl:'systemctl restart sp'を再起動します
+. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+. SPLを再起動します。 `systemctl restart spl`
 
 
 

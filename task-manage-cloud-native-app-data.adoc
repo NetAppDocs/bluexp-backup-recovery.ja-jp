@@ -111,7 +111,8 @@ curl --location --request PATCH
 
 * 必要なもの *
 
-次のコマンドを実行して、_<base_mount_path>_：sudo Docker volume ls | grep scs_cloud_volume | awk｛'print$2'｝| xargs sudo Docker volume inspect | grep mountpointを取得できます
+次のコマンドを実行すると、<base_mount_path> を取得できます。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 
 * 手順 *
 
@@ -124,13 +125,15 @@ curl --location --request PATCH
 . certificate.p12という名前でPKCS12形式の証明書を作成し、_<base_mount_path>/client/certificate__に保持してください。
 . すべての中間CAおよびルートCAの証明書.p12と証明書を、_/var/opt/snapcenter/spl/etc/_のプラグインホストにコピーします。
 . プラグインホストにログインします。
-. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass SnapCenter -deststorepass SnapCenter agentcert -destalias agentcert -noprompt`
-. ルートCAと中間証明書をインポートします。keytool -import trustcacerts -keystore .JKS -storepass SnapCenter -alias trustedca-file <certificate.crt >
+. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+. ルートCAと中間証明書をインポートします。
+`keytool -import -trustcacerts -keystore keystore.jks -storepass snapcenter -alias trustedca -file <certificate.crt>`
 +
 
 NOTE: certfile.crtは、ルートCAおよび中間CAの証明書を参照します。
 
-. spl:'systemctl restart sp'を再起動します
+. SPLを再起動します。 `systemctl restart spl`
 
 
 
@@ -141,7 +144,8 @@ CA証明書には、Connector仮想マシンと通信するプラグインホス
 
 * 必要なもの *
 
-次のコマンドを実行して、_<base_mount_path>_：sudo Docker volume ls | grep scs_cloud_volume | awk｛'print$2'｝| xargs sudo Docker volume inspect | grep mountpointを取得できます
+次のコマンドを実行すると、<base_mount_path> を取得できます。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 
 * 手順 *
 
@@ -149,9 +153,11 @@ CA証明書には、Connector仮想マシンと通信するプラグインホス
 +
 .. SPLのkeystore_/var/opt/snapcenter/spl/etcが格納されているフォルダに移動します。
 .. 証明書とキーの両方を持つ証明書のPKCS12形式を、alias_splkeystore._で作成します。
-.. CA証明書を追加します。keytool -importkeystore -srckeystore <CertificatePathToImport>-srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -noprompt`
-.. 証明書を確認します。keytool -list -v キーストア .jks
-.. spl:'systemctl restart sp'を再起動します
+.. CA証明書を追加します。
+`keytool -importkeystore -srckeystore <CertificatePathToImport> -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -noprompt`
+.. 証明書を確認します。
+`keytool -list -v -keystore keystore.jks`
+.. SPLを再起動します。 `systemctl restart spl`
 
 
 . コネクタで次の手順を実行します。
@@ -161,8 +167,10 @@ CA証明書には、Connector仮想マシンと通信するプラグインホス
 +
 サーバーフォルダが存在しない場合は作成します。
 
-.. cloudmanager_scs_cloudに接続し、* enableCACert * in_config.yml_to * true *を変更します。「sudo Docker exec-t cloudmanager_scs_cloud sed -i 's/enableCACert:false/enableCACert:true/g'/opt/netapp/cloudmanager-scs-cloud/config/config.yml
-.. cloudmanager_scs_cloudコンテナを再起動します。「sudo Docker restart cloudmanager_scs_cloud」
+.. cloudmanager_scs_cloudに接続し、* enableCACert * in_config.yml_to * true *を変更します。
+`sudo docker exec -t cloudmanager_scs_cloud sed -i 's/enableCACert: false/enableCACert: true/g' /opt/netapp/cloudmanager-scs-cloud/config/config.yml`
+.. cloudmanager_scs_cloudコンテナを再起動します。
+`sudo docker restart cloudmanager_scs_cloud`
 
 
 

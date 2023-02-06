@@ -220,7 +220,7 @@ NOTE: このクラスタに対してCloud Backupをアクティブ化すると�
 
 このクラスタでCloud Backupをアクティブ化するときに_DataLockとRansomware Protection_を 有効にすると、オンデマンドバックアップもDataLockで設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェアによる保護の詳細をご確認ください"^]。
 
-アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。スナップショットの名前は'CBS-snapshot-adhoc -で始まります https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"^]。
+アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。Snapshotの名前はで始まります `cbs-snapshot-adhoc-`。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"^]。
 
 
 NOTE: オンデマンドボリュームバックアップは、データ保護ボリュームではサポートされません。

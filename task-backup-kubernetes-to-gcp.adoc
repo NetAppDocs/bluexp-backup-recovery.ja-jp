@@ -79,7 +79,7 @@ Kubernetes クラスタの要件::
 
 * バックアップする永続ボリュームの作成に使用されるすべての Persistent Volume Claim オブジェクトで、「 snapshotPolicy 」が「 default 」に設定されている必要があります。
 +
-これは、注釈の下に「 SnapshotPolicy 」を追加することで、個々の PVC に対して行うことができます。
+これは、を追加することによって、個 々 のPVCに対して行うことができます `snapshotPolicy` アノテーションの下：
 
 +
 [source, json]
@@ -99,7 +99,7 @@ spec:
   storageClassName: silver
 ----
 +
-バックエンド・ストレージに関連付けられているすべての PVC に対してこの操作を行うには ' backend.json ファイルの defaults に 'napshotPolicy' フィールドを追加します
+これは、特定のバックエンドストレージに関連付けられているすべてのPVCに対して実行できます `snapshotPolicy` フィールドのデフォルト値は、です `backend.json` ファイル：
 
 +
 [source, json]

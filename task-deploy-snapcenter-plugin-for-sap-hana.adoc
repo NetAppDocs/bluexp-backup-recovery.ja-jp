@@ -30,7 +30,8 @@ NOTE: 各SAP HANAデータベースホストにJava 11（64ビット）Oracle Ja
 . Connector VMにログインします。
 . Linuxホストのプラグインバイナリをダウンロードします。
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
+. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 . から1～16の行をコピーします `oracle_checksum_scs.txt` ファイルの場所 `base_mount_path/version/sc-linux-host-plugin/`
 . SAP HANAデータベースホストにログインし、次の手順を実行します。
 +
@@ -78,8 +79,10 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 . Connector VMにログインします。
 . Linuxホストのプラグインバイナリをダウンロードします。
 `# sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. ベースマウントパスを取得します。「sudo Docker volume ls | grep scs_cloud_volume | awk {'print$2'}|xargs sudo Docker volume inspect | grep mountpoint`」
-. ダウンロードしたプラグインのバイナリパスを取得します。sudo ls <base_mount_path>$（sudo Docker PS | grep -Po " cloudmanager_scs_cloud：*？"|sed -e '/*$//'/|cut -f2 -d ":")/sc-linux -host-plugin/snapcenter linux _host_plugin_bbin
+. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+. ダウンロードしたプラグインのバイナリパスを取得します。
+`sudo ls <base_mount_path> $(sudo docker ps|grep -Po "cloudmanager_scs_cloud:.*? "|sed -e 's/ *$//'|cut -f2 -d":")/sc-linux-host-plugin/snapcenter_linux_host_plugin_scs.bin`
 . コピー `snapcenter_linux_host_plugin_scs.bin` scpまたはその他の代替方法を使用して、各SAP HANAデータベースホストに接続します。
 . SAP HANAデータベースホストで、次のコマンドを実行してバイナリの実行権限を有効にします。
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
@@ -89,7 +92,7 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 +
 .. に移動します `/var/opt/snapcenter/spl/etc` keytoolコマンドを実行して証明書をインポートします。
 `keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
-.. spl:'systemctl restart sp'を再起動します
+.. SPLを再起動します。 `systemctl restart spl`
 
 
 

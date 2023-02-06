@@ -311,7 +311,7 @@ homepage:
       url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
     - title: バックアップを削除します
       url: task-manage-backups-ontap.html#deleting-backups
-  - title: ブログコミュニティ
+  - title: ブログとコミュニティ
     links:
     - title: ネットアップコミュニティ
       url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS

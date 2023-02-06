@@ -34,7 +34,7 @@ NOTE: アプリケーションに関連付けられているポリシーを編�
 
 
 
-「 Get-SmResources 」 SnapCenter コマンドレットを実行して、クラウド拡張 SnapCenter ポリシーを表示することもできます。コマンドレットで使用できるパラメータとその説明については、 Get-Help コマンドレットを実行して確認できます。または、を参照することもできます https://library.netapp.com/ecm/ecm_download_file/ECMLP2880726["SnapCenter ソフトウェアコマンドレットリファレンスガイド"]。
+を実行して、クラウド拡張SnapCenter ポリシーを表示することもできます `Get-SmResources` SnapCenter コマンドレット。コマンドレットで使用できるパラメータとその説明については、 Get-Help コマンドレットを実行して確認できます。または、を参照することもできます https://library.netapp.com/ecm/ecm_download_file/ECMLP2880726["SnapCenter ソフトウェアコマンドレットリファレンスガイド"]。
 
 
 
@@ -58,7 +58,7 @@ IMPORTANT: 表示されるバックアップの所要時間は、ONTAPのデフ�
 
 NOTE: クラウド保護を有効にする前に作成したバックアップはリストア対象として表示されません。
 
-これらのバックアップは 'Get-SmBackup' SnapCenter コマンドレットを実行して表示することもできますコマンドレットで使用できるパラメータとその説明については、 Get-Help コマンドレットを実行して確認できます。または、を参照することもできます https://library.netapp.com/ecm/ecm_download_file/ECMLP2880726["SnapCenter ソフトウェアコマンドレットリファレンスガイド"]。
+これらのバックアップは、を実行して確認することもできます `Get-SmBackup` SnapCenter コマンドレット。コマンドレットで使用できるパラメータとその説明については、 Get-Help コマンドレットを実行して確認できます。または、を参照することもできます https://library.netapp.com/ecm/ecm_download_file/ECMLP2880726["SnapCenter ソフトウェアコマンドレットリファレンスガイド"]。
 
 
 
@@ -138,28 +138,28 @@ CA 証明書がない場合は、 CA 証明書を設定せずに続行できま�
 
 . Docker エージェントからアクセス可能なボリュームに証明書をコピーします。
 +
-** 「 cd /var/lib/docker/dochels/cloudmanager_snapcenter _ volume/_data/mkdir sc_certs 」と入力します
-** chmod 777 SC_certs
+** `cd /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/mkdir sc_certs`
+** `chmod 777 sc_certs`
 
 
 . RootCA 証明書ファイルを Connector マシンの上のフォルダにコピーします。
 +
-`cp <path on connector> /<filename>/var/lib/docx/volumes/cloudmanager_snapcenter volume/_data/sc_certs'
+`cp <path on connector>/<filename> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/sc_certs`
 
 . CRL ファイルを、 Docker エージェントからアクセス可能なボリュームにコピーします。
 +
-** 「 cd /var/lib/docker/volumes/cloudmanager_snapcenter _ volume/_data/mkdir sc_crl 」のように入力します
-** 'chmod 777 SC_CRL
+** `cd /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/mkdir sc_crl`
+** `chmod 777 sc_crl`
 
 
 . CRL ファイルを Connector マシンの上のフォルダにコピーします。
 +
-`cp <path on connector> /<filename>/var/lib/docx/volumes/cloudmanager_snapcenter volume/_data/sc_crl`
+`cp <path on connector>/<filename> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/sc_crl`
 
 . 証明書と CRL ファイルをコピーしたら、 Cloud Backup for Apps サービスを再起動します。
 +
-** 「 sudo Docker exec cloudmanager_snapcenter sed -i /skipscCertValidation ： true/skipSCCertValidation ： false/g'/opt/NetApp/cloudmanager-snapcenter agent/config/config.yml
-** 「 sudo Docker restart cloudmanager_snapcenter 」と入力します
+** `sudo docker exec cloudmanager_snapcenter sed -i 's/skipSCCertValidation: true/skipSCCertValidation: false/g' /opt/netapp/cloudmanager-snapcenter-agent/config/config.yml`
+** `sudo docker restart cloudmanager_snapcenter`
 
 
 
