@@ -50,6 +50,9 @@ image:screenshot_backup_provider_settings_azure.png["Cloud Volumes ONTAP シス�
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
+ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+
+[role="quick-margin-para"]
 バックアップはデフォルトでCoolアクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
@@ -82,7 +85,7 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 +
 --
 .を開始する前に
-* Azure Synapse Analyticsリソースプロバイダーをサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+* Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
 * コネクタとAzure Synapse SQLサービス間の通信には、ポート1433が開いている必要があります。
 +
 .手順
@@ -197,6 +200,7 @@ image:screenshot_backup_provider_settings_azure.png["Cloud Volumes ONTAP シス�
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
 .. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
+.. ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
 .. ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したバックアップを Azure Archive ストレージに階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
 +
 image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]

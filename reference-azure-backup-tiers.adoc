@@ -44,6 +44,11 @@ Azure Archive からデータをリストアするのにどれくらいのコス
 各メソッドには、 GB 単位の取得料金とリクエストごとの料金が異なります。Azure リージョン別の Azure Archive の詳細な価格設定については、を参照してください https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure の料金体系のページです"^]。
 
 --
+
+
+
+NOTE: 高優先度は、AzureからStorageGRID システムにデータをリストアする場合はサポートされていません。
+
 Azure Archive にアーカイブされたデータをリストアするのにどれくらいの時間がかかりますか。:: リストア時間は次の 2 つの要素で構成されます。
 +
 --

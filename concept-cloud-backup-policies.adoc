@@ -55,6 +55,8 @@ Cloud Backupは、ボリュームバックアップに対するDataLockやRansom
 
 これらの機能はどちらもバックアップファイルを保護するため、ソースデータがランサムウェア攻撃を受けた場合にデータをリカバリするための有効なバックアップファイルを常に用意しています。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionが有効な場合、クラウドバックアップのアクティブ化の一環としてプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。
 
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["詳細については、DataLockとRansomwareによる保護ブログをご覧ください"^]。
+
 この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。ネットアップのソリューションを使用 https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights およびCloud Secure"^]、またはの一部 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^] ソースボリュームを保護します。
 
 [CAUTION]
@@ -110,48 +112,84 @@ DataLockは、バックアップファイルが一定期間変更または削除
 
 各バックアップポリシーには、バックアップファイルに適用可能な_DataLockとRansomware Protection_に関する セクションが用意されています。
 
-image:screenshot_datalock_ransomware_settings.png["バックアップポリシー作成時のDataLockとRansomware Protectionの設定のスクリーンショット"]
+image:screenshot_datalock_ransomware_settings.png["バックアップポリシー作成時のAWS、Azure、StorageGRID のDataLockとRansProtectionの設定のスクリーンショット"]
 
 各バックアップポリシーについて、次の設定から選択できます。
 
-* なし（デフォルト）
+[role="tabbed-block"]
+====
+.AWS
+--
+* *なし*（デフォルト）
 +
 DataLock保護とランサムウェア防御は無効になっています。
 
-* ガバナンス（StorageGRID では使用不可）
+* *ガバナンス*
 +
-DataLockは_Governanceモードに設定されています。特定の権限を持つユーザーです（link:concept-cloud-backup-policies.html#requirements["以下を参照してください"]）を使用すると、保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効
+DataLockは_Governanceモードに設定されています。このモードでは、を使用します `s3:BypassGovernanceRetention` 権限（link:concept-cloud-backup-policies.html#requirements["以下を参照してください"]）を使用すると、保持期間中にバックアップファイルを上書きまたは削除できます。ランサムウェア攻撃からの保護が有効
 
-* コンプライアンス
+* *コンプライアンス*
 +
 DataLockは_Compliion_modeに設定されており、保持期間中にユーザがバックアップファイルを上書きしたり削除したりすることはできません。ランサムウェア攻撃からの保護が有効
 
 
 
+--
+.Azure
+--
+* *なし*（デフォルト）
++
+DataLock保護とランサムウェア防御は無効になっています。
 
-NOTE: StorageGRID S3オブジェクトロック機能は、Complianceモードに相当する単一のDataLockモードを提供します。同等のガバナンスモードはサポートされないため、保持設定を省略したり、保護されたバックアップを上書きしたり、ロックされたバックアップを削除したりする機能はユーザにはありません。
+* *ロック解除*
++
+バックアップファイルは保持期間中に保護されます。保持期間は増減できます。通常、システムのテストに24時間使用されます。ランサムウェア攻撃からの保護が有効
 
+* *ロックされています*
++
+バックアップファイルは保持期間中に保護されます。保持期間は長くすることはできますが、短くすることはできません。完全なコンプライアンスを実現します。ランサムウェア攻撃からの保護が有効
+
+
+
+--
+.StorageGRID
+--
+* *なし*（デフォルト）
++
+DataLock保護とランサムウェア防御は無効になっています。
+
+* *コンプライアンス*
++
+DataLockは_Compliion_modeに設定されており、保持期間中にユーザがバックアップファイルを上書きしたり削除したりすることはできません。ランサムウェア攻撃からの保護が有効
+
+
+
+--
+====
 
 
 === サポートされている作業環境とオブジェクトストレージプロバイダ
 
 以下のパブリッククラウドプロバイダとプライベートクラウドプロバイダでオブジェクトストレージを使用する際に、ONTAP ボリュームに対するDataLock保護とRansomware保護を有効にすることができます。クラウドプロバイダは今後のリリースで追加される予定です。
 
-[cols="50,50"]
+[cols="55,45"]
 |===
 | ソースの作業環境 | バックアップファイルデスティネーションifdef：aws [] 
 
 
-| AWS の Cloud Volumes ONTAP | Amazon S3 endif：aws [] ifdef：azure[] endif：azure [] ifdef：GCP [] endif：gcp [] 
+| AWS の Cloud Volumes ONTAP | Amazon S3 endif：aws []ifdef：azure[] 
 
 
-| オンプレミスの ONTAP システム | ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] endif：azure[] ifdef：gCP[] endif：GCP [] NetApp StorageGRID 
+| Azure の Cloud Volumes ONTAP | Azure Blob endif：Azure[]ifdef: GCP []endif：GCP [] 
+
+
+| オンプレミスの ONTAP システム | ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] Azure Blob endif：azure [] ifdef：gcp [] endif：：gcp [] NetApp StorageGRID 
 |===
 
 
 === 要件
 
-* クラスタでONTAP 9.11.1以降が実行されている必要があります
+* クラスタでONTAP 9.11.1以降が実行されている必要があります（Azureの場合は9.12.1）。
 * BlueXP 3.9.21以上を使用している必要があります
 
 
@@ -200,6 +238,17 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aw
 
 endif::aws[]
 
+ifdef::azure[]
+
+* Azureの場合：
++
+** コネクタは、クラウドまたはオンプレミスに導入できます
+
+
+
+
+endif::azure[]
+
 * StorageGRID の場合：
 +
 ** コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。
@@ -213,7 +262,8 @@ endif::aws[]
 === 制限事項
 
 * バックアップポリシーでアーカイブストレージを設定している場合、DataLockとRansomwareによる保護は利用できません。
-* クラウドバックアップ（ガバナンスまたはコンプライアンス）をアクティブ化する際に選択するDataLockオプションは、そのクラスタのすべてのバックアップポリシーに使用する必要があります。1つのクラスタでガバナンスモードとコンプライアンスモードの両方のロックを使用することはできません。
+* クラウドバックアップをアクティブ化するときに選択したDataLockオプションは、そのクラスタのすべてのバックアップポリシーに使用する必要があります。
+* 1つのクラスタで両方のDataLockモードを使用することはできません。
 * DataLockを有効にすると、すべてのボリュームバックアップがロックされます。1つのクラスタに、ロックされたボリュームバックアップとロックされていないボリュームバックアップを混在させることはできません。
 * DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。Cloud Backupをアクティブ化したあとは、この機能を有効にできません。
 
@@ -234,7 +284,7 @@ ifdef::aws[]
 
 * AWS では、バックアップは _Standard_storage クラスから開始し、 30 日後に _Standard-Infrequent Access_storage クラスに移行します。
 +
-クラスタが ONTAP 9.10.1 以降を使用している場合は、古いバックアップを S3 Glacier Deep Archive_storage のいずれかに階層化して、特定の日数が経過したらコストをさらに最適化することができます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
+クラスタがONTAP 9.10.1以降を使用している場合は、古いバックアップをS3 Glacier Deep Archive_storageに階層化できます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
 
 +
 クラウドバックアップをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier Deep Archive_inを選択した場合、その階層は、そのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。
@@ -247,7 +297,7 @@ ifdef::azure[]
 
 * Azure では、バックアップは _COOL アクセス層に関連付けられます。
 +
-クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過した古いバックアップを Azure Archive_storage に階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
+ONTAP 9.10.1以降を使用しているクラスタでは、古いバックアップを_Azure Archive_storageに階層化できます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
 
 
 
@@ -257,7 +307,7 @@ ifdef::gcp[]
 
 * GCP では、バックアップは _Standard_storage クラスに関連付けられます。
 +
-オンプレミスクラスタがONTAP 9.12.1以降を使用している場合、コストをさらに最適化するために、特定の日数後に、Cloud Backup UIで古いバックアップを_Archive_storageに階層化することを選択できます。（この機能は現在、Cloud Volumes ONTAP システムでは使用できません）。 link:reference-google-backup-tiers.html["Googleアーカイブストレージの詳細をご覧ください"^]。
+オンプレミスクラスタがONTAP 9.12.1以降を使用している場合、コストをさらに最適化するために、特定の日数後に、Cloud Backup UIで古いバックアップを_Archive_storageに階層化することを選択できます。 link:reference-google-backup-tiers.html["Googleアーカイブストレージの詳細をご覧ください"^]。
 
 
 
@@ -265,6 +315,20 @@ endif::gcp[]
 
 * StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
 +
-オンプレミスクラスタでONTAP 9.12.1以降を使用しており、StorageGRID システムで11.3以上を使用している場合は、古いバックアップファイルをパブリッククラウドのアーカイブストレージにアーカイブできます。アーカイブストレージは、現時点ではAWS S3ストレージクラスでのみサポートされています。AWS_S3 Glacier Deep Archive_storageへのバックアップの階層化は、特定の日数後に選択できます。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。
+オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルをパブリッククラウドアーカイブストレージにアーカイブできます。
 
 
+
+ifdef::aws[]
+
++** AWSでは、AWS_S3 Glacier Deep Archive_storageにバックアップを階層化できます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
+
+endif::aws[]
+
+ifdef::azure[]
+
++** Azureでは、古いバックアップを_Azure Archive_storageに階層化できます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
+
+endif::azure[]
+
+[+]link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。

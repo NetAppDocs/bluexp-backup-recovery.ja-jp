@@ -18,6 +18,52 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2023年2月6日
+
+
+
+=== 古いバックアップファイルをStorageGRID システムからAzureアーカイブストレージに移動する機能
+
+これで、古いバックアップファイルをStorageGRID システムからAzureのアーカイブストレージに階層化できるようになりました。これにより、StorageGRID システムのスペースを解放し、古いバックアップファイルには低コストのストレージクラスを使用することでコストを削減できます。
+
+この機能は、オンプレミスクラスタがONTAP 9.12.1以降を使用し、StorageGRID システムが11.4以降を使用している場合に使用できます。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["詳細はこちらをご覧ください"^]。
+
+
+
+=== DataLockとRansomwareによる保護は、Azure Blobでのバックアップファイルに対して設定できます
+
+DataLockとRansomware Protectionは、Azure Blobに保存されたバックアップファイルでサポートされるようになりました。Cloud Volumes ONTAP またはオンプレミスONTAP システムでONTAP 9.12.1以降を実行している場合、バックアップファイルをロックしてスキャンし、ランサムウェアの可能性を検出できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェア防御を使用してバックアップを保護する方法については、こちらをご覧ください"^]。
+
+
+
+=== FlexGroup ボリュームのバックアップとリストアの機能拡張
+
+* FlexGroup ボリュームのリストア時に複数のアグリゲートを選択できるようになりました。前回のリリースでは、アグリゲートを1つしか選択できませんでした。
+* FlexGroup ボリュームリストアがCloud Volumes ONTAP システムでサポートされるようになりました。前回のリリースでは、オンプレミスのONTAP システムにのみリストアできました。
+
+
+
+
+=== Cloud Volumes ONTAP システムでは、古いバックアップをGoogleアーカイブストレージに移動できます
+
+バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。Cloud Backupを使用して、より古いバックアップをGoogle Archiveストレージに階層化し、コストをさらに最適化できるようになりました。前回のリリースでは、オンプレミスのONTAP クラスタでのみこの機能がサポートされていました。現在Google Cloudに導入されているCloud Volumes ONTAP システムがサポートされています。
+
+
+
+=== ボリュームリストア処理で、ボリュームデータをリストアするSVMを選択できるようになりました
+
+次に、ONTAP クラスタ内の別のStorage VMにボリュームデータをリストアします。これまでは、Storage VMを選択できませんでした。
+
+
+
+=== MetroCluster 構成でのボリュームのサポートが強化されました
+
+ONTAP 9.12.1 GA以降を使用している場合、MetroCluster 構成でプライマリシステムに接続しているときにバックアップがサポートされるようになりました。バックアップ構成全体がセカンダリシステムに転送されるため、スイッチオーバー後もクラウドへのバックアップが自動的に続行されます。
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#backup-limitations["詳細については、「バックアップの制限」を参照してください"]。
+
+
+
 == 2023年1月9日
 
 

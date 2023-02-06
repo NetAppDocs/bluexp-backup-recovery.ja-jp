@@ -45,7 +45,7 @@ summary: オンプレミスの ONTAP システムから NetApp StorageGRID シ�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムで Cloud Backup を有効にします
 [role="quick-margin-para"]
-作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
+ソースONTAP 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
@@ -62,10 +62,10 @@ image:screenshot_backup_provider_settings_storagegrid.png["ONTAP クラスタか
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
-クラスタがONTAP 9.12.1以降を使用しており、StorageGRID 11.3以降を使用している場合は、特定の日数が経過したあとに古いバックアップをAWS S3 GlacierまたはS3 Glacier Deep Archiveストレージに階層化してコストをさらに最適化することができます。
+クラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムがバージョン11.4以降を使用している場合は、特定の日数が経過した古いバックアップをパブリッククラウドのアーカイブ階層に階層化して、コストをさらに最適化することができます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。
 
 [role="quick-margin-para"]
-ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+クラスタがONTAP 9.11.1以降を使用している場合は、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_policy.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
@@ -75,7 +75,7 @@ image:screenshot_backup_onprem_policy.png["クラウドバックアップの設�
 Select Volumes （ボリュームの選択）ページで、デフォルトのバックアップポリシーを使用してバックアップするボリュームを特定します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、あとから追加のポリシーを作成してボリュームに適用できます。
 
 [role="quick-margin-para"]
-S3 バケットは、入力した S3 アクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。
+S3バケットは、入力したS3アクセスキーとシークレットキーで指定されたサービスアカウントのStorageGRID に自動的に作成され、バックアップファイルが格納されます。
 
 
 
@@ -209,14 +209,23 @@ NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれていま�
 
 古いバックアップファイルをアーカイブストレージに階層化すると、不要なバックアップに低コストのストレージクラスを使用することで、コストを削減できます。StorageGRID は、アーカイブストレージを提供しないオンプレミス（プライベートクラウド）の解決策 ですが、古いバックアップファイルをパブリッククラウドのアーカイブストレージに移動できます。この方法で使用した場合、クラウドストレージに階層化されたデータ、またはクラウドストレージから復元されたデータは、StorageGRID とクラウドストレージの間を移動します。BlueXPはこのデータ転送には関与しません。
 
-要件::
-+
---
+現在のサポートでは、AWS_S3 Glacier Deep Archive_or_Azure Archive_storageにバックアップをアーカイブできます。
+
+* ONTAP 要件*
+
 * クラスタでONTAP 9.12.1以降が使用されている必要があります
-* StorageGRID で11.3以降を使用している必要があります
-* StorageGRID はである必要があります https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]
-* アーカイブストレージは、現時点ではAWS S3ストレージクラスでのみサポートされています。AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。 link:reference-aws-backup-tiers.html["AWSアーカイブ階層の詳細は、こちらをご覧ください"^]。
-* バックアップを格納するストレージスペースには、Amazon S3アカウントを登録する必要があります。
+
+
+* StorageGRID 要件*
+
+* StorageGRID が11.4以降を使用している必要があります
+* StorageGRID はである必要があります https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]。
+
+
+* Amazon S3の要件*
+
+* アーカイブ済みバックアップを格納するストレージスペースには、Amazon S3アカウントを登録する必要があります。
+* AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。 link:reference-aws-backup-tiers.html["AWSアーカイブ階層の詳細は、こちらをご覧ください"^]。
 * StorageGRID には、バケットへのフルコントロールアクセスが必要です (`s3:*`）。ただし、これができない場合は、バケットポリシーで次のS3権限をStorageGRID に付与する必要があります。
 +
 ** `s3:AbortMultipartUpload`
@@ -231,12 +240,15 @@ NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれていま�
 
 
 
---
+* Azure Blob要件*
+
+* アーカイブ済みバックアップを格納するストレージスペースに対するAzureサブスクリプションに登録する必要があります。
+* アクティブ化ウィザードでは、既存のリソースグループを使用して、バックアップを保存するBLOBコンテナを管理するか、新しいリソースグループを作成することができます。
 
 
-クラスタのバックアップポリシーのアーカイブ設定を定義するときは、クラウドプロバイダのクレデンシャルを入力し、使用するストレージクラスを選択します。Cloud Backupは、クラスタのバックアップをアクティブ化するときにクラウドバケットを作成します。AWSアーカイブストレージに必要な情報を次に示します。
+クラスタのバックアップポリシーのアーカイブ設定を定義するときは、クラウドプロバイダのクレデンシャルを入力し、使用するストレージクラスを選択します。Cloud Backupは、クラスタのバックアップをアクティブ化するときにクラウドバケットを作成します。AWSおよびAzureアーカイブストレージに必要な情報を次に示します。
 
-image:screenshot_sg_archive_to_aws.png["バックアップファイルをStorageGRID からAWS S3にアーカイブするために必要な情報のスクリーンショット。"]
+image:screenshot_sg_archive_to_cloud.png["バックアップファイルをStorageGRID からAWS S3またはAzure Blobにアーカイブするために必要な情報のスクリーンショット。"]
 
 選択したアーカイブポリシーの設定では、StorageGRID で情報ライフサイクル管理（ILM）ポリシーが生成され、「ルール」として追加されます。既存のアクティブなILMポリシーがある場合は、新しいルールがILMポリシーに追加されてデータがアーカイブ階層に移動されます。「ドラフト」状態の既存のILMポリシーがある場合は、新しいILMポリシーを作成およびアクティブ化できません。 https://docs.netapp.com/us-en/storagegrid-116/ilm/index.html["StorageGRID のILMポリシーとルールに関する詳細情報"^]。
 
@@ -284,7 +296,7 @@ image:screenshot_backup_provider_settings_storagegrid.png["オンプレミスの
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
 .. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
 .. クラスタがONTAP 9.11.1以降を使用している場合は、_DataLockとランサムウェアによる攻撃からバックアップを保護するように設定できます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
-.. クラスタでONTAP 9.12.1以降を使用しており、StorageGRID 11.3以降を使用している場合は、特定の日数が経過した古いバックアップをAWS S3 GlacierまたはS3 Glacier Deep Archiveストレージに階層化してコストを最適化することができます。 <<古いバックアップファイルをパブリッククラウドストレージにアーカイブする準備をしています,この機能を使用するためのシステムの設定方法を参照してください>>。
+.. クラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムがバージョン11.4以降を使用している場合は、特定の日数が経過したあとに古いバックアップをパブリッククラウドのアーカイブ階層に階層化することを選択できます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <<古いバックアップファイルをパブリッククラウドストレージにアーカイブする準備をしています,この機能を使用するためのシステムの設定方法を参照してください>>。
 +
 image:screenshot_backup_onprem_policy.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
 
