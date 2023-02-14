@@ -38,6 +38,11 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 * このタスクについて *
 
 * 表示されるのはNFSデータストアのみです。
+
+
+
+NOTE: iSCSI / FC / NVMeおよびVVOLに基づくVMFSデータストアはサポートされません。
+
 * SnapCenter Plug-in for VMware vSphereで少なくとも1つの正常なバックアップが作成されているデータストアのみが表示されます。
 
 
