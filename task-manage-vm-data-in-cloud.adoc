@@ -35,17 +35,6 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 登録済みのSnapCenter Plug-in for VMware vSphereを使用して保護されているデータストアと仮想マシンが表示されます。
 
-* このタスクについて *
-
-* 表示されるのはNFSデータストアのみです。
-
-
-
-NOTE: iSCSI / FC / NVMeおよびVVOLに基づくVMFSデータストアはサポートされません。
-
-* SnapCenter Plug-in for VMware vSphereで少なくとも1つの正常なバックアップが作成されているデータストアのみが表示されます。
-
-
 .手順
 . BlueXP UIで、*Protection*>* Backup and recovery*>* Virtual Machines *>* Settings*>* SnapCenter Plug-in for VMware vSphere*の順にクリックします。
 . データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereをクリックします。

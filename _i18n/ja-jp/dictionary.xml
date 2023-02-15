@@ -2054,8 +2054,6 @@
   <block id="c592537d7c4342754740fa8b36640686" category="section-title">データストアと仮想マシンを表示します</block>
   <block id="3fad99d665e8244fc38412e798c501af" category="paragraph">登録済みのSnapCenter Plug-in for VMware vSphereを使用して保護されているデータストアと仮想マシンが表示されます。</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">* このタスクについて *</block>
-  <block id="6b0050118b87748ccc2e6422181d4463" category="list-text">表示されるのはNFSデータストアのみです。</block>
-  <block id="4a60f4a892ee2b36c77a92d2aa8f7a15" category="list-text">SnapCenter Plug-in for VMware vSphereで少なくとも1つの正常なバックアップが作成されているデータストアのみが表示されます。</block>
   <block id="9330e7377c5511f70bfc35493714892a" category="list-text">BlueXP UIで、*Protection*&gt;* Backup and recovery*&gt;* Virtual Machines *&gt;* Settings*&gt;* SnapCenter Plug-in for VMware vSphere*の順にクリックします。</block>
   <block id="21d67fc25940b8b3b749e37ad8e29e79" category="list-text">データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereをクリックします。</block>
   <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">SnapCenter Plug-in for VMware vSphereインスタンスを編集します</block>
@@ -3511,5 +3509,5 @@
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
-  <block id="3ff977a010b4bffe09adf01a3ba75903" category="admonition">iSCSI / FC / NVMeおよびVVOLに基づくVMFSデータストアはサポートされません。</block>
+  <block id="8453fab1acf37cb3dad50bd528b75148" category="list-text">サポートされるのはNFSデータストアのみです。iSCSI / FC / NVMeおよびVVOLに基づくVMFSデータストアはサポートされません。</block>
 </blocks>
