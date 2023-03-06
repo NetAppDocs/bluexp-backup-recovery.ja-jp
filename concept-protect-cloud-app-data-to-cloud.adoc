@@ -17,7 +17,7 @@ summary: BlueXPを使用すると、アプリケーションと整合性のあ�
 Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXP（旧Cloud Manager）で有効になっているCloud Backup for Applicationsは、アプリケーションと整合性のある効率的なポリシーベースの保護機能を提供します。
 
 * Amazon FSX for NetApp ONTAP およびCloud Volumes ONTAP 上に存在するOracleデータベース
-* Azure NetApp Files （ANF）上にあるSAP HANAシステム
+* Azure NetApp Files 上にあるSAP HANAシステム
 
 
 
@@ -144,7 +144,7 @@ IMPORTANT: Cloud Backup for Applications SaaSインフラは、リージョン�
 ** SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています
 
 
-* ストレージシステム：Azure NetApp Files （ANF）
+* ストレージシステム：Azure NetApp Files
 * ストレージレイアウト：データとログについては、AzureでNFSv4.1のみがサポートされます。
 * データベースレイアウト：
 +

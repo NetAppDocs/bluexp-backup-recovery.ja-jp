@@ -4,7 +4,7 @@ permalink: task-deploy-snapcenter-plugin-for-sap-hana.html
 keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, deploy 
 summary: 各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。 
 ---
-= SnapCenter Plug-in for SAP HANAを導入
+= SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,13 +17,26 @@ summary: 各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNA
 SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。
 
 
-NOTE: 各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。
+
+== 前提条件
+
+* 各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。
+* 作業環境を追加し、コネクタを作成しておく必要があります。
+* コネクタが作業環境に接続されていることを確認します
+* BlueXPユーザーに「アカウント管理者」の役割があることを確認します。
+* SnapCenter ユーザを作成し、SnapCenter ユーザにsudoを設定しておく必要があります。詳細については、を参照してください link:task-deploy-snapcenter-plugin-for-sap-hana.html#configure-sudo-for-snapcenter-user["SnapCenter ユーザにsudoを設定します。"]
+* データベースホストを追加する前に、SnapCenter Plug-in for SAP HANAを導入しておく必要があります。
+* SAP HANAデータベースホストを追加する場合は、HDBユーザストアキーを追加する必要があります。HDBセキュアユーザストアキーは、SAP HANAデータベースホストの接続情報をクライアントにセキュアに格納し、HDBSQLクライアントでセキュアなユーザストアキーを使用してSAP HANAデータベースホストに接続するために使用されます。
+* HANA System Replication（HSR；システムレプリケーション）の場合、HANAシステムを保護するには、プライマリとセカンダリの両方のHANAシステムを手動で登録する必要があります。
+* SSHベースの導入を使用する場合は、コネクタでSSHポートへの通信を有効にする必要があります（デフォルト：22）。
+* 操作を実行するには、コネクタでプラグインポート（デフォルト：8145）との通信が有効になっている必要があります。
 
 
 
-== root以外のユーザを設定します
 
-プラグインを導入するには、root以外のユーザを作成する必要があります。
+== SnapCenter ユーザにsudoを設定します
+
+プラグインを導入するには、SnapCenter ユーザを作成する必要があります。
 
 * 手順 *
 
@@ -35,10 +48,10 @@ NOTE: 各SAP HANAデータベースホストにJava 11（64ビット）Oracle Ja
 . から1～16の行をコピーします `oracle_checksum_scs.txt` ファイルの場所 `base_mount_path/version/sc-linux-host-plugin/`
 . SAP HANAデータベースホストにログインし、次の手順を実行します。
 +
-.. root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。
+.. SnapCenter ユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。
 .. 手順4でコピーした行をに貼り付けます `/etc/sudoers` visudo Linuxユーティリティを使用したファイル。
 +
-上の行で、<LINUXUSER> を作成したroot以外のユーザに置き換え、visoodユーティリティで保存します。
+上記の行で、<LINUXUSER> を作成してvisuodユーティリティで保存したSnapCenter ユーザーに置き換えます。
 
 
 
@@ -68,6 +81,8 @@ HANAホストでSSHキーベースの認証が有効になっている場合は�
 
 
 
+プラグインを導入したら、を追加する必要があります link:task-deploy-snapcenter-plugin-for-sap-hana.html#add-sap-hana-database-hosts["SAP HANAデータベースホスト："]
+
 
 
 == プラグインを手動で導入します
@@ -86,13 +101,106 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 . コピー `snapcenter_linux_host_plugin_scs.bin` scpまたはその他の代替方法を使用して、各SAP HANAデータベースホストに接続します。
 . SAP HANAデータベースホストで、次のコマンドを実行してバイナリの実行権限を有効にします。
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
-. sudoのroot以外のユーザとしてSAP HANAプラグインを導入します。
+. sudo SnapCenter ユーザとしてSAP HANAプラグインを導入します。
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
 . コピー `certificate.p12` 移動元 `<base_mount_path>/client/certificate/` Connector VMのへのパス `/var/opt/snapcenter/spl/etc/` プラグインホスト。
 +
 .. に移動します `/var/opt/snapcenter/spl/etc` keytoolコマンドを実行して証明書をインポートします。
 `keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
 .. SPLを再起動します。 `systemctl restart spl`
+
+
+. コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
++
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
+
+
+
+
+
+== SAP HANAデータベースホストを追加します
+
+ポリシーを割り当ててバックアップを作成するには、SAP HANAデータベースホストを手動で追加する必要があります。SAP HANAデータベースホストの自動検出はサポートされていません。
+
+* 手順 *
+
+. BlueXP* UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
+. [*アプリケーションの検出*]をクリックします。
+. Cloud Native *>* SAP HANA *を選択し、* Next *をクリックします。
+. [*アプリケーション*]ページで、[*システムの追加*]をクリックします。
+. [システムの詳細*]ページで、次の操作を実行します。
++
+.. システムタイプとしてMulti-tenantデータベースコンテナまたはSingle Containerを選択します。
+.. SAP HANAシステムの名前を入力します。
+.. SAP HANA システムの SID を指定します。
+.. （オプション）HDBSQL OSユーザを指定します。
+.. プラグインホストを選択します。（オプション）ホストが追加されていない場合、または複数のホストを追加する場合は、*プラグインホストの追加*をクリックします。
+.. HANAシステムがHANAシステムレプリケーションで構成されている場合は、* HANA System Replication（HSR）System *を有効にします。
+.. ユーザーストアキーの詳細を追加するには、[*HDB Secure User Store Keys*]テキストボックスをクリックします。
++
+キー名、システムの詳細、ユーザー名、パスワードを指定し、*キーの追加*をクリックします。
+
++
+ユーザストアキーは削除または変更できます。
+
+
+
+. 「 * 次へ * 」をクリックします。
+. [ストレージ容量*]ページで、[*ストレージの追加]をクリックして、次の操作を実行します。
++
+.. 作業環境を選択し、ネットアップアカウントを指定します。
++
+新しい作業環境を追加するには、[* Canvas *（キャンバス*）]ページに移動します
+
+.. 必要なボリュームを選択します。
+.. [ ストレージの追加 ] をクリックします。
+
+
+. すべての詳細を確認し、*システムの追加*をクリックします。
+
+
+
+NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます
+
+REST APIを使用してSAP HANAシステムを変更および削除できます。HANAシステムを削除する前に、関連付けられているバックアップをすべて削除し、保護を解除してください。
+
+
+
+=== 非データボリュームを追加します
+
+マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムの非データボリュームを追加できます。
+
+* 手順 *
+
+. BlueXP* UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
+. [*アプリケーションの検出*]をクリックします。
+. Cloud Native *>* SAP HANA *を選択し、* Next *をクリックします。
+. [*アプリケーション*]ページで、をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] 非データボリュームを追加するシステムに対応し、*システム管理*>*非データボリューム*を選択します。
+
+
+
+
+=== グローバルな非データボリュームを追加します
+
+マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバル非データボリュームを追加できます。
+
+* 手順 *
+
+. BlueXP* UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
+. [*アプリケーションの検出*]をクリックします。
+. Cloud Native *>* SAP HANA *を選択し、* Next *をクリックします。
+. [*アプリケーション*]ページで、[*システムの追加*]をクリックします。
+. [システムの詳細*]ページで、次の操作を実行します。
++
+.. System Type（システムタイプ）ドロップダウンから、* Global Non-Data Volume（グローバル非データボリューム）*を選択します。
+.. SAP HANAシステムの名前を入力します。
+.. SAP HANAシステムの関連付けられたSIDを指定します。
+.. プラグインホストを選択します
++
+（オプション）複数のホストを追加するには、*プラグインホストの追加*をクリックし、ホスト名とポートを指定して、*ホストの追加*をクリックします。
+
+.. 「 * 次へ * 」をクリックします。
+.. すべての詳細を確認し、*システムの追加*をクリックします。
 
 
 

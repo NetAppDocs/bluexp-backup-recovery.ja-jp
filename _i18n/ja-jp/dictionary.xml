@@ -1237,9 +1237,7 @@
   <block id="c6927bf583958e84094bc7e9d4328c6f" category="section-title">Azure NetApp Files 作業環境を作成します</block>
   <block id="8b53faee27870b72e0be69261d54a7ee" category="inline-link-macro">Azure NetApp Files の詳細をご覧ください</block>
   <block id="c5c12e22be965b4ae0e9fc5e1618bdbe" category="inline-link-macro">Azure NetApp Files 作業環境を作成します</block>
-  <block id="bf91af894eb3580afdb33ab6ce5ab06f" category="paragraph">データベースがホストされているAzure NetApp Files （ANF）作業環境を作成する必要があります。詳細については、を参照してください <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> および <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
   <block id="e7a9cd1dc4bf0c230d0684e18369d70d" category="section-title">コネクタを作成します</block>
-  <block id="7c258ce888390955a0508e6bf64eec18" category="paragraph">アカウント管理者は、ANFにConnectorを導入して、BlueXPがパブリッククラウド環境内でリソースとプロセスを管理できるようにする必要があります。</block>
   <block id="bca25b5056d8715db55e6e28a72ddea0" category="admonition">UIから新しいconnector_idを更新することはできません。</block>
   <block id="e12fb4f30abef516bf6f5e0e9a5b72b7" category="inline-link-macro">BlueXPからAzureにコネクタを作成します</block>
   <block id="3717a56f9d9c162dfd0127cd325c0a2f" category="paragraph">詳細については、を参照してください <block ref="88ddfb8e0cf0e729a2d90f978111b93e" category="inline-link-macro-rx"></block>。</block>
@@ -1317,61 +1315,38 @@
   <block id="4512b12288e7290cb279f814b15ba5dc" category="inline-link">フェデレーテッド認証を使用してユーザトークンを作成します</block>
   <block id="8753ca0304fc4dd31beb83f4a57f7b41" category="paragraph">REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください<block ref="0eb587a835d0db317e25e938408a4ed2" category="inline-link-rx"></block>。</block>
   <block id="33519237272d7d2506e4b23467569d7f" category="summary">各OracleデータベースホストにSnapCenter Plug-in for Oracleを導入します。</block>
-  <block id="5513c7a4fb1a461c9910fea9e8c7a3df" category="doc">ホストを追加し、Oracleデータベースを検出します</block>
-  <block id="0046bf9daf0e3a3d63572328eb09710c" category="paragraph">ポリシーを割り当ててバックアップを作成するには、ホストを追加し、ホスト上のデータベースを検出する必要があります。プラグインを導入済みのときにホストを手動で追加するか、SSHを使用してホストを追加することができます。</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">前提条件</block>
   <block id="031ed57adfb7acf180fc66b9bac25dcf" category="paragraph">ホストを追加する前に、前提条件を満たしていることを確認する必要があります。</block>
   <block id="00346be4bfc4c310cf2dbead933dff7c" category="list-text">作業環境とコネクタを作成しておきます。</block>
   <block id="150cd80aa8da7e8a0e1532db17acbab2" category="list-text">コネクタが作業環境とOracleデータベースホストに接続されていることを確認してください。</block>
   <block id="ca8f6fdf6612f39d01c4ba19ddfa9742" category="list-text">BlueXPユーザーに「アカウント管理者」の役割があることを確認します。</block>
   <block id="b3a8552d8ed438ec3ca2f066908ea2d4" category="list-text">Java 11（64ビット）のOracle JavaまたはOpenJDKが各Oracleデータベースホストにインストールされていて、JAVA_HOME変数が適切に設定されていることを確認します。</block>
-  <block id="5206371c2969f80deb7370081781fc8b" category="list-text">root以外のユーザを作成しておく必要があります。詳細については、を参照してください <block ref="218c9ff3f0827d13a63195c67e07e241" category="inline-xref-macro-rx"></block>。</block>
-  <block id="419e9f180bcb9992797f0d63e5108d02" category="inline-xref">手動で実行する</block>
-  <block id="6082f779360f7aa7eae37c198973c6a2" category="inline-xref">スクリプトを使用</block>
-  <block id="a0b4d571b248f50b94b7633e3babe462" category="list-text">ホストを手動で追加する場合は、最初にプラグインを導入してください。プラグインを導入できます <block ref="71f9c0626648fc2ad6935845122647e8" category="inline-xref-macro-rx"></block> または <block ref="d5731cdfa534d1a5d7ccf2070fa3f2fc" category="inline-xref-macro-rx"></block>。</block>
-  <block id="9528b4fc4cc8c4ea29cdf1b307031b98" category="paragraph">このプラグインは、各Oracleデータベースホストに導入する必要があります。</block>
-  <block id="16ca5309d737224096c304c6dff4de3a" category="section-title">root以外のユーザを設定します</block>
-  <block id="882fd9db70a37f6582163f4e6d1c4fde" category="paragraph">プラグインを導入するようにroot以外のユーザを設定する必要があります。</block>
   <block id="e67d4d64b1a45fd340729c74de84b847" category="list-text">Connector VMにログインします。</block>
   <block id="274f1ac526644b363a1660f91b59759a" category="list-text">SnapCenter Linuxホストプラグインバイナリをダウンロードします。<block ref="2109844ce6213da69b1227dc07554bb8" prefix=" " category="inline-code"></block></block>
   <block id="da60bfd3c8edf7a67f3978209e164121" category="list-text">ベースマウントパスを取得します。<block ref="22ab9e84fb8aba7e93d8b90366ddca59" prefix=" " category="inline-code"></block></block>
   <block id="c3af1031c174f35d8fbd1d63764549d3" category="list-text">1～16の行を、*_base_mount_path/_version_/sc-linux-host-plugin/*にある*ORACLE_checksum_scs.txt *ファイルからコピーします。</block>
   <block id="941c84084e1d6a473d4b06951513646e" category="list-text">Oracleデータベース・ホストにログインし、次の手順を実行します。</block>
   <block id="20ba94819b2688b9ce1be17cd8c67f00" category="inline-link">ユーザアカウントを作成します</block>
-  <block id="dc77642a9db95bfa3d7cfad2feac68d7" category="list-text">root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。詳細については、を参照してください<block ref="fda0d36f41d4c9e30e06c472b1bf9e0c" category="inline-link-rx"></block>。</block>
   <block id="e0a6bb364ca10aed658b56d5c7220ce6" category="list-text">手順4でコピーした行を、visudo Linuxユーティリティを使用して、/etc/sudoers_fileに貼り付けます。</block>
-  <block id="e0ec6c3418190a65b388f2ec3b545b73" category="paragraph">上記の行で、&lt;LINUXUSER&gt; を作成したroot以外のユーザーに置き換え、visudoユーティリティでファイルを保存します。</block>
-  <block id="d00dc5124d9367c0c08e4ba45796fdd4" category="section-title">スクリプトを使用してプラグインを導入します</block>
-  <block id="7f4f03eee9cd1fb77b091d1f31a63e75" category="paragraph">root以外のユーザに対してOracleホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。</block>
   <block id="5db771567067dd09af5564e02cf7ed87" category="list-text">コネクタに用意されているヘルパースクリプトを使用して、プラグインを導入します。<block ref="1d1dd7c5683a80bd4fd769dadbf81b09" prefix=" " category="inline-code"></block></block>
   <block id="d633b044fd8a9ca45f4d615327cbf109" category="list-text">host_nameはOracleホストの名前です。これは必須パラメータです。</block>
-  <block id="0fe1e69c4c87559df8ff5fba40419445" category="list-text">ssh_key_fileは、root以外のユーザのSSHキーであり、Oracleホストへの接続に使用します。これは必須パラメータです。</block>
-  <block id="d9997864ce67719ea93cc0b0cff9c006" category="list-text">user_name：OracleホストでSSH権限を持つroot以外のユーザ。これはオプションパラメータです。デフォルト値はec2-userです。</block>
   <block id="3dbc2a858555e80cf398377571556499" category="list-text">ssh_port：Oracleホスト上のSSHポート。これはオプションパラメータです。デフォルト値は22です</block>
   <block id="e5a8e97642efe29ef958c3cafde091c8" category="list-text">plugin_port：プラグインで使用するポート。これはオプションパラメータです。デフォルト値は8145です</block>
   <block id="5e0c9d9b775ad3565e6649bfa8ec9800" category="list-text">install_dir：プラグインが配置されるディレクトリ。これはオプションのパラメータです。デフォルト値は/optです。</block>
   <block id="6ae7d9f8527d1ed6cd28c1fe9cc17109" category="paragraph">例：<block ref="f2458f3042d087542cd1b232a3f7c978" prefix=" " category="inline-code"></block></block>
   <block id="6fb496880c72d81f141594926d685434" category="section-title">プラグインを手動で導入します</block>
-  <block id="1744dd19db9c80afac565572fb28289c" category="paragraph">OracleホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入する必要があります。</block>
   <block id="5f46deee08d4b3d1d62d6ffaf5f1db1c" category="list-text">ダウンロードしたプラグインのバイナリパスを取得します。<block ref="f051661bb5d887ff1ad2db41b197db9d" prefix=" " category="inline-code"></block></block>
   <block id="b63053825a0c4e3a09fd276fe30a743b" category="list-text">scpまたはその他の代替方法を使用して、Oracleデータベースホストのそれぞれにcopy_snapcenter linux_host_plugin_scs.bin _をコピーします。</block>
-  <block id="ad15ac1aed6665420aee6da3d2599843" category="paragraph">_snapcenter _ linux_host_plugin_scs.bin_は、root以外のユーザがアクセスできる場所にコピーする必要があります。</block>
-  <block id="1140247d0922f07c1db2936f25736b76" category="list-text">root以外のユーザアカウントを使用してOracleデータベースホストにログインし、次のコマンドを実行してバイナリの実行権限を有効にします。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
-  <block id="448fb639b2dbccf2171b5c8f9a70a09a" category="list-text">Oracleプラグインをsudoのroot以外のユーザとして導入します。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
   <block id="e83ebe810e7607148882f52b5e3b71fd" category="list-text">connector VMのcopy_certificate.p12_from_&lt;base_mount_path&gt;/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。</block>
   <block id="7550e76395e0f500b3d970b6fa0ec73f" category="list-text">_/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。<block ref="0d48a0d1a6daee261d59f76e1ce65f98" prefix=" " category="inline-code"></block></block>
-  <block id="af7f8976f175216d1e12ff5be8b68be4" category="section-title">ホストを追加します</block>
-  <block id="c45737224c5ab40ea9affadd8962c6e7" category="paragraph">ホストを追加し、Oracleデータベースを検出する必要があります。</block>
   <block id="e4bed981c8dc4fe15a706f0b93160836" category="list-text">BlueXP UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
   <block id="fe4137061bd2c33fe1c02ad6b9570b0e" category="list-text">アプリケーションの検出をクリックします。</block>
   <block id="d20aa4d7347d2818451332f0d49b2253" category="list-text">クラウドネイティブ*を選択し、*次へ*をクリックします。</block>
   <block id="63000a0fa2dbdc9bced04917b9fb5014" category="paragraph">SnapCenter system_roleを持つサービスアカウントが作成され、このアカウントのすべてのユーザに対してスケジュールされたデータ保護処理が実行されます。</block>
   <block id="2f1527fabf6b15b2c246b08aca9ef8a4" category="list-text">*Account*&gt;*Manage Account*&gt;*Members*をクリックして、サービスアカウントを表示します。</block>
   <block id="0e0ba396f0687ce7517d861db155fb10" category="admonition">スケジュールされたバックアップ処理を実行するには、サービスアカウント（_SnapCenter -account-&lt;accountId&gt;&gt;）を使用します。サービスアカウントは絶対に削除しないでください。</block>
-  <block id="254d235472af71154481e0a6f56b2535" category="list-text">[Add Host]ページで、次のいずれかを実行します。</block>
   <block id="61a6d655671eebbd633c1d84fae09e17" category="cell">状況</block>
   <block id="5e2ad6fd9deb412d871137094ee43ef0" category="cell">手順</block>
-  <block id="2958f19f58f0ca8d9d63b20360a0d39d" category="paragraph">どちらかのプラグインを導入しておきます <block ref="71f9c0626648fc2ad6935845122647e8" category="inline-xref-macro-rx"></block> または <block ref="d5731cdfa534d1a5d7ccf2070fa3f2fc" category="inline-xref-macro-rx"></block></block>
   <block id="f56876c150285cea7b724cbb95594046" category="list-text">[* Manual*]を選択します。</block>
   <block id="96d18284484330f0461bebeeedf28b93" category="list-text">プラグインを導入するホストのFQDNまたはIPアドレスを指定します。</block>
   <block id="4b9c5e10e240cdb44f786ad97e92d363" category="paragraph">FQDNまたはIPアドレスを使用して、コネクタがデータベースホストと通信できることを確認します。</block>
@@ -1380,11 +1355,8 @@
   <block id="91128bbc82eb724ccb4b4532f152c3da" category="list-text">コネクタを選択します。</block>
   <block id="74a99b6dc2ef8f1a612ef62e0fbae84d" category="list-text">チェックボックスを選択して、プラグインがホストにインストールされていることを確認します</block>
   <block id="bbff424da8a31c1b4e098004a31a8d16" category="list-text">[*アプリケーションの検出*]をクリックします。</block>
-  <block id="8443ac4c22417245b61f0c033b4ea3d2" category="paragraph">プラグインを自動的に導入する</block>
   <block id="044408c01f4556451a3907257fc21382" category="list-text">SSHを使用して*を選択します。</block>
   <block id="21c7549ba6f4014b1d2c113aff7f95aa" category="list-text">プラグインをインストールするホストのFQDNまたはIPアドレスを指定します。</block>
-  <block id="067a9635a80c1edff88c622203fa7ce1" category="inline-xref">root以外のユーザ</block>
-  <block id="0b2581c6c2b040b10360f2182f95a26e" category="list-text">ユーザ名を指定します（<block ref="b860729b45208ea0c8184e39fd0d4fa7" category="inline-xref-macro-rx"></block>）を使用して、プラグインパッケージをホストにコピーします。</block>
   <block id="791d63ac899b8ad7fc56dc931d1fd29a" category="list-text">SSHとプラグインポートを指定します。</block>
   <block id="505ce6fed4446b13324d0562a28bb6ba" category="paragraph">デフォルトのSSHポートは22で、プラグインポートは8145です。</block>
   <block id="11f3ace264fde67c71154e15a9b49b51" category="paragraph">プラグインをインストールしたら、アプリケーションホスト上のSSHポートを閉じることができます。SSHポートは、他のプラグイン処理には必要ありません。</block>
@@ -1891,9 +1863,7 @@
   <block id="e648f70e1fb5d17870bf65097e43c5a6" category="doc">クラウドネイティブのSAP HANAデータベースをリストア</block>
   <block id="26661dc24144ed594be15c07b300db39" category="paragraph">データ損失が発生した場合は、データファイルと非データファイルをリストアしてから、データベースをリカバリできます。</block>
   <block id="7322146fa0278b7076d42a67da3ca68f" category="section-title">プリスクリプトとポストスクリプト</block>
-  <block id="209bbbd2ef26cf13ac9d3e2ab4a48795" category="paragraph">ポリシーの作成時にプリスクリプト、ポストスクリプト、および終了スクリプトを指定できます。これらのスクリプトは、リストア処理の実行中にHANAホストで実行されます。</block>
   <block id="6185a8cfc72f93e3f8af600e5e7f9606" category="paragraph">サポートされているスクリプトの形式は、.sh、Pythonスクリプト、perlスクリプトなどです。</block>
-  <block id="8e193dde313806673c3561148f67d074" category="paragraph">プリスクリプトとポストスクリプトは、ホスト管理者がに登録する必要があります<block ref="3b233c9e75b7e3c86773366e24bbc002" prefix=" " category="inline-code"></block></block>
   <block id="3c91acc7806c6fcfd2da29720998df5d" category="paragraph"><block ref="8a0444f402186e75dfce312a113251e3" prefix="" category="inline-code"></block></block>
   <block id="50283e8d57278ed79d15d9dbb7c56561" category="section-title">環境変数</block>
   <block id="3e2882dbce286b81b8650600aa1d8086" category="paragraph">リストアワークフローでは、プリスクリプトとポストスクリプトの一部として次の環境変数を使用できます。</block>
@@ -1911,7 +1881,6 @@
   <block id="e7112ed1470e71e600498d1a4b34ac26" category="list-text">SAP HANAシステムを停止するプリスクリプトを用意できます。</block>
   <block id="878f99c91be407d0f28af03c6c58cc11" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアするデータベースに対応して、*詳細の表示*をクリックします。</block>
   <block id="0b666df245a6202aced91c7640467d2f" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアに使用するデータ・バックアップに対応して、*リストア*をクリックします。</block>
-  <block id="864ef826ca9afa5b1d7e1e3468c6f957" category="list-text">[* Restore System*（システムの復元）]ページで、スクリプトを入力します。</block>
   <block id="357a35aedd0c37deb3a881df778a9bb4" category="list-text">[* リストア ] をクリックします。</block>
   <block id="8f0f4ecd6bb49079fb488435d58bf611" category="list-text">リストアが完了したら、SAP HANAシステムを手動でリカバリするか、ポストスクリプトを指定してSAP HANAシステムのリカバリを実行します。</block>
   <block id="aafa017aee26c3860dee1aac06cc22e5" category="section-title">非データボリュームをリストアします</block>
@@ -2114,7 +2083,6 @@
   <block id="e29eef6ae64d545134f2b42984845a94" category="section-title">2022年12月19日</block>
   <block id="89d500a3ace67f6d47edb61231336589" category="section-title">Cloud Backup for Applicationsの機能強化</block>
   <block id="0a286ad90f3a25f45e443367036a8789" category="list-text">SAP HANAデータベース</block>
-  <block id="feb69ad1d8975111fe86bbc94b823a7f" category="list-text">Azure NetApp Files （ANF）上にあるSAP HANAデータベースのポリシーベースのバックアップとリストアをサポート</block>
   <block id="d5a365014bbbc5172b423043fb2a2501" category="list-text">カスタムポリシーをサポート</block>
   <block id="5ffbe0deb5b41148dc58e63a20df8411" category="list-text">Oracleデータベース</block>
   <block id="aa6dc7e308fa4a4875c447c8e7fa4a19" category="list-text">ホストを追加してプラグインを自動的に導入</block>
@@ -2294,16 +2262,12 @@
   <block id="7a99d9487fc9540fa7bee7c2eb717413" category="inline-link-macro">「ジョブモニタの使用方法」を参照してください</block>
   <block id="9d20a5735dc25af92271eea8fa797bf7" category="paragraph">ジョブモニタは、バックアップポリシーの変更やバックアップの削除など、複数のボリュームに対して処理を開始した場合に非常に役立ちます。そのため、すべてのボリュームで処理が完了したことを確認できます。 <block ref="41d368101275ff882313a6db3fc29812" category="inline-link-macro-rx"></block>。</block>
   <block id="367df4ef9103973813086656b7424c40" category="summary">各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。</block>
-  <block id="d5df46302dfdd7579521694fb4b06495" category="doc">SnapCenter Plug-in for SAP HANAを導入</block>
   <block id="0aa4c98c108fd4eb123ca5d3e22561e8" category="paragraph">SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。</block>
   <block id="dd115af180e43b9284746f0724f2e436" category="admonition">各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。</block>
-  <block id="fd80eea6ceaa6f2785bf097c10501f77" category="paragraph">プラグインを導入するには、root以外のユーザを作成する必要があります。</block>
   <block id="2023b702229269846bc6ab1d33834e02" category="list-text">Linuxホストのプラグインバイナリをダウンロードします。<block ref="2109844ce6213da69b1227dc07554bb8" prefix=" " category="inline-code"></block></block>
   <block id="fa4308d3f9fdcd01f05ba58ff69b9dd5" category="list-text">から1～16の行をコピーします<block ref="5fc8e5db28f79a3512344717eb75a2f3" prefix=" " category="inline-code"></block> ファイルの場所<block ref="dca5cd789ecd3e8ac3b24e72d56f2c0f" prefix=" " category="inline-code"></block></block>
   <block id="3ebdbfe737c7aead22c3f4a0051261a7" category="list-text">SAP HANAデータベースホストにログインし、次の手順を実行します。</block>
-  <block id="089e0745e03208bd82005bf60f52e3c2" category="list-text">root以外のユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。</block>
   <block id="bdacf8a8beaec8b190c600a860c2b532" category="list-text">手順4でコピーした行をに貼り付けます<block ref="6c109d6e94c97fb519007c1f06880582" prefix=" " category="inline-code"></block> visudo Linuxユーティリティを使用したファイル。</block>
-  <block id="e3092b913d71bf2b71c0b3838c675913" category="paragraph">上の行で、&lt;LINUXUSER&gt; を作成したroot以外のユーザに置き換え、visoodユーティリティで保存します。</block>
   <block id="4b2f93895b0dedb56a23d712ea814846" category="section-title">SSHキーベースの認証を使用してプラグインを導入します</block>
   <block id="7a62668b5fa6466acb8d9535915852a1" category="paragraph">HANAホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。</block>
   <block id="e0fee89e5366ab3052030779fe81997d" category="list-text">ベースマウントパスを取得します。<block ref="f3835e30f35d2401357edbf1ae1edad1" prefix=" " category="inline-code"></block></block>
@@ -2318,7 +2282,6 @@
   <block id="c8e4cea60639b8f6c2e1f74034e46e71" category="list-text">Linuxホストのプラグインバイナリをダウンロードします。<block ref="842b6533279ede354ede13a8696c77a7" prefix=" " category="inline-code"></block></block>
   <block id="1333b695230748772732811a4dce8133" category="list-text">コピー<block ref="4f97ae2a0dc11c8ac2f61e73bbd23cd8" prefix=" " category="inline-code"></block> scpまたはその他の代替方法を使用して、各SAP HANAデータベースホストに接続します。</block>
   <block id="ec3a94350310fa8818e0df3a82aa2b54" category="list-text">SAP HANAデータベースホストで、次のコマンドを実行してバイナリの実行権限を有効にします。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
-  <block id="f21f4c2a14663fba17fd663498932188" category="list-text">sudoのroot以外のユーザとしてSAP HANAプラグインを導入します。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
   <block id="8125c29989803ad0a7a3fcd80763904a" category="list-text">コピー<block ref="7730e5c2e030df9de4e60d7586534d1d" prefix=" " category="inline-code"></block> 移動元<block ref="6a722c9070d74bb0503ce0417b0cad70" prefix=" " category="inline-code"></block> Connector VMのへのパス<block ref="b99636c9e34de318e385a63d2cb037a1" prefix=" " category="inline-code"></block> プラグインホスト。</block>
   <block id="ef1e764c716d2aa5406d3d434b9c8614" category="list-text">に移動します<block ref="0dc0b955539cf9119a9695bb3312c8cb" prefix=" " category="inline-code"></block> keytoolコマンドを実行して証明書をインポートします。<block ref="0d48a0d1a6daee261d59f76e1ce65f98" prefix=" " category="inline-code"></block></block>
   <block id="2eeb194bf5c17f3408edda6fb4570318" category="summary">アプリケーションデータをONTAP からAzureにバックアップするには、いくつかの手順を実行します。</block>
@@ -2853,7 +2816,6 @@
   <block id="eb5668f5c3459c84cc715cf197e7c91a" category="doc">クラウドネイティブアプリケーションのデータを保護</block>
   <block id="7105ab20f187c4c6345342e06cd1748d" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXP（旧Cloud Manager）で有効になっているCloud Backup for Applicationsは、アプリケーションと整合性のある効率的なポリシーベースの保護機能を提供します。</block>
   <block id="9b029537d0b8df0bfe13af02e2f4b676" category="list-text">Amazon FSX for NetApp ONTAP およびCloud Volumes ONTAP 上に存在するOracleデータベース</block>
-  <block id="0fb238fbf40ffb66b4fc526838e26664" category="list-text">Azure NetApp Files （ANF）上にあるSAP HANAシステム</block>
   <block id="2d242bb36ec91b32005f9296ff03a912" category="section-title">アーキテクチャ</block>
   <block id="5e106a25aff8402c9cb720536f4f9763" category="paragraph">Cloud Backup for Applicationsアーキテクチャには、次のコンポーネントが含まれています。</block>
   <block id="c50c64e55455dd7f429be9192a7ad6a2" category="list-text">Cloud Backup for Applicationsは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームをベースにしています。</block>
@@ -2909,7 +2871,6 @@
   <block id="9317a56cfedd80231a539c42f44d9c8d" category="section-title">SAP HANAデータベースを保護</block>
   <block id="494c3084e3990387ac3b46cb5749bb65" category="list-text">SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム</block>
   <block id="504d22b0e020e0b365851eef08a1e4ca" category="list-text">SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています</block>
-  <block id="bf8209cf9b7524db25e82e107aec699b" category="list-text">ストレージシステム：Azure NetApp Files （ANF）</block>
   <block id="4181f6e16bb30e02b42299eaabaccd5e" category="list-text">ストレージレイアウト：データとログについては、AzureでNFSv4.1のみがサポートされます。</block>
   <block id="c7325743e6b1be5853672e4ed19d279b" category="list-text">データベースレイアウト：</block>
   <block id="4f3c431044df2a4101e620b1add959d6" category="list-text">シングルコンテナバージョン1.0SPS12</block>
@@ -2983,7 +2944,6 @@
   <block id="54f922a09b59b7f2fce83cc984324d03" category="paragraph">ポリシーを割り当ててバックアップを作成するには、SAP HANAデータベースホストを手動で追加する必要があります。SAP HANAデータベースホストの自動検出はサポートされていません。</block>
   <block id="2d401a77c81793a9ece97156d2f30373" category="list-text">作業環境を追加し、コネクタを作成しておく必要があります。</block>
   <block id="fdb89fa76e003bcdaa62dc781c75080d" category="list-text">コネクタが作業環境に接続されていることを確認します</block>
-  <block id="0c6caad59b974bed7b5a027d2727752f" category="list-text">SnapCenter Plug-in for SAP HANAを導入しておく必要があります。 <block ref="4495130e78dd5770e2665c50d9b867ed" category="inline-link-macro-rx"></block></block>
   <block id="19ba3d8b0889a939f5ec8733d64f1d60" category="list-text">SAP HANAデータベースホストを追加する場合は、HDBユーザストアキーを追加する必要があります。HDBセキュアユーザストアキーは、SAP HANAデータベースホストの接続情報をクライアントにセキュアに格納し、HDBSQLクライアントでセキュアなユーザストアキーを使用してSAP HANAデータベースホストに接続するために使用されます。</block>
   <block id="eb8c7136dc3f88489deecb383a3e2159" category="list-text">HANA System Replication（HSR；システムレプリケーション）の場合、HANAシステムを保護するには、プライマリとセカンダリの両方のHANAシステムを手動で登録する必要があります。</block>
   <block id="8b0c466fdb979630c3d45c5c1cdb2441" category="list-text">BlueXP* UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
@@ -3010,14 +2970,11 @@
   <block id="718c7b6c3378e6331dfacc19082eceda" category="section-title">非データボリュームを追加します</block>
   <block id="c1d37ffb98838b18cccda19785198d15" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムの非データボリュームを追加できます。</block>
   <block id="70ece8b209ed1c9476f13c0fa00e2a77" category="list-text">[*アプリケーション*]ページで、をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 非データボリュームを追加するシステムに対応し、*システム管理*&gt;*非データボリューム*を選択します。</block>
-  <block id="1c5bc62ec06d77a94bd950001c20bf5c" category="section-title">グローバルな非データボリュームを追加します</block>
   <block id="e84d0cbc8756fa7ba2af158f670486a8" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバル非データボリュームを追加できます。</block>
   <block id="01f13da2dfcf737f54346ebf7f44db6f" category="list-text">System Type（システムタイプ）ドロップダウンから、* Global Non-Data Volume（グローバル非データボリューム）*を選択します。</block>
   <block id="5d9b8dbd580deb48e76c53d62ab7c6f3" category="list-text">SAP HANAシステムの関連付けられたSIDを指定します。</block>
   <block id="9c40bb6f28c1548e2bec94c55bf9bf96" category="list-text">プラグインホストを選択します</block>
   <block id="b5e87b76d37fdb904487f6bc0c10bef7" category="paragraph">（オプション）複数のホストを追加するには、*プラグインホストの追加*をクリックし、ホスト名とポートを指定して、*ホストの追加*をクリックします。</block>
-  <block id="b3716aa17e229f5a48546a80e870a997" category="paragraph">ポリシーの作成時にプリスクリプト、ポストスクリプト、および終了スクリプトを指定できます。これらのスクリプトは、バックアップの作成時にHANAホストで実行されます。</block>
-  <block id="d36dcc27103f15cf7156e649498bba14" category="paragraph">プリスクリプトとポストスクリプトは、ホスト管理者がに登録する必要があります<block ref="198c786822c306ff1d8e3ae0098bbf6c" prefix=" " category="inline-code"></block></block>
   <block id="3ce248d24933b7902d76adc1396159db" category="paragraph">実行します</block>
   <block id="9efcb68627558971adca6566b3dab494" category="paragraph">スケジュールされたバックアップの場合のみ</block>
   <block id="183ea2e1e5cda6eb1abec65a89a6959c" category="paragraph">schedule_type</block>
@@ -3026,7 +2983,6 @@
   <block id="30ca1c0b30eeb1e981b018064c3097f6" category="list-text">[*アプリケーション*]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
   <block id="78ba2f5b165a9466c243c7ee05da78ac" category="list-text">（オプション）Snapshotコピー名の形式を編集します。</block>
   <block id="808bacecc5ae86450915402dea0afd9a" category="list-text">ポリシータイプを選択します。</block>
-  <block id="d47a69e45ac10064eed780e92117e540" category="list-text">（任意）スクリプトを指定します。</block>
   <block id="01ca810bd15c48e8c9ab7589db8498ca" category="section-title">SAP HANAデータベースのバックアップを作成します</block>
   <block id="9fbab2932a5b265f7d6778bc72aaa745" category="paragraph">HANA System Replication（HSR；システムレプリケーション）の場合、スケジュールされたバックアップジョブはプライマリHANAシステムに対してのみトリガーされ、システムがセカンダリHANAシステムにフェイルオーバーすると、既存のスケジュールが現在のプライマリHANAシステムでバックアップをトリガーします。両方のHANAシステムにポリシーが割り当てられていない場合、フェイルオーバー後にスケジュールは失敗します。</block>
   <block id="e0a1b2dffc713527405b0a710a4c3c77" category="paragraph">HSRシステムに異なるポリシーが割り当てられている場合、システムとセカンダリHANAシステムのバックアップの両方に対してスケジュールされたバックアップがトリガーされます。</block>
@@ -3208,7 +3164,6 @@
   <block id="c9df4195a305212ffd7b56d24f67129d" category="summary">ネットアップでは、さまざまな方法でBlueXPをサポートしています。ナレッジベース（ KB ）記事やコミュニティフォーラムなど、 24 時間 365 日利用可能な幅広いセルフサポートオプションをご用意しています。サポート登録には、 Web チケット処理によるリモートテクニカルサポートが含まれます。</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">ヘルプを表示します</block>
   <block id="7c5661ab6b39ee901cea00a6e7020a49" category="paragraph">ネットアップでは、BlueXPとその クラウド サービス をさまざまな方法でサポートしています。ナレッジベース（ KB ）記事やコミュニティフォーラムなど、 24 時間 365 日利用可能な幅広いセルフサポートオプションをご用意しています。サポート登録には、 Web チケット処理によるリモートテクニカルサポートが含まれます。</block>
-  <block id="07d41912a6ab6b97216f8cf89e93205c" category="section-title">セルフサポート</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">次のオプションは、 1 日 24 時間、週 7 日間無料でご利用いただけます。</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">ナレッジベース</block>
   <block id="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="list-text"><block ref="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="inline-link-rx"></block></block>
@@ -3220,15 +3175,12 @@
   <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">現在表示しているBlueXPのマニュアル。</block>
   <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">mailto ： ng-cloudmanager-feedback@netapp.com [ フィードバックメール ]</block>
   <block id="6702efec14563f45f1ee2f8c613b8ad8" category="paragraph">お客様のご意見をお考えください。フィードバックを送信して、BlueXPの改善に役立ててください。</block>
-  <block id="0659d428df833a806e29e65e632d380a" category="section-title">ネットアップサポート</block>
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">上記のセルフサポートオプションに加え、サポートを有効にしたあとで問題が発生した場合は、ネットアップサポートの担当者と相談して解決できます。</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="paragraph-title">始める前に</block>
   <block id="e2a733504c4088b809813bbb35a3ddfd" category="inline-link-macro">サポートに登録する方法について説明します</block>
   <block id="1012a287397c66025d7748edf06a36e2" category="paragraph">[ケースの作成]機能を使用するには、まず、BlueXPアカウントIDのシリアル番号(例960xxxx）にネットアップが付属 <block ref="3349e4b3d05f646f2f1421bee7c2ad26" category="inline-link-macro-rx"></block>。</block>
   <block id="6254a4afeeb76765a127fe74d31c1b3d" category="list-text">BlueXPで、[ヘルプ]、[サポート]の順にクリックします。</block>
-  <block id="f5052c65917d7341726235d4d4941461" category="list-text">テクニカルサポートで利用可能なオプションのいずれかを選択します。</block>
   <block id="383133cb6f7207b1c65c3ace94aa5e95" category="list-text">電話の相手と話したい場合は、「*お電話」をクリックしてください。netapp.comのページに移動し、電話番号が表示されます。</block>
-  <block id="bf5bc6ab0f95f17f4e98c9d766b8c11d" category="list-text">[*ケースの作成*]をクリックして、ネットアップサポートスペシャリストのチケットを開きます。</block>
   <block id="b53e0a259f4a0c8e7da80d6c94e26c84" category="list-text">* NetApp Support Site アカウント*：サポートケースをオープンしたユーザーに関連付けられている該当のNSSアカウントを選択します。この担当者は、以下に記載する追加のEメールに加えて、ネットアップから連絡を受け取る主要担当者となります。</block>
   <block id="d950fb930d7f7e6bfdda1b91b4639a02" category="paragraph">NSSアカウントが表示されない場合は、BlueXPのサポートセクションにある*NSS Management*タブに移動して追加できます。</block>
   <block id="d63bf50426f4c712554faec55b30c548" category="list-text">*Service*:問題 が関連付けられているサービスを選択します。たとえば、サービス内のワークフローまたは機能を備えたテクニカルサポート問題 に固有のBlueXPなどです。</block>
@@ -3510,4 +3462,63 @@
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
   <block id="8453fab1acf37cb3dad50bd528b75148" category="list-text">サポートされるのはNFSデータストアのみです。iSCSI / FC / NVMeおよびVVOLに基づくVMFSデータストアはサポートされません。</block>
+  <block id="f990e553cdc4c29c2efffba33e08a8c7" category="inline-link-macro">詳細はこちら。</block>
+  <block id="c0efb50e50bd832fe33303fe8a025710" category="list-text">（任意）スクリプトを指定します。 <block ref="64f80f18cd8436040cdc180731adb1df" category="inline-link-macro-rx"></block></block>
+  <block id="898f472703342efc6d5adc298a7628c8" category="paragraph">ポリシーの作成時にプリスクリプト、ポストスクリプト、および終了スクリプトを指定できます。これらのスクリプトは、データ保護処理中にHANAホストで実行されます。</block>
+  <block id="c5b751b6877453fd04eb6340347e4511" category="paragraph">プリスクリプトとポストスクリプトは、ホスト管理者がに登録する必要があります<block ref="91d372f85b001dba79ebc4129e5acd32" prefix=" " category="inline-code"></block> ファイル。</block>
+  <block id="0baab2619f15ec742e2bf8b60e516b39" category="paragraph">バックアップワークフローでは、プリスクリプトとポストスクリプトで次の環境変数を使用できます。</block>
+  <block id="37b91819addbb5b3ca6a2d78cfe91ff2" category="inline-link-macro">プリスクリプトとポストスクリプト</block>
+  <block id="c7436ac5bc62035107d7dd8330e0ce9c" category="paragraph">詳細については、を参照してください <block ref="e21df236c176ec826d056db82d193773" category="inline-link-macro-rx"></block></block>
+  <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">セルフサポートオプションを使用します</block>
+  <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">ネットアップサポートと一緒にケースを作成します</block>
+  <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">[*Resources*]ページで、[Technical Support]で次のいずれかのオプションを選択します。</block>
+  <block id="5be2e1dfe4bf215289731df45ec8157b" category="list-text">[ケースの作成]*をクリックして、ネットアップサポートスペシャリストとのチケットをオープンします。</block>
+  <block id="32ecc38b872b5f889b952ca26b4c9e01" category="list-text">Azure NetApp Files 上にあるSAP HANAシステム</block>
+  <block id="25b10c02d41eec413a14409c4612d5d3" category="list-text">ストレージシステム：Azure NetApp Files</block>
+  <block id="2aebd4a586327a155f5ad3b448f755af" category="doc">SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します</block>
+  <block id="269c48e37c80fdf85eed155628bc58de" category="inline-link-macro">SnapCenter ユーザにsudoを設定します。</block>
+  <block id="ddaa83445dd7a230c2c58c8306085a19" category="list-text">SnapCenter ユーザを作成し、SnapCenter ユーザにsudoを設定しておく必要があります。詳細については、を参照してください <block ref="6178ed5e7702fbe22f507b323e07e08d" category="inline-link-macro-rx"></block></block>
+  <block id="d2112f16a8059fc09554b14c09d4fcfc" category="list-text">データベースホストを追加する前に、SnapCenter Plug-in for SAP HANAを導入しておく必要があります。</block>
+  <block id="257b77ad500d8d34d40999c829e11687" category="list-text">SSHベースの導入を使用する場合は、コネクタでSSHポートへの通信を有効にする必要があります（デフォルト：22）。</block>
+  <block id="5725f533e015d3bd4b9e8c38eca0144b" category="list-text">操作を実行するには、コネクタでプラグインポート（デフォルト：8145）との通信が有効になっている必要があります。</block>
+  <block id="b010a3fdc0e4a30de49959a04a4e75e0" category="section-title">SnapCenter ユーザにsudoを設定します</block>
+  <block id="a07faa3e8d1ee5e05e2477cb22d4aada" category="paragraph">プラグインを導入するには、SnapCenter ユーザを作成する必要があります。</block>
+  <block id="d92750f46e700776d748ee9b15b423cc" category="list-text">SnapCenter ユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。</block>
+  <block id="1aadfd10fc57b635454a6d55fa8fc260" category="paragraph">上記の行で、&lt;LINUXUSER&gt; を作成してvisuodユーティリティで保存したSnapCenter ユーザーに置き換えます。</block>
+  <block id="1fd90cd4e86ccb2a0caebc53978ce238" category="inline-link-macro">SAP HANAデータベースホスト：</block>
+  <block id="d608b8b79f8e38b5355b2621076c03a7" category="paragraph">プラグインを導入したら、を追加する必要があります <block ref="92ad6bba296fdb7b03893ff2938b8375" category="inline-link-macro-rx"></block></block>
+  <block id="bd66e9124149884520020da3bbb7fb42" category="list-text">sudo SnapCenter ユーザとしてSAP HANAプラグインを導入します。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
+  <block id="c827c4145f570b61f9ba6a78e5ffdca3" category="list-text">コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。</block>
+  <block id="196620afd1e2e98d838480028131dc6b" category="paragraph"><block ref="7bab21217ba7da8fb8f176538fe93b9b" prefix="" category="inline-code"></block></block>
+  <block id="ed4c596de80903a7b24e5ada4ad1cb18" category="section-title">グローバルな非データボリュームを追加します</block>
+  <block id="c85382f11c645139d96d5e2eacdd8985" category="list-text">[* Restore System*（システムの復元）]ページで、スクリプトを入力します。 <block ref="64f80f18cd8436040cdc180731adb1df" category="inline-link-macro-rx"></block></block>
+  <block id="c2d07a443e1ff7ca3b9a176f2e281fa7" category="paragraph">データベースがホストされているAzure NetApp Files 作業環境を作成する必要があります。詳細については、を参照してください <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> および <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
+  <block id="86e567c58e1677d6f28f5faf45337dd6" category="paragraph">アカウント管理者は、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるコネクタをAzure NetApp Files に導入する必要があります。</block>
+  <block id="fcdf1a1b46f3b7e8ad6ff82010438a90" category="list-text">Azure NetApp Files 上にあるSAP HANAデータベースのポリシーベースのバックアップとリストアをサポートします</block>
+  <block id="626a739569b9dd0c59a5743d227d6123" category="doc">SnapCenter Plug-in for Oracleを導入し、データベースホストを追加します</block>
+  <block id="67d8739c95209190622df34ef33e74cb" category="paragraph">SnapCenter Plug-in for Oracleを各Oracleデータベースホストに導入し、データベースホストを追加し、ホスト上のデータベースを検出して、ポリシーを割り当ててバックアップを作成する必要があります。</block>
+  <block id="90830749b6cbde0f0a187f49bb486594" category="list-text">データベースホストでSSHが有効になっている場合は、次のいずれかの方法でプラグインを導入できます。</block>
+  <block id="8b6b64c474edd30f1a9272ee24a2232f" category="list-text">プラグインを導入し、SSHオプションを使用してホストUIを追加します。 <block ref="96cf78a1eacf9d4e1d33800a6dba4d36" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3262da317dca873a6393aacedc92711b" category="list-text">スクリプトを使用してプラグインを導入し、手動オプションを使用してUIからホストを追加します。 <block ref="7e15d0c8c67b3cf8713be59b7b4c1b25" category="inline-xref-macro-rx"></block>。</block>
+  <block id="08504e173a088669654aaeccaa2b3a23" category="list-text">SSHが無効な場合は、プラグインを手動で導入し、手動オプションを使用してUIからホストを追加します。 <block ref="5f00e4f7335cd99930cda849266e93c9" category="inline-xref-macro-rx"></block>。</block>
+  <block id="39897a09935775120f58a38650026ddb" category="list-text">SnapCenter ユーザを作成し、SnapCenter ユーザにsudoを設定しておく必要があります。詳細については、を参照してください <block ref="5e3b9649d708169ed88a9a242f31b61c" category="inline-xref-macro-rx"></block>。</block>
+  <block id="552cb41f77557f24afc949caef89280f" category="list-text">SSHベースの導入を使用する場合は、コネクタでSSHポートへの通信が有効になっていることを確認します（デフォルト：22）。</block>
+  <block id="39f31ccaa29cc339e3980e0da960d750" category="list-text">操作が機能するように、コネクタがプラグインポート（デフォルト：8145）との通信が有効になっていることを確認します。</block>
+  <block id="739fcf2b514d944f705042f1e0e00257" category="paragraph">SnapCenter ユーザを作成し、そのユーザにsudoを設定する必要があります。</block>
+  <block id="fe689694da98d31a8ecb33f9937bcf2b" category="list-text">SnapCenter ユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。詳細については、を参照してください<block ref="fda0d36f41d4c9e30e06c472b1bf9e0c" category="inline-link-rx"></block>。</block>
+  <block id="08a9756f760e15ecb833f8a03e820f5c" category="paragraph">上記の行で、&lt;LINUXUSER&gt; を作成したSnapCenter ユーザーに置き換え、visudoユーティリティでファイルを保存します。</block>
+  <block id="cf4cb057a8a94a7af35c1f206a490fc7" category="section-title">SSHオプションを使用してプラグインを導入し、UIからホストを追加します</block>
+  <block id="c19f3000ecedd6e739c73e513c597e19" category="list-text">[Add Host]ページで、次の手順を実行します。</block>
+  <block id="ac942bfda2b49411af92bb83a04093ea" category="inline-xref">sudo SnapCenter ユーザ</block>
+  <block id="3873a19d99c54075bd878c4755a660d7" category="list-text">ユーザ名を指定します（<block ref="0ddbb3d2c437bced333ce4f5ef476df6" category="inline-xref-macro-rx"></block>）を使用して、プラグインパッケージをホストにコピーします。</block>
+  <block id="96e8e4df8b3ca0b4eec3a79081f69a5f" category="section-title">スクリプトを使用してプラグインを導入し、手動オプションを使用してUIからホストを追加します</block>
+  <block id="91eb61d109e3007a8e969ba3cba1c154" category="paragraph">OracleホストでSnapCenter ユーザに対してSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。</block>
+  <block id="10e01a340c84380e027a73fec4302231" category="list-text">ssh_key_fileはSnapCenter ユーザのSSHキーで、Oracleホストへの接続に使用します。これは必須パラメータです。</block>
+  <block id="2a8cccba41dd7585d3e688efa551f3ca" category="list-text">user_name：Oracleホストに対するSSH権限を持つSnapCenter ユーザ。これはオプションパラメータです。デフォルト値はec2-userです。</block>
+  <block id="dc9d1d5a9daee6a922e8ca3b643f951f" category="section-title">プラグインを手動で導入し、手動オプションを使用してUIからホストを追加します</block>
+  <block id="6536d8bd829629536e41a1e31830f5df" category="paragraph">OracleデータベースホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入し、manualオプションを使用してUIからホストを追加する必要があります。</block>
+  <block id="59498123f173f525c8ccd6041aad0090" category="paragraph">_snapcenter_linux_host_plugin_scs.bin_は、SnapCenter ユーザがアクセスできる場所にコピーする必要があります。</block>
+  <block id="9fccb7bf2ea38fc2199a167bbe2d87fd" category="list-text">SnapCenter ユーザアカウントを使用してOracleデータベースホストにログインし、次のコマンドを実行してバイナリの実行権限を有効にします。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
+  <block id="2fe3c4ca1597e6bdf865a7367c7a7a08" category="list-text">Oracleプラグインをsudo SnapCenter ユーザとして導入します。<block ref="d0ac17823bdcaade630c1553c4540054" prefix=" " category="inline-code"></block></block>
+  <block id="f55cf31361d600683e03e25c6f1109e3" category="list-text">コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。<block ref="7bab21217ba7da8fb8f176538fe93b9b" prefix=" " category="inline-code"></block></block>
 </blocks>

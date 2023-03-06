@@ -128,7 +128,7 @@ sidebar:
             url: "/reference-configure-fsx-for-ontap.html"
           - title: Cloud Volumes ONTAP を設定します
             url: "/reference-configure-cloud-volumes-ontap.html"
-          - title: ホストを追加し、Oracleデータベースを検出します
+          - title: SnapCenter Plug-in for Oracleを導入し、データベースホストを追加します
             url: "/task-add-host-discover-oracle-databases.html"
           - title: Oracleデータベースをバックアップする
             url: "/task-backup-cloud-native-oracle-data.html"
@@ -140,7 +140,7 @@ sidebar:
           - title: Azure NetApp Files を設定します
             flavor: azure
             url: "/reference-configure-azure-netapp-files.html"
-          - title: SnapCenter Plug-in for SAP HANAを導入
+          - title: SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します
             flavor: azure
             url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
           - title: SAP HANAデータベースをバックアップする
