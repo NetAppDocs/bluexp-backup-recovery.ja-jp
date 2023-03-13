@@ -325,7 +325,6 @@
   <block id="2cb92dc9664b8bd89b66c1b586d1b5d2" category="list-text">バックアップ-クラウドリソースとオンプレミスリソースのバックアップ処理を管理し、バックアップデータの詳細を取得します</block>
   <block id="0a924c1567df8b244e9ce16ecf18158d" category="list-text">カタログ-クエリに基づいて、インデックス付きカタログ検索を管理します（検索とリストア）。</block>
   <block id="06edcf8e7a33c320645fd0ea9368455d" category="list-text">クラウド-さまざまなクラウドプロバイダリソースに関する情報をBlueXPから取得します</block>
-  <block id="bbc08f31565cf18b34651c7d285d9911" category="list-text">ジョブ- BlueXPデータベースのジョブ詳細エントリを管理します</block>
   <block id="24a0195c713a5929a91f430eefb31465" category="list-text">ライセンス-作業環境のライセンスの有効性をBlueXPから取得します</block>
   <block id="f3e008a63710b1317b4340caf4a574bd" category="list-text">Ransomware scan -ランサムウェアスキャンを特定のバックアップファイルで開始します</block>
   <block id="0c1029565d47087d49e25dbc4e2a20e9" category="list-text">Restore -ボリューム、ファイル、およびフォルダレベルのリストア処理を実行できます</block>
@@ -756,10 +755,7 @@
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">ログインページで、NetApp Support Siteの登録 E メールアドレスとパスワードを入力して認証プロセスを実行します。</block>
   <block id="cbc6cc3bb022583403171b447b2a962c" category="paragraph">これらのアクションにより、BlueXPはライセンスのダウンロード、ソフトウェアのアップグレード検証、および将来のサポート登録などの目的でNSSアカウントを使用できます。</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">次の点に注意してください。</block>
-  <block id="0f0a0d646a020cf3a65ce82ada4cfb01" category="list-text">お客様レベルのアカウントである必要があります（ゲストや一時アカウントは使用できません）。</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">3つの水平ドットのアイコン</block>
-  <block id="ff67299785d475e87002751aa6ab5eb8" category="list-text">ログインに成功すると、ネットアップはNSSのユーザ名を保存します。これはシステムで生成されたIDで、Eメールにマッピングされます。[*NSS Management*]ページで、から電子メールを表示できます <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
-  <block id="505da61efe6bebebbaf092da18f64613" category="list-text">ログイン認証情報トークンを更新する必要がある場合は、の[認証情報の更新*]オプションも使用できます <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> メニュー。このオプションを使用すると、再度ログインするように求められます。</block>
   <block id="ad56c7289bc13dcf4f78c285f7f03878" category="section-title">ネットアップに登録してください</block>
   <block id="f1bac79c2c71fbd93863b9fbd718094c" category="paragraph">ネットアップサポートへの登録方法は、NetApp Support Site （NSS）アカウントがあるかどうかによって異なります。</block>
   <block id="bf4c731c0ee7f60c8018ad8f96828dda" category="section-title">NSSアカウントをお持ちの既存のお客様</block>
@@ -1469,13 +1465,9 @@
   <block id="fe3f1bd257c4451d8f8bcbf9a1a58d34" category="paragraph"><block ref="1247b899b5e6800d8fd9e850903ad55a" category="inline-link-rx"></block>。</block>
   <block id="44eb910aad595ba9500cebcb52445bcf" category="paragraph">バックアップとリストアは、次の目的で使用できます。</block>
   <block id="02fe91ecafd3cfc37675f0776294605f" category="inline-link-macro">詳細な機能については、こちらをご覧ください</block>
-  <block id="ef288ee793660dc823a897c059e4319e" category="list-text">Cloud Volumes ONTAP システムとオンプレミスの ONTAP システムから ONTAP ボリュームをバックアップおよびリストア <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
-  <block id="ea002f9386d9cd059f69c6d59dbea06c" category="list-text">Kubernetes の永続ボリュームのバックアップとリストア <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
-  <block id="7a6c8511ba9b6f1392c7f34fbd81508d" category="list-text">クラウドバックアップアプリケーションを使用して、アプリケーションと整合性のある Snapshot をオンプレミスの ONTAP からクラウドにバックアップできます。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
   <block id="f23af0fb3293030465a68a6d46401ecc" category="list-text">Cloud Backup for VMwareを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 <block ref="7d3aa28b08d11afec4b666dd6503d425" category="inline-link-macro-rx"></block>。</block>
   <block id="6176afad6a7761beffa9af008f2ae633" category="inline-link">簡単なデモをご覧ください</block>
   <block id="a9840ddd0211114f18d80718c08ddb05" category="paragraph"><block ref="a9840ddd0211114f18d80718c08ddb05" category="inline-link-rx"></block></block>
-  <block id="2ddfbc4337478fa7bf2a7b36bae29f25" category="admonition">BlueXP Connectorがクラウドの政府機関、またはインターネットにアクセスできないサイト（ダークサイト）に導入されている場合、Cloud BackupはONTAP システムからのバックアップおよびリストア操作のみをサポートします。これらの代替導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。</block>
   <block id="50b80798372065ac20ad628faaa584d9" category="section-title">Cloud Backup の仕組み</block>
   <block id="aaf08f028a79c27dca25c9e5f3b23cb9" category="paragraph">Cloud Volumes ONTAP またはオンプレミスの ONTAP システムでクラウドバックアップを有効にすると、サービスはデータのフルバックアップを実行します。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。</block>
   <block id="fee59c74a156abe8a410a85ba51f5956" category="inline-link">Cloud Backup を使用してボリュームをクラウドにバックアップする方法については、 System Manager の説明を参照してください。</block>
@@ -1651,25 +1643,17 @@
   <block id="10ad842a6a3246a44700dd2f0005c89c" category="section-title">ジョブモニタを使用して、バックアップおよびリストアジョブのステータスを表示します</block>
   <block id="8fa9fc7dcc8c23904d4a616698a7a223" category="paragraph">すべてのバックアップおよびリストア処理とそれらの現在のステータスのリストは、*ジョブ監視*タブで確認できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。ステータスは次のいずれかになります。</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
-  <block id="a71885ef6a4b7b03d125d62703fd8263" category="admonition">実行中のバックアップ操作などのシステムで開始されたジョブは、*ジョブ監視*タブには反映されません。ユーザーが開始したジョブのみが表示されます。</block>
   <block id="49e34b28c9e9b61ed97b385f257f46fe" category="list-text">［ * ジョブ監視 * ］ タブをクリックします。</block>
   <block id="fdb4a732f867f813a90fc7fb3a9bd9ea" category="inline-image-macro">ジョブ監視ダッシュボードのバックアップジョブとリストアジョブを示すスクリーンショット。</block>
   <block id="6a0946e9e6df1feca77ae10577f6057c" category="paragraph"><block ref="6a0946e9e6df1feca77ae10577f6057c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e3b4f8fa8b10978799c7afb6af895d2a" category="inline-image-macro">プラス記号ボタン</block>
-  <block id="9242e15fce714d8c7c3b06793453802d" category="paragraph">このスクリーンショットは、デフォルトの列とフィールドの見出しを示しています。をクリックできます <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block> 列見出しの表示と非表示を切り替えたり、「ユーザー名」と「タイプ」に2つの見出しを追加したりすることができます。</block>
-  <block id="e26263e363fecef775843a8d72ae75f8" category="paragraph">特定のジョブを検索する場合は、次の操作を実行できます。</block>
-  <block id="9596c723878bfc4072c4881a7877ce59" category="list-text">ページの左上にあるタイムセレクタを使用して、一定期間のジョブを表示します</block>
-  <block id="8c8d15cbcb23d4d9a941a520eed8f594" category="list-text">特定のステータスについては、「ジョブの表示」をクリックします。たとえば、「失敗」では、失敗したジョブのみを表示します</block>
-  <block id="d9adc9312afedb38a2612892c29f9ec2" category="list-text">各列見出しのフィルタを使用して結果をソートします。たとえば、「workloads」列のフィルタを使用すると、次のカテゴリのジョブを表示できます。</block>
   <block id="3919b07e397df4ea5f1ccc5ad0f35b8a" category="list-text">ボリューム（Cloud Volumes ONTAP とオンプレミスONTAP ボリューム）</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">アプリケーション</block>
   <block id="76b0fa668c1cd016096eb9bc1bfde44a" category="list-text">仮想マシン</block>
   <block id="30136395f01879792198317c11831ea4" category="list-text">Kubernetes</block>
   <block id="63a6a88c066880c5ac42394a22803ca6" category="inline-image-macro">更新</block>
-  <block id="1b9503fb0780a47432acd66652752b5b" category="paragraph">このページは15分ごとに自動的に更新されるため、常に最新のジョブステータスの結果が表示されます。をクリックできます <block ref="26403496cb9a151e9afeeb59244dd01b" category="inline-image-macro-rx" type="image"></block> ボタンをクリックして、ページをただちに更新します。</block>
   <block id="8b512d5ba4f8158f9bbde90865caba8c" category="section-title">ジョブ監視結果をレポートとしてダウンロードします</block>
   <block id="801ab24683a4a8c433c6eb40c48bcd9d" category="inline-image-macro">ダウンロード</block>
-  <block id="e24ca4972ca35c84b1dae71aaf15065b" category="paragraph">ジョブ監視のメインページの内容をリファインした後でレポートとしてダウンロードする場合は、をクリックします <block ref="d2e5c9ca6fcd7f605e1d5f7b4f6a6a99" category="inline-image-macro-rx" type="image"></block> ボタンを押します。Cloud Backupは、必要に応じて他のグループを確認して送信できる.csvファイルを生成します。.csvファイルには、最大10、000行のデータが含まれます。</block>
   <block id="ec7d92235d0dc6e0acfa017dfe7f1dbd" category="section-title">ジョブの詳細を表示します</block>
   <block id="1bc59241eb9bf200909aad328d7d6f94" category="paragraph">特定のジョブの名前をクリックすると、そのジョブに対応する詳細を確認できます。メインジョブを完了するために実行中のすべてのサブジョブが[ジョブの詳細]ページに表示されます。</block>
   <block id="ead1b755a95c48c918fa1c54aead1fbb" category="inline-image-macro">ジョブの詳細ページを示すスクリーンショット。</block>
@@ -1677,8 +1661,6 @@
   <block id="b58d9a206bdb4f66bef72d876e8c275e" category="section-title">通知センターを使用して、バックアップとリストアに関するアラートを確認します</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知ベル</block>
   <block id="e415c99bdef560f45a5ed65de16a1f1c" category="paragraph">通知センターでは、開始したバックアップ・ジョブとリストア・ジョブの進捗状況を追跡するため、処理が成功したかどうかを確認できます。通知を表示するには、（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>)を選択します。また、システムにログインしていないときでも重要なシステムアクティビティを通知できるように、メールで通知を送信するようにBlueXPを構成することもできます。</block>
-  <block id="aa72dffd28e8e8bc6bede04c2bfb9b8a" category="paragraph">現時点では、Eメールアラートは次の4つのイベントによってトリガーされます。</block>
-  <block id="86adb6c119fde87f974199cf61935f54" category="list-text">クラウドバックアップのアクティブ化が作業環境で失敗しました</block>
   <block id="17d0a830cae7a9ee38e63d4d74257685" category="list-text">クラウドバックアップのリストア処理に失敗しました</block>
   <block id="4a4cfe5483874f73014159f5baca5462" category="list-text">アドホック（オンデマンド）ボリュームのバックアップに失敗しました</block>
   <block id="01c236efa847517aec154a45e404d759" category="list-text">潜在的なランサムウェア攻撃がシステムで検出されました</block>
@@ -1723,7 +1705,6 @@
   <block id="b1b998a9bc88754640934520205257d6" category="paragraph">「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。</block>
   <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">インターネットに接続されていないサイトをサポート</block>
   <block id="1b91b58bbd15b10b96b7306af574303b" category="inline-link-macro">オンプレミスの ONTAP データの StorageGRID へのバックアップ</block>
-  <block id="d23034ecc8c41806d59e0a80e72171aa" category="paragraph">インターネットに接続されていないサイト（「オフライン」または「ダーク」サイトとも呼ばれる）で Cloud Backup を使用して、ローカルのオンプレミス ONTAP システムからローカルの NetApp StorageGRID システムにボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにBlueXPコネクタ(バージョン3.9.20)を配備する必要があります。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="8c9b6b8729507556572552d0d8f472e3" category="section-title">サポートされるボリューム</block>
   <block id="6cc30d6c33bfc4f65037828783c2a89d" category="paragraph">Cloud Backupでは、次のタイプのボリュームをサポートしています。</block>
   <block id="d461a54e93e8dcbd189b38f0ff2865bc" category="list-text">FlexVol 読み書き可能ボリューム</block>
@@ -1848,17 +1829,14 @@
   <block id="ff65f252d2a0aa40e634cf2ad7eaa2d3" category="list-text">[今すぐバックアップ]ボタンを使用したアドホック・ボリューム・バックアップは'データ保護ボリュームではサポートされていません</block>
   <block id="3dd0180637528cde8671a0c957cf90da" category="list-text">SM-BC 設定はサポートされません。</block>
   <block id="6488e4b9eef53ffd6c9cc6103d98e9fa" category="list-text">ONTAP では、単一のボリュームから複数のオブジェクトストアへの SnapMirror 関係のファンアウトはサポートされていません。そのため、この構成は Cloud Backup ではサポートされていません。</block>
-  <block id="1f973e0276bdcc7629141de9466f59f2" category="list-text">オブジェクトストアでのWorm/Complianceモードは、現時点ではAmazon S3およびStorageGRID でのみサポートされています。これはDataLock機能と呼ばれ、クラウドプロバイダのインターフェイスではなく、Cloud Backupの設定を使用して管理する必要があります。</block>
   <block id="374f4526af8df5d7623354dc7ae40010" category="section-title">リストアの制限事項</block>
   <block id="79ec871c574dbe9adf17973bdb4bf029" category="paragraph">これらの制限事項は、特に明記されていない限り、ファイルとフォルダをリストアするための検索とリストアおよび参照と復元の両方の方法に適用されます。</block>
   <block id="03a5b9815bb473e6f4be8d24abee633a" category="list-text">ブラウズとリストアでは、一度に最大100個のファイルをリストアできます。</block>
   <block id="83e93965854a9ee03d55a2d15f2e8dc7" category="list-text">検索とリストアでは、一度に1つのファイルをリストアできます。</block>
-  <block id="7a6f7d393f4de35501272976e1ba9e03" category="list-text">参照と復元および検索と復元では、一度に1つのフォルダを復元できます。</block>
   <block id="2906b13dc7235ea8bc16b456298915d1" category="list-text">ディレクトリ/フォルダのリストアは、現在FlexGroup ボリュームではサポートされていません。</block>
   <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">FlexGroup ボリュームからFlexVol ボリューム、またはFlexVol ボリュームからFlexGroup ボリュームへのリストアはサポートされていません。</block>
   <block id="7675fc79dcb00b07887361a923ba9860" category="list-text">バックアップファイルがアーカイブストレージにある場合、個 々 のフォルダをリストアすることはできません。</block>
   <block id="5f5966e9da5716290dfc2b88ceeb2217" category="list-text">リストアするファイルは、デスティネーションボリュームの言語と同じ言語を使用している必要があります。言語が異なる場合は、エラーメッセージが表示されます。</block>
-  <block id="2ec354868590a74d060a9333bd4af020" category="list-text">AzureからStorageGRID システムにデータをリストアする場合、_High_restore優先度はサポートされません。</block>
   <block id="5cca45bd52ac035de73ec0e76f0e5043" category="summary">データファイルをリストアし、データベースをリカバリします。</block>
   <block id="e648f70e1fb5d17870bf65097e43c5a6" category="doc">クラウドネイティブのSAP HANAデータベースをリストア</block>
   <block id="26661dc24144ed594be15c07b300db39" category="paragraph">データ損失が発生した場合は、データファイルと非データファイルをリストアしてから、データベースをリカバリできます。</block>
@@ -2482,7 +2460,6 @@
   <block id="7e9e3d210bbdc9a1da52aaf1ad227746" category="section-title">Browse &amp; Restoreを使用してフォルダとファイルを復元する</block>
   <block id="27816218998e04ffd3077d0806e7798b" category="paragraph">ONTAP のバックアップから数ファイルしかリストアしない場合は、ボリューム全体をリストアするのではなく、フォルダまたは個々のファイルをリストアするように選択できます。フォルダとファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
   <block id="2cfe9659cdef6b61005a35e5ad1c7305" category="paragraph">複数のファイルを選択した場合は、選択したデスティネーションボリュームにすべてのファイルがリストアされます。したがって、ファイルを別のボリュームにリストアする場合は、リストアプロセスを複数回実行する必要があります。</block>
-  <block id="ced64378309b598ee856f94695ccdd3a" category="paragraph">この時点では、1つのフォルダのみを選択してリストアできます。また、そのフォルダのファイルのみがリストアされます。サブフォルダやサブフォルダ内のファイルはリストアされません。</block>
   <block id="66d2847cfd42bf73060fb82fb4345a9a" category="list-text">バックアップファイルにDataLockとRansomwareが設定されている場合、フォルダレベルのリストアは現在サポートされていません。この場合、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。</block>
   <block id="5571d67bc301ab9246278c7b368f2013" category="list-text">バックアップファイルがアーカイブストレージにある場合、フォルダレベルのリストアは現在サポートされていません。この場合、アーカイブされていない新しいバックアップファイルからフォルダをリストアするか、アーカイブされたバックアップからボリューム全体をリストアして、必要なフォルダとファイルにアクセスできます。</block>
   <block id="502b9bcf8737b06b486f332278870bbf" category="list-text">FILE _ RESTORE処理を実行するには、ONTAP のバージョンが9.6以降である必要があります。</block>
@@ -2541,7 +2518,6 @@
   <block id="bd0f4c161a252516fc5ca2f8121fe5d5" category="paragraph">バックアップファイルからボリュームをリストアすると、 Cloud Backup はバックアップのデータを使用して _new_volume を作成します。データは、元の作業環境のボリュームとしてリストアすることも、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることもできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。</block>
   <block id="ddc1dd6e781e5ceee9400e96abd01aca" category="paragraph">フォルダやファイルは、元のボリュームの場所、同じ作業環境内の別のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
   <block id="c003f27675e7048b4dd9d00ba4f2f343" category="paragraph">リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降で使用可能）にある場合、リストア処理にはより長い時間がかかり、追加コストが発生します。また、ボリュームリストアの場合はONTAP 9.10.1以降、ファイルリストアの場合は9.11.1、Google ArchiveおよびStorageGRID の場合は9.12.1以降がデスティネーションクラスタで実行されている必要があります。</block>
-  <block id="f2750c1f24a10b384914ab44b4f2d630" category="list-text">AzureからStorageGRID システムにデータをリストアする場合、リストア優先度「高」はサポートされません。</block>
   <block id="42c4ab8961cdba5beaf8c8b46bfb4bc4" category="paragraph">開始する前に、リストアするボリュームやファイルの名前や場所を把握しておく必要があります。</block>
   <block id="08f59a930621019b7b2d289b74ed3bf2" category="section-title">サポートされている作業環境とオブジェクトストレージプロバイダの検索とリストア</block>
   <block id="e1ddf1ac9e59a50d9ac5683a1d33e13a" category="cell">デスティネーション作業環境ifdef：aws []</block>
@@ -2936,7 +2912,6 @@
   <block id="fb03128f43a982e985025c970d7947c6" category="paragraph">バックアップに別のAWSアカウントを使用する場合は、デスティネーションのAWSアカウントのクレデンシャルをBlueXPに追加し、「s3：PutBucketPolicy」および「s3：PutOwnerBucketshipControls」権限をBlueXPに付与するIAMロールに追加する必要があります。</block>
   <block id="0ea4b8f8e49e76c407dc92eef3ef1c15" category="inline-link">独自の暗号化キーの使用方法を参照してください</block>
   <block id="c405c27a75a970faab6a45d722272f0e" category="list-text">デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択してデータの暗号化を管理するか。 <block ref="bc512376b7a797d916a8cc982884f1f3" category="inline-link-rx"></block>）。</block>
-  <block id="e83377d046e6ba641ad164b4cb484f6d" category="list-text">ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。 <block ref="58f01ad9ea7ce8fd23147681b9f27af7" category="inline-link-macro-rx"></block>。</block>
   <block id="d4f871b7d459c4ece286a475f033ca49" category="summary">SAP HANAデータベースのバックアップをスケジュール設定またはオンデマンドで作成します。</block>
   <block id="fd8f5388e72a984af8274823defe28fc" category="doc">クラウドネイティブのSAP HANAデータベースをバックアップ</block>
   <block id="4177041af0a361a0920a41b55631aa87" category="paragraph">SAP HANAデータベースのバックアップを作成する前に、SAP HANAデータベースホストを追加し、組み込みのポリシーまたは作成したポリシーを割り当てる必要があります。</block>
@@ -3521,4 +3496,99 @@
   <block id="9fccb7bf2ea38fc2199a167bbe2d87fd" category="list-text">SnapCenter ユーザアカウントを使用してOracleデータベースホストにログインし、次のコマンドを実行してバイナリの実行権限を有効にします。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
   <block id="2fe3c4ca1597e6bdf865a7367c7a7a08" category="list-text">Oracleプラグインをsudo SnapCenter ユーザとして導入します。<block ref="d0ac17823bdcaade630c1553c4540054" prefix=" " category="inline-code"></block></block>
   <block id="f55cf31361d600683e03e25c6f1109e3" category="list-text">コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。<block ref="7bab21217ba7da8fb8f176538fe93b9b" prefix=" " category="inline-code"></block></block>
+  <block id="d2b32f39697a5b013948d2ec66933921" category="list-text">job - BlueXPデータベースのジョブ詳細エントリを管理します</block>
+  <block id="5874609ca1e9c6045e19df3c609ae04c" category="list-text">AWSにコネクタをインストールしておきます。</block>
+  <block id="ce611ab7ae453854c290d7e4d11064ce" category="paragraph">Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 <block ref="47744e5312ce42ad8130a5365d7fb0d0" category="inline-link-macro-rx"></block>。コネクタとCloud Volumes ONTAP システムをダークサイトに導入する場合は、BYOLライセンスを使用する必要があります。</block>
+  <block id="608448c2576128ccc8c2f959d59e20b4" category="list-text">コネクタの要件</block>
+  <block id="08917925d8deee805c0740b818316f1f" category="list-text">コネクタは、インターネットアクセスの有無にかかわらず、AWSリージョンにインストールできます。現時点では、インターネットにアクセスできないサイトでは、AWS Commercialサイトのみがサポートされています。</block>
+  <block id="c9069f67c447a0a15bda0467230c3148" category="inline-link">AWSにコネクタを導入します</block>
+  <block id="545a608e55ae4e3a96594a093a988a8a" category="list-text"><block ref="545a608e55ae4e3a96594a093a988a8a" category="inline-link-rx"></block></block>
+  <block id="d1000075c67be559ac41b2b7f56e66ab" category="inline-link">インターネットにアクセスできないAWSリージョンのLinuxホストにコネクタをインストールします</block>
+  <block id="1f3a5a11cda993d1d191432fd2dc055b" category="list-text"><block ref="1f3a5a11cda993d1d191432fd2dc055b" category="inline-link-rx"></block></block>
+  <block id="070bde10025186ce49792171c694b711" category="list-text">ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。この機能は、ダークサイトに導入した場合は使用できません。 <block ref="58f01ad9ea7ce8fd23147681b9f27af7" category="inline-link-macro-rx"></block>。</block>
+  <block id="6c0c856e3601c869e5ed2f66c1dcbf65" category="list-text">Azureにコネクタをインストールしておきます。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。</block>
+  <block id="7a2aa73d5af1003f6f2e1afc92561258" category="list-text">コネクタは、インターネットアクセスの有無にかかわらず、Azureリージョンにインストールできます。現時点では、インターネットにアクセスできないサイトではAzure Commercialサイトのみがサポートされています。</block>
+  <block id="261ca950ce5b13f6fc57f9ad7d366d88" category="inline-link">Azureにコネクタをデプロイします</block>
+  <block id="28cf618b595b848efbf044d272e765f2" category="list-text"><block ref="28cf618b595b848efbf044d272e765f2" category="inline-link-rx"></block></block>
+  <block id="84beba0db9273fc390fc97455e0888c5" category="inline-link">インターネットにアクセスできないAzureリージョンのLinuxホストにコネクタをインストールします</block>
+  <block id="9ec4ead8f39a7134e0970f8b37a9cc9a" category="list-text"><block ref="9ec4ead8f39a7134e0970f8b37a9cc9a" category="inline-link-rx"></block></block>
+  <block id="7cccee5994c911e5094d2b657aa36982" category="list-text">ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したバックアップを Azure Archive ストレージに階層化して、コストをさらに最適化することができます。この機能は、ダークサイトに導入した場合は使用できません。 <block ref="0f1866ee99580c7794186e312ffd205e" category="inline-link-macro-rx"></block>。</block>
+  <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">サポートケースの管理（プレビュー）</block>
+  <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">アクティブなサポートケースと解決済みのサポートケースは、BlueXPから直接表示および管理できます。NSSアカウントと会社に関連付けられたケースを管理できます。</block>
+  <block id="394ef093ad3259b9ff0fe7406f015b83" category="paragraph">ケース管理はプレビューとして使用できます。今後のリリースでは、この点をさらに改良し、機能を強化する予定です。製品内のチャットでご意見をお寄せください。</block>
+  <block id="5e4e7672ec2ba2b8a763da7f6714e212" category="list-text">ページ上部のケース管理ダッシュボードには、次の2つのビューがあります。</block>
+  <block id="01c3ffea552d74a5ae390b10e71a1f26" category="list-text">左側のビューには、指定したユーザNSSアカウントによって過去3カ月間にオープンされたケースの総数が表示されます。</block>
+  <block id="e3b6c09a5686233f72ce1ea60a1eb088" category="list-text">右側のビューには、ユーザのNSSアカウントに基づいて、過去3カ月間にオープンしたケースの総数が会社レベルで表示されます。</block>
+  <block id="b19b168cc8a2b8c984465e140256b3a2" category="paragraph">テーブルの結果には、選択したビューに関連するケースが反映されます。</block>
+  <block id="56dcadeee6b0e5c47a52673f9b5a0bb3" category="list-text">目的の列を追加または削除したり、[優先度]や[ステータス]などの列の内容をフィルタリングしたりできます。他の列には、並べ替え機能だけがあります。</block>
+  <block id="6f936762e1223311f031685422fcd3a4" category="paragraph">詳細については、以下の手順を参照してください。</block>
+  <block id="b14929795a61440e9b4ec9f8a4885ae3" category="list-text">ケースごとに、ケースノートを更新したり、ステータスが「Closed」または「Pending Closed」でないケースをクローズしたりすることができます。</block>
+  <block id="34b1296d31cefa72dae9b3a364b1f444" category="list-text">[ケース管理]*をクリックし、プロンプトが表示されたらNSSアカウントをBlueXPに追加します。</block>
+  <block id="d8ce1865cf1fe3cffd60300b4b86ad63" category="paragraph">ケース管理*ページには、BlueXPユーザアカウントに関連付けられたNSSアカウントに関連するオープンケースが表示されます。これは、* NSS管理*ページの上部に表示されるNSSアカウントと同じです。</block>
+  <block id="2ae5ae78bdb2d222f15fd8e89248709c" category="list-text">必要に応じて、テーブルに表示される情報を変更します。</block>
+  <block id="27635a52fe4c34c39ffc6430f4244ec6" category="list-text">[Organization's Cases]*で[View]*をクリックすると、会社に関連付けられているすべてのケースが表示されます。</block>
+  <block id="059e856250b59be3069246887b74a23c" category="list-text">正確な日付範囲を選択するか、別の期間を選択して、日付範囲を変更します。</block>
+  <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">[Case Management]ページのテーブルの上にあるオプションのスクリーンショット。正確な日付範囲、または過去7日、30日、または3カ月を選択できます。</block>
+  <block id="7fcba8aeefa9960d3fc3fa08b360ba2e" category="paragraph"><block ref="7fcba8aeefa9960d3fc3fa08b360ba2e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">列の内容をフィルタリングします。</block>
+  <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">[Status]列のフィルタオプションのスクリーンショット。[Active]や[Closed]など、特定のステータスに一致するケースを除外できます。</block>
+  <block id="37709be3a43df07d5975287545d0ba12" category="paragraph"><block ref="37709be3a43df07d5975287545d0ba12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">テーブルに表示されるプラスアイコン</block>
+  <block id="1614dc8e47c0492434152c990d6c1040" category="list-text">をクリックして、テーブルに表示される列を変更します <block ref="effeab06130cddc8360822b2b706805b" category="inline-image-macro-rx" type="image"></block> 次に、表示する列を選択します。</block>
+  <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">表に表示できる列を示すスクリーンショット。</block>
+  <block id="5de408d7cbad49634fb25f9047498132" category="paragraph"><block ref="5de408d7cbad49634fb25f9047498132" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">テーブルの最後の列に表示される3つの点を持つアイコン</block>
+  <block id="98efef1c8a47ed5791b41944e8ff4ec2" category="list-text">をクリックして既存のケースを管理します <block ref="a0b152b50a56901a75affebabc26ed61" category="inline-image-macro-rx" type="image"></block> 使用可能なオプションのいずれかを選択します。</block>
+  <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*ケースの表示*:特定のケースの詳細を表示します。</block>
+  <block id="482429810c2b00a4fa04f9900c560232" category="list-text">*ケースノートの更新*：問題の詳細を入力します。</block>
+  <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*ケースをクローズ*：ケースをクローズする理由の詳細を入力し、*ケースをクローズ*をクリックします。</block>
+  <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">テーブルの最後の列でメニューを選択した後に実行できる操作を示すスクリーンショット。</block>
+  <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8960709309953db706184cbddcb4b045" category="paragraph">インターネットに接続されていないサイト（「オフライン」または「ダーク」サイトとも呼ばれます）では、Cloud Backupを使用してボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにBlueXPコネクタを導入する必要があります。</block>
+  <block id="2336f5fb78c2a5c8f2076f882bd71161" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="a5e6246728060cb5f413df6fa5adbf0c" category="inline-link-macro">Cloud Volumes ONTAP データをAzure Blobにバックアップしています</block>
+  <block id="37071c3b292f3b2dabcce750f34cbc0e" category="list-text">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできます。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block> および <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
+  <block id="9d5cd7f5faccdd3ae5ba70e594cc061f" category="list-text">現時点では、オブジェクトストアのWORM / ComplianceモードはAmazon S3、Azure、StorageGRID でサポートされています。これはDataLock機能と呼ばれ、クラウドプロバイダのインターフェイスではなく、Cloud Backupの設定を使用して管理する必要があります。</block>
+  <block id="1eea998a6969261ae6e45e41459d7ae2" category="list-text">ONTAP 9.13.0以降を使用している場合、[参照と復元]および[検索と復元]では、フォルダ内のすべてのファイルとサブフォルダとともにフォルダを復元できます。</block>
+  <block id="e7dd5c3025a4bc62e595b708efedd1e5" category="paragraph">9.11.1より前のバージョンのONTAP を使用している場合、リストア処理でリストアできるのは選択したフォルダとそのフォルダ内のファイルのみです。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
+  <block id="118a57e2fb1b730b4d9702fc0590ed48" category="paragraph">9.11.1より前のバージョンのONTAP を使用している場合、フォルダのリストアはサポートされません。</block>
+  <block id="0bfb7259f1f6626c1cdf5b3afe490baa" category="list-text">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、_High_restore優先度はサポートされません。</block>
+  <block id="ec084bb25ed5b934c09b361069c246b2" category="list-text">NSSアカウントは、お客様レベルのアカウントである必要があります（ゲストアカウントや一時アカウントではありません）。複数のお客様レベルのNSSアカウントを設定できます。</block>
+  <block id="27387009488fe78dcc7cb7e3e432792f" category="list-text">NSSアカウントがパートナーレベルのアカウントの場合、作成できるNSSアカウントは1つだけです。お客様レベルのNSSアカウントを追加しようとすると、パートナーレベルのアカウントが存在する場合は、次のエラーメッセージが表示されます。</block>
+  <block id="d926847e4634e19a1aa7358becc0fa27" category="paragraph">「別のタイプのNSSユーザーがすでに存在するため、このアカウントではNSS顧客タイプは許可されていません。」</block>
+  <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">既存のお客様レベルのNSSアカウントがあり、パートナーレベルのアカウントを追加しようとする場合も同様です。</block>
+  <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">ログインに成功すると、ネットアップはNSSのユーザ名を保存します。</block>
+  <block id="452cd4df7b0d5eb1156519a2f3b0206b" category="paragraph">これはシステムによって生成されたIDで、電子メールにマッピングされます。[*NSS Management*]ページで、から電子メールを表示できます <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
+  <block id="fd02e84624a2fdfd58787131aa2820b5" category="list-text">ログイン認証情報トークンを更新する必要がある場合は、の[認証情報の更新*]オプションも使用できます <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
+  <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">このオプションを使用すると、再度ログインするように求められます。これらのアカウントのトークンは90日後に期限切れになります。このことを通知する通知が投稿されます。</block>
+  <block id="aa581d4a856d4e4b679f430d75b6675b" category="list-text">Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
+  <block id="0ddf34ad5270eddf503a40460693fa5f" category="list-text">Kubernetes永続ボリュームのバックアップとリストア <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
+  <block id="630b6fb489bd2a5285488f531d84037b" category="list-text">Cloud Backup for Applicationsを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
+  <block id="8c9003b0bb11b5538760df9871279172" category="admonition">BlueXP Connectorがクラウドの政府機関、またはインターネットにアクセスできないサイト（ダークサイト）に導入されている場合、Cloud BackupはONTAP システムからのバックアップおよびリストア操作のみをサポートします。これらのタイプの導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。</block>
+  <block id="01e76ab0dacc58799dc14adbdc705ac7" category="section-title">2023年3月9日</block>
+  <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">フォルダレベルのリストア処理に、すべてのサブフォルダとファイルが含まれるようになりました</block>
+  <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">以前は、フォルダをリストアしたときに、そのフォルダのファイルのみがリストアされました。サブフォルダやサブフォルダ内のファイルはリストアされませんでした。ONTAP 9.13.0以降を使用している場合は、選択したフォルダ内のすべてのサブフォルダとファイルが復元されます。これにより、トップレベルフォルダに複数のフォルダがネストされている場合に、時間とコストを大幅に節約できます。</block>
+  <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能</block>
+  <block id="aef1b3252b7a5b85dab7066cccc19b52" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block> および <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
+  <block id="463ed6b78b2c95e39ecc10ee3195e921" category="section-title">ジョブモニタでは、特定のバックアップジョブまたはリストアジョブを検索するための高度なフィルタリングが提供されます</block>
+  <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">詳細フィルタの使用方法を参照してください</block>
+  <block id="aa3492539222da5bc85fd5614f489f71" category="paragraph">[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 <block ref="f726054cf0d935cd51c2a5edb3b3fd0c" category="inline-link-rx"></block>。</block>
+  <block id="1625899745083f00e310fe6a84e9582c" category="list-text">次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。</block>
+  <block id="ec119ac8f6ca5b011d4a2ba9323dbca5" category="admonition">システムが開始したジョブ（進行中のバックアップ処理など）は、現時点では*[ジョブ監視]*タブには反映されません。ユーザが開始したジョブのみが表示されます。</block>
+  <block id="d90665b682298c55adb9c3f6a9ceb3f0" category="paragraph">このスクリーンショットは、デフォルトの列とフィールドの見出しを示しています。をクリックできます <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block> [Working Environment]、[SVM]、[User Name]、および[Workloads]の4つの列が追加されました。</block>
+  <block id="9d5572457fea4567bbd4373a983f3216" category="section-title">ジョブのリストを検索およびフィルタリングします</block>
+  <block id="c892f9f2802395ba3a650b944f02ddbc" category="paragraph">デフォルトでは、[Job Monitoring]ページには過去24時間のジョブが表示されます。結果をソートするには、各列の見出しをクリックして、ステータス、開始時間、リソース名などでソートします。</block>
+  <block id="0bcdeb46b5f3d4d317c7920982129c63" category="paragraph">特定のジョブまたは特定のジョブのグループを探している場合は、*高度な検索とフィルタリング*領域をクリックして、検索パネルを開くことができます。このパネルでは、任意のリソース（「volume 1」や「application 3」など）に対してフリーテキスト検索を実行できます。ドロップダウンメニューの項目に基づいてジョブリストをフィルタすることもできます。</block>
+  <block id="cff5fc0e11ee3e58d953f2080d46b7cb" category="inline-image-macro">フィルタ条件に一致するジョブのみを表示するようにフィルタを設定したスクリーンショット。</block>
+  <block id="87cc1b510629c0452232ccc6838b69a7" category="paragraph"><block ref="87cc1b510629c0452232ccc6838b69a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30c580a99dd8f8145066f47bf26ac29f" category="paragraph">このスクリーンショットは、「過去1週間」に「Volume_1」という名前のボリュームに対するすべての「Volume」「Backup」ジョブを検索する方法を示しています。</block>
+  <block id="51b623efdc27fe6f448c8ac3c9969630" category="paragraph">ほとんどのフィルタはわかりやすいものです。「ワークロード」のフィルタを使用すると、次のカテゴリのジョブを表示できます。</block>
+  <block id="dd9313799fa929f642611d4d86e9e772" category="paragraph">特定の「SVM」内のデータを検索できるのは、最初に作業環境を選択した場合のみです。</block>
+  <block id="aae95eaf384b0c3c467df78d2dffac6b" category="paragraph">このページは15分ごとに自動的に更新されるため、常に最新のジョブステータスの結果が表示されます。をクリックできます <block ref="26403496cb9a151e9afeeb59244dd01b" category="inline-image-macro-rx" type="image"></block> ボタンすぐにページを更新する必要がある場合。</block>
+  <block id="25c5bc4b2a25afb0f66d91c9f9de520f" category="paragraph">ジョブ監視のメインページの内容をリファインした後でレポートとしてダウンロードする場合は、をクリックします <block ref="d2e5c9ca6fcd7f605e1d5f7b4f6a6a99" category="inline-image-macro-rx" type="image"></block> ボタンを押します。Cloud Backupは.csvファイルを生成してダウンロードし、確認して必要に応じて他のグループに送信できます。.csvファイルには、最大10、000行のデータが含まれます。</block>
+  <block id="0baf64ee9658e94630586cd9067331e3" category="paragraph">現時点では、Eメールアラートをトリガーするバックアップイベントとリストアイベントは4つあります。</block>
+  <block id="1dd33183006df81ec96a6dbec241ac42" category="list-text">作業環境でCloud Backupのアクティブ化に失敗しました</block>
+  <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、優先度「高」はサポートされません。</block>
+  <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォルダ内のすべてのファイルおよびサブフォルダをリストアできます。9.13.0より前のバージョンのONTAP を使用している場合は、そのフォルダのファイルのみがリストアされます。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
+  <block id="9dc68f929a10fb4c3bc9901cb0ad551c" category="list-text">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、リストア優先度を[高]にすることはできません。</block>
 </blocks>

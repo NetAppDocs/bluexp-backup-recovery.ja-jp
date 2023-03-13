@@ -251,8 +251,38 @@ endif::azure[]
 
 * StorageGRID の場合：
 +
-** コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。
 ** DataLock機能を完全にサポートするには、StorageGRID 11.6.0.3以降が必要です
+** コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。
+** 次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。
++
+*** S3 ： GetObjectVersionTagging
+*** S3 ： GetBucketObjectLockConfiguration
+*** S3：GetObjectVersionAcl
+*** S3 ： PutObjectTagging
+*** S3 ： DeleteObject
+*** S3 ： DeleteObjectTagging
+*** S3 ： GetObjectRetention
+*** S3 ： DeleteObjectVersionTagging
+*** S3 ： PutObject
+*** S3 ： GetObject
+*** S3 ： PutBucketObjectLockConfiguration
+*** S3 ： GetLifecycleConfiguration
+*** S3：ListBucketByTags
+*** S3 ： GetBucketTagging
+*** S3 ： DeleteObjectVersion
+*** S3 ： ListBucketVersions
+*** S3 ： ListBucket
+*** S3 ： PutBucketTagging
+*** S3 ： GetObjectTagging
+*** S3 ： PutBucketVersioning
+*** S3 ： PutObjectVersionTagging
+*** S3 ： GetBucketVersioning
+*** S3 ： GetBucketAcl
+*** S3 ： PutObjectRetention
+*** S3 ： GetBucketLocation
+*** S3 ： GetObjectVersion
+
+
 
 
 

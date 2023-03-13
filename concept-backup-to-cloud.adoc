@@ -22,16 +22,16 @@ https://bluexp.netapp.com/cloud-backup["Cloud Backup の詳細については、
 
 バックアップとリストアは、次の目的で使用できます。
 
-* Cloud Volumes ONTAP システムとオンプレミスの ONTAP システムから ONTAP ボリュームをバックアップおよびリストア link:concept-ontap-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
-* Kubernetes の永続ボリュームのバックアップとリストア link:concept-kubernetes-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
-* クラウドバックアップアプリケーションを使用して、アプリケーションと整合性のある Snapshot をオンプレミスの ONTAP からクラウドにバックアップできます。 link:concept-protect-app-data-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
+* Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 link:concept-ontap-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
+* Kubernetes永続ボリュームのバックアップとリストア link:concept-kubernetes-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
+* Cloud Backup for Applicationsを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 link:concept-protect-app-data-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
 * Cloud Backup for VMwareを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 link:concept-protect-vm-data.html["詳細な機能については、こちらをご覧ください"]。
 
 
 https://www.youtube.com/watch?v=DF0knrH2a80["簡単なデモをご覧ください"^]
 
 
-TIP: BlueXP Connectorがクラウドの政府機関、またはインターネットにアクセスできないサイト（ダークサイト）に導入されている場合、Cloud BackupはONTAP システムからのバックアップおよびリストア操作のみをサポートします。これらの代替導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。
+TIP: BlueXP Connectorがクラウドの政府機関、またはインターネットにアクセスできないサイト（ダークサイト）に導入されている場合、Cloud BackupはONTAP システムからのバックアップおよびリストア操作のみをサポートします。これらのタイプの導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。
 
 
 

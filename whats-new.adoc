@@ -18,6 +18,28 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2023年3月9日
+
+
+
+=== フォルダレベルのリストア処理に、すべてのサブフォルダとファイルが含まれるようになりました
+
+以前は、フォルダをリストアしたときに、そのフォルダのファイルのみがリストアされました。サブフォルダやサブフォルダ内のファイルはリストアされませんでした。ONTAP 9.13.0以降を使用している場合は、選択したフォルダ内のすべてのサブフォルダとファイルが復元されます。これにより、トップレベルフォルダに複数のフォルダがネストされている場合に、時間とコストを大幅に節約できます。
+
+
+
+=== ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能
+
+AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください link:task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および link:task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
+
+
+
+=== ジョブモニタでは、特定のバックアップジョブまたはリストアジョブを検索するための高度なフィルタリングが提供されます
+
+[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["詳細フィルタの使用方法を参照してください"]。
+
+
+
 == 2023年2月6日
 
 
