@@ -1641,7 +1641,6 @@
   <block id="c2957acd301b96ab66a098d21d407ec6" category="summary">作業環境で開始したバックアップジョブとリストアジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。また、通知をEメールで送信するように設定することで、システムにログインしていないときでも重要なシステムアクティビティを通知することができます。</block>
   <block id="ee0db59fec59c2b3e6c6583a61bf12b6" category="doc">バックアップジョブとリストアジョブのステータスを監視しています</block>
   <block id="10ad842a6a3246a44700dd2f0005c89c" category="section-title">ジョブモニタを使用して、バックアップおよびリストアジョブのステータスを表示します</block>
-  <block id="8fa9fc7dcc8c23904d4a616698a7a223" category="paragraph">すべてのバックアップおよびリストア処理とそれらの現在のステータスのリストは、*ジョブ監視*タブで確認できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。ステータスは次のいずれかになります。</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="49e34b28c9e9b61ed97b385f257f46fe" category="list-text">［ * ジョブ監視 * ］ タブをクリックします。</block>
   <block id="fdb4a732f867f813a90fc7fb3a9bd9ea" category="inline-image-macro">ジョブ監視ダッシュボードのバックアップジョブとリストアジョブを示すスクリーンショット。</block>
@@ -3570,11 +3569,9 @@
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">以前は、フォルダをリストアしたときに、そのフォルダのファイルのみがリストアされました。サブフォルダやサブフォルダ内のファイルはリストアされませんでした。ONTAP 9.13.0以降を使用している場合は、選択したフォルダ内のすべてのサブフォルダとファイルが復元されます。これにより、トップレベルフォルダに複数のフォルダがネストされている場合に、時間とコストを大幅に節約できます。</block>
   <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能</block>
   <block id="aef1b3252b7a5b85dab7066cccc19b52" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block> および <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="463ed6b78b2c95e39ecc10ee3195e921" category="section-title">ジョブモニタでは、特定のバックアップジョブまたはリストアジョブを検索するための高度なフィルタリングが提供されます</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">詳細フィルタの使用方法を参照してください</block>
   <block id="aa3492539222da5bc85fd5614f489f71" category="paragraph">[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 <block ref="f726054cf0d935cd51c2a5edb3b3fd0c" category="inline-link-rx"></block>。</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。</block>
-  <block id="ec119ac8f6ca5b011d4a2ba9323dbca5" category="admonition">システムが開始したジョブ（進行中のバックアップ処理など）は、現時点では*[ジョブ監視]*タブには反映されません。ユーザが開始したジョブのみが表示されます。</block>
   <block id="d90665b682298c55adb9c3f6a9ceb3f0" category="paragraph">このスクリーンショットは、デフォルトの列とフィールドの見出しを示しています。をクリックできます <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block> [Working Environment]、[SVM]、[User Name]、および[Workloads]の4つの列が追加されました。</block>
   <block id="9d5572457fea4567bbd4373a983f3216" category="section-title">ジョブのリストを検索およびフィルタリングします</block>
   <block id="c892f9f2802395ba3a650b944f02ddbc" category="paragraph">デフォルトでは、[Job Monitoring]ページには過去24時間のジョブが表示されます。結果をソートするには、各列の見出しをクリックして、ステータス、開始時間、リソース名などでソートします。</block>
@@ -3591,4 +3588,9 @@
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、優先度「高」はサポートされません。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォルダ内のすべてのファイルおよびサブフォルダをリストアできます。9.13.0より前のバージョンのONTAP を使用している場合は、そのフォルダのファイルのみがリストアされます。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
   <block id="9dc68f929a10fb4c3bc9901cb0ad551c" category="list-text">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、リストア優先度を[高]にすることはできません。</block>
+  <block id="1442489a4cf0ea56df2e53ec47c70ec8" category="section-title">ジョブモニタに複数の機能拡張が追加されました</block>
+  <block id="bf2bb33000b51334f72c2e394ff56247" category="list-text">ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、ユーザが開始したバックアップ処理とリストア処理、およびシステムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]*タブで使用できるようになりました。以前のバージョンのCloud Volumes ONTAP システムおよびオンプレミスのONTAP システムでは、現時点ではユーザが開始したジョブのみが表示されます。</block>
+  <block id="da2d24e019fdbb554fb9260491bdb31f" category="paragraph">すべてのバックアップおよびリストア処理とそれらの現在のステータスのリストは、*ジョブ監視*タブで確認できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理（ジョブ）には一意のIDとステータスがあります。ステータスは次のいずれかになります。</block>
+  <block id="51ed954daa0d2ac8e61b514ada10d020" category="paragraph">ユーザが開始したバックアップ処理とリストア処理、および進行中のバックアップ処理などのシステム開始ジョブは、ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムの*[ジョブ監視]*タブで確認できます。</block>
+  <block id="ef3fa14a7fd05f8163ad506cf72a0464" category="admonition">Cloud Volumes ONTAP システムまたはオンプレミスのONTAP システムで以前のバージョンのONTAP を実行している場合、この時点ではユーザが開始したジョブのみが表示されます。</block>
 </blocks>
