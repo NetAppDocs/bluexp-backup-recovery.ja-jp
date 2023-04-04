@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-private-cloud.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
-summary: オンプレミスの ONTAP システムから NetApp StorageGRID システムのオブジェクトストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: オンプレミスのONTAP システムからNetApp StorageGRID システムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = オンプレミスの ONTAP データの StorageGRID へのバックアップ
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: オンプレミスの ONTAP システムから NetApp StorageGRID シ�
 
 
 [role="lead"]
-オンプレミスの ONTAP システムから NetApp StorageGRID システムのオブジェクトストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。
+オンプレミスのONTAP システムからNetApp StorageGRID システムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
 「オンプレミス ONTAP システム」には、 FAS 、 AFF 、 ONTAP Select の各システムが含まれます。
 

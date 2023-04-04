@@ -155,8 +155,8 @@ image:screenshot_backup_edit_export_snapshots.png["詳細設定ページの既�
 
 == ソースシステムから「年次」スナップショットを削除するかどうかを変更します
 
-いずれかのボリュームのバックアップポリシーに対して「年次」バックアップラベルを選択すると、作成されるSnapshotコピーは非常に大きくなります。デフォルトでは、これらの毎年のSnapshotがオブジェクトストレージに転送されたあとにソースシステムから自動的に削除されます。このデフォルト動作は、「年単位のSnapshotの削除」セクションから変更できます。
+いずれかのボリュームのバックアップポリシーで「年単位」のバックアップラベルを選択すると、作成されるSnapshotコピーのサイズが非常に大きくなります。デフォルトでは、これらの年単位のSnapshotは、オブジェクトストレージに転送されたあとにソースシステムから自動的に削除されます。このデフォルト動作は、「年単位のSnapshotの削除」セクションから変更できます。
 
-image:screenshot_backup_edit_yearly_snap_delete.png["Advanced SettingsページのIPspaceエントリのスクリーンショット。"]
+image:screenshot_backup_edit_yearly_snap_delete.png["[Advanced Settings]ページの[Yearly Snapshots]エントリのスクリーンショット。"]
 
 ソースシステムで毎年のスナップショットを保持する場合は、[*Disabled]を選択し、[*Apply*]をクリックします。

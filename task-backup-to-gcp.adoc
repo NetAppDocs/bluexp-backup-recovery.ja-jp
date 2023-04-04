@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-to-gcp.html 
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup 
-summary: Cloud Volumes ONTAP から Google Cloud ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: Cloud Volumes ONTAP システムからGoogle Cloudストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = Cloud Volumes ONTAP データの Google Cloud Storage へのバックアップ
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP から Google Cloud ストレージへのデータ�
 
 
 [role="lead"]
-Cloud Volumes ONTAP から Google Cloud Storage へのデータのバックアップを開始するには、いくつかの手順を実行します。
+Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
 
 
@@ -28,6 +28,7 @@ Cloud Volumes ONTAP から Google Cloud Storage へのデータのバックア�
 * バックアップを保存するストレージスペースの有効な GCP サブスクリプションがあります。
 * Google Cloud Project に、事前定義された Storage Admin ロールを持つサービスアカウントがあります。
 * に登録しておきます https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
+* Google Cloudにコネクタがインストールされている必要があります。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムで Cloud Backup を有効にします
@@ -81,6 +82,14 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 --
 サポートされる GCP リージョン:: Cloud Backup はすべての GCP リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
 GCP サービスアカウント:: 事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["サービスアカウントの作成方法について説明します"^]。
+コネクタの要件:: コネクタは、インターネットにアクセスできるGoogleリージョンにインストールする必要があります。
++
+--
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Google Cloudにコネクタをデプロイします"^]
+
+
+--
 コネクタの権限を確認または追加します:: Cloud Backupの「検索と復元」機能を使用するには、Connectorの役割に特定の権限を付与して、Google Cloud BigQueryサービスにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 +
 --

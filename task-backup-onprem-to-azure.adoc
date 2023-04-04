@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-azure.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
-summary: オンプレミスの ONTAP システムから Azure BLOB ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: オンプレミスのONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = オンプレミスの ONTAP データを Azure BLOB ストレージにバックアップする
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: オンプレミスの ONTAP システムから Azure BLOB ストレー�
 
 
 [role="lead"]
-オンプレミスの ONTAP システムから Azure BLOB ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。
+オンプレミスのONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
 「オンプレミス ONTAP システム」には、 FAS 、 AFF 、 ONTAP Select の各システムが含まれます。
 
@@ -154,7 +154,7 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["Azure Governmentリージョンへのコネクタのインストール"^]
 +
-Connectorがクラウドに導入されている場合、Cloud BackupはAzure Governmentのリージョンでサポートされます。オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。政府機関の地域では、BlueXP SaaS WebサイトからConnectorを展開することはできません。
+Connectorがクラウドに導入されている場合、Cloud BackupはAzure Governmentのリージョンでサポートされます。オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
 
 
 

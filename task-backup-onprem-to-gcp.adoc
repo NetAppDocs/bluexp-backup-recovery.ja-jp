@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-gcp.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, gcp, google cloud 
-summary: オンプレミスの ONTAP システムから Google Cloud Storage へのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: いくつかの手順を実行して、オンプレミスのONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始します。 
 ---
 = オンプレミスの ONTAP データを Google Cloud Storage にバックアップする
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: オンプレミスの ONTAP システムから Google Cloud Storage へ
 
 
 [role="lead"]
-オンプレミスの ONTAP システムから Google Cloud Storage へのデータのバックアップを開始するには、いくつかの手順を実行します。
+いくつかの手順を実行して、オンプレミスのONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始します。
 
 「オンプレミス ONTAP システム」には、 FAS 、 AFF 、 ONTAP Select の各システムが含まれます。
 

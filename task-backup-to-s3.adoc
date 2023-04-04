@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-to-s3.html 
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, cloud backup 
-summary: Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: Cloud Volumes ONTAP システムからAmazon S3へのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = Amazon S3 への Cloud Volumes ONTAP データのバックアップ
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP から Amazon S3 へのデータのバックアッ�
 
 
 [role="lead"]
-Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開始するには、いくつかの手順を実行します。
+Cloud Volumes ONTAP システムからAmazon S3へのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
 
 
@@ -27,9 +27,9 @@ Cloud Volumes ONTAP から Amazon S3 へのデータのバックアップを開�
 * AWSでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
 * に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplaceバックアップ製品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
-* AWSにコネクタをインストールしておきます。
+* AWSにコネクタがインストールされている必要があります。
 +
-** コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。
+** コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。
 ** BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXPポリシー"^]。
 
 
@@ -93,23 +93,17 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 また、バックアップを格納するストレージスペース用の AWS アカウントが必要です。
 
 --
-サポートされている AWS リージョン:: Cloud Backup はすべての AWS リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。
 データ暗号化にお客様が管理するキーを使用するために必要な情報:: デフォルトの Amazon S3 暗号化キーを使用する代わりに、アクティブ化ウィザードでお客様が管理するデータ暗号化キーを選択できます。この場合は、暗号化管理キーがすでに設定されている必要があります。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"^]。
-コネクタの要件:: コネクタは、インターネットアクセスの有無にかかわらず、AWSリージョンにインストールできます。現時点では、インターネットにアクセスできないサイトでは、AWS Commercialサイトのみがサポートされています。
+コネクタの要件:: このコネクタは、インターネットアクセスがフルまたは制限されたAWSリージョン（「標準」または「制限」モード）にインストールできます。
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["AWSにコネクタを導入します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["インターネットにアクセスできないAWSリージョンのLinuxホストにコネクタをインストールします"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["AWSリージョンのLinuxホストへのコネクタの手動インストール"^]
 
 
 --
 
-
-
-NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["Cloud Backup の新機能"] Cloud Backup の各リリースの新機能を確認し、手順 ~ を実行します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
-
-コネクタがインターネットに接続されていないサイトにインストールされている場合は、Cloud Backup設定データのローカルバックアップを定期的に作成することを強く推奨します。 link:reference-backup-cbs-db-in-dark-site.html["ダークサイトでCloud Backupのデータをバックアップする方法をご覧ください"^]。
 
 必要なAWS Connector権限:: BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]。
 +
@@ -186,6 +180,7 @@ NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれていま�
 BlueXPバージョン3.9.23以降を使用してCloud Volumes ONTAP 作業環境を作成した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。
 
 --
+サポートされている AWS リージョン:: Cloud Backup はすべての AWS リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。
 別の AWS アカウントでバックアップを作成する場合の必須のセットアップです:: デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別のAWSアカウントを使用する場合は、次の作業を行う必要があります。
 +
 --

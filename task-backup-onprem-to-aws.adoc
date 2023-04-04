@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-aws.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3, govcloud, government 
-summary: オンプレミスの ONTAP システムから Amazon S3 ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = オンプレミスの ONTAP データの Amazon S3 へのバックアップ
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: オンプレミスの ONTAP システムから Amazon S3 ストレー�
 
 
 [role="lead"]
-オンプレミスの ONTAP システムから Amazon S3 ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。
+オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
 「オンプレミス ONTAP システム」には、 FAS 、 AFF 、 ONTAP Select の各システムが含まれます。
 
@@ -95,7 +95,7 @@ AWS VPCまたはオンプレミスにすでにコネクタが導入されてい�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["コネクタをオンプレミスにインストールする"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region["AWS GovCloudリージョンへのコネクタのインストール"^]
 +
-コネクタをクラウドに導入した場合はGovCloudリージョンでCloud Backupがサポートされ、オンプレミスにインストールした場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。政府機関の地域では、BlueXP SaaS WebサイトからConnectorを展開することはできません。
+コネクタをクラウドに導入した場合はGovCloudリージョンでCloud Backupがサポートされ、オンプレミスにインストールした場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
 
 
 

@@ -18,6 +18,37 @@ Cloud Backup の新機能をご確認ください。
 
 
 
+== 2023年4月4日
+
+
+
+=== 「制限付き」モードでCloud Volumes ONTAP システムからクラウドにデータをバックアップする機能
+
+これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限付き」モードでバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。を参照してください https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
+
+
+
+=== APIを使用して、オンプレミスのONTAP ボリュームをONTAP S3にバックアップする機能
+
+APIの新機能を使用して、BlueXP Cloud Backupを使用してボリュームSnapshotをONTAP S3にバックアップできます。この機能は、現時点ではオンプレミスのONTAP システムでのみ使用できます。詳細な手順については、ブログを参照してください https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["デスティネーションとしてのONTAP S3との統合（REST APIを使用）"^]。
+
+
+
+=== Azureストレージアカウントのゾーン冗長性の側面をLRSからZRSに変更する機能
+
+Cloud Volumes ONTAP システムからAzureストレージへのバックアップを作成する際、デフォルトでは、コスト最適化のためにローカル冗長性（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
+
+
+
+=== ジョブモニタの機能拡張
+
+* ユーザが開始したバックアップ処理とリストア処理、および進行中のバックアップ処理などのシステム開始ジョブは、ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムの*[ジョブ監視]*タブで使用できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。
+* すべてのジョブをレポートするためのCSVファイルをダウンロードできるほか、単一のジョブのJSONファイルをダウンロードして詳細を確認できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["詳細はこちら。"]。
+* 「Scheduled job failure」と「Restore job completes but with warnings」という2つの新しいバックアップジョブアラートが追加されました。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Cloud Backupから送信できるすべてのアラートを確認します"]。
+
+
+
+
 == 2023年3月9日
 
 
@@ -30,7 +61,7 @@ Cloud Backup の新機能をご確認ください。
 
 === ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能
 
-AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください link:task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および link:task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
+AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
 
 
 

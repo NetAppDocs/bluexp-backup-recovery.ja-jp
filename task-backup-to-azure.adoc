@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-to-azure.html 
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, cloud backup 
-summary: Cloud Volumes ONTAP から Azure Blob Storage へのデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
 = Cloud Volumes ONTAP データの Azure BLOB ストレージへのバックアップ
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP から Azure Blob Storage へのデータのバッ�
 
 
 [role="lead"]
-Cloud Volumes ONTAP から Azure Blob Storage へのデータのバックアップを開始するには、いくつかの手順を実行します。
+Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
 
 
@@ -27,10 +27,9 @@ Cloud Volumes ONTAP から Azure Blob Storage へのデータのバックアッ�
 * AzureでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
 * に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
-* Azureにコネクタをインストールしておきます。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。
+* Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。。image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムで Cloud Backup を有効にします
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムで Cloud Backup を有効にします
 [role="quick-margin-list"]
 * 新しいシステム： Cloud Backup は、作業環境ウィザードではデフォルトで有効になっています。このオプションは必ず有効にしておいてください。
 * 既存のシステム：作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable*をクリックして、セットアップ・ウィザードに従います。
@@ -82,21 +81,16 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。
 
 --
-コネクタの要件:: コネクタは、インターネットアクセスの有無にかかわらず、Azureリージョンにインストールできます。現時点では、インターネットにアクセスできないサイトではAzure Commercialサイトのみがサポートされています。
+コネクタの要件:: コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を備えたAzureリージョンにインストールできます。
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Azureにコネクタをデプロイします"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["インターネットにアクセスできないAzureリージョンのLinuxホストにコネクタをインストールします"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["Azureリージョン内のLinuxホストにコネクタを手動でインストールする"^]
 
 
 --
 
-
-
-NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["Cloud Backup の新機能"] Cloud Backup の各リリースの新機能を確認し、手順 ~ を実行します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
-
-コネクタがインターネットに接続されていないサイトにインストールされている場合は、Cloud Backup設定データのローカルバックアップを定期的に作成することを強く推奨します。 link:reference-backup-cbs-db-in-dark-site.html["ダークサイトでCloud Backupのデータをバックアップする方法をご覧ください"^]。
 
 コネクタの権限を確認または追加します:: Cloud Backupの検索とリストア機能を使用するには、Connectorの役割に特定の権限を付与して、Azure Synapse WorkspaceとData Lakeストレージアカウントにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 +
@@ -239,7 +233,11 @@ image:screenshot_backup_select_volumes.png["バックアップするボリュー
 
 
 .結果
-BLOBストレージコンテナは、入力したリソースグループに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
+BLOBストレージコンテナは、入力したリソースグループに自動的に作成され、そこにバックアップファイルが格納されます。
+
+ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
+
+Cloud Backupは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナをプロビジョニングします。異なるゾーン間でデータを確実に複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
 
 
 
