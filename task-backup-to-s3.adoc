@@ -98,8 +98,8 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["AWSにコネクタを導入します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["AWSリージョンのLinuxホストへのコネクタの手動インストール"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["AWSにコネクタを導入します"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["AWSリージョンのLinuxホストへのコネクタの手動インストール"^]
 
 
 --

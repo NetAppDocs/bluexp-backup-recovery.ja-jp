@@ -219,10 +219,7 @@
   <block id="8d95102bf9140e4354a61dced325fdb3" category="paragraph">Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダやオンプレミスに導入されているコネクタは使用できません。</block>
   <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">コネクタについて説明します</block>
   <block id="da1264a616f156bd6836a85f7dfdea5a" category="list-text"><block ref="da1264a616f156bd6836a85f7dfdea5a" category="inline-link-rx"></block></block>
-  <block id="d41b031ef25fff764808749edcc2cd28" category="inline-link">コネクタの使用を開始する</block>
-  <block id="b37ed402641ff6f2d1b0b55061547f2d" category="list-text"><block ref="b37ed402641ff6f2d1b0b55061547f2d" category="inline-link-rx"></block></block>
   <block id="1c52fe530613f90d476d439dbca6d53e" category="inline-link">コネクタをGCPにインストールする</block>
-  <block id="a792c7e75bcc7cf7d82f87b63cbca477" category="list-text"><block ref="a792c7e75bcc7cf7d82f87b63cbca477" category="inline-link-rx"></block></block>
   <block id="a8e8e48001e032c3b5939047d15db5a2" category="section-title">コネクタのネットワークを準備しています</block>
   <block id="7b16b8b258668ab05a1e5d83e084b477" category="paragraph">コネクタに必要なネットワーク接続があることを確認します。</block>
   <block id="aadbd6cd1f8b4e9deafea8f1d6c8333c" category="list-text">コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。</block>
@@ -1425,11 +1422,8 @@
   <block id="8ba57385dd56e0702c2eaf4101f0267d" category="list-text">必要に応じてファイアウォールルールを更新し、 ONTAP からオブジェクトストレージへのポート 443 経由の Cloud Backup Service 接続と、ポート 53 （ TCP / UDP ）経由での Storage VM から DNS サーバへの名前解決トラフィックを許可します。</block>
   <block id="68c339b6eb7bfabf7edb3aa60625b8a0" category="paragraph">Azure VNetまたはオンプレミスにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、これらのいずれかの場所にコネクタを作成して、ONTAP データをAzure BLOBストレージにバックアップする必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。</block>
   <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">Azureにコネクタをインストールしています</block>
-  <block id="b4f571ad8c9a525beb5cb8da26f64fef" category="list-text"><block ref="b4f571ad8c9a525beb5cb8da26f64fef" category="inline-link-rx"></block></block>
   <block id="c434332bb7ea2d6636a3d41a262f1e7e" category="inline-link">コネクタをオンプレミスにインストールする</block>
-  <block id="408e970a6e2ac7b03356ff4f61689ed3" category="list-text"><block ref="408e970a6e2ac7b03356ff4f61689ed3" category="inline-link-rx"></block></block>
   <block id="0fed42c16e02df19813c1ada5f9c8fd7" category="inline-link">Azure Governmentリージョンへのコネクタのインストール</block>
-  <block id="3ed416b513332ef0663a96d528858df7" category="list-text"><block ref="3ed416b513332ef0663a96d528858df7" category="inline-link-rx"></block></block>
   <block id="ed5be7df16713ed4a1d631dedaea1f5e" category="list-text">ポート 443 経由での BLOB オブジェクトストレージへの HTTPS 接続</block>
   <block id="716ef7b4757802ea9cccaa1100796c41" category="list-text">Cloud Backupの検索とリストア機能を使用するには、ConnectorとAzure Synapse SQLサービス間の通信用にポート1433を開いておく必要があります。</block>
   <block id="b445de53411a165e9c56da6430c38d59" category="inline-link">Azure のコネクタのルール</block>
@@ -1521,9 +1515,7 @@
   <block id="2568e9dfbf799a7f4514c6421cdd6535" category="paragraph">BlueXPコネクタは'BlueXP機能の主要なソフトウェアですONTAP データのバックアップとリストアにはコネクタが必要です。</block>
   <block id="244b0622880fcbe1c4432e64d81bc038" category="paragraph">AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。ない場合は、ONTAP データをAWS S3ストレージにバックアップするために、これらのいずれかの場所にコネクタを作成する必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。</block>
   <block id="cd10ae990b1a676dcb9da574833197dc" category="inline-link">AWSにコネクタをインストールする</block>
-  <block id="fe96b3be0fd11571a6c8ea6ac43f23fe" category="list-text"><block ref="fe96b3be0fd11571a6c8ea6ac43f23fe" category="inline-link-rx"></block></block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">AWS GovCloudリージョンへのコネクタのインストール</block>
-  <block id="9ead7424c07e39075bc88d26cf29486d" category="list-text"><block ref="9ead7424c07e39075bc88d26cf29486d" category="inline-link-rx"></block></block>
   <block id="929d25665bc92d22cf4a79265248dd36" category="section-title">コネクタのネットワーク要件</block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">エンドポイントのリストを参照してください</block>
   <block id="3014a55cd7ec25590c6b5406eec324b1" category="list-text">ポート443からCloud Backup Service およびS3オブジェクトストレージへのHTTPS接続 <block ref="2b717f51e9f0e108fc936d861142f7b4" category="inline-link-rx"></block>)</block>
@@ -2282,14 +2274,9 @@
   <block id="168036087bcdae960471ab9c23a03efa" category="list-text">オブジェクトストアバケットでは、StorageGRID オブジェクトのバージョン管理を手動で有効にしないでください。</block>
   <block id="6dca065caf89927398e08355b9d7718e" category="paragraph">StorageGRID にデータをバックアップするときは、オンプレミスのコネクタが必要です。新しいコネクターをインストールするか、現在選択されているコネクターがオンプレミスにあることを確認する必要があります。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。</block>
   <block id="f9e3fe9bcf87b917aee79601ec31e206" category="inline-link">インターネットにアクセスできる Linux ホストにコネクタをインストールしています</block>
-  <block id="c406c8943ff98e7dc5d56f37428c9410" category="list-text"><block ref="c406c8943ff98e7dc5d56f37428c9410" category="inline-link-rx"></block></block>
   <block id="f6428d68ab8312cad4e05d9222dbabc5" category="inline-link">インターネットにアクセスできない Linux ホストにコネクタをインストールしています</block>
-  <block id="d2c6281fb2bfdd80b1c106c90e21e78b" category="list-text"><block ref="d2c6281fb2bfdd80b1c106c90e21e78b" category="inline-link-rx"></block></block>
-  <block id="c870531773e82c374eb4125c8029e25e" category="inline-link">コネクタ間の切り替え</block>
-  <block id="74d39f4b6fe0e32c5cfa2ed86891bf44" category="list-text"><block ref="74d39f4b6fe0e32c5cfa2ed86891bf44" category="inline-link-rx"></block></block>
   <block id="31f0caf11b57fb7cb77368268e368d75" category="inline-link-macro">Cloud Backup の新機能</block>
   <block id="f4cec0313eb4678996dc68cfe81c6f4f" category="inline-link">Connector ソフトウェアをアップグレードします</block>
-  <block id="48b0bfd3649cb51640d3b2b726ccd1b0" category="admonition">Cloud Backupの機能は、BlueXPコネクタに組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="4b505ef59fae088b7538ff8d53b204e9" category="inline-link-macro-rx"></block> Cloud Backup の各リリースの新機能を確認し、手順 ~ を実行します<block ref="9f7f6f7d33dac6a99bb8b7e121fd2054" category="inline-link-rx"></block> 新しい機能を使用する場合。</block>
   <block id="f8436f6242c5e270dd0e25a1a05d34a4" category="inline-link-macro">ダークサイトでCloud Backupのデータをバックアップする方法をご覧ください</block>
   <block id="02bf1c0a02190999eeab71bbe7fff71c" category="paragraph">コネクタがインターネットに接続されていないサイトにインストールされている場合は、Cloud Backup設定データのローカルバックアップを定期的に作成することを強く推奨します。 <block ref="07f517d916bbf45a47c5d9dc6a000920" category="inline-link-macro-rx"></block>。</block>
   <block id="92a508a0037c85cca367ecb3e92a0fde" category="list-text">ポート443からStorageGRID ゲートウェイノードへのHTTPS接続</block>
@@ -3469,10 +3456,8 @@
   <block id="d2b32f39697a5b013948d2ec66933921" category="list-text">job - BlueXPデータベースのジョブ詳細エントリを管理します</block>
   <block id="608448c2576128ccc8c2f959d59e20b4" category="list-text">コネクタの要件</block>
   <block id="c9069f67c447a0a15bda0467230c3148" category="inline-link">AWSにコネクタを導入します</block>
-  <block id="545a608e55ae4e3a96594a093a988a8a" category="list-text"><block ref="545a608e55ae4e3a96594a093a988a8a" category="inline-link-rx"></block></block>
   <block id="070bde10025186ce49792171c694b711" category="list-text">ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。この機能は、ダークサイトに導入した場合は使用できません。 <block ref="58f01ad9ea7ce8fd23147681b9f27af7" category="inline-link-macro-rx"></block>。</block>
   <block id="261ca950ce5b13f6fc57f9ad7d366d88" category="inline-link">Azureにコネクタをデプロイします</block>
-  <block id="28cf618b595b848efbf044d272e765f2" category="list-text"><block ref="28cf618b595b848efbf044d272e765f2" category="inline-link-rx"></block></block>
   <block id="7cccee5994c911e5094d2b657aa36982" category="list-text">ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したバックアップを Azure Archive ストレージに階層化して、コストをさらに最適化することができます。この機能は、ダークサイトに導入した場合は使用できません。 <block ref="0f1866ee99580c7794186e312ffd205e" category="inline-link-macro-rx"></block>。</block>
   <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">サポートケースの管理（プレビュー）</block>
   <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">アクティブなサポートケースと解決済みのサポートケースは、BlueXPから直接表示および管理できます。NSSアカウントと会社に関連付けられたケースを管理できます。</block>
@@ -3542,11 +3527,9 @@
   <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">添付ファイルはファイルあたり25 MBに制限されています。サポートされているファイル拡張子は、txt、log、pdf、jpg/jpeg、rtf、 doc/docx、xls/xlsx、およびcsv。</block>
   <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*ケースノートの更新*：問題の詳細を入力するか、*ファイルのアップロード*を選択して最大5つのファイルを添付します。</block>
   <block id="99b6a376880ac28b047f54b783efb2b9" category="summary">Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="682b6321ac519cf28bd8d1a2cb21003e" category="list-text">Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。。<block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 新規または既存のシステムで Cloud Backup を有効にします</block>
   <block id="6bdecde65d2cf1697dee748c10e1d508" category="paragraph">Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 <block ref="47744e5312ce42ad8130a5365d7fb0d0" category="inline-link-macro-rx"></block>。コネクタとCloud Volumes ONTAP システムをダークサイトに導入する場合は、BYOLライセンスを使用する必要があります。</block>
   <block id="6322974b2572b580e2e280f1f7473932" category="list-text">コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を備えたAzureリージョンにインストールできます。</block>
   <block id="f07703a113f9329efbb1b3b1ed7d5490" category="inline-link">Azureリージョン内のLinuxホストにコネクタを手動でインストールする</block>
-  <block id="6557cfcd06534fdeff37ca971fbd068c" category="list-text"><block ref="6557cfcd06534fdeff37ca971fbd068c" category="inline-link-rx"></block></block>
   <block id="f74289356f2bc0344a65a98de529ad8d" category="paragraph">BLOBストレージコンテナは、入力したリソースグループに自動的に作成され、そこにバックアップファイルが格納されます。</block>
   <block id="62ce1fd293b23e542e251491d1905645" category="paragraph">ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます <block ref="5d9366e34fca5f2de6190abcadbc5e98" category="inline-link-macro-rx"></block>。</block>
   <block id="95fa16fe802a71eca4c0ade2049c7325" category="inline-link">ストレージアカウントの複製方法の変更</block>
@@ -3609,13 +3592,11 @@
   <block id="051139f64ea4dc8d9390cd2792f01b14" category="list-text">Google Cloudにコネクタがインストールされている必要があります。</block>
   <block id="6b344f3d57a23c796f9476dd353d12e7" category="list-text">コネクタは、インターネットにアクセスできるGoogleリージョンにインストールする必要があります。</block>
   <block id="87a05d4200b00403ad79b218876c73d4" category="inline-link">Google Cloudにコネクタをデプロイします</block>
-  <block id="b7ca017a195ca4317075e0552ce38e44" category="list-text"><block ref="b7ca017a195ca4317075e0552ce38e44" category="inline-link-rx"></block></block>
   <block id="38d4d167f6dd9174c3535fc5c7ba4b76" category="section-title">2023年4月4日</block>
   <block id="40c193dda1b0a4df68695abe150f234a" category="section-title">「制限付き」モードでCloud Volumes ONTAP システムからクラウドにデータをバックアップする機能</block>
   <block id="28e1f4495f1c7f5d7f7a5392a215c21a" category="paragraph">これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限付き」モードでバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。を参照してください<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> および<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
   <block id="57c3b4ba3c60295d45a2554606080eef" category="section-title">APIを使用して、オンプレミスのONTAP ボリュームをONTAP S3にバックアップする機能</block>
   <block id="430a1b25bf435fd21376b7b1884b6999" category="inline-link">デスティネーションとしてのONTAP S3との統合（REST APIを使用）</block>
-  <block id="26ec6efcc8d7c7740aceeb4c7307d184" category="paragraph">APIの新機能を使用して、BlueXP Cloud Backupを使用してボリュームSnapshotをONTAP S3にバックアップできます。この機能は、現時点ではオンプレミスのONTAP システムでのみ使用できます。詳細な手順については、ブログを参照してください<block ref="50f757899df464a10b489edfac75ae5d" category="inline-link-rx"></block>。</block>
   <block id="720734599c08f49ea57d729ec9f12d53" category="section-title">Azureストレージアカウントのゾーン冗長性の側面をLRSからZRSに変更する機能</block>
   <block id="d9f6af5f4e2b16940729f1ac7da86d7d" category="paragraph">Cloud Volumes ONTAP システムからAzureストレージへのバックアップを作成する際、デフォルトでは、コスト最適化のためにローカル冗長性（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="a7393f4b2940dc4b2ad20a62564d25be" category="section-title">ジョブモニタの機能拡張</block>
@@ -3632,7 +3613,6 @@
   <block id="a9d3c4c93c315af7f13f9b365c2adcbf" category="list-text">コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
   <block id="5b477e50c905f9613c5e16e571e9e5bc" category="list-text">このコネクタは、インターネットアクセスがフルまたは制限されたAWSリージョン（「標準」または「制限」モード）にインストールできます。</block>
   <block id="e7e22b4d377bdd0d9b0cb0ec1148ae55" category="inline-link">AWSリージョンのLinuxホストへのコネクタの手動インストール</block>
-  <block id="1196ba0da50696f076c6352e9882467f" category="list-text"><block ref="1196ba0da50696f076c6352e9882467f" category="inline-link-rx"></block></block>
   <block id="04b01ab636ef32a98ac9e4e70d26301d" category="paragraph">インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、Cloud Backupを使用してボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにBlueXPコネクタを導入する必要があります。</block>
   <block id="9cee8a58cb0f70566a439c4bcaed0562" category="list-text">AWSの商用リージョンおよびAWS C2S/SC2SのセキュアリージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3にデータをバックアップできます。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
   <block id="5660f9fec8990d75e681f2c7676a1132" category="list-text">Azure商用リージョンおよびAzure IL6セキュアリージョンにインストールされているCloud Volumes ONTAP システムから、Azure Blobにデータをバックアップできます。を参照してください <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
@@ -3648,4 +3628,20 @@
   <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間は、各ソース ONTAP システムで設定されているタイムゾーンに基づきます。UIからユーザが指定した時間にバックアップ処理をスケジュールすることはできません。詳細については、システムエンジニアにお問い合わせください。</block>
   <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="1034847477ed5a052dde5a113bf49af2" category="paragraph">コネクタをクラウドに導入した場合はGovCloudリージョンでCloud Backupがサポートされ、オンプレミスにインストールした場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。</block>
+  <block id="a16acb967c4e8e9b1d495f499e535a7a" category="list-text">Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
+  <block id="d6dafcdb12e4f86e51530ee982eab823" category="list-text"><block ref="d6dafcdb12e4f86e51530ee982eab823" category="inline-link-rx"></block></block>
+  <block id="027b143222d1d3eb38cfc1f168468c85" category="list-text"><block ref="027b143222d1d3eb38cfc1f168468c85" category="inline-link-rx"></block></block>
+  <block id="42fe5b7d13b47e1a54bdeba0b60b6fe4" category="list-text"><block ref="42fe5b7d13b47e1a54bdeba0b60b6fe4" category="inline-link-rx"></block></block>
+  <block id="9782e9b134ce2961f9658af915ee4113" category="list-text"><block ref="9782e9b134ce2961f9658af915ee4113" category="inline-link-rx"></block></block>
+  <block id="d1830c648563b369c87ce51dd1eefe60" category="list-text"><block ref="d1830c648563b369c87ce51dd1eefe60" category="inline-link-rx"></block></block>
+  <block id="323b89c418724269f9abecade7c834d3" category="list-text"><block ref="323b89c418724269f9abecade7c834d3" category="inline-link-rx"></block></block>
+  <block id="8359638cbd1b68fd640fa0f309480550" category="list-text"><block ref="8359638cbd1b68fd640fa0f309480550" category="inline-link-rx"></block></block>
+  <block id="348d63f232889527f97197322aaa8986" category="admonition">Cloud Backupの機能は、BlueXPコネクタに組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="4b505ef59fae088b7538ff8d53b204e9" category="inline-link-macro-rx"></block> Cloud Backup の各リリースの新機能を確認し、手順 ~ を実行します<block ref="665cecca74760cbd23ea14978e32ba89" category="inline-link-rx"></block> 新しい機能を使用する場合。</block>
+  <block id="2ea7e7f07a1904fc4427a42a7aba9533" category="list-text"><block ref="2ea7e7f07a1904fc4427a42a7aba9533" category="inline-link-rx"></block></block>
+  <block id="1a9500ce2c4bdf3774a1abc05bae9ae2" category="list-text"><block ref="1a9500ce2c4bdf3774a1abc05bae9ae2" category="inline-link-rx"></block></block>
+  <block id="f25c47eb7d9f3c638d89723bee6d2360" category="paragraph">APIの新機能を使用して、BlueXP Cloud Backupを使用してボリュームSnapshotをONTAP S3にバックアップできます。この機能は、現時点ではオンプレミスのONTAP システムでのみ使用できます。詳細な手順については、ブログを参照してください<block ref="50f757899df464a10b489edfac75ae5d" category="inline-link-rx"></block>。</block>
+  <block id="bf561a7142f1f05d376a8d4b4beaad24" category="list-text"><block ref="bf561a7142f1f05d376a8d4b4beaad24" category="inline-link-rx"></block></block>
+  <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
+  <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
+  <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
 </blocks>

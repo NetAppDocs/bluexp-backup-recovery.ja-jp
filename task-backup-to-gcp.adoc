@@ -86,7 +86,7 @@ GCP サービスアカウント:: 事前定義された Storage Admin ロール�
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Google Cloudにコネクタをデプロイします"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["Google Cloudにコネクタをデプロイします"^]
 
 
 --

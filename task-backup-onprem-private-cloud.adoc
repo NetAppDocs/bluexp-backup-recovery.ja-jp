@@ -177,13 +177,12 @@ StorageGRID へのバックアップを設定する際、テナントアカウ�
 StorageGRID にデータをバックアップするときは、オンプレミスのコネクタが必要です。新しいコネクターをインストールするか、現在選択されているコネクターがオンプレミスにあることを確認する必要があります。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["コネクタ間の切り替え"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
 
 
 
-NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["Cloud Backup の新機能"] Cloud Backup の各リリースの新機能を確認し、手順 ~ を実行します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
+NOTE: Cloud Backupの機能は、BlueXPコネクタに組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["Cloud Backup の新機能"] Cloud Backup の各リリースの新機能を確認し、手順 ~ を実行します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
 
 コネクタがインターネットに接続されていないサイトにインストールされている場合は、Cloud Backup設定データのローカルバックアップを定期的に作成することを強く推奨します。 link:reference-backup-cbs-db-in-dark-site.html["ダークサイトでCloud Backupのデータをバックアップする方法をご覧ください"^]。
 
