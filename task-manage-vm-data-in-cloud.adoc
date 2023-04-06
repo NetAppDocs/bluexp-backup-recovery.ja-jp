@@ -14,42 +14,42 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 
 [role="lead"]
-データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。
+データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、リソースグループの変更内容に応じて、BlueXP UIで更新内容を確認できます。
 
 
 
 == ポリシーを表示します
 
-デフォルトの組み込みポリシーをすべて表示できます。各ポリシーについて詳細を表示すると、関連付けられているすべてのCloud Backup for Virtual Machinesポリシーと関連するすべての仮想マシンが表示されます。
+デフォルトの組み込みポリシーをすべて表示できます。これらの各ポリシーについて、詳細を表示すると、関連付けられているすべてのポリシーと仮想マシンが表示されます。
 
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . [* 設定 *] ドロップダウンから、 [* ポリシー *] をクリックします。
 . 詳細を表示するポリシーに対応する *View Details* をクリックします。
 
 
-関連付けられているCloud Backup for Virtual Machinesポリシーとすべての仮想マシンが表示されます。
+関連付けられているポリシーと仮想マシンが一覧表示されます。
 
 
 
 == データストアと仮想マシンを表示します
 
-登録済みのSnapCenter Plug-in for VMware vSphereを使用して保護されているデータストアと仮想マシンが表示されます。
+登録済みのSnapCenter Plug-in for VMware vSphereホストを使用して保護されているデータストアと仮想マシンが表示されます。
 
 .手順
 . BlueXP UIで、*Protection*>* Backup and recovery*>* Virtual Machines *>* Settings*>* SnapCenter Plug-in for VMware vSphere*の順にクリックします。
-. データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereをクリックします。
+. データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereホストをクリックします。
 
 
 
 
 == SnapCenter Plug-in for VMware vSphereインスタンスを編集します
 
-BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます。
+BlueXPでは、SnapCenter Plug-in for VMware vSphereホストの詳細を編集できます。
 
 .手順
 . BlueXP UIで、*Protection*>* Backup and recovery*>* Virtual Machines *>* Settings*>* SnapCenter Plug-in for VMware vSphere*の順にクリックします。
-. をクリックし、*編集*を選択します
-. 必要に応じて詳細を変更します
+. をクリックします image:icon-action.png["アクション"] をクリックし、 * Edit * を選択します。
+. 必要に応じて詳細を変更します。
 . [ 保存（ Save ） ] をクリックします。
 
 
@@ -57,11 +57,11 @@ BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます。
 
 == 保護ステータスを更新します
 
-新しいボリュームがデータベースに追加された場合やポリシーまたはリソースグループに変更があった場合は、保護を更新する必要があります。
+データベースに新しいボリュームが追加された場合、またはポリシーやリソースグループに変更があった場合は、保護ステータスを更新する必要があります。
 
 . [*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . [*設定*]ドロップダウンから、[* SnapCenter Plug-in for VMware vSphere*]をクリックします。
-. をクリックします image:icon-action.png["アクション"] 仮想マシンをホストしているSnapCenter Plug-in for VMware vSphereに対応しており、*更新*をクリックします。
+. をクリックします image:icon-action.png["アクション"] SnapCenter Plug-in for VMware vSphereホストに対応し、*[リフレッシュ]*をクリックします。
 +
 新しい変更が検出されます。
 

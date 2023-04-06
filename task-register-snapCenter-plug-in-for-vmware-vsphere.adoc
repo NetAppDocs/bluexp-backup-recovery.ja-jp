@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html 
 keywords: register, registration, SnapCenter Plug-in for VMware vSphere 
-summary: BlueXPでSnapCenter Plug-in for VMware vSphereを登録します。 
+summary: BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録します。 
 ---
-= SnapCenter Plug-in for VMware vSphereの登録
+= SnapCenter Plug-in for VMware vSphereホストを登録
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: BlueXPでSnapCenter Plug-in for VMware vSphereを登録します。
 
 
 [role="lead"]
-BlueXPにデータストアと仮想マシンを表示するには、SnapCenter Plug-in for VMware vSphereをBlueXPに登録する必要があります。SnapCenter Plug-in for VMware vSphereの登録は、管理者アクセス権を持つユーザのみが実行できます。
+表示するデータストアと仮想マシンについては、BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録する必要があります。SnapCenter Plug-in for VMware vSphereホストを登録できるのは、管理者アクセス権を持つユーザだけです。
 
 
-NOTE: 複数のSnapCenter Plug-in for VMware vSphereを登録できます。ただし、一度登録すると、SnapCenter Plug-in for VMware vSphereを削除できなくなります。
+NOTE: BlueXPでは、複数のSnapCenter Plug-in for VMware vSphereホストを登録できます。ただし、登録後にSnapCenter Plug-in for VMware vSphereホストを削除することはできません。
 
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
@@ -25,10 +25,10 @@ NOTE: 複数のSnapCenter Plug-in for VMware vSphereを登録できます。た�
 . [* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。
 . 次の情報を指定します。
 +
-.. SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereのFQDNまたはIPアドレスを指定します。
-.. Portフィールドで、SnapCenter Plug-in for VMware vSphereを実行しているポート番号を指定します。
+.. SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereホストのFQDNまたはIPアドレスを指定します。
+.. [ポート]フィールドで、SnapCenter Plug-in for VMware vSphereホストが実行されているポート番号を指定します。
 +
-SnapCenter Plug-in for VMware vSphereとCloud Backup for Virtual Machinesの間の通信に使用するポートが開いていることを確認する必要があります。
+SnapCenter Plug-in for VMware vSphereホストとBlueXPの間で通信するためには、ポートが開いていることを確認する必要があります。
 
 .. Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。
 
@@ -38,4 +38,4 @@ SnapCenter Plug-in for VMware vSphereとCloud Backup for Virtual Machinesの間�
 
 * 終了後 *
 
-[*バックアップとリカバリ*>*仮想マシン*]をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereを使用した保護の対象となるすべてのデータストアおよび仮想マシンを表示します。
+[バックアップとリカバリ]*>*[仮想マシン]*をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereホストを使用して保護されているすべてのデータストアと仮想マシンを表示します。

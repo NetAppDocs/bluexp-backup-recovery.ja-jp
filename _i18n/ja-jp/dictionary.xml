@@ -1088,13 +1088,11 @@
   <block id="e65bc43817a0ccba6c96b51583aeb5d2" category="paragraph">Amazon S3 Glacier と S3 Glacier Deep Archive の読み出しオプションの詳細については、を参照してください<block ref="b0992f5e2227a70d04a7c3b83b2ca245" category="inline-link-rx"></block>。</block>
   <block id="cf12172bd966bafd91b1daeef9357fe8" category="summary">オンプレミスのONTAP からStorageGRID へデータストアをバックアップ</block>
   <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="doc">データストアをStorageGRID にバックアップする</block>
-  <block id="dc2f305c54bc6989c91413415c2c57b6" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、1つ以上のデータストアをStorageGRID にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">要件</block>
   <block id="9a0c42190771559c2a8da5fac845d24d" category="admonition">すべてのが満たされていることを確認します <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> データストアをクラウドにバックアップする前に、</block>
   <block id="a9bb4a4ebd2695e50a673d0b706564b1" category="list-text">BlueXP UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*仮想マシン*]をクリックします。</block>
   <block id="418c5509e2171d55b0aee5c2ea4442b5" category="inline-image-macro">アクション</block>
   <block id="1d419e3005bf4974f6070bbb53e5816f" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> バックアップするデータストアに対応して、*バックアップのアクティブ化*をクリックします。</block>
-  <block id="abe7d23d1826e9db79e6c78593403413" category="paragraph">データストアのバックアップを検出するONTAP クラスタを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。</block>
   <block id="925e322b8ed2bad21cf3391e5e93df0a" category="list-text">SVMに対応する* Add Working Environment *をクリックします。</block>
   <block id="73f07eefb51e62cc902b672233bd4977" category="list-text">ONTAP クラスタユーザのクレデンシャルを指定してください。</block>
   <block id="6c5cc1315b69c8256bbc33cf47a5a7ab" category="list-text">「* StorageGRID *」を選択します。</block>
@@ -1194,16 +1192,11 @@
   <block id="7e97cb9cfa6da264730476207742c975" category="list-text">また可能です <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> Azure 内の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムへの接続に使用できます。</block>
   <block id="ddac760f2c60fbb2375807e939befa9d" category="summary">仮想マシン上のデータ保護の詳細と、さまざまなポリシーについて理解する。</block>
   <block id="97bfb69bf5a1d719c6265b922436bbaa" category="doc">仮想マシンのデータを保護</block>
-  <block id="7d83d5d5ce1c46e87b0f8c0f37208dfa" category="paragraph">SnapCenter Plug-in for VMware vSphereとBlueXP（旧Cloud Manager）を統合することで、仮想マシン上のデータを保護できます。データストアはオンプレミスのプライマリストレージやセカンダリストレージからクラウドにバックアップでき、仮想マシンはオンプレミスのSnapCenter Plug-in for VMware vSphereに簡単にリストアできます。</block>
-  <block id="b8104f51ae1e5a69311d6b01f5409c0e" category="paragraph">データストアは、Amazon Web Services S3（サポートされているアーカイブ階層はGlacierとDeep Glacier）、Microsoft Azure Blob（サポートされているアーカイブ階層はAzure Archive）、Google Cloud Platform、およびStorageGRID にバックアップできます。</block>
-  <block id="bf12440e355f2cc41683d5da523c5fce" category="paragraph">データストアおよび仮想マシンを クラウド サービス にバックアップする前に、次の要件を確認し、サポートされる構成になっていることを確認してください。</block>
   <block id="d511399444cf864b695600d159b7c93b" category="list-text">VMware vSphere 4.6P1以降用のSnapCenter プラグイン</block>
   <block id="0fbf3afea399595219e31836afabacc9" category="list-text">VMware vSphere 4.7P1以降でSnapCenter Plug-inを使用して、オンプレミスのセカンダリストレージから仮想マシンをバックアップする必要があります。</block>
   <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">ONTAP 9.8 以降</block>
-  <block id="52764b554e9bba6804ede67b5b8f970e" category="list-text">BlueXP 3.9以降</block>
   <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">VMware vSphere 4.6P1向けSnapCenter プラグインでは、少なくとも1つのバックアップを作成しておく必要があります。</block>
   <block id="9a3ae5d8e3738351dd9a586e8215632a" category="list-text">SnapCenter Plug-in for VMware vSphereで、BlueXPの仮想マシンポリシーと同じラベルまたは同じラベルの日単位、週単位、または月単位のポリシーが少なくとも1つ適用されます。</block>
-  <block id="9c2d7e78a68e18061466c4c12001d828" category="list-text">組み込みのポリシーの場合は、スケジュール階層はSnapCenter Plug-in for VMware vSphereとクラウドのデータストアで同じである必要があります。</block>
   <block id="ad747f24f06324c9bc58eeaa274f014a" category="list-text">FlexGroup ボリュームのバックアップとリストアはサポートされていないため、データストアにFlexGroup ボリュームがないことを確認してください。</block>
   <block id="d4e9a319924f580f8d8c025f39e06dc3" category="list-text">暗号化されたボリュームのリストアはサポートされていないため、暗号化されたボリュームがないことを確認してください。</block>
   <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">必要なリソースグループで「*_ recent *」を無効にします。リソースグループに対して「*_ recent *」が有効になっている場合、これらのリソースグループのバックアップをクラウドへのデータ保護に使用できず、それ以降はリストア処理に使用できません。</block>
@@ -1365,12 +1358,10 @@
   <block id="3b5c5ae54533da138be94559c533a510" category="list-text">[*Configure*] をクリックします。</block>
   <block id="210360badd0de9b811d995dd73e39d33" category="summary">オンプレミスのONTAP からAzureへデータストアをバックアップ</block>
   <block id="32d2b45dd98e36ad888d7156b4532053" category="doc">データストアをMicrosoft Azureにバックアップする</block>
-  <block id="206a435abd7cd4811fdc6eb74ac46545" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされるアーカイブ層はAzure Archive Blob Storageです。</block>
   <block id="8a8bca40b3d548c634cd73d37e5a630c" category="list-text">「* Microsoft Azure *」を選択して、クラウドプロバイダとして設定します。</block>
   <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">Azure サブスクリプション ID を指定します。</block>
   <block id="db7f740fbee2466830a1f559dba6b17b" category="list-text">新しいリソースグループを作成するか、既存のリソースグループを使用します。</block>
-  <block id="17e71ff8be0504f2f0970de9d25aff47" category="list-text">作業環境として追加した ONTAP クラスタの IP アドレスを指定します。</block>
   <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">アーカイブ階層を選択します。</block>
   <block id="1f32eed19bf38ccd50dd00a18fd2d95c" category="summary">Cloud Volumes ONTAP 作業環境とコネクタを作成します</block>
   <block id="ef1b9121ab9ea469ad904cedd07f94d3" category="doc">Cloud Volumes ONTAP を設定します</block>
@@ -1942,44 +1933,26 @@
   <block id="529795f55723488071425500df0ff5d6" category="summary">仮想マシンはクラウドからオンプレミスのSnapCenter にリストアできます。</block>
   <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">クラウドから仮想マシンをリストアします</block>
   <block id="9506c95f9ad8061d2b32d45700688c83" category="paragraph">仮想マシンをクラウドからオンプレミスのvCenterにリストアできます。バックアップは、作成された場所とまったく同じ場所にリストアされます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
-  <block id="d464a140825c1e9f8813a3b52ebddc03" category="admonition">データストア全体にまたがっている仮想マシンはリストアできません。</block>
-  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">必要なもの</block>
   <block id="1344fa03cfc0e1e9c9a94eebf3e3c1a9" category="paragraph">すべてのが満たされていることを確認します <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> 仮想マシンをクラウドからリストアする前に、</block>
-  <block id="4f72fd7ca712acaf47fd9055c7bd40b5" category="list-text">BlueXP UIで、*Protection*&gt;* Backup and recovery*&gt;* Virtual Machines *&gt;* SnapCenter Plug-in for VMware vSphere*をクリックし、仮想マシンをリストアするSnapCenter Plug-in for VMware vSphereを選択します。</block>
-  <block id="fcbd686b41684a3ab6f265cc8de940c9" category="admonition">ソース仮想マシンが別の場所（vMotion）に移動され、ユーザーがその仮想マシンのリストアをBlueXPから実行した場合、仮想マシンはバックアップが作成された元の場所にリストアされます。</block>
-  <block id="d97e3ee694bea96c30606b68a9d786db" category="list-text">データストアからリストアするには：</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアするデータストアに対応し、*詳細の表示*をクリックします。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">リストアするバックアップに対応する* Restore *をクリックします。</block>
   <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">バックアップからリストアする仮想マシンを選択します。</block>
   <block id="0b204b102ed08f6af904a33d81026023" category="list-text">[* Archival Restore Priority]を選択し、[* Next]をクリックします。</block>
-  <block id="8088e5c36e0c98125d876c46d3a81440" category="paragraph">このオプションは、アーカイブ設定が設定されているポリシーを使用して仮想マシンが保護されている場合にのみ使用できます。Amazon Web Servicesでサポートされているアーカイブリストアの優先度は、高、標準、および低です。また、Microsoft Azureでサポートされているアーカイブリストアの優先度は高および標準です。</block>
-  <block id="cbf0f67cafb8adff0e22d1448f5921f1" category="list-text">仮想マシンからリストアするには：</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアする仮想マシンに対応して、*リストア*をクリックします。</block>
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">仮想マシンのリストアに使用するバックアップを選択します。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VMは、バックアップの作成元と同じ場所にリストアされます。</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">データストアと仮想マシンを表示し、SnapCenter Plug-in for VMware vSphereインスタンスを編集できます。</block>
   <block id="880521c077c3d9130e51f737ddd86b15" category="doc">仮想マシンの保護を管理します</block>
-  <block id="ddbe1a27c8679d52220657402cc89453" category="paragraph">データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。</block>
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">ポリシーを表示します</block>
-  <block id="20fa0d77fdaa3a45a8f87701c0342e8b" category="paragraph">デフォルトの組み込みポリシーをすべて表示できます。各ポリシーについて詳細を表示すると、関連付けられているすべてのCloud Backup for Virtual Machinesポリシーと関連するすべての仮想マシンが表示されます。</block>
   <block id="8a53d8d9bdff689ff4cea2f3d55f43de" category="list-text">[* 設定 *] ドロップダウンから、 [* ポリシー *] をクリックします。</block>
   <block id="8bdf078d3946fd5743d8283e1dda131b" category="list-text">詳細を表示するポリシーに対応する *View Details* をクリックします。</block>
-  <block id="0eaea88f7ff41f67b59dccbcf68165fd" category="paragraph">関連付けられているCloud Backup for Virtual Machinesポリシーとすべての仮想マシンが表示されます。</block>
-  <block id="c592537d7c4342754740fa8b36640686" category="section-title">データストアと仮想マシンを表示します</block>
-  <block id="3fad99d665e8244fc38412e798c501af" category="paragraph">登録済みのSnapCenter Plug-in for VMware vSphereを使用して保護されているデータストアと仮想マシンが表示されます。</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">* このタスクについて *</block>
   <block id="9330e7377c5511f70bfc35493714892a" category="list-text">BlueXP UIで、*Protection*&gt;* Backup and recovery*&gt;* Virtual Machines *&gt;* Settings*&gt;* SnapCenter Plug-in for VMware vSphere*の順にクリックします。</block>
-  <block id="21d67fc25940b8b3b749e37ad8e29e79" category="list-text">データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereをクリックします。</block>
   <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">SnapCenter Plug-in for VMware vSphereインスタンスを編集します</block>
-  <block id="aead5ccad47d982e42806d38753de835" category="paragraph">BlueXPのSnapCenter Plug-in for VMware vSphereの詳細を編集できます。</block>
-  <block id="65e94d24e7bbe43abc97d317024d0fcd" category="list-text">をクリックし、*編集*を選択します</block>
-  <block id="de272c17799e442dfec66612b8e9058b" category="list-text">必要に応じて詳細を変更します</block>
   <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">[ 保存（ Save ） ] をクリックします。</block>
   <block id="1b6f5433333a05ee720166b3bef29b73" category="section-title">保護ステータスを更新します</block>
-  <block id="6701db38a1eb11efa12fa6c9ee0fa66a" category="paragraph">新しいボリュームがデータベースに追加された場合やポリシーまたはリソースグループに変更があった場合は、保護を更新する必要があります。</block>
   <block id="8fc5a6acddf8678dc2c340b6dfae42a9" category="list-text">[*バックアップとリカバリ*&gt;*仮想マシン*]をクリックします。</block>
   <block id="2ffa396b01e2ea9f2f8a8e7307a1e28e" category="list-text">[*設定*]ドロップダウンから、[* SnapCenter Plug-in for VMware vSphere*]をクリックします。</block>
-  <block id="f9d6d89e14fa868377d75b60a21b7841" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 仮想マシンをホストしているSnapCenter Plug-in for VMware vSphereに対応しており、*更新*をクリックします。</block>
   <block id="048b394365a250ed3a53a1b28e83733e" category="paragraph">新しい変更が検出されます。</block>
   <block id="3e99ccad833881d9a8aeec4e2665baae" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> データストアに対応し、*更新保護*をクリックして変更に対するクラウド保護を有効にします。</block>
   <block id="d65dcf19e9eda758238d835f23a69642" category="section-title">ジョブを監視します</block>
@@ -2605,7 +2578,6 @@
   <block id="198c941b68b959d876c1fe884654eb0f" category="paragraph">Azure Archive の読み出しオプションの詳細については、を参照してください<block ref="932993244834a73e92c6a33c0a2e980e" category="inline-link-rx"></block>。</block>
   <block id="87f7d3321134d426b2518c004c972cc2" category="summary">オンプレミスのONTAP からGoogle Cloud Platformにデータストアをバックアップ</block>
   <block id="eb1ab874b09a7eab583845e8576be828" category="doc">データストアをGoogle Cloud Platformにバックアップする</block>
-  <block id="ff71a97178182c75d3a25f7342156533" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、1つ以上のデータストアをGoogle Cloud Platformにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">Google Cloud Platform *を選択して、クラウドプロバイダとして構成します。</block>
   <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="list-text">バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project を選択します。</block>
   <block id="16d4cdec56b3c490095eb1c28b330e1f" category="doc">Cloud Volumes ONTAP データの Google Cloud Storage へのバックアップ</block>
@@ -2677,16 +2649,9 @@
   <block id="b44a2ec7d100bd7fbbcef764a835ae72" category="paragraph">「*自動生成*」を選択した場合は、サフィックスを指定する必要があります。</block>
   <block id="01fc6bc870eb60d107c41c724b7c0f61" category="list-text">要件に応じて仕様ファイルを編集し、*参照*ボタンをクリックしてアップロードします。</block>
   <block id="46630b95005d23b3ccd9d9af01eed5bc" category="list-text">をクリックします <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> [*フィルタ]の横にある[*クローニング・オプション*&gt;*クローン*]を選択して、クローンを表示します。</block>
-  <block id="068e918014ac9eb5e356de3a0a621d15" category="summary">BlueXPでSnapCenter Plug-in for VMware vSphereを登録します。</block>
   <block id="8f2653c5938080ffdd57904f850bc430" category="doc">SnapCenter Plug-in for VMware vSphereの登録</block>
-  <block id="6425eb8dd63509a5d1228d5f87438934" category="paragraph">BlueXPにデータストアと仮想マシンを表示するには、SnapCenter Plug-in for VMware vSphereをBlueXPに登録する必要があります。SnapCenter Plug-in for VMware vSphereの登録は、管理者アクセス権を持つユーザのみが実行できます。</block>
-  <block id="8129ec59f397c5afc10f7d884869f8a5" category="admonition">複数のSnapCenter Plug-in for VMware vSphereを登録できます。ただし、一度登録すると、SnapCenter Plug-in for VMware vSphereを削除できなくなります。</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">[* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。</block>
-  <block id="d530421284e594531ff677ce26aca840" category="list-text">SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereのFQDNまたはIPアドレスを指定します。</block>
-  <block id="0db60886ecbee2c8ae4b0a650b7ef422" category="list-text">Portフィールドで、SnapCenter Plug-in for VMware vSphereを実行しているポート番号を指定します。</block>
-  <block id="a0ba49a69c26d4de1afcac95ba435828" category="paragraph">SnapCenter Plug-in for VMware vSphereとCloud Backup for Virtual Machinesの間の通信に使用するポートが開いていることを確認する必要があります。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。</block>
-  <block id="3a41597d5116718fb24622669197f3e8" category="paragraph">[*バックアップとリカバリ*&gt;*仮想マシン*]をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereを使用した保護の対象となるすべてのデータストアおよび仮想マシンを表示します。</block>
   <block id="bc75c7043b8e7365f3c8207f2cc978cc" category="summary">データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。</block>
   <block id="3d580f21069642f6846c9301b0b69c5a" category="doc">クラウドネイティブのOracleデータベースをリストアする</block>
   <block id="c48a955b9e2bd6b7c7d520e85a16d929" category="paragraph">データ損失が発生した場合は、データファイル、制御ファイル、またはその両方をリストアして、データベースをリカバリできます。</block>
@@ -3099,7 +3064,6 @@
   <block id="7c5661ab6b39ee901cea00a6e7020a49" category="paragraph">ネットアップでは、BlueXPとその クラウド サービス をさまざまな方法でサポートしています。ナレッジベース（ KB ）記事やコミュニティフォーラムなど、 24 時間 365 日利用可能な幅広いセルフサポートオプションをご用意しています。サポート登録には、 Web チケット処理によるリモートテクニカルサポートが含まれます。</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">次のオプションは、 1 日 24 時間、週 7 日間無料でご利用いただけます。</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">ナレッジベース</block>
-  <block id="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="list-text"><block ref="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="inline-link-rx"></block></block>
   <block id="9a3db1abe5491d0eb9bb5d125981356c" category="paragraph">BlueXPナレッジベースで問題のトラブルシューティングに役立つ記事を検索します。</block>
   <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">コミュニティ</block>
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
@@ -3135,8 +3099,6 @@
   <block id="846099e77083903f32f72c0e2156c3c5" category="doc">Cloud Backup のドキュメント</block>
   <block id="0ec24d208e5df8843f6524b944c450f6" category="summary">オンプレミスのONTAP からAWSにデータストアをバックアップできます。</block>
   <block id="1d5ad62b9217b4a3f085f517534f40bb" category="doc">データストアをAmazon Web Servicesにバックアップする</block>
-  <block id="4222162492898e3a8b9e4698a4abb67a" category="paragraph">SnapCenter Plug-in for VMware vSphereとBlueXPを統合することで、1つ以上のデータストアをAmazon Web Servicesにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
-  <block id="2b4cd4d5e8c08204b572f3a126cb5509" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。</block>
   <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Amazon Web Services *を選択してクラウドプロバイダとして設定します。</block>
   <block id="0b6515b0d85be4c32021431c5119a675" category="list-text">AWS Access Keyフィールドで、データ暗号化のキーを指定します。</block>
   <block id="095a532bc2c4eed2ec2c64b6008b497f" category="list-text">AWS Secret Keyフィールドで、データ暗号化のパスワードを指定します。</block>
@@ -3644,4 +3606,52 @@
   <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
   <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
   <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
+  <block id="ceb0e703e6fc4ff33d792e51790261e4" category="paragraph">オンプレミスのプライマリストレージとセカンダリストレージのデータストアをクラウドにバックアップすることで、仮想マシン上のデータを保護できます。必要に応じて、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。</block>
+  <block id="21d7ed1a0ed596af2b79f06576c84ca9" category="paragraph">データストアは、Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップできます。</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">作業を開始する前に</block>
+  <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">データストアと仮想マシンをクラウドプロバイダにバックアップする前に、次の要件を確認して、サポートされる構成があることを確認してください。</block>
+  <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">BlueXP</block>
+  <block id="620e81d38f76998723b0192a6d3d009a" category="list-text">Cloud Backupの組み込みポリシーの場合は、SnapCenter Plug-in for VMware vSphereとクラウドのデータストアでスケジュール階層を同じにする必要があります。</block>
+  <block id="75f480f92315c62b407d8ae1ad890f29" category="paragraph">1つ以上のデータストアをAmazon Web Servicesにバックアップしてアーカイブすることで、ストレージ効率を高め、クラウドへの移行を促進できます。</block>
+  <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択できます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。</block>
+  <block id="899494c2cbe7f443bbc4d058b8ea51a6" category="paragraph">BlueXPで検出するクラスタ管理LIFを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。</block>
+  <block id="b19fb0dfd78b28bc5415a7f3f4ad6a49" category="list-text">クラスタ管理LIFのIPアドレスを指定します。</block>
+  <block id="8205f04ad04fda177786668dd772bbd6" category="list-text">作業環境として追加したクラスタ管理LIFのIPアドレスを指定します。</block>
+  <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">アーカイブ層は1回限りのアクティビティであり、あとで設定することはできないため、設定することを推奨します。</block>
+  <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">複数のデータストアにまたがる仮想マシンはリストアできません。</block>
+  <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">BlueXP UIで、*[保護]*&gt;*[バックアップとリカバリ]*&gt;*[仮想マシン]*&gt;* SnapCenter Plug-in for VMware vSphere *をクリックし、SnapCenter Plug-in for VMware vSphereホストを選択します。</block>
+  <block id="873069930fc1357e9cd4216822243f14" category="admonition">ソース仮想マシンを別の場所（vMotion）に移動した場合にユーザがBlueXPからその仮想マシンのリストアをトリガーすると、バックアップが作成されたソースの場所に仮想マシンがリストアされます。</block>
+  <block id="73bc14a460209f6fd497aa9bd91fbaa6" category="list-text">データストアまたは仮想マシンからリストアできます。</block>
+  <block id="5d920b501536441ea32ecc24679c72a2" category="cell">状況</block>
+  <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">データストアからリストアします</block>
+  <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">このオプションは、アーカイブ設定が構成されているポリシーを使用して仮想マシンが保護されている場合にのみ使用できます。Amazon Web Servicesでサポートされているアーカイブリストアの優先度は、高、標準、および低です。また、Microsoft Azureでサポートされているアーカイブリストアの優先度は高および標準です。</block>
+  <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">仮想マシンからリストアします</block>
+  <block id="4eb58c4143c6b0e5561211f7a2425377" category="list-text">オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはAzureがクラウドプロバイダである必要があります。</block>
+  <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">各クラウドプロバイダにアーカイブアクセス階層を設定する必要があります。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">このタスクについて</block>
+  <block id="ca69b8ee34e44ac66b7f0dfd3b786e9c" category="paragraph">BlueXPでは、次の事前定義されたポリシーを使用できます。</block>
+  <block id="7250cb0d0c1524aec805084d9f0ffc21" category="paragraph">1年間のLTR（長期保持）</block>
+  <block id="8016908361c8a89e5b37a2ac87b22faa" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで、1つ以上のデータストアをGoogle Cloud Platformにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="06ac0cb7b7615ba7b7f08032fcc97c6a" category="summary">BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録します。</block>
+  <block id="437ae89009b207d1aafce3d11e58f524" category="doc">SnapCenter Plug-in for VMware vSphereホストを登録</block>
+  <block id="8d69a4a1581a5dfb55d085bec9816e72" category="paragraph">表示するデータストアと仮想マシンについては、BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録する必要があります。SnapCenter Plug-in for VMware vSphereホストを登録できるのは、管理者アクセス権を持つユーザだけです。</block>
+  <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">BlueXPでは、複数のSnapCenter Plug-in for VMware vSphereホストを登録できます。ただし、登録後にSnapCenter Plug-in for VMware vSphereホストを削除することはできません。</block>
+  <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereホストのFQDNまたはIPアドレスを指定します。</block>
+  <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">[ポート]フィールドで、SnapCenter Plug-in for VMware vSphereホストが実行されているポート番号を指定します。</block>
+  <block id="a3640e12809bb0c58c14ed0dc2515991" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPの間で通信するためには、ポートが開いていることを確認する必要があります。</block>
+  <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">[バックアップとリカバリ]*&gt;*[仮想マシン]*をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereホストを使用して保護されているすべてのデータストアと仮想マシンを表示します。</block>
+  <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
+  <block id="26000c50c37289d13041f03c670085a3" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="11cda0a1f9099558841d0f78195d8cf6" category="paragraph">データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、リソースグループの変更内容に応じて、BlueXP UIで更新内容を確認できます。</block>
+  <block id="5bea9354a7049a7e639553b703f18e84" category="paragraph">デフォルトの組み込みポリシーをすべて表示できます。これらの各ポリシーについて、詳細を表示すると、関連付けられているすべてのポリシーと仮想マシンが表示されます。</block>
+  <block id="1c281da53a696408c46b6da9d44b27e7" category="paragraph">関連付けられているポリシーと仮想マシンが一覧表示されます。</block>
+  <block id="8ed12ef54cb1d9b3b955b96ba5173201" category="section-title">データストアと仮想マシンを表示します</block>
+  <block id="e3dbc361d0cd589544c61663904eef2c" category="paragraph">登録済みのSnapCenter Plug-in for VMware vSphereホストを使用して保護されているデータストアと仮想マシンが表示されます。</block>
+  <block id="0f793a67a6d50ed2f6c165bb38899ead" category="list-text">データストアおよび仮想マシンを表示するSnapCenter Plug-in for VMware vSphereホストをクリックします。</block>
+  <block id="09d402d9d90a8c43787a9b36dbc81909" category="paragraph">BlueXPでは、SnapCenter Plug-in for VMware vSphereホストの詳細を編集できます。</block>
+  <block id="8a27c524970cd13dc7b03f92b7043065" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> をクリックし、 * Edit * を選択します。</block>
+  <block id="05c829c7b617d014c0186656453575ea" category="list-text">必要に応じて詳細を変更します。</block>
+  <block id="63e8ab93fb455764c3aae06f874e9f89" category="paragraph">データベースに新しいボリュームが追加された場合、またはポリシーやリソースグループに変更があった場合は、保護ステータスを更新する必要があります。</block>
+  <block id="b08753885f48b8d718edd5f9d9cd7ab7" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> SnapCenter Plug-in for VMware vSphereホストに対応し、*[リフレッシュ]*をクリックします。</block>
+  <block id="9f7b95641e24cb882e149de39743a97c" category="paragraph">SnapCenter Plug-in for VMware vSphereホストをBlueXPに統合することで、1つ以上のデータストアをStorageGRID にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
 </blocks>
