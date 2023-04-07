@@ -119,20 +119,45 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 +
 [source, json]
 ----
-"Microsoft.Storage/checknameavailability/read",
-"Microsoft.Storage/operations/read",
+"Microsoft.Compute/virtualMachines/read",
+"Microsoft.Compute/virtualMachines/start/action",
+"Microsoft.Compute/virtualMachines/deallocate/action",
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",
 "Microsoft.Storage/storageAccounts/write",
 "Microsoft.Storage/storageAccounts/blobServices/containers/read",
 "Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write",
+"Microsoft.Network/networkInterfaces/read",
+"Microsoft.Resources/subscriptions/locations/read",
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/virtualNetworks/subnets/read",
+"Microsoft.Resources/subscriptions/resourceGroups/read",
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+"Microsoft.Resources/subscriptions/resourceGroups/write",
+"Microsoft.Authorization/locks/*",
+"Microsoft.Network/privateEndpoints/write",
+"Microsoft.Network/privateEndpoints/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+"Microsoft.Network/virtualNetworks/join/action",
+"Microsoft.Network/privateDnsZones/A/write",
+"Microsoft.Network/privateDnsZones/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+"Microsoft.Compute/virtualMachines/extensions/delete",
+"Microsoft.Compute/virtualMachines/delete",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+"Microsoft.Network/publicIPAddresses/delete",
+"Microsoft.Storage/storageAccounts/blobServices/containers/write",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
 "Microsoft.Synapse/workspaces/write",
 "Microsoft.Synapse/workspaces/read",
 "Microsoft.Synapse/workspaces/delete",
 "Microsoft.Synapse/register/action",
 "Microsoft.Synapse/checkNameAvailability/action",
 "Microsoft.Synapse/workspaces/operationStatuses/read",
-"Microsoft.Synapse/workspaces/firewallRules/write",
 "Microsoft.Synapse/workspaces/firewallRules/read",
 "Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
 "Microsoft.Synapse/workspaces/operationResults/read",
@@ -150,6 +175,10 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 --
 サポートされている Azure リージョン:: Cloud Backup はすべての Azure リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
+
+
+Cloud Backupは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナをプロビジョニングします。異なるゾーン間でデータを確実にレプリケートする場合は、Cloud Backupをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
+
 別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ:: デフォルトでは、バックアップは Cloud Volumes ONTAP システムと同じサブスクリプションを使用して作成されます。バックアップに別の Azure サブスクリプションを使用する場合は、が必要です link:reference-backup-multi-account-azure.html["Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます"]。
 データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
 

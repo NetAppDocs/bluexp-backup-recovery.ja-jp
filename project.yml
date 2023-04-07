@@ -38,7 +38,7 @@ sidebar:
       url: "/task-monitor-backup-jobs.html"
   - title: ONTAP データのバックアップとリストア
     entries:
-    - title: ONTAP データを保護
+    - title: ONTAP ボリュームのデータを保護
       url: "/concept-ontap-backup-to-cloud.html"
     - title: Cloud Volumes ONTAP を Amazon S3 にバックアップします
       flavor: aws
@@ -315,8 +315,8 @@ homepage:
     links:
     - title: ネットアップコミュニティ
       url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS
-    - title: BlueXPブログ
-      url: https://bluexp.netapp.com/blog
+    - title: Cloud Backupに関するブログ
+      url: https://bluexp.netapp.com/blog/topic/cloud-backup
     - title: Cloud Backupのユースケース
       url: https://bluexp.netapp.com/cloud-backup
     - title: クラウドに関する Web セミナー

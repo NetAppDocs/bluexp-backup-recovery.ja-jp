@@ -24,13 +24,13 @@ Cloud Backup の新機能をご確認ください。
 
 === 「制限付き」モードでCloud Volumes ONTAP システムからクラウドにデータをバックアップする機能
 
-これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限付き」モードでバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。を参照してください https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
+これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限付き」モードでバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["BlueXPの導入モードの詳細については、こちらをご覧ください"^]。を参照してください https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
 
 
 
 === APIを使用して、オンプレミスのONTAP ボリュームをONTAP S3にバックアップする機能
 
-APIの新機能を使用して、BlueXP Cloud Backupを使用してボリュームSnapshotをONTAP S3にバックアップできます。この機能は、現時点ではオンプレミスのONTAP システムでのみ使用できます。詳細な手順については、ブログを参照してください https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["デスティネーションとしてのONTAP S3との統合（REST APIを使用）"^]。
+APIの新機能を使用して、BlueXP Cloud Backupを使用してボリュームSnapshotをONTAP S3にバックアップできます。この機能は、現時点ではオンプレミスのONTAP システムでのみ使用できます。詳細な手順については、ブログを参照してください https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["デスティネーションとしてのONTAP S3との統合"^]。
 
 
 
