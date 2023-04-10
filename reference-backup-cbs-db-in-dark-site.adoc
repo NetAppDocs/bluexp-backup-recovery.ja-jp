@@ -105,7 +105,7 @@ Cloud Backupシステムを稼働状態に戻すには、次の4つのタスク�
 
 新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。Cloud Backupデータベース構造に定期的に変更が加えられると、新しいソフトウェアリリースで元のデータベースバックアップとの互換性がなくなる可能性があります。可能です https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします"^]。
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします"^]
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします"^]
 . 作成した管理者ユーザー資格情報を使用してBlueXPにログインします。
 
 

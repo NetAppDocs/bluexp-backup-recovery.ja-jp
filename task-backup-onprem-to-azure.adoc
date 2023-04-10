@@ -166,8 +166,7 @@ Connectorがクラウドに導入されている場合、Cloud BackupはAzure Go
 .手順
 . コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** Cloud Backup Service へのアウトバウンドインターネット接続 ポート 443 （ HTTPS ）
-** ポート 443 経由での BLOB オブジェクトストレージへの HTTPS 接続
+** ポート443を介してCloud Backup Service とBLOBオブジェクトストレージに接続します (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
 ** Cloud Backupの検索とリストア機能を使用するには、ConnectorとAzure Synapse SQLサービス間の通信用にポート1433を開いておく必要があります。
 ** AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure のコネクタのルール"^] を参照してください。

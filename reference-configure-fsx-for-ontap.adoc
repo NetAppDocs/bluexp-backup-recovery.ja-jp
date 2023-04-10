@@ -30,7 +30,7 @@ NetApp FSXは、BlueXPまたはAWSを使用して作成できます。AWSを使�
 
 アカウント管理者は、AWSにConnectorを導入する必要があります。これにより、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理できるようになります。
 
-詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["BlueXPからAWSでコネクタを作成する"]。
+詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["BlueXPからAWSでコネクタを作成する"]。
 
 * FSX作業環境とOracleデータベースの両方を管理する場合には、同じコネクタを使用する必要があります。
 * FSX作業環境とOracleデータベースが同じVPC内にある場合は、同じVPC内にコネクタを導入できます。
@@ -46,7 +46,7 @@ NOTE: NAS（NFS）ワークロードを使用する場合は、Oracleデータ�
 
 
 
-コネクターを作成したら、*ストレージ*>*キャンバス*>*作業環境*>*作業環境の追加*をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。
+コネクタを作成したら、*[ストレージ]*>* Canvas *>* My Working Environments *>*[Add Working Environment]*をクリックし、プロンプトに従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSx作業環境への接続が確立されていることを確認します。コネクタは、FSx作業環境のクラスタ管理IPアドレスに接続できる必要があります。
 
 
 IMPORTANT: コネクタを作成したら、[コネクタ（Connector）]>[コネクタの管理（Manage Connectors）]*をクリックし、コネクタ名を選択してコネクタIDをコピーします。

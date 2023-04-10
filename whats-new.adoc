@@ -147,7 +147,7 @@ ONTAP システムからGoogle Cloud Storageにデータをバックアップす
 
 インターネットアクセスのないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）のオンプレミスのONTAP クラスタからStorageGRID にデータをバックアップする場合は、必要に応じて検索とリストアのオプションを使用してデータをリストアできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.25以上)がオフラインサイトに配置されている必要があります。
 
-https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["検索とリストアを使用してONTAP データをリストアする方法を参照してください"]。https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["検索とリストアを使用してONTAP データをリストアする方法を参照してください"]。https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。
 
 
 
@@ -216,7 +216,7 @@ Cloud Backupの処理が変更されたため、クラウドバックアップ�
 
 | \ https://*.cloudmanager.cloud.netapp.com | \ https://*.api.bluexp.netapp.com 
 |===
-のすべてのエンドポイントのリストを参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access["Google Cloud"^]または https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access["Azure"^] クラウド環境：
+のすべてのエンドポイントのリストを参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#outbound-internet-access["Google Cloud"^]または https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#outbound-internet-access["Azure"^] クラウド環境：
 
 
 
@@ -449,7 +449,7 @@ Cloud Backupを使用して、SnapLock Enterpriseボリュームをパブリッ�
 
 オンプレミスのONTAP クラスタが、インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）にある場合は、Cloud Backupを使用して、同じサイトにあるNetApp StorageGRID システムにボリュームデータをバックアップできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.19以降)もオフラインサイトに配置する必要があります。
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["オフラインサイトのStorageGRID にONTAP データをバックアップする方法を参照してください"]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["オフラインサイトのStorageGRID にONTAP データをバックアップする方法を参照してください"]。
 
 
 
@@ -558,27 +558,3 @@ link:concept-protect-app-data-to-cloud.html["オンプレミスアプリケー�
 
 
 === Cloud Data Sense を使用して Cloud Backup ファイルをスキャンするベータ機能は、本リリースでは廃止されました
-
-
-
-== 2022 年 2 月 14 日
-
-
-
-=== バックアップポリシーを単一クラスタ内の個々のボリュームに割り当てることができるようになりました
-
-これまでは、クラスタ内のすべてのボリュームに割り当てることができるバックアップポリシーは 1 つだけでした。1 つのクラスタに複数のバックアップポリシーを作成し、異なるボリュームに異なるポリシーを適用できるようになりました。 link:task-manage-backups-ontap#changing-the-policy-assigned-to-existing-volumes["クラスタの新しいバックアップポリシーを作成し、選択したボリュームに割り当てる方法を参照してください"]。
-
-
-
-=== 新しいオプションを使用すると、新規に作成されたボリュームにデフォルトのバックアップポリシーを自動的に適用できます
-
-以前は、 Cloud Backup をアクティブ化したあとに作業環境で作成した新しいボリュームには、バックアップポリシーを手動で適用する必要がありました。これで、ボリュームがBlueXP、System Manager、CLI、またはAPIを使用して作成されたかどうかに関係なく、Cloud Backupはボリュームを検出し、デフォルトポリシーとして選択したバックアップポリシーを適用します。
-
-このオプションは、新しい作業環境でバックアップを有効にする場合、または既存の作業環境で _ ボリュームの管理 _ ページから有効にする場合に使用できます。
-
-
-
-=== すべてのバックアップジョブとリストアジョブの処理中ステータスを確認するには、新しいジョブモニタを使用できます
-
-ジョブモニタは、バックアップポリシーの変更やバックアップの削除など、複数のボリュームに対して処理を開始した場合に非常に役立ちます。そのため、すべてのボリュームで処理が完了したことを確認できます。 link:task-monitor-backup-jobs.html["「ジョブモニタの使用方法」を参照してください"]。

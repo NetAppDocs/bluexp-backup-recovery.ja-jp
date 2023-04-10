@@ -223,8 +223,6 @@
   <block id="a8e8e48001e032c3b5939047d15db5a2" category="section-title">コネクタのネットワークを準備しています</block>
   <block id="7b16b8b258668ab05a1e5d83e084b477" category="paragraph">コネクタに必要なネットワーク接続があることを確認します。</block>
   <block id="aadbd6cd1f8b4e9deafea8f1d6c8333c" category="list-text">コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。</block>
-  <block id="98ec81693c17601be27be39c9336f3b4" category="list-text">Cloud Backup Service へのアウトバウンドインターネット接続 ポート 443 （ HTTPS ）</block>
-  <block id="c359c4549d4c72aed13558f2e3ef33a0" category="list-text">ポート 443 経由での Google Cloud ストレージへの HTTPS 接続</block>
   <block id="699a71169310a3553bddb7e36ecb8a5c" category="list-text">ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続</block>
   <block id="b092138563f7b68473c3bf2a6a23a434" category="inline-link">プライベート Google アクセス</block>
   <block id="697b9d2300ad9e2f011376f9c9a30392" category="inline-link">Private Service Connectの略</block>
@@ -992,7 +990,6 @@
   <block id="65432ae2b80d2de48c0eff9f34726b87" category="inline-link">Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします</block>
   <block id="2e7f569a13a8775ddbc8714475ad7db7" category="paragraph">新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。Cloud Backupデータベース構造に定期的に変更が加えられると、新しいソフトウェアリリースで元のデータベースバックアップとの互換性がなくなる可能性があります。可能です<block ref="d77ae51b7aa47031957bd13dfa8d8fa8" category="inline-link-rx"></block>。</block>
   <block id="fb91cab4ff80a23255e3962dd363d180" category="inline-link">新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします</block>
-  <block id="147eee6c59a90af6498494b9e5153835" category="list-text"><block ref="147eee6c59a90af6498494b9e5153835" category="inline-link-rx"></block></block>
   <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">作成した管理者ユーザー資格情報を使用してBlueXPにログインします。</block>
   <block id="5fb01033092428057d91703462850bb8" category="list-text">MySQLのバックアップを安全な場所から新しいコネクタホストにコピーします。</block>
   <block id="ee8d56e3bf2ec5617d7b8febb655c287" category="list-text">次のコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。</block>
@@ -1415,7 +1412,6 @@
   <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">Azureにコネクタをインストールしています</block>
   <block id="c434332bb7ea2d6636a3d41a262f1e7e" category="inline-link">コネクタをオンプレミスにインストールする</block>
   <block id="0fed42c16e02df19813c1ada5f9c8fd7" category="inline-link">Azure Governmentリージョンへのコネクタのインストール</block>
-  <block id="ed5be7df16713ed4a1d631dedaea1f5e" category="list-text">ポート 443 経由での BLOB オブジェクトストレージへの HTTPS 接続</block>
   <block id="716ef7b4757802ea9cccaa1100796c41" category="list-text">Cloud Backupの検索とリストア機能を使用するには、ConnectorとAzure Synapse SQLサービス間の通信用にポート1433を開いておく必要があります。</block>
   <block id="b445de53411a165e9c56da6430c38d59" category="inline-link">Azure のコネクタのルール</block>
   <block id="f840409b357663e7b24e8296c05770a5" category="list-text">AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください<block ref="e1893ebf6f9d2e927a13d052b78eec9f" category="inline-link-rx"></block> を参照してください。</block>
@@ -1509,7 +1505,6 @@
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">AWS GovCloudリージョンへのコネクタのインストール</block>
   <block id="929d25665bc92d22cf4a79265248dd36" category="section-title">コネクタのネットワーク要件</block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">エンドポイントのリストを参照してください</block>
-  <block id="3014a55cd7ec25590c6b5406eec324b1" category="list-text">ポート443からCloud Backup Service およびS3オブジェクトストレージへのHTTPS接続 <block ref="2b717f51e9f0e108fc936d861142f7b4" category="inline-link-rx"></block>)</block>
   <block id="fd1958e5e74317f89c6c16bbca7d1446" category="inline-link">AWS のコネクタのルール</block>
   <block id="56d39ecb5bf4d2ec753c12fbb0e00108" category="list-text">AWSおよびAWS GovCloud環境では、追加のインバウンドおよびアウトバウンドのセキュリティグループルールが必要です。を参照してください<block ref="74fb388667736bb2b34ea14720dd63e3" category="inline-link-rx"></block> を参照してください。</block>
   <block id="76e709935c290dea4c7b1c0de4918211" category="inline-link-macro">コネクタにS3バケットを管理する権限があることを確認します</block>
@@ -1601,14 +1596,12 @@
   <block id="21465eddb0676f3918f9041ef059c735" category="paragraph">NetApp FSXは、BlueXPまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、BlueXPのONTAP システム用FSXを検出する必要があります。</block>
   <block id="91381cdaf1cff61a625d6355a34abc10" category="paragraph">アカウント管理者は、AWSにConnectorを導入する必要があります。これにより、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理できるようになります。</block>
   <block id="71e064246e91e058534eb9c47cbeadcf" category="inline-link-macro">BlueXPからAWSでコネクタを作成する</block>
-  <block id="d15bab64d8286860a0c772cefded5f73" category="paragraph">詳細については、を参照してください <block ref="3fdf2a62e687b222e52b805dde381364" category="inline-link-macro-rx"></block>。</block>
   <block id="f6b8c8d4c527eaebdea85ded6d8cc15a" category="list-text">FSX作業環境とOracleデータベースの両方を管理する場合には、同じコネクタを使用する必要があります。</block>
   <block id="9f69e13234533744e815d263723a5cd0" category="list-text">FSX作業環境とOracleデータベースが同じVPC内にある場合は、同じVPC内にコネクタを導入できます。</block>
   <block id="fafa58ae12f83200fd5e76519a291a56" category="list-text">FSX作業環境および異なるVPC内のOracleデータベースがある場合：</block>
   <block id="cf0a8805abc36f57c061b63fdb27c4af" category="list-text">FSX上にNAS（NFS）ワークロードが設定されている場合、どちらのVPCにもコネクタを作成できます。</block>
   <block id="4a2c2d38801ece7b96f22f796f2462e0" category="list-text">NAS（NFS）ワークロードを使用しないようにSANワークロードだけを設定している場合は、FSXシステムが作成されたVPCにコネクタを作成する必要があります。</block>
   <block id="ba6b286f0b29e48621c9d0bf4a77e627" category="admonition">NAS（NFS）ワークロードを使用する場合は、OracleデータベースVPCとFSX VPCの間に転送ゲートウェイを設定する必要があります。フローティングIPアドレスであるNFS IPアドレスには、転送ゲートウェイ経由でのみ別のVPCからアクセスできます。VPCをピアリングしてフローティングIPアドレスにアクセスすることはできません。</block>
-  <block id="839bd9c4189b78503bd77127fcecbb39" category="paragraph">コネクターを作成したら、*ストレージ*&gt;*キャンバス*&gt;*作業環境*&gt;*作業環境の追加*をクリックし、画面の指示に従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSX作業環境への接続が確立されていることを確認します。コネクタは、FSX作業環境のクラスタ管理IPアドレスに接続できる必要があります。</block>
   <block id="b45b202ba2cef5a8e5349896310f7f9d" category="admonition">コネクタを作成したら、[コネクタ（Connector）]&gt;[コネクタの管理（Manage Connectors）]*をクリックし、コネクタ名を選択してコネクタIDをコピーします。</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="fdb4a732f867f813a90fc7fb3a9bd9ea" category="inline-image-macro">ジョブ監視ダッシュボードのバックアップジョブとリストアジョブを示すスクリーンショット。</block>
@@ -1994,7 +1987,6 @@
   <block id="a282fca785a0e402e0b5cdde4c380d6d" category="paragraph">インターネットアクセスのないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）のオンプレミスのONTAP クラスタからStorageGRID にデータをバックアップする場合は、必要に応じて検索とリストアのオプションを使用してデータをリストアできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.25以上)がオフラインサイトに配置されている必要があります。</block>
   <block id="c9ec78264dce9938676b736265201e28" category="inline-link">検索とリストアを使用してONTAP データをリストアする方法を参照してください</block>
   <block id="6f44a1bf2246f054fd573ae9473909b6" category="inline-link">コネクターをオフラインサイトにインストールする方法を参照してください</block>
-  <block id="74aacc002c6d6d85e9786012bf71af08" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。</block>
   <block id="fe1757784884bfcaf0ca6254fb7fa44e" category="section-title">ジョブ監視結果ページを.csvレポートとしてダウンロードできるようになりました</block>
   <block id="5ae1400b4fd16294ac8af42e98d8a9ed" category="inline-link">「ジョブ監視レポートを生成する方法」を参照してください</block>
   <block id="c8a0a8bdcaf1f25cbadde68224d6591d" category="paragraph">[ジョブ監視]ページをフィルタリングして、必要なジョブとアクションを表示したら、そのデータの.csvファイルを生成してダウンロードできるようになりました。次に、情報を分析したり、組織内の他のユーザーにレポートを送信したりできます。<block ref="f54dc22fe93134a0b2767a291dba51f5" category="inline-link-rx"></block>。</block>
@@ -2024,7 +2016,6 @@
   <block id="9e434ddc2ad4b9de005368b77254223d" category="cell">\ https://*.cloudmanager.cloud.netapp.com</block>
   <block id="37ba276f010f4ea07f1196b487811443" category="cell">\ https://*.api.bluexp.netapp.com</block>
   <block id="56ef2682280ac110060b881925a87b80" category="inline-link">Google Cloud</block>
-  <block id="0e40b9cba041560c9517bc49757da3c7" category="paragraph">のすべてのエンドポイントのリストを参照してください<block ref="4c9e3e17ba20f553394e5bc78e402946" category="inline-link-rx"></block>、<block ref="cd3c6f623ccf3e34f9d46b28c47f2a3d" category="inline-link-rx"></block>または<block ref="80755100f97c37f8aa8e3d999b0a43d9" category="inline-link-rx"></block> クラウド環境：</block>
   <block id="e3a84cf85e2ede3f349ff73485707901" category="section-title">UIでのGoogleアーカイブストレージクラスの選択がサポートされます</block>
   <block id="862c6bfd630667f5b535d9741b4f08fc" category="paragraph">バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。Cloud Backup UIを使用して、特定の日数が経過した古いバックアップをGoogle Archiveストレージに階層化し、コストをさらに最適化できるようになりました。</block>
   <block id="738d31d37e16df450b2af9540e98c7d4" category="paragraph">この機能は、現在、ONTAP 9.12.1以降を使用するオンプレミスONTAP クラスタでサポートされています。現在、Cloud Volumes ONTAP システムでは使用できません。</block>
@@ -2121,7 +2112,6 @@
   <block id="dd16b8804cbc8afa6e2f6deb9acf5bcf" category="section-title">インターネットにアクセスできないサイトのオンプレミスONTAP クラスタデータをバックアップするサポートが追加されました</block>
   <block id="314d64b29803a4017e18c95e19a18a09" category="paragraph">オンプレミスのONTAP クラスタが、インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）にある場合は、Cloud Backupを使用して、同じサイトにあるNetApp StorageGRID システムにボリュームデータをバックアップできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.19以降)もオフラインサイトに配置する必要があります。</block>
   <block id="826610554423c9dc8481da631ccae8be" category="inline-link">オフラインサイトのStorageGRID にONTAP データをバックアップする方法を参照してください</block>
-  <block id="824ce1955c2b2d5f91cb80c86545d639" category="paragraph"><block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
   <block id="afd87a86d8a5973d91f3fcc4e85c719f" category="section-title">Cloud Backup for Virtual Machines 1.1.0のGA版になりました</block>
   <block id="a1bf67f5d2f66348eff06c9dbdb7636d" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。</block>
   <block id="b418e05c847b656e4a8ac26f2f0cc045" category="inline-link">仮想マシンをクラウドに保護する方法については、こちらをご覧ください</block>
@@ -2169,16 +2159,6 @@
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link-macro">詳細については、こちらをご覧ください</block>
   <block id="6ff133e735e841b3a54d6f8c0a84c071" category="paragraph">ネットアップ Astra Trident がインストールされている GKE クラスタで、 Cloud Volumes ONTAP for GCP をクラスタのバックエンドストレージとして使用している場合は、 Google Cloud ストレージとの間で永続的ボリュームのバックアップとリストアを行うことができます。 <block ref="04c62f5c961d468f8c7e3d8b6a8a1398" category="inline-link-macro-rx"></block>。</block>
   <block id="536f48524e36a16593703c5d8d108b79" category="section-title">Cloud Data Sense を使用して Cloud Backup ファイルをスキャンするベータ機能は、本リリースでは廃止されました</block>
-  <block id="f49fe4c56999dcc895c26b71ec63e34f" category="section-title">2022 年 2 月 14 日</block>
-  <block id="57ccb73ee63efac047dc0eeebb63f5a1" category="section-title">バックアップポリシーを単一クラスタ内の個々のボリュームに割り当てることができるようになりました</block>
-  <block id="963d2836c97952a191ac974f0e9b5e67" category="inline-link-macro">クラスタの新しいバックアップポリシーを作成し、選択したボリュームに割り当てる方法を参照してください</block>
-  <block id="15949a792d77a6efb31116510902270f" category="paragraph">これまでは、クラスタ内のすべてのボリュームに割り当てることができるバックアップポリシーは 1 つだけでした。1 つのクラスタに複数のバックアップポリシーを作成し、異なるボリュームに異なるポリシーを適用できるようになりました。 <block ref="d267d345a84c274cd28fdecc1282029a" category="inline-link-macro-rx"></block>。</block>
-  <block id="81bbbb41117b46d39dbcf4b7db2f1e38" category="section-title">新しいオプションを使用すると、新規に作成されたボリュームにデフォルトのバックアップポリシーを自動的に適用できます</block>
-  <block id="f464a9820cae6a24053ca10aad54bbb6" category="paragraph">以前は、 Cloud Backup をアクティブ化したあとに作業環境で作成した新しいボリュームには、バックアップポリシーを手動で適用する必要がありました。これで、ボリュームがBlueXP、System Manager、CLI、またはAPIを使用して作成されたかどうかに関係なく、Cloud Backupはボリュームを検出し、デフォルトポリシーとして選択したバックアップポリシーを適用します。</block>
-  <block id="b702b8a648700d54afccce0b8de7766a" category="paragraph">このオプションは、新しい作業環境でバックアップを有効にする場合、または既存の作業環境で _ ボリュームの管理 _ ページから有効にする場合に使用できます。</block>
-  <block id="739f8a5ac1453fdcd33ce781cd333914" category="section-title">すべてのバックアップジョブとリストアジョブの処理中ステータスを確認するには、新しいジョブモニタを使用できます</block>
-  <block id="7a99d9487fc9540fa7bee7c2eb717413" category="inline-link-macro">「ジョブモニタの使用方法」を参照してください</block>
-  <block id="9d20a5735dc25af92271eea8fa797bf7" category="paragraph">ジョブモニタは、バックアップポリシーの変更やバックアップの削除など、複数のボリュームに対して処理を開始した場合に非常に役立ちます。そのため、すべてのボリュームで処理が完了したことを確認できます。 <block ref="41d368101275ff882313a6db3fc29812" category="inline-link-macro-rx"></block>。</block>
   <block id="367df4ef9103973813086656b7424c40" category="summary">各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。</block>
   <block id="0aa4c98c108fd4eb123ca5d3e22561e8" category="paragraph">SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。</block>
   <block id="dd115af180e43b9284746f0724f2e436" category="admonition">各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。</block>
@@ -2552,7 +2532,6 @@
   <block id="1a21a1a2d4f828ab8b7b8e03358484e8" category="doc">BlueXPにアクセスします</block>
   <block id="035e6d59b1caedb3017d4559881471b2" category="inline-link-macro">NetApp BlueXP Webサイトに登録します</block>
   <block id="253b7edb57d157e0cff45ddb9e389aa4" category="inline-link-macro">BlueXPにログインします</block>
-  <block id="ab26432294c471f0aa2bb50434ef5822" category="paragraph">お勧めします <block ref="f8ff5153376f519ebb8fe9e2c5ab9cd8" category="inline-link-macro-rx"></block>、 <block ref="9f5c210a6685dd250338a699e76589de" category="inline-link-macro-rx"></block>をクリックし、を設定します <block ref="8a2a59f9ec508dc199624b6dfabe5c9f" category="inline-link-macro-rx"></block>。</block>
   <block id="87ccee1471ec33aac8d0152747a90731" category="summary">Cloud Backup は、 1 つの Azure アーカイブアクセス階層とほとんどのリージョンをサポートします。</block>
   <block id="834584c768066ae32da6d93ce603642d" category="doc">Azure のアーカイブ階層およびリストアの読み出し時間</block>
   <block id="9da75d0f7d40b078d43b7554f93291a7" category="section-title">クラウドバックアップでサポートされている Azure Blob アクセス階層</block>
@@ -3656,4 +3635,14 @@
   <block id="0149a79f6ea8841a807875892d5a71fd" category="paragraph">Cloud Backupは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナをプロビジョニングします。異なるゾーン間でデータを確実にレプリケートする場合は、Cloud Backupをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="7126662a353f79c46a7ccefe46dc4c0a" category="sidebar">ONTAP ボリュームのデータを保護</block>
   <block id="d5dea9a3cf9da6b76394dba2198011a1" category="sidebar">Cloud Backupに関するブログ</block>
+  <block id="1e209655f824e5d0966174caef1584c2" category="list-text">Cloud Backup Service とGoogle Cloudストレージへのポート443経由のHTTPS接続 <block ref="d9defc1077847b67f008853c06990134" category="inline-link-rx"></block>)</block>
+  <block id="a08b19468c2c1ca9e62c072d8f0b1897" category="paragraph">詳細については、を参照してください <block ref="f2f2cc81b566c493fa151c100741f24d" category="inline-link-macro-rx"></block>。</block>
+  <block id="18a49ef13ab2949d420634845599ca86" category="paragraph">コネクタを作成したら、*[ストレージ]*&gt;* Canvas *&gt;* My Working Environments *&gt;*[Add Working Environment]*をクリックし、プロンプトに従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSx作業環境への接続が確立されていることを確認します。コネクタは、FSx作業環境のクラスタ管理IPアドレスに接続できる必要があります。</block>
+  <block id="39ad50c1d2eeb8e8a5ce297ee25b98dc" category="list-text">ポート443を介してCloud Backup Service とBLOBオブジェクトストレージに接続します <block ref="5bf1914e1013b2901a1aed42fbd7a1ac" category="inline-link-rx"></block>)</block>
+  <block id="7a83a72c3d1bcda0f295b3ad0313c6dd" category="paragraph">お勧めします <block ref="f8ff5153376f519ebb8fe9e2c5ab9cd8" category="inline-link-macro-rx"></block>、 <block ref="9f5c210a6685dd250338a699e76589de" category="inline-link-macro-rx"></block>をクリックし、を設定します <block ref="ee143af1c2cac202dd1b0077361e68fb" category="inline-link-macro-rx"></block>。</block>
+  <block id="9c2fdb3ded170db997a9fcf800fcf26c" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。</block>
+  <block id="c395006d6063b66336be768382280c9e" category="paragraph">のすべてのエンドポイントのリストを参照してください<block ref="684a3f4234dd7d8f8b7d90e00da95138" category="inline-link-rx"></block>、<block ref="fd66fc554da543d0f7f94dcde36b2a2f" category="inline-link-rx"></block>または<block ref="2484264a704a749bc992bec76f43f13d" category="inline-link-rx"></block> クラウド環境：</block>
+  <block id="da51e9451a525419419d8c9da2b6fd19" category="paragraph"><block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
+  <block id="22af84c027176379749ae95a3dcf8328" category="list-text">ポート443からCloud Backup Service およびS3オブジェクトストレージへのHTTPS接続 <block ref="e55fc914b3d027a7a2463283008a8fbf" category="inline-link-rx"></block>)</block>
+  <block id="1733b24a3114e19949a64706ed91c2af" category="list-text"><block ref="1733b24a3114e19949a64706ed91c2af" category="inline-link-rx"></block></block>
 </blocks>
