@@ -544,17 +544,3 @@ link:concept-protect-app-data-to-cloud.html["オンプレミスアプリケー�
 === すべての ONTAP バックアップファイルでボリュームまたはファイルを検索するための新しい検索とリストア機能
 
 ボリューム名またはフルボリューム名、部分的またはフルファイル名、サイズ範囲、および追加の検索フィルタを使用して、すべての ONTAP バックアップファイル * にまたがるボリュームまたはファイルを検索できるようになりました。これは、どのクラスタまたはボリュームがデータのソースであるかがわからない場合に、リストアするデータを見つけるための新しい優れた方法です。 link:task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["検索とリストアの使用方法を説明します"]。
-
-
-
-== 2022 年 3 月 3 日
-
-
-
-=== GKE Kubernetes クラスタから Google Cloud ストレージに永続ボリュームをバックアップする機能
-
-ネットアップ Astra Trident がインストールされている GKE クラスタで、 Cloud Volumes ONTAP for GCP をクラスタのバックエンドストレージとして使用している場合は、 Google Cloud ストレージとの間で永続的ボリュームのバックアップとリストアを行うことができます。 link:task-backup-kubernetes-to-gcp.html["詳細については、こちらをご覧ください"]。
-
-
-
-=== Cloud Data Sense を使用して Cloud Backup ファイルをスキャンするベータ機能は、本リリースでは廃止されました

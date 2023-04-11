@@ -2154,11 +2154,7 @@
   <block id="0749ae9ea79ee87dd8c530f67a9065fe" category="section-title">すべての ONTAP バックアップファイルでボリュームまたはファイルを検索するための新しい検索とリストア機能</block>
   <block id="abad9ff4f9967065f50634a2a3606dd0" category="inline-link-macro">検索とリストアの使用方法を説明します</block>
   <block id="41cb49a16b097520a48e2141982170fe" category="paragraph">ボリューム名またはフルボリューム名、部分的またはフルファイル名、サイズ範囲、および追加の検索フィルタを使用して、すべての ONTAP バックアップファイル * にまたがるボリュームまたはファイルを検索できるようになりました。これは、どのクラスタまたはボリュームがデータのソースであるかがわからない場合に、リストアするデータを見つけるための新しい優れた方法です。 <block ref="3e575c236f27ae49c244d24621c1b57f" category="inline-link-macro-rx"></block>。</block>
-  <block id="983a4e7f5913304ec713a249baf7be47" category="section-title">2022 年 3 月 3 日</block>
-  <block id="afffc0d082245313c31dfcac23d2d8e0" category="section-title">GKE Kubernetes クラスタから Google Cloud ストレージに永続ボリュームをバックアップする機能</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link-macro">詳細については、こちらをご覧ください</block>
-  <block id="6ff133e735e841b3a54d6f8c0a84c071" category="paragraph">ネットアップ Astra Trident がインストールされている GKE クラスタで、 Cloud Volumes ONTAP for GCP をクラスタのバックエンドストレージとして使用している場合は、 Google Cloud ストレージとの間で永続的ボリュームのバックアップとリストアを行うことができます。 <block ref="04c62f5c961d468f8c7e3d8b6a8a1398" category="inline-link-macro-rx"></block>。</block>
-  <block id="536f48524e36a16593703c5d8d108b79" category="section-title">Cloud Data Sense を使用して Cloud Backup ファイルをスキャンするベータ機能は、本リリースでは廃止されました</block>
   <block id="367df4ef9103973813086656b7424c40" category="summary">各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。</block>
   <block id="0aa4c98c108fd4eb123ca5d3e22561e8" category="paragraph">SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。</block>
   <block id="dd115af180e43b9284746f0724f2e436" category="admonition">各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。</block>
@@ -3550,14 +3546,9 @@
   <block id="a9d3c4c93c315af7f13f9b365c2adcbf" category="list-text">コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
   <block id="5b477e50c905f9613c5e16e571e9e5bc" category="list-text">このコネクタは、インターネットアクセスがフルまたは制限されたAWSリージョン（「標準」または「制限」モード）にインストールできます。</block>
   <block id="e7e22b4d377bdd0d9b0cb0ec1148ae55" category="inline-link">AWSリージョンのLinuxホストへのコネクタの手動インストール</block>
-  <block id="04b01ab636ef32a98ac9e4e70d26301d" category="paragraph">インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、Cloud Backupを使用してボリュームデータをバックアップできます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、ダークサイトにBlueXPコネクタを導入する必要があります。</block>
-  <block id="9cee8a58cb0f70566a439c4bcaed0562" category="list-text">AWSの商用リージョンおよびAWS C2S/SC2SのセキュアリージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3にデータをバックアップできます。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
-  <block id="5660f9fec8990d75e681f2c7676a1132" category="list-text">Azure商用リージョンおよびAzure IL6セキュアリージョンにインストールされているCloud Volumes ONTAP システムから、Azure Blobにデータをバックアップできます。を参照してください <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="ee2081007b4b41aa21ddcbdddb722d5e" category="section-title">接続が制限されているサイトのサポート</block>
-  <block id="b2f6031ac57c2fd58a0d11d2c12f1465" category="paragraph">Cloud Backupは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータをバックアップするために使用できます。この構成では、ボリュームとファイルのリストアもサポートされます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
   <block id="a3f02510edf67619908394e8afc73938" category="list-text">AWSの商用リージョンにインストールされているCloud Volumes ONTAP システムからAmazon S3にデータをバックアップできます。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
   <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。を参照してください <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="1b57298c9825f880d62b2296bd4b45f2" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、毎月、および毎年のバックアップの組み合わせを選択できます。ボリュームに適用されるSnapshotポリシーは、Cloud Backupで認識されるいずれかのポリシーである必要があります。また、システム定義のポリシーの中から、 3 カ月、 1 年、 7 年のバックアップと保持を提供するポリシーを選択することもできます。ポリシーは次のとおりです。</block>
   <block id="a6a4730c10b1358f1c9def7ffe4b5b3e" category="summary">BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
   <block id="7eb9cafcf06d2b2e35409b3b19eebaa6" category="summary">BlueXPのバックアップとリカバリ機能は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="4e16c93a7a40b92bf4ddc82057092a1f" category="paragraph">BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
@@ -3645,4 +3636,7 @@
   <block id="da51e9451a525419419d8c9da2b6fd19" category="paragraph"><block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
   <block id="22af84c027176379749ae95a3dcf8328" category="list-text">ポート443からCloud Backup Service およびS3オブジェクトストレージへのHTTPS接続 <block ref="e55fc914b3d027a7a2463283008a8fbf" category="inline-link-rx"></block>)</block>
   <block id="1733b24a3114e19949a64706ed91c2af" category="list-text"><block ref="1733b24a3114e19949a64706ed91c2af" category="inline-link-rx"></block></block>
+  <block id="ff130d4d587ae9b0b25a1a56ae928634" category="paragraph">Cloud Backupは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータをバックアップおよびリストアするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
+  <block id="0a4d3b56b9c686b7377816bc81da68bb" category="paragraph">インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、Cloud Backupを使用してボリュームデータをバックアップできます。この場合は、ダークサイトにBlueXPコネクタを導入する必要があります。</block>
+  <block id="b2b373cdd55c0c4cdd45eaaa104c1c58" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、毎月、および毎年のバックアップの組み合わせを選択できます。ボリュームに適用するSnapshotポリシーは、Cloud Backupで認識されるいずれかのポリシーである必要があります。そうしないと、バックアップファイルは作成されません。また、システム定義のポリシーの中から、 3 カ月、 1 年、 7 年のバックアップと保持を提供するポリシーを選択することもできます。ポリシーは次のとおりです。</block>
 </blocks>
