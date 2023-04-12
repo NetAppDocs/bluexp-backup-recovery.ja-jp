@@ -193,14 +193,18 @@ sidebar:
     - title: Cloud Backupポリシーの設定
       url: "/concept-cloud-backup-policies.html"
     - title: サポート対象の AWS アーカイブストレージ階層
+      flavor: aws
       url: "/reference-aws-backup-tiers.html"
     - title: サポートされている Azure アーカイブアクセス層
+      flavor: azure
       url: "/reference-azure-backup-tiers.html"
     - title: サポートされているGoogleアーカイブストレージ階層
+      flavor: gcp
       url: "/reference-google-backup-tiers.html"
     - title: ダークサイトのCloud Backupデータベースをバックアップする
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Azure でマルチアカウントアクセス用にバックアップを設定
+      flavor: azure
       url: "/reference-backup-multi-account-azure.html"
   - title: 知識とサポート
     entries:

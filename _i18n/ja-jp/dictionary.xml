@@ -1764,7 +1764,6 @@
   <block id="418dfdb508c036c09d2c850937665491" category="list-text">ボリュームの作成時に階層化ポリシーが割り当てられていた場合、この問題は表示されません。</block>
   <block id="6970012bbe95bd9244f695fd98b4cceb" category="list-text">を割り当てる前に、バックアップによる影響を考慮してください<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block> ボリュームへの階層化ポリシー。データはすぐに階層化されるため、 Cloud Backup はローカル階層からではなくクラウド階層からデータを読み取ります。バックアップの同時処理は、クラウドオブジェクトストレージへのネットワークリンクを共有するため、ネットワークリソースが最大限まで使用されなくなった場合にパフォーマンスが低下する可能性があります。この場合、複数のネットワークインターフェイス（ LIF ）をプロアクティブに設定して、この種類のネットワークの飽和を軽減することができます。</block>
   <block id="c84ee35eef49d3ea170dc5583bae97eb" category="section-title">バックアップの制限</block>
-  <block id="1ab00b260d8ce265da81957e2ab8768a" category="list-text">古いバックアップファイルをアーカイブストレージに階層化するには、クラスタでONTAP 9.10.1以降が実行されている必要があります。アーカイブストレージにあるバックアップファイルからボリュームをリストアするには、デスティネーションクラスタで ONTAP 9.10.1 以降が実行されている必要もあります。</block>
   <block id="b2c42e88cb6710c9293d1ce23cdc3cd1" category="list-text">ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。回避策 では、ポリシーを作成するバックアップの数を減らすことができます。その後、ポリシーを編集して、ポリシーにボリュームを割り当てたあとで最大 4 、 000 個のバックアップを作成できます。</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">DP ボリュームをバックアップする場合は、次の点に注意してください。</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">SnapMirrorラベルが設定された関係<block ref="b17c9a947d4e38d7975718380fab6b7a" prefix=" " category="inline-code"></block> および<block ref="02d69a40f5f4cdc817176fabd085b511" prefix=" " category="inline-code"></block> クラウドにバックアップできない。</block>
@@ -3424,7 +3423,6 @@
   <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*ケースをクローズ*：ケースをクローズする理由の詳細を入力し、*ケースをクローズ*をクリックします。</block>
   <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">テーブルの最後の列でメニューを選択した後に実行できる操作を示すスクリーンショット。</block>
   <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2336f5fb78c2a5c8f2076f882bd71161" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="a5e6246728060cb5f413df6fa5adbf0c" category="inline-link-macro">Cloud Volumes ONTAP データをAzure Blobにバックアップしています</block>
   <block id="9d5cd7f5faccdd3ae5ba70e594cc061f" category="list-text">現時点では、オブジェクトストアのWORM / ComplianceモードはAmazon S3、Azure、StorageGRID でサポートされています。これはDataLock機能と呼ばれ、クラウドプロバイダのインターフェイスではなく、Cloud Backupの設定を使用して管理する必要があります。</block>
   <block id="1eea998a6969261ae6e45e41459d7ae2" category="list-text">ONTAP 9.13.0以降を使用している場合、[参照と復元]および[検索と復元]では、フォルダ内のすべてのファイルとサブフォルダとともにフォルダを復元できます。</block>
@@ -3639,4 +3637,6 @@
   <block id="ff130d4d587ae9b0b25a1a56ae928634" category="paragraph">Cloud Backupは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータをバックアップおよびリストアするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
   <block id="0a4d3b56b9c686b7377816bc81da68bb" category="paragraph">インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、Cloud Backupを使用してボリュームデータをバックアップできます。この場合は、ダークサイトにBlueXPコネクタを導入する必要があります。</block>
   <block id="b2b373cdd55c0c4cdd45eaaa104c1c58" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、毎月、および毎年のバックアップの組み合わせを選択できます。ボリュームに適用するSnapshotポリシーは、Cloud Backupで認識されるいずれかのポリシーである必要があります。そうしないと、バックアップファイルは作成されません。また、システム定義のポリシーの中から、 3 カ月、 1 年、 7 年のバックアップと保持を提供するポリシーを選択することもできます。ポリシーは次のとおりです。</block>
+  <block id="11222d6b8c3052f6f5e7aaaa5b23b929" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。ifdef：aws []</block>
+  <block id="3835d8f8839ebb8c540019c7da03ff7a" category="list-text">ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。</block>
 </blocks>
