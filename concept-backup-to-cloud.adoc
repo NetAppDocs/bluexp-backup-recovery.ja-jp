@@ -14,7 +14,7 @@ summary: BlueXPのバックアップとリカバリ機能は、オンプレミ�
 
 
 [role="lead"]
-BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。
+BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続ボリューム、データベース、仮想マシンに、効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。
 
 このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護対象の分だけ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、Cloud Backupの対費用効果が非常に高くなります。
 
@@ -22,7 +22,7 @@ BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレ�
 
 https://bluexp.netapp.com/cloud-backup["Cloud Backup の詳細については、こちらをご覧ください"^]。
 
-バックアップとリストアは、次の目的で使用できます。
+バックアップとリカバリは、次の目的で使用できます。
 
 * Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 link:concept-ontap-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
 * Kubernetes永続ボリュームのバックアップとリストア link:concept-kubernetes-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
@@ -33,7 +33,7 @@ https://bluexp.netapp.com/cloud-backup["Cloud Backup の詳細については、
 https://www.youtube.com/watch?v=DF0knrH2a80["簡単なデモをご覧ください"^]
 
 
-TIP: BlueXP Connectorがクラウドの政府機関、またはインターネットにアクセスできないサイト（ダークサイト）に導入されている場合、Cloud BackupはONTAP システムからのバックアップおよびリストア操作のみをサポートします。これらのタイプの導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。
+TIP: BlueXP Connectorがクラウドの行政機関のリージョンや、インターネットアクセスのないサイト（ダークサイト）に導入されている場合、ONTAP システムからのバックアップとリストアの処理のみがサポートされます。このような導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。
 
 
 
@@ -43,7 +43,7 @@ Cloud Volumes ONTAP またはオンプレミスの ONTAP システムでクラ�
 
 ほとんどの場合、すべてのバックアップ処理にBlueXP UIを使用します。ただし、 ONTAP 9.9.1 以降では、 ONTAP System Manager を使用して、オンプレミスの ONTAP クラスタのボリュームバックアップ処理を開始できます。 https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html["Cloud Backup を使用してボリュームをクラウドにバックアップする方法については、 System Manager の説明を参照してください。"^]
 
-次の図は、各コンポーネント間の関係を示しています。
+次の図は、コンポーネント間の関係を示しています。
 
 image:diagram_cloud_backup_general.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションオブジェクトストレージと通信する仕組みを示す図。"]
 
@@ -51,7 +51,7 @@ image:diagram_cloud_backup_general.png["Cloud Backup が、ソースシステム
 
 === バックアップの保管場所
 
-バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPは「NetApp-backup-clusteruuid」のようにオブジェクトストアに名前を付けます。このオブジェクトストアは削除しないでください。
+バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではこのオブジェクトストアの名前を次のように指定します。 `netapp-backup-clusteruuid`。このオブジェクトストアは削除しないでください。
 
 ifdef::aws[]
 
@@ -94,6 +94,6 @@ endif::gcp[]
 
 === バックアップコピーはネットアップアカウントに関連付けられています
 
-バックアップコピーはに関連付けられます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["ネットアップアカウント"^] コネクタがある場所。
+バックアップコピーはに関連付けられます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["ネットアップアカウント"^] BlueXPコネクタが配置されています。
 
-同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。
+同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。

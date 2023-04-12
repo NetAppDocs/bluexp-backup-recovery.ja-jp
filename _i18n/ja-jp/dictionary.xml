@@ -1436,7 +1436,6 @@
   <block id="1619bac39deaef2fc2adb60633af222f" category="paragraph">必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAP データをバックアップする場合は、バックアップから同じ作業環境または別の作業環境に 1 つ以上の _ ファイル _ をリストアすることもできます。</block>
   <block id="b8d82fc8540bcb0b292930e59ebdd4dd" category="inline-link">Cloud Backup の詳細については、こちらをご覧ください</block>
   <block id="fe3f1bd257c4451d8f8bcbf9a1a58d34" category="paragraph"><block ref="1247b899b5e6800d8fd9e850903ad55a" category="inline-link-rx"></block>。</block>
-  <block id="44eb910aad595ba9500cebcb52445bcf" category="paragraph">バックアップとリストアは、次の目的で使用できます。</block>
   <block id="02fe91ecafd3cfc37675f0776294605f" category="inline-link-macro">詳細な機能については、こちらをご覧ください</block>
   <block id="f23af0fb3293030465a68a6d46401ecc" category="list-text">Cloud Backup for VMwareを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 <block ref="7d3aa28b08d11afec4b666dd6503d425" category="inline-link-macro-rx"></block>。</block>
   <block id="6176afad6a7761beffa9af008f2ae633" category="inline-link">簡単なデモをご覧ください</block>
@@ -1449,7 +1448,6 @@
   <block id="47a3cfa320df46c8c8f90a83132cd7c6" category="inline-image-macro">Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションオブジェクトストレージと通信する仕組みを示す図。</block>
   <block id="d8a8881779a15e8eb6bec6b61a2390a2" category="paragraph"><block ref="d8a8881779a15e8eb6bec6b61a2390a2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="57739bc049ff58f3d3db6f5281e84b85" category="section-title">バックアップの保管場所</block>
-  <block id="bf2b1bf7aed8d75654bb42a8a53d6a96" category="paragraph">バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPは「NetApp-backup-clusteruuid」のようにオブジェクトストアに名前を付けます。このオブジェクトストアは削除しないでください。</block>
   <block id="e6c344acbe141c46bf8617b9d43d0c2f" category="inline-link">Amazon S3 ブロックのパブリックアクセス機能</block>
   <block id="e33931549f252451d72b5664ade6ecf0" category="list-text">AWSでは、BlueXPによってが有効になります<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block> を S3 バケットに配置します。</block>
   <block id="33bfcd052df4f75c25d08493f7b03ba3" category="inline-link">BLOB データへのパブリックアクセスをブロックします</block>
@@ -1464,8 +1462,6 @@
   <block id="de76148f38881d048b0371c5472a1c65" category="list-text">年単位のバックアップは、年の最初の日の午前0時を過ぎた直後に開始されます。</block>
   <block id="fab27e4b9f13b45f921fe1c7f42ffac1" category="section-title">バックアップコピーはネットアップアカウントに関連付けられています</block>
   <block id="ac252743de820aac9183d9f76d4bed67" category="inline-link">ネットアップアカウント</block>
-  <block id="3ce3233955186ca42fd073f31c7b98aa" category="paragraph">バックアップコピーはに関連付けられます<block ref="5c84ace7b3e4263476ddf0c264272cee" category="inline-link-rx"></block> コネクタがある場所。</block>
-  <block id="20c092d8421a998d3ac6aa33a55628ba" category="paragraph">同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。</block>
   <block id="e4eb771c510e3febaca5aa81f1155f85" category="doc">オンプレミスの ONTAP データの Amazon S3 へのバックアップ</block>
   <block id="5c37edf1ec718afd1ab9a5a51043e0ce" category="paragraph">これらの手順を実行すると、すぐに作業を開始できます。各手順の詳細については、このトピックの以降のセクションを参照してください。</block>
   <block id="6f863df0df6a06cb4fad6fa2f223e77f" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 使用する構成方法を特定します</block>
@@ -3439,8 +3435,6 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">このオプションを使用すると、再度ログインするように求められます。これらのアカウントのトークンは90日後に期限切れになります。このことを通知する通知が投稿されます。</block>
   <block id="aa581d4a856d4e4b679f430d75b6675b" category="list-text">Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
   <block id="0ddf34ad5270eddf503a40460693fa5f" category="list-text">Kubernetes永続ボリュームのバックアップとリストア <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
-  <block id="630b6fb489bd2a5285488f531d84037b" category="list-text">Cloud Backup for Applicationsを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="8c9003b0bb11b5538760df9871279172" category="admonition">BlueXP Connectorがクラウドの政府機関、またはインターネットにアクセスできないサイト（ダークサイト）に導入されている場合、Cloud BackupはONTAP システムからのバックアップおよびリストア操作のみをサポートします。これらのタイプの導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。</block>
   <block id="01e76ab0dacc58799dc14adbdc705ac7" category="section-title">2023年3月9日</block>
   <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">フォルダレベルのリストア処理に、すべてのサブフォルダとファイルが含まれるようになりました</block>
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">以前は、フォルダをリストアしたときに、そのフォルダのファイルのみがリストアされました。サブフォルダやサブフォルダ内のファイルはリストアされませんでした。ONTAP 9.13.0以降を使用している場合は、選択したフォルダ内のすべてのサブフォルダとファイルが復元されます。これにより、トップレベルフォルダに複数のフォルダがネストされている場合に、時間とコストを大幅に節約できます。</block>
@@ -3549,8 +3543,6 @@
   <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。を参照してください <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="a6a4730c10b1358f1c9def7ffe4b5b3e" category="summary">BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
   <block id="7eb9cafcf06d2b2e35409b3b19eebaa6" category="summary">BlueXPのバックアップとリカバリ機能は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
-  <block id="4e16c93a7a40b92bf4ddc82057092a1f" category="paragraph">BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
-  <block id="d875f19aed16817841128703d062f580" category="paragraph">このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護対象の分だけ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、Cloud Backupの対費用効果が非常に高くなります。</block>
   <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間は、各ソース ONTAP システムで設定されているタイムゾーンに基づきます。UIからユーザが指定した時間にバックアップ処理をスケジュールすることはできません。詳細については、システムエンジニアにお問い合わせください。</block>
   <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="1034847477ed5a052dde5a113bf49af2" category="paragraph">コネクタをクラウドに導入した場合はGovCloudリージョンでCloud Backupがサポートされ、オンプレミスにインストールした場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。</block>
@@ -3639,4 +3631,13 @@
   <block id="b2b373cdd55c0c4cdd45eaaa104c1c58" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、毎月、および毎年のバックアップの組み合わせを選択できます。ボリュームに適用するSnapshotポリシーは、Cloud Backupで認識されるいずれかのポリシーである必要があります。そうしないと、バックアップファイルは作成されません。また、システム定義のポリシーの中から、 3 カ月、 1 年、 7 年のバックアップと保持を提供するポリシーを選択することもできます。ポリシーは次のとおりです。</block>
   <block id="11222d6b8c3052f6f5e7aaaa5b23b929" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。ifdef：aws []</block>
   <block id="3835d8f8839ebb8c540019c7da03ff7a" category="list-text">ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。</block>
+  <block id="bb280534703ad71e61cfe80a5fe858c8" category="paragraph">BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続ボリューム、データベース、仮想マシンに、効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
+  <block id="c046907d1d72e6426051e85493e0af8e" category="paragraph">このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護対象の分だけ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、Cloud Backupの対費用効果が非常に高くなります。</block>
+  <block id="56387194e2baefbedf3b4e19ea5780fe" category="paragraph">バックアップとリカバリは、次の目的で使用できます。</block>
+  <block id="48bcb85cafc1f72efb03d9b2b5ed82c5" category="list-text">Cloud Backup for Applicationsを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
+  <block id="df405fcd52dd910b780660dd568c32f0" category="admonition">BlueXP Connectorがクラウドの行政機関のリージョンや、インターネットアクセスのないサイト（ダークサイト）に導入されている場合、ONTAP システムからのバックアップとリストアの処理のみがサポートされます。このような導入方法を使用する場合、Cloud BackupはKubernetesクラスタ、アプリケーション、または仮想マシンからのバックアップとリストアの処理をサポートしません。</block>
+  <block id="06548d8c3dd532a955281943d00e4ae0" category="paragraph">次の図は、コンポーネント間の関係を示しています。</block>
+  <block id="27af9a77d19fed3cc5992a809811dc11" category="paragraph">バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではこのオブジェクトストアの名前を次のように指定します。<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block>。このオブジェクトストアは削除しないでください。</block>
+  <block id="6433bf341a35460ce346cdf0fc05e1b8" category="paragraph">バックアップコピーはに関連付けられます<block ref="5c84ace7b3e4263476ddf0c264272cee" category="inline-link-rx"></block> BlueXPコネクタが配置されています。</block>
+  <block id="610778054da9c0e7c61921555da9ddc9" category="paragraph">同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。</block>
 </blocks>
