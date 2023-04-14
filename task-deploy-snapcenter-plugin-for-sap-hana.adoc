@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-deploy-snapcenter-plugin-for-sap-hana.html 
 keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, deploy 
-summary: 各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNANを導入します。 
+summary: 各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HANAをインストールします。 
 ---
-= SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します
+= SnapCenter Plug-in for SAP HANAをインストールし、データベースホストを追加します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,106 +14,193 @@ summary: 各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HNA
 
 
 [role="lead"]
-SnapCenter Plug-in for SAP HANAは、各SAP HANAデータベースホストに導入する必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインを導入できます。
+各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HANAをインストールする必要があります。SAP HANAホストでSSHキーベースの認証が有効になっているかどうかに応じて、いずれかの方法でプラグインをインストールできます。
+
+* データベース・ホストでSSHが有効になっている場合は、SSHオプションを使用してプラグインをインストールできます。 <<スクリプトを使用してプラグインをインストールします,詳細はこちら。>>。
+* SSHが無効になっている場合は、プラグインを手動でインストールします。 <<プラグインを手動でインストールします,詳細はこちら。>>。
+
 
 
 
 == 前提条件
 
+ホストを追加する前に、前提条件を満たしていることを確認する必要があります。
+
 * 各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。
 * 作業環境を追加し、コネクタを作成しておく必要があります。
-* コネクタが作業環境に接続されていることを確認します
+* コネクタがSAP HANAデータベースホストに接続されていることを確認します。
++
+接続問題 を解決する方法については、を参照してください link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["BlueXP Connectorホストからアプリケーションデータベースホストへの接続を検証できませんでした"]。
+
++
+コネクタが失われた場合、または新しいコネクタを作成した場合は、コネクタを既存のアプリケーションリソースに関連付ける必要があります。コネクタを更新する手順については、を参照してください link:task-manage-cloud-native-app-data.html#update-the-connector-details["コネクタの詳細を更新します"]。
+
 * BlueXPユーザーに「アカウント管理者」の役割があることを確認します。
-* SnapCenter ユーザを作成し、SnapCenter ユーザにsudoを設定しておく必要があります。詳細については、を参照してください link:task-deploy-snapcenter-plugin-for-sap-hana.html#configure-sudo-for-snapcenter-user["SnapCenter ユーザにsudoを設定します。"]
-* データベースホストを追加する前に、SnapCenter Plug-in for SAP HANAを導入しておく必要があります。
+* SnapCenter ユーザを作成し、root以外（sudo）ユーザにsudoを設定しておく必要があります。詳細については、を参照してください link:task-deploy-snapcenter-plugin-for-sap-hana.html#configure-sudo-for-snapcenter-user["SnapCenter ユーザにsudoを設定します。"]
+* データベースホストを追加する前に、SnapCenter Plug-in for SAP HANAをインストールしておく必要があります。
 * SAP HANAデータベースホストを追加する場合は、HDBユーザストアキーを追加する必要があります。HDBセキュアユーザストアキーは、SAP HANAデータベースホストの接続情報をクライアントにセキュアに格納し、HDBSQLクライアントでセキュアなユーザストアキーを使用してSAP HANAデータベースホストに接続するために使用されます。
 * HANA System Replication（HSR；システムレプリケーション）の場合、HANAシステムを保護するには、プライマリとセカンダリの両方のHANAシステムを手動で登録する必要があります。
-* SSHベースの導入を使用する場合は、コネクタでSSHポートへの通信を有効にする必要があります（デフォルト：22）。
-* 操作を実行するには、コネクタでプラグインポート（デフォルト：8145）との通信が有効になっている必要があります。
+* SSHベースのインストールを実行する場合は、コネクタでSSHポートへの通信が有効になっていることを確認します（デフォルト：22）。
+* データ保護処理が機能するように、コネクタがプラグインポート（デフォルト：8145）との通信が有効になっていることを確認します。
+* 最新バージョンのプラグインがインストールされていることを確認します。プラグインをアップグレードするには、を参照してください <<SnapCenter Plug-in for SAP HANA Databaseをアップグレードします>>。
 
+
+
+NOTE: BlueXP Connectorホストからアプリケーションホストへの接続に失敗する場合は、を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["ナレッジベースの記事"^] を参照してください。
 
 
 
 == SnapCenter ユーザにsudoを設定します
 
-プラグインを導入するには、SnapCenter ユーザを作成する必要があります。
+プラグインをインストールするには、root以外のユーザ（sudo）を作成してください。
 
 * 手順 *
 
 . Connector VMにログインします。
-. Linuxホストのプラグインバイナリをダウンロードします。
+. _manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -PO "cloudmanager_SCS_cloud:.*？にある* sudoer.txt *の内容をコピーします。"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
+. rootユーザアカウントを使用してSAP HANAデータベースホストにログインします。
+. 手順3でコピーしたテキストを_/etc/sudoers.d/snapcenter_fileにコピーして、root以外のユーザにsudoアクセスを設定します。
++
+/etc/sudoers.d/snapcenter_fileに追加した行で、_<LINUXUSER> _をroot以外のユーザに、_<USER_HOME_DIRECTORY> _を_HOME /<non-root-user> _に置き換えます。
+
+
+
+
+
+== スクリプトを使用してプラグインをインストールします
+
+SAP HANAホストのroot以外のユーザアカウントに対してSSHキーベースの認証を設定し、次の手順を実行してプラグインをインストールします。
+
+*始める前に*
+
+コネクタへのSSH接続が有効になっていることを確認します。
+
+* 手順 *
+
+. コネクタVMにログインします。
+. コネクタに付属のスクリプトを使用してプラグインをインストールします。
+`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
++
+|===
+| 名前 | 説明 | 必須 | デフォルト 
+
+
+ a| 
+plugin_hostの略
+ a| 
+SAP HANAホストを指定します
+ a| 
+はい。
+ a| 
+-
+
+
+
+ a| 
+host_user_nameを指定します
+ a| 
+SAP HANAホストに対するSSH権限を持つSnapCenter ユーザを指定します
+ a| 
+はい。
+ a| 
+-
+
+
+
+ a| 
+host_ssh_keyを指定します
+ a| 
+SnapCenter ユーザのSSHキーを指定します。このキーは、SAP HANAホストへの接続に使用されます
+ a| 
+はい。
+ a| 
+-
+
+
+
+ a| 
+PLUGIN_PORT
+ a| 
+プラグインで使用されるポートを指定します
+ a| 
+いいえ
+ a| 
+8145
+
+
+
+ a| 
+host_ssh_portを指定します
+ a| 
+SAP HANAホストのSSHポートを指定します
+ a| 
+いいえ
+ a| 
+22
+
+|===
++
+例： `sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+
+
+
+プラグインをインストールしたら、インストールする必要があります <<SAP HANAデータベースホストを追加します>>。
+
+
+
+== プラグインを手動でインストールします
+
+HANAホストでSSHキーベースの認証が有効になっていない場合は、以下の手動手順を実行してプラグインをインストールする必要があります。
+
+* 手順 *
+
+. Connector VMにログインします。
+. SnapCenter Linuxホストプラグインバイナリをダウンロードします。
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. ベースマウントパスを取得します。
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-. から1～16の行をコピーします `oracle_checksum_scs.txt` ファイルの場所 `base_mount_path/version/sc-linux-host-plugin/`
-. SAP HANAデータベースホストにログインし、次の手順を実行します。
 +
-.. SnapCenter ユーザアカウントと秘密鍵のペアを作成し、権限を割り当てます。
-.. 手順4でコピーした行をに貼り付けます `/etc/sudoers` visudo Linuxユーティリティを使用したファイル。
-+
-上記の行で、<LINUXUSER> を作成してvisuodユーティリティで保存したSnapCenter ユーザーに置き換えます。
+プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -po "cloudmanager_SCS_cloud:.*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
 
-
-
-
-
-
-
-== SSHキーベースの認証を使用してプラグインを導入します
-
-HANAホストでSSHキーベースの認証が有効になっている場合は、次の手順を実行してプラグインを導入できます。手順を実行する前に、コネクタへのSSH接続が有効になっていることを確認してください。
-
-* 手順 *
-
-. Connector VMにログインします。
-. ベースマウントパスを取得します。
-`# sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-. プラグインを導入します。
-`# sudo <base_mount_path>/scripts/hana_plugin_copy_and_install.sh --host <host_name> --sshkey <ssh_key_file> --username <user_name> --port <ssh_port> --pluginport <plugin_port> --installdir <install_dir>`
-+
-** host_nameはHANAホストの名前で、これは必須パラメータです。
-** ssh_key_fileは、HANAホストへの接続に使用するSSHキーです。これは必須パラメータです。
-** user_name：HANAホストに対するSSH権限を持つユーザ。これはオプションパラメータです。デフォルト値はazureuserです。
-** ssh_port：HANAホスト上のSSHポート。これはオプションパラメータです。デフォルト値は22です。
-** plugin_port：プラグインで使用するポート。これはオプションパラメータです。デフォルト値は8145です。
-** install_dir：プラグインが配置されるディレクトリ。これはオプションのパラメータです。デフォルト値は/optです。
-
-
-
-
-プラグインを導入したら、を追加する必要があります link:task-deploy-snapcenter-plugin-for-sap-hana.html#add-sap-hana-database-hosts["SAP HANAデータベースホスト："]
-
-
-
-== プラグインを手動で導入します
-
-HANAホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインを導入する必要があります。
-
-* 手順 *
-
-. Connector VMにログインします。
-. Linuxホストのプラグインバイナリをダウンロードします。
-`# sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. ベースマウントパスを取得します。
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-. ダウンロードしたプラグインのバイナリパスを取得します。
-`sudo ls <base_mount_path> $(sudo docker ps|grep -Po "cloudmanager_scs_cloud:.*? "|sed -e 's/ *$//'|cut -f2 -d":")/sc-linux-host-plugin/snapcenter_linux_host_plugin_scs.bin`
-. コピー `snapcenter_linux_host_plugin_scs.bin` scpまたはその他の代替方法を使用して、各SAP HANAデータベースホストに接続します。
-. SAP HANAデータベースホストで、次のコマンドを実行してバイナリの実行権限を有効にします。
+. scpまたはその他の方法を使用して、各<non root user (sudo)> HANAデータベースホストの_/ home/sapan/.sc_netapp_pathに上記のパスから_snapcenter_linux_host_plugin_sc.bin_をコピーします。
+. root以外のアカウント（sudo）を使用してSAP HANAデータベースホストにログインします。
+. ディレクトリを_/ home/home /<non root user> /.sc_netapp/_に変更し、次のコマンドを実行してバイナリの実行権限を有効にします。
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
-. sudo SnapCenter ユーザとしてSAP HANAプラグインを導入します。
-`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
-. コピー `certificate.p12` 移動元 `<base_mount_path>/client/certificate/` Connector VMのへのパス `/var/opt/snapcenter/spl/etc/` プラグインホスト。
-+
-.. に移動します `/var/opt/snapcenter/spl/etc` keytoolコマンドを実行して証明書をインポートします。
+. sudo SnapCenter ユーザとしてSAP HANAプラグインをインストールします。
+`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
+. connector VMのcopy_certificate.p12_from_<base_mount_path>/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。
+. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。
 `keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
-.. SPLを再起動します。 `systemctl restart spl`
-
-
+. SPLを再起動します。 `systemctl restart spl`
 . コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
+. 詳細を確認し、*[アプリケーションの検出]*をクリックします。
 +
-`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
+** ホスト上のすべてのデータベースが表示されます。
+** すべてのホストを表示するには、[*設定*]をクリックし、[*ホスト*]を選択します。
++
 
+NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。
+
+** [*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認し、要件に合わせて編集するか、新しいポリシーを作成します。
+
+
+
+
+
+
+== SnapCenter Plug-in for SAP HANA Databaseをアップグレードします
+
+最新の新機能や機能拡張を利用するには、SnapCenter Plug-in for SAP HANAデータベースをアップグレードする必要があります。
+
+* 始める前に *
+
+* ホストで実行中の処理がないことを確認します。
+
+
+* 手順 *
+
+. コネクタVMにログインします。
+. 次のスクリプトを実行します。
+`/var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
 
 
 
@@ -133,7 +220,7 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 .. システムタイプとしてMulti-tenantデータベースコンテナまたはSingle Containerを選択します。
 .. SAP HANAシステムの名前を入力します。
 .. SAP HANA システムの SID を指定します。
-.. （オプション）HDBSQL OSユーザを指定します。
+.. （オプション）HDBSQL OSユーザを変更します。
 .. プラグインホストを選択します。（オプション）ホストが追加されていない場合、または複数のホストを追加する場合は、*プラグインホストの追加*をクリックします。
 .. HANAシステムがHANAシステムレプリケーションで構成されている場合は、* HANA System Replication（HSR）System *を有効にします。
 .. ユーザーストアキーの詳細を追加するには、[*HDB Secure User Store Keys*]テキストボックスをクリックします。
@@ -160,15 +247,24 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 
 
 
-NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます
+NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。
 
-REST APIを使用してSAP HANAシステムを変更および削除できます。HANAシステムを削除する前に、関連付けられているバックアップをすべて削除し、保護を解除してください。
+*次のステップ*
+
+* SAP HANAシステムは、UIおよびREST APIを使用して変更または削除できます。
++
+SAP HANAシステムを削除する前に、関連付けられているバックアップをすべて削除し、保護を解除する必要があります。
+
+* REST APIを使用して、SAP HANAホストを変更または削除できます。
+
 
 
 
 === 非データボリュームを追加します
 
-マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムの非データボリュームを追加できます。
+マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。
+
+使用可能な SAP HANA データベースを検出したあと、それらのリソースをリソースグループに追加してデータ保護処理を実行できます。
 
 * 手順 *
 
@@ -182,7 +278,7 @@ REST APIを使用してSAP HANAシステムを変更および削除できます�
 
 === グローバルな非データボリュームを追加します
 
-マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバル非データボリュームを追加できます。
+マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。
 
 * 手順 *
 

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start-hana.html 
+keywords: Cloud Manager, BlueXP, configuration, support, SAP HANA 
+summary: SAP HANAデータベースのバックアップを開始するには、いくつかの手順を実行してください。 
+---
+= クイックスタート
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+これらの手順を実行すると、すぐに作業を開始できます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
+[role="quick-margin-list"]
+* オペレーティングシステム
++
+** SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム
+** SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています
+
+
+* ネットアップクラウドストレージ：Azure NetApp Files
+* ストレージレイアウト：データファイルとログファイルについては、AzureでサポートされるのはNFSv4.1のみです。
+* データベースレイアウト：
++
+** シングルコンテナバージョン1.0SPS12
+** SAP HANA Multitenant Database Container（MDC）2.0SPS4、2.0SPS5、2.0SPS6（シングルテナントまたは複数テナント）
+** SAP HANAシングルホストシステム、SAP HANAマルチホストシステム（スタンバイホストなし）、HANAシステムレプリケーション
+
+
+* データベースホスト上のSAP HANAプラグイン
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] BlueXPにサインアップします
+[role="quick-margin-list"]
+BlueXPにはWebベースのコンソールからアクセスできます。BlueXPの利用を開始するには、まず既存のNetApp Support Site クレデンシャルを使用するか、ネットアップクラウドログインアカウントを作成して登録します。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-sign-up-saas.html["BlueXPにサインアップします"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] BlueXPにログインします
+[role="quick-margin-list"]
+BlueXPに登録すると、Webベースのコンソールからログインできます。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["BlueXPにログインします"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] BlueXPアカウントを管理します
+[role="quick-margin-list"]
+ユーザー、サービスアカウント、ワークスペース、コネクタを管理することで、アカウントを管理できます。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html["BlueXPアカウントを管理します"]。

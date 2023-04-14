@@ -19,37 +19,15 @@ summary: バックアップの詳細を表示し、すべてのジョブのス�
 
 作業環境で開始されたジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。
 
-すべての処理とそのステータスのリストを表示できます。各処理またはジョブには、一意の ID とステータスがあります。ステータスは次のいずれかになります。
-
-* 成功しました
-* 実行中です
-* キューに登録され
-* 警告
-* 失敗しました
-
-
-* 手順 *
-
-. [バックアップとリカバリ]をクリックします。
-. ［*ジョブ監視*］をクリックします
-+
-ジョブの名前をクリックすると、その処理に対応する詳細を確認できます。特定のジョブを探している場合は、次の操作を実行できます。
-
-+
-** ページ上部のタイムセレクタを使用して、特定の期間のジョブを表示します
-** [ 検索 ] フィールドにジョブ名の一部を入力します
-** 各列見出しのフィルタを使用して結果をソートします
-
-
-
+詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html["ジョブステータスを監視します"]。
 
 
 
 == 監査データ
 
-APIを直接実行するか、UIを使用して、外部で公開されているCloud Backup for ApplicationsのAPIを呼び出した場合は、ヘッダー、ロール、要求の本文、また、API情報はBlueXPタイムラインに記録され、監査エントリは永久にタイムラインに保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。
+APIを直接実行するか、UIを使用して、アプリケーション向けにBlueXPの外部に公開されているAPIのいずれかにAPI呼び出しを行うと、ヘッダー、ロール、要求の本文、 また、API情報はBlueXPのタイムラインに記録され、監査エントリはタイムラインに永久に保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。
 
-Cloud Backup for Applicationsは、ホストIP、要求本文、処理名、トリガーしたユーザ、一部のヘッダーなどのエントリをログに記録します。APIの動作状態を確認する必要があります。
+アプリケーション向けBlueXPのバックアップ/リカバリでは、ホストIP、要求の本文、処理名、トリガー日時、一部のヘッダー、 およびAPIの動作状態。
 
 
 
@@ -62,7 +40,7 @@ Cloud Backup for Applicationsは、ホストIP、要求本文、処理名、ト�
 
 
 
-IMPORTANT: エージェントIDはコネクタに関連付けられています。SAP HANAホストの登録時に使用したコネクタが存在しない場合、新しいコネクタのエージェントIDが異なるため、そのアプリケーションの以降のバックアップは失敗します。ホストのコネクタIDを変更する必要があります。
+IMPORTANT: エージェントIDはコネクタに関連付けられています。SAP HANAホストの登録時に使用したコネクタが存在しない場合、新しいコネクタのエージェントIDが異なるため、そのアプリケーションの以降のバックアップは失敗します。ホストのコネクタIDを変更する必要があります。詳細については、を参照してください <<コネクタの詳細を更新します>>。
 
 
 
@@ -79,9 +57,31 @@ IMPORTANT: エージェントIDはコネクタに関連付けられています�
 
 
 
-== SAP HANAデータベースホストのConnector Detailsを更新します
+== コネクタの詳細を更新します
 
-アプリケーションホストの登録時に使用したコネクタが存在しなくなったり破損したりした場合は、新しいコネクタを導入する必要があります。新しいコネクタを導入したら、* connector-update * APIを実行して、古いコネクタを使用して登録されているすべてのホストのコネクタの詳細を更新する必要があります。
+アプリケーションホストの登録時に使用されたコネクタが存在しないか破損している場合は、新しいコネクタを導入する必要があります。新しいコネクタを導入したら、* connector-update * APIを実行して、古いコネクタを使用して登録されているすべてのホストのコネクタの詳細を更新する必要があります。
+
+|===
+| 使用する環境 | 手順 
+
+
+ a| 
+Oracleデータベースホスト
+ a| 
+. すべてのを確認します link:task-add-host-discover-oracle-databases.html#prerequisites["前提条件"] 達成された。
+. [バックアップとリカバリ]*>*[アプリケーション]*をクリックします
+. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
+. コネクターID *を修正します。
+
+
+
+
+ a| 
+SAP HANAデータベースホスト
+ a| 
+. すべてのを確認します link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["前提条件"] 達成された。
+. 次のコマンドを実行します。
+
 
 [listing]
 ----
@@ -97,6 +97,27 @@ curl --location --request PATCH
 ----
 すべてのホストにSnapCenter Plug-in for SAP HANAサービスがインストールされて実行されている場合、およびすべてのホストが新しいコネクタからアクセスできる場合、コネクタの詳細は正しく更新されます。
 
+|===
+OracleホストまたはSAP HANAホストのコネクタの詳細を更新したら、次の手順を実行してコネクタの詳細が正常に更新されたことを確認します。
+
+. BlueXP Connector VMにログインし、次の手順を実行します。
++
+.. コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
+.. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+.. コネクタVMの_certificate.p12 /client/certificate/_pathから<base_mount_path> プラグインホストの_/var/opt/snapcenter/spl/etc/にcertificate.p12をコピーします。
+
+
+. プラグインホストにログインし、次の手順を実行します。
++
+.. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+.. SPLを再起動します。 `systemctl restart spl`
+
+
+
+
 
 
 == CA署名証明書を設定します
@@ -105,67 +126,90 @@ curl --location --request PATCH
 
 
 
-=== クライアント証明書認証用のCA署名証明書を設定します
+=== BlueXP ConnectorのCA署名証明書を設定します
 
 コネクタは、自己署名証明書を使用してプラグインと通信します。自己署名証明書は、インストールスクリプトによってキーストアにインポートされます。自己署名証明書をCA署名証明書に置き換えるには、次の手順を実行します。
 
-* 必要なもの *
+* 始める前に *
 
 次のコマンドを実行すると、<base_mount_path> を取得できます。
 `sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 
 * 手順 *
 
-. コネクタにログインします。
-. Connector仮想マシンの_<base_mount_path>/client/certificate__にある既存のファイルをすべて削除してください。
-. CA署名証明書とキーファイルをConnector仮想マシンの_<base_mount_path>/client/certificate_inにコピーします。
+. コネクタがプラグインに接続しているときにCA証明書をクライアント証明書として使用するには、コネクタで次の手順を実行します。
++
+.. コネクタにログインします。
+.. コネクタの_<base_mount_path> /client/certificate_inにある既存のファイルをすべて削除します。
+.. CA署名証明書とキーファイルをコネクタの_<base_mount_path> / client/certificate_にコピーします。
 +
 ファイル名はcertificate.pemとkey.pemである必要があります。certificate.pemには、中間CAやルートCAなどの証明書のチェーン全体が含まれている必要があります。
 
-. certificate.p12という名前でPKCS12形式の証明書を作成し、_<base_mount_path>/client/certificate__に保持してください。
-. すべての中間CAおよびルートCAの証明書.p12と証明書を、_/var/opt/snapcenter/spl/etc/_のプラグインホストにコピーします。
-. プラグインホストにログインします。
-. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
+.. certificate.p12という名前でPKCS12形式の証明書を作成し、_<base_mount_path>/client/certificate__に保持してください。
++
+例：openssl pkcs12 -inkey key.pem -in certificate.pem -export-out certificate.p12
+
+.. すべての中間CAとルートCAの証明書.p12と証明書をプラグインホスト（_/var/opt/snapcenter/spl/etc/_）にコピーします。
++
+
+NOTE: 中間CA証明書とルートCA証明書の形式は.crt形式である必要があります。
+
+
+
+. プラグインホストで次の手順を実行して、コネクタから送信された証明書を検証します。
++
+.. プラグインホストにログインします。
+.. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
 `keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
-. ルートCAと中間証明書をインポートします。
+.. ルートCAと中間証明書をインポートします。
 `keytool -import -trustcacerts -keystore keystore.jks -storepass snapcenter -alias trustedca -file <certificate.crt>`
 +
 
-NOTE: certfile.crtは、ルートCAおよび中間CAの証明書を参照します。
+NOTE: certificate.crtは、ルートCAと中間CAの証明書を参照します。
 
-. SPLを再起動します。 `systemctl restart spl`
-
-
+.. SPLを再起動します。 `systemctl restart spl`
 
 
-=== プラグインのサーバ証明書のCA署名証明書を設定します
 
-CA証明書には、Connector仮想マシンと通信するプラグインホストの正確な名前を指定する必要があります。
 
-* 必要なもの *
+
+
+=== プラグインのCA署名証明書を設定します
+
+CA証明書の名前は、プラグインホストのCloud Backupに登録されている名前と同じである必要があります。
+
+* 始める前に *
 
 次のコマンドを実行すると、<base_mount_path> を取得できます。
 `sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 
 * 手順 *
 
-. プラグインホストで次の手順を実行します。
+. CA証明書を使用してプラグインをホストするには、プラグインホストで次の手順を実行します。
 +
-.. SPLのkeystore_/var/opt/snapcenter/spl/etcが格納されているフォルダに移動します。
+.. SPLのkeystore _/var/opt/snapcenter/spl/etc _が格納されているフォルダに移動します。
 .. 証明書とキーの両方を持つ証明書のPKCS12形式を、alias_splkeystore._で作成します。
-.. CA証明書を追加します。
-`keytool -importkeystore -srckeystore <CertificatePathToImport> -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -noprompt`
++
+certificate.pemには、中間CAやルートCAなどの証明書のチェーン全体が含まれている必要があります。
+
++
+例：openssl pkcs12 -inkey key.pem -in certificate.pem -export-out certificate.p12 -name splkeystore
+
+.. 上記の手順で作成したCA証明書を追加します。
+`keytool -importkeystore -srckeystore certificate.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -noprompt`
 .. 証明書を確認します。
 `keytool -list -v -keystore keystore.jks`
 .. SPLを再起動します。 `systemctl restart spl`
 
 
-. コネクタで次の手順を実行します。
+. コネクタで次の手順を実行して、コネクタがプラグインの証明書を確認できるようにします。
 +
 .. root以外のユーザとしてコネクタにログインします。
-.. CA証明書のチェーン全体を、_<base_mount_path>/server_.にある永続ボリュームにコピーしてください。
+.. serverディレクトリの下にあるルートCAファイルと中間CAファイルをコピーします。
+`cd <base_mount_path>`
+`mkdir server`
 +
-サーバーフォルダが存在しない場合は作成します。
+CAファイルはPEM形式である必要があります。
 
 .. cloudmanager_scs_cloudに接続し、* enableCACert * in_config.yml_to * true *を変更します。
 `sudo docker exec -t cloudmanager_scs_cloud sed -i 's/enableCACert: false/enableCACert: true/g' /opt/netapp/cloudmanager-scs-cloud/config/config.yml`

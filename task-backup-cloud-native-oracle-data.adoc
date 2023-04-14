@@ -14,11 +14,11 @@ summary: Oracleデータベースのバックアップをスケジュール設�
 
 
 [role="lead"]
-作成した組み込みのポリシーまたはポリシーを割り当ててから、バックアップを作成する必要があります。
+組み込みのポリシーまたは作成したポリシーを割り当てることで、バックアップを作成できます。
 
 
 
-== Oracleデータベースを保護するためのポリシーを作成します
+== Oracleデータベースを保護するポリシーを作成します
 
 組み込みのポリシーを編集しない場合は、ポリシーを作成できます。
 
@@ -29,6 +29,62 @@ summary: Oracleデータベースのバックアップをスケジュール設�
 . ポリシー名を指定します。
 . （オプション）バックアップ名の形式を編集します。
 . スケジュールと保持の詳細を指定します。
+. （オプション）バックアップの成功後に実行してSnapshotをセカンダリストレージにコピーするポストスクリプトのパスとタイムアウト値を入力します。
++
+必要に応じて、引数を指定することもできます。
+
++
+ポストスクリプトは、_/var/opt/snapcenter/spl/scripts _というパスに保存する必要があります。
+
++
+サポートされている環境変数は次のとおりです。
+
++
+|===
+| 環境変数 | 説明 
+
+
+ a| 
+SC_ORACLE_SID
+ a| 
+OracleデータベースのSIDを指定します。
+
+
+
+ a| 
+sc_hostの略
+ a| 
+データベースのホスト名を指定します
+
+
+
+ a| 
+SC_BACKUP_NAME
+ a| 
+バックアップの名前を指定します。データバックアップ名とログバックアップ名は区切り文字で連結されます。
+
+
+
+ a| 
+SC_BACKUP_POLICY_NAME
+ a| 
+バックアップの作成に使用するポリシーの名前を指定します。
+
+
+
+ a| 
+sc_primary_data_volume_full_pathを指定します
+ a| 
+区切り文字として「、」を使用して連結されたデータボリュームパスを指定します。ANFボリュームの場合、情報は「/」/｛anfaccount｝/｛subscription_id｝/｛resource_group｝/｛capacity_pool｝/｛VolumeName｝_を使用して連結されます
+
+
+
+ a| 
+sc_primary_archivelogs_volume_full_pathを指定します
+ a| 
+区切り文字として「、」を使用して連結されたアーカイブログボリュームのパスを指定します。ANFボリュームの場合、情報は「/」/｛anfaccount｝/｛subscription_id｝/｛resource_group｝/｛capacity_pool｝/｛VolumeName｝_を使用して連結されます
+
+|===
 . [ 作成（ Create ） ] をクリックします。
 
 
@@ -36,10 +92,10 @@ summary: Oracleデータベースのバックアップをスケジュール設�
 
 == Oracleデータベースのバックアップを作成します
 
-組み込みポリシーを割り当てるか、ポリシーを作成してデータベースに割り当てることができます。ポリシーを割り当てると、ポリシーで定義されたスケジュールに従ってバックアップが作成されます。
+組み込みのポリシーを割り当てるか、ポリシーを作成してデータベースに割り当てることができます。ポリシーを割り当てると、ポリシーで定義されたスケジュールに従ってバックアップが作成されます。
 
 
-NOTE: Oracleの場合、ASMディスクグループを作成するときは、複数のディスクグループに共通のボリュームがないことを確認します。各ディスクグループには専用のボリュームを含める必要があります。
+NOTE: Oracleの場合、ASMディスクグループを作成するときは、複数のディスクグループに共通のボリュームがないことを確認します。各ディスクグループに専用のボリュームを配置する必要があります。
 
 * 手順 *
 
@@ -53,7 +109,7 @@ NOTE: Oracleの場合、ASMディスクグループを作成するときは、�
 
 +
 
-NOTE: サービスアカウント（_SnapCenter -account-<account_id>_）は、スケジュールされたバックアップ処理の実行に使用されます。
+NOTE: スケジュールされたバックアップ処理の実行には、サービスアカウント（_SnapCenter -account-<account_id> _）を使用します。
 
 
 
@@ -69,21 +125,15 @@ NOTE: サービスアカウント（_SnapCenter -account-<account_id>_）は、�
 . アプリケーションに複数のポリシーが割り当てられている場合は、ポリシー、保持値を選択し、*バックアップの作成*をクリックします。
 
 
-* 詳細はこちら *
-
-大規模なデータベース（250GB以上）をリストアしたあとに、同じデータベースでフルオンラインバックアップを実行すると、次のエラーメッセージが表示されて処理が失敗することがあります。
-
-`failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
-
-この問題 の修正方法については、以下を参照してください。 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["Snapshotでバックアップされたクローンが原因で、Snapshot処理を実行できません"]。
-
 
 
 == 制限
 
-* オンラインデータまたはログのみのバックアップはサポートしません
-* では、オフラインバックアップはサポートされません
-* は、再帰マウントポイント上に存在するOracleデータベースのバックアップをサポートしていません
 * では、FSXボリュームと重複する複数のASMディスクグループに存在するOracleデータベースの整合グループSnapshotはサポートされていません
 * OracleデータベースがASMで設定されている場合は、SVM名がFSXシステム全体で一意であることを確認します。FSXシステム間でSVM名が同じ場合は、それらのSVM上にあるOracleデータベースのバックアップはサポートされません。
+* 大規模なデータベース（250GB以上）をリストアしたあとに、同じデータベースでフルオンラインバックアップを実行すると、次のエラーメッセージが表示されて処理が失敗することがあります。
+`failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
++
+この問題 の修正方法については、以下を参照してください。 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["Snapshotでバックアップされたクローンが原因で、Snapshot処理を実行できません"]。
+
 

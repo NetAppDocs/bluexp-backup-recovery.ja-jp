@@ -14,7 +14,7 @@ summary: SnapCenter サーバを登録するには、いくつかの手順を実
 
 
 [role="lead"]
-SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が実行されているホストを登録できます。複数のSnapCenter サーバホストを登録できます。
+SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が実行されているホストを登録できます。BlueXPには複数のSnapCenter サーバホストを登録できます。
 
 * 手順 *
 
@@ -24,9 +24,9 @@ SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が
 . 次の情報を指定します。
 +
 .. SnapCenter Server フィールドで、 SnapCenter サーバホストの FQDN または IP アドレスを指定します。
-.. Port フィールドで、 SnapCenter サーバが稼働しているポート番号を指定します。
+.. [ポート]フィールドで、SnapCenter サーバホストが実行されているポート番号を指定します。
 +
-SnapCenter サーバと Cloud Backup for Applications の間の通信用にポートが開いていることを確認してください。
+SnapCenter サーバとBlueXPの間で通信するためには、ポートが開いていることを確認する必要があります。
 
 .. [ タグ ] フィールドで、 SnapCenter サーバーにタグを付けるサイト名、都市名、またはカスタム名を指定します。
 +
@@ -35,17 +35,16 @@ SnapCenter サーバと Cloud Backup for Applications の間の通信用にポ�
 .. Username and Password フィールドで、 SnapCenterAdmin ロールを持つユーザのクレデンシャルを指定します。
 
 
+. コネクター*ドロップダウンからコネクターを選択します。
 . [*Register] をクリックします。
 
 
 * 終了後 *
 
-[* バックアップと復元 *>* アプリケーション *] をクリックして、登録済み SnapCenter サーバ・ホストを使用して保護されているすべてのアプリケーションを表示します。
-
-デフォルトでは、アプリケーションは毎日午前0時に自動的に検出されます。アプリケーションを検出するようにスケジュールを設定できます。
+[* バックアップと復元 *>* アプリケーション *] をクリックして、登録済み SnapCenter サーバ・ホストを使用して保護されているすべてのアプリケーションを表示します。デフォルトでは、アプリケーションは毎日午前0時に自動的に検出されます。
 
 
-NOTE: SQL Serverデータベースの場合、[アプリケーション名]列には、名前が_application_name（インスタンス名）_formatで表示されます。
+IMPORTANT: FQDNまたはIPアドレスを使用してSVMをSnapCenter に追加すると、それらのSVMで実行されているアプリケーションを保護できません。アプリケーション向けBlueXPのバックアップ/リカバリで認識されるのは、名前で追加されたSVM、またはONTAP クラスタの一部として追加されたSnapCenter によって検出されたSVMだけです。
 
 サポートされるアプリケーションとその構成は次のとおりです。
 

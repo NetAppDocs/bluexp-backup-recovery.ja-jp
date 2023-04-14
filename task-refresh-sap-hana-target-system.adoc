@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: task-refresh-sap-hana-target-system.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, system refresh 
+summary: 本番環境のデータベースであるソースのSAP HANAシステムからターゲットシステムへの更新を実行します。 
+---
+= SAP HANAターゲットシステムを更新
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SAP HANAソースシステムのデータを使用して、SAP HANAターゲットシステムの更新を実行できます。これを使用して、現在の本番環境のデータをテストシステムに提供できます。クラウドバックアップでは、ソースシステムからSnapshotコピーを選択し、そのSnapshotコピーに基づいて新しいANFボリュームを作成できます。サンプルのスクリプトを使用して、SAP HANAデータベースをリカバリするためにデータベースホストで必要な処理を実行します。
+
+* 始める前に *
+
+* 最初の更新処理を実行する前に、SAP HANAターゲットシステムをインストールする必要があります。
+* ソースとターゲットのHANAシステムをクラウドバックアップに手動で追加する必要があります。
+* ソースシステムとターゲットシステムでSAP HANAデータベースのバージョンが同じであることを確認します。
+* 使用する更新スクリプトを決定しておく必要があります。更新スクリプトは、解決策 テクニカルレポートで提供されています。
++
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html#script-sc-system-refresh-sh["自動化スクリプトの例"]
+
++
+更新スクリプトはカスタマイズできます。
+
+* プリスクリプトとポストスクリプトでは、次の環境変数を使用できます。
++
+** cloned_volumes_mount_pathを指定します
+** <SOURCEVOLUME> の宛先
+** hana_database_typeを指定します
+** tenant_database_namesの略
+
+
+
+
+* このタスクについて *
+
+* システム更新は、マルチテナントデータベースコンテナHANAシステムでのみサポートされます。
+* 既存のポリシーはシステムの更新後に有効になります。
+* 新しいボリュームには、<sourcevolumename> -<timestamp> という命名規則が適用されます
++
+** タイムスタンプの形式：<year> <month> <day> -<hour> <minute> <second>
++
+たとえば、ソースボリュームがvol1の場合、更新されるボリューム名はvol1-20230109-184501になります
+
+
+
+
+
+
+NOTE: 新しいボリュームは、ターゲットボリュームと同じ容量プールに配置されます。
+
+* ジャンクションパスはボリューム名と同じになります。
+
+
+* 手順 *
+
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
+. [*アプリケーション*]ページで、をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アイコンをクリックして、更新するシステムに対応するアクションを選択し、*[システムの更新]*を選択します。
+. [システムの更新]*ページで、次の操作を実行します。
++
+.. ソースシステムとSnapshotコピーを選択
+.. 新しいボリュームにアクセスできるエクスポートアドレスを入力します。
+.. プリスクリプト、ポストスクリプト、およびエラーが発生したスクリプトパスを入力します。失敗時スクリプトは、システム更新処理が失敗した場合にのみ実行されます。
+.. [Delete associated SAP HANA backups]*[only Snapshot copies will be deleted]を選択します。ターゲットシステムの既存のバックアップが存在し、上記のオプションが選択されていない場合、システムの更新処理は失敗します。また、*[Topology]*ページでバックアップを削除することもできます。
+.. [* 更新 * ] をクリックします。
+
+
+

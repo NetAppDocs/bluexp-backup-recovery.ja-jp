@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP 作業環境とコネクタを作成します
 
 
 [role="lead"]
-Cloud Volumes ONTAP の作業環境とコネクタを作成する必要があります。
+BlueXPを使用してCloud Volumes ONTAP 作業環境を作成し、ボリュームや追加のデータサービスを追加および管理する必要があります。また、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理できるように、クラウド環境用のコネクタを作成する必要もあります。
 
 
 
@@ -33,8 +33,8 @@ Cloud Volumes ONTAP の作業環境とコネクタを作成する必要があり
 * link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Google Cloud の Cloud Volumes ONTAP のクイックスタート"]
 
 
-CVOの作業環境とOracleデータベースの両方を同じコネクタで管理する必要があります。
+Cloud Volumes ONTAP 作業環境とデータベースの両方を管理するには、同じコネクタを使用する必要があります。
 
-* CVO作業環境があり、同じVPCまたはVNetにOracleデータベースがある場合は、同じVPCまたはVNetにコネクタを導入できます。
-* CVO作業環境があり、異なるVPCまたはVNet内のOracleデータベースがある場合は、VPCまたはVNetのピア関係が確立されていることを確認してください。
+* Cloud Volumes ONTAP の作業環境とデータベースが同じVirtual Private Cloud（VPC；仮想プライベートクラウド）またはVNetにある場合は、コネクタを同じVPCまたはVNetに導入できます。
+* Cloud Volumes ONTAP 作業環境があり、データベースが異なるVPCまたはVNetにある場合は、VPCまたはVNetがピアリングされていることを確認します。
 

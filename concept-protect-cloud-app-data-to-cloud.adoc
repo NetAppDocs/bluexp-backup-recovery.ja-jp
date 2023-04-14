@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP, cloud backup 
 summary: BlueXPを使用すると、アプリケーションと整合性のある、Amazon FSX for NetApp ONTAP またはCloud Volumes ONTAP 上にあるOracle®データベースの効率的でポリシーベースのバックアップとリストアを実行できます。 
 ---
 = クラウドネイティブアプリケーションのデータを保護
@@ -14,9 +14,9 @@ summary: BlueXPを使用すると、アプリケーションと整合性のあ�
 
 
 [role="lead"]
-Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXP（旧Cloud Manager）で有効になっているCloud Backup for Applicationsは、アプリケーションと整合性のある効率的なポリシーベースの保護機能を提供します。
+BlueXPのアプリケーション向けバックアップ/リカバリサービスは、ネットアップのクラウドストレージで実行されるアプリケーションに、アプリケーションと整合性のあるデータ保護機能を提供するSaaSベースのサービスです。BlueXPのアプリケーション向けバックアップ/リカバリ機能では、次のアプリケーションに対して、アプリケーションと整合性のある効率的なポリシーベースの保護を提供します。
 
-* Amazon FSX for NetApp ONTAP およびCloud Volumes ONTAP 上に存在するOracleデータベース
+* Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベース
 * Azure NetApp Files 上にあるSAP HANAシステム
 
 
@@ -24,17 +24,14 @@ Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されている�
 
 == アーキテクチャ
 
-Cloud Backup for Applicationsアーキテクチャには、次のコンポーネントが含まれています。
+Cloud Backupのアーキテクチャには、次のコンポーネントが含まれています。
 
-* Cloud Backup for Applicationsは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームをベースにしています。
+* Cloud Backupは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームを基盤としています。
 +
 オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます
 
-* Cloud Backup for Applications UIには、BlueXP UIからアクセスできます。
-+
-Cloud Backup for Applications UIは、アプリケーションにデータ保護機能を提供します。
-
-* BlueXP Connectorは、ユーザーのクラウドネットワークで動作し、ストレージシステムおよびアプリケーション固有のプラグインと通信するコンポーネントです。
+* Cloud Backup UIはアプリケーション向けのデータ保護機能を提供し、BlueXP UIからアクセスできます。
+* BlueXP Connectorは、クラウドネットワークで実行されるコンポーネントで、ストレージシステムやアプリケーション固有のプラグインと通信します。
 * アプリケーション固有のプラグインは、各アプリケーションホストで実行され、データ保護処理の実行中にホストで実行されるデータベースと通信するコンポーネントです。
 
 
@@ -42,7 +39,7 @@ Cloud Backup for Applications UIは、アプリケーションにデータ保護
 
 image:diagram_nativecloud_backup_app.png["各コンポーネントと接続の準備を行う方法を示す図。"]
 
-ユーザーが開始したリクエストの場合、Cloud Backup for Applications UIはBlueXP SaaSと通信します。BlueXP SaaSでは、リクエストプロセスが同じであることが検証されます。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。
+ユーザが開始した要求の場合、Cloud Backup UIはBlueXP SaaSと通信し、BlueXP SaaSは要求の検証時に同じ処理を行います。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。
 
 このコネクタは、アプリケーションと同じVPCまたはVNetに導入することも、別のVPCまたはVNetに導入することもできます。コネクタとアプリケーションが異なるネットワーク上にある場合は、コネクタとアプリケーションの間にネットワーク接続を確立する必要があります。
 
@@ -50,7 +47,7 @@ image:diagram_nativecloud_backup_app.png["各コンポーネントと接続の�
 NOTE: 1つのBlueXPコネクタは、複数のストレージシステムおよび複数のアプリケーションプラグインと通信できます。コネクタとアプリケーションホストの間に接続がある限り、アプリケーションを管理するには単一のコネクタが必要です。
 
 
-IMPORTANT: Cloud Backup for Applications SaaSインフラは、リージョン内のアベイラビリティゾーン障害に対して耐障害性に優れています。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。
+IMPORTANT: Cloud Backup SaaSインフラは、リージョン内のアベイラビリティゾーンに障害が発生しても耐障害性があります。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。
 
 
 
@@ -58,54 +55,31 @@ IMPORTANT: Cloud Backup for Applications SaaSインフラは、リージョン�
 
 
 
-=== サポートされている構成
-
-* オペレーティングシステム
-+
-** RHEL 7.5以降および8.x
-** OL 7.5以降および8.x
-
-
-* ストレージシステム：
-+
-** ONTAP 対応の Amazon FSX
-** Cloud Volumes ONTAP
-
-
-* ストレージレイアウト：
-+
-** NFS v3およびv4.1（dNFSを含む）
-** ASMを使用するiSCSI（ASMFD、ASMLib、ASMUdev）
-
-
-* データベースレイアウト：Oracle StandardおよびOracle Enterprise Standalone（従来型およびマルチテナントCDBおよびPDB）
-* データベースバージョン：12cR2、18c、19C、および21c
-
-
-
-
 === の機能
 
 * ホストを追加してプラグインを導入
 +
-プラグインは、手動、スクリプト、または自動で導入できます。
+プラグインは、スクリプトを使用して手動で導入することも、自動で導入することもできます。
 
 * Oracleデータベースの自動検出
-* Oracleデータベースのバックアップ
+* Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベースをバックアップします
 +
 ** フル（データ+制御+アーカイブログファイル）バックアップ
 ** オンデマンドバックアップ
 ** システム定義またはカスタムのポリシーに基づいてスケジュールされたバックアップ
 +
-ポリシーでは、毎時、毎日、毎週、毎月などの異なるスケジュール頻度を指定できます。
+ポリシーでは、毎時、毎日、毎週、毎月などの異なるスケジュール頻度を指定できます。バックアップの成功後に実行するポストスクリプトを指定して、Snapshotをセカンダリストレージにコピーすることもできます。
 
 
 
 * ポリシーに基づいてバックアップを保持する
-* 指定したバックアップからOracleデータベース全体（データ・ファイル+制御ファイル）をリストアします
-* データファイルのみをリストアし、指定したバックアップからのみファイルを制御する
-* SCNまで、時間が経過するまで、使用可能なすべてのログ、およびリカバリオプションなしでOracleデータベースをリカバリする場合
-* ソースホストまたは代替ターゲットホスト上のOracleデータベースのクローニング
+* Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files にあるOracleデータベースのリストア
++
+** 指定したバックアップからOracleデータベース全体（データ・ファイル+制御ファイル）をリストアします
+** SCNまで、時間が経過するまで、使用可能なすべてのログ、およびリカバリオプションなしでOracleデータベースをリカバリする場合
+
+
+* Amazon FSx for NetApp ONTAP およびCloud Volumes ONTAP 上にあるOracleデータベースのソースホストまたは代替ターゲットホストへのクローニング
 +
 ** 基本的なワンクリッククローン
 ** カスタムクローン仕様ファイルを使用した高度なクローニング
@@ -117,6 +91,7 @@ IMPORTANT: Cloud Backup for Applications SaaSインフラは、リージョン�
 * バックアップ、リストア、クローニングなどのジョブを監視しています
 * ダッシュボードに保護の概要を表示します
 * E メールでアラートを送信する
+* ホストプラグインをアップグレードします
 
 
 
@@ -126,35 +101,13 @@ IMPORTANT: Cloud Backup for Applications SaaSインフラは、リージョン�
 * Oracle 11gはサポートされません
 * バックアップに対するマウント、カタログ化、検証の処理はサポートされていません
 * では、RACおよびData GuardでのOracleはサポートされません
-* Cloud Volumes ONTAP HAでは、ネットワークインターフェイスのIPアドレスのうち1つだけが使用されます。IPの接続がダウンした場合やIPにアクセスできない場合は、処理が失敗します。
-* NetApp ONTAP またはCloud Volumes ONTAP 用のAmazon FSXのネットワークインターフェイスIPアドレスは、BlueXPのアカウントとリージョン内で一意である必要があります。
+* Cloud Volumes ONTAP HAでは、ネットワークインターフェイスのIPアドレスのうち1つだけが使用されます。IPの接続がダウンした場合やIPにアクセスできない場合は、データ保護処理が失敗します。
+* Amazon FSx for NetApp ONTAP またはCloud Volumes ONTAP のネットワークインターフェイスIPアドレスは、BlueXPのアカウントとリージョンで一意である必要があります。
 
 
 
 
 == SAP HANAデータベースを保護
-
-
-
-=== サポートされている構成
-
-* オペレーティングシステム
-+
-** SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム
-** SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています
-
-
-* ストレージシステム：Azure NetApp Files
-* ストレージレイアウト：データとログについては、AzureでNFSv4.1のみがサポートされます。
-* データベースレイアウト：
-+
-** シングルコンテナバージョン1.0SPS12
-** SAP HANA Multitenant Database Container（MDC）2.0SPS4、2.0SPS5、2.0SPS6（シングルテナントまたは複数テナント）
-** SAP HANAシングルホストシステム、SAP HANAマルチホストシステム（スタンバイホストなし）、HANAシステムレプリケーション
-
-
-* データベースホスト上のSAP HANAプラグイン
-
 
 
 

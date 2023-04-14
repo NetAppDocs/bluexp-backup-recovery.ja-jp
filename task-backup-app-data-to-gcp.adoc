@@ -14,12 +14,7 @@ summary: ONTAP からGCPにアプリケーションデータをバックアッ�
 
 
 [role="lead"]
-Cloud Backup for ApplicationsをCloud ManagerとオンプレミスのSnapCenter に統合することで、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップできます。
-
-単一のポリシーを使用して、 1 つ以上のアプリケーションをクラウドで同時に保護することができます。
-
-
-IMPORTANT: BlueXP GUIを使用している場合は、一度に保護できるアプリケーションは1つだけです。ただし、 REST API を使用する場合は、複数のアプリケーションを同時に保護できます。
+いくつかの手順を実行して、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップします。
 
 * 手順 *
 
@@ -28,16 +23,16 @@ IMPORTANT: BlueXP GUIを使用している場合は、一度に保護できる�
 . [ ポリシーの割り当て ] ページで、ポリシーを選択して [ 次へ * ] をクリックします。
 . 作業環境を追加します。
 +
-アプリケーションが実行されている SVM をホストする ONTAP クラスタを設定します。いずれかのアプリケーション用の作業環境を追加したら、同じ ONTAP クラスタにある他のすべてのアプリケーションでその作業環境を再利用できます。
+BlueXPで検出するクラスタ管理LIFを設定します。いずれかのアプリケーション用の作業環境を追加したら、同じ ONTAP クラスタにある他のすべてのアプリケーションでその作業環境を再利用できます。
 
 +
 .. SVMを選択し、*作業環境の追加*をクリックします。
 .. 作業環境の追加ウィザードで、次の手順を実行します。
 +
-... ONTAP クラスタの IP アドレスを指定します。
-... 管理クレデンシャルを指定します。
+... クラスタ管理LIFのIPアドレスを指定します。
+... ONTAP クラスタユーザのクレデンシャルを指定してください。
 +
-Cloud Backup for Applications でサポートされているのはクラスタ管理者のみです。
+アプリケーション向けBlueXPのバックアップとリカバリでサポートされるのはクラスタ管理者のみです。
 
 
 
@@ -46,9 +41,9 @@ Cloud Backup for Applications でサポートされているのはクラスタ�
 
 . クラウドプロバイダとして「* Google Cloud Platform *」を選択します。
 +
-.. バックアップ用にGoogle Cloud Storageバケットを作成するGoogle Cloud Projectを選択します。
-.. Google Cloud Access Keyフィールドで、キーを指定します。
-.. Google Cloud Secret Keyフィールドで、パスワードを指定します。
+.. バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project を選択します。
+.. [Google Cloud Access Key]フィールドで、データ暗号化のキーを指定します。
+.. [Google Cloud Secret Key]フィールドで、データ暗号化のパスワードを指定します。
 .. バックアップを作成するリージョンを選択します。
 .. IPスペースを指定してください。
 

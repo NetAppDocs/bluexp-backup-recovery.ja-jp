@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP 
-summary: クラウドバックアップアプリケーションとBlueXPおよびオンプレミスSnapCenter を統合して、アプリケーションと整合性のあるスナップショットをオンプレミスのONTAP からクラウドにバックアップします。 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, cloud backup 
+summary: BlueXPやオンプレミスのSnapCenter にアプリケーションのバックアップとリカバリを統合することで、オンプレミスのONTAP からクラウドにアプリケーションと整合性のあるSnapshotをバックアップできます。 
 ---
 = オンプレミスアプリケーションのデータを保護
 :hardbreaks:
@@ -14,43 +14,40 @@ summary: クラウドバックアップアプリケーションとBlueXPおよ�
 
 
 [role="lead"]
-Cloud Backup for ApplicationsをBlueXP（旧Cloud Manager）やオンプレミスSnapCenter と統合することで、オンプレミスのONTAP からクラウドにアプリケーションと整合性のあるSnapshotをバックアップできます。必要に応じて、クラウドからオンプレミスの SnapCenter サーバにリストアできます。
+アプリケーション向けのBlueXPバックアップ/リカバリ機能は、オンプレミスのONTAP プライマリからクラウドプロバイダに至るまで、アプリケーションと整合性のあるSnapshotを保護するためのデータ保護機能を提供します。
 
 オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。
 
-
-NOTE: SnapCenter ソフトウェア4.6以降を使用している必要があります。
-
-Cloud Backup for Applications の詳細については、以下を参照してください。
+アプリケーションのBlueXPのバックアップとリカバリの詳細については、以下を参照してください。
 
 * https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["クラウドバックアップと SnapCenter を使用したアプリケーション対応バックアップ"^]
-* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["「Cloud Backup for Applications」ポッドキャストをお聞きください"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["BlueXPの「Backup and Recovery for Applications」ポッドキャスト"^]
 
 
 
 
 == 要件
 
-アプリケーションデータを クラウド サービス にバックアップする前に、次の要件を参照して、サポートされる構成になっていることを確認してください。
+クラウドプロバイダへのアプリケーションデータのバックアップを開始する前に、次の要件を読み、サポートされる構成があることを確認してください。
 
 * ONTAP 9.8 以降
-* BlueXP 3.9
+* BlueXP
 * SnapCenter Server 4.6以降次の機能を使用する場合は、SnapCenter Server 4.7以降を使用する必要があります。
 +
 ** オンプレミスのセカンダリストレージからバックアップを保護
 ** SAP HANAアプリケーションを保護
-** VMware環境上のOracleおよびSQLアプリケーションを保護
+** VMware環境上にあるOracleアプリケーションやSQLアプリケーションを保護
 ** バックアップをマウントします
 ** バックアップの非アクティブ化
 ** SnapCenter サーバを登録解除します
 
 
 * SnapCenter サーバでは、各アプリケーションに使用可能なバックアップを少なくとも 1 つ用意する必要があります
-* BlueXPのクラウドバックアップアプリケーションポリシーとラベルまたはラベルがないSnapCenter では、1日、1週間、または1か月のポリシーが少なくとも1つあります。
+* SnapCenter では、BlueXPのポリシーとラベルがない、または同じラベルが設定された日次、週次、または月次のポリシーを少なくとも1つ指定してください。
 
 
 
-NOTE: Cloud Backup for Applicationsでは、FQDNまたはIPアドレスを使用して追加されたSVM上のアプリケーションの保護はサポートされていません。
+NOTE: FQDNまたはIPアドレスを使用してSVMをSnapCenter に追加すると、それらのSVMで実行されているアプリケーションを保護できません。アプリケーション向けBlueXPのバックアップ/リカバリで認識されるのは、名前で追加されたSVM、またはONTAP クラスタの一部として追加されたSnapCenter によって検出されたSVMだけです。
 
 次の図は、クラウドにバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。
 

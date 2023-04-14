@@ -14,7 +14,7 @@ summary: Azure NetApp Files 作業環境とコネクタを作成します
 
 
 [role="lead"]
-Azure NetApp Files の作業環境とコネクタを作成する必要があります。
+BlueXPを使用してAzure NetApp Files 作業環境を作成し、ボリュームや追加のデータサービスを追加および管理する必要があります。Azureでコネクタを作成して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにすることも必要です。
 
 
 
@@ -26,9 +26,23 @@ Azure NetApp Files の作業環境とコネクタを作成する必要があり�
 
 == コネクタを作成します
 
-アカウント管理者は、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるコネクタをAzure NetApp Files に導入する必要があります。
+BlueXPのアカウント管理者は、Azureにコネクタを導入して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにする必要があります。
 
 
 NOTE: UIから新しいconnector_idを更新することはできません。
 
 詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["BlueXPからAzureにコネクタを作成します"]。
+
+* Azure NetApp Files 作業環境とデータベースの両方を管理するには、同じコネクタを使用する必要があります。
+* Azure NetApp Files の作業環境とデータベースが同じVirtual Private Cloud（VPC；仮想プライベートクラウド）内にある場合は、コネクタを同じVPCに導入できます。
+* Azure NetApp Files 作業環境とデータベースが異なるVPCにあり、Azure NetApp Files でNAS（NFS）ワークロードが設定されている場合は、どちらかのVPCにコネクタを作成できます。
+
+
+コネクタを作成したら、次の手順を実行します。
+
+* [ストレージ]*>* Canvas *>* My Working Environments *>*[作業環境の追加]*をクリックして、作業環境を追加します。
++
+コネクタからデータベースホストおよびAzure NetApp Files 作業環境への接続が確立されていることを確認します。コネクタはAzure NetApp Files 作業環境に接続する必要があります。
+
+* コネクター（Connector）>コネクターを管理（Manage Connectors）*をクリックし、コネクター名を選択して、コネクターIDをコピーします。
+

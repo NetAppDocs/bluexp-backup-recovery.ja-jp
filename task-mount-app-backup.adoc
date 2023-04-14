@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-mount-app-backup.html 
 keywords: mount, mount application backups, Oracle database, SAP HANA database 
-summary: 指定したデータベースにSAP HANAとOracleのバックアップをマウントできます 
+summary: SAP HANAとOracleのバックアップを指定したホストにマウントできます。 
 ---
 = アプリケーションバックアップをマウント
 :hardbreaks:
@@ -14,11 +14,9 @@ summary: 指定したデータベースにSAP HANAとOracleのバックアップ
 
 
 [role="lead"]
-SnapCenter では、OracleおよびHANAのバックアップを代替ホストにリストアすることはできません。そのため、Cloud Backup for Applicationsでは、OracleとHANAのバックアップを特定のホストにマウントできます。
+アプリケーション向けのBlueXPバックアップ/リカバリでは、OracleとHANAのバックアップを代替ホストにマウントできます。
 
-* 必要なもの *
-
-セカンダリストレージからオブジェクトストアに移動されたバックアップをマウントする場合は、プライマリ作業環境の詳細を追加し、IPスペースを設定する必要があります。詳細については、を参照してください link:task-manage-app-backups.html#set-ip-space-of-the-primary-working-environment["プライマリ作業環境のIPスペースを設定します"]。
+SnapCenter では、OracleおよびHANAのバックアップを代替ホストにリストアすることはできません。このため、OracleとHANAのバックアップを代替ホストにマウントするためのマウントオプションが用意されています。
 
 * 手順 *
 
@@ -29,17 +27,19 @@ SnapCenter では、OracleおよびHANAのバックアップを代替ホスト�
 +
 .. 次のいずれかを指定します。
 +
-... NAS環境の場合は、オブジェクトストアからリストアした代替ボリュームのエクスポート先ホストのFQDNまたはIPアドレスを指定します。
-... SAN環境の場合は、代替ボリュームのLUNをオブジェクトストアからリストアしてマッピングするホストのイニシエータを指定します。
+... NAS環境の場合は、オブジェクトストアからリストアするボリュームのエクスポート先となるホストのFQDNまたはIPアドレスを指定します。
+... SAN環境の場合、オブジェクトストアからリストアするボリュームのLUNをマッピングするホストのイニシエータを指定します。
 
 
-.. 代替ボリューム名に追加するサフィックスを指定します。
+.. ボリューム名に追加するサフィックスを指定します。
 .. Snapshotがアーカイブストレージにある場合に、アーカイブストレージからデータを読み出す優先度を指定します。
 .. [ マウント ] をクリックします。
 
 
 
 
-この処理では、指定したホストにストレージのみがマウントされます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。代替ボリュームを利用したあとで、ストレージ管理者はONTAP クラスタからボリュームを削除できます。
+この処理では、指定したホストにストレージのみがマウントされます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。ボリュームを利用したあと、ストレージ管理者はONTAP クラスタからボリュームを削除できます。
 
-SAP HANAデータベースを起動する方法については、を参照してください。 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：『Automating SAP HANA System Copy and Clone Operations with SnapCenter 』"^]。
+* Oracleデータベースを起動する方法については、を参照してください。 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["ナレッジベースの記事"]。
+* SAP HANAデータベースを起動する方法については、を参照してください。 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system copy workflow with SnapCenter 』"^] および https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system clone workflow with SnapCenter 』"^]。
+

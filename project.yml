@@ -83,86 +83,83 @@ sidebar:
       url: "/task-manage-backups-kubernetes.html"
     - title: Kubernetes バックアップからリストア
       url: "/task-restore-backups-kubernetes.html"
-  - title: アプリケーションデータを保護
+  - title: オンプレミスのアプリケーションデータのバックアップとリストア
     entries:
     - title: オンプレミスアプリケーションのデータを保護
+      url: "/concept-protect-app-data-to-cloud.html"
+    - title: SnapCenter サーバを登録します
+      url: "/task-register-snapcenter-server.html"
+    - title: アプリケーションをバックアップするポリシーを作成する
+      url: "/task-create-policies-apps.html"
+    - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
+      flavor: aws
+      url: "/task-backup-app-data-to-aws.html"
+    - title: オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ
+      flavor: azure
+      url: "/task-backup-app-data-to-azure.html"
+    - title: オンプレミスアプリケーションのデータをGoogle Cloudにバックアップ
+      flavor: gcp
+      url: "/task-backup-app-data-to-gcp.html"
+    - title: オンプレミスのアプリケーションデータをStorageGRID にバックアップ
+      url: "/task-backup-app-data-to-storagegrid.html"
+    - title: アプリケーションの保護を管理します
+      url: "/task-manage-app-backups.html"
+    - title: オンプレミスアプリケーションのデータをリストア
       entries:
-      - title: オンプレミスアプリケーションのデータを保護
-        url: "/concept-protect-app-data-to-cloud.html"
-      - title: SnapCenter サーバを登録します
-        url: "/task-register-snapcenter-server.html"
-      - title: アプリケーションをバックアップするポリシーを作成する
-        url: "/task-create-policies-apps.html"
-      - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
-        flavor: aws
-        url: "/task-backup-app-data-to-aws.html"
-      - title: オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ
-        flavor: azure
-        url: "/task-backup-app-data-to-azure.html"
-      - title: オンプレミスアプリケーションのデータをGoogle Cloudにバックアップ
-        flavor: gcp
-        url: "/task-backup-app-data-to-gcp.html"
-      - title: オンプレミスのアプリケーションデータをStorageGRID にバックアップ
-        url: "/task-backup-app-data-to-storagegrid.html"
-      - title: アプリケーションの保護を管理します
-        url: "/task-manage-app-backups.html"
-      - title: オンプレミスアプリケーションのデータをリストア
-        entries:
-        - title: Oracle データベースをリストアします
-          url: "/task-restore-oracle-data.html"
-        - title: SQL Server データベースをリストアする
-          url: "/task-restore-sql-data.html"
-      - title: アプリケーションバックアップをマウント
-        url: "/task-mount-app-backup.html"
+      - title: Oracle データベースをリストアします
+        url: "/task-restore-oracle-data.html"
+      - title: SQL Server データベースをリストアする
+        url: "/task-restore-sql-data.html"
+    - title: アプリケーションバックアップをマウント
+      url: "/task-mount-app-backup.html"
+  - title: クラウドネイティブアプリケーションデータのバックアップとリストア
+    entries:
     - title: クラウドネイティブアプリケーションのデータを保護
+      url: "/concept-protect-cloud-app-data-to-cloud.html"
+    - title: クラウドネイティブのOracleデータベースをバックアップ
       entries:
-      - title: クラウドネイティブアプリケーションのデータを保護
-        url: "/concept-protect-cloud-app-data-to-cloud.html"
-      - title: クラウドネイティブアプリケーションデータをバックアップ
-        entries:
-        - title: クラウドネイティブのOracleデータベースをバックアップ
-          entries:
-          - title: BlueXPにアクセスします
-            url: "/reference-access-bluexp.html"
-          - title: ONTAP のFSXを設定します
-            url: "/reference-configure-fsx-for-ontap.html"
-          - title: Cloud Volumes ONTAP を設定します
-            url: "/reference-configure-cloud-volumes-ontap.html"
-          - title: SnapCenter Plug-in for Oracleを導入し、データベースホストを追加します
-            url: "/task-add-host-discover-oracle-databases.html"
-          - title: Oracleデータベースをバックアップする
-            url: "/task-backup-cloud-native-oracle-data.html"
-        - title: クラウドネイティブのSAP HANAデータベースをバックアップ
-          entries:
-          - title: BlueXPにアクセスします
-            flavor: azure
-            url: "/reference-access-bluexp.html"
-          - title: Azure NetApp Files を設定します
-            flavor: azure
-            url: "/reference-configure-azure-netapp-files.html"
-          - title: SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します
-            flavor: azure
-            url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
-          - title: SAP HANAデータベースをバックアップする
-            flavor: azure
-            url: "/task-backup-cloud-native-sap-hana-data.html"
-      - title: クラウドネイティブアプリケーションのデータをリストア
-        entries:
-        - title: クラウドネイティブのOracleデータベースをリストアする
-          url: "/task-restore-cloud-native-oracle-data.html"
-        - title: クラウドネイティブのSAP HANAデータベースをリストア
-          flavor: azure
-          url: "/task-restore-cloud-native-sap-hana-data.html"
-      - title: クラウドネイティブアプリケーションデータのクローニング
-        entries:
-        - title: クラウドネイティブのOracleデータベースをクローニングします
-          entries:
-          - title: クローンの概念と要件
-            url: "/concept-clone-cloud-native-oracle-concepts.html"
-          - title: クラウドネイティブのOracleデータベースをクローニングします
-            url: "/task-clone-cloud-native-oracle-data.html"
-      - title: クラウドネイティブなアプリケーションデータの保護を管理
-        url: "/task-manage-cloud-native-app-data.html"
+      - title: クイックスタート
+        url: "/task-quick-start-oracle.html"
+      - title: ONTAP のFSXを設定します
+        url: "/reference-configure-fsx-for-ontap.html"
+      - title: Cloud Volumes ONTAP を設定します
+        url: "/reference-configure-cloud-volumes-ontap.html"
+      - title: Azure NetApp Files を設定します
+        flavor: azure
+        url: "/reference-configure-azure-netapp-files.html"
+      - title: SnapCenter Plug-in for Oracleを導入し、データベースホストを追加します
+        url: "/task-add-host-discover-oracle-databases.html"
+      - title: Oracleデータベースをバックアップする
+        url: "/task-backup-cloud-native-oracle-data.html"
+    - title: クラウドネイティブのSAP HANAデータベースをバックアップ
+      entries:
+      - title: クイックスタート
+        flavor: azure
+        url: "/task-quick-start-hana.html"
+      - title: Azure NetApp Files を設定します
+        flavor: azure
+        url: "/reference-configure-azure-netapp-files.html"
+      - title: SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します
+        flavor: azure
+        url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
+      - title: SAP HANAデータベースをバックアップする
+        flavor: azure
+        url: "/task-backup-cloud-native-sap-hana-data.html"
+    - title: クラウドネイティブのOracleデータベースをリストアする
+      url: "/task-restore-cloud-native-oracle-data.html"
+    - title: クラウドネイティブのSAP HANAデータベースをリストア
+      flavor: azure
+      url: "/task-restore-cloud-native-sap-hana-data.html"
+    - title: SAP HANAターゲットシステムを更新
+      url: "/task-refresh-sap-hana-target-system.html"
+    - title: クラウドネイティブのOracleデータベースをクローニングします
+      entries:
+      - title: クローンの概念と要件
+        url: "/concept-clone-cloud-native-oracle-concepts.html"
+      - title: クラウドネイティブのOracleデータベースをクローニングします
+        url: "/task-clone-cloud-native-oracle-data.html"
+    - title: クラウドネイティブなアプリケーションデータの保護を管理
+      url: "/task-manage-cloud-native-app-data.html"
   - title: 仮想マシンのデータのバックアップとリストア
     entries:
     - title: 仮想マシンのデータを保護
@@ -259,7 +256,7 @@ homepage:
     - title: Kubernetes クラスタから Google Cloud へ
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
-  - title: アプリケーションデータを保護
+  - title: アプリケーションデータをクラウドにバックアップ
     links:
     - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
       flavor: aws
