@@ -19,7 +19,7 @@ SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで�
 データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされるアーカイブ層はAzure Archive Blob Storageです。
 
 .作業を開始する前に
-すべてのが満たされていることを確認します link:concept-protect-vm-data.html#Requirements["要件"] データストアをクラウドにバックアップする前に、
+すべてのが満たされていることを確認します link:concept-protect-vm-data.html["要件"] データストアをクラウドにバックアップする前に、
 
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
