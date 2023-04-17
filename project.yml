@@ -270,9 +270,10 @@ homepage:
     - title: オンプレミスのアプリケーションデータをStorageGRID にバックアップ
       url: "/task-backup-app-data-to-storagegrid.html"
     - title: クラウドネイティブのOracleデータベースをバックアップ
-      url: task-backup-cloud-native-oracle-data.html
+      url: "/task-backup-cloud-native-oracle-data.html"
     - title: クラウドネイティブのSAP HANAデータベースをバックアップ
-      url: task-backup-cloud-native-sap-hana-data.html
+      flavor: azure
+      url: "/task-backup-cloud-native-sap-hana-data.html"
   - title: 仮想マシンのデータのバックアップとリストア
     links:
     - title: データストアをAmazon Web Servicesにバックアップする
@@ -287,7 +288,7 @@ homepage:
     - title: データストアをStorageGRID にバックアップする
       url: "/task-backup-vm-data-to-storagegrid.html"
     - title: クラウドから仮想マシンをリストアします
-      url: task-restore-vm-data.html
+      url: "/task-restore-vm-data.html"
   - title: ONTAP バックアップファイルからデータをリストアする
     links:
     - title: ONTAP ボリュームをリストア

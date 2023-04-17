@@ -10,6 +10,7 @@ summary: ネットアップテクニカルサポートでサポートケース�
 :imagesdir: ../media/
 
 
+[role="lead"]
 ネットアップテクニカルサポートでサポートケースをオープンするには、まずNetApp Support Site （NSS）アカウントをBlueXPに追加し、サポートに登録する必要があります。
 
 

@@ -223,6 +223,6 @@ CAファイルはPEM形式である必要があります。
 
 == REST APIにアクセスできます
 
-クラウドへのアプリケーションの保護に使用できるREST APIを用意しています https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/["こちらをご覧ください"]。
+アプリケーションをクラウドで保護するREST APIには、次のURLからアクセスできます。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/[]。
 
 REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["フェデレーテッド認証を使用してユーザトークンを作成します"]。
