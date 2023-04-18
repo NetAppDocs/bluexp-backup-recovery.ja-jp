@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-multi-account-azure.html 
 keywords: microsoft azure, azure, regions, blob, multiple accounts, multiple regions, backup 
-summary: Cloud Backupを使用すると、ソースCloud Volumes ONTAP ボリュームの場所とは異なる、BlueXPコネクタが存在するアカウントとは異なるバックアップファイルをAzureアカウントで作成できます。 
+summary: BlueXPのバックアップとリカバリでは、ソースCloud Volumes ONTAP ボリュームが配置されているアカウントとは別のAzureアカウントにバックアップファイルを作成できます。 
 ---
 = Azure でマルチアカウントアクセスのバックアップを設定する
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Backupを使用すると、ソースCloud Volumes ONTAP ボリュ
 
 
 [role="lead"]
-Cloud Backup では、ソース Cloud Volumes ONTAP ボリュームとは別の Azure アカウントにバックアップファイルを作成できます。両方のアカウントは、BlueXP Connectorがインストールされているアカウントとは異なる場合があります。
+BlueXPのバックアップとリカバリでは、ソースCloud Volumes ONTAP ボリュームの場所とは異なるAzureアカウントにバックアップファイルを作成できます。両方のアカウントは、BlueXP Connectorがインストールされているアカウントとは異なる場合があります。
 
 これらの手順は、を実行している場合にのみ必要です https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データの Azure BLOB ストレージへのバックアップ"^]。
 
@@ -131,5 +131,5 @@ image:screenshot_azure_networking5.png[""]
 +
 これで、ストレージアカウント（サブスクリプション 1 ）は、サブスクリプション 2 で実行されている Cloud Volumes ONTAP システムにアクセスできます。
 
-. Cloud Volumes ONTAP システムでクラウドバックアップの有効化を再度実行して、成功することを確認します。
+. Cloud Volumes ONTAP システムでBlueXPのバックアップとリカバリの有効化をもう一度実行すると、成功します。
 

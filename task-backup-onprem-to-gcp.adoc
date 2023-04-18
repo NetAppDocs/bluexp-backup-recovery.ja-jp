@@ -38,7 +38,7 @@ summary: いくつかの手順を実行して、オンプレミスのONTAP シ�
 * ONTAP クラスタがデータをバックアップおよびリストアできるように、アクセスキーとシークレットキーを持つ Google アカウントを用意しておきます。
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムで Cloud Backup を有効にします
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムでBlueXPのバックアップとリカバリを有効にします
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
@@ -57,10 +57,10 @@ image:screenshot_backup_onprem_to_google.png["オンプレミスのONTAP シス�
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
-バックアップはデフォルトでStandardストレージに格納されます。クラスタでONTAP 9.12.1以降を使用している場合は、特定の日数が経過した後にGoogleアーカイブストレージにバックアップを階層化して、コストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+バックアップはデフォルトでStandardストレージに格納されます。クラスタでONTAP 9.12.1以降を使用している場合は、特定の日数が経過した後にGoogleアーカイブストレージにバックアップを階層化して、コストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_gcp.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
+image:screenshot_backup_policy_gcp.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップスケジュールと保持期間を選択できます。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップするボリュームを選択します
 [role="quick-margin-para"]
@@ -80,11 +80,11 @@ Select Volumes （ボリュームの選択）ページで、デフォルトの�
 
 次の図は、*パブリック接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。コネクターはGoogle Cloud Platform VPCに展開する必要があります。
 
-image:diagram_cloud_backup_onprem_gcp_public.png["Cloud Backupがパブリック接続を介してクラスタ上のボリュームおよびバックアップファイルが配置されているGoogle Cloudストレージと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_onprem_gcp_public.png["BlueXPのバックアップとリカバリが、クラスタ上のボリュームおよびバックアップファイルが配置されているGoogle Cloudストレージとのパブリック接続を介してどのように通信するかを示す図。"]
 
 次の図は、*プライベート接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。コネクターはGoogle Cloud Platform VPCに展開する必要があります。
 
-image:diagram_cloud_backup_onprem_gcp_private.png["Cloud Backupがプライベート接続を介してクラスタ上のボリュームおよびバックアップファイルが配置されているGoogle Cloudストレージと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_onprem_gcp_private.png["BlueXPのバックアップとリカバリが、クラスタ上のボリュームおよびバックアップファイルが配置されているGoogle Cloudストレージとのプライベート接続を介して通信する仕組みを示す図。"]
 
 
 
@@ -100,7 +100,7 @@ ONTAP の要件::
 * ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
 * SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。
 +
-* 注： * Cloud Backup を使用する場合、「 Hybrid Cloud Bundle 」は必要ありません。
+*注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
 方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
@@ -122,7 +122,7 @@ ONTAP は、オブジェクトストレージとの間でデータの読み取�
 * ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。このコネクタは、 Google Cloud Platform VPC 内に配置できます。
 * クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace の詳細については、こちらをご覧ください"^]。
 +
-Cloud Backup をセットアップすると、 IPspace で使用するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
+BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
 
 * ノードのクラスタ間 LIF からオブジェクトストアにアクセスできます。
 * ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
@@ -130,7 +130,7 @@ Cloud Backup をセットアップすると、 IPspace で使用するように�
 Private Google AccessまたはPrivate Service Connectを使用している場合は、DNSサーバーがポイントするように設定されていることを確認します `storage.googleapis.com` を正しい内部（プライベート）IPアドレスに割り当てます。
 
 * をデフォルトとは異なる IPspace を使用している場合は、オブジェクトストレージへのアクセスを取得するために静的ルートの作成が必要になることがあります。
-* ファイアウォールルールを必要に応じて更新して、ONTAP からオブジェクトストレージへのクラウドバックアップ接続にポート443を使用するように設定し、Storage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。
+* 必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPのバックアップ/リカバリ接続（ポート443を経由）と、Storage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。
 
 
 --
@@ -155,7 +155,7 @@ Google Cloud Platform VPCにコネクタがすでに導入されている場合�
 .手順
 . コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** Cloud Backup Service とGoogle Cloudストレージへのポート443経由のHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
+** ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
 
 
@@ -169,7 +169,7 @@ Googleの指示に従って、プライベートアクセスオプションを�
 
 === コネクタの権限を確認または追加します
 
-Cloud Backupの「検索と復元」機能を使用するには、Connectorの役割に特定の権限を付与して、Google Cloud BigQueryサービスにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
+BlueXPのバックアップとリカバリの「Search & Restore」機能を使用するには、コネクタがGoogle Cloud BigQueryサービスにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
 .手順
 . を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
@@ -198,7 +198,7 @@ bigquery.tables.create
 
 === Google Cloud Storage でバックアップを準備しています
 
-バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、 Cloud Backup でバックアップの格納に使用する Cloud Storage バケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
+バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
 
 .手順
 . を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
@@ -233,7 +233,7 @@ storage.objects.update
 .. プロジェクトを選択し、 * 互換性 * をクリックします。まだ有効にしていない場合は、 * 相互運用アクセスを有効にする * をクリックします。
 .. [ サービスアカウントのアクセスキー *] で、 [ サービスアカウントのキーの作成 *] をクリックし、作成したサービスアカウントを選択して、 [ キーの作成 *] をクリックします。
 +
-Cloud Backup でキーを入力する必要があるのは、あとでバックアップサービスを設定するときです。
+あとでバックアップサービスを設定するときに、BlueXPのバックアップとリカバリでキーを入力する必要があります。
 
 
 
@@ -264,17 +264,17 @@ cloudkms.keyRings.setIamPolicy
 * 新しく作成またはインポートしたCloud KMSキーは両方サポートされます。
 * リージョンキーのみがサポートされています。グローバルキーはサポートされていません。
 * 現在、「対称暗号化/復号化」の目的のみがサポートされています。
-* ストレージアカウントに関連付けられたサービスエージェントには、Cloud BackupのIAMロール「CryptoKey encrypter/Decrypter（役割/ Cloudkms.cryptoKeyEncrypterDecrypter）」が割り当てられます。
+* BlueXPのバックアップとリカバリによって、ストレージアカウントに関連付けられたサービスエージェントには、「CryptoKey encrypter/Decrypter（roles/cloudkms.cryptoKeyEncrypterDecrypter）」IAMロールが割り当てられます。
 
 
 
 
 === ライセンス要件を確認
 
-* クラスタでCloud Backupをアクティブ化するには、従量課金制（PAYGO）のBlueXP Marketplace製品をGoogleから購入するか、ネットアップからCloud Backup BYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
+* クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、Googleから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
 +
-** Cloud Backup PAYGO ライセンスの場合は、へのサブスクリプションが必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google"^] Cloud Backupを使用するBlueXP Marketplaceを提供しています。Cloud Backup の請求は、このサブスクリプションを通じて行われます。
-** Cloud Backup BYOL ライセンスを利用するには、ライセンスの期間と容量に応じてサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。
+** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google"^] BlueXP Marketplaceでは、BlueXPのバックアップとリカバリを使用できます。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 
 * バックアップを格納するオブジェクトストレージスペース用の Google サブスクリプションが必要です。
@@ -285,9 +285,9 @@ cloudkms.keyRings.setIamPolicy
 
 
 
-== Cloud Backup を有効にしています
+== BlueXPのバックアップとリカバリを有効にする
 
-Cloud Backup は、オンプレミスの作業環境からいつでも直接有効にできます。
+BlueXPのバックアップとリカバリは、オンプレミスの作業環境からいつでも直接実行できます。
 
 .手順
 . キャンバスから作業環境を選択し、右パネルのバックアップとリカバリサービスの横にある*Enable>Backup Volumes]をクリックします。
@@ -310,14 +310,14 @@ image:screenshot_backup_onprem_to_google.png["オンプレミスのクラスタ�
 
 
 
-. アカウントにCloud Backupの既存のライセンスがない場合は、使用する課金方法を選択するよう求められます。Googleが提供する従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか（複数のサブスクリプションを選択する必要がある場合は1つを選択）、ネットアップが提供するCloud Backup BYOLライセンスを購入してアクティブ化することができます。 link:task-licensing-cloud-backup.html["Cloud Backupライセンスの設定方法について説明します。"]
+. アカウントのBlueXPバックアップ/リカバリライセンスがない場合は、この時点で、使用する課金方法を選択するように求められます。Googleから従量課金制（PAYGO）のBlueXP Marketplaceサービスにサブスクライブするか（複数のサブスクリプションがある場合は1つ選択する必要があります）、ネットアップからBlueXPバックアップ/リカバリBYOLライセンスを購入してアクティブ化できます。 link:task-licensing-cloud-backup.html["BlueXPのバックアップ/リカバリライセンスのセットアップ方法をご紹介します。"]
 . デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
 +
 .. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
 .. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
-.. ONTAP 9.12.1以降を使用している場合は、特定の日数を経過したバックアップをアーカイブストレージに階層化して、さらにコストを最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+.. ONTAP 9.12.1以降を使用している場合は、特定の日数を経過したバックアップをアーカイブストレージに階層化して、さらにコストを最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 +
-image:screenshot_backup_policy_gcp.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
+image:screenshot_backup_policy_gcp.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップスケジュールと保持期間を選択できます。"]
 
 
 
@@ -332,7 +332,7 @@ image:screenshot_backup_select_volumes.png["バックアップするボリュー
 ** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
-. Activate Backup * をクリックすると、ボリュームの初期バックアップの作成が開始されます。
+. [バックアップをアクティブ化]*をクリックすると、BlueXPのバックアップとリカバリによってボリュームの初期バックアップの作成が開始されます。
 
 
 .結果

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: Web UIから使用できるクラウドバックアップ機能は、RESTful APIからも使用できます。 
+summary: Web UIから利用できるBlueXPのバックアップとリカバリ機能は、RESTful APIからも利用できます。 
 ---
-= Cloud Backup API
+= BlueXPのバックアップとリカバリ用API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: Web UIから使用できるクラウドバックアップ機能は、RE
 
 
 [role="lead"]
-Web UIから使用できるクラウドバックアップ機能は、RESTful APIからも使用できます。
+Web UIから利用できるBlueXPのバックアップとリカバリ機能は、RESTful APIからも利用できます。
 
-Cloud Backupでは、次の9つのエンドポイントカテゴリが定義されています。
+BlueXPのバックアップとリカバリには、次の9つのカテゴリのエンドポイントが定義されています。
 
 * バックアップ-クラウドリソースとオンプレミスリソースのバックアップ処理を管理し、バックアップデータの詳細を取得します
 * カタログ-クエリに基づいて、インデックス付きカタログ検索を管理します（検索とリストア）。
@@ -34,7 +34,7 @@ Cloud Backupでは、次の9つのエンドポイントカテゴリが定義さ�
 
 == はじめに
 
-Cloud Backup APIを使い始めるには、ユーザトークン、BlueXPアカウントID、BlueXPコネクタIDを取得する必要があります。
+BlueXPのバックアップとリカバリAPIの使用を開始するには、ユーザトークン、BlueXPアカウントID、およびBlueXPコネクタIDを取得する必要があります。
 
 API呼び出しを行うときは、Authorizationヘッダーにユーザートークンを、x-agent-idヘッダーにBlueXPコネクタIDを追加します。APIでBlueXPアカウントIDを使用する必要があります。
 
@@ -95,7 +95,7 @@ Header:
 
 == APIを使用した例
 
-次の例は、AzureクラウドのEast-US-2リージョンで、daily、hourly、weeklyのラベルが設定された新しいポリシーを使用して、作業環境でCloud Backupをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。
+次の例は、AzureクラウドのEast-US-2リージョンで、日単位、時間単位、週単位のラベルが180日に設定された新しいポリシーを使用して、作業環境でBlueXPのバックアップとリカバリをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。
 
 「auto-backup-enabled」：「true」を選択すると、システムにすでに存在するすべてのボリュームと、以降のボリュームもバックアップされます。
 
@@ -186,4 +186,4 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
 
 == API リファレンス
 
-各Cloud Backup APIのドキュメントは、から入手できます https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html[]。
+BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html[]。

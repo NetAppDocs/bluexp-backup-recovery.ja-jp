@@ -1,6 +1,6 @@
 ---
 settings:
-  name: Cloud Backup
+  name: BlueXP backup and recovery
   platform: cloud
   internal:
     pdf_enabled: true
@@ -24,13 +24,13 @@ settings:
   langs: ja-jp,us-en,ko-kr,zh-cn,zh-tw,de-de,es-es,fr-fr
 sidebar:
   entries:
-  - title: Cloud Backup のドキュメント
+  - title: BlueXPのバックアップとリカバリのドキュメント
     url: "/index.html"
   - title: リリースノート
     url: "/whats-new.html"
   - title: はじめに
     entries:
-    - title: Cloud Backup の詳細をご確認ください
+    - title: BlueXPのバックアップとリカバリについて説明します
       url: "/concept-backup-to-cloud.html"
     - title: ライセンスをセットアップする
       url: "/task-licensing-cloud-backup.html"
@@ -187,18 +187,15 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: 参照
     entries:
-    - title: Cloud Backupポリシーの設定
+    - title: BlueXPのバックアップとリカバリポリシーの設定
       url: "/concept-cloud-backup-policies.html"
     - title: サポート対象の AWS アーカイブストレージ階層
-      flavor: aws
       url: "/reference-aws-backup-tiers.html"
     - title: サポートされている Azure アーカイブアクセス層
-      flavor: azure
       url: "/reference-azure-backup-tiers.html"
     - title: サポートされているGoogleアーカイブストレージ階層
-      flavor: gcp
       url: "/reference-google-backup-tiers.html"
-    - title: ダークサイトのCloud Backupデータベースをバックアップする
+    - title: ダークサイトにBlueXPのバックアップとリカバリのデータベースをバックアップします
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Azure でマルチアカウントアクセス用にバックアップを設定
       flavor: azure
@@ -215,7 +212,7 @@ homepage:
   tiles:
   - title: はじめに
     links:
-    - title: Cloud Backup の詳細をご確認ください
+    - title: BlueXPのバックアップとリカバリについて説明します
       url: concept-backup-to-cloud.html
     - title: 新機能
       url: whats-new.html
@@ -317,9 +314,9 @@ homepage:
     links:
     - title: ネットアップコミュニティ
       url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS
-    - title: Cloud Backupに関するブログ
+    - title: BlueXPのバックアップとリカバリに関するブログ
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
-    - title: Cloud Backupのユースケース
+    - title: BlueXPのバックアップとリカバリのユースケース
       url: https://bluexp.netapp.com/cloud-backup
     - title: クラウドに関する Web セミナー
       url: https://bluexp.netapp.com/events

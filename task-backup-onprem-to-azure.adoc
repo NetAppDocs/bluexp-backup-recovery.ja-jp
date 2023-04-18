@@ -37,7 +37,7 @@ summary: オンプレミスのONTAP システムからAzure BLOBストレージ�
 * バックアップを配置するオブジェクトストレージスペース用の有効な Azure サブスクリプションが必要です。
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムで Cloud Backup を有効にします
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] システムでBlueXPのバックアップとリカバリを有効にします
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable>Backup Volumes]をクリックして、セットアップ・ウィザードに従います。
 
@@ -63,13 +63,13 @@ image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Az
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
-ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
-デフォルトでは、バックアップは Cool アクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+デフォルトでは、バックアップは Cool アクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
+image:screenshot_backup_policy_azure.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップスケジュールと保持期間を選択できます。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] バックアップするボリュームを選択します
 [role="quick-margin-para"]
@@ -89,11 +89,11 @@ Select Volumes （ボリュームの選択）ページで、デフォルトの�
 
 次の図は、*パブリック接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。オンプレミスにインストールしたコネクタやAzure VNetに導入したコネクタを使用できます。
 
-image:diagram_cloud_backup_onprem_azure_public.png["Cloud Backupがパブリック接続を介してクラスタ上のボリュームおよびバックアップファイルが配置されているAzure Blob Storageと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_onprem_azure_public.png["BlueXPのバックアップ/リカバリが、クラスタ上のボリュームおよびバックアップファイルが配置されているAzure BLOBストレージとのパブリック接続を介して通信する仕組みを示す図。"]
 
 次の図は、*プライベート接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。オンプレミスにインストールしたコネクタやAzure VNetに導入したコネクタを使用できます。
 
-image:diagram_cloud_backup_onprem_azure_private.png["Cloud Backupがプライベート接続を介してクラスタ上のボリュームおよびバックアップファイルが配置されているAzure Blob Storageと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_onprem_azure_private.png["BlueXPのバックアップ/リカバリが、クラスタ上のボリュームおよびバックアップファイルが配置されているAzure BLOBストレージとのプライベート接続を介して通信する仕組みを示す図。"]
 
 
 
@@ -109,7 +109,7 @@ ONTAP の要件::
 * ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
 * SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。
 +
-* 注： * Cloud Backup を使用する場合、「 Hybrid Cloud Bundle 」は必要ありません。
+*注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
 方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
@@ -131,12 +131,12 @@ ONTAP は、オブジェクトストレージとの間でデータの読み取�
 * ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。コネクタは Azure VNet 内に配置できます。
 * クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace の詳細については、こちらをご覧ください"^]。
 +
-Cloud Backup をセットアップすると、 IPspace で使用するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
+BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
 
 * ノードとクラスタ間 LIF からオブジェクトストアにアクセスできます。
 * ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
 * をデフォルトとは異なる IPspace を使用している場合は、オブジェクトストレージへのアクセスを取得するために静的ルートの作成が必要になることがあります。
-* 必要に応じてファイアウォールルールを更新し、 ONTAP からオブジェクトストレージへのポート 443 経由の Cloud Backup Service 接続と、ポート 53 （ TCP / UDP ）経由での Storage VM から DNS サーバへの名前解決トラフィックを許可します。
+* 必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPバックアップ/リカバリサービス接続（ポート443経由）、およびStorage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。
 
 
 --
@@ -153,7 +153,7 @@ Azure VNetまたはオンプレミスにコネクタがすでに導入されて�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["コネクタをオンプレミスにインストールする"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["Azure Governmentリージョンへのコネクタのインストール"^]
 +
-Connectorがクラウドに導入されている場合、Cloud BackupはAzure Governmentのリージョンでサポートされます。オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
+BlueXPのバックアップとリカバリは、コネクタがクラウドに導入されている場合はAzure Governmentのリージョンでサポートされ、オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
 
 
 
@@ -166,9 +166,9 @@ Connectorがクラウドに導入されている場合、Cloud BackupはAzure Go
 .手順
 . コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** ポート443を介してCloud Backup Service とBLOBオブジェクトストレージに接続します (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
+** ポート443を介してBlueXPバックアップおよびリカバリサービスとBLOBオブジェクトストレージへのHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
-** Cloud Backupの検索とリストア機能を使用するには、ConnectorとAzure Synapse SQLサービス間の通信用にポート1433を開いておく必要があります。
+** BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタとAzure Synapse SQLサービスの間の通信用にポート1433が開いている必要があります。
 ** AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure のコネクタのルール"^] を参照してください。
 
 
@@ -179,7 +179,7 @@ Connectorがクラウドに導入されている場合、Cloud BackupはAzure Go
 
 === コネクタの権限を確認または追加します
 
-Cloud Backupの検索とリストア機能を使用するには、Connectorの役割に特定の権限を付与して、Azure Synapse WorkspaceとData Lakeストレージアカウントにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
+BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタがAzure Synapse WorkspaceとData Lake Storageアカウントにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
 .を開始する前に
 Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
@@ -265,10 +265,10 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 === ライセンス要件を確認
 
-* クラスタでCloud Backupをアクティブ化するには、従量課金制（PAYGO）のBlueXP Marketplace製品をAzureから購入するか、ネットアップからCloud Backup BYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
+* クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、Azureから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
 +
-** Cloud Backup PAYGO ライセンスの場合は、へのサブスクリプションが必要です https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure"^] Cloud Backupを使用するBlueXP Marketplaceを提供しています。Cloud Backup の請求は、このサブスクリプションを通じて行われます。
-** Cloud Backup BYOL ライセンスを利用するには、ライセンスの期間と容量に応じてサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。
+** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure"^] BlueXP Marketplaceでは、BlueXPのバックアップとリカバリを使用できます。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 
 * バックアップを配置するオブジェクトストレージスペース用の Azure サブスクリプションが必要です。
@@ -287,9 +287,9 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 
 
-== Cloud Backup を有効にしています
+== BlueXPのバックアップとリカバリを有効にする
 
-Cloud Backup は、オンプレミスの作業環境からいつでも直接有効にできます。
+BlueXPのバックアップとリカバリは、オンプレミスの作業環境からいつでも直接実行できます。
 
 .手順
 . キャンバスから作業環境を選択し、右パネルのバックアップとリカバリサービスの横にある*Enable>Backup Volumes]をクリックします。
@@ -310,7 +310,7 @@ image:screenshot_backup_onprem_to_azure.png["オンプレミスクラスタか�
 
 
 
-. アカウントにCloud Backupの既存のライセンスがない場合は、使用する課金方法を選択するよう求められます。Azureから従量課金制（PAYGO）のBlueXP Marketplaceサービスにサブスクライブする（または複数のサブスクリプションを選択する必要がある場合）か、ネットアップからCloud Backup BYOLライセンスを購入してアクティブ化することができます。 link:task-licensing-cloud-backup.html["Cloud Backupライセンスの設定方法について説明します。"]
+. アカウントのBlueXPバックアップ/リカバリライセンスがない場合は、この時点で、使用する課金方法を選択するように求められます。Azureから従量課金制（PAYGO）のBlueXP Marketplaceサービスにサブスクライブするか（複数のサブスクリプションがある場合は1つ選択する必要があります）、ネットアップからBlueXPバックアップ/リカバリBYOLライセンスを購入してアクティブ化できます。 link:task-licensing-cloud-backup.html["BlueXPのバックアップ/リカバリライセンスのセットアップ方法をご紹介します。"]
 . ネットワークの詳細を入力し、 * 次へ * をクリックします。
 +
 .. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
@@ -327,7 +327,7 @@ image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Az
 .. ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
 .. ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したバックアップを Azure Archive ストレージに階層化して、コストをさらに最適化することができます。 link:reference-azure-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
 +
-image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]
+image:screenshot_backup_policy_azure.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、スケジュールとバックアップの保持を選択できます。"]
 
 
 
@@ -342,7 +342,7 @@ image:screenshot_backup_select_volumes.png["バックアップするボリュー
 ** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
-. Activate Backup * をクリックすると、ボリュームの初期バックアップの作成が開始されます。
+. [バックアップをアクティブ化]*をクリックすると、BlueXPのバックアップとリカバリによってボリュームの初期バックアップの作成が開始されます。
 
 
 .結果

@@ -33,22 +33,22 @@ AKS Kubernetes クラスタ上の永続ボリュームから Azure BLOB スト�
 
 
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
+* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 既存のKubernetesクラスタでCloud Backupを有効にします
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 既存のKubernetesクラスタでBlueXPのバックアップとリカバリを有効にします
 [role="quick-margin-para"]
 作業環境を選択し、右パネルでバックアップ/リカバリサービスの横にある*有効化*をクリックして、セットアップ・ウィザードに従います。
 
 [role="quick-margin-para"]
-image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できる Cloud Backup Enable ボタンを示すスクリーンショット。"]
+image:screenshot_backup_cvo_enable.png["作業環境を選択すると表示されるBlueXPのバックアップとリカバリの[有効化]ボタンのスクリーンショット。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] バックアップポリシーを定義
 [role="quick-margin-para"]
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、または毎月のバックアップに変更するか、システム定義のポリシーの中からオプションを追加する 1 つを選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_k8s_azure.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
+image:screenshot_backup_policy_k8s_azure.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップスケジュールと保持期間を選択できます。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] バックアップするボリュームを選択します
 [role="quick-margin-para"]
@@ -62,7 +62,7 @@ Kubernetes 永続ボリュームを BLOB ストレージにバックアップす
 
 次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
 
-image:diagram_cloud_backup_k8s_cvo_azure.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_k8s_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 プライベートエンドポイントはオプションです。
 
@@ -129,34 +129,34 @@ spec:
 
 
 --
-ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 Cloud Backup を有効にする前に Azure Marketplace でサブスクリプションを購入する必要があります。Cloud Backup の請求は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
-Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。
+BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。
 
 --
-サポートされている Azure リージョン:: Cloud Backup はすべての Azure リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
+サポートされている Azure リージョン:: BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
 
 
 
 
-== Cloud Backup を有効にしています
+== BlueXPのバックアップとリカバリを有効にする
 
-Kubernetesの作業環境からCloud Backupをいつでも直接有効にできます。
+BlueXPのバックアップとリカバリは、Kubernetes作業環境からいつでも直接実行できます。
 
 .手順
 . 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化*をクリックします。
 +
-image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できるクラウドバックアップ設定ボタンを示すスクリーンショット。"]
+image:screenshot_backup_cvo_enable.png["作業環境を選択すると表示されるBlueXPのバックアップとリカバリの[設定]ボタンのスクリーンショット。"]
 
 . バックアップポリシーの詳細を入力し、 * Next * をクリックします。
 +
 バックアップスケジュールを定義して、保持するバックアップの数を選択できます。
 
 +
-image:screenshot_backup_policy_k8s_azure.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]
+image:screenshot_backup_policy_k8s_azure.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、スケジュールとバックアップの保持を選択できます。"]
 
 . バックアップする永続ボリュームを選択します。
 +
@@ -168,7 +168,7 @@ image:screenshot_backup_select_volumes_k8s.png["バックアップする永続�
 
 
 . 現在および将来のすべてのボリュームでバックアップを有効にする場合は、「今後のボリュームを自動的にバックアップします…一時保持」チェックボックスをオンのままにします。この設定を無効にした場合は、将来のボリュームのバックアップを手動で有効にする必要があります。
-. Activate Backup * をクリックすると、選択した各ボリュームの初期バックアップの実行が開始されます。
+. [バックアップをアクティブ化]*をクリックすると、選択した各ボリュームの初期バックアップの作成がBlueXPのバックアップとリカバリによって開始されます。
 
 
 .結果

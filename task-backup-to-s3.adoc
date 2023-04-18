@@ -26,7 +26,7 @@ Cloud Volumes ONTAP システムからAmazon S3へのボリュームデータの
 [role="quick-margin-list"]
 * AWSでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplaceバックアップ製品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"] NetApp の Cloud Backup BYOL ライセンス。
+* に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplaceバックアップ製品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
 * AWSにコネクタがインストールされている必要があります。
 +
 ** コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。
@@ -35,9 +35,9 @@ Cloud Volumes ONTAP システムからAmazon S3へのボリュームデータの
 
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムで Cloud Backup を有効にします
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムでBlueXPのバックアップとリカバリを有効にします
 [role="quick-margin-list"]
-* 新しいシステム： Cloud Backup は、作業環境ウィザードではデフォルトで有効になっています。このオプションは必ず有効にしておいてください。
+* 新規システム：作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
 * 既存のシステム：作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable*をクリックして、セットアップ・ウィザードに従います。
 +
 image:screenshot_backup_cvo_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
@@ -59,10 +59,10 @@ image:screenshot_backup_provider_settings_aws.png["Cloud Volumes ONTAP システ
 バックアップはデフォルトで S3 Standard ストレージに格納されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、 S3 Glacier または S3 Glacier Deep Archive ストレージにバックアップを階層化して、コストをさらに最適化することができます。
 
 [role="quick-margin-para"]
-ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_aws.png["クラウドバックアップの設定を示すスクリーンショット。バックアップのスケジュールと保持期間を選択できます。"]
+image:screenshot_backup_policy_aws.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップスケジュールと保持期間を選択できます。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップするボリュームを選択します
 [role="quick-margin-para"]
@@ -76,19 +76,19 @@ S3 へのボリュームのバックアップを開始する前に、次の要�
 
 次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
 
-image:diagram_cloud_backup_cvo_aws.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_cvo_aws.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 VPCゲートウェイエンドポイントがすでにVPCに存在している必要があります。 https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["ゲートウェイエンドポイントの詳細については、こちらをご覧ください"^]。
 
 サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
-ライセンス要件:: Cloud Backup PAYGOライセンスの場合は、Cloud Volumes ONTAP とクラウドバックアップを導入できるAWS MarketplaceでBlueXPサブスクリプションが提供されます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["このBlueXPサブスクリプションを購読します"^] Cloud Backup を有効にする前に、Cloud Backup の請求は、このサブスクリプションを通じて行われます。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、AWS MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["このBlueXPサブスクリプションを購読します"^] BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
 +
 --
 Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace のページ"^] 次に https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["サブスクリプションを AWS クレデンシャルに関連付けます"^]。
 
-Cloud Volumes ONTAP とクラウドバックアップをバンドルできる年間契約については、 Cloud Volumes ONTAP 作業環境の作成時に年間契約を設定する必要があります。このオプションでは、オンプレミスのデータをバックアップすることはできません。
+Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる年間契約の場合は、Cloud Volumes ONTAP 作業環境の作成時に年間契約を設定する必要があります。このオプションでは、オンプレミスのデータをバックアップすることはできません。
 
-Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイトに導入する場合は、BYOLライセンスを使用する必要があります。
+BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイトに導入する場合は、BYOLライセンスを使用する必要があります。
 
 また、バックアップを格納するストレージスペース用の AWS アカウントが必要です。
 
@@ -174,13 +174,13 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 
 バージョン3.9.21以降を使用してコネクタを導入した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。検索とリストアに必要な「アテナ」と「グルー」の権限を明確に示します。
 
-必要なAWS Cloud Volumes ONTAP 権限:: Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合、作業環境に権限を付与するIAMロールには、最新のCloud Backup専用のS3権限セットを新たに含める必要があります https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["Cloud Volumes ONTAP ポリシー"^]。
+必要なAWS Cloud Volumes ONTAP 権限:: Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合は、作業環境に権限を付与するIAMロールに、BlueXPの最新のバックアップとリカバリに特化した新しいS3権限のセットを含める必要があります https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["Cloud Volumes ONTAP ポリシー"^]。
 +
 --
 BlueXPバージョン3.9.23以降を使用してCloud Volumes ONTAP 作業環境を作成した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。
 
 --
-サポートされている AWS リージョン:: Cloud Backup はすべての AWS リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。
+サポートされている AWS リージョン:: BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。
 別の AWS アカウントでバックアップを作成する場合の必須のセットアップです:: デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別のAWSアカウントを使用する場合は、次の作業を行う必要があります。
 +
 --
@@ -207,9 +207,9 @@ BlueXPバージョン3.9.23以降を使用してCloud Volumes ONTAP 作業環境
 
 
 
-== 新しいシステムでの Cloud Backup の有効化
+== 新しいシステムでBlueXPのバックアップとリカバリを有効にする
 
-Cloud Backup は、作業環境ウィザードではデフォルトで有効になっています。このオプションは必ず有効にしておいてください。
+作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
 
 を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS での Cloud Volumes ONTAP の起動"^] を Cloud Volumes ONTAP 参照してください。
 
@@ -219,19 +219,19 @@ Cloud Backup は、作業環境ウィザードではデフォルトで有効に�
 . [ 詳細と資格情報 ] ページに入力します。
 . [ サービス ] ページで、サービスを有効のままにして、 [* 続行 ] をクリックします。
 +
-image:screenshot_backup_to_gcp.png["に、作業環境ウィザードの Cloud Backup オプションを示します。"]
+image:screenshot_backup_to_gcp.png["は、作業環境ウィザードのBlueXPのバックアップとリカバリオプションを示しています。"]
 
 . ウィザードの各ページを設定し、システムを導入します。
 
 
 .結果
-Cloud Backup はシステムで有効になり、ボリュームを毎日バックアップして、最新の 30 個のバックアップコピーを保持します。
+BlueXPのバックアップとリカバリはシステムで有効になっており、ボリュームが毎日バックアップされ、最新の30個のバックアップコピーが保持されます。
 
 
 
-== 既存のシステムでの Cloud Backup の有効化
+== 既存システムでBlueXPのバックアップとリカバリを有効にする
 
-作業環境から Cloud Backup をいつでも直接有効にできます。
+BlueXPのバックアップとリカバリは、いつでも作業環境から直接実行できます。
 
 .手順
 . 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化*をクリックします。
@@ -261,10 +261,10 @@ image:screenshot_backup_provider_settings_aws.png["Cloud Volumes ONTAP システ
 .. ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
 .. ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。この機能は、ダークサイトに導入した場合は使用できません。 link:reference-aws-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
 +
-image:screenshot_backup_policy_aws.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]
+image:screenshot_backup_policy_aws.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、スケジュールとバックアップの保持を選択できます。"]
 
 +
-*重要：* DataLockを使用する場合は、Cloud Backupをアクティブにするときに最初のポリシーで有効にする必要があります。
+*重要：* DataLockを使用する場合は、BlueXPのバックアップとリカバリをアクティブ化するときに最初のポリシーでDataLockを有効にする必要があります。
 
 
 
@@ -279,7 +279,7 @@ image:screenshot_backup_select_volumes.png["バックアップするボリュー
 ** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
-. Activate Backup * をクリックすると、選択した各ボリュームの初期バックアップの実行が開始されます。
+. [バックアップをアクティブ化]*をクリックすると、選択した各ボリュームの初期バックアップの作成がBlueXPのバックアップとリカバリによって開始されます。
 
 
 .結果

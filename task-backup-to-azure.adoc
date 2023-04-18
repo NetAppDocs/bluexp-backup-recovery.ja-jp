@@ -26,16 +26,16 @@ Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュ�
 [role="quick-margin-list"]
 * AzureでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["アクティブ化されます"^] NetApp の Cloud Backup BYOL ライセンス。
+* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
 * Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムで Cloud Backup を有効にします
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 新規または既存のシステムでBlueXPのバックアップとリカバリを有効にします
 [role="quick-margin-list"]
-* 新しいシステム： Cloud Backup は、作業環境ウィザードではデフォルトで有効になっています。このオプションは必ず有効にしておいてください。
+* 新規システム：作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
 * 既存のシステム：作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*Enable*をクリックして、セットアップ・ウィザードに従います。
 +
-image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できる Cloud Backup Enable ボタンを示すスクリーンショット。"]
+image:screenshot_backup_cvo_enable.png["作業環境を選択すると表示されるBlueXPのバックアップとリカバリの[有効化]ボタンのスクリーンショット。"]
 
 
 
@@ -51,13 +51,13 @@ image:screenshot_backup_provider_settings_azure.png["Cloud Volumes ONTAP シス�
 デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、毎月、または毎年のバックアップに変更します。 または、オプションを追加するシステム定義のポリシーを1つ選択します。保持するバックアップコピーの数を変更することもできます。
 
 [role="quick-margin-para"]
-ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
-バックアップはデフォルトでCoolアクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なクラウドバックアップポリシー設定の詳細については、こちらをご覧ください"^]。
+バックアップはデフォルトでCoolアクセス層に保存されます。クラスタが ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したあとに Azure Archive ストレージにバックアップを階層化してコストをさらに最適化することができます。 link:concept-cloud-backup-policies.html["使用可能なBlueXPのバックアップとリカバリポリシーの設定の詳細については、こちらをご覧ください"^]。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。バックアップポリシーを選択して、バックアップの保持期間を選択できます。"]
+image:screenshot_backup_policy_azure.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップポリシーとバックアップの保持方法を選択できます。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップするボリュームを選択します
 [role="quick-margin-para"]
@@ -71,13 +71,13 @@ Azure Blob Storage へのボリュームのバックアップを開始する前�
 
 次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
 
-image:diagram_cloud_backup_cvo_azure.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
-ライセンス要件:: Cloud Backup 従量課金制のライセンスの場合は、 Cloud Backup を有効にする前に Azure Marketplace でサブスクリプションを購入する必要があります。Cloud Backup の請求は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
-Cloud Backup BYOL ライセンスを使用するには、ライセンスの期間と容量にサービスを使用できるように、ネットアップから提供されたシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイトに導入する場合は、BYOLライセンスを使用する必要があります。
+BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイトに導入する場合は、BYOLライセンスを使用する必要があります。
 
 また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。
 
@@ -93,7 +93,7 @@ Cloud Backup BYOL ライセンスを使用するには、ライセンスの期�
 --
 
 
-コネクタの権限を確認または追加します:: Cloud Backupの検索とリストア機能を使用するには、Connectorの役割に特定の権限を付与して、Azure Synapse WorkspaceとData Lakeストレージアカウントにアクセスできるようにする必要があります。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
+コネクタの権限を確認または追加します:: BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタがAzure Synapse WorkspaceとData Lake Storageアカウントにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 +
 --
 .を開始する前に
@@ -174,10 +174,10 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 
 --
-サポートされている Azure リージョン:: Cloud Backup はすべての Azure リージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
+サポートされている Azure リージョン:: BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
 
 
-Cloud Backupは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナをプロビジョニングします。異なるゾーン間でデータを確実にレプリケートする場合は、Cloud Backupをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
+BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実にレプリケートする場合は、BlueXPのバックアップとリカバリをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
 
 別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ:: デフォルトでは、バックアップは Cloud Volumes ONTAP システムと同じサブスクリプションを使用して作成されます。バックアップに別の Azure サブスクリプションを使用する場合は、が必要です link:reference-backup-multi-account-azure.html["Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます"]。
 データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
@@ -185,14 +185,14 @@ Cloud Backupは、コストを最適化するために、デフォルトでLocal
 
 
 
-== 新しいシステムでの Cloud Backup の有効化
+== 新しいシステムでBlueXPのバックアップとリカバリを有効にする
 
-Cloud Backup は、作業環境ウィザードではデフォルトで有効になっています。このオプションは必ず有効にしておいてください。
+作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
 
 を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
 
 
-NOTE: リソースグループの名前を選択する場合は、 Cloud Volumes ONTAP を導入する際に * disable * Cloud Backup と入力します。の手順に従います <<enabling-cloud-backup-on-an-existing-system,既存のシステムでの Cloud Backup の有効化>> Cloud Backup を有効にしてリソースグループを選択します。
+NOTE: リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <<enabling-bluexp-backup-and-recovery-on-an-existing-system,既存システムでBlueXPのバックアップとリカバリを有効にする>> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。
 
 .手順
 . [ Cloud Volumes ONTAP の作成 *] をクリックします。
@@ -201,19 +201,19 @@ NOTE: リソースグループの名前を選択する場合は、 Cloud Volumes
 . 詳細とクレデンシャルページに必要事項を入力し、 Azure Marketplace サブスクリプションが登録されていることを確認して、「 * Continue * 」をクリックします。
 . [ サービス ] ページで、サービスを有効のままにして、 [* 続行 ] をクリックします。
 +
-image:screenshot_backup_to_gcp.png["に、作業環境ウィザードの Cloud Backup オプションを示します。"]
+image:screenshot_backup_to_gcp.png["は、作業環境ウィザードのBlueXPのバックアップとリカバリオプションを示しています。"]
 
 . ウィザードの各ページを設定し、システムを導入します。
 
 
 .結果
-Cloud Backup はシステムで有効になり、ボリュームを毎日バックアップして、最新の 30 個のバックアップコピーを保持します。
+BlueXPのバックアップとリカバリはシステムで有効になっており、ボリュームが毎日バックアップされ、最新の30個のバックアップコピーが保持されます。
 
 
 
-== 既存のシステムでの Cloud Backup の有効化
+== 既存システムでBlueXPのバックアップとリカバリを有効にする
 
-作業環境から Cloud Backup をいつでも直接有効にできます。
+BlueXPのバックアップとリカバリは、いつでも作業環境から直接実行できます。
 
 .手順
 . 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化*をクリックします。
@@ -221,7 +221,7 @@ Cloud Backup はシステムで有効になり、ボリュームを毎日バッ�
 バックアップのAzure BlobデスティネーションがCanvas上に作業環境として存在する場合は、クラスタをAzure Blob Working環境にドラッグしてセットアップウィザードを開始できます。
 
 +
-image:screenshot_backup_cvo_enable.png["作業環境を選択したあとに使用できる Cloud Backup Enable ボタンを示すスクリーンショット。"]
+image:screenshot_backup_cvo_enable.png["作業環境を選択すると表示されるBlueXPのバックアップとリカバリの[有効化]ボタンのスクリーンショット。"]
 
 . プロバイダの詳細を選択し、 * 次へ * ：
 +
@@ -244,7 +244,7 @@ image:screenshot_backup_provider_settings_azure.png["Cloud Volumes ONTAP シス�
 .. ONTAP 9.12.1以降を使用している場合、_DataLockとRansomware Protection_settingsのいずれかを設定することで、バックアップを削除攻撃やランサムウェア攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
 .. ONTAP 9.10.1 以降を使用している場合は、特定の日数が経過したバックアップを Azure Archive ストレージに階層化して、コストをさらに最適化することができます。この機能は、ダークサイトに導入した場合は使用できません。 link:reference-azure-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"]。
 +
-image:screenshot_backup_policy_azure.png["クラウドバックアップの設定を示すスクリーンショット。スケジュールとバックアップの保持を選択できます。"]
+image:screenshot_backup_policy_azure.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、スケジュールとバックアップの保持を選択できます。"]
 
 
 
@@ -259,7 +259,7 @@ image:screenshot_backup_select_volumes.png["バックアップするボリュー
 ** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
 
 
-. Activate Backup * をクリックすると、選択した各ボリュームの初期バックアップの実行が開始されます。
+. [バックアップをアクティブ化]*をクリックすると、選択した各ボリュームの初期バックアップの作成がBlueXPのバックアップとリカバリによって開始されます。
 
 
 .結果
@@ -267,7 +267,7 @@ BLOBストレージコンテナは、入力したリソースグループに自�
 
 ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
 
-Cloud Backupは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナをプロビジョニングします。異なるゾーン間でデータを確実に複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
+BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実に複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
 
 
 

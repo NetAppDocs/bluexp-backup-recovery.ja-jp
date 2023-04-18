@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
 keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
-summary: クラウドバックアップのライセンスは、従量課金制（PAYGO）または年単位のマーケットプレイスサブスクリプションをクラウドプロバイダから購入するか、ネットアップからお客様所有のライセンスを使用（BYOL）を購入することで取得できます。作業環境でCloud Backupをアクティブ化し、本番環境のデータのバックアップを作成し、本番環境のシステムにバックアップデータをリストアするには、有効なライセンスが必要です。 
+summary: BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制（PAYGO）またはマーケットプレイスの年間サブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（BYOL）する必要があります。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。 
 ---
-= Cloud Backup のライセンスをセットアップします
+= BlueXPのバックアップとリカバリのライセンスをセットアップ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,29 +14,29 @@ summary: クラウドバックアップのライセンスは、従量課金制�
 
 
 [role="lead"]
-クラウドバックアップのライセンスは、従量課金制（PAYGO）または年単位のマーケットプレイスサブスクリプションをクラウドプロバイダから購入するか、ネットアップからお客様所有のライセンスを使用（BYOL）を購入することで取得できます。作業環境でCloud Backupをアクティブ化し、本番環境のデータのバックアップを作成し、本番環境のシステムにバックアップデータをリストアするには、有効なライセンスが必要です。
+BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制（PAYGO）またはマーケットプレイスの年間サブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（BYOL）する必要があります。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。
 
 さらに読む前に、いくつかのメモを記入してください。
 
-* クラウドプロバイダのCloud Volumes ONTAP システム市場で従量課金制（PAYGO）サブスクリプションをすでに登録している場合は、Cloud Backupにも自動的に登録されます。再度登録する必要はありません。
-* Cloud Backup Bring Your Own License（BYOL）は、BlueXPアカウントに関連付けられたすべてのシステムで使用できるフローティングライセンスです。したがって、既存のBYOLライセンスで使用できるバックアップ容量が十分にある場合、別のBYOLライセンスを購入する必要はありません。
+* クラウドプロバイダのマーケットプレイスでCloud Volumes ONTAP システムの従量課金制（PAYGO）サブスクリプションにすでに登録している場合は、BlueXPのバックアップとリカバリも自動的に登録されます。再度サブスクライブする必要はありません。
+* BlueXPのバックアップとリカバリのBring-your-own-license（BYOL）は、BlueXPアカウントに関連付けられているすべてのシステムで使用できるフローティングライセンスです。したがって、既存のBYOLライセンスで使用できるバックアップ容量が十分にある場合、別のBYOLライセンスを購入する必要はありません。
 * BYOLライセンスを使用している場合は、PAYGOサブスクリプションもサブスクライブすることを推奨します。BYOLライセンスで許可されている数を超えるデータをバックアップした場合、従量課金制サブスクリプションでバックアップが続行されるため、サービスが中断されることはありません。
 * オンプレミスの ONTAP データを StorageGRID にバックアップする場合は、 BYOL ライセンスが必要ですが、クラウドプロバイダのストレージスペースは無償です。
 
 
-link:concept-ontap-backup-to-cloud.html#cost["Cloud Backupの使用に関連するコストの詳細については、こちらをご覧ください。"]
+link:concept-ontap-backup-to-cloud.html#cost["BlueXPのバックアップとリカバリの使用に関連するコストの詳細をご確認ください。"]
 
 
 
 == 30 日間の無償トライアルをご利用いただけます
 
-クラウド・バックアップの30日間無料トライアルは、クラウド・プロバイダーのマーケットプレイスで従量課金制サブスクリプションから利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAP システムの導入時にマーケットプレイスサブスクリプションの料金を支払い、クラウドバックアップの無償トライアルを10日後に開始した場合は、20日後に無償トライアルを利用できます。
+BlueXPのバックアップとリカバリの30日間無償トライアルは、クラウドプロバイダのマーケットプレイスで提供されている従量課金制サブスクリプションでご利用いただけます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAP システムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無料トライアルを開始すると、20日以内に無料トライアルを利用できます。
 
-無償トライアルが終了すると、自動的にPAYGOサブスクリプションに切り替えられます。Cloud Backupを引き続き使用しない場合は、のみを使用してください link:task-manage-backups-ontap.html#unregistering-cloud-backup-for-a-working-environment["作業環境からCloud Backupの登録を解除します"] トライアルが終了する前に、請求は行われません。
+無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["作業環境からBlueXPバックアップおよびリカバリの登録を解除します"] トライアルが終了する前に、請求は行われません。
 
 
 
-== Cloud Backup 従量課金制を使用
+== BlueXPのバックアップとリカバリのPAYGOサブスクリプションを利用
 
 従量課金制の場合、クラウドプロバイダにオブジェクトストレージのコストとネットアップのバックアップライセンスのコストを1時間単位で支払うことになります。無償トライアルを利用されている場合や、お客様が独自のライセンスを使用（ BYOL ）されている場合も、サブスクリプションを設定する必要があります。
 
@@ -46,22 +46,16 @@ link:concept-ontap-backup-to-cloud.html#cost["Cloud Backupの使用に関連す�
 
 お客様は、無料トライアル期間中、または BYOL ライセンスを超えていない場合は、従量課金制サブスクリプションから料金を請求されることはありません。
 
-Cloud Backupについては、次の2種類のPAYGOを計画しています。
+BlueXPのバックアップとリカバリには、いくつかのPAYGOプランがあります。
 
 * Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。
-* Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「CVO Professional」パッケージ。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
+* Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージです。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
+* 「CVO Edge Cache」パッケージの機能は「CVO Professional」パッケージと同じですが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["グローバルファイルキャッシュ"^]。Cloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。
 
-
-ifdef::azure[]
-
-* 「CVO Edge Cache」パッケージの機能は「CVO Professional」パッケージと同じですが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["グローバルファイルキャッシュ"^]。Cloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzure Marketplaceからのみ利用でき、オンプレミスのONTAP データのバックアップはできません。
-
-
-endif::azure[]
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["これらの容量ベースのライセンスパッケージの詳細については、こちらをご覧ください"]。
 
-以下のリンクから、クラウドプロバイダのマーケットプレイスから Cloud Backup にサブスクライブできます。
+以下のリンクから、クラウドプロバイダのマーケットプレイスからBlueXPバックアップ/リカバリのサブスクリプションに登録できます。
 
 ifdef::aws[]
 
@@ -88,7 +82,7 @@ endif::gcp[]
 
 == 年間契約を使用する
 
-年間契約を購入することで、Cloud Backupを年間料金で利用できます。
+BlueXPのバックアップとリカバリの料金は、年単位の契約を購入して年単位で支払うことができます。
 
 ifdef::aws[]
 
@@ -98,7 +92,7 @@ AWSを使用している場合は、で2つの年間契約が提供されます 
 +
 このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["サブスクリプションを AWS クレデンシャルに関連付けます"^]。BlueXPでAWS資格情報に割り当てることができるのは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAP システムの料金を支払う必要があります。
 
-* Cloud Volumes ONTAP とクラウドバックアップをバンドルできる「 CVO Professional 」プラン。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
+* Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
 +
 を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP のライセンスに関するトピック"^] このライセンスオプションの詳細については、を参照してください。
 
@@ -111,41 +105,41 @@ endif::aws[]
 
 ifdef::azure[]
 
-Azureをご利用の場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Azure Marketplaceでのプライベートオファーとして提供されます。ネットアップがプライベートオファーを共有したあとは、Cloud Backupのアクティブ化の際にAzure Marketplaceからサブスクリプションするときに、年間プランを選択できます。
+Azureをご利用の場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Azure Marketplaceでのプライベートオファーとして提供されます。ネットアップからプライベートオファーが提供されたら、BlueXPのバックアップとリカバリのアクティブ化時にAzure Marketplaceでサブスクライブする際に年間プランを選択できます。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-GCPを使用している場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Google Cloud Marketplaceでのプライベートオファーとして利用できます。ネットアップがお客様とプライベートオファーを共有した後は、Cloud Backupのアクティブ化の際にGoogle Cloud Marketplaceから登録するときに、年間プランを選択できます。
+GCPを使用している場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Google Cloud Marketplaceでのプライベートオファーとして利用できます。ネットアップからプライベートオファーが提供されたら、BlueXPのバックアップとリカバリのアクティブ化時にGoogle Cloud Marketplaceからサブスクライブする際に年間プランを選択できます。
 
 endif::gcp[]
 
 
 
-== Cloud Backup BYOL ライセンスを使用する
+== BlueXPのバックアップとリカバリのBYOLライセンスを使用
 
 ネットアップが提供するお客様所有のライセンスには、 1 年、 2 年、 3 年の期間があります。バックアップ対象のソース ONTAP ボリュームの論理使用容量（ _Before_any 効率化）で計算され、保護するデータに対してのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。
 
-BYOL Cloud Backupライセンスは、合計容量がBlueXPアカウントに関連付けられたすべてのシステムで共有されるフローティングライセンスです。ONTAP システムの場合は、CLIコマンドを実行して、必要な容量を概算できます `volume show -fields logical-used-by-afs` をクリックします。
+BYOL BlueXPバックアップ/リカバリライセンスはフローティングライセンスで、BlueXPアカウントに関連付けられているすべてのシステムで合計容量が共有されます。ONTAP システムの場合は、CLIコマンドを実行して、必要な容量を概算できます `volume show -fields logical-used-by-afs` をクリックします。
 
-Cloud Backup BYOLライセンスをお持ちでない場合は、BlueXPの右下にあるチャットアイコンをクリックしてライセンスを購入してください。
+BlueXPバックアップ/リカバリのBYOLライセンスをお持ちでない場合は、BlueXPの右下にあるチャットアイコンをクリックして購入してください。
 
-必要に応じて、使用しない Cloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、ドル同等かつ同じ有効期限で Cloud Backup ライセンスに変換できます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["詳細については、こちらをご覧ください"^]。
+必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["詳細については、こちらをご覧ください"^]。
 
 BYOLライセンスを管理するには、BlueXPのDigital Walletページを使用します。新しいライセンスの追加、既存のライセンスの更新、およびDigital Walletからのライセンスステータスの表示を行うことができます。
 
 
 
-=== Cloud Backup ライセンスファイルを取得します
+=== BlueXPのバックアップとリカバリのライセンスファイルを入手します
 
-Cloud Backupライセンスを購入した後、Cloud Backupのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードして、BlueXPでライセンスを有効にします。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。
+BlueXPバックアップとリカバリのライセンスを購入したら、BlueXPバックアップとリカバリのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。
 
-インターネットにアクセスできないオンプレミスサイトでCloud Backupを実行している場合は、オフラインのオンプレミスサイトのホストにBlueXPコネクタを導入しているため、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。シリアル番号と NSS アカウントを使用してライセンスをアクティブ化することは、オフライン（ダークサイト）でのインストールには利用できません。
+インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している場合、つまりオフラインのオンプレミスサイトのホストにBlueXPコネクタを導入している場合は、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。シリアル番号と NSS アカウントを使用してライセンスをアクティブ化することは、オフライン（ダークサイト）でのインストールには利用できません。
 
 .手順
 . にサインインします https://mysupport.netapp.com["NetApp Support Site"^] [ システム ] 、 [ ソフトウェアライセンス ] の順にクリックします。
-. Cloud Backup ライセンスのシリアル番号を入力します。
+. BlueXPバックアップ/リカバリライセンスのシリアル番号を入力します。
 +
 image:screenshot_cloud_backup_license_step1.gif["シリアル番号で検索したあとのライセンスの一覧を示すスクリーンショット。"]
 
@@ -161,9 +155,9 @@ BlueXPアカウントIDを確認するには、BlueXPの上部にある[*Account
 
 
 
-=== Cloud Backup BYOL ライセンスをアカウントに追加します
+=== BlueXPのバックアップとリカバリのBYOLライセンスをアカウントに追加します
 
-ネットアップアカウント用のCloud Backupライセンスを購入したら、ライセンスをBlueXPに追加する必要があります。
+ネットアップアカウント用のBlueXPバックアップ/リカバリライセンスを購入したら、そのライセンスをBlueXPに追加する必要があります。
 
 .手順
 . BlueXPメニューから、「ガバナンス」>「デジタルウォレット」をクリックし、「*データサービスライセンス*」タブを選択します。
@@ -176,33 +170,33 @@ BlueXPアカウントIDを確認するには、BlueXPの上部にある[*Account
 
 ** バックアップライセンスファイル（ダークサイトにインストールする場合に必要）がある場合は、 * ライセンスファイルのアップロード * オプションを選択し、プロンプトに従ってファイルを添付します。
 +
-image:screenshot_services_license_add2.png["Cloud Backup BYOL ライセンスを追加するページのスクリーンショット。"]
+image:screenshot_services_license_add2.png["BlueXPバックアップ/リカバリのBYOLライセンスを追加するページのスクリーンショット。"]
 
 
 
 
 
 .結果
-BlueXPでは、Cloud Backupがアクティブになるようにライセンスが追加されています。
+BlueXPには、BlueXPのバックアップとリカバリをアクティブにするためのライセンスが追加されています。
 
 
 
-=== Cloud Backup BYOL ライセンスを更新する
+=== BlueXPのバックアップとリカバリのBYOLライセンスを更新します
 
 ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、 [ デジタルウォレット ] ページおよびにも表示されます https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
 
 image:screenshot_services_license_expire.png["Digital Wallet ページに期限切れになるライセンスを示すスクリーンショット。"]
 
-Cloud Backup のライセンスは有効期限が切れる前に更新できるため、データのバックアップとリストアを中断することなく実行できます。
+BlueXPのバックアップとリカバリのライセンスは、有効期限が切れる前に更新できるため、データのバックアップとリストアが中断されることはありません。
 
 .手順
-. BlueXPの右下にあるチャットアイコンをクリックするか、サポートに連絡して、特定のシリアル番号のCloud Backupライセンスの期間延長または追加容量をリクエストします。
+. BlueXPの右下にあるチャットアイコンをクリックするか、サポートにお問い合わせください。特定のシリアル番号について、BlueXPバックアップ/リカバリライセンスの期間の延長や容量の追加をリクエストできます。
 +
 ライセンスの支払いが完了し、NetApp Support Site に登録されると、BlueXPは自動的にデジタルウォレットのライセンスを更新し、[データサービスのライセンス]ページには5～10分で変更が反映されます。
 
 . BlueXPがライセンスを自動的に更新できない場合(たとえば、ダークサイトにインストールされている場合)は、ライセンスファイルを手動でアップロードする必要があります。
 +
-.. 可能です <<Cloud Backup ライセンスファイルを取得します,ライセンスファイルをNetApp Support Siteから入手します>>。
+.. 可能です <<BlueXPのバックアップとリカバリのライセンスファイルを入手します,ライセンスファイルをNetApp Support Siteから入手します>>。
 .. [ デジタルウォレット ] ページの [ データサービスライセンス ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。
 +
 image:screenshot_services_license_update1.png["特定のサービスの [ ライセンスの更新 ] ボタンを選択するスクリーンショット。"]
@@ -213,13 +207,13 @@ image:screenshot_services_license_update1.png["特定のサービスの [ ライ
 
 
 .結果
-ライセンスが更新され、Cloud Backupが引き続きアクティブになります。
+BlueXPのライセンスが更新され、BlueXPのバックアップとリカバリが引き続きアクティブになります。
 
 
 
 === BYOL ライセンスに関する考慮事項
 
-Cloud Backup BYOLライセンスを使用している場合、バックアップするすべてのデータのサイズが容量の上限に近づいているか、ライセンスの有効期限に近づいているときに、BlueXPのユーザーインターフェイスに警告が表示されます。次の警告が表示されます。
+BlueXPのバックアップとリカバリのBYOLライセンスを使用している場合、バックアップするすべてのデータのサイズが容量の上限に近づいているかライセンスの有効期限に近づいているときに、BlueXPのユーザインターフェイスに警告が表示されます。次の警告が表示されます。
 
 * バックアップがライセンスで許可された容量の 80% に達したとき、および制限に達したときに再度実行されます
 * ライセンスの有効期限が切れる 30 日前と、ライセンスの有効期限が切れたあとに再度有効になります
@@ -233,6 +227,6 @@ BYOLライセンスの期限が切れると、次の2つのことが起こりま
 * 使用しているアカウントにMarketplaceアカウントがない場合、バックアップサービスは引き続き実行されますが、警告は引き続き表示されます。
 
 
-BYOLサブスクリプションを更新すると、BlueXPによってライセンスが自動的に更新されます。BlueXPが安全なインターネット接続経由でライセンスファイルにアクセスできない場合(たとえば、ダークサイトにインストールされている場合)は、自分でファイルを取得してBlueXPに手動でアップロードできます。手順については、を参照してください link:task-licensing-cloud-backup.html#update-a-cloud-backup-byol-license["Cloud Backup ライセンスを更新する方法"]。
+BYOLサブスクリプションを更新すると、BlueXPによってライセンスが自動的に更新されます。BlueXPが安全なインターネット接続経由でライセンスファイルにアクセスできない場合(たとえば、ダークサイトにインストールされている場合)は、自分でファイルを取得してBlueXPに手動でアップロードできます。手順については、を参照してください link:task-licensing-cloud-backup.html#update-a-bluexp-backup-and-recovery-byol-license["BlueXPのバックアップとリカバリのライセンスを更新する方法"]。
 
 PAYGO ライセンスに切り替えられたシステムは、自動的に BYOL ライセンスに戻されます。ライセンスなしで実行されていたシステムでは、警告が表示されなくなります。
