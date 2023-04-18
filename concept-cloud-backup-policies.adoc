@@ -118,6 +118,8 @@ image:screenshot_datalock_ransomware_settings.png["バックアップポリシ�
 
 [role="tabbed-block"]
 ====
+ifdef::aws[]
+
 .AWS
 --
 * *なし*（デフォルト）
@@ -135,6 +137,10 @@ DataLockは_Compliion_modeに設定されており、保持期間中にユーザ
 
 
 --
+endif::aws[]
+
+ifdef::azure[]
+
 .Azure
 --
 * *なし*（デフォルト）
@@ -152,6 +158,8 @@ DataLock保護とランサムウェア防御は無効になっています。
 
 
 --
+endif::azure[]
+
 .StorageGRID
 --
 * *なし*（デフォルト）

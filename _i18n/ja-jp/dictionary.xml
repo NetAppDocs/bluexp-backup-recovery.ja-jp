@@ -2722,11 +2722,6 @@
   <block id="5afde787e060c3a96f34f757eb507404" category="sidebar">Kubernetes クラスタから Amazon S3 へ</block>
   <block id="3ef08bbbf058b2bc6a87e3ff1ceecd81" category="sidebar">Kubernetes クラスタから Azure Blob への移行</block>
   <block id="d5513ddfa26c41caaba3c021a29dbe45" category="sidebar">Kubernetes クラスタから Google Cloud へ</block>
-  <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">仮想マシンのデータのバックアップとリストア</block>
-  <block id="5a885bd71d1142c7d1b89fcfcf197a41" category="sidebar">ONTAP バックアップファイルからデータをリストアする</block>
-  <block id="e2f83fe82d1e819ed299851d4da320ce" category="sidebar">ONTAP ボリュームをリストア</block>
-  <block id="ba9a6951ecf97e593c2140f66a8574bf" category="sidebar">ONTAP ボリュームからファイルとフォルダをリストア</block>
-  <block id="09653b9c7955d4792895fbf1fcaa6ad6" category="sidebar">Kubernetes ボリュームをリストア</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">ONTAP バックアップファイルを管理します</block>
   <block id="c88c557dd4e62b29bc87fc433d1738c6" category="sidebar">ボリュームのバックアップを有効または無効にします</block>
   <block id="56b3614ad370987e8f2f3583eb78c757" category="sidebar">既存のバックアップポリシーを編集する</block>
@@ -3740,4 +3735,13 @@
   <block id="2e5d6ff9bc4d6b4194df020bde3f3dca" category="sidebar">ダークサイトにBlueXPのバックアップとリカバリのデータベースをバックアップします</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXPのバックアップとリカバリに関するブログ</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXPのバックアップとリカバリのユースケース</block>
+  <block id="ceffaf94354645ad26052bbc53604f5d" category="sidebar">仮想マシンのデータをクラウドにバックアップ</block>
+  <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">クラウドからデータをリストア</block>
+  <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">ONTAP ボリュームのデータをリストアします</block>
+  <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">オンプレミスのOracleアプリケーションデータをリストア</block>
+  <block id="6002846df6663ea571e55d74bd085335" category="sidebar">オンプレミスのSQL Serverアプリケーションデータをリストア</block>
+  <block id="4bc9a14a4fac8328e801409fa8234e7e" category="sidebar">クラウドネイティブのOracleアプリケーションデータをリストア</block>
+  <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">クラウドネイティブのSAP HANAアプリケーションデータをリストア</block>
+  <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">仮想マシンのデータをリストアします</block>
+  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Kubernetesボリュームデータをリストア</block>
 </blocks>
