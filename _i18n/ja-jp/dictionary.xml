@@ -1013,7 +1013,6 @@
   <block id="ddac760f2c60fbb2375807e939befa9d" category="summary">仮想マシン上のデータ保護の詳細と、さまざまなポリシーについて理解する。</block>
   <block id="97bfb69bf5a1d719c6265b922436bbaa" category="doc">仮想マシンのデータを保護</block>
   <block id="d511399444cf864b695600d159b7c93b" category="list-text">VMware vSphere 4.6P1以降用のSnapCenter プラグイン</block>
-  <block id="0fbf3afea399595219e31836afabacc9" category="list-text">VMware vSphere 4.7P1以降でSnapCenter Plug-inを使用して、オンプレミスのセカンダリストレージから仮想マシンをバックアップする必要があります。</block>
   <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">ONTAP 9.8 以降</block>
   <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">VMware vSphere 4.6P1向けSnapCenter プラグインでは、少なくとも1つのバックアップを作成しておく必要があります。</block>
   <block id="9a3ae5d8e3738351dd9a586e8215632a" category="list-text">SnapCenter Plug-in for VMware vSphereで、BlueXPの仮想マシンポリシーと同じラベルまたは同じラベルの日単位、週単位、または月単位のポリシーが少なくとも1つ適用されます。</block>
@@ -1038,12 +1037,10 @@
   <block id="bca25b5056d8715db55e6e28a72ddea0" category="admonition">UIから新しいconnector_idを更新することはできません。</block>
   <block id="e12fb4f30abef516bf6f5e0e9a5b72b7" category="inline-link-macro">BlueXPからAzureにコネクタを作成します</block>
   <block id="3717a56f9d9c162dfd0127cd325c0a2f" category="paragraph">詳細については、を参照してください <block ref="88ddfb8e0cf0e729a2d90f978111b93e" category="inline-link-macro-rx"></block>。</block>
-  <block id="fe8f95b60b7c4092ce03adfbb31e89b4" category="summary">仮想マシンをバックアップするポリシーを作成します</block>
   <block id="b4866a33463f80d02c65e0910ff4b146" category="paragraph">ポリシーを作成するか、BlueXPで使用可能な次の定義済みポリシーのいずれかを使用できます。</block>
   <block id="43852dc1e0c3229284688eb4c01dfef0" category="paragraph">事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。</block>
   <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">[仮想マシン]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
   <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">（オプション）コストを最適化するために一定の日数が経過したあとにバックアップをオブジェクトストアからアーカイブストレージに移動する場合は、「* Tier Backups to Archival *」チェックボックスをオンにし、バックアップをアーカイブするまでの日数を入力します。</block>
-  <block id="2918bd1eb41f17cc6bbd51b50460f7dc" category="admonition">仮想マシンに関連付けられているポリシーを編集または削除することはできません。</block>
   <block id="d1e18cf16b83a90a2911458097d3358c" category="summary">バックアップの詳細を表示し、すべてのジョブのステータスを監視します。</block>
   <block id="a0535e3da7a79865ac35aff6cbcd9919" category="doc">クラウドネイティブなアプリケーションデータの保護を管理</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="section-title">ジョブを監視する</block>
@@ -1588,8 +1585,6 @@
   <block id="6b8f75608c780411342a488cc1ed6a77" category="paragraph"><block ref="6b8f75608c780411342a488cc1ed6a77" category="inline-image-macro-rx" type="image"></block></block>
   <block id="16d050cc0c345f23a8c1f9d1557ac107" category="list-text">確認ダイアログボックスで、 * 登録解除 * をクリックします。</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">仮想マシンはクラウドからオンプレミスのSnapCenter にリストアできます。</block>
-  <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">クラウドから仮想マシンをリストアします</block>
-  <block id="9506c95f9ad8061d2b32d45700688c83" category="paragraph">仮想マシンをクラウドからオンプレミスのvCenterにリストアできます。バックアップは、作成された場所とまったく同じ場所にリストアされます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアするデータストアに対応し、*詳細の表示*をクリックします。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">リストアするバックアップに対応する* Restore *をクリックします。</block>
   <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">バックアップからリストアする仮想マシンを選択します。</block>
@@ -1598,7 +1593,6 @@
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">仮想マシンのリストアに使用するバックアップを選択します。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VMは、バックアップの作成元と同じ場所にリストアされます。</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">データストアと仮想マシンを表示し、SnapCenter Plug-in for VMware vSphereインスタンスを編集できます。</block>
-  <block id="880521c077c3d9130e51f737ddd86b15" category="doc">仮想マシンの保護を管理します</block>
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">ポリシーを表示します</block>
   <block id="8a53d8d9bdff689ff4cea2f3d55f43de" category="list-text">[* 設定 *] ドロップダウンから、 [* ポリシー *] をクリックします。</block>
   <block id="8bdf078d3946fd5743d8283e1dda131b" category="list-text">詳細を表示するポリシーに対応する *View Details* をクリックします。</block>
@@ -2206,7 +2200,6 @@
   <block id="b44a2ec7d100bd7fbbcef764a835ae72" category="paragraph">「*自動生成*」を選択した場合は、サフィックスを指定する必要があります。</block>
   <block id="01fc6bc870eb60d107c41c724b7c0f61" category="list-text">要件に応じて仕様ファイルを編集し、*参照*ボタンをクリックしてアップロードします。</block>
   <block id="46630b95005d23b3ccd9d9af01eed5bc" category="list-text">をクリックします <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> [*フィルタ]の横にある[*クローニング・オプション*&gt;*クローン*]を選択して、クローンを表示します。</block>
-  <block id="8f2653c5938080ffdd57904f850bc430" category="doc">SnapCenter Plug-in for VMware vSphereの登録</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">[* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。</block>
   <block id="bc75c7043b8e7365f3c8207f2cc978cc" category="summary">データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。</block>
@@ -2256,7 +2249,6 @@
   <block id="e3b72f702a3b0c42e864fe0ad9eb9453" category="paragraph"><block ref="e3b72f702a3b0c42e864fe0ad9eb9453" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2c9139d12cc7ddacb93c941d4bf412a2" category="paragraph">このコネクタは、アプリケーションと同じVPCまたはVNetに導入することも、別のVPCまたはVNetに導入することもできます。コネクタとアプリケーションが異なるネットワーク上にある場合は、コネクタとアプリケーションの間にネットワーク接続を確立する必要があります。</block>
   <block id="e3a2981d750d1d4a623860068a07cc70" category="admonition">1つのBlueXPコネクタは、複数のストレージシステムおよび複数のアプリケーションプラグインと通信できます。コネクタとアプリケーションホストの間に接続がある限り、アプリケーションを管理するには単一のコネクタが必要です。</block>
-  <block id="11db7b880ef2ebba3ee0a02b685e8da0" category="section-title">Oracleデータベースを保護します</block>
   <block id="0f0f84cb9775a6f4ad6b4796bfcedfe9" category="list-text">オペレーティングシステム</block>
   <block id="70cfb8b329ca692c676669ef294b37c0" category="list-text">RHEL 7.5以降および8.x</block>
   <block id="0d9cfc701256d81666be8cc96e8482b8" category="list-text">OL 7.5以降および8.x</block>
@@ -2286,7 +2278,6 @@
   <block id="9518d577aae2b3d43b6dd0f41fb999e1" category="list-text">Oracle 11gはサポートされません</block>
   <block id="d67615cd9765a283fd8a9d06cd5d44a1" category="list-text">バックアップに対するマウント、カタログ化、検証の処理はサポートされていません</block>
   <block id="9c1f3568b85ef3ac4da7fc528340d6ba" category="list-text">では、RACおよびData GuardでのOracleはサポートされません</block>
-  <block id="9317a56cfedd80231a539c42f44d9c8d" category="section-title">SAP HANAデータベースを保護</block>
   <block id="494c3084e3990387ac3b46cb5749bb65" category="list-text">SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム</block>
   <block id="504d22b0e020e0b365851eef08a1e4ca" category="list-text">SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています</block>
   <block id="c7325743e6b1be5853672e4ed19d279b" category="list-text">データベースレイアウト：</block>
@@ -2698,10 +2689,6 @@
   <block id="d1444f985888131065bf58d488e5a34f" category="sidebar">オンプレミスアプリケーションのデータをリストア</block>
   <block id="1c157808ae21e883235bd19d5c13f45e" category="sidebar">Oracleデータベースをバックアップする</block>
   <block id="b0c92f6f27a434824e7723b42147cce3" category="sidebar">SAP HANAデータベースをバックアップする</block>
-  <block id="7c8db0bef9b3c6a1335fe8f0a09bfdef" category="sidebar">仮想マシンのデータのバックアップとリストア</block>
-  <block id="4cfbdcb9aba741b123b3c46a8341bf59" category="sidebar">仮想マシンのデータを保護</block>
-  <block id="b2736084b30c35472d74c3c29a818a95" category="sidebar">仮想マシンの保護を管理します</block>
-  <block id="c2c86860cad5cd95ae9ef9c003e01d57" category="sidebar">仮想マシンのデータをリストアします</block>
   <block id="68b1e52936c426875b2780e91e195546" category="sidebar">REST API で自動化</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">参照</block>
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">サポート対象の AWS アーカイブストレージ階層</block>
@@ -2709,7 +2696,6 @@
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">サポートされているGoogleアーカイブストレージ階層</block>
   <block id="37c606e486cf867317024daab096d5c7" category="sidebar">Azure でマルチアカウントアクセス用にバックアップを設定</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知識とサポート</block>
-  <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">新機能</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">ONTAP データをクラウドにバックアップ</block>
   <block id="8c603f955aa6e872271a6e7adacc3d3b" category="sidebar">Cloud Volumes ONTAP から Amazon S3 へ</block>
   <block id="9b26267f3d6e18a8491eff1a814d7b23" category="sidebar">Cloud Volumes ONTAP と Azure Blob の間</block>
@@ -2924,8 +2910,6 @@
   <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
   <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
   <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
-  <block id="ceb0e703e6fc4ff33d792e51790261e4" category="paragraph">オンプレミスのプライマリストレージとセカンダリストレージのデータストアをクラウドにバックアップすることで、仮想マシン上のデータを保護できます。必要に応じて、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。</block>
-  <block id="21d7ed1a0ed596af2b79f06576c84ca9" category="paragraph">データストアは、Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップできます。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">作業を開始する前に</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">データストアと仮想マシンをクラウドプロバイダにバックアップする前に、次の要件を確認して、サポートされる構成があることを確認してください。</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">BlueXP</block>
@@ -2939,12 +2923,10 @@
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">複数のデータストアにまたがる仮想マシンはリストアできません。</block>
   <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">BlueXP UIで、*[保護]*&gt;*[バックアップとリカバリ]*&gt;*[仮想マシン]*&gt;* SnapCenter Plug-in for VMware vSphere *をクリックし、SnapCenter Plug-in for VMware vSphereホストを選択します。</block>
   <block id="873069930fc1357e9cd4216822243f14" category="admonition">ソース仮想マシンを別の場所（vMotion）に移動した場合にユーザがBlueXPからその仮想マシンのリストアをトリガーすると、バックアップが作成されたソースの場所に仮想マシンがリストアされます。</block>
-  <block id="73bc14a460209f6fd497aa9bd91fbaa6" category="list-text">データストアまたは仮想マシンからリストアできます。</block>
   <block id="5d920b501536441ea32ecc24679c72a2" category="cell">状況</block>
   <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">データストアからリストアします</block>
   <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">このオプションは、アーカイブ設定が構成されているポリシーを使用して仮想マシンが保護されている場合にのみ使用できます。Amazon Web Servicesでサポートされているアーカイブリストアの優先度は、高、標準、および低です。また、Microsoft Azureでサポートされているアーカイブリストアの優先度は高および標準です。</block>
   <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">仮想マシンからリストアします</block>
-  <block id="4eb58c4143c6b0e5561211f7a2425377" category="list-text">オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはAzureがクラウドプロバイダである必要があります。</block>
   <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">各クラウドプロバイダにアーカイブアクセス階層を設定する必要があります。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">このタスクについて</block>
   <block id="ca69b8ee34e44ac66b7f0dfd3b786e9c" category="paragraph">BlueXPでは、次の事前定義されたポリシーを使用できます。</block>
@@ -2956,7 +2938,6 @@
   <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">BlueXPでは、複数のSnapCenter Plug-in for VMware vSphereホストを登録できます。ただし、登録後にSnapCenter Plug-in for VMware vSphereホストを削除することはできません。</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereホストのFQDNまたはIPアドレスを指定します。</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">[ポート]フィールドで、SnapCenter Plug-in for VMware vSphereホストが実行されているポート番号を指定します。</block>
-  <block id="a3640e12809bb0c58c14ed0dc2515991" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPの間で通信するためには、ポートが開いていることを確認する必要があります。</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">[バックアップとリカバリ]*&gt;*[仮想マシン]*をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereホストを使用して保護されているすべてのデータストアと仮想マシンを表示します。</block>
   <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
   <block id="26000c50c37289d13041f03c670085a3" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
@@ -3490,7 +3471,6 @@
   <block id="5c92c4685a32fe7d41d3f537c7f5116b" category="paragraph">*重要：* DataLockを使用する場合は、BlueXPのバックアップとリカバリをアクティブ化するときに最初のポリシーでDataLockを有効にする必要があります。</block>
   <block id="0331809832826b1a244aca026a9b2d64" category="list-text">[バックアップをアクティブ化]*をクリックすると、選択した各ボリュームの初期バックアップの作成がBlueXPのバックアップとリカバリによって開始されます。</block>
   <block id="ba48140a3394818b661e6fd497e203a7" category="doc">BlueXPのバックアップとリカバリについて説明します</block>
-  <block id="fa3178fc47dcb8e792e863ce59dac949" category="paragraph">BlueXPのバックアップとリカバリ機能は、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="af4d8d7b56820e969dfbdcfe2654b5b3" category="paragraph">このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護されたデータに対してのみ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、BlueXPのバックアップとリカバリの対費用効果が非常に高くなります。</block>
   <block id="723a81a7ee0b42134a46c1aaa0d99371" category="inline-link">BlueXPのバックアップとリカバリの詳細については、こちらをご覧ください</block>
   <block id="9eb420abad7616344371178eb6cfb9a7" category="paragraph"><block ref="63f4276e2fdf1ca315cba1b1fcff7250" category="inline-link-rx"></block>。</block>
@@ -3735,7 +3715,6 @@
   <block id="2e5d6ff9bc4d6b4194df020bde3f3dca" category="sidebar">ダークサイトにBlueXPのバックアップとリカバリのデータベースをバックアップします</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXPのバックアップとリカバリに関するブログ</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXPのバックアップとリカバリのユースケース</block>
-  <block id="ceffaf94354645ad26052bbc53604f5d" category="sidebar">仮想マシンのデータをクラウドにバックアップ</block>
   <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">クラウドからデータをリストア</block>
   <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">ONTAP ボリュームのデータをリストアします</block>
   <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">オンプレミスのOracleアプリケーションデータをリストア</block>
@@ -3744,4 +3723,21 @@
   <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">クラウドネイティブのSAP HANAアプリケーションデータをリストア</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">仮想マシンのデータをリストアします</block>
   <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Kubernetesボリュームデータをリストア</block>
+  <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
+  <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">データストアと仮想マシンのデータの保護を管理します</block>
+  <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">デフォルトの8144ポートで実行されているオンプレミスのSnapCenter Plug-in for VMware vSphereホストと、任意のクラウドプロバイダ（Amazon Web Services、Microsoft Azure、Google Cloud Platform）またはオンプレミスで実行されているBlueXPコネクタインスタンスの間で通信が開かれていることを確認する必要があります。</block>
+  <block id="de437d1f424b507f3d7be645ac0952c2" category="paragraph">BlueXPの仮想マシン向けバックアップ/リカバリ機能は、データストアをバックアップして仮想マシンをリストアすることでデータを保護します。</block>
+  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。</block>
+  <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">SnapCenter Plug-in for VMware vSphere 4.7P1以降を使用して、オンプレミスのセカンダリストレージからデータストアをバックアップする必要があります。</block>
+  <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">データストアをバックアップするポリシーを作成します</block>
+  <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはMicrosoft Azureをクラウドプロバイダとして使用する必要があります。</block>
+  <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">データストアに関連付けられているポリシーを編集または削除することはできません。</block>
+  <block id="ffa1e37a2c6478ff157a0a7d25a607e9" category="doc">仮想マシンのデータをクラウドからリストア</block>
+  <block id="95513dac8a621e64dcee2a0f311b0e66" category="paragraph">仮想マシンのデータをクラウドからオンプレミスのvCenterにリストアできます。バックアップは、作成された場所とまったく同じ場所にリストアされます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
+  <block id="6c0dd80335ed3d649017aa79a23eddae" category="list-text">データストアまたは仮想マシンからリストアできます。</block>
+  <block id="54a98d3cca3d552c2562869bfcebf735" category="section-title">Oracle データベースを保護します</block>
+  <block id="b45eb079efd4b3748b1efc669c02c01c" category="section-title">SAP HANA データベースを保護します</block>
+  <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">仮想マシンのデータのバックアップとリストア</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
+  <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">データストアをクラウドにバックアップ</block>
 </blocks>

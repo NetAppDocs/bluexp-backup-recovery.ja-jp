@@ -14,16 +14,16 @@ summary: 仮想マシン上のデータ保護の詳細と、さまざまなポ�
 
 
 [role="lead"]
-オンプレミスのプライマリストレージとセカンダリストレージのデータストアをクラウドにバックアップすることで、仮想マシン上のデータを保護できます。必要に応じて、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。
+BlueXPの仮想マシン向けバックアップ/リカバリ機能は、データストアをバックアップして仮想マシンをリストアすることでデータを保護します。
 
-データストアは、Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップできます。
+データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。
 
 .作業を開始する前に
 データストアと仮想マシンをクラウドプロバイダにバックアップする前に、次の要件を確認して、サポートされる構成があることを確認してください。
 
 * VMware vSphere 4.6P1以降用のSnapCenter プラグイン
 +
-** VMware vSphere 4.7P1以降でSnapCenter Plug-inを使用して、オンプレミスのセカンダリストレージから仮想マシンをバックアップする必要があります。
+** SnapCenter Plug-in for VMware vSphere 4.7P1以降を使用して、オンプレミスのセカンダリストレージからデータストアをバックアップする必要があります。
 
 
 * ONTAP 9.8 以降

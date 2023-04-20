@@ -28,7 +28,7 @@ NOTE: BlueXPでは、複数のSnapCenter Plug-in for VMware vSphereホストを�
 .. SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereホストのFQDNまたはIPアドレスを指定します。
 .. [ポート]フィールドで、SnapCenter Plug-in for VMware vSphereホストが実行されているポート番号を指定します。
 +
-SnapCenter Plug-in for VMware vSphereホストとBlueXPの間で通信するためには、ポートが開いていることを確認する必要があります。
+デフォルトの8144ポートで実行されているオンプレミスのSnapCenter Plug-in for VMware vSphereホストと、任意のクラウドプロバイダ（Amazon Web Services、Microsoft Azure、Google Cloud Platform）またはオンプレミスで実行されているBlueXPコネクタインスタンスの間で通信が開かれていることを確認する必要があります。
 
 .. Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。
 

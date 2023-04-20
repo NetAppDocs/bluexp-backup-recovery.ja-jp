@@ -4,7 +4,7 @@ permalink: task-manage-vm-data-in-cloud.html
 keywords: manage backups, virtual machines, view datastores, view virtual machines, edit 
 summary: データストアと仮想マシンを表示し、SnapCenter Plug-in for VMware vSphereインスタンスを編集できます。 
 ---
-= 仮想マシンの保護を管理します
+= データストアと仮想マシンのデータの保護を管理します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

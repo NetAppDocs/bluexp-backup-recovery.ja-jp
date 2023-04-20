@@ -51,7 +51,7 @@ IMPORTANT: Cloud Backup SaaSインフラは、リージョン内のアベイラ�
 
 
 
-== Oracleデータベースを保護します
+== Oracle データベースを保護します
 
 
 
@@ -107,7 +107,7 @@ IMPORTANT: Cloud Backup SaaSインフラは、リージョン内のアベイラ�
 
 
 
-== SAP HANAデータベースを保護
+== SAP HANA データベースを保護します
 
 
 

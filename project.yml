@@ -164,9 +164,9 @@ sidebar:
     entries:
     - title: 仮想マシンのデータを保護
       url: "/concept-protect-vm-data.html"
-    - title: SnapCenter Plug-in for VMware vSphereの登録
+    - title: SnapCenter Plug-in for VMware vSphereホストを登録
       url: "/task-register-snapCenter-plug-in-for-vmware-vsphere.html"
-    - title: 仮想マシンをバックアップするポリシーを作成します
+    - title: データストアをバックアップするポリシーを作成します
       url: "/task-create-policies-vms.html"
     - title: データストアをAmazon Web Servicesにバックアップする
       flavor: aws
@@ -179,7 +179,7 @@ sidebar:
       url: "/task-backup-vm-data-to-gcp.html"
     - title: データストアをStorageGRID にバックアップする
       url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: 仮想マシンの保護を管理します
+    - title: データストアと仮想マシンのデータの保護を管理します
       url: "/task-manage-vm-data-in-cloud.html"
     - title: 仮想マシンのデータをリストアします
       url: "/task-restore-vm-data.html"
@@ -271,7 +271,7 @@ homepage:
     - title: クラウドネイティブのSAP HANAデータベースをバックアップ
       flavor: azure
       url: task-backup-cloud-native-sap-hana-data.html
-  - title: 仮想マシンのデータをクラウドにバックアップ
+  - title: データストアをクラウドにバックアップ
     links:
     - title: データストアをAmazon Web Servicesにバックアップする
       flavor: aws

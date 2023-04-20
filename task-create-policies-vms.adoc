@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-create-policies-vms.html 
 keywords: create policy, protection policies, predefined policies, custom policies 
-summary: 仮想マシンをバックアップするポリシーを作成します 
+summary: データストアをバックアップするポリシーを作成します 
 ---
-= 仮想マシンをバックアップするポリシーを作成します
+= データストアをバックアップするポリシーを作成します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ summary: 仮想マシンをバックアップするポリシーを作成しま�
 
 .作業を開始する前に
 * 事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。
-* オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはAzureがクラウドプロバイダである必要があります。
+* オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはMicrosoft Azureをクラウドプロバイダとして使用する必要があります。
 * 各クラウドプロバイダにアーカイブアクセス階層を設定する必要があります。
 
 
@@ -74,6 +74,6 @@ BlueXPでは、次の事前定義されたポリシーを使用できます。
 . [ 作成（ Create ） ] をクリックします。
 +
 
-NOTE: 仮想マシンに関連付けられているポリシーを編集または削除することはできません。
+NOTE: データストアに関連付けられているポリシーを編集または削除することはできません。
 
 
