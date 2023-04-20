@@ -1392,7 +1392,6 @@
   <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">お客様所有のライセンスを使用</block>
   <block id="cedae03e22c7bb2c103685dfa74cddab" category="paragraph">BYOL は期間ベース（ 12 カ月、 24 カ月、 36 カ月）の _ 容量ベースであり、 1TiB 単位で提供されます。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量を指定した場合は「 10TiB 」とします。</block>
   <block id="065c13346a6a1b4ec88ebda80e48a910" category="inline-link">BlueXPアカウント</block>
-  <block id="0dd9786a3d42804eeebb54b2f3e11edd" category="paragraph">サービスを有効にするために、BlueXP Digital Walletページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます<block ref="52a8d8c521fd6d51982efde4bc1bb1fd" category="inline-link-rx"></block>。</block>
   <block id="d1517db071086971f3453ded8278c7a1" category="section-title">従量課金制のサブスクリプション</block>
   <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">従量課金制サブスクリプションの設定方法について説明します</block>
   <block id="9757bd87f9a5ff6758600430092b3955" category="paragraph">PAYGOサブスクリプションに最初にサインアップしたときに、30日間の無償トライアルを利用できます。</block>
@@ -2391,7 +2390,6 @@
   <block id="5f5358182364ef304e26de4fc2395537" category="list-text">BYOL ライセンスで許可されている数を超えるデータをバックアップした場合、データバックアップは従量課金制サブスクリプションを使用して続行されます。たとえば、 BYOL ライセンスが 10TiB の場合、 10TiB を超える容量はすべて PAYGO サブスクリプションによって課金されます。</block>
   <block id="0f00cbe3f53cc394d366dd2245df4f68" category="paragraph">お客様は、無料トライアル期間中、または BYOL ライセンスを超えていない場合は、従量課金制サブスクリプションから料金を請求されることはありません。</block>
   <block id="20e92bedd41f67c18b032dfcce8e6443" category="list-text">Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。</block>
-  <block id="24e6e2f6171b43a847fe194a9a9b5cd0" category="inline-link">グローバルファイルキャッシュ</block>
   <block id="c04e9a5a6565b2a7f08b4191d93602f6" category="inline-link">これらの容量ベースのライセンスパッケージの詳細については、こちらをご覧ください</block>
   <block id="15117a805dc21b83a72d3b993a76f167" category="paragraph"><block ref="0b3d0999528dc9bb1b2a5ebd17f87563" category="inline-link-rx"></block>。</block>
   <block id="8ceedd80ab3ad72f595a01a7d5ea8d33" category="inline-link">価格の詳細については、BlueXP Marketplaceのサービスを参照してください</block>
@@ -2405,7 +2403,6 @@
   <block id="798aac57a47adfaf930d9def9b4bbe02" category="paragraph">を参照してください<block ref="d58b2dbf2a4616ceca06f8773ed8f738" category="inline-link-rx"></block> このライセンスオプションの詳細については、を参照してください。</block>
   <block id="d24c531f67e59e16184a6f74c9a59f91" category="paragraph">このオプションを使用する場合は、Cloud Volumes ONTAP 作業環境を作成するときに年間契約を設定し、AWS Marketplaceに登録するように要求するBlueXPを設定できます。</block>
   <block id="70af97100aa32faf0090b5c729f50df0" category="paragraph">ネットアップが提供するお客様所有のライセンスには、 1 年、 2 年、 3 年の期間があります。バックアップ対象のソース ONTAP ボリュームの論理使用容量（ _Before_any 効率化）で計算され、保護するデータに対してのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。</block>
-  <block id="aa64d3ab005dc0bda0aad02472aaa320" category="paragraph">BYOLライセンスを管理するには、BlueXPのDigital Walletページを使用します。新しいライセンスの追加、既存のライセンスの更新、およびDigital Walletからのライセンスステータスの表示を行うことができます。</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp Support Site</block>
   <block id="80c4b6e3dfa1d4f33033585b7c74e7e9" category="list-text">にサインインします<block ref="fcc52edac3ce57829c48ee35d97a295d" category="inline-link-rx"></block> [ システム ] 、 [ ソフトウェアライセンス ] の順にクリックします。</block>
   <block id="5190e9ec018f5e661ec4b31ff1b34423" category="inline-image-macro">シリアル番号で検索したあとのライセンスの一覧を示すスクリーンショット。</block>
@@ -2423,13 +2420,8 @@
   <block id="fc76651edf85f11e6b8f2a81226ab59d" category="paragraph">お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、<block ref="6d9745cd4f1d60b55f06aef4c5cb6ec4" category="inline-link-rx"></block>。</block>
   <block id="664bf8c6e31ba8a710f5213d1874cd18" category="list-text">バックアップライセンスファイル（ダークサイトにインストールする場合に必要）がある場合は、 * ライセンスファイルのアップロード * オプションを選択し、プロンプトに従ってファイルを添付します。</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">通知</block>
-  <block id="07cbe2ff704ff30b6f3ca7e91297e4fd" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、 [ デジタルウォレット ] ページおよびにも表示されます<block ref="2011e54262643b9060a004b0df801155" category="inline-link-rx"></block>。</block>
-  <block id="89ec6475bcd2a52ce9ca1c8fa843339e" category="inline-image-macro">Digital Wallet ページに期限切れになるライセンスを示すスクリーンショット。</block>
-  <block id="b16535eaa5694c59eb7ff71777c5cd59" category="paragraph"><block ref="b16535eaa5694c59eb7ff71777c5cd59" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8061535eb5e8bab52c4a8a0fdc119d14" category="paragraph">ライセンスの支払いが完了し、NetApp Support Site に登録されると、BlueXPは自動的にデジタルウォレットのライセンスを更新し、[データサービスのライセンス]ページには5～10分で変更が反映されます。</block>
   <block id="cc51ebad1f268690053194c8639d1a75" category="list-text">BlueXPがライセンスを自動的に更新できない場合(たとえば、ダークサイトにインストールされている場合)は、ライセンスファイルを手動でアップロードする必要があります。</block>
   <block id="b2b168bd64a341a85c749cb61bba40cb" category="inline-xref">ライセンスファイルをNetApp Support Siteから入手します</block>
-  <block id="f0542d3d118535e2d706a4502f615735" category="list-text">[ デジタルウォレット ] ページの [ データサービスライセンス ] タブで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。</block>
   <block id="3ce750f001c2369e23b68f3210d9f100" category="inline-image-macro">特定のサービスの [ ライセンスの更新 ] ボタンを選択するスクリーンショット。</block>
   <block id="9d37072f5a1b76b16e647a14826ade70" category="paragraph"><block ref="9d37072f5a1b76b16e647a14826ade70" category="inline-image-macro-rx" type="image"></block></block>
   <block id="41e921305ae1b027e5d364af4a2a9df2" category="list-text">_Update License_page で、ライセンスファイルをアップロードし、 * ライセンスの更新 * をクリックします。</block>
@@ -2892,8 +2884,6 @@
   <block id="ee2081007b4b41aa21ddcbdddb722d5e" category="section-title">接続が制限されているサイトのサポート</block>
   <block id="a3f02510edf67619908394e8afc73938" category="list-text">AWSの商用リージョンにインストールされているCloud Volumes ONTAP システムからAmazon S3にデータをバックアップできます。を参照してください <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
   <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。を参照してください <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="a6a4730c10b1358f1c9def7ffe4b5b3e" category="summary">BlueXPのバックアップとリカバリ（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
-  <block id="7eb9cafcf06d2b2e35409b3b19eebaa6" category="summary">BlueXPのバックアップとリカバリ機能は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間は、各ソース ONTAP システムで設定されているタイムゾーンに基づきます。UIからユーザが指定した時間にバックアップ処理をスケジュールすることはできません。詳細については、システムエンジニアにお問い合わせください。</block>
   <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="a16acb967c4e8e9b1d495f499e535a7a" category="list-text">Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
@@ -3360,7 +3350,6 @@
   <block id="d3f281db7462fac1f93bb8cd8a846973" category="paragraph">クローニングスキームとして*自動生成*を選択した場合、マウントポイントの場所とクローニングされたデータベースのディスクグループの名前にはサフィックスが付加されます。</block>
   <block id="b473eb967027d6cb105d361800543822" category="list-text">基本的なクローニング方法を選択した場合、接尾辞に*クローンSID *が付加されます。</block>
   <block id="7bee2ff1284f314015393080c5e56ecc" category="list-text">仕様ファイル方式を選択した場合、クローン仕様ファイルのダウンロード時に指定した*サフィックス*がサフィックスとして付加されます。</block>
-  <block id="add971a5b842968000d5e9b8cd3b1684" category="summary">BlueXPのバックアップとリカバリは、ONTAP クラスタのデータを保護し、長期アーカイブするためのバックアップとリストアの機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。</block>
   <block id="453e66b92e78e9c59b8192fa674cb377" category="doc">BlueXPのバックアップとリカバリを使用してONTAP クラスタのデータを保護します</block>
   <block id="cd6de3b24ca86c25e1638a3d0c67466c" category="paragraph">BlueXPのバックアップとリカバリでは、ONTAP ボリュームを次の作業環境から次のパブリック/プライベートクラウドプロバイダのオブジェクトストレージにバックアップできます。</block>
   <block id="e053cf298b007eb949b93bc1bbd6453c" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータのバックアップとリストアに使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
@@ -3499,7 +3488,6 @@
   <block id="094ba72a3fdb39776632245f235f26be" category="section-title">BlueXPのバックアップとリカバリのPAYGOサブスクリプションを利用</block>
   <block id="c04968186bb3df4bd0331429c63f8641" category="paragraph">BlueXPのバックアップとリカバリには、いくつかのPAYGOプランがあります。</block>
   <block id="d6d65ebf5ad097949fd6fbbf14e96347" category="list-text">Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージです。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。</block>
-  <block id="d7a158120ac71a227bc19987a9b341fb" category="list-text">「CVO Edge Cache」パッケージの機能は「CVO Professional」パッケージと同じですが、のサポートも含まれています<block ref="475d408daeaf0424668ce650296169bb" category="inline-link-rx"></block>。Cloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。</block>
   <block id="c02893129433d085ea6dfbc155a79562" category="paragraph">以下のリンクから、クラウドプロバイダのマーケットプレイスからBlueXPバックアップ/リカバリのサブスクリプションに登録できます。</block>
   <block id="cdf5556d637c931d7fb6a645af6fc805" category="paragraph">BlueXPのバックアップとリカバリの料金は、年単位の契約を購入して年単位で支払うことができます。</block>
   <block id="46289439d4ba1052046eac9e7e72ca47" category="list-text">Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。</block>
@@ -3549,7 +3537,6 @@
   <block id="cc30b9dac3532c6eec37a8e45c7aab0b" category="summary">Web UIから利用できるBlueXPのバックアップとリカバリ機能は、RESTful APIからも利用できます。</block>
   <block id="77d4d9afc8b5a0160c070fc2f71692a4" category="doc">BlueXPのバックアップとリカバリ用API</block>
   <block id="3eb635444f2c91af4f0b9c5e7eb8ce2e" category="paragraph">Web UIから利用できるBlueXPのバックアップとリカバリ機能は、RESTful APIからも利用できます。</block>
-  <block id="17e519cb3c57a9ec38afbdc326725f90" category="paragraph">BlueXPのバックアップとリカバリには、次の9つのカテゴリのエンドポイントが定義されています。</block>
   <block id="12a2037b721e887383ad92ab04c54ed9" category="paragraph">BlueXPのバックアップとリカバリAPIの使用を開始するには、ユーザトークン、BlueXPアカウントID、およびBlueXPコネクタIDを取得する必要があります。</block>
   <block id="364d76798fa90eb8899a1b8798fd1791" category="paragraph">次の例は、AzureクラウドのEast-US-2リージョンで、日単位、時間単位、週単位のラベルが180日に設定された新しいポリシーを使用して、作業環境でBlueXPのバックアップとリカバリをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。</block>
   <block id="16f8d7fb6b488cf9914e01cad7b0556f" category="paragraph">BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます<block ref="323898002645c2363c910f7c119fd4d6" category="inline-link-rx"></block>。</block>
@@ -3740,4 +3727,17 @@
   <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">仮想マシンのデータのバックアップとリストア</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
   <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">データストアをクラウドにバックアップ</block>
+  <block id="febda1467d687047522ece2d9d4680b8" category="summary">BlueXPのバックアップとリカバリサービスは、ONTAP クラスタデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。</block>
+  <block id="b0633b8fc7276f8e9a7f9ba97c212551" category="paragraph">サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます<block ref="52a8d8c521fd6d51982efde4bc1bb1fd" category="inline-link-rx"></block>。</block>
+  <block id="a18f9997a691db43808d1169a31c3670" category="summary">BlueXPのバックアップとリカバリサービス（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
+  <block id="3daba77ab92b57915950a36f17f965c3" category="summary">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
+  <block id="6192be65cd3fbb101c0f789fab9eae08" category="inline-link">BlueXPのエッジキャッシング</block>
+  <block id="a803d6b73372969b4830a3a6cc9bfeef" category="list-text">「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています<block ref="6a291086b9b2e2c1bf57350866f6f726" category="inline-link-rx"></block> サービスCloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。</block>
+  <block id="0a190b7a7b571c1c4ae19e069137c2ac" category="paragraph">BYOLライセンスの管理には、BlueXPデジタルウォレットを使用します。BlueXPデジタルウォレットから、新しいライセンスの追加、既存ライセンスの更新、ライセンスステータスの表示を行うことができます。</block>
+  <block id="ee3c97eeb652fa9d260a05c339bc1004" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="2011e54262643b9060a004b0df801155" category="inline-link-rx"></block>。</block>
+  <block id="0553876f11122be0920f9fa9c803d152" category="inline-image-macro">BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。</block>
+  <block id="3ef315abed0cef6dcc1d41cb39b4322b" category="paragraph"><block ref="3ef315abed0cef6dcc1d41cb39b4322b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">ライセンスの料金を支払ってNetApp Support Site に登録すると、BlueXPデジタルウォレット内のライセンスが自動的に更新され、[Data Services Licenses]ページに5~10分後に変更が反映されます。</block>
+  <block id="858d57a70137ab2d1ecb54acde00b982" category="list-text">BlueXPデジタルウォレットページの[Data Services Licenses]タブで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。</block>
+  <block id="59c9e6a866010a647915edad57105749" category="paragraph">BlueXPのバックアップとリカバリでは、次の10のカテゴリのエンドポイントが定義されています。</block>
 </blocks>

@@ -50,7 +50,7 @@ BlueXPのバックアップとリカバリには、いくつかのPAYGOプラン
 
 * Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。
 * Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージです。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスの ONTAP データをバックアップすることはできません。
-* 「CVO Edge Cache」パッケージの機能は「CVO Professional」パッケージと同じですが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["グローバルファイルキャッシュ"^]。Cloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。
+* 「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["BlueXPのエッジキャッシング"^] サービスCloud Volumes ONTAP システムでプロビジョニングされた容量3TiBにつき、グローバルファイルキャッシュエッジシステムを1台導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。
 
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["これらの容量ベースのライセンスパッケージの詳細については、こちらをご覧ください"]。
@@ -127,7 +127,7 @@ BlueXPバックアップ/リカバリのBYOLライセンスをお持ちでない
 
 必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["詳細については、こちらをご覧ください"^]。
 
-BYOLライセンスを管理するには、BlueXPのDigital Walletページを使用します。新しいライセンスの追加、既存のライセンスの更新、およびDigital Walletからのライセンスステータスの表示を行うことができます。
+BYOLライセンスの管理には、BlueXPデジタルウォレットを使用します。BlueXPデジタルウォレットから、新しいライセンスの追加、既存ライセンスの更新、ライセンスステータスの表示を行うことができます。
 
 
 
@@ -183,21 +183,21 @@ BlueXPには、BlueXPのバックアップとリカバリをアクティブに�
 
 === BlueXPのバックアップとリカバリのBYOLライセンスを更新します
 
-ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、 [ デジタルウォレット ] ページおよびにも表示されます https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
+ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
 
-image:screenshot_services_license_expire.png["Digital Wallet ページに期限切れになるライセンスを示すスクリーンショット。"]
+image:screenshot_services_license_expire.png["BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。"]
 
 BlueXPのバックアップとリカバリのライセンスは、有効期限が切れる前に更新できるため、データのバックアップとリストアが中断されることはありません。
 
 .手順
 . BlueXPの右下にあるチャットアイコンをクリックするか、サポートにお問い合わせください。特定のシリアル番号について、BlueXPバックアップ/リカバリライセンスの期間の延長や容量の追加をリクエストできます。
 +
-ライセンスの支払いが完了し、NetApp Support Site に登録されると、BlueXPは自動的にデジタルウォレットのライセンスを更新し、[データサービスのライセンス]ページには5～10分で変更が反映されます。
+ライセンスの料金を支払ってNetApp Support Site に登録すると、BlueXPデジタルウォレット内のライセンスが自動的に更新され、[Data Services Licenses]ページに5~10分後に変更が反映されます。
 
 . BlueXPがライセンスを自動的に更新できない場合(たとえば、ダークサイトにインストールされている場合)は、ライセンスファイルを手動でアップロードする必要があります。
 +
 .. 可能です <<BlueXPのバックアップとリカバリのライセンスファイルを入手します,ライセンスファイルをNetApp Support Siteから入手します>>。
-.. [ デジタルウォレット ] ページの [ データサービスライセンス ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。
+.. BlueXPデジタルウォレットページの[Data Services Licenses]タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。
 +
 image:screenshot_services_license_update1.png["特定のサービスの [ ライセンスの更新 ] ボタンを選択するスクリーンショット。"]
 

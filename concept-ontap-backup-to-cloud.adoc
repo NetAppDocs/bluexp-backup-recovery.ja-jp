@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-ontap-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem 
-summary: BlueXPのバックアップとリカバリは、ONTAP クラスタのデータを保護し、長期アーカイブするためのバックアップとリストアの機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。 
+summary: BlueXPのバックアップとリカバリサービスは、ONTAP クラスタデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。 
 ---
 = BlueXPのバックアップとリカバリを使用してONTAP クラスタのデータを保護します
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: BlueXPのバックアップとリカバリは、ONTAP クラスタの�
 
 
 [role="lead"]
-BlueXPのバックアップとリカバリは、ONTAP クラスタのデータを保護し、長期アーカイブするためのバックアップとリストアの機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。
+BlueXPのバックアップとリカバリサービスは、ONTAP クラスタデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。
 
 必要に応じて、バックアップから同じ作業環境または別の作業環境に、_volume_全体、a_folder_、または1つ以上の_files_をリストアできます。
 
@@ -223,7 +223,7 @@ BlueXPのバックアップとリカバリには、次の消費モデルがあ�
 
 BYOL は期間ベース（ 12 カ月、 24 カ月、 36 カ月）の _ 容量ベースであり、 1TiB 単位で提供されます。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量を指定した場合は「 10TiB 」とします。
 
-サービスを有効にするために、BlueXP Digital Walletページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["BlueXPアカウント"^]。
+サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["BlueXPアカウント"^]。
 
 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
