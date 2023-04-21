@@ -309,7 +309,6 @@
   <block id="fc1884cf63980b9b5ae00209f05a3be3" category="paragraph">Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。バックアップファイルは、 Cloud Volumes ONTAP システムと同じ Azure サブスクリプションとリージョンを使用して BLOB コンテナに格納されます。</block>
   <block id="065e936a81a03d8084991529f2ecb28e" category="paragraph">Kubernetes 永続ボリュームを BLOB ストレージにバックアップする前に、次の要件を読み、サポートされている構成であることを確認してください。</block>
   <block id="455299fd2e4b438ff8661df0bfd1cace" category="paragraph">次の図は、各コンポーネントとその間の準備に必要な接続を示しています。</block>
-  <block id="362e1fd025fbc54170675a786630faff" category="inline-image-macro">Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。</block>
   <block id="efe4ad90c097b3e944ddb0e73553dce4" category="paragraph">プライベートエンドポイントはオプションです。</block>
   <block id="722cdb9316b3fa8ce17714d9c3e2710c" category="list-text">Kubernetes クラスタの要件</block>
   <block id="39a875b1e9ef9f5447dff029a4e31641" category="inline-link">Kubernetes クラスタの検出方法を参照してください</block>
@@ -882,7 +881,6 @@
   <block id="ca58572920332b0113296b57e60a56de" category="list-text">リストア・ダッシュボードの[検索とリストア]セクションで、[*インデックス設定*]をクリックします。</block>
   <block id="98c648bc34880f7f4d457836f8d482d7" category="paragraph">インデックスカタログが有効になっている作業環境が、以前に有効なままであることを確認します。</block>
   <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">[検索と復元]ページで、いくつかのカタログ検索を実行して、インデックス付けされたカタログの復元が正常に完了したことを確認します。</block>
-  <block id="5f1ca0dc5a7a1c5b872ab6837d27232f" category="summary">組み込みポリシーを使用するか、独自のポリシーを作成してアプリケーションを保護します。</block>
   <block id="8a4528cef726e4e36a30d918236162fc" category="doc">アプリケーションをバックアップするポリシーを作成する</block>
   <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">ポリシー名</block>
   <block id="b021df6aac4654c454f46c77646e745f" category="cell">ラベル</block>
@@ -1042,7 +1040,6 @@
   <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">[仮想マシン]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
   <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">（オプション）コストを最適化するために一定の日数が経過したあとにバックアップをオブジェクトストアからアーカイブストレージに移動する場合は、「* Tier Backups to Archival *」チェックボックスをオンにし、バックアップをアーカイブするまでの日数を入力します。</block>
   <block id="d1e18cf16b83a90a2911458097d3358c" category="summary">バックアップの詳細を表示し、すべてのジョブのステータスを監視します。</block>
-  <block id="a0535e3da7a79865ac35aff6cbcd9919" category="doc">クラウドネイティブなアプリケーションデータの保護を管理</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="section-title">ジョブを監視する</block>
   <block id="a5cae278ab84c15ead127cbc4d6b2fc5" category="paragraph">作業環境で開始されたジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。</block>
   <block id="c9413dd7682a45da9ecc9efa8cea47d7" category="list-text">実行中です</block>
@@ -1465,7 +1462,6 @@
   <block id="7675fc79dcb00b07887361a923ba9860" category="list-text">バックアップファイルがアーカイブストレージにある場合、個 々 のフォルダをリストアすることはできません。</block>
   <block id="5f5966e9da5716290dfc2b88ceeb2217" category="list-text">リストアするファイルは、デスティネーションボリュームの言語と同じ言語を使用している必要があります。言語が異なる場合は、エラーメッセージが表示されます。</block>
   <block id="5cca45bd52ac035de73ec0e76f0e5043" category="summary">データファイルをリストアし、データベースをリカバリします。</block>
-  <block id="e648f70e1fb5d17870bf65097e43c5a6" category="doc">クラウドネイティブのSAP HANAデータベースをリストア</block>
   <block id="26661dc24144ed594be15c07b300db39" category="paragraph">データ損失が発生した場合は、データファイルと非データファイルをリストアしてから、データベースをリカバリできます。</block>
   <block id="7322146fa0278b7076d42a67da3ca68f" category="section-title">プリスクリプトとポストスクリプト</block>
   <block id="6185a8cfc72f93e3f8af600e5e7f9606" category="paragraph">サポートされているスクリプトの形式は、.sh、Pythonスクリプト、perlスクリプトなどです。</block>
@@ -1651,7 +1647,6 @@
   <block id="2c35eeb424b768876f1774567e7bf2f5" category="list-text">Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのポリシーベースのバックアップおよびリストアをサポートします</block>
   <block id="88094c6c8ad963e6131e3c23988917d4" category="list-text">Connect and Copy方式を使用したOracleデータベースのリストアをサポートします</block>
   <block id="7d6f6d1efeae8c573a74a091cc119cb9" category="list-text">Oracle 21cをサポートします</block>
-  <block id="35d9afe1e1e85a29b0de625fd2a9a44a" category="list-text">クラウドネイティブのOracleデータベースのクローニングをサポートします</block>
   <block id="e75ce95021f32383e6a928c1b242bc34" category="section-title">Cloud Backup for Virtual Machinesの機能拡張</block>
   <block id="137f19e6e2dc1219f33553b812627bc2" category="list-text">仮想マシン</block>
   <block id="c2452add37f94598e06d237edc68078b" category="list-text">オンプレミスのセカンダリストレージから仮想マシンをバックアップ</block>
@@ -1733,7 +1728,6 @@
   <block id="736c2dbf2aa9f4b08b97a4f719b3cf5e" category="section-title">ドラッグアンドドロップして、StorageGRID システムへのクラウドバックアップを有効にします</block>
   <block id="01fa460d0b4e6c77f9b145e51a76fbd6" category="paragraph">状況に応じて<block ref="81ffc4823c79c3e10cfa644aead6e93c" category="inline-link-rx"></block> バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてクラウドバックアップセットアップウィザードを開始できます。</block>
   <block id="15471566ffb385e256937957990dd60d" category="section-title">2022年8月18日</block>
-  <block id="d583f1393e45db7abf2dbb15da48eaad" category="section-title">クラウドネイティブアプリケーションデータを保護するためのサポートが追加されました</block>
   <block id="3f3ac5f6857788bfe6b27f406afcffa5" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXPで有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、効率的でポリシーベースのバックアップとリストアを実現します。Amazon FSX for NetApp ONTAP 上にあるOracleデータベースのバックアップとリストアを実行できます。<block ref="5774010e75c0af5301ef0cfe74198590" category="inline-link-rx"></block>。</block>
   <block id="5f98181f93bdb66aed67b6ec6ca0e6a1" category="section-title">検索とリストアがAzure Blobでのバックアップファイルでサポートされるようになりました</block>
   <block id="a2824b49f1c7526bf0e925b86c7b293c" category="inline-link">Search &amp; Restoreを使用してボリュームとファイルをリストアする方法を参照してください</block>
@@ -1826,7 +1820,6 @@
   <block id="2f57a005d513080291cd2a14713fbefd" category="paragraph">S3バケットは、入力したS3アクセスキーとシークレットキーで指定されたサービスアカウントのStorageGRID に自動的に作成され、バックアップファイルが格納されます。</block>
   <block id="da95680877c2d8ff430e738df948144e" category="paragraph">オンプレミスボリュームを StorageGRID にバックアップする前に、次の要件を確認し、サポートされている構成であることを確認してください。</block>
   <block id="cac9868917effa10c15d3dafdd2bd043" category="paragraph">次の図は、オンプレミスのONTAP システムをStorageGRID にバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。</block>
-  <block id="7c9c2c9135c9dd5b2198f3d2e909e271" category="paragraph"><block ref="7c9c2c9135c9dd5b2198f3d2e909e271" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d1eea7086b8dc17469efa8e41a303777" category="paragraph">コネクタとオンプレミスのONTAP システムがインターネットにアクセスできないオンプレミスの場所（「ダークサイト」）にインストールされている場合は、StorageGRID システムをオンプレミスの同じデータセンターに配置する必要があります。ダークサイトの構成では、古いバックアップファイルをパブリッククラウドにアーカイブすることはできません。</block>
   <block id="9aa87cabc3c16ccfd72ed13e9e2a189c" category="list-text">ONTAP クラスタは、バックアップおよびリストア処理のために、ユーザ指定のポートをクラスタ間LIFからStorageGRID ゲートウェイノードに介してHTTPS接続を開始します。ポートはバックアップのセットアップ時に設定できます。</block>
   <block id="56b804288a96913690a4b3ca49ceea54" category="list-text">ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。コネクタは必ずオンプレミスに配置してください。</block>
@@ -2173,7 +2166,6 @@
   <block id="437c2bff9e94c6e982529b9d2ef1cd3c" category="paragraph">プロジェクトには、事前定義された Storage Admin ロールを持つサービスアカウントが必要です。</block>
   <block id="6bf39a60f8a045efaafd2bcde95bf33e" category="inline-link">バケットのデフォルトのストレージクラスを変更する</block>
   <block id="4dbebe33c4927d0c2034e3f9d520ba42" category="summary">ソースまたは代替ホストにデータベースをクローニングします。</block>
-  <block id="027ad436d33a0bd111ed11873f94c74b" category="doc">クラウドネイティブのOracleデータベースをクローニングします</block>
   <block id="0b5992955627a4d221dfaf4d434b9596" category="paragraph">データベースのバックアップを使用して、ソースデータベースホストまたは代替ホストにOracleデータベースをクローニングすることができます。</block>
   <block id="91af1a160d0e82dc6915ed84b13cb026" category="paragraph">データベースをクローニングする理由には次のものがあります。</block>
   <block id="f808e6b1f9f18d3401fa365d39ab80f4" category="list-text">アプリケーション開発のライフサイクルで、実装が必要な機能を、現在のデータベースの構造およびコンテンツを使用してテストするため。</block>
@@ -2202,7 +2194,6 @@
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">[* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。</block>
   <block id="bc75c7043b8e7365f3c8207f2cc978cc" category="summary">データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。</block>
-  <block id="3d580f21069642f6846c9301b0b69c5a" category="doc">クラウドネイティブのOracleデータベースをリストアする</block>
   <block id="c48a955b9e2bd6b7c7d520e85a16d929" category="paragraph">データ損失が発生した場合は、データファイル、制御ファイル、またはその両方をリストアして、データベースをリカバリできます。</block>
   <block id="843aa7f2a542d8c13efb89db29c10118" category="list-text">Restore Scopeセクションで、次の操作を実行します。</block>
   <block id="abad8f3214f3a57c46ff8ce273f3c2fa" category="paragraph">データ・ファイルだけをリストアする場合</block>
@@ -2231,16 +2222,10 @@
   <block id="4b077d1c7e93e91ee6d4fb4a8eacdf33" category="list-text">「*次へ*」をクリックして詳細を確認します。</block>
   <block id="18a6c204240510c87aba39d6d8b5d26b" category="doc">オンプレミスアプリケーションのデータを保護</block>
   <block id="ded90f27fe65ac910c74189d47b689e7" category="paragraph">オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。</block>
-  <block id="ca6aeed84517a7133f1abaebed19854e" category="inline-link">クラウドバックアップと SnapCenter を使用したアプリケーション対応バックアップ</block>
-  <block id="ef3b2f715336b2a637c8e6704ee4bf21" category="list-text"><block ref="ef3b2f715336b2a637c8e6704ee4bf21" category="inline-link-rx"></block></block>
   <block id="351f25e3e7fc628f73a433013b9820a6" category="list-text">SnapCenter Server 4.6以降次の機能を使用する場合は、SnapCenter Server 4.7以降を使用する必要があります。</block>
   <block id="f3753469514d2cda99cee390aa2bf172" category="list-text">SnapCenter サーバでは、各アプリケーションに使用可能なバックアップを少なくとも 1 つ用意する必要があります</block>
   <block id="29d7639a0c7b9ce1eeb1a132409265c0" category="paragraph">次の図は、クラウドにバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。</block>
-  <block id="c895d0010b397b55778718d6ccc26b78" category="inline-image-macro">Cloud Backup がオンプレミスアプリケーションやバックアップファイルの保存先ストレージと通信する仕組みを示す図。</block>
-  <block id="bc983d441473b5c9a47c39b5fb57e53f" category="paragraph"><block ref="bc983d441473b5c9a47c39b5fb57e53f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="908a0e47cd03ccd04955cb93b0d41ef4" category="paragraph">次の図は、StorageGRID にバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。</block>
   <block id="013e38cfdb2c6d0bb3f17b59760240ff" category="summary">BlueXPを使用すると、アプリケーションと整合性のある、Amazon FSX for NetApp ONTAP またはCloud Volumes ONTAP 上にあるOracle®データベースの効率的でポリシーベースのバックアップとリストアを実行できます。</block>
-  <block id="eb5668f5c3459c84cc715cf197e7c91a" category="doc">クラウドネイティブアプリケーションのデータを保護</block>
   <block id="2d242bb36ec91b32005f9296ff03a912" category="section-title">アーキテクチャ</block>
   <block id="5aa6aa9ade143b785fa0243d0138a6b5" category="paragraph">オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます</block>
   <block id="aad0e4f379abbcb6d97deaa2a9b6fa44" category="list-text">アプリケーション固有のプラグインは、各アプリケーションホストで実行され、データ保護処理の実行中にホストで実行されるデータベースと通信するコンポーネントです。</block>
@@ -2679,8 +2664,6 @@
   <block id="17e5b396f3c069ca62608e4b9e3c1767" category="sidebar">Kubernetes バックアップからリストア</block>
   <block id="cba6a24686804eb1d7fea3608588a013" category="sidebar">オンプレミスアプリケーションのデータをGoogle Cloudにバックアップ</block>
   <block id="d1444f985888131065bf58d488e5a34f" category="sidebar">オンプレミスアプリケーションのデータをリストア</block>
-  <block id="1c157808ae21e883235bd19d5c13f45e" category="sidebar">Oracleデータベースをバックアップする</block>
-  <block id="b0c92f6f27a434824e7723b42147cce3" category="sidebar">SAP HANAデータベースをバックアップする</block>
   <block id="68b1e52936c426875b2780e91e195546" category="sidebar">REST API で自動化</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">参照</block>
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">サポート対象の AWS アーカイブストレージ階層</block>
@@ -2733,12 +2716,10 @@
   <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">[*Resources*]ページで、[Technical Support]で次のいずれかのオプションを選択します。</block>
   <block id="5be2e1dfe4bf215289731df45ec8157b" category="list-text">[ケースの作成]*をクリックして、ネットアップサポートスペシャリストとのチケットをオープンします。</block>
   <block id="32ecc38b872b5f889b952ca26b4c9e01" category="list-text">Azure NetApp Files 上にあるSAP HANAシステム</block>
-  <block id="2aebd4a586327a155f5ad3b448f755af" category="doc">SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します</block>
   <block id="269c48e37c80fdf85eed155628bc58de" category="inline-link-macro">SnapCenter ユーザにsudoを設定します。</block>
   <block id="b010a3fdc0e4a30de49959a04a4e75e0" category="section-title">SnapCenter ユーザにsudoを設定します</block>
   <block id="ed4c596de80903a7b24e5ada4ad1cb18" category="section-title">グローバルな非データボリュームを追加します</block>
   <block id="fcdf1a1b46f3b7e8ad6ff82010438a90" category="list-text">Azure NetApp Files 上にあるSAP HANAデータベースのポリシーベースのバックアップとリストアをサポートします</block>
-  <block id="626a739569b9dd0c59a5743d227d6123" category="doc">SnapCenter Plug-in for Oracleを導入し、データベースホストを追加します</block>
   <block id="d2b32f39697a5b013948d2ec66933921" category="list-text">job - BlueXPデータベースのジョブ詳細エントリを管理します</block>
   <block id="608448c2576128ccc8c2f959d59e20b4" category="list-text">コネクタの要件</block>
   <block id="c9069f67c447a0a15bda0467230c3148" category="inline-link">AWSにコネクタを導入します</block>
@@ -3086,8 +3067,6 @@
   <block id="c79eb0bf5a61fc9579b3f63e3958e469" category="paragraph">データベースがホストされているAzure NetApp Files 作業環境を作成する必要があります。詳細については、を参照してください <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> および <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
   <block id="0496db92b8208ffdfc7b84a2c4d6cbbb" category="paragraph">BlueXPのアカウント管理者は、Azureにコネクタを導入して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにする必要があります。</block>
   <block id="c12c07c58c5db36f5c4864f275d4c11f" category="list-text">Azure NetApp Files 作業環境とデータベースの両方を管理するには、同じコネクタを使用する必要があります。</block>
-  <block id="92d58d2bf7a748ab0734161ced9285dc" category="list-text">Azure NetApp Files の作業環境とデータベースが同じVirtual Private Cloud（VPC；仮想プライベートクラウド）内にある場合は、コネクタを同じVPCに導入できます。</block>
-  <block id="d74e17272bd25e73d7a1c8a126a3744a" category="list-text">Azure NetApp Files 作業環境とデータベースが異なるVPCにあり、Azure NetApp Files でNAS（NFS）ワークロードが設定されている場合は、どちらかのVPCにコネクタを作成できます。</block>
   <block id="4e5ad280767f2ab5aa5de64be61d55d5" category="paragraph">コネクタを作成したら、次の手順を実行します。</block>
   <block id="c3b81703083be6a60b46bc530dce3152" category="paragraph">コネクタからデータベースホストおよびAzure NetApp Files 作業環境への接続が確立されていることを確認します。コネクタはAzure NetApp Files 作業環境に接続する必要があります。</block>
   <block id="f20cd1b900b89f55ebfb06447e182090" category="summary">SnapCenter Plug-in for Oracleを各Oracleデータベースホストにインストールします。</block>
@@ -3172,7 +3151,6 @@
   <block id="35d45d5c5ce076e306b520a11aca5200" category="list-text">[Access Key]フィールドで、データ暗号化のキーを指定します。</block>
   <block id="f42df8d50c905dc42d79abceb255aab1" category="list-text">[Secret Key]フィールドで、データ暗号化のパスワードを指定します。</block>
   <block id="256c6643ca1c733f72685d5a161161f5" category="section-title">2023年4月14日</block>
-  <block id="490df703588f640c6679be6bc3bfb6a8" category="section-title">BlueXPのアプリケーション向けバックアップとリカバリの機能拡張（クラウドネイティブ）</block>
   <block id="c0c906f83c940d4d16ffb433d7a368ca" category="list-text">スクリプトベースのシステム更新をサポートします</block>
   <block id="b53bbb0902c6b7a25e7c1ac484d9fec2" category="list-text">Azure NetApp Files バックアップが設定されている場合は、Single-File-Snapshot-Restoreがサポートされます</block>
   <block id="14860ef57cb4190ea449b13f7f0c8ea1" category="list-text">プラグインのアップグレードをサポートします</block>
@@ -3181,7 +3159,6 @@
   <block id="d21798a5d9e370e5fbb0150023dfaa38" category="list-text">きめ細かなリカバリにより、Oracleデータベースを元の場所にリストアできます</block>
   <block id="a1501619265b99c9d02aefcdb1128d6d" category="section-title">アプリケーション向けのBlueXPのバックアップとリカバリの機能拡張（ハイブリッド）</block>
   <block id="61d664f90cea3bf652d380cd39162905" category="list-text">アプリケーション（ハイブリッド）向けのBlueXPのバックアップとリカバリは、SaaSコントロールプレーンから実行されます。</block>
-  <block id="c91aa555304f2dfcde890c20b48de4d1" category="list-text">クラウドネイティブAPIと連携するようにハイブリッドREST APIが変更されました。</block>
   <block id="91dd9ae8b3342cf7e40f497897ce70d7" category="list-text">Eメール通知をサポートします</block>
   <block id="b1ff80e0381bc83ddd14f54747d1f9ab" category="summary">各SAP HANAデータベースホストにSnapCenter Plug-in for SAP HANAをインストールします。</block>
   <block id="71a4cab5aa6b73aefb296b68bc2acb46" category="doc">SnapCenter Plug-in for SAP HANAをインストールし、データベースホストを追加します</block>
@@ -3236,7 +3213,6 @@
   <block id="82079d60037e9d0df21acad72b86e52d" category="list-text">（オプション）HDBSQL OSユーザを変更します。</block>
   <block id="bf5b83e4fce51c42d6592beefd18ac45" category="list-text">SAP HANAシステムは、UIおよびREST APIを使用して変更または削除できます。</block>
   <block id="1cb5dc89376339563335539bf6e6b34f" category="paragraph">SAP HANAシステムを削除する前に、関連付けられているバックアップをすべて削除し、保護を解除する必要があります。</block>
-  <block id="c844eed2ba93cf171bd3a9e1ed93bb68" category="list-text">REST APIを使用して、SAP HANAホストを変更または削除できます。</block>
   <block id="ed610882a056fb1f63c13e2a503a9aad" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。</block>
   <block id="d9242f06d616d0d0d92448044927a033" category="paragraph">使用可能な SAP HANA データベースを検出したあと、それらのリソースをリソースグループに追加してデータ保護処理を実行できます。</block>
   <block id="ae2f6000d9cdad6b8f7e1ca8fca0b847" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。</block>
@@ -3279,7 +3255,6 @@
   <block id="d1855d4cda620fe92adb2f981fed02d4" category="list-text">コネクタで次の手順を実行して、コネクタがプラグインの証明書を確認できるようにします。</block>
   <block id="baa45a9561ae264c9c17bfc76784fe10" category="list-text">serverディレクトリの下にあるルートCAファイルと中間CAファイルをコピーします。<block ref="3a2959e990df17f13fc29e6af626f37d" prefix=" " category="inline-code"></block><block ref="568c59dff00aad73acfc6a0bba0e73f1" prefix=" " category="inline-code"></block></block>
   <block id="68553a1f6aeafb6e270057c83458f0ea" category="paragraph">CAファイルはPEM形式である必要があります。</block>
-  <block id="14343ef6b7a9ffecc00e523d714c022f" category="paragraph">Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースをリストアするには、次のコマンドを実行する必要があります。<block ref="160ee41b32c5f5be43397b4b028828c5" prefix=" " category="inline-code"></block></block>
   <block id="f2a41ed5adc439ab3b0dc591d647b2c9" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> リストアするデータベースに対応し、*[リストア]*をクリックします。</block>
   <block id="9a746f42430ce856d696ca2d13f1b5f4" category="list-text">データベースのリストア先となるリストアポイントを選択し、*[元の場所にリストア]*をクリックします。</block>
   <block id="a7e4f5d7b5114b57c09100d5e6f4adbf" category="admonition">ASMレイアウトでは、制御ファイルを含むデータファイル、またはiSCSIの制御ファイルのみをリストアし、表領域とPDBをリストアすることはできません。</block>
@@ -3325,7 +3300,6 @@
   <block id="caf3f609386a7e9cbf196c14d7c951ff" category="list-text">Oracleソフトウェアは代替ホストにインストールする必要があります。</block>
   <block id="6303e0e569ab48a5e97ac5729b7354b5" category="list-text">sc_backup_nameには、バックアップの名前を指定します。このパラメータは、アプリケーションボリュームに対して入力されます。例</block>
   <block id="fcf3dae76ca88120872e44d0e2a8632a" category="list-text">sc_target_SIDには、クローンデータベースのSIDを指定します。PDB クローンワークフローの場合、このパラメータの値は事前定義されていません。このパラメータは、アプリケーションボリュームに対して入力されます。例： clonedb</block>
-  <block id="711a474ead316224d3300e00a237829f" category="paragraph">BlueXPのアプリケーション向けバックアップ/リカバリサービスは、ネットアップのクラウドストレージで実行されるアプリケーションに、アプリケーションと整合性のあるデータ保護機能を提供するSaaSベースのサービスです。BlueXPのアプリケーション向けバックアップ/リカバリ機能では、次のアプリケーションに対して、アプリケーションと整合性のある効率的なポリシーベースの保護を提供します。</block>
   <block id="77488205944ea72e9e23e95280d03937" category="list-text">Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベース</block>
   <block id="19c84e82fa4984f5df63ce4f98f092e3" category="paragraph">Cloud Backupのアーキテクチャには、次のコンポーネントが含まれています。</block>
   <block id="c172c6b44294844886abdf85bca67551" category="list-text">Cloud Backupは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームを基盤としています。</block>
@@ -3342,7 +3316,6 @@
   <block id="20d112bbc5f1942b3e0e448e4e89747a" category="list-text">Cloud Volumes ONTAP HAでは、ネットワークインターフェイスのIPアドレスのうち1つだけが使用されます。IPの接続がダウンした場合やIPにアクセスできない場合は、データ保護処理が失敗します。</block>
   <block id="7c47521b95a312ac4eb933479f7a14a8" category="list-text">Amazon FSx for NetApp ONTAP またはCloud Volumes ONTAP のネットワークインターフェイスIPアドレスは、BlueXPのアカウントとリージョンで一意である必要があります。</block>
   <block id="a46033978f070978d19c56a083f9252f" category="sidebar">オンプレミスのアプリケーションデータのバックアップとリストア</block>
-  <block id="084829803f52f86aee9d787cb2c3581d" category="sidebar">クラウドネイティブアプリケーションデータのバックアップとリストア</block>
   <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">アプリケーションデータをクラウドにバックアップ</block>
   <block id="5019db204cdfcff4225102866ab1c6bb" category="paragraph">すべてのが満たされていることを確認します <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> データストアをクラウドにバックアップする前に、</block>
   <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">すべてのが満たされていることを確認します <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 仮想マシンをクラウドからリストアする前に、</block>
@@ -3713,7 +3686,6 @@
   <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">データストアと仮想マシンのデータの保護を管理します</block>
   <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">デフォルトの8144ポートで実行されているオンプレミスのSnapCenter Plug-in for VMware vSphereホストと、任意のクラウドプロバイダ（Amazon Web Services、Microsoft Azure、Google Cloud Platform）またはオンプレミスで実行されているBlueXPコネクタインスタンスの間で通信が開かれていることを確認する必要があります。</block>
-  <block id="de437d1f424b507f3d7be645ac0952c2" category="paragraph">BlueXPの仮想マシン向けバックアップ/リカバリ機能は、データストアをバックアップして仮想マシンをリストアすることでデータを保護します。</block>
   <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。</block>
   <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">SnapCenter Plug-in for VMware vSphere 4.7P1以降を使用して、オンプレミスのセカンダリストレージからデータストアをバックアップする必要があります。</block>
   <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">データストアをバックアップするポリシーを作成します</block>
@@ -3740,4 +3712,28 @@
   <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">ライセンスの料金を支払ってNetApp Support Site に登録すると、BlueXPデジタルウォレット内のライセンスが自動的に更新され、[Data Services Licenses]ページに5~10分後に変更が反映されます。</block>
   <block id="858d57a70137ab2d1ecb54acde00b982" category="list-text">BlueXPデジタルウォレットページの[Data Services Licenses]タブで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。</block>
   <block id="59c9e6a866010a647915edad57105749" category="paragraph">BlueXPのバックアップとリカバリでは、次の10のカテゴリのエンドポイントが定義されています。</block>
+  <block id="ed9447a1f476cad2b945e6cd0c6af9f8" category="doc">クラウドネイティブのSAP HANAデータベースをリストア</block>
+  <block id="272ea43c17bb748acf948f028cd26513" category="summary">アプリケーションを保護する独自のポリシーを作成します。</block>
+  <block id="df0c923800c467f891c33cea961511ff" category="doc">クラウドネイティブのOracleデータベースをバックアップ</block>
+  <block id="9647181c2307f39ebfee949998c189db" category="paragraph">BlueXPの仮想マシン向けバックアップ/リカバリ機能は、データストアのバックアップとリストアを通じてデータを保護します。</block>
+  <block id="e048aa26e0a328ac61083504bfb7933c" category="doc">クラウドネイティブなOracleデータベースをクローニング</block>
+  <block id="931e4fe861e71fa09533d16b71275f23" category="list-text">Azure NetApp Files の作業環境とデータベースが同じ仮想ネットワーク（VNet）にある場合は、コネクタを同じVNetに導入できます。</block>
+  <block id="31e91372a63a60de9acc2a68995fa974" category="list-text">Azure NetApp Files 作業環境とデータベースが異なるVNetにあり、Azure NetApp Files でNAS（NFS）ワークロードが設定されている場合は、どちらかのVNetにコネクタを作成できます。</block>
+  <block id="197747cde80c31576877de78be696240" category="section-title">BlueXPのアプリケーション向けバックアップとリカバリの機能拡張（クラウドネイティブ）</block>
+  <block id="abfdb85669faee0a0fe78a3ddd25158b" category="list-text">ハイブリッドREST APIが変更され、クラウドネイティブAPIと連携するようになりました。</block>
+  <block id="6aed75aba7c0fd43b22d758888e056e5" category="list-text">クラウドネイティブのOracleデータベースのクローニングをサポート</block>
+  <block id="7f7d1a32b5fedca3a771d2900e5395cd" category="section-title">クラウドネイティブアプリケーションのデータを保護するためのサポートが追加されました</block>
+  <block id="dc553b3a8ff149a0efb878a07b9d8ec0" category="doc">クラウドネイティブアプリケーションデータの保護を管理</block>
+  <block id="f48626282fa7688ef2e0f91ee72f0675" category="doc">クラウドネイティブのOracleデータベースをリストア</block>
+  <block id="634e2ab135fc91c3a377e944e4ac17ef" category="paragraph">Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースを正常にリストアするには、次のコマンドを実行する必要があります。<block ref="160ee41b32c5f5be43397b4b028828c5" prefix=" " category="inline-code"></block></block>
+  <block id="1d9ea4875c4899d53fe18b313e3814a8" category="doc">クラウドネイティブのSAP HANAデータベースをバックアップ</block>
+  <block id="3a462fe0425c18b634a1f644c1b6e5b0" category="inline-link">BlueXPのバックアップ/リカバリ機能とSnapCenter を使用した、アプリケーション対応のバックアップ</block>
+  <block id="d924f26cc49b9ff35abdb19f684eccab" category="list-text"><block ref="d924f26cc49b9ff35abdb19f684eccab" category="inline-link-rx"></block></block>
+  <block id="ddc4eff2345788fc606fb71155e77e08" category="inline-image-macro">BlueXPのバックアップ/リカバリとオンプレミスアプリケーションおよびバックアップファイルが配置されているデスティネーションストレージとの通信方法を示す図。</block>
+  <block id="5900ca7e734dbd4ebfc5c92beb6901ad" category="paragraph"><block ref="5900ca7e734dbd4ebfc5c92beb6901ad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e2b884e233698d79dba9ae1a61ec9653" category="doc">クラウドネイティブアプリケーションのデータを保護</block>
+  <block id="eef768141b9dd395f1e8b3aeeac1b961" category="paragraph">BlueXPのアプリケーション向けバックアップ/リカバリサービスは、ネットアップのクラウドストレージで実行されるアプリケーションに、アプリケーションと整合性のあるデータ保護機能を提供するSaaSベースのサービスです。BlueXPのバックアップとリカバリでは、次のアプリケーションに対して、アプリケーションと整合性のある効率的なポリシーベースの保護を提供します。</block>
+  <block id="8c7c81dd2ca4a5ab651c1cfb30a19c0e" category="sidebar">クラウドネイティブアプリケーションデータのバックアップとリストア</block>
+  <block id="1aac38ab9167eb6ae3a199d0a8bc7915" category="sidebar">Oracle データベースをバックアップする</block>
+  <block id="7394e84832837e7d0dc503d85eb3f36c" category="sidebar">SAP HANA データベースをバックアップする</block>
 </blocks>

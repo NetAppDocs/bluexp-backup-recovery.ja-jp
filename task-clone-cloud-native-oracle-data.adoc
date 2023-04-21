@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-clone-cloud-native-oracle-data.html 
-keywords: cloud native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
 summary: ソースまたは代替ホストにデータベースをクローニングします。 
 ---
-= クラウドネイティブのOracleデータベースをクローニングします
+= クラウドネイティブなOracleデータベースをクローニング
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-restore-cloud-native-oracle-data.html 
-keywords: cloud native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
 summary: データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。 
 ---
-= クラウドネイティブのOracleデータベースをリストアする
+= クラウドネイティブのOracleデータベースをリストア
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ summary: データファイル、制御ファイル、またはその両方を�
 
 * 始める前に *
 
-Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースをリストアするには、次のコマンドを実行する必要があります。
+Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースを正常にリストアするには、次のコマンドを実行する必要があります。
 `cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
 * 手順 *

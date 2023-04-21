@@ -46,7 +46,7 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 === アプリケーション向けのBlueXPのバックアップとリカバリの機能拡張（ハイブリッド）
 
 * アプリケーション（ハイブリッド）向けのBlueXPのバックアップとリカバリは、SaaSコントロールプレーンから実行されます。
-* クラウドネイティブAPIと連携するようにハイブリッドREST APIが変更されました。
+* ハイブリッドREST APIが変更され、クラウドネイティブAPIと連携するようになりました。
 * Eメール通知をサポートします
 
 
@@ -211,7 +211,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-
 ** Amazon FSX for NetApp ONTAP 上に存在するOracleデータベースのポリシーベースのバックアップおよびリストアをサポートします
 ** Connect and Copy方式を使用したOracleデータベースのリストアをサポートします
 ** Oracle 21cをサポートします
-** クラウドネイティブのOracleデータベースのクローニングをサポートします
+** クラウドネイティブのOracleデータベースのクローニングをサポート
 
 
 
@@ -409,7 +409,7 @@ Cloud Volumes ONTAP バックアップにソースボリュームに使用して
 
 
 
-=== クラウドネイティブアプリケーションデータを保護するためのサポートが追加されました
+=== クラウドネイティブアプリケーションのデータを保護するためのサポートが追加されました
 
 Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXPで有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、効率的でポリシーベースのバックアップとリストアを実現します。Amazon FSX for NetApp ONTAP 上にあるOracleデータベースのバックアップとリストアを実行できます。https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["詳細はこちら。"^]。
 

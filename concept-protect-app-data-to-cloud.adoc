@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, cloud backup 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, backup and recovery 
 summary: BlueXPやオンプレミスのSnapCenter にアプリケーションのバックアップとリカバリを統合することで、オンプレミスのONTAP からクラウドにアプリケーションと整合性のあるSnapshotをバックアップできます。 
 ---
 = オンプレミスアプリケーションのデータを保護
@@ -20,7 +20,7 @@ summary: BlueXPやオンプレミスのSnapCenter にアプリケーションの
 
 アプリケーションのBlueXPのバックアップとリカバリの詳細については、以下を参照してください。
 
-* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["クラウドバックアップと SnapCenter を使用したアプリケーション対応バックアップ"^]
+* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["BlueXPのバックアップ/リカバリ機能とSnapCenter を使用した、アプリケーション対応のバックアップ"^]
 * https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["BlueXPの「Backup and Recovery for Applications」ポッドキャスト"^]
 
 
@@ -51,8 +51,4 @@ NOTE: FQDNまたはIPアドレスを使用してSVMをSnapCenter に追加する
 
 次の図は、クラウドにバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。
 
-image:diagram_cloud_backup_app.png["Cloud Backup がオンプレミスアプリケーションやバックアップファイルの保存先ストレージと通信する仕組みを示す図。"]
-
-次の図は、StorageGRID にバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。
-
-image:diagram_cloud_backup_onprem_storagegrid.png["Cloud Backup が、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージと通信する仕組みを示す図。"]
+image:diagram_cloud_backup_app.png["BlueXPのバックアップ/リカバリとオンプレミスアプリケーションおよびバックアップファイルが配置されているデスティネーションストレージとの通信方法を示す図。"]

@@ -127,9 +127,9 @@ sidebar:
       - title: Azure NetApp Files を設定します
         flavor: azure
         url: "/reference-configure-azure-netapp-files.html"
-      - title: SnapCenter Plug-in for Oracleを導入し、データベースホストを追加します
+      - title: SnapCenter Plug-in for Oracleをインストールし、データベースホストを追加します
         url: "/task-add-host-discover-oracle-databases.html"
-      - title: Oracleデータベースをバックアップする
+      - title: Oracle データベースをバックアップする
         url: "/task-backup-cloud-native-oracle-data.html"
     - title: クラウドネイティブのSAP HANAデータベースをバックアップ
       entries:
@@ -139,26 +139,26 @@ sidebar:
       - title: Azure NetApp Files を設定します
         flavor: azure
         url: "/reference-configure-azure-netapp-files.html"
-      - title: SnapCenter Plug-in for SAP HANAを導入し、データベースホストを追加します
+      - title: SnapCenter Plug-in for SAP HANAをインストールし、データベースホストを追加します
         flavor: azure
         url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
-      - title: SAP HANAデータベースをバックアップする
+      - title: SAP HANA データベースをバックアップする
         flavor: azure
         url: "/task-backup-cloud-native-sap-hana-data.html"
-    - title: クラウドネイティブのOracleデータベースをリストアする
+    - title: クラウドネイティブのOracleデータベースをリストア
       url: "/task-restore-cloud-native-oracle-data.html"
     - title: クラウドネイティブのSAP HANAデータベースをリストア
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"
     - title: SAP HANAターゲットシステムを更新
       url: "/task-refresh-sap-hana-target-system.html"
-    - title: クラウドネイティブのOracleデータベースをクローニングします
+    - title: クラウドネイティブなOracleデータベースをクローニング
       entries:
       - title: クローンの概念と要件
         url: "/concept-clone-cloud-native-oracle-concepts.html"
-      - title: クラウドネイティブのOracleデータベースをクローニングします
+      - title: クラウドネイティブなOracleデータベースをクローニング
         url: "/task-clone-cloud-native-oracle-data.html"
-    - title: クラウドネイティブなアプリケーションデータの保護を管理
+    - title: クラウドネイティブアプリケーションデータの保護を管理
       url: "/task-manage-cloud-native-app-data.html"
   - title: 仮想マシンのデータのバックアップとリストア
     entries:

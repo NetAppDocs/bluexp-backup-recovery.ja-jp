@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-policies-apps.html 
 keywords: policy, create, pre-canned polices, custom policies, protection policies 
-summary: 組み込みポリシーを使用するか、独自のポリシーを作成してアプリケーションを保護します。 
+summary: アプリケーションを保護する独自のポリシーを作成します。 
 ---
 = アプリケーションをバックアップするポリシーを作成する
 :hardbreaks:

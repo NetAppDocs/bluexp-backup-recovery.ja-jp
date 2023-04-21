@@ -34,8 +34,8 @@ NOTE: UIから新しいconnector_idを更新することはできません。
 詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["BlueXPからAzureにコネクタを作成します"]。
 
 * Azure NetApp Files 作業環境とデータベースの両方を管理するには、同じコネクタを使用する必要があります。
-* Azure NetApp Files の作業環境とデータベースが同じVirtual Private Cloud（VPC；仮想プライベートクラウド）内にある場合は、コネクタを同じVPCに導入できます。
-* Azure NetApp Files 作業環境とデータベースが異なるVPCにあり、Azure NetApp Files でNAS（NFS）ワークロードが設定されている場合は、どちらかのVPCにコネクタを作成できます。
+* Azure NetApp Files の作業環境とデータベースが同じ仮想ネットワーク（VNet）にある場合は、コネクタを同じVNetに導入できます。
+* Azure NetApp Files 作業環境とデータベースが異なるVNetにあり、Azure NetApp Files でNAS（NFS）ワークロードが設定されている場合は、どちらかのVNetにコネクタを作成できます。
 
 
 コネクタを作成したら、次の手順を実行します。

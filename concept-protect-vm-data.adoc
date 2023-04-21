@@ -14,7 +14,7 @@ summary: 仮想マシン上のデータ保護の詳細と、さまざまなポ�
 
 
 [role="lead"]
-BlueXPの仮想マシン向けバックアップ/リカバリ機能は、データストアをバックアップして仮想マシンをリストアすることでデータを保護します。
+BlueXPの仮想マシン向けバックアップ/リカバリ機能は、データストアのバックアップとリストアを通じてデータを保護します。
 
 データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。
 

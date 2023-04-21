@@ -4,7 +4,7 @@ permalink: task-manage-cloud-native-app-data.html
 keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
 summary: バックアップの詳細を表示し、すべてのジョブのステータスを監視します。 
 ---
-= クラウドネイティブなアプリケーションデータの保護を管理
+= クラウドネイティブアプリケーションデータの保護を管理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
