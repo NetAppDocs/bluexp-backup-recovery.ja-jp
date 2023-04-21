@@ -66,23 +66,6 @@ sidebar:
       url: "/task-manage-backup-settings-ontap.html"
     - title: ONTAP バックアップからリストアする
       url: "/task-restore-backups-ontap.html"
-  - title: Kubernetes データのバックアップとリストア
-    entries:
-    - title: Kubernetes のデータを保護
-      url: "/concept-kubernetes-backup-to-cloud.html"
-    - title: Amazon S3 にバックアップします
-      flavor: aws
-      url: "/task-backup-kubernetes-to-s3.html"
-    - title: Azure Blob にバックアップ
-      flavor: azure
-      url: "/task-backup-kubernetes-to-azure.html"
-    - title: Google Cloud にバックアップ
-      flavor: gcp
-      url: "/task-backup-kubernetes-to-gcp.html"
-    - title: Kubernetes のバックアップを管理
-      url: "/task-manage-backups-kubernetes.html"
-    - title: Kubernetes バックアップからリストア
-      url: "/task-restore-backups-kubernetes.html"
   - title: オンプレミスのアプリケーションデータのバックアップとリストア
     entries:
     - title: オンプレミスアプリケーションのデータを保護
@@ -151,6 +134,7 @@ sidebar:
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"
     - title: SAP HANAターゲットシステムを更新
+      flavor: azure
       url: "/task-refresh-sap-hana-target-system.html"
     - title: クラウドネイティブなOracleデータベースをクローニング
       entries:
@@ -183,6 +167,23 @@ sidebar:
       url: "/task-manage-vm-data-in-cloud.html"
     - title: 仮想マシンのデータをリストアします
       url: "/task-restore-vm-data.html"
+  - title: Kubernetes データのバックアップとリストア
+    entries:
+    - title: Kubernetes のデータを保護
+      url: "/concept-kubernetes-backup-to-cloud.html"
+    - title: Amazon S3 にバックアップします
+      flavor: aws
+      url: "/task-backup-kubernetes-to-s3.html"
+    - title: Azure Blob にバックアップ
+      flavor: azure
+      url: "/task-backup-kubernetes-to-azure.html"
+    - title: Google Cloud にバックアップ
+      flavor: gcp
+      url: "/task-backup-kubernetes-to-gcp.html"
+    - title: Kubernetes のバックアップを管理
+      url: "/task-manage-backups-kubernetes.html"
+    - title: Kubernetes バックアップからリストア
+      url: "/task-restore-backups-kubernetes.html"
   - title: REST API で自動化
     url: "/api-backup-restore.html"
   - title: 参照
@@ -195,11 +196,13 @@ sidebar:
       url: "/reference-azure-backup-tiers.html"
     - title: サポートされているGoogleアーカイブストレージ階層
       url: "/reference-google-backup-tiers.html"
-    - title: ダークサイトにBlueXPのバックアップとリカバリのデータベースをバックアップします
-      url: "/reference-backup-cbs-db-in-dark-site.html"
-    - title: Azure でマルチアカウントアクセス用にバックアップを設定
+    - title: Azure でマルチアカウントアクセスのバックアップを設定する
       flavor: azure
       url: "/reference-backup-multi-account-azure.html"
+    - title: ダークサイトにBlueXPのバックアップとリカバリのデータベースをバックアップします
+      url: "/reference-backup-cbs-db-in-dark-site.html"
+    - title: BlueXPのバックアップとリカバリを再開します
+      url: "/reference-restart-backup.html"
   - title: 知識とサポート
     entries:
     - title: サポートに登録します
@@ -242,17 +245,22 @@ homepage:
       flavor: gcp
     - title: オンプレミスの ONTAP から StorageGRID へ
       url: task-backup-onprem-private-cloud.html
-  - title: Kubernetes のデータをクラウドにバックアップ
+  - title: ONTAP バックアップファイルを管理します
     links:
-    - title: Kubernetes クラスタから Amazon S3 へ
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: Kubernetes クラスタから Azure Blob への移行
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: Kubernetes クラスタから Google Cloud へ
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
+    - title: ボリュームのバックアップを有効または無効にします
+      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
+    - title: 既存のバックアップポリシーを編集する
+      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
+    - title: 新しいバックアップポリシーを追加します
+      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
+    - title: 既存のボリュームに割り当てられているポリシーを変更します
+      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
+    - title: ボリュームの手動バックアップを作成します
+      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
+    - title: 各ボリュームのバックアップのリストを表示します
+      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
+    - title: バックアップを削除します
+      url: task-manage-backups-ontap.html#deleting-backups
   - title: アプリケーションデータをクラウドにバックアップ
     links:
     - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
@@ -301,22 +309,17 @@ homepage:
       url: task-restore-vm-data.html
     - title: Kubernetesボリュームデータをリストア
       url: task-restore-backups-kubernetes.html
-  - title: ONTAP バックアップファイルを管理します
+  - title: Kubernetes のデータをクラウドにバックアップ
     links:
-    - title: ボリュームのバックアップを有効または無効にします
-      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
-    - title: 既存のバックアップポリシーを編集する
-      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
-    - title: 新しいバックアップポリシーを追加します
-      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
-    - title: 既存のボリュームに割り当てられているポリシーを変更します
-      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
-    - title: ボリュームの手動バックアップを作成します
-      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
-    - title: 各ボリュームのバックアップのリストを表示します
-      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
-    - title: バックアップを削除します
-      url: task-manage-backups-ontap.html#deleting-backups
+    - title: Kubernetes クラスタから Amazon S3 へ
+      url: task-backup-kubernetes-to-s3.html
+      flavor: aws
+    - title: Kubernetes クラスタから Azure Blob への移行
+      url: task-backup-kubernetes-to-azure.html
+      flavor: azure
+    - title: Kubernetes クラスタから Google Cloud へ
+      url: task-backup-kubernetes-to-gcp.html
+      flavor: gcp
   - title: ブログとコミュニティ
     links:
     - title: ネットアップコミュニティ
@@ -325,7 +328,7 @@ homepage:
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
     - title: BlueXPのバックアップとリカバリのユースケース
       url: https://bluexp.netapp.com/cloud-backup
-    - title: クラウドに関する Web セミナー
+    - title: BlueXP Webセミナー
       url: https://bluexp.netapp.com/events
 product-family:
   name: BlueXP

@@ -147,7 +147,7 @@ StorageGRID は、次の要件を満たす必要があります。を参照し�
 --
 DataLockとRansomware Protectionをバックアップに使用するには、StorageGRID システムでバージョン11.6.0.3以降が実行されている必要があります。
 
-古いバックアップをクラウドアーカイブストレージに階層化するには、StorageGRID システムでバージョン11.3以降が実行されている必要があります。
+古いバックアップをクラウドアーカイブストレージに階層化するには、StorageGRID システムでバージョン11.3以降が実行されている必要があります。また、StorageGRID システムがBlueXPキャンバスで検出されている必要があります。
 
 --
 S3 クレデンシャル:: StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["詳細については、StorageGRID のドキュメントを参照してください"^]。

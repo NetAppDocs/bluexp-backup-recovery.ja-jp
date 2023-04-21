@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference-restart-backup.html 
+keywords: backup restart, restart backup 
+summary: 場合によっては、BlueXPのバックアップとリカバリサービスの再起動が必要になることがあります。 
+---
+= BlueXPバックアップ/リカバリサービスを再起動します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+場合によっては、BlueXPのバックアップとリカバリサービスの再起動が必要になることがあります。
+
+BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。コネクタをクラウドにデプロイしたか、コネクタをLinuxシステムに手動でインストールしたかに応じて、サービスを再起動するためにさまざまな初期手順を実行する必要があります。
+
+.手順
+. コネクタが実行されているLinuxシステムに接続します。
++
+[cols="25,50"]
+|===
+| コネクタの位置 | 手順 
+
+
+| クラウドの導入 | の手順に従ってください https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["コネクタLinux仮想マシンに接続しています"^] 使用しているクラウドプロバイダによって異なります。 
+
+
+| 手動インストール | Linuxシステムにログインします。 
+|===
+. コマンドを入力してサービスを再起動します。
++
+[cols="45,45"]
+|===
+| コネクタの位置 | コマンドを実行します 
+
+
+| クラウドの導入 | `docker restart cloudmanager_cbs` 
+
+
+| インターネットアクセスを使用した手動インストール | `docker restart cloudmanager_cbs` 
+
+
+| インターネットにアクセスせずに手動でインストールします | `docker restart ds_cloudmanager_cbs_1` 
+|===
+
