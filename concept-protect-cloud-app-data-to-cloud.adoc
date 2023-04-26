@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP, cloud backup 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP 
 summary: BlueXPを使用すると、アプリケーションと整合性のある、Amazon FSX for NetApp ONTAP またはCloud Volumes ONTAP 上にあるOracle®データベースの効率的でポリシーベースのバックアップとリストアを実行できます。 
 ---
 = クラウドネイティブアプリケーションのデータを保護
@@ -24,13 +24,13 @@ BlueXPのアプリケーション向けバックアップ/リカバリサービ�
 
 == アーキテクチャ
 
-Cloud Backupのアーキテクチャには、次のコンポーネントが含まれています。
+BlueXPのアプリケーション向けバックアップ/リカバリアーキテクチャには、次のコンポーネントが含まれています。
 
-* Cloud Backupは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームを基盤としています。
+* BlueXPのバックアップとリカバリは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームを基盤としています。
 +
 オーケストレーション機能を使用して、NetApp Cloud Storage上にあるアプリケーションのデータ保護ワークフローをオーケストレーションできます
 
-* Cloud Backup UIはアプリケーション向けのデータ保護機能を提供し、BlueXP UIからアクセスできます。
+* BlueXP UIはアプリケーション向けのデータ保護機能を提供し、BlueXP UIからアクセスできます。
 * BlueXP Connectorは、クラウドネットワークで実行されるコンポーネントで、ストレージシステムやアプリケーション固有のプラグインと通信します。
 * アプリケーション固有のプラグインは、各アプリケーションホストで実行され、データ保護処理の実行中にホストで実行されるデータベースと通信するコンポーネントです。
 
@@ -39,7 +39,7 @@ Cloud Backupのアーキテクチャには、次のコンポーネントが含�
 
 image:diagram_nativecloud_backup_app.png["各コンポーネントと接続の準備を行う方法を示す図。"]
 
-ユーザが開始した要求の場合、Cloud Backup UIはBlueXP SaaSと通信し、BlueXP SaaSは要求の検証時に同じ処理を行います。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。
+ユーザが開始した要求については、BlueXP UIがBlueXP SaaSと通信し、BlueXP UIは要求の検証時に同じ処理を行います。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。
 
 このコネクタは、アプリケーションと同じVPCまたはVNetに導入することも、別のVPCまたはVNetに導入することもできます。コネクタとアプリケーションが異なるネットワーク上にある場合は、コネクタとアプリケーションの間にネットワーク接続を確立する必要があります。
 
@@ -47,7 +47,7 @@ image:diagram_nativecloud_backup_app.png["各コンポーネントと接続の�
 NOTE: 1つのBlueXPコネクタは、複数のストレージシステムおよび複数のアプリケーションプラグインと通信できます。コネクタとアプリケーションホストの間に接続がある限り、アプリケーションを管理するには単一のコネクタが必要です。
 
 
-IMPORTANT: Cloud Backup SaaSインフラは、リージョン内のアベイラビリティゾーンに障害が発生しても耐障害性があります。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。
+IMPORTANT: BlueXP SaaSインフラは、リージョン内のアベイラビリティゾーンに障害が発生した場合の耐障害性を備えています。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。
 
 
 

@@ -2875,7 +2875,6 @@
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">作業を開始する前に</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">データストアと仮想マシンをクラウドプロバイダにバックアップする前に、次の要件を確認して、サポートされる構成があることを確認してください。</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">BlueXP</block>
-  <block id="620e81d38f76998723b0192a6d3d009a" category="list-text">Cloud Backupの組み込みポリシーの場合は、SnapCenter Plug-in for VMware vSphereとクラウドのデータストアでスケジュール階層を同じにする必要があります。</block>
   <block id="75f480f92315c62b407d8ae1ad890f29" category="paragraph">1つ以上のデータストアをAmazon Web Servicesにバックアップしてアーカイブすることで、ストレージ効率を高め、クラウドへの移行を促進できます。</block>
   <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択できます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。</block>
   <block id="899494c2cbe7f443bbc4d058b8ea51a6" category="paragraph">BlueXPで検出するクラスタ管理LIFを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。</block>
@@ -3291,12 +3290,7 @@
   <block id="6303e0e569ab48a5e97ac5729b7354b5" category="list-text">sc_backup_nameには、バックアップの名前を指定します。このパラメータは、アプリケーションボリュームに対して入力されます。例</block>
   <block id="fcf3dae76ca88120872e44d0e2a8632a" category="list-text">sc_target_SIDには、クローンデータベースのSIDを指定します。PDB クローンワークフローの場合、このパラメータの値は事前定義されていません。このパラメータは、アプリケーションボリュームに対して入力されます。例： clonedb</block>
   <block id="77488205944ea72e9e23e95280d03937" category="list-text">Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベース</block>
-  <block id="19c84e82fa4984f5df63ce4f98f092e3" category="paragraph">Cloud Backupのアーキテクチャには、次のコンポーネントが含まれています。</block>
-  <block id="c172c6b44294844886abdf85bca67551" category="list-text">Cloud Backupは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームを基盤としています。</block>
-  <block id="182bd05f63635c015828e6ea29df8f87" category="list-text">Cloud Backup UIはアプリケーション向けのデータ保護機能を提供し、BlueXP UIからアクセスできます。</block>
   <block id="ca8bb01c601877e87fd9c90bc1063d4e" category="list-text">BlueXP Connectorは、クラウドネットワークで実行されるコンポーネントで、ストレージシステムやアプリケーション固有のプラグインと通信します。</block>
-  <block id="d22e0f69ea6e44134be4670e0ae7fce7" category="paragraph">ユーザが開始した要求の場合、Cloud Backup UIはBlueXP SaaSと通信し、BlueXP SaaSは要求の検証時に同じ処理を行います。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。</block>
-  <block id="596d8d0a85b032b70cc48497df12dfed" category="admonition">Cloud Backup SaaSインフラは、リージョン内のアベイラビリティゾーンに障害が発生しても耐障害性があります。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。</block>
   <block id="16c125a4350a830ef25b444e7c8e77ae" category="paragraph">プラグインは、スクリプトを使用して手動で導入することも、自動で導入することもできます。</block>
   <block id="2883368889244856ee2153e7da94f334" category="list-text">Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベースをバックアップします</block>
   <block id="d8d6e412c9a8b94c54f1f0b85341ce79" category="paragraph">ポリシーでは、毎時、毎日、毎週、毎月などの異なるスケジュール頻度を指定できます。バックアップの成功後に実行するポストスクリプトを指定して、Snapshotをセカンダリストレージにコピーすることもできます。</block>
@@ -3756,4 +3750,10 @@
   <block id="2f1042d0e59ea2a8ebfd0fb9bb5c169f" category="sidebar">クラウドネイティブのOracleアプリケーションデータをリストア</block>
   <block id="54d6597fa185df5cd22caa81d7e9d4d9" category="sidebar">クラウドネイティブのSAP HANAアプリケーションデータをリストア</block>
   <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP Webセミナー</block>
+  <block id="a3e9bcad86b818f7875704d49bbe6240" category="list-text">組み込みのポリシーの場合は、SnapCenter Plug-in for VMware vSphereとクラウドのデータストアでスケジュール階層を同じにする必要があります。</block>
+  <block id="eb7084fa002dda093f8d4e3d744ec8c3" category="paragraph">BlueXPのアプリケーション向けバックアップ/リカバリアーキテクチャには、次のコンポーネントが含まれています。</block>
+  <block id="94e1a3fbef097baefd6187935d2712fd" category="list-text">BlueXPのバックアップとリカバリは、ネットアップがSaaSサービスとしてホストする一連のデータ保護サービスで、BlueXP SaaSプラットフォームを基盤としています。</block>
+  <block id="9bc4ac9aec3ce95487de5999da3a7e13" category="list-text">BlueXP UIはアプリケーション向けのデータ保護機能を提供し、BlueXP UIからアクセスできます。</block>
+  <block id="5f6363d5a5bf731c42038bd14750276a" category="paragraph">ユーザが開始した要求については、BlueXP UIがBlueXP SaaSと通信し、BlueXP UIは要求の検証時に同じ処理を行います。バックアップ、復元、クローンなどのワークフローを実行する要求がある場合、SaaSサービスはワークフローを開始し、必要に応じてコールをBlueXP Connectorに転送します。このコネクタは、ワークフロータスクの実行中にストレージシステムおよびアプリケーション固有のプラグインと通信します。</block>
+  <block id="49e77e013cd6e44ddab4df1881f2dd91" category="admonition">BlueXP SaaSインフラは、リージョン内のアベイラビリティゾーンに障害が発生した場合の耐障害性を備えています。このフェイルオーバーは、新しいリージョンにフェイルオーバーすることで地域的な障害に対応します。そのため、2時間程度のダウンタイムが発生します。</block>
 </blocks>
