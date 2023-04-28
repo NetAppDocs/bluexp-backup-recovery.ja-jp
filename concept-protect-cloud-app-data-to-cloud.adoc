@@ -59,7 +59,7 @@ IMPORTANT: BlueXP SaaSインフラは、リージョン内のアベイラビリ�
 
 * ホストを追加してプラグインを導入
 +
-プラグインは、スクリプトを使用して手動で導入することも、自動で導入することもできます。
+プラグインは、UIまたはスクリプトを使用して導入することも、手動で導入することもできます。
 
 * Oracleデータベースの自動検出
 * Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベースをバックアップします

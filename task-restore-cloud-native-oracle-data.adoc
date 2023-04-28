@@ -55,7 +55,7 @@ Oracle 21cデータベースがstarted状態の場合、リストア処理は失
 また、［*強制的にインプレースリストア*］チェックボックスをオンにすることもできます。
 
 +
-SANレイアウトでは、SnapCenter Plug-in for OracleがASMディスクグループ上にOracleデータファイル以外の外部ファイルを検出すると、接続リストアとコピーリストアの方法が実行されます。外部ファイルには、次のタイプが1つ以上ある可能性があります。
+Amazon FSx for NetApp ONTAP またはCloud Volumes ONTAP SANレイアウトで、SnapCenter Plug-in for OracleがASMディスクグループにOracleデータファイル以外の外部ファイルを検出した場合は、接続とコピーのリストアが実行されます。外部ファイルには、次のタイプが1つ以上ある可能性があります。
 
 +
 ** パラメータ
