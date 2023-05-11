@@ -26,7 +26,7 @@ summary: オンプレミスのONTAP システムからNetApp StorageGRID シス�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
+* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタで ONTAP 9.7P5 以降が実行されています。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
@@ -95,7 +95,7 @@ image:diagram_cloud_backup_onprem_storagegrid.png["BlueXPのバックアップ�
 
 ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
+https://["クラスタの検出方法について説明します"^]。
 
 ONTAP の要件::
 +
@@ -106,11 +106,11 @@ ONTAP の要件::
 *注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
-方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
+方法を参照してください https://["クラスタライセンスを管理します"^]。
 
 * 時間とタイムゾーンが正しく設定されている。
 +
-方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
+方法を参照してください https://["クラスタ時間を設定します"^]。
 
 
 
@@ -123,12 +123,12 @@ ONTAP の要件::
 ONTAP は、オブジェクトストレージとの間でデータの読み取りと書き込みを行います。オブジェクトストレージが開始されることはなく、応答するだけです。
 
 * ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。コネクタは必ずオンプレミスに配置してください。
-* クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace の詳細については、こちらをご覧ください"^]。
+* クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://["IPspace の詳細については、こちらをご覧ください"^]。
 +
 BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
 
 * ノードのクラスタ間 LIF はオブジェクトストアにアクセスできます（コネクタが「ダーク」サイトに設置されている場合は不要）。
-* ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
+* ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://["SVM 用に DNS サービスを設定"^]。
 * をデフォルトとは異なる IPspace を使用している場合は、オブジェクトストレージへのアクセスを取得するために静的ルートの作成が必要になることがあります。
 * 必要に応じてファイアウォールルールを更新して、指定したポート（通常はポート443）を介してONTAP からオブジェクトストレージへのBlueXPバックアップ/リカバリサービスの接続と、Storage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。
 
@@ -140,7 +140,7 @@ BlueXPのバックアップとリカバリをセットアップするときに�
 
 === StorageGRID を準備しています
 
-StorageGRID は、次の要件を満たす必要があります。を参照してください https://docs.netapp.com/us-en/storagegrid-116/["StorageGRID のドキュメント"^] を参照してください。
+StorageGRID は、次の要件を満たす必要があります。を参照してください https://["StorageGRID のドキュメント"^] を参照してください。
 
 サポートされている StorageGRID のバージョン:: StorageGRID 10.3 以降がサポートされます。
 +
@@ -150,7 +150,7 @@ DataLockとRansomware Protectionをバックアップに使用するには、Sto
 古いバックアップをクラウドアーカイブストレージに階層化するには、StorageGRID システムでバージョン11.3以降が実行されている必要があります。また、StorageGRID システムがBlueXPキャンバスで検出されている必要があります。
 
 --
-S3 クレデンシャル:: StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["詳細については、StorageGRID のドキュメントを参照してください"^]。
+S3 クレデンシャル:: StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。 https://["詳細については、StorageGRID のドキュメントを参照してください"^]。
 +
 --
 StorageGRID へのバックアップを設定する際、テナントアカウントのS3アクセスキーとシークレットキーを入力するようにバックアップウィザードで求められます。テナントアカウントを使用すると、バックアップの格納に使用するStorageGRID バケットをBlueXPのバックアップとリカバリで認証してアクセスできるようになります。StorageGRID が誰が要求を行うかを認識できるようにするには、キーが必要です。
@@ -176,14 +176,14 @@ StorageGRID へのバックアップを設定する際、テナントアカウ�
 
 StorageGRID にデータをバックアップするときは、オンプレミスのコネクタが必要です。新しいコネクターをインストールするか、現在選択されているコネクターがオンプレミスにあることを確認する必要があります。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["コネクタ間の切り替え"^]
+* https://["コネクタについて説明します"^]
+* https://["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
+* https://["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
+* https://["コネクタ間の切り替え"^]
 
 
 
-NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["BlueXPのバックアップとリカバリの最新情報"] BlueXPのバックアップとリカバリの各リリースの新機能を確認するには、次の手順を実行します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
+NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["BlueXPのバックアップとリカバリの最新情報"] BlueXPのバックアップとリカバリの各リリースの新機能を確認するには、次の手順を実行します https://["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
 
 インターネットに接続されていないサイトにコネクタがインストールされている場合は、BlueXPのバックアップとリカバリの設定データのローカルバックアップを定期的に作成することを強く推奨します。 link:reference-backup-cbs-db-in-dark-site.html["BlueXPのバックアップデータとリカバリデータをダークサイトにバックアップする方法を説明します"^]。
 
@@ -219,7 +219,7 @@ NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機�
 * StorageGRID 要件*
 
 * StorageGRID が11.4以降を使用している必要があります
-* StorageGRID はである必要があります https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]。
+* StorageGRID はである必要があります https://["BlueXP Canvasで検出され、使用可能になりました"^]。
 
 
 * Amazon S3の要件*
@@ -250,7 +250,7 @@ NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機�
 
 image:screenshot_sg_archive_to_cloud.png["バックアップファイルをStorageGRID からAWS S3またはAzure Blobにアーカイブするために必要な情報のスクリーンショット。"]
 
-選択したアーカイブポリシーの設定では、StorageGRID で情報ライフサイクル管理（ILM）ポリシーが生成され、「ルール」として追加されます。既存のアクティブなILMポリシーがある場合は、新しいルールがILMポリシーに追加されてデータがアーカイブ階層に移動されます。「ドラフト」状態の既存のILMポリシーがある場合は、新しいILMポリシーを作成およびアクティブ化できません。 https://docs.netapp.com/us-en/storagegrid-116/ilm/index.html["StorageGRID のILMポリシーとルールに関する詳細情報"^]。
+選択したアーカイブポリシーの設定では、StorageGRID で情報ライフサイクル管理（ILM）ポリシーが生成され、「ルール」として追加されます。既存のアクティブなILMポリシーがある場合は、新しいルールがILMポリシーに追加されてデータがアーカイブ階層に移動されます。「ドラフト」状態の既存のILMポリシーがある場合は、新しいILMポリシーを作成およびアクティブ化できません。 https://["StorageGRID のILMポリシーとルールに関する詳細情報"^]。
 
 
 

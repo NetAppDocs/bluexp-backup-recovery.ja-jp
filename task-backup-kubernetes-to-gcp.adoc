@@ -34,7 +34,7 @@ GKE Kubernetes クラスタ上の永続ボリュームから Google Cloud スト
 
 * バックアップを保存するストレージスペースの有効な GCP サブスクリプションがあります。
 * Google Cloud Project に、事前定義された Storage Admin ロールを持つサービスアカウントがあります。
-* に登録しておきます https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
+* に登録しておきます https://["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 既存のKubernetesクラスタでBlueXPのバックアップとリカバリを有効にします
@@ -70,8 +70,8 @@ image:diagram_cloud_backup_k8s_cvo_gcp.png["BlueXPのバックアップおよび
 Kubernetes クラスタの要件::
 +
 --
-* KubernetesクラスタがBlueXP作業環境として検出されました。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-gke.html["Kubernetes クラスタの検出方法を参照してください"^]。
-* Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["Trident のインストール方法"^] または https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["Trident バージョンをアップグレードする方法"^]。
+* KubernetesクラスタがBlueXP作業環境として検出されました。 https://["Kubernetes クラスタの検出方法を参照してください"^]。
+* Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください https://["Trident のインストール方法"^] または https://["Trident バージョンをアップグレードする方法"^]。
 * クラスタは、そのバックエンドストレージに GCP 上の Cloud Volumes ONTAP を使用している必要があります。
 * Cloud Volumes ONTAP システムはKubernetesクラスタと同じGCPリージョンに配置し、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。
 +
@@ -130,8 +130,8 @@ spec:
 
 
 --
-サポートされる GCP リージョン:: BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
-ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、を使用したサブスクリプションです https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP Marketplace"^] は、BlueXPのバックアップとリカバリを有効にする前に必要です。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+サポートされる GCP リージョン:: BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます https://["Cloud Volumes ONTAP がサポートされている場合"^]。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、を使用したサブスクリプションです https://["GCP Marketplace"^] は、BlueXPのバックアップとリカバリを有効にする前に必要です。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
 BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
@@ -139,7 +139,7 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 また、バックアップを保存するストレージスペースの Google サブスクリプションが必要です。
 
 --
-GCP サービスアカウント:: 事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["サービスアカウントの作成方法について説明します"^]。
+GCP サービスアカウント:: 事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。 https://["サービスアカウントの作成方法について説明します"^]。
 
 
 

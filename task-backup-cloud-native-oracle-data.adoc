@@ -134,6 +134,6 @@ NOTE: スケジュールされたバックアップ処理の実行には、サ�
 * 大規模なデータベース（250GB以上）をリストアしたあとに、同じデータベースでフルオンラインバックアップを実行すると、次のエラーメッセージが表示されて処理が失敗することがあります。
 `failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
 +
-この問題 の修正方法については、以下を参照してください。 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["Snapshotでバックアップされたクローンが原因で、Snapshot処理を実行できません"]。
+この問題 の修正方法については、以下を参照してください。 https://["Snapshotでバックアップされたクローンが原因で、Snapshot処理を実行できません"]。
 
 

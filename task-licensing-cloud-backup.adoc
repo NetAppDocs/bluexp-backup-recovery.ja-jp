@@ -50,30 +50,30 @@ BlueXPのバックアップとリカバリには、いくつかのPAYGOプラン
 
 * Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。
 * Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージです。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスのONTAP データはバックアップできません。
-* 「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["BlueXPのエッジキャッシング"^] サービスCloud Volumes ONTAP システムにプロビジョニングされた容量3TiBにつき、BlueXPエッジキャッシュエッジシステムを1つ導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。
+* 「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています https://["BlueXPのエッジキャッシング"^] サービスCloud Volumes ONTAP システムにプロビジョニングされた容量3TiBにつき、BlueXPエッジキャッシュエッジシステムを1つ導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。
 
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["これらの容量ベースのライセンスパッケージの詳細については、こちらをご覧ください"]。
+https://["これらの容量ベースのライセンスパッケージの詳細については、こちらをご覧ください"]。
 
 以下のリンクから、クラウドプロバイダのマーケットプレイスからBlueXPバックアップ/リカバリのサブスクリプションに登録できます。
 
 ifdef::aws[]
 
-* AWS https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* AWS https://["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* Azure https://["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* GCP ： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* GCP ： https://["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
 
 
 endif::gcp[]
@@ -86,15 +86,15 @@ BlueXPのバックアップとリカバリの料金は、年単位の契約を�
 
 ifdef::aws[]
 
-AWSを使用している場合は、で2つの年間契約が提供されます https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace のページ"^] Cloud Volumes ONTAP システムとオンプレミスの ONTAP システムで使用できます。1年、2年、または3年の期間が用意されています。
+AWSを使用している場合は、で2つの年間契約が提供されます https://["AWS Marketplace のページ"^] Cloud Volumes ONTAP システムとオンプレミスの ONTAP システムで使用できます。1年、2年、または3年の期間が用意されています。
 
 * Cloud Volumes ONTAP データとオンプレミスの ONTAP データをバックアップできる「クラウドバックアップ」プラン。
 +
-このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["サブスクリプションを AWS クレデンシャルに関連付けます"^]。BlueXPでAWSクレデンシャルに割り当てることができるアクティブなサブスクリプションは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAP システムの料金も支払う必要があります。
+このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://["サブスクリプションを AWS クレデンシャルに関連付けます"^]。BlueXPでAWSクレデンシャルに割り当てることができるアクティブなサブスクリプションは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAP システムの料金も支払う必要があります。
 
 * Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスのONTAP データはバックアップできません。
 +
-を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP のライセンスに関するトピック"^] このライセンスオプションの詳細については、を参照してください。
+を参照してください https://["Cloud Volumes ONTAP のライセンスに関するトピック"^] このライセンスオプションの詳細については、を参照してください。
 
 +
 このオプションを使用する場合は、Cloud Volumes ONTAP 作業環境を作成するときに年間契約を設定し、AWS Marketplaceに登録するように要求するBlueXPを設定できます。
@@ -125,7 +125,7 @@ BYOL BlueXPバックアップ/リカバリライセンスはフローティン�
 
 BlueXPバックアップ/リカバリのBYOLライセンスをお持ちでない場合は、BlueXPの右下にあるチャットアイコンをクリックして購入してください。
 
-必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["詳細については、こちらをご覧ください"^]。
+必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。 https://["詳細については、こちらをご覧ください"^]。
 
 BYOLライセンスの管理には、BlueXPデジタルウォレットを使用します。BlueXPデジタルウォレットから、新しいライセンスの追加、既存ライセンスの更新、ライセンスステータスの表示を行うことができます。
 
@@ -138,7 +138,7 @@ BlueXPバックアップとリカバリのライセンスを購入したら、Bl
 インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している場合、つまりオフラインのオンプレミスサイトのホストにBlueXPコネクタを導入している場合は、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。シリアル番号と NSS アカウントを使用してライセンスをアクティブ化することは、オフライン（ダークサイト）でのインストールには利用できません。
 
 .手順
-. にサインインします https://mysupport.netapp.com["NetApp Support Site"^] [ システム ] 、 [ ソフトウェアライセンス ] の順にクリックします。
+. にサインインします https://["NetApp Support Site"^] [ システム ] 、 [ ソフトウェアライセンス ] の順にクリックします。
 . BlueXPバックアップ/リカバリライセンスのシリアル番号を入力します。
 +
 image:screenshot_cloud_backup_license_step1.gif["シリアル番号で検索したあとのライセンスの一覧を示すスクリーンショット。"]
@@ -166,7 +166,7 @@ BlueXPアカウントIDを確認するには、BlueXPの上部にある[*Account
 +
 ** バックアップライセンスのシリアル番号があり、 NSS アカウントを知っている場合は、 * シリアル番号を入力 * オプションを選択してその情報を入力します。
 +
-お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["NSSアカウントをBlueXPに追加します"^]。
+お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、 https://["NSSアカウントをBlueXPに追加します"^]。
 
 ** バックアップライセンスファイル（ダークサイトにインストールする場合に必要）がある場合は、 * ライセンスファイルのアップロード * オプションを選択し、プロンプトに従ってファイルを添付します。
 +
@@ -183,7 +183,7 @@ BlueXPには、BlueXPのバックアップとリカバリをアクティブに�
 
 === BlueXPのバックアップとリカバリのBYOLライセンスを更新します
 
-ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
+ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます https://["通知"]。
 
 image:screenshot_services_license_expire.png["BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。"]
 

@@ -55,9 +55,9 @@ BlueXPのバックアップとリカバリは、DataLockとランサムウェア
 
 これらの機能はどちらもバックアップファイルを保護するため、ランサムウェア攻撃がバックアップに試みられた場合にデータをリカバリするための有効なバックアップファイルを常に保持できます。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionを有効にすると、BlueXPのバックアップとリカバリのアクティブ化でプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["詳細については、DataLockとRansomwareによる保護ブログをご覧ください"^]。
+https://["詳細については、DataLockとRansomwareによる保護ブログをご覧ください"^]。
 
-この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。ネットアップのソリューションを使用 https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights およびCloud Secure"^]、またはの一部 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^] ソースボリュームを保護します。
+この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。ネットアップのソリューションを使用 https://["Cloud Insights およびCloud Secure"^]、またはの一部 https://["ONTAP が提供するアンチランサムウェア防御"^] ソースボリュームを保護します。
 
 [CAUTION]
 ====
@@ -233,7 +233,7 @@ ifdef::aws[]
 *** S3 ： GetBucketLocation
 *** S3 ： GetObjectVersion
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
+https://["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
 
 
 

@@ -186,4 +186,4 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
 
 == API リファレンス
 
-BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html[]。
+BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます https://[]。

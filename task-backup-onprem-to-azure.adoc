@@ -26,7 +26,7 @@ summary: オンプレミスのONTAP システムからAzure BLOBストレージ�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
+* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタでONTAP 9.7P5以降が実行されている（ONTAP 9.8P13以降を推奨）。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
@@ -101,7 +101,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["BlueXPのバックアップ
 
 ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
+https://["クラスタの検出方法について説明します"^]。
 
 ONTAP の要件::
 +
@@ -112,11 +112,11 @@ ONTAP の要件::
 *注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
-方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
+方法を参照してください https://["クラスタライセンスを管理します"^]。
 
 * 時間とタイムゾーンが正しく設定されている。
 +
-方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
+方法を参照してください https://["クラスタ時間を設定します"^]。
 
 
 
@@ -129,12 +129,12 @@ ONTAP の要件::
 ONTAP は、オブジェクトストレージとの間でデータの読み取りと書き込みを行います。オブジェクトストレージが開始されることはなく、応答するだけです。
 
 * ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。コネクタは Azure VNet 内に配置できます。
-* クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace の詳細については、こちらをご覧ください"^]。
+* クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://["IPspace の詳細については、こちらをご覧ください"^]。
 +
 BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
 
 * ノードとクラスタ間 LIF からオブジェクトストアにアクセスできます。
-* ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
+* ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://["SVM 用に DNS サービスを設定"^]。
 * をデフォルトとは異なる IPspace を使用している場合は、オブジェクトストレージへのアクセスを取得するために静的ルートの作成が必要になることがあります。
 * 必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPバックアップ/リカバリサービス接続（ポート443経由）、およびStorage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。
 
@@ -148,10 +148,10 @@ BlueXPのバックアップとリカバリをセットアップするときに�
 
 Azure VNetまたはオンプレミスにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、これらのいずれかの場所にコネクタを作成して、ONTAP データをAzure BLOBストレージにバックアップする必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Azureにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["コネクタをオンプレミスにインストールする"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["Azure Governmentリージョンへのコネクタのインストール"^]
+* https://["コネクタについて説明します"^]
+* https://["Azureにコネクタをインストールしています"^]
+* https://["コネクタをオンプレミスにインストールする"^]
+* https://["Azure Governmentリージョンへのコネクタのインストール"^]
 +
 BlueXPのバックアップとリカバリは、コネクタがクラウドに導入されている場合はAzure Governmentのリージョンでサポートされ、オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
 
@@ -166,10 +166,10 @@ BlueXPのバックアップとリカバリは、コネクタがクラウドに�
 .手順
 . コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** ポート443を介してBlueXPバックアップおよびリカバリサービスとBLOBオブジェクトストレージへのHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
+** ポート443を介してBlueXPバックアップおよびリカバリサービスとBLOBオブジェクトストレージへのHTTPS接続 (https://["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
 ** BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタとAzure Synapse SQLサービスの間の通信用にポート1433が開いている必要があります。
-** AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure のコネクタのルール"^] を参照してください。
+** AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください https://["Azure のコネクタのルール"^] を参照してください。
 
 
 . Azure ストレージへの VNet プライベートエンドポイントを有効化これは、ONTAP クラスタからVNetへのExpressRouteまたはVPN接続があり、コネクタとBLOBストレージ間の通信を仮想プライベートネットワーク（*プライベート*接続）で維持する場合に必要です。
@@ -182,7 +182,7 @@ BlueXPのバックアップとリカバリは、コネクタがクラウドに�
 BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタがAzure Synapse WorkspaceとData Lake Storageアカウントにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
 .を開始する前に
-Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
 
 .手順
 . Connector 仮想マシンに割り当てられているロールを特定します。
@@ -233,8 +233,6 @@ Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブス�
 "Microsoft.Network/networkInterfaces/delete",
 "Microsoft.Network/networkSecurityGroups/delete",
 "Microsoft.Resources/deployments/delete",
-"Microsoft.Network/publicIPAddresses/delete",
-"Microsoft.Storage/storageAccounts/blobServices/containers/write",
 "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
 "Microsoft.Synapse/workspaces/write",
 "Microsoft.Synapse/workspaces/read",
@@ -248,7 +246,7 @@ Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブス�
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
+https://["ポリシーの完全な JSON 形式を表示します"^]
 
 .. [ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。
 
@@ -259,7 +257,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 === サポートされている地域
 
-すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます https://["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 
@@ -267,13 +265,13 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 * クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、Azureから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
 +
-** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure"^] BlueXP Marketplaceでは、BlueXPのバックアップとリカバリを使用できます。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://["Azure Marketplaceで提供されるNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
 ** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 
 * バックアップを配置するオブジェクトストレージスペース用の Azure サブスクリプションが必要です。
 +
-すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます https://["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 
@@ -281,8 +279,8 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 === バックアップ用に Azure BLOB ストレージを準備しています
 
-. Microsoftが管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで独自のカスタム管理キーを使用して、データ暗号化を行うことができます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
-. オンプレミスのデータセンターから VNet へのパブリックインターネット経由での接続をより安全にするには、アクティブ化ウィザードで Azure Private Endpoint を設定するオプションがあります。この場合、この接続用の VNet とサブネットについて理解しておく必要があります。 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["プライベートエンドポイントの使用の詳細を参照してください"^]。
+. Microsoftが管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで独自のカスタム管理キーを使用して、データ暗号化を行うことができます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://["独自のキーの使用方法を参照してください"^]。
+. オンプレミスのデータセンターから VNet へのパブリックインターネット経由での接続をより安全にするには、アクティブ化ウィザードで Azure Private Endpoint を設定するオプションがあります。この場合、この接続用の VNet とサブネットについて理解しておく必要があります。 https://["プライベートエンドポイントの使用の詳細を参照してください"^]。
 
 
 
@@ -304,7 +302,7 @@ image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使�
 +
 .. バックアップおよびバックアップを格納する Azure リージョンで使用する Azure サブスクリプション。
 .. BLOB コンテナを管理するリソースグループ - 新しいリソースグループを作成したり、既存のリソースグループを選択したりできます。
-.. Microsoft が管理するデフォルトの暗号化キーを使用するか、お客様が管理する独自のキーを選択してデータの暗号化を管理するか。 (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]）。
+.. Microsoft が管理するデフォルトの暗号化キーを使用するか、お客様が管理する独自のキーを選択してデータの暗号化を管理するか。 (https://["独自のキーの使用方法を参照してください"^]）。
 +
 image:screenshot_backup_onprem_to_azure.png["オンプレミスクラスタから Azure Blob Storage にボリュームをバックアップする場合のクラウドプロバイダの詳細を示すスクリーンショット。"]
 
@@ -314,7 +312,7 @@ image:screenshot_backup_onprem_to_azure.png["オンプレミスクラスタか�
 . ネットワークの詳細を入力し、 * 次へ * をクリックします。
 +
 .. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
-.. 必要に応じて、 Azure プライベートエンドポイントを設定するかどうかを選択します。 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["プライベートエンドポイントの使用の詳細を参照してください"^]。
+.. 必要に応じて、 Azure プライベートエンドポイントを設定するかどうかを選択します。 https://["プライベートエンドポイントの使用の詳細を参照してください"^]。
 +
 image:screenshot_backup_onprem_azure_networking.png["ONTAP システムから Azure BLOB ストレージにボリュームをバックアップする場合のネットワークの詳細を示すスクリーンショット。"]
 

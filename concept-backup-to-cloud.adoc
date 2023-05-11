@@ -20,7 +20,7 @@ BlueXPのバックアップとリカバリサービスは、オンプレミス�
 
 必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAP データをバックアップする場合は、バックアップから同じ作業環境または別の作業環境に 1 つ以上の _ ファイル _ をリストアすることもできます。
 
-https://bluexp.netapp.com/cloud-backup["BlueXPのバックアップとリカバリの詳細については、こちらをご覧ください"^]。
+https://["BlueXPのバックアップとリカバリの詳細については、こちらをご覧ください"^]。
 
 バックアップとリカバリは、次の目的で使用できます。
 
@@ -30,7 +30,7 @@ https://bluexp.netapp.com/cloud-backup["BlueXPのバックアップとリカバ�
 * VMware向けBlueXPバックアップ/リカバリを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 link:concept-protect-vm-data.html["詳細な機能については、こちらをご覧ください"]。
 
 
-https://www.youtube.com/watch?v=DF0knrH2a80["簡単なデモをご覧ください"^]
+https://["簡単なデモをご覧ください"^]
 
 
 TIP: BlueXP Connectorがクラウドの行政機関やインターネットアクセスのないサイト（ダークサイト）に導入されている場合、BlueXPのバックアップとリカバリでサポートされるのはONTAP システムからのバックアップとリストアの処理のみです。このような導入方法を使用する場合、BlueXPのバックアップとリカバリでは、Kubernetesのクラスタ、アプリケーション、仮想マシンからのバックアップとリストアの処理はサポートされません。
@@ -53,14 +53,14 @@ image:diagram_cloud_backup_general.png["BlueXPのバックアップおよびリ�
 
 ifdef::aws[]
 
-* AWSでは、BlueXPによってが有効になります https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
+* AWSでは、BlueXPによってが有効になります https://["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
+* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP https://["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
 
 
 endif::azure[]
@@ -92,6 +92,6 @@ endif::gcp[]
 
 === バックアップコピーはネットアップアカウントに関連付けられています
 
-バックアップコピーはに関連付けられます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["ネットアップアカウント"^] BlueXPコネクタが配置されています。
+バックアップコピーはに関連付けられます https://["ネットアップアカウント"^] BlueXPコネクタが配置されています。
 
 同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。
