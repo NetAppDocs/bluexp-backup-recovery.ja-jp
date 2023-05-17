@@ -246,6 +246,40 @@ SAP HANAシステムを削除する前に、関連付けられているバック
 
 
 
+=== SAP HANAデータベースホストを削除します
+
+SAP HANAデータベースホストは、REST APIのみを使用して削除できます。
+
+* 手順 *
+
+. UIまたは下記のREST APIを使用して、SAP HANAデータベースホストに関連付けられているすべてのシステムを削除します。
+`DELETE /saphana/and/systems/(id)`
+. SAP HANAデータベースホストを削除するには、次の手順を実行します。
++
+.. GET REST APIを使用して、削除する必要があるSAP HANAデータベースホストのIDを取得します。
+`GET /saphana/hosts`
+   `{`
+    `"num_records": 1,`
+    `"records": [`
+        `{`
+            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
+            `"host_name": "galaxy-vm134.netapp.com",`
+            `"port": 443,`
+            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
+       
+`}`
+    `]`
+`}`
+.. 下記のREST APIのIDを渡してSAP HANAデータベースホストを削除します。
+`DELETE /saphana/hosts/(id)`
+.. 次のコマンドを使用して、データベースホストからSAP HANA Linuxプラグインをアンインストールします。
+`/opt/NetApp/snapcenter/spl/installation/plugins/uninstall`
+
+
+
+
+
+
 === 非データボリュームを追加します
 
 マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。
@@ -285,4 +319,29 @@ SAP HANAシステムを削除する前に、関連付けられているバック
 .. すべての詳細を確認し、*システムの追加*をクリックします。
 
 
+
+
+
+
+=== SAP HANAデータベースホストを変更
+
+SAP HANAデータベースホストを追加したら、REST APIを使用してホスト名またはプラグインポートを変更できます。
+
+* 手順 *
+
+. GET REST APIを使用して、削除する必要があるSAP HANAデータベースホストのIDを取得します。 `GET /saphana/hosts`
+   `{`
+    `"num_records": 1,`
+    `"records": [`
+        `{`
+            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
+            `"host_name": "galaxy-vm134.netapp.com",`
+            `"port": 443,`
+            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
+       
+`}`
+    `]`
+`}`
+. 以下のパッチAPIを使用してホスト名またはプラグインポートを変更してください。
+`PATCH /saphana/hosts/(id)``
 
