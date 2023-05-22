@@ -831,7 +831,6 @@
   <block id="f89ceb52adf6438c575a46d20a693abb" category="list-text">バックアップをネットワーク内の安全な場所にコピーします。ローカルStorageGRID システムは、その場所へのONTAP ボリュームのバックアップを作成する場合に使用できます。</block>
   <block id="155dea4952585272f1c0844ef81cfd9a" category="section-title">インデックス付けされたカタログファイルをバックアップします</block>
   <block id="c404e3c86dc07dadeb1ba026f8f68641" category="paragraph">インデックスカタログは、検索と復元機能に使用されます。このディレクトリには、すべてのボリュームとすべてのバックアップファイルに関する情報が含まれているため、リストアするボリュームデータを検索する際に、迅速かつ効率的に検索を行うことができます。</block>
-  <block id="ef634fffc66ae93838b8ca070447f663" category="list-text">Connectorホストシステムで、ディレクトリを「/tmp」に変更します。</block>
   <block id="7cb88c443fc924903c835b571b479a4e" category="list-text">[インデックスカタログ]フォルダを探します。文字列* catalog *から始まります。</block>
   <block id="8569fa5b25edd3388fba8c4d5fbbdf9d" category="list-text">次のコマンドを入力して、「catalog &lt;_xxxxxx_&gt;」フォルダを圧縮します。</block>
   <block id="a343bcd32b68b96334fcf073958cc3da" category="list-text">圧縮されたバックアップをネットワーク内の安全な場所にコピーします。</block>
@@ -848,7 +847,6 @@
   <block id="bb319ca7a8d748d2ce5adf7548a5803c" category="list-text">次のコマンドを使用してMySQLコンテナシェルを入力します。</block>
   <block id="1a411806f1f54597b7259137d2e753db" category="paragraph">パスワードを入力します。</block>
   <block id="3ec8f556a760c1ea438f0c8012517d09" category="paragraph">表示されているボリュームが、元の環境に存在していたボリュームと同じかどうかを確認します。</block>
-  <block id="f9083b6cbd32e754624254bf8a15bbd5" category="list-text">Indexed Catalogバックアップzipファイルを'セキュアな場所から'/tmpフォルダ内の新しいコネクタ・ホストにコピーします</block>
   <block id="4137b6be705d5f9d9f9bcc8018e1f70a" category="list-text">次のコマンドを使用して、「catalxxxxxx.zip」ファイルを解凍します。</block>
   <block id="82ed93b77a5223377d1a45ab463f6fb3" category="list-text">「*ls *」コマンドを実行して、サブフォルダ「changes」と「snapshots」を含むフォルダ「catalogxxxxxx」が作成されていることを確認します。</block>
   <block id="47088be6cbcb439bd7241ec72edf3a91" category="section-title">ONTAP クラスタとStorageGRID システムを検出</block>
@@ -3698,7 +3696,6 @@
   <block id="aad236ec8e2b61a79fb4bb3a416a2e06" category="paragraph">クラスタでONTAP 9.12.1以降が実行されている場合、AWS China Beijing（cn-north-1）リージョンとNingxia（cn-northwest-1）リージョンがバックアップファイルのデスティネーションとしてサポートされるようになりました。</block>
   <block id="c93bfe725726f47fe3bfcc0e95f8ec7d" category="inline-link">オンプレミスのONTAP データをAmazon S3にバックアップします</block>
   <block id="afe182ec329d300711f89a81223f8fe1" category="paragraph">BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。を参照してください<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> および<block ref="98f7c8e7ee596af91f0142606f0617c9" category="inline-link-rx"></block> を参照してください。</block>
-  <block id="5db93da6e314f6aa0349c5e8f35f4b9a" category="paragraph">ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムで、システム開始ジョブ（進行中のバックアップ処理など）を*[ジョブ監視]*タブで確認できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
   <block id="4d5789e8f025b3895d94f1b6a7225e4a" category="list-text">アプリケーション（ハイブリッド）向けのBlueXPのバックアップとリカバリは、SaaSコントロールプレーンから実行されます</block>
   <block id="53eb0fdde70aa10525b581e17b5d6f86" category="paragraph">これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限モード」でバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。<block ref="18611796b9b4332697b6f9bb72b16e0b" category="inline-link-rx"></block>。を参照してください<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> および<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
   <block id="f1a109ae8d953da8e05cf5534df6b22b" category="list-text">ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
@@ -3793,4 +3790,7 @@
        <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
    <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
   <block id="cab82189f2bc3aa6ebb43c8830e47693" category="list-text">以下のパッチAPIを使用してホスト名またはプラグインポートを変更してください。<block ref="1fcec45b91ad39b0aa8d1cf2b8d5e031" prefix=" " category="inline-code"></block></block>
+  <block id="c325ed37b6a44d9e765cfd2dd7779cfb" category="paragraph">ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムで、システム開始ジョブ（進行中のバックアップ処理など）を*[ジョブ監視]*タブで確認できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
+  <block id="62bcc3625fd0e0ab73db7f861ea43e38" category="list-text">コネクタホストシステムで、ディレクトリを「/opt/application/netapp/cbs」に変更します。</block>
+  <block id="471862806e2663ce1f62d2a75294c7f4" category="list-text">インデックスカタログのバックアップzipファイルを安全な場所から「/opt/application/netapp/cbs」フォルダの新しいコネクタホストにコピーします。</block>
 </blocks>
