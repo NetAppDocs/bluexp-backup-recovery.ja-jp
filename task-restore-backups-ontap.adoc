@@ -423,7 +423,7 @@ image:screenshot_restore_select_dest.png["リストアするファイルのボ�
 
 検索とリストアを使用して、ONTAP バックアップファイルからボリューム、フォルダ、またはファイルをリストアできます。検索とリストアでは、クラウドストレージに保存されている特定のプロバイダのすべてのバックアップから特定のボリューム、フォルダ、またはファイルを検索し、リストアを実行できます。正確な作業環境名やボリューム名がわからなくても、検索ではすべてのボリュームのバックアップファイルが検索されます。
 
-検索処理では、 ONTAP ボリュームに対応するすべてのローカル Snapshot コピーも検索されます。ローカル Snapshot コピーからデータをリストアする方が、バックアップファイルからリストアするよりも高速で低コストなので、 Snapshot からデータをリストアできます。Snapshotは新しいボリュームとしてリストアできます https://["キャンバスの[ボリュームの詳細]ページから選択します"^] （BlueXPのバックアップとリカバリではありません）。
+検索処理では、 ONTAP ボリュームに対応するすべてのローカル Snapshot コピーも検索されます。ローカル Snapshot コピーからデータをリストアする方が、バックアップファイルからリストアするよりも高速で低コストなので、 Snapshot からデータをリストアできます。Snapshotは新しいボリュームとしてリストアできます https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["キャンバスの[ボリュームの詳細]ページから選択します"^] （BlueXPのバックアップとリカバリではありません）。
 
 バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリュームとしてリストアすることも、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることもできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。
 
@@ -546,7 +546,7 @@ ifdef::azure[]
 
 * Azureの要件：
 +
-** Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+** Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
 ** 特定のAzure Synapse WorkspaceおよびData Lakeストレージアカウントの権限を、BlueXPに権限を付与するユーザーロールに追加する必要があります。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["すべての権限が正しく設定されていることを確認します"]。
 +
 以前に設定したコネクタでBlueXPのバックアップとリカバリをすでに使用している場合は、ここでBlueXPユーザロールにAzure Synapse WorkspaceとData Lake Storageアカウントの権限を追加する必要があります。これらは新しい機能で、検索とリストアに必要です。
@@ -579,7 +579,7 @@ endif::gcp[]
 +
 ** アカウントにクラウドプロバイダの資格情報がない場合は、インデックスカタログの情報がコネクタに保存されます。
 ** ダークサイトでコネクタを使用している場合は、インデックスカタログ情報がコネクタに保存されます（コネクタバージョン3.9.25以上が必要です）。
-** ある場合 https://["AWS クレデンシャル"^] または https://["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。
+** ある場合 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS クレデンシャル"^] または https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。
 +
 オンプレミスコネクタを使用している場合でも、コネクタ権限とクラウドプロバイダリソースの両方についてクラウドプロバイダの要件を満たしている必要があります。この実装を使用する場合は、前述のAWSとAzureの要件を参照してください。
 
@@ -618,7 +618,7 @@ image:diagram_search_restore_vol_file.png["Search  Restoreを使用してボリ�
 
 ifdef::aws[]
 
-* AWSに格納されたバックアップについては、新しいS3バケットとがプロビジョニングされます https://["Amazon Athena インタラクティブクエリーサービス"^] および https://["AWS グルーサーバレスデータ統合サービス"^]。
+* AWSに格納されたバックアップについては、新しいS3バケットとがプロビジョニングされます https://aws.amazon.com/athena/faqs/["Amazon Athena インタラクティブクエリーサービス"^] および https://aws.amazon.com/glue/faqs/["AWS グルーサーバレスデータ統合サービス"^]。
 
 
 endif::aws[]
@@ -632,7 +632,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* Google Cloudに保存されているバックアップの場合、新しいバケットとがプロビジョニングされます https://["Google Cloud BigQueryサービス"^] アカウント/プロジェクトレベルでプロビジョニングされます。
+* Google Cloudに保存されているバックアップの場合、新しいバケットとがプロビジョニングされます https://cloud.google.com/bigquery["Google Cloud BigQueryサービス"^] アカウント/プロジェクトレベルでプロビジョニングされます。
 
 
 endif::gcp[]

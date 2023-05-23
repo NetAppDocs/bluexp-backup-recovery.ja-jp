@@ -20,8 +20,8 @@ summary: BlueXPやオンプレミスのSnapCenter にアプリケーションの
 
 アプリケーションのBlueXPのバックアップとリカバリの詳細については、以下を参照してください。
 
-* https://["BlueXPのバックアップ/リカバリ機能とSnapCenter を使用した、アプリケーション対応のバックアップ"^]
-* https://["BlueXPの「Backup and Recovery for Applications」ポッドキャスト"^]
+* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["BlueXPのバックアップ/リカバリ機能とSnapCenter を使用した、アプリケーション対応のバックアップ"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["BlueXPの「Backup and Recovery for Applications」ポッドキャスト"^]
 
 
 

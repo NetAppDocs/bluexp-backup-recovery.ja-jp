@@ -89,10 +89,10 @@ BlueXPコネクタは'BlueXP機能の主要なソフトウェアですONTAP デ�
 
 AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。ない場合は、ONTAP データをAWS S3ストレージにバックアップするために、これらのいずれかの場所にコネクタを作成する必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。
 
-* https://["コネクタについて説明します"^]
-* https://["AWSにコネクタをインストールする"^]
-* https://["コネクタをオンプレミスにインストールする"^]
-* https://["AWS GovCloudリージョンへのコネクタのインストール"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["AWSにコネクタをインストールする"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["コネクタをオンプレミスにインストールする"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["AWS GovCloudリージョンへのコネクタのインストール"^]
 +
 BlueXPのバックアップとリカバリは、コネクタがクラウドに導入されている場合はGovCloudリージョンでサポートされ、オンプレミスにインストールされている場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
 
@@ -104,9 +104,9 @@ BlueXPのバックアップとリカバリは、コネクタがクラウドに�
 
 * コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** ポート443を介してBlueXPバックアップおよびリカバリサービスとS3オブジェクトストレージへのHTTPS接続 (https://["エンドポイントのリストを参照してください"^])
+** ポート443を介してBlueXPバックアップおよびリカバリサービスとS3オブジェクトストレージへのHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
-** AWSおよびAWS GovCloud環境では、追加のインバウンドおよびアウトバウンドのセキュリティグループルールが必要です。を参照してください https://["AWS のコネクタのルール"^] を参照してください。
+** AWSおよびAWS GovCloud環境では、追加のインバウンドおよびアウトバウンドのセキュリティグループルールが必要です。を参照してください https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html["AWS のコネクタのルール"^] を参照してください。
 
 
 * link:task-backup-onprem-to-aws.html#set-up-s3-permissions["コネクタにS3バケットを管理する権限があることを確認します"]。
@@ -123,7 +123,7 @@ BlueXPのバックアップとリカバリは、コネクタがクラウドに�
 
 ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。クラスタを追加するには、クラスタ管理 IP アドレスと admin ユーザアカウントのパスワードが必要です。
 
-https://["クラスタの検出方法について説明します"^]。
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
 
 
 
@@ -135,11 +135,11 @@ https://["クラスタの検出方法について説明します"^]。
 *注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
-方法を参照してください https://["クラスタライセンスを管理します"^]。
+方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
 
 * 時間とタイムゾーンが正しく設定されている。
 +
-方法を参照してください https://["クラスタ時間を設定します"^]。
+方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
 
 
 
@@ -152,7 +152,7 @@ https://["クラスタの検出方法について説明します"^]。
 +
 クラスタは、バックアップおよびリストア処理のために、インタークラスタ LIF から Amazon S3 ストレージへのポート 443 経由のアウトバウンド HTTPS 接続を開始します。ONTAP は、オブジェクトストレージとの間でデータの読み取りと書き込みを行います。オブジェクトストレージが開始されることはなく、応答するだけです。
 
-* クラスタ間 LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://["IPspace の詳細については、こちらをご覧ください"^]。
+* クラスタ間 LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace の詳細については、こちらをご覧ください"^]。
 +
 BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。これらの LIF が関連付けられている IPspace を選択します。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
 
@@ -162,7 +162,7 @@ BlueXPのバックアップとリカバリをセットアップするときに�
 +
 IPspace内のすべてのクラスタ間LIFがオブジェクトストアにアクセスできる必要があります。現在のIPspaceに対してこれを設定できない場合は、すべてのクラスタ間LIFがオブジェクトストアにアクセスできる専用のIPspaceを作成する必要があります。
 
-* ボリュームが配置されている Storage VM 用に DNS サーバが設定されている必要があります。方法を参照してください https://["SVM 用に DNS サービスを設定"^]。
+* ボリュームが配置されている Storage VM 用に DNS サーバが設定されている必要があります。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
 * 必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPのバックアップおよびリカバリ接続（ポート443経由）、およびStorage VMからDNSサーバへの名前解決トラフィック（TCP / UDP）を許可します。
 * AWSでS3接続にプライベートVPCインターフェイスエンドポイントを使用している場合は、HTTPS / 443を使用するために、S3エンドポイント証明書をONTAP クラスタにロードする必要があります。 <<VPCエンドポイントインターフェイスを使用して、システムにプライベート接続を設定します,VPC エンドポイントインターフェイスのセットアップ方法を参照して、 S3 証明書をロードしてください。>>
 * link:task-backup-onprem-to-aws.html#set-up-s3-permissions["ONTAP クラスタにS3バケットへのアクセス権限があることを確認します"]。
@@ -174,13 +174,13 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
 
 * クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、AWSから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
 +
-** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://["AWS Marketplaceで提供されるNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplaceで提供されるNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
 ** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 
 * バックアップを格納するオブジェクトストレージスペース用の AWS サブスクリプションが必要です。
 +
-すべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます https://["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+すべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 
@@ -199,7 +199,7 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
 
 
 .手順
-. （最新のから）次の S3 権限を確認します https://["BlueXPポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください https://["AWS のドキュメント：「 Editing IAM policies"]。
+. （最新のから）次の S3 権限を確認します https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS のドキュメント：「 Editing IAM policies"]。
 +
 [source, json]
 ----
@@ -319,7 +319,7 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
 }
 ----
 +
-を参照してください https://["AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User"^] を参照してください。
+を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User"^] を参照してください。
 
 
 
@@ -329,7 +329,7 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
 
 デフォルトのAmazon S3暗号化キーを使用してオンプレミスクラスタとS3バケット間でやり取りされるデータを暗号化する場合は、デフォルトのインストールでそのタイプの暗号化が使用されるため、すべての暗号化キーが設定されます。
 
-デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。 https://["独自のキーの使用方法を参照してください"^]。
+デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"^]。
 
 
 
@@ -339,7 +339,7 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
 
 オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["2番目の図"]。
 
-. Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。 https://["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
+. Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
 . BlueXPコネクタに関連付けられているセキュリティグループ設定を変更します。このポリシーを「 Custom 」（「 Full Access 」から）に変更する必要があります。また、変更する必要があります <<S3 権限をセットアップする,バックアップポリシーから S3 権限を追加します>> 前に示したように、
 +
 image:screenshot_backup_aws_sec_group.png["コネクタに関連付けられている AWS セキュリティグループのスクリーンショット。"]
@@ -354,7 +354,7 @@ image:screenshot_backup_aws_sec_group.png["コネクタに関連付けられて�
 +
 image:screenshot_endpoint_dns_aws_console.png["AWS コンソールから VPC エンドポイントの DNS 名のスクリーンショット。"]
 
-. VPC S3 エンドポイントから証明書を取得します。これは、で行います https://["BlueXPコネクタをホストしているVMにログインします"^] 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。
+. VPC S3 エンドポイントから証明書を取得します。これは、で行います https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["BlueXPコネクタをホストしているVMにログインします"^] 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。
 +
 [source, text]
 ----
@@ -405,7 +405,7 @@ image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使�
 アクセスキーとシークレットキーは、 ONTAP クラスタに S3 バケットへのアクセスを付与するために作成した IAM ユーザ用のものです。
 
 .. バックアップを格納する AWS リージョン。
-.. デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択して、データの暗号化を管理できます。 (https://["独自のキーの使用方法を参照してください"]）。
+.. デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択して、データの暗号化を管理できます。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"]）。
 +
 image:screenshot_backup_provider_settings_aws.png["ONTAP システムから AWS S3 にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
 
@@ -415,7 +415,7 @@ image:screenshot_backup_provider_settings_aws.png["ONTAP システムから AWS 
 . ネットワークの詳細を入力し、 * 次へ * をクリックします。
 +
 .. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
-.. 必要に応じて、以前に設定した AWS PrivateLink を使用するかどうかを選択します。 https://["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
+.. 必要に応じて、以前に設定した AWS PrivateLink を使用するかどうかを選択します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
 +
 image:screenshot_backup_onprem_aws_networking.png["ONTAP システムから AWS S3 にボリュームをバックアップする場合のネットワークの詳細を示すスクリーンショット。"]
 

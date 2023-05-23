@@ -40,6 +40,6 @@ SnapCenter では、OracleおよびHANAのバックアップを代替ホスト�
 
 この処理では、指定したホストにストレージのみがマウントされます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。ボリュームを利用したあと、ストレージ管理者はONTAP クラスタからボリュームを削除できます。
 
-* Oracleデータベースを起動する方法については、を参照してください。 https://["ナレッジベースの記事"]。
-* SAP HANAデータベースを起動する方法については、を参照してください。 https://["TR-4667：『Overview of SAP system copy workflow with SnapCenter 』"^] および https://["TR-4667：『Overview of SAP system clone workflow with SnapCenter 』"^]。
+* Oracleデータベースを起動する方法については、を参照してください。 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["ナレッジベースの記事"]。
+* SAP HANAデータベースを起動する方法については、を参照してください。 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system copy workflow with SnapCenter 』"^] および https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system clone workflow with SnapCenter 』"^]。
 

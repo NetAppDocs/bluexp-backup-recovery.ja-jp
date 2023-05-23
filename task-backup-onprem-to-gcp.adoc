@@ -26,7 +26,7 @@ summary: いくつかの手順を実行して、オンプレミスのONTAP シ�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください https://["ONTAP クラスタの検出"^] を参照してください。
+* オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタでONTAP 9.7P5以降が実行されている（ONTAP 9.8P13以降を推奨）。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
@@ -92,7 +92,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["BlueXPのバックアップ�
 
 ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。
 
-https://["クラスタの検出方法について説明します"^]。
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
 
 ONTAP の要件::
 +
@@ -103,11 +103,11 @@ ONTAP の要件::
 *注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
-方法を参照してください https://["クラスタライセンスを管理します"^]。
+方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
 
 * 時間とタイムゾーンが正しく設定されている。
 +
-方法を参照してください https://["クラスタ時間を設定します"^]。
+方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
 
 
 
@@ -120,12 +120,12 @@ ONTAP の要件::
 ONTAP は、オブジェクトストレージとの間でデータの読み取りと書き込みを行います。オブジェクトストレージが開始されることはなく、応答するだけです。
 
 * ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。このコネクタは、 Google Cloud Platform VPC 内に配置できます。
-* クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://["IPspace の詳細については、こちらをご覧ください"^]。
+* クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。LIF は、 ONTAP がオブジェクトストレージへの接続に使用する IPspace に関連付けられている必要があります。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IPspace の詳細については、こちらをご覧ください"^]。
 +
 BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。
 
 * ノードのクラスタ間 LIF からオブジェクトストアにアクセスできます。
-* ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://["SVM 用に DNS サービスを設定"^]。
+* ボリュームが配置されている Storage VM に DNS サーバが設定されている。方法を参照してください https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["SVM 用に DNS サービスを設定"^]。
 +
 Private Google AccessまたはPrivate Service Connectを使用している場合は、DNSサーバーがポイントするように設定されていることを確認します `storage.googleapis.com` を正しい内部（プライベート）IPアドレスに割り当てます。
 
@@ -142,8 +142,8 @@ Private Google AccessまたはPrivate Service Connectを使用している場合
 
 Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダやオンプレミスに導入されているコネクタは使用できません。
 
-* https://["コネクタについて説明します"^]
-* https://["コネクタをGCPにインストールする"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["コネクタをGCPにインストールする"^]
 
 
 
@@ -155,11 +155,11 @@ Google Cloud Platform VPCにコネクタがすでに導入されている場合�
 .手順
 . コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 (https://["エンドポイントのリストを参照してください"^])
+** ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
 
 
-. Connectorを展開するサブネットでプライベートGoogleアクセス（またはプライベートサービス接続）を有効にします。 https://["プライベート Google アクセス"^] または https://["Private Service Connectの略"^] ONTAP クラスタからVPCへの直接接続が確立されていて、ConnectorとGoogle Cloud Storage間の通信を仮想プライベートネットワーク（*プライベート*接続）のままにする場合に必要です。
+. Connectorを展開するサブネットでプライベートGoogleアクセス（またはプライベートサービス接続）を有効にします。 https://cloud.google.com/vpc/docs/configure-private-google-access["プライベート Google アクセス"^] または https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises["Private Service Connectの略"^] ONTAP クラスタからVPCへの直接接続が確立されていて、ConnectorとGoogle Cloud Storage間の通信を仮想プライベートネットワーク（*プライベート*接続）のままにする場合に必要です。
 +
 Googleの指示に従って、プライベートアクセスオプションを設定します。DNSサーバが参照するように設定されていることを確認します `www.googleapis.com` および `storage.googleapis.com` を正しい内部（プライベート）IPアドレスに割り当てます。
 
@@ -172,7 +172,7 @@ Googleの指示に従って、プライベートアクセスオプションを�
 BlueXPのバックアップとリカバリの「Search & Restore」機能を使用するには、コネクタがGoogle Cloud BigQueryサービスにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
 
 .手順
-. を参照してください https://["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
+. を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
 . ページ上部のドロップダウンリストを使用して、編集するロールを含むプロジェクトまたは組織を選択します。
 . カスタムロールをクリックします。
 . 役割の権限を更新するには、 * 役割の編集 * をクリックします。
@@ -201,8 +201,8 @@ bigquery.tables.create
 バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
 
 .手順
-. を参照してください https://["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
-. https://["新しいロールを作成します"^] 次の権限が必要です。
+. を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["新しいロールを作成します"^] 次の権限が必要です。
 +
 [source, json]
 ----
@@ -219,7 +219,7 @@ storage.objects.get
 storage.objects.list
 storage.objects.update
 ----
-. Google Cloud コンソールで、 https://["[ サービスアカウント ] ページに移動します"^]。
+. Google Cloud コンソールで、 https://console.cloud.google.com/iam-admin/serviceaccounts["[ サービスアカウント ] ページに移動します"^]。
 . クラウドプロジェクトを選択します。
 . ［*サービスアカウントの作成*］をクリックして、必要な情報を入力します。
 +
@@ -228,7 +228,7 @@ storage.objects.update
 .. [ 完了（ Done ） ] をクリックします。
 
 
-. に進みます https://["GCP Storage Settings （ GCP ストレージ設定）"^] サービスアカウントのアクセスキーを作成します。
+. に進みます https://console.cloud.google.com/storage/settings["GCP Storage Settings （ GCP ストレージ設定）"^] サービスアカウントのアクセスキーを作成します。
 +
 .. プロジェクトを選択し、 * 互換性 * をクリックします。まだ有効にしていない場合は、 * 相互運用アクセスを有効にする * をクリックします。
 .. [ サービスアカウントのアクセスキー *] で、 [ サービスアカウントのキーの作成 *] をクリックし、作成したサービスアカウントを選択して、 [ キーの作成 *] をクリックします。
@@ -245,7 +245,7 @@ storage.objects.update
 
 Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを使用してデータを暗号化できます。クロスリージョンキーとクロスプロジェクトキーの両方がサポートされているため、CMEKキーのプロジェクトとは異なるバケット用のプロジェクトを選択できます。お客様が管理する独自のキーを使用する場合は、次の手順を実行します。
 
-* アクティベーションウィザードでこの情報を追加できるように、キーリングとキー名が必要です。 https://["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
+* アクティベーションウィザードでこの情報を追加できるように、キーリングとキー名が必要です。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
 * これらの必要な権限がコネクタの役割に含まれていることを確認する必要があります。
 +
 [source, json]
@@ -259,7 +259,7 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-* プロジェクトでGoogleの「Cloud Key Management Service（KMS）」APIが有効になっていることを確認する必要があります。を参照してください https://["Google Cloudドキュメント：APIの有効化"] を参照してください。
+* プロジェクトでGoogleの「Cloud Key Management Service（KMS）」APIが有効になっていることを確認する必要があります。を参照してください https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloudドキュメント：APIの有効化"] を参照してください。
 
 
 * CMEKの考慮事項：*
@@ -277,13 +277,13 @@ cloudkms.keyRings.setIamPolicy
 
 * クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、Googleから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
 +
-** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://["Google Marketplaceで提供されているNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Marketplaceで提供されているNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
 ** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
 
 * バックアップを格納するオブジェクトストレージスペース用の Google サブスクリプションが必要です。
 +
-すべての地域で、オンプレミスシステムからGoogle Cloud Storageへのバックアップを作成できます https://["Cloud Volumes ONTAP がサポートされている場合"^]。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+すべての地域で、オンプレミスシステムからGoogle Cloud Storageへのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 
@@ -308,7 +308,7 @@ image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使�
 .. バックアップの保存に使用する Google Access Key および Secret Key 。
 .. バックアップが保存される Google リージョン。
 .. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
-.. Googleが管理するデフォルトの暗号化キーを使用する場合でも、お客様が管理する独自のキーを選択してデータの暗号化を管理する場合でも、CMEKを使用するには、キーリングとキー名が必要です。 https://["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
+.. Googleが管理するデフォルトの暗号化キーを使用する場合でも、お客様が管理する独自のキーを選択してデータの暗号化を管理する場合でも、CMEKを使用するには、キーリングとキー名が必要です。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
 +
 image:screenshot_backup_onprem_to_google.png["オンプレミスのクラスタから Google Cloud Storage にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
 

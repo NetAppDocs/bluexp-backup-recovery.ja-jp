@@ -26,7 +26,7 @@ Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュ�
 [role="quick-margin-list"]
 * AzureでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
+* に登録しておきます https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
 * Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。
 
 
@@ -74,7 +74,7 @@ Azure Blob Storage へのボリュームのバックアップを開始する前�
 image:diagram_cloud_backup_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
-ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
 BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイト（「プライベートモード」）に導入する場合は、BYOLライセンスを使用する必要があります。
@@ -82,12 +82,12 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。
 
 --
-コネクタの要件:: コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。 https://["詳細については、BlueXPの導入モードを参照してください"^]。
+コネクタの要件:: コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["詳細については、BlueXPの導入モードを参照してください"^]。
 +
 --
-* https://["コネクタについて説明します"^]
-* https://["Azureで標準モードでコネクタを導入する（フルインターネットアクセス）"^]
-* https://["制限モードでのコネクタの取り付け（制限されたアウトバウンドアクセス）"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Azureで標準モードでコネクタを導入する（フルインターネットアクセス）"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["制限モードでのコネクタの取り付け（制限されたアウトバウンドアクセス）"^]
 
 
 --
@@ -97,7 +97,7 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 +
 --
 .を開始する前に
-* Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+* Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
 * コネクタとAzure Synapse SQLサービス間の通信には、ポート1433が開いている必要があります。
 +
 .手順
@@ -162,7 +162,7 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://["ポリシーの完全な JSON 形式を表示します"^]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
 
 ... [ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。
 
@@ -172,14 +172,14 @@ https://["ポリシーの完全な JSON 形式を表示します"^]
 
 
 --
-サポートされている Azure リージョン:: BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます https://["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
+サポートされている Azure リージョン:: BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
 +
 --
-BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実にレプリケートする場合は、BlueXPのバックアップとリカバリをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://["ストレージアカウントの複製方法の変更"^]。
+BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実にレプリケートする場合は、BlueXPのバックアップとリカバリをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
 
 --
 別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ:: デフォルトでは、バックアップは Cloud Volumes ONTAP システムと同じサブスクリプションを使用して作成されます。バックアップに別の Azure サブスクリプションを使用する場合は、が必要です link:reference-backup-multi-account-azure.html["Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます"]。
-データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://["独自のキーの使用方法を参照してください"^]。
+データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
 
 
 
@@ -188,7 +188,7 @@ BlueXPのバックアップとリカバリでは、コストを最適化する�
 
 作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
 
-を参照してください https://["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
+を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
 
 
 NOTE: リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <<enabling-bluexp-backup-and-recovery-on-an-existing-system,既存システムでBlueXPのバックアップとリカバリを有効にする>> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。
@@ -230,7 +230,7 @@ image:screenshot_backup_cvo_enable.png["作業環境を選択すると表示さ�
 
 .. バックアップを保存するリージョン。これは、 Cloud Volumes ONTAP システムが配置されているリージョンとは異なるリージョンにすることもできます。
 .. BLOB コンテナを管理するリソースグループ - 新しいリソースグループを作成したり、既存のリソースグループを選択したりできます。
-.. Microsoft が管理するデフォルトの暗号化キーを使用する場合でも、お客様が管理する独自のキーを選択してデータの暗号化を管理する場合でも、 (https://["独自のキーの使用方法を参照してください"]）。
+.. Microsoft が管理するデフォルトの暗号化キーを使用する場合でも、お客様が管理する独自のキーを選択してデータの暗号化を管理する場合でも、 (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"]）。
 +
 image:screenshot_backup_provider_settings_azure.png["Cloud Volumes ONTAP システムから Azure Blob Tier にボリュームをバックアップする場合のクラウドプロバイダの詳細を示すスクリーンショット。"]
 
@@ -266,7 +266,7 @@ BLOBストレージコンテナは、入力したリソースグループに自�
 
 ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
 
-BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実に複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://["ストレージアカウントの複製方法の変更"^]。
+BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実に複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
 
 
 

@@ -161,7 +161,7 @@ BlueXPのバックアップとリカバリではソースボリュームのス�
 ifdef::aws[]
 
 +
-** AWSでは、 https://["Amazon Athena"^] および https://["AWS 接着剤"^] リソースは新しいS3バケットに導入される。
+** AWSでは、 https://aws.amazon.com/athena/faqs/["Amazon Athena"^] および https://aws.amazon.com/glue/faqs/["AWS 接着剤"^] リソースは新しいS3バケットに導入される。
 +
 endif::aws[]
 
@@ -171,7 +171,7 @@ endif::aws[]
 ifdef::azure[]
 
 +
-** Azureのでは https://["Azure Synapseワークスペース"^] および https://["Azure Data Lake Storageの略"^] データの格納と分析を行うためにストレージアカウントにプロビジョニングします。
+** Azureのでは https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapseワークスペース"^] および https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure Data Lake Storageの略"^] データの格納と分析を行うためにストレージアカウントにプロビジョニングします。
 +
 endif::azure[]
 
@@ -181,7 +181,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* Googleでは、新しいバケットが導入され、が展開されます https://["Google Cloud BigQueryサービス"^] アカウント/プロジェクトレベルでプロビジョニングされます。
+* Googleでは、新しいバケットが導入され、が展開されます https://cloud.google.com/bigquery["Google Cloud BigQueryサービス"^] アカウント/プロジェクトレベルでプロビジョニングされます。
 
 
 endif::gcp[]
@@ -223,7 +223,7 @@ BlueXPのバックアップとリカバリには、次の消費モデルがあ�
 
 BYOL は期間ベース（ 12 カ月、 24 カ月、 36 カ月）の _ 容量ベースであり、 1TiB 単位で提供されます。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量を指定した場合は「 10TiB 」とします。
 
-サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます https://["BlueXPアカウント"^]。
+サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["BlueXPアカウント"^]。
 
 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
 
@@ -271,7 +271,7 @@ link:task-licensing-cloud-backup.html#use-an-annual-contract["年間契約の設
 
 == BlueXPのバックアップとリカバリの仕組み
 
-Cloud Volumes ONTAP またはオンプレミスのONTAP システムでBlueXPのバックアップとリカバリを有効にすると、データのフルバックアップが実行されます。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。BlueXPのバックアップとリカバリは、上に構築されています https://["NetApp SnapMirror Cloudテクノロジ"^]。
+Cloud Volumes ONTAP またはオンプレミスのONTAP システムでBlueXPのバックアップとリカバリを有効にすると、データのフルバックアップが実行されます。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。BlueXPのバックアップとリカバリは、上に構築されています https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror Cloudテクノロジ"^]。
 
 
 CAUTION: クラウドプロバイダ環境からバックアップファイルの管理や変更を直接行うと、ファイルが破損してサポートされない構成になる可能性があります。
@@ -288,14 +288,14 @@ image:diagram_cloud_backup_general.png["BlueXPのバックアップおよびリ�
 
 ifdef::aws[]
 
-* AWSでは、BlueXPによってが有効になります https://["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
+* AWSでは、BlueXPによってが有効になります https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP https://["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
+* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
 
 
 endif::azure[]

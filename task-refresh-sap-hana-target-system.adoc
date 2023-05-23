@@ -23,7 +23,7 @@ SAP HANAソースシステムのデータを使用して、SAP HANAターゲッ�
 * ソースシステムとターゲットシステムでSAP HANAデータベースのバージョンが同じであることを確認します。
 * 使用する更新スクリプトを決定しておく必要があります。更新スクリプトは、解決策 テクニカルレポートで提供されています。
 +
-https://["自動化スクリプトの例"]
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html#script-sc-system-refresh-sh["自動化スクリプトの例"]
 
 +
 更新スクリプトはカスタマイズできます。

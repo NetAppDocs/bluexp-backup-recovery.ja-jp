@@ -33,8 +33,8 @@ EKS Kubernetes クラスタ上の永続ボリュームから Amazon S3 ストレ
 
 
 * バックアップを格納するストレージスペースに対する有効なクラウドプロバイダのサブスクリプションが必要です。
-* に登録しておきます https://["BlueXP Marketplaceバックアップ製品"]、 https://["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
-* BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://["BlueXPポリシー"^]。
+* に登録しておきます https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplaceバックアップ製品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS 年間契約"]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
+* BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] 既存のKubernetesクラスタでBlueXPのバックアップとリカバリを有効にします
@@ -70,8 +70,8 @@ VPC エンドポイントはオプションです。
 Kubernetes クラスタの要件::
 +
 --
-* KubernetesクラスタがBlueXP作業環境として検出されました。 https://["Kubernetes クラスタの検出方法を参照してください"^]。
-* Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください https://["Trident のインストール方法"^] または https://["Trident バージョンをアップグレードする方法"^]。
+* KubernetesクラスタがBlueXP作業環境として検出されました。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-aws.html["Kubernetes クラスタの検出方法を参照してください"^]。
+* Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["Trident のインストール方法"^] または https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["Trident バージョンをアップグレードする方法"^]。
 * クラスタのバックエンドストレージに AWS で Cloud Volumes ONTAP が使用されている必要があります。
 * Cloud Volumes ONTAP システムはKubernetesクラスタと同じAWSリージョンに配置する必要があり、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。
 +
@@ -130,10 +130,10 @@ spec:
 
 
 --
-ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、AWS Marketplaceでサブスクリプションを購入してCloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です https://["このBlueXPサブスクリプションを購読します"^] BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、AWS Marketplaceでサブスクリプションを購入してCloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["このBlueXPサブスクリプションを購読します"^] BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
 +
 --
-Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります https://["AWS Marketplace のページ"^] 次に https://["サブスクリプションを AWS クレデンシャルに関連付けます"^]。
+Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace のページ"^] 次に https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["サブスクリプションを AWS クレデンシャルに関連付けます"^]。
 
 Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる年間契約の場合は、Cloud Volumes ONTAP 作業環境の作成時に年間契約を設定する必要があります。このオプションでは、オンプレミスのデータをバックアップすることはできません。
 
@@ -142,8 +142,8 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 また、バックアップを格納するストレージスペース用の AWS アカウントが必要です。
 
 --
-サポートされている AWS リージョン:: BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます https://["Cloud Volumes ONTAP がサポートされている場合"^]。
-AWS Backup 権限が必要です:: BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります https://["BlueXPポリシー"^]。
+サポートされている AWS リージョン:: BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
+AWS Backup 権限が必要です:: BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります https://mysupport.netapp.com/site/info/cloud-manager-policies["BlueXPポリシー"^]。
 +
 --
 次に、このポリシーの特定の S3 権限を示します。

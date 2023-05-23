@@ -220,7 +220,7 @@ NOTE: このクラスタでBlueXPのバックアップとリカバリをアク�
 
 このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection_を有効にした場合、オンデマンドバックアップにもDataLockが設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェアによる保護の詳細をご確認ください"^]。
 
-アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。Snapshotの名前はで始まります `cbs-snapshot-adhoc-`。 https://["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"^]。
+アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。Snapshotの名前はで始まります `cbs-snapshot-adhoc-`。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"^]。
 
 
 NOTE: オンデマンドボリュームバックアップは、データ保護ボリュームではサポートされません。
@@ -367,7 +367,7 @@ image:screenshot_delete_one_backup.png["単一のバックアップファイル�
 
 この機能は、システムでONTAP 9.12.1以降が実行されている場合にのみ使用できます。
 
-BlueXPのバックアップとリカバリのユーザインターフェイスでソースボリュームを削除することはできません。ただし、Canvas、およびのVolume Detailsページを開くことはできます https://["そこからボリュームを削除します"]。
+BlueXPのバックアップとリカバリのユーザインターフェイスでソースボリュームを削除することはできません。ただし、Canvas、およびのVolume Detailsページを開くことはできます https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["そこからボリュームを削除します"]。
 
 
 NOTE: 関係を削除したあとでボリュームバックアップファイルを個別に削除することはできません。ただし、 link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["ボリュームのバックアップをすべて削除します"] すべてのバックアップ・ファイルを削除する場合
