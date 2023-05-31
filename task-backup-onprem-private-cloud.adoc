@@ -26,7 +26,7 @@ summary: オンプレミスのONTAP システムからNetApp StorageGRID シス�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
+* オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタで ONTAP 9.7P5 以降が実行されています。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
@@ -95,7 +95,7 @@ image:diagram_cloud_backup_onprem_storagegrid.png["BlueXPのバックアップ�
 
 ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
 
 ONTAP の要件::
 +
@@ -176,14 +176,14 @@ StorageGRID へのバックアップを設定する際、テナントアカウ�
 
 StorageGRID にデータをバックアップするときは、オンプレミスのコネクタが必要です。新しいコネクターをインストールするか、現在選択されているコネクターがオンプレミスにあることを確認する必要があります。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["コネクタ間の切り替え"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["コネクタ間の切り替え"^]
 
 
 
-NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["BlueXPのバックアップとリカバリの最新情報"] BlueXPのバックアップとリカバリの各リリースの新機能を確認するには、次の手順を実行します https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
+NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["BlueXPのバックアップとリカバリの最新情報"] BlueXPのバックアップとリカバリの各リリースの新機能を確認するには、次の手順を実行します https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Connector ソフトウェアをアップグレードします"^] 新しい機能を使用する場合。
 
 インターネットに接続されていないサイトにコネクタがインストールされている場合は、BlueXPのバックアップとリカバリの設定データのローカルバックアップを定期的に作成することを強く推奨します。 link:reference-backup-cbs-db-in-dark-site.html["BlueXPのバックアップデータとリカバリデータをダークサイトにバックアップする方法を説明します"^]。
 
@@ -219,7 +219,7 @@ NOTE: BlueXPコネクタには、BlueXPのバックアップとリカバリ機�
 * StorageGRID 要件*
 
 * StorageGRID が11.4以降を使用している必要があります
-* StorageGRID はである必要があります https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]。
+* StorageGRID はである必要があります https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["BlueXP Canvasで検出され、使用可能になりました"^]。
 
 
 * Amazon S3の要件*

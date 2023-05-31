@@ -103,9 +103,9 @@ BlueXPのバックアップとリカバリシステムを動作状態に戻す�
 
 === 新しいオンプレミスLinuxホストに新しいコネクタをインストールします
 
-新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします"^]。
+新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします"^]。
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします"^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします"^]
 . 作成した管理者ユーザー資格情報を使用してBlueXPにログインします。
 
 
@@ -172,15 +172,15 @@ unzip catalogxxxxxx.zip
 
 === ONTAP クラスタとStorageGRID システムを検出
 
-. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["オンプレミスのONTAP 作業環境をすべて検出できます"^] 以前の環境で使用できていたものです。
-. https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["StorageGRID システムを検出"^]。
+. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["オンプレミスのONTAP 作業環境をすべて検出できます"^] 以前の環境で使用できていたものです。
+. https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["StorageGRID システムを検出"^]。
 
 
 
 
 === StorageGRID 環境の詳細を設定
 
-を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します https://docs.netapp.com/us-en/cloud-manager-automation/index.html["BlueXP API"^]。
+を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します https://docs.netapp.com/us-en/bluexp-automation/index.html["BlueXP API"^]。
 
 これらの手順は、StorageGRID にデータをバックアップするONTAP システムごとに実行する必要があります。
 

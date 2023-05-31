@@ -20,7 +20,7 @@ BlueXPを使用してFSx for ONTAP 作業環境を作成し、ボリュームや
 
 == ONTAP 作業環境用のFSXを作成します
 
-データベースがホストされているFSx for ONTAP 作業環境を作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSX for ONTAP の利用を開始しましょう"] および link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Amazon FSX for ONTAP 作業環境の作成と管理"]。
+データベースがホストされているFSx for ONTAP 作業環境を作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSX for ONTAP の利用を開始しましょう"] および link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html["Amazon FSX for ONTAP 作業環境の作成と管理"]。
 
 FSx for ONTAP 作業環境は、BlueXPまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、BlueXPのONTAP システム用FSXを検出する必要があります。
 
@@ -30,7 +30,7 @@ FSx for ONTAP 作業環境は、BlueXPまたはAWSを使用して作成できま
 
 アカウント管理者はAWSでコネクタを作成し、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理する必要があります。
 
-詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["BlueXPからAWSでコネクタを作成する"]。
+詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["BlueXPからAWSでコネクタを作成する"]。
 
 * FSx for ONTAP の作業環境とデータベースの管理には、同じコネクタを使用する必要があります。
 * FSx for ONTAP の作業環境とデータベースが同じ仮想プライベートクラウド（VPC）内にある場合は、コネクタを同じVPCに導入できます。

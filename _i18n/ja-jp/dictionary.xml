@@ -86,7 +86,6 @@
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">オープンソース</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">BlueXPに関する注意事項</block>
-  <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
   <block id="0b6eb60ffffdbd69e169beb358d8dd44" category="inline-link-macro">Single File Restore に関する注意事項を参照してください</block>
   <block id="88c51ea85ad6413ada0a99db3150b7ad" category="list-text"><block ref="88c51ea85ad6413ada0a99db3150b7ad" category="inline-link-macro-rx"></block></block>
   <block id="c8b8b4fdeb24aa620ef9c52c25526cea" category="summary">バックアップは、特定の時点のデータをリストアできるように、クラウドアカウントのオブジェクトストアに格納されます。Kubernetes の永続ボリューム全体を、保存したバックアップファイルからリストアできます。</block>
@@ -130,7 +129,6 @@
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1つ</block>
   <block id="60afd0ad9e3c0e83604b54dde769e201" category="list-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 構成がサポートされていることを確認します</block>
   <block id="e845620e391b62ad3163cdb0e100a862" category="inline-link">ONTAP クラスタの検出</block>
-  <block id="3583d22777b682d17c7d912cdbfe39ae" category="list-text">オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください<block ref="04e8e773ac6637419158f2743860946e" category="inline-link-rx"></block> を参照してください。</block>
   <block id="a39a3a8413839ba93362257bd4ae066b" category="list-text">クラスタでONTAP 9.7P5以降が実行されている（ONTAP 9.8P13以降を推奨）。</block>
   <block id="95fb96b977a1d58e839b707e064c5588" category="list-text">クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。</block>
   <block id="4e3ab3869d64d61090a4ac213d5f1074" category="list-text">クラスタから Google ストレージおよびコネクタへの必要なネットワーク接続が確立されている必要があります。</block>
@@ -162,7 +160,6 @@
   <block id="5c611511bb6c7851d2e8d2dda1c92506" category="section-title">ONTAP クラスタの準備</block>
   <block id="f14bda54277879b5d5f51fa405834285" category="paragraph">ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。</block>
   <block id="b020365bc471630c977d9fcc2c5ea1d1" category="inline-link">クラスタの検出方法について説明します</block>
-  <block id="6ff483ff43e1d1341ed8bca213a5d6c2" category="paragraph"><block ref="781159370dedb574e61a716048070385" category="inline-link-rx"></block>。</block>
   <block id="1b6bc3125f482fcbcf029c833aea1290" category="list-text">ONTAP の要件</block>
   <block id="80b09eca2711141a189a78c7b481d5cb" category="list-text">ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。</block>
   <block id="be2a4307ac15130326b39aa20133d5ed" category="list-text">SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。</block>
@@ -185,7 +182,6 @@
   <block id="d32e4305e9f04e1cbc37d3e892619ee7" category="section-title">コネクタの作成または切り替え</block>
   <block id="8d95102bf9140e4354a61dced325fdb3" category="paragraph">Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダやオンプレミスに導入されているコネクタは使用できません。</block>
   <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">コネクタについて説明します</block>
-  <block id="da1264a616f156bd6836a85f7dfdea5a" category="list-text"><block ref="da1264a616f156bd6836a85f7dfdea5a" category="inline-link-rx"></block></block>
   <block id="1c52fe530613f90d476d439dbca6d53e" category="inline-link">コネクタをGCPにインストールする</block>
   <block id="a8e8e48001e032c3b5939047d15db5a2" category="section-title">コネクタのネットワークを準備しています</block>
   <block id="7b16b8b258668ab05a1e5d83e084b477" category="paragraph">コネクタに必要なネットワーク接続があることを確認します。</block>
@@ -308,10 +304,8 @@
   <block id="efe4ad90c097b3e944ddb0e73553dce4" category="paragraph">プライベートエンドポイントはオプションです。</block>
   <block id="722cdb9316b3fa8ce17714d9c3e2710c" category="list-text">Kubernetes クラスタの要件</block>
   <block id="39a875b1e9ef9f5447dff029a4e31641" category="inline-link">Kubernetes クラスタの検出方法を参照してください</block>
-  <block id="6c5b6689ac55433faa02a7b00a324c53" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="fe9c905e0ac5679eb2b5a96bea671a0a" category="inline-link-rx"></block>。</block>
   <block id="f39cf0371a8569a37618b2abf7fb11bd" category="inline-link">Trident のインストール方法</block>
   <block id="68fe2e383aebea35afdffc7be08dfbdd" category="inline-link">Trident バージョンをアップグレードする方法</block>
-  <block id="a7aea8698166f2ca86f6eca652031639" category="list-text">Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください<block ref="efafd7c7be663b6b746c03d24d88023f" category="inline-link-rx"></block> または<block ref="23a633d2f31911781b4c35e0d8f7c8b9" category="inline-link-rx"></block>。</block>
   <block id="3bc0e9b1baf3af2c3c4d977a88c7633d" category="list-text">Cloud Volumes ONTAP システムはKubernetesクラスタと同じAzureリージョンに配置する必要があり、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。</block>
   <block id="7e750612c420301512a8e94f7491def1" category="paragraph">オンプレミス環境の Kubernetes クラスタはサポートされていません。Cloud Volumes ONTAP システムを使用するクラウド環境では、 Kubernetes クラスタのみがサポートされます。</block>
   <block id="17fc7550015fcf3581b1f6f07cc675a6" category="list-text">バックアップする永続ボリュームの作成に使用されるすべての Persistent Volume Claim オブジェクトで、「 snapshotPolicy 」が「 default 」に設定されている必要があります。</block>
@@ -553,19 +547,16 @@
   <block id="721df1cfc096c8fe936071e3747d828d" category="list-text">Google Cloud Project に、事前定義された Storage Admin ロールを持つサービスアカウントがあります。</block>
   <block id="916de09e13f9b94e688ab4e6175f2885" category="paragraph">Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。バックアップファイルは、 Cloud Volumes ONTAP システムと同じ GCP サブスクリプションとリージョンを使用して Google Cloud Storage バケットに格納されます。</block>
   <block id="ef15478cabaf21c4a3c8477e93312cee" category="paragraph">Kubernetes の永続ボリュームを Google Cloud ストレージにバックアップする前に、次の要件を確認し、サポートされている構成であることを確認してください。</block>
-  <block id="fbd33db6168b024f7fb941bc669aa81a" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="9f26112087077321f30a8a9a55bedf44" category="inline-link-rx"></block>。</block>
   <block id="c3793afe37c8ef86193b630f9ff4e7b9" category="list-text">Cloud Volumes ONTAP システムはKubernetesクラスタと同じGCPリージョンに配置し、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。</block>
   <block id="2faa0205939423bf83f1e331a7844f83" category="list-text">サポートされる GCP リージョン</block>
   <block id="12a896df7cf6cd5b5e5dcf4a46c0cebc" category="inline-link">GCP Marketplace</block>
   <block id="f8064badfe5eb591467c838191401d7c" category="paragraph">また、バックアップを保存するストレージスペースの Google サブスクリプションが必要です。</block>
   <block id="4ce60442c0b2156c43c785528827a3ab" category="list-text">GCP サービスアカウント</block>
   <block id="68cc6348671b24995e53975d0fd5d303" category="inline-link">サービスアカウントの作成方法について説明します</block>
-  <block id="20f8f5d9ab5ca1f8b32e4ead9a146d35" category="list-text">事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。<block ref="f4cbcff3186e97a51a588b3579e1ddb7" category="inline-link-rx"></block>。</block>
   <block id="672d5169919efa7cbd903c5d4f8738a2" category="paragraph">バックアップファイルは、 Cloud Volumes ONTAP システムと同じ GCP サブスクリプションとリージョンを使用して Google Cloud Storage バケットに格納されます。</block>
   <block id="687ea0908739e5e54201ce20b273affd" category="paragraph">可能です <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。また可能です <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> GCP 内の同じ Kubernetes クラスタまたは別の Kubernetes クラスタ（同じリージョン内）上の新しいボリュームです。</block>
   <block id="da7bc8de90297f74e7e43d559d6f8a4c" category="doc">Azure でマルチアカウントアクセスのバックアップを設定する</block>
   <block id="08fb1651cbfdb11878b475347705c01b" category="inline-link">Cloud Volumes ONTAP データの Azure BLOB ストレージへのバックアップ</block>
-  <block id="2a4ac893df9780b6108621896c9bfc7b" category="paragraph">これらの手順は、を実行している場合にのみ必要です<block ref="e74b3b06a2a8c2ff7fa54388adf98ac9" category="inline-link-rx"></block>。</block>
   <block id="f9a8974587711b80f51f844aef1e99df" category="paragraph">この方法で設定を行うには、次の手順を実行します。</block>
   <block id="7effdaab63f2a455255267b1c45a602d" category="section-title">アカウント間の VNet ピアリングを設定します</block>
   <block id="29e89229775aefede67526b03124356e" category="paragraph">BlueXPで別のアカウント/リージョンでCloud Volumes ONTAP システムを管理する場合は、VNetピアリングを設定する必要があることに注意してください。ストレージアカウントの接続に VNet ピアリングは必要ありません。</block>
@@ -610,11 +601,8 @@
   <block id="0375f4855be072c7d856a0233cc21de9" category="section-title">クラウドプロバイダソリューションのサポート</block>
   <block id="be845c219bb74b14349ffa6e27e7aef3" category="paragraph">BlueXPに統合した次のクラウドプロバイダソリューションのテクニカルサポートについては、その製品のBlueXPマニュアルの「困ったときは」を参照してください。</block>
   <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">ONTAP 対応の Amazon FSX</block>
-  <block id="5bf5309465f91318228a7f956b826348" category="list-text"><block ref="5bf5309465f91318228a7f956b826348" category="inline-link-macro-rx"></block></block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files の特長</block>
-  <block id="0e2bc9c853e0af52ead12823c025e58b" category="list-text"><block ref="0e2bc9c853e0af52ead12823c025e58b" category="inline-link-macro-rx"></block></block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service for Google Cloud</block>
-  <block id="02efcbea18b9485a78a41871dce1e64d" category="list-text"><block ref="02efcbea18b9485a78a41871dce1e64d" category="inline-link-macro-rx"></block></block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">サポート登録の概要</block>
   <block id="192054ad7601240a3e8be54cc5cc548e" category="paragraph">サポート資格を有効にする登録には、次の2つの形式があります。</block>
   <block id="2322ca552c2b0ebe090c8485519246a8" category="list-text">BlueXPアカウントIDサポートサブスクリプションの登録(BlueXPの[サポートリソース]ページにある20桁の960xxxxxxxxxシリアル番号)。</block>
@@ -637,7 +625,6 @@
   <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">パートナーアカウントまたはリセラーアカウントをお持ちの場合は、1つ以上のNSSアカウントを追加することはできますが、お客様レベルのアカウントと一緒に追加することはできません。</block>
   <block id="1afe19576f77bb0073c93359ed2cbb18" category="list-text">BlueXPコンソールの右上にある[ヘルプ]アイコンをクリックし、[*Support*]を選択します。</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">[ ヘルプ ] メニューのスクリーンショット。サポートは最初に表示されるオプションです</block>
-  <block id="868d9aa88f16ea923af1d15eac5d2647" category="paragraph"><block ref="868d9aa88f16ea923af1d15eac5d2647" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d17d6b5dafebab6b7659da8850737e70" category="list-text">[*NSS Management] &gt; [Add NSS Account*] をクリックします。</block>
   <block id="8aaf101e623c543c7eef3c65f6233366" category="list-text">メッセージが表示されたら、 [* Continue （続行） ] をクリックして Microsoft ログインページにリダイレクトします。</block>
   <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">ネットアップは、サポートとライセンスに固有の認証サービスのアイデンティティプロバイダとして Microsoft Azure Active Directory を使用しています。</block>
@@ -652,7 +639,6 @@
   <block id="25b94e7b58140f12be91fa8fd935fa59" category="list-text">NSSアカウントをまだ追加していない場合は、BlueXPに追加します。</block>
   <block id="819aff12752b7e6a1828e755c7664de7" category="list-text">[*リソース]ページで、[*サポートに登録*]をクリックします。</block>
   <block id="e8a3d9970b8fc1d92caaf33d9e116bd4" category="inline-image-macro">アカウントのシリアル番号と[サポートに登録]オプションを示すスクリーンショット</block>
-  <block id="113f9cd7bac6f4faa6b8d58e3e099a8e" category="paragraph"><block ref="113f9cd7bac6f4faa6b8d58e3e099a8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ff5aefce774ec72a211f2b3bb10b950" category="section-title">NSSアカウントを持たない既存のお客様</block>
   <block id="cc1d3c161bcf25e6445c2fc771647849" category="paragraph">既存のライセンスとシリアル番号をお持ちで、_no-NSSアカウントをお持ちのネットアップのお客様は、NSSアカウントを作成するだけで十分です。</block>
   <block id="5b2b7f628f804bcb786a097c7e45aa41" category="inline-link">NetApp Support Site ユーザー登録フォーム</block>
@@ -662,7 +648,6 @@
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">ネットアップのソリューションを初めて導入する場合は</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">ネットアップ製品を初めてご利用になり、NSSアカウントをお持ちでない場合は、以下の手順に従ってください。</block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">サポート登録ページでアカウントIDのシリアル番号を確認します。</block>
-  <block id="ef5e63bb6b6827440a13cc2ec7e9cf56" category="paragraph"><block ref="ef5e63bb6b6827440a13cc2ec7e9cf56" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">ネットアップサポート登録サイト</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">に移動します<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> 「*ネットアップ登録のお客様ではありません*」を選択します。</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">必須フィールドに入力します（赤いアスタリスクのフィールド）。</block>
@@ -772,7 +757,6 @@
   <block id="57beb7405f0a1c7bc500e793294e4d80" category="list-text">S3 ： GetBucketLocation</block>
   <block id="2575b79b2cd768a027306db8b9e8614a" category="list-text">S3 ： GetObjectVersion</block>
   <block id="7b2b7c08da06dd437ae98c50b4ace20f" category="inline-link">必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します</block>
-  <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
   <block id="b6cde9c60675582b751733112d2d9c0e" category="list-text">Azureの場合：</block>
   <block id="a0cfa687d678b7bdaa6e05ad4367a96d" category="list-text">StorageGRID の場合：</block>
   <block id="00913a42b009e85b8960c2fdad53a54a" category="list-text">コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。</block>
@@ -851,12 +835,9 @@
   <block id="82ed93b77a5223377d1a45ab463f6fb3" category="list-text">「*ls *」コマンドを実行して、サブフォルダ「changes」と「snapshots」を含むフォルダ「catalogxxxxxx」が作成されていることを確認します。</block>
   <block id="47088be6cbcb439bd7241ec72edf3a91" category="section-title">ONTAP クラスタとStorageGRID システムを検出</block>
   <block id="202fec1254d856dde5dee6e53f5eb9e9" category="inline-link">オンプレミスのONTAP 作業環境をすべて検出できます</block>
-  <block id="1832485ebcd99cd5b4b3491a8cffd638" category="list-text"><block ref="9033f64bdbb62eae631654d0a3df291b" category="inline-link-rx"></block> 以前の環境で使用できていたものです。</block>
   <block id="f8fe3d533b3c8ec77c886cdbfcbd8c60" category="inline-link">StorageGRID システムを検出</block>
-  <block id="1b7fb9def2cbf0701ee8453186654b5b" category="list-text"><block ref="a5cecadb957adccfe222c1147dfa0b64" category="inline-link-rx"></block>。</block>
   <block id="8a817b57889a6e642ad7fb06e7b26c80" category="section-title">StorageGRID 環境の詳細を設定</block>
   <block id="95405ad3ad814456093255e6d36ee69e" category="inline-link">BlueXP API</block>
-  <block id="10e047f5e5b14e395de98b85ed4c9291" category="paragraph">を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します<block ref="40510467bd8e1f43a6541476355593dd" category="inline-link-rx"></block>。</block>
   <block id="ed28e31454bb8c9849e6271a030b2762" category="paragraph">これらの手順は、StorageGRID にデータをバックアップするONTAP システムごとに実行する必要があります。</block>
   <block id="3f1b9decb18d57a001f26c7273adeddc" category="list-text">次のOAuth/token APIを使用して、認証トークンを抽出します。</block>
   <block id="f2b2dd8a7061a4f2836de5feda40a45e" category="paragraph">このAPIは、次のような応答を返します。次のように、認証トークンを取得できます。</block>
@@ -962,7 +943,6 @@
   <block id="e067d2382b356fe698b89336fbadacc9" category="list-text">カスタムロールの省略記号 (...) をクリックし、 * 編集 * をクリックします。</block>
   <block id="08054c8ee39ddd5116698bd17cecfaf1" category="list-text">JSON をクリックして、次の権限を追加します。</block>
   <block id="e72ae7637ee4c3c3135530cf7abf3ea9" category="inline-link">ポリシーの完全な JSON 形式を表示します</block>
-  <block id="66241dc59ccaae038652c7cc0bcd7783" category="paragraph"><block ref="66241dc59ccaae038652c7cc0bcd7783" category="inline-link-rx"></block></block>
   <block id="013bd8775ccd54f42d086e5e2e52fcde" category="list-text">[ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。</block>
   <block id="5befa7486c8d00eaafce2041341f9c2e" category="list-text">別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ</block>
   <block id="a2ff0bc78d093861138e916ba1b7cc8b" category="inline-link-macro">Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます</block>
@@ -971,7 +951,6 @@
   <block id="5938ac938681497e7209c89bcf1fc58f" category="inline-link">独自のキーの使用方法を参照してください</block>
   <block id="caa02466e2a6c1c2c13139fe55b7aaab" category="list-text">Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。<block ref="50f2f49feb0afd07f1969b5faf2ca775" category="inline-link-rx"></block>。</block>
   <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link">Azure で Cloud Volumes ONTAP を起動します</block>
-  <block id="3ed257b47c643900e9574b8c70a0c8a6" category="paragraph">を参照してください<block ref="e515c0e95325e358a799acebafdf6235" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
   <block id="36233220222760341fc9ff566bc8f320" category="list-text">[ Cloud Volumes ONTAP の作成 *] をクリックします。</block>
   <block id="5387e637e4dec0e9f79e98e81ca789ff" category="list-text">クラウドプロバイダとして Microsoft Azure を選択し、シングルノードまたは HA システムを選択します。</block>
   <block id="d4181fc5781232f50f90b64c6aeddf08" category="list-text">Azure クレデンシャルの定義ページで、クレデンシャル名、クライアント ID 、クライアントシークレット、およびディレクトリ ID を入力し、 * 続行 * をクリックします。</block>
@@ -1019,7 +998,6 @@
   <block id="c5c12e22be965b4ae0e9fc5e1618bdbe" category="inline-link-macro">Azure NetApp Files 作業環境を作成します</block>
   <block id="e7a9cd1dc4bf0c230d0684e18369d70d" category="section-title">コネクタを作成します</block>
   <block id="e12fb4f30abef516bf6f5e0e9a5b72b7" category="inline-link-macro">BlueXPからAzureにコネクタを作成します</block>
-  <block id="3717a56f9d9c162dfd0127cd325c0a2f" category="paragraph">詳細については、を参照してください <block ref="88ddfb8e0cf0e729a2d90f978111b93e" category="inline-link-macro-rx"></block>。</block>
   <block id="b4866a33463f80d02c65e0910ff4b146" category="paragraph">ポリシーを作成するか、BlueXPで使用可能な次の定義済みポリシーのいずれかを使用できます。</block>
   <block id="43852dc1e0c3229284688eb4c01dfef0" category="paragraph">事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。</block>
   <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">[仮想マシン]ページの[設定]ドロップダウンリストから、[*ポリシー*]を選択します。</block>
@@ -1060,7 +1038,6 @@
   <block id="beed6a355a0f3c2fec57e272c4df9a9b" category="list-text">cloudmanager_scs_cloudコンテナを再起動します。<block ref="9d7054b7c81b67187a51afa7122a5891" prefix=" " category="inline-code"></block></block>
   <block id="56221c5b2b531b839a3cd5c7e9c9cd9f" category="section-title">REST APIにアクセスできます</block>
   <block id="4512b12288e7290cb279f814b15ba5dc" category="inline-link">フェデレーテッド認証を使用してユーザトークンを作成します</block>
-  <block id="8753ca0304fc4dd31beb83f4a57f7b41" category="paragraph">REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください<block ref="0eb587a835d0db317e25e938408a4ed2" category="inline-link-rx"></block>。</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">前提条件</block>
   <block id="031ed57adfb7acf180fc66b9bac25dcf" category="paragraph">ホストを追加する前に、前提条件を満たしていることを確認する必要があります。</block>
   <block id="00346be4bfc4c310cf2dbead933dff7c" category="list-text">作業環境とコネクタを作成しておきます。</block>
@@ -1104,16 +1081,11 @@
   <block id="ef1b9121ab9ea469ad904cedd07f94d3" category="doc">Cloud Volumes ONTAP を設定します</block>
   <block id="add0d0ec5591795d2933dd7c1f3e9950" category="section-title">Cloud Volumes ONTAP 作業環境を作成します</block>
   <block id="5838355f0487c8b48bcad7c6bcae87af" category="inline-link-macro">既存のCloud Volumes ONTAP システムをBlueXPに追加する</block>
-  <block id="8a4f79c770877a1f6dc14d8c5fa17702" category="paragraph">既存のCloud Volumes ONTAP システムを検出し、BlueXPに追加できます。詳細については、を参照してください <block ref="c0cbe78c27219d64a20527a549b6f27b" category="inline-link-macro-rx"></block>。</block>
   <block id="94ee7072c2750da1997438a715efb7d4" category="section-title">コネクタを作成します</block>
   <block id="486388bbe4cda183a0e74df6ada2a454" category="inline-link-macro">AWS での Cloud Volumes ONTAP のクイックスタート</block>
-  <block id="d76b143ce1cb466792de0e0337e820e7" category="list-text"><block ref="d76b143ce1cb466792de0e0337e820e7" category="inline-link-macro-rx"></block></block>
   <block id="6b9ec885733dcee16db8c4d8dde6312a" category="inline-link-macro">Azure での Cloud Volumes ONTAP のクイックスタート</block>
-  <block id="1a4dc7b45f8328469b28b4e49fc22125" category="list-text"><block ref="1a4dc7b45f8328469b28b4e49fc22125" category="inline-link-macro-rx"></block></block>
   <block id="c816d65f45a034b0842bc039567fcb6b" category="inline-link-macro">Google Cloud の Cloud Volumes ONTAP のクイックスタート</block>
-  <block id="d6758ec75f0ff2bab6d8a4d6b6f79cf1" category="list-text"><block ref="d6758ec75f0ff2bab6d8a4d6b6f79cf1" category="inline-link-macro-rx"></block></block>
   <block id="3d6e948defef3e67a438f4f7819ed82e" category="doc">オンプレミスの ONTAP データを Azure BLOB ストレージにバックアップする</block>
-  <block id="5e9c68a306632190e5fdfb7db87750f9" category="list-text">オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください<block ref="04e8e773ac6637419158f2743860946e" category="inline-link-rx"></block> を参照してください。</block>
   <block id="08c19771a6ca4c9d29ee89345a0e2d51" category="list-text">クラスタは、 BLOB ストレージとコネクタへの必要なネットワーク接続を備えている必要があります。</block>
   <block id="c6ec39d27710723c8e240515b4b8d58e" category="list-text">コネクタは、 BLOB ストレージとクラスタへの必要なネットワーク接続と、必要な権限を備えている必要があります。</block>
   <block id="4f7dddcefc072dbdfbfc21f597fc974b" category="list-text">バックアップを配置するオブジェクトストレージスペース用の有効な Azure サブスクリプションが必要です。</block>
@@ -1141,7 +1113,6 @@
   <block id="c434332bb7ea2d6636a3d41a262f1e7e" category="inline-link">コネクタをオンプレミスにインストールする</block>
   <block id="0fed42c16e02df19813c1ada5f9c8fd7" category="inline-link">Azure Governmentリージョンへのコネクタのインストール</block>
   <block id="b445de53411a165e9c56da6430c38d59" category="inline-link">Azure のコネクタのルール</block>
-  <block id="f840409b357663e7b24e8296c05770a5" category="list-text">AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください<block ref="e1893ebf6f9d2e927a13d052b78eec9f" category="inline-link-rx"></block> を参照してください。</block>
   <block id="a3caba4397a73eb091b3374d44a36510" category="list-text">Azure ストレージへの VNet プライベートエンドポイントを有効化これは、ONTAP クラスタからVNetへのExpressRouteまたはVPN接続があり、コネクタとBLOBストレージ間の通信を仮想プライベートネットワーク（*プライベート*接続）で維持する場合に必要です。</block>
   <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">サポートされている地域</block>
   <block id="ff3e862b2a18f8bce76ed20224f2e575" category="paragraph">すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
@@ -1209,7 +1180,6 @@
   <block id="929d25665bc92d22cf4a79265248dd36" category="section-title">コネクタのネットワーク要件</block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">エンドポイントのリストを参照してください</block>
   <block id="fd1958e5e74317f89c6c16bbca7d1446" category="inline-link">AWS のコネクタのルール</block>
-  <block id="56d39ecb5bf4d2ec753c12fbb0e00108" category="list-text">AWSおよびAWS GovCloud環境では、追加のインバウンドおよびアウトバウンドのセキュリティグループルールが必要です。を参照してください<block ref="74fb388667736bb2b34ea14720dd63e3" category="inline-link-rx"></block> を参照してください。</block>
   <block id="76e709935c290dea4c7b1c0de4918211" category="inline-link-macro">コネクタにS3バケットを管理する権限があることを確認します</block>
   <block id="834f26d80b9784d547a441b2c02d3ad5" category="list-text"><block ref="7eb7d4d5a2ffca3aec2449e14ed03205" category="inline-link-macro-rx"></block>。</block>
   <block id="db41e7a8de9567fec002e93320c428ad" category="inline-xref">VPC エンドポイントインターフェイスの設定方法を参照してください。</block>
@@ -1258,7 +1228,6 @@
   <block id="51cca00855dd27ddbb729c64d6988680" category="inline-image-macro">AWS コンソールから VPC エンドポイントの DNS 名のスクリーンショット。</block>
   <block id="63c7ff1056127bdaee465b05c7c83d3c" category="paragraph"><block ref="63c7ff1056127bdaee465b05c7c83d3c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="667b744af05e085368d150edc4b8a344" category="inline-link">BlueXPコネクタをホストしているVMにログインします</block>
-  <block id="53580765f208bf3a21b9b94ab077bfb1" category="list-text">VPC S3 エンドポイントから証明書を取得します。これは、で行います<block ref="baa295d957d2e86c0ec7224e7ed425da" category="inline-link-rx"></block> 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。</block>
   <block id="b11703e578eba56af91d25ee75ec1594" category="list-text">このコマンドの出力から、 S3 証明書のデータ（ BEGIN / END CERTIFICATE タグを含む、との間のすべてのデータ）をコピーします。</block>
   <block id="042284b067b431d7d21168a5ada6e448" category="list-text">ONTAP クラスタの CLI にログインし、次のコマンドを使用してコピーした証明書を適用します（代わりに独自の Storage VM 名を指定します）。</block>
   <block id="94dd9372ab529c315f08bd0bae6ae331" category="paragraph">バックアップのAmazon S3デスティネーションがCanvas上の作業環境として存在する場合は、クラスタをAmazon S3作業環境にドラッグしてセットアップウィザードを開始できます。</block>
@@ -1266,7 +1235,6 @@
   <block id="6a214193b7d4e0d357a02a60f0b08db3" category="list-text">バックアップの格納に使用する AWS アカウント、 AWS Access Key 、および Secret Key 。</block>
   <block id="e087799545278f981b56959838c52762" category="paragraph">アクセスキーとシークレットキーは、 ONTAP クラスタに S3 バケットへのアクセスを付与するために作成した IAM ユーザ用のものです。</block>
   <block id="747f0efebd1dba208c83630552f97a6d" category="list-text">バックアップを格納する AWS リージョン。</block>
-  <block id="4f31b10ac849af9ac0f7dfb88a23d059" category="list-text">デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択して、データの暗号化を管理できます。 <block ref="69a8af80d8bd7de755d81b7e7b4942df" category="inline-link-rx"></block>）。</block>
   <block id="b8752d8344f0777b3df39705ebfca22f" category="inline-image-macro">ONTAP システムから AWS S3 にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。</block>
   <block id="5ada387e6bdf51389cbc58e3a326ec69" category="paragraph"><block ref="5ada387e6bdf51389cbc58e3a326ec69" category="inline-image-macro-rx" type="image"></block></block>
   <block id="da6211c797a89720b6883bacdc774e98" category="list-text">必要に応じて、以前に設定した AWS PrivateLink を使用するかどうかを選択します。<block ref="4b288ecb11624923e7ee69f96a59c546" category="inline-link-rx"></block>。</block>
@@ -1296,7 +1264,6 @@
   <block id="ec7d92235d0dc6e0acfa017dfe7f1dbd" category="section-title">ジョブの詳細を表示します</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知ベル</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">通知センターの詳細と、バックアップおよびリストア・ジョブに関するアラート・メールの送信方法について説明します</block>
-  <block id="09b16d1aa35c58d96fa185b2690e8f18" category="paragraph"><block ref="5089517823b516715ea5ebbb3ef37ff2" category="inline-link-rx"></block>。</block>
   <block id="d45e0847841b73f9b8082d6a7bc89f24" category="paragraph">必要に応じて、バックアップから同じ作業環境または別の作業環境に、_volume_全体、a_folder_、または1つ以上の_files_をリストアできます。</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">の機能</block>
   <block id="6433f8932ae76610af96dec0c0c9c0f2" category="paragraph">バックアップ機能：</block>
@@ -1583,10 +1550,8 @@
   <block id="86763912a3fb720760d95338a077e264" category="section-title">古いバックアップファイルをStorageGRID システムからAzureアーカイブストレージに移動する機能</block>
   <block id="56182657e28c8dfde64ef2386feb1cde" category="paragraph">これで、古いバックアップファイルをStorageGRID システムからAzureのアーカイブストレージに階層化できるようになりました。これにより、StorageGRID システムのスペースを解放し、古いバックアップファイルには低コストのストレージクラスを使用することでコストを削減できます。</block>
   <block id="ec9614a46239aa59499c4a94e919963a" category="inline-link">詳細はこちらをご覧ください</block>
-  <block id="2dbb2c58aa8d6b345d1c74a70f17d1a2" category="paragraph">この機能は、オンプレミスクラスタがONTAP 9.12.1以降を使用し、StorageGRID システムが11.4以降を使用している場合に使用できます。<block ref="70195a33db6d6b4308ed37adb844e324" category="inline-link-rx"></block>。</block>
   <block id="609d2baddee02ef8a648a83c3c6583af" category="section-title">DataLockとRansomwareによる保護は、Azure Blobでのバックアップファイルに対して設定できます</block>
   <block id="dc78c18207a001d77615c0f857f16f9d" category="inline-link">DataLockとランサムウェア防御を使用してバックアップを保護する方法については、こちらをご覧ください</block>
-  <block id="44522dba6ab4478f7cb53c4622e3dafa" category="paragraph">DataLockとRansomware Protectionは、Azure Blobに保存されたバックアップファイルでサポートされるようになりました。Cloud Volumes ONTAP またはオンプレミスONTAP システムでONTAP 9.12.1以降を実行している場合、バックアップファイルをロックしてスキャンし、ランサムウェアの可能性を検出できるようになりました。<block ref="97e28eb0f7fdcd65cbf9241c83ee1d40" category="inline-link-rx"></block>。</block>
   <block id="5b97e7065442b7eb64668b69dbdada19" category="section-title">FlexGroup ボリュームのバックアップとリストアの機能拡張</block>
   <block id="36698eb018d0923e923633648afc1660" category="list-text">FlexGroup ボリュームのリストア時に複数のアグリゲートを選択できるようになりました。前回のリリースでは、アグリゲートを1つしか選択できませんでした。</block>
   <block id="f5f0348847173672e951c41ae184f50e" category="list-text">FlexGroup ボリュームリストアがCloud Volumes ONTAP システムでサポートされるようになりました。前回のリリースでは、オンプレミスのONTAP システムにのみリストアできました。</block>
@@ -1596,11 +1561,9 @@
   <block id="14f514abf2e1958a0b5bcab66eaf30a4" category="section-title">MetroCluster 構成でのボリュームのサポートが強化されました</block>
   <block id="1fe2df29e9bf17baaab103f0a9bba7fe" category="paragraph">ONTAP 9.12.1 GA以降を使用している場合、MetroCluster 構成でプライマリシステムに接続しているときにバックアップがサポートされるようになりました。バックアップ構成全体がセカンダリシステムに転送されるため、スイッチオーバー後もクラウドへのバックアップが自動的に続行されます。</block>
   <block id="5f3a7b9d761ca72393881ec6b3e09094" category="inline-link">詳細については、「バックアップの制限」を参照してください</block>
-  <block id="a6fdbb3a339b191fd632ddee7fbee8cf" category="paragraph"><block ref="10efc6f0a427d8e27569782c3149d3d7" category="inline-link-rx"></block>。</block>
   <block id="88a11892e7418e1eee8c952df9545b46" category="section-title">2023年1月9日</block>
   <block id="b17d2155a07524d0e8a3d1eb73a257c3" category="section-title">StorageGRID システムからAWS S3アーカイブストレージに古いバックアップファイルを移動する機能</block>
   <block id="76592785cd14862cf74d11289e50ed92" category="paragraph">これにより、StorageGRID システムの古いバックアップファイルをAWS S3のアーカイブストレージに階層化できるようになりました。これにより、StorageGRID システムのスペースを解放し、古いバックアップファイルには低コストのストレージクラスを使用することでコストを削減できます。AWS S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化することもできます。</block>
-  <block id="b7027e7163ab44680c3c69296db41564" category="paragraph">この機能は、オンプレミスクラスタでONTAP 9.12.1以降を使用し、StorageGRID システムで11.3以上を使用している場合に使用できます。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
   <block id="5baabb9bbca503ea382779d0fce7e9c5" category="section-title">Google Cloudのデータ暗号化に、お客様が管理する独自のキーを選択できます</block>
   <block id="b9395c2030b2a8ad48d31ad52bd9f6e9" category="section-title">「ストレージ管理者」ロールは、サービスアカウントがGoogle Cloud Storageでバックアップを作成するために必要なくなりました</block>
   <block id="d7cf6019b64afefeee4361ce4c22ce30" category="inline-link">Google Cloud Storageでバックアップを準備する方法をご覧ください</block>
@@ -1610,7 +1573,6 @@
   <block id="6f44a1bf2246f054fd573ae9473909b6" category="inline-link">コネクターをオフラインサイトにインストールする方法を参照してください</block>
   <block id="fe1757784884bfcaf0ca6254fb7fa44e" category="section-title">ジョブ監視結果ページを.csvレポートとしてダウンロードできるようになりました</block>
   <block id="5ae1400b4fd16294ac8af42e98d8a9ed" category="inline-link">「ジョブ監視レポートを生成する方法」を参照してください</block>
-  <block id="c8a0a8bdcaf1f25cbadde68224d6591d" category="paragraph">[ジョブ監視]ページをフィルタリングして、必要なジョブとアクションを表示したら、そのデータの.csvファイルを生成してダウンロードできるようになりました。次に、情報を分析したり、組織内の他のユーザーにレポートを送信したりできます。<block ref="f54dc22fe93134a0b2767a291dba51f5" category="inline-link-rx"></block>。</block>
   <block id="e29eef6ae64d545134f2b42984845a94" category="section-title">2022年12月19日</block>
   <block id="89d500a3ace67f6d47edb61231336589" category="section-title">Cloud Backup for Applicationsの機能強化</block>
   <block id="0a286ad90f3a25f45e443367036a8789" category="list-text">SAP HANAデータベース</block>
@@ -1642,19 +1604,15 @@
   <block id="4547c4a9db890b3449aca4e706555007" category="section-title">FlexGroup ボリュームのサポート</block>
   <block id="f337eb9be5f215d07b89436adc58d486" category="paragraph">Cloud BackupでFlexGroup ボリュームのバックアップとリストアがサポートされるようになりました。ONTAP 9.12.1以降を使用している場合は、FlexGroup ボリュームをパブリッククラウドストレージとプライベートクラウドストレージにバックアップできます。FlexVol ボリュームとFlexGroup ボリュームが含まれる作業環境がある場合、ONTAP ソフトウェアを更新すると、それらのシステム上の任意のFlexGroup をバックアップできます。</block>
   <block id="cce3f2ac0edcb49693caf11399223d89" category="inline-link">サポートされるボリュームタイプの一覧を参照してください</block>
-  <block id="2750ec6dc42d79b24b9902d41543b6fd" category="paragraph"><block ref="0b2b94d5062b1eb6747bf9cb58e01b77" category="inline-link-rx"></block>。</block>
   <block id="d1c49eec91984b5c0c7c8ff6998bb65d" category="section-title">バックアップのデータをCloud Volumes ONTAP システムの特定のアグリゲートにリストアする機能</block>
   <block id="e674451efff1f119cf056a3e852d4483" category="paragraph">以前のリリースでは、データをオンプレミスのONTAP システムにリストアする場合にのみアグリゲートを選択できました。この機能は、Cloud Volumes ONTAP システムにデータをリストアする場合に使用できるようになりました。</block>
   <block id="733947b9c31fd162b40f0854f88a98f0" category="section-title">2022年11月2日</block>
   <block id="4e1bedfa5acb9fc8467640ea1dcaece3" category="section-title">古いSnapshotコピーをベースラインバックアップファイルにエクスポートできるようになりました</block>
   <block id="ae268c326c8c4dacd9c1078313ddd2ba" category="paragraph">バックアップスケジュールのラベル（日単位、週単位など）に一致するボリュームのローカルSnapshotコピーが作業環境にある場合は、それらの履歴Snapshotをバックアップファイルとしてオブジェクトストレージにエクスポートできます。これにより、古いSnapshotコピーをベースラインバックアップコピーに移動することで、クラウドでバックアップを初期化できます。</block>
   <block id="649d79e860fd8eae7a579da7093b467e" category="inline-link">[詳細設定]ページ</block>
-  <block id="baf7d965b78ce781f897df564be4d675" category="paragraph">このオプションは、作業環境でCloud Backupをアクティブ化する場合に使用できます。この設定は、あとでで変更することもできます<block ref="88d25b1a851fc3767825406ea8de456d" category="inline-link-rx"></block>。</block>
   <block id="bddf21f18c4ffad2268ebfc0d565c03c" category="section-title">これで、ソースシステムで不要になったボリュームのアーカイブにCloud Backupを使用できるようになります</block>
   <block id="3348dcc393bde37af6464ca44f92a231" category="inline-link">詳細をご確認ください</block>
-  <block id="429c129d466e9cdbc94da5ebfd639734" category="paragraph">これで、ボリュームのバックアップ関係を削除できるようになります。これにより、新しいバックアップファイルの作成を停止してソースボリュームを削除し、既存のすべてのバックアップファイルを保持する場合に、アーカイブメカニズムを実現できます。これにより、必要に応じて、あとでソースストレージシステムからスペースを消去しながら、バックアップファイルからボリュームをリストアできるようになります。<block ref="96e512d167a0d6d287f83a8e9bfbf6a3" category="inline-link-rx"></block>。</block>
   <block id="d977c6f6b61d0f35299ae86a391a8a57" category="section-title">Cloud BackupのアラートをEメールおよび通知センターで受信するためのサポートが追加されました</block>
-  <block id="8a52e1de39b1a61e3a2c04e39442b0e8" category="paragraph">Cloud Backupは、BlueXP Notificationサービスに統合されています。Cloud Backup通知を表示するには、BlueXPメニューバーの通知ベルをクリックします。また、システムにログインしていないときでも重要なシステムアクティビティを通知できるように、メールで通知を送信するようにBlueXPを構成することもできます。このEメールは、バックアップとリストアのアクティビティに注意する必要があるすべての受信者に送信できます。<block ref="74389894cb83c627291d11e2dde62faa" category="inline-link-rx"></block>。</block>
   <block id="d07fed7e54302c401452d86813f74fdb" category="section-title">新しいAdvanced Settingsページでは、クラスタレベルのバックアップ設定を変更できます</block>
   <block id="711d5dadc0f2641aef64c8697fec3458" category="paragraph">この新しいページでは、ONTAP システムごとにクラウドバックアップをアクティブ化するときに設定したクラスタレベルのバックアップ設定の多くを変更できます。「デフォルト」バックアップ設定として適用される一部の設定を変更することもできます。変更可能なバックアップ設定の完全なセットは、次のとおりです。</block>
   <block id="54ce718c77c15316f9e58b5cae74c251" category="list-text">ONTAP システムにオブジェクトストレージへのアクセス権を付与するストレージキー</block>
@@ -1665,13 +1623,11 @@
   <block id="81db226b4b2fef2e7c216cbb14e7d89c" category="list-text">ソースシステムから「年次」スナップショットを削除するかどうか</block>
   <block id="33e5226a6b178bab9e22b761cbda6440" category="list-text">オブジェクトストレージに接続されているONTAP IPspace（アクティブ化時に誤って選択された場合）</block>
   <block id="7b95d23b6b30b69ed07a2e15017d99e3" category="inline-link">クラスタレベルのバックアップ設定の管理に関する詳細情報</block>
-  <block id="057c181e6c21fad200a862461add5a03" category="paragraph"><block ref="344cf4f459ea1c1e24d6bef144dcb178" category="inline-link-rx"></block>。</block>
   <block id="49b6fd5ed6bda6ec09a46ece6a679207" category="section-title">オンプレミスコネクタを使用している場合に、検索とリストアを使用してバックアップファイルをリストアできるようになりました</block>
   <block id="8f6062f059e26f94975a36f6a5efcc4b" category="paragraph">以前のリリースでは、Connectorをオンプレミスに導入すると、バックアップファイルをパブリッククラウドに作成するためのサポートが追加されていました。このリリースでは、Connectorがオンプレミスに導入されている場合、Search &amp; Restoreを使用してAmazon S3またはAzure Blobからバックアップをリストアできるようになりました。検索とリストアでは、StorageGRID システムからオンプレミスのONTAP システムへのバックアップのリストアもサポートされています。</block>
   <block id="18cddedef625cde24d34d1b2bb64fb96" category="paragraph">現時点では、Google Cloud Storageからバックアップをリストアするために検索とリストアを使用する場合、ConnectorをGoogle Cloud Platformに導入する必要があります。</block>
   <block id="f4f4c174196d45dbc07ae62740f92b92" category="section-title">ジョブ監視ページが更新されました</block>
   <block id="213f79d27d3a76a68080f2d948105d7e" category="inline-link">ジョブ監視ページ</block>
-  <block id="92e275cf9354b2e79f6ecadafa52a965" category="paragraph">には、次の更新が行われています<block ref="2aba02720d116e26596d478ca3ace389" category="inline-link-rx"></block>：</block>
   <block id="5b839de8a8e7b5f30407c5dc2cfdabd2" category="list-text">「ワークロード」の列を使用して、ページをフィルタして、ボリューム、アプリケーション、仮想マシン、Kubernetesの各バックアップサービスのジョブを表示できます。</block>
   <block id="a2ed310c63a1aba1225315fe5f7f60ee" category="list-text">特定のバックアップジョブの詳細を表示するには、「ユーザ名」と「ジョブタイプ」の列を新たに追加します。</block>
   <block id="bcce731a4ced178ba1457a0965f1a878" category="list-text">[ジョブの詳細]ページには、メインジョブを完了するために実行中のすべてのサブジョブが表示されます。</block>
@@ -1691,7 +1647,6 @@
   <block id="ab288ae4b4c50ebb9a997e0f0debbd15" category="section-title">2022年9月19日</block>
   <block id="4b60b47d2569a6a3e984e451c382fbdb" category="section-title">DataLockとRansomwareによる保護は、StorageGRID システムのバックアップファイルに対して設定できます</block>
   <block id="9ca61d0605df8b23ed36445fbf3f2f6a" category="inline-link">DataLockとRansomwareによる保護でバックアップを保護する方法の詳細をご確認ください</block>
-  <block id="f2c9e54745387d4204d350aaf464ef16" category="paragraph">最後のリリースで導入された、Amazon S3バケットに格納されたバックアップ向けの_DataLockとRansomware Protection_forが含まれます。このリリースでは、StorageGRID システムに格納されたバックアップファイルのサポートが拡張されています。クラスタがONTAP 9.11.1以降を使用していて、StorageGRID システムがバージョン11.6.0.3以降を実行している場合、この新しいバックアップポリシーオプションを使用できます。<block ref="3f7eaa3e30bb5eb7a46ecb7c423ee7ad" category="inline-link-rx"></block>。</block>
   <block id="7db81221e474d169032014280bbe8e36" category="paragraph">バージョン3.9.22以降のソフトウェアがインストールされたコネクタを実行する必要があります。コネクタはオンプレミスにインストールする必要があり、インターネットにアクセスできるサイトまたはインターネットに接続できないサイトにインストールできます。</block>
   <block id="dfa4dbaa7b53b80d828eeac39da445d5" category="section-title">これで、バックアップファイルからフォルダレベルのリストアを実行できるようになりました</block>
   <block id="201e1c2515e9474bbcf720fb750a48c0" category="paragraph">フォルダ（ディレクトリまたは共有）内のすべてのファイルにアクセスする必要がある場合は、バックアップファイルからフォルダをリストアできるようになりました。フォルダをリストアする方が、ボリューム全体をリストアするよりもはるかに効率的です。この機能は、ONTAP 9.11.1以降を使用している場合、Browse &amp; RestoreメソッドとSearch &amp; Restoreメソッドの両方を使用してリストア処理を実行するときに使用できます。この時点では、1つのフォルダのみを選択してリストアできます。そのフォルダのファイルのみがリストアされます。サブフォルダやサブフォルダ内のファイルはリストアされません。</block>
@@ -1700,24 +1655,17 @@
   <block id="b0e03676724b8b6468356ef104a66e4f" category="section-title">ファイルレベルのリストアで、元のソースファイルを上書きするオプションが追加されました</block>
   <block id="f3e2c168c189da079b62c6ff6558a640" category="paragraph">以前は、元のボリュームにリストアされたファイルは、「Restore_&lt; file_name &gt;」というプレフィックスの新しいファイルとして常にリストアされていました。ボリューム上の元の場所にファイルをリストアする際に、元のソースファイルを上書きできるようになりました。この機能は、参照およびリストア方法と検索およびリストア方法の両方を使用して、リストア処理を実行する場合に使用できます。</block>
   <block id="736c2dbf2aa9f4b08b97a4f719b3cf5e" category="section-title">ドラッグアンドドロップして、StorageGRID システムへのクラウドバックアップを有効にします</block>
-  <block id="01fa460d0b4e6c77f9b145e51a76fbd6" category="paragraph">状況に応じて<block ref="81ffc4823c79c3e10cfa644aead6e93c" category="inline-link-rx"></block> バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてクラウドバックアップセットアップウィザードを開始できます。</block>
   <block id="15471566ffb385e256937957990dd60d" category="section-title">2022年8月18日</block>
-  <block id="3f3ac5f6857788bfe6b27f406afcffa5" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXPで有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、効率的でポリシーベースのバックアップとリストアを実現します。Amazon FSX for NetApp ONTAP 上にあるOracleデータベースのバックアップとリストアを実行できます。<block ref="5774010e75c0af5301ef0cfe74198590" category="inline-link-rx"></block>。</block>
   <block id="5f98181f93bdb66aed67b6ec6ca0e6a1" category="section-title">検索とリストアがAzure Blobでのバックアップファイルでサポートされるようになりました</block>
   <block id="a2824b49f1c7526bf0e925b86c7b293c" category="inline-link">Search &amp; Restoreを使用してボリュームとファイルをリストアする方法を参照してください</block>
-  <block id="3cc0a32f0024bbcc0e74c0ca7c01b4ca" category="paragraph">Azure BLOBストレージにバックアップファイルを保存するユーザが、ボリュームとファイルのリストア方法を検索してリストアできるようになりました。<block ref="2505b78b897ef0dc1c5d1783874239f2" category="inline-link-rx"></block>。</block>
   <block id="df69045929c0c3d81d05d291d9a65cdf" category="inline-link">必要に応じて、これらの権限を追加する方法を参照してください</block>
-  <block id="0d686592bdbc5c86f2ba1c8248bc44da" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェア（2022年8月）を使用して導入されたコネクタに、次の権限が含まれます。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="0ebb6015b7a8d1b3b67f8b17b057acd1" category="inline-link-rx"></block>。</block>
   <block id="3b360b98b3f98a4a19cae6eee4917697" category="section-title">バックアップファイルを削除攻撃やランサムウェア攻撃から保護する機能が追加されました</block>
-  <block id="e7f0bd203723dde56c408349b772431e" category="paragraph">Cloud Backupでランサムウェアセーフバックアップのオブジェクトロックがサポートされるようになりました。クラスタがONTAP 9.11.1以降を使用していて、バックアップのデスティネーションがAmazon S3の場合、_DataLockという新しいバックアップポリシーオプションとランサムウェア防御_が利用可能になりました。DataLockはバックアップファイルの変更や削除を防止します。ランサムウェア対策はバックアップファイルをスキャンして、ランサムウェアによるバックアップファイルへの攻撃の証拠を探します。<block ref="3f7eaa3e30bb5eb7a46ecb7c423ee7ad" category="inline-link-rx"></block>。</block>
   <block id="0d12e2bc2bcdc88948dc22492e4465d5" category="inline-link">必要に応じて、これらの権限を追加する方法を参照してください</block>
-  <block id="79ab6792e94316bd9a787cf24d4ff7b1" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェアを使用して展開されたコネクタには、これらの権限が含まれています。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="5959bb22b1cf142d57ce2b955e17e926" category="inline-link-rx"></block>。</block>
   <block id="9fa4d73f6f3d752a69adeebba1959edb" category="section-title">Cloud Backupで、カスタムSnapMirrorラベルを使用して作成したポリシーがサポートされるようになりまし</block>
   <block id="387856638678798c3ffb0e38b39170c6" category="paragraph">以前は、Cloud Backupであらかじめ定義されているSnapMirrorラベル（hourly、daily、weekly、hourly、yearlyなど）のみがサポートされていました。これで、System ManagerまたはCLIを使用して作成したカスタムのSnapMirrorラベルを含むSnapMirrorポリシーがCloud Backupで検出されるようになります。これらの新しいラベルはCloud BackupのUIで公開されており、SnapMirrorラベルを使用してボリュームをクラウドにバックアップできます。</block>
   <block id="a50aef84191a2a8583dff3169f0e9722" category="section-title">ONTAP システムのバックアップポリシーも強化されました</block>
   <block id="49ed93361b6144f58f401017aa6361d0" category="paragraph">一部のバックアップポリシーのページが再設計され、各ONTAP クラスタのボリュームに使用できるすべてのバックアップポリシーが表示されるようになりました。これにより、使用可能なポリシーの詳細を簡単に確認できるため、ボリュームに最適なポリシーを適用できます。</block>
   <block id="c386ae49c48be8bcc2fbd19ab4807c0a" category="section-title">ドラッグアンドドロップして、Azure BlobやGoogle Cloud StorageへのCloud Backupを有効にします</block>
-  <block id="1c630f0a83d0317db1fef94fb4dac579" category="paragraph">状況に応じて<block ref="a3c3477c66a633d03b9d52df95b2c874" category="inline-link-rx"></block> または<block ref="d8758b85898e795623db75e4c1372f83" category="inline-link-rx"></block> バックアップ先はキャンバス上の作業環境として存在し、オンプレミスのONTAP またはCloud Volumes ONTAP 作業環境（AzureまたはGCPにインストール）を移行先にドラッグしてバックアップセットアップウィザードを開始できます。</block>
   <block id="b6f2e1a880ce20ab3d1039056746fa33" category="paragraph">この機能はAmazon S3バケットに対してはすでに存在します。</block>
   <block id="02e3f175b6b6db384cc8a9f19dfd8b6a" category="section-title">2022年7月13日</block>
   <block id="f2c95e400c19071fbcd562467ddc48b3" category="section-title">SnapLock Enterpriseボリュームのバックアップがサポートされるようになりました</block>
@@ -1734,7 +1682,6 @@
   <block id="afd87a86d8a5973d91f3fcc4e85c719f" category="section-title">Cloud Backup for Virtual Machines 1.1.0のGA版になりました</block>
   <block id="a1bf67f5d2f66348eff06c9dbdb7636d" category="paragraph">SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。</block>
   <block id="b418e05c847b656e4a8ac26f2f0cc045" category="inline-link">仮想マシンをクラウドに保護する方法については、こちらをご覧ください</block>
-  <block id="3a5ea6bb0616fe3f66bd74e5e18fd1b3" category="paragraph"><block ref="95fa49d8f0b9a0affedd5e0d4a52c2d2" category="inline-link-rx"></block>。</block>
   <block id="338b73eb5ee02b02ceb307b68866c9f2" category="section-title">クラウドのリストアインスタンスは、ONTAP の参照とリストア機能では必要ありません</block>
   <block id="c2f301bf47b0e51a835909a868e786b5" category="paragraph">S3およびBLOBストレージからのファイルレベルの参照およびリストア処理に必要な、別のCloud Restoreインスタンス/仮想マシン。このインスタンスは使用していないときにシャットダウンされますが、ファイルのリストアに時間とコストがかかります。この機能は、必要に応じてコネクタに導入される無償のコンテナに置き換えられました。これには、次の利点があります。</block>
   <block id="b7a41babdf28bb4d456f0725ccfbc402" category="list-text">ファイルレベルのリストア処理のための追加コストは不要です</block>
@@ -1743,18 +1690,14 @@
   <block id="0a0c24e7fef8cd9bcb19d6db19987b93" category="paragraph">以前に使用していた場合は、Cloud Restoreインスタンス/VMが自動的に削除されることに注意してください。Cloud Backupプロセスが1日に1回実行され、古いCloud Restoreインスタンスがすべて削除されます。この変更は完全に透過的に行われます。データへの影響はなく、バックアップジョブやリストアジョブの変更は通知されません。</block>
   <block id="06a21d28fcdc17ce4f2e4747a1fe635b" category="section-title">Google CloudおよびStorageGRID ストレージからのファイルのサポートを参照してリストアできます</block>
   <block id="60222043eb5ad60b7dd1964a983d4f85" category="inline-link">参照リストアを使用してONTAP バックアップからボリュームとファイルをリストアする方法を参照してください</block>
-  <block id="68792eeb104c6fe1ef3c561265ed75dd" category="paragraph">前述のように、参照および復元操作用のコンテナが追加されたことで、Google CloudおよびStorageGRID システムに保存されているバックアップファイルからファイルの復元操作を実行できるようになりました。現在は、参照とリストアを使用して、すべてのパブリッククラウドプロバイダとStorageGRID からファイルをリストアできます。<block ref="a4ebf9bfc678bc28afd45dff032c4465" category="inline-link-rx"></block>。</block>
   <block id="fe3455104008d8da35fbd267dbef0701" category="section-title">ドラッグアンドドロップして、Cloud Backup to S3ストレージを有効にします</block>
   <block id="5e1eb4d1c116b2c77bbd1fbc73321106" category="paragraph">バックアップのAmazon S3デスティネーションがキャンバス上の作業環境として存在する場合、オンプレミスのONTAP クラスタまたはCloud Volumes ONTAP システム（AWSにインストール）をAmazon S3作業環境にドラッグしてセットアップウィザードを開始できます。</block>
   <block id="da1d5a542623977c61bd148b8576513c" category="section-title">Kubernetesクラスタ内に新しく作成されたボリュームにバックアップポリシーを自動的に適用します</block>
   <block id="31d9f5df125d9014e9c296eed143904c" category="inline-link">[バックアップ設定]ページから選択します</block>
-  <block id="0781288780239fb5b3a1479574714ff9" category="paragraph">Cloud Backupをアクティブ化したあとにKubernetesクラスタに新しい永続ボリュームを追加した場合は、以前にそれらのボリュームのバックアップを忘れずに設定する必要がありました。新しく作成したボリュームに自動的に適用するポリシーを選択できます<block ref="11a3efd6b42c9f2e763586db69ebed23" category="inline-link-rx"></block> Cloud Backupをすでにアクティブ化しているクラスタの場合</block>
   <block id="52e2c3fc6fb58a0ca1eb816ca6e270ed" category="section-title">Cloud Backup APIを使用して、バックアップとリストアの処理を管理できるようになりました</block>
   <block id="8334797b9b3383d4f48d98178b8845ea" category="inline-link-macro">このページです</block>
-  <block id="b83e2caeb95bea361704be4e9e795cd1" category="paragraph">APIはにあります<block ref="323898002645c2363c910f7c119fd4d6" category="inline-link-rx"></block>。を参照してください <block ref="cf7847f4c926eb96d69d319dfdc23654" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="49644953fd4e9612a9842d17bef5e79b" category="section-title">2022年5月2日</block>
   <block id="403f4772d715b69d553d3568ca523be0" category="section-title">Google Cloud Storageのバックアップファイルで検索とリストアがサポートされるようになりました</block>
-  <block id="c84eb78e4a1957b6b0aa50908d89949f" category="paragraph">ボリュームとファイルをリストアするための検索とリストアの方法は、AWSにバックアップファイルを格納するユーザ向けに4月に導入されました。Google Cloud Storageにバックアップファイルを保存するユーザーがこの機能を使用できるようになりました。<block ref="c9d4c1d19223377e15b82823d41fa44a" category="inline-link-rx"></block>。</block>
   <block id="1dc3a9d2d46d5247757ad692a1dda8d4" category="section-title">Kubernetesクラスタ内に新しく作成されたボリュームにバックアップポリシーが自動的に適用されるように設定します</block>
   <block id="35902f649443d8dd6c5f04595fff3035" category="paragraph">Cloud Backupをアクティブ化したあとにKubernetesクラスタに新しい永続ボリュームを追加した場合は、以前にそれらのボリュームのバックアップを忘れずに設定する必要がありました。新しく作成したボリュームに自動的に適用するポリシーを選択できます。このオプションは、新しいKubernetesクラスタに対してCloud Backupをアクティブ化するときにセットアップウィザードで使用できます。</block>
   <block id="fd875d3cd25e36f42ac27fb4f3449a8e" category="section-title">Cloud Backupを作業環境でアクティブ化するには、ライセンスが必要になります</block>
@@ -1763,7 +1706,6 @@
   <block id="6902b4bfe7e77a50b544384d4b87d579" category="list-text">30日間無償トライアルは、クラウドプロバイダがPAYGOサブスクリプションを使用している場合にのみ利用できます。BYOLライセンスを使用している場合は利用できません。</block>
   <block id="013bf9b0d5295922582e97a69409b714" category="list-text">無料トライアルは、Marketplaceのサブスクリプションが開始された日から開始されます。たとえば、Cloud Volumes ONTAP システムのMarketplaceサブスクリプションを30日間使用した後で無料トライアルを有効にした場合、クラウドバックアップトライアルは利用できません。</block>
   <block id="caf9c5028f987d64131bfc8e9f4bd0ed" category="inline-link">使用可能なライセンスモデルの詳細については、こちらをご覧ください</block>
-  <block id="ecd035ede918d91432ba5203669d96bd" category="paragraph"><block ref="7226e404226609d8e6a7fa892651e74a" category="inline-link-rx"></block>。</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link-macro">詳細については、こちらをご覧ください</block>
   <block id="dd115af180e43b9284746f0724f2e436" category="admonition">各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。</block>
   <block id="2eeb194bf5c17f3408edda6fb4570318" category="summary">アプリケーションデータをONTAP からAzureにバックアップするには、いくつかの手順を実行します。</block>
@@ -1814,7 +1756,6 @@
   <block id="34694926aa1d4d0f11f7da3c458f0e72" category="paragraph">* StorageGRID 要件*</block>
   <block id="8bcf790caa84000d570d027ed4f8736a" category="list-text">StorageGRID が11.4以降を使用している必要があります</block>
   <block id="170d42742a62bce031fc4ab2cfd0c056" category="inline-link">BlueXP Canvasで検出され、使用可能になりました</block>
-  <block id="3ebfc45e81207fdc1d33750d83ff4359" category="list-text">StorageGRID はである必要があります<block ref="a62572fc02ca2a884f6a1e42d38d1d55" category="inline-link-rx"></block>。</block>
   <block id="e72317565731d7261572856170ffdded" category="paragraph">* Amazon S3の要件*</block>
   <block id="c36c751c1a7fe413ac301c3d92bbb612" category="list-text">アーカイブ済みバックアップを格納するストレージスペースには、Amazon S3アカウントを登録する必要があります。</block>
   <block id="68aa7e5e44b2aff449b0543b49e563bd" category="inline-link-macro">AWSアーカイブ階層の詳細は、こちらをご覧ください</block>
@@ -2007,7 +1948,6 @@
   <block id="cd1cceb157b5982d899b66d18217af64" category="list-text">ダークサイトでコネクタを使用している場合は、インデックスカタログ情報がコネクタに保存されます（コネクタバージョン3.9.25以上が必要です）。</block>
   <block id="2c4eed705dd3e0adf6e7194858d8dff7" category="inline-link">AWS クレデンシャル</block>
   <block id="71cf9cd60037f691ceec3200a6f0acf1" category="inline-link">Azure のクレデンシャル</block>
-  <block id="74bd719b13624aeb842a19616fb1cfad" category="list-text">ある場合<block ref="c58d3a84f39ad7966453b4e8b820285d" category="inline-link-rx"></block> または<block ref="d94ab38ae083fd6e134dadfa3fe446cb" category="inline-link-rx"></block> アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。</block>
   <block id="b2cb452ce46a05694081545067d5ddb6" category="paragraph">オンプレミスコネクタを使用している場合でも、コネクタ権限とクラウドプロバイダリソースの両方についてクラウドプロバイダの要件を満たしている必要があります。この実装を使用する場合は、前述のAWSとAzureの要件を参照してください。</block>
   <block id="4c633b18d08cc2b8986282359ac32e3f" category="section-title">検索とリストアのプロセス</block>
   <block id="ea69bd234559eac714e5d0b94f7c07f5" category="list-text">検索とリストアを使用する前に、ボリュームデータのリストア元となる各ソース作業環境でインデックスの作成を有効にする必要があります。これにより、 Indexed Catalog は、すべてのボリュームのバックアップファイルを追跡できます。</block>
@@ -2106,7 +2046,6 @@
   <block id="3faa891caeff03d695c501cc0759c886" category="list-text">顧客が管理する暗号化キー（CMEK）の使用に必要な情報</block>
   <block id="f436bcae123c67a5a4225fe3ca69b3a3" category="paragraph">サービスアカウントがすでに設定されている必要があります。Cloud Volumes ONTAP システムの作成時にサービスアカウントを選択しなかった場合は、システムをオフにして、GCPコンソールからCloud Volumes ONTAP にサービスアカウントを追加する必要があります。</block>
   <block id="fdbc311c4dd4bb425160f22f166435fa" category="inline-link">GCP での Cloud Volumes ONTAP の起動</block>
-  <block id="eda646708ac3ebe2ee9ceee189ecd1f1" category="paragraph">を参照してください<block ref="cb0c89ebc39bea4b1064543ce799882f" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
   <block id="7760e8c768deeb43f1f031963f43945f" category="list-text">[ 作業環境 ] ページで、 [ * 作業環境の追加 * ] をクリックし、画面の指示に従います。</block>
   <block id="060608d5af817469fe3cc22ee36ca553" category="list-text">* 場所を選択 * ：「 * Google Cloud Platform * 」を選択します。</block>
   <block id="d5f13d82755531fdc681865fff2d3f92" category="list-text">* タイプを選択 * ：「 * Cloud Volumes ONTAP * 」（シングルノードまたはハイアベイラビリティ）を選択します。</block>
@@ -2118,7 +2057,6 @@
   <block id="d518f67b757ee71fbfa12db2394ebdcb" category="paragraph">GCP Marketplace のサブスクリプションが登録されていることを確認します。</block>
   <block id="a8b374b360b288a9c2785928aa666185" category="inline-image-macro">作業環境ウィザードでサービスアカウントを有効にする方法を示すスクリーンショット。</block>
   <block id="8d3684722736546ab245b4b0da04627e" category="paragraph"><block ref="8d3684722736546ab245b4b0da04627e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5e807f8371650cef9e33a4d42fdac697" category="list-text">ウィザードの各ページを設定し、システムを導入します を参照してください<block ref="cb0c89ebc39bea4b1064543ce799882f" category="inline-link-rx"></block>。</block>
   <block id="2599350a4e955ee44290aa8aca0871d2" category="list-text">バックアップ用にGoogle Cloud Storageバケットを作成するGoogle Cloud Projectとリージョン。</block>
   <block id="437c2bff9e94c6e982529b9d2ef1cd3c" category="paragraph">プロジェクトには、事前定義された Storage Admin ロールを持つサービスアカウントが必要です。</block>
   <block id="6bf39a60f8a045efaafd2bcde95bf33e" category="inline-link">バケットのデフォルトのストレージクラスを変更する</block>
@@ -2237,7 +2175,6 @@
   <block id="9d811f8ab4335c82eeb7d1477874bc1c" category="doc">Amazon S3 への Cloud Volumes ONTAP データのバックアップ</block>
   <block id="555662c8177ef0a8b7bd61c88704ac20" category="list-text">AWSでCloud Volumes ONTAP 9.7P5以降を実行している（ONTAP 9.8P13以降を推奨）。</block>
   <block id="77f3b81e1d7c5ed627835fb76acd97c6" category="inline-link">AWS 年間契約</block>
-  <block id="9f813891cf864e124291dd36d2e892de" category="list-text">BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています<block ref="394437555179c91b366e70183d98c846" category="inline-link-rx"></block>。</block>
   <block id="b8ec7451d278a232ac753f3d02c39cb2" category="paragraph"><block ref="b8ec7451d278a232ac753f3d02c39cb2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a7d695b3eb756754aec11a762e124dbb" category="paragraph">バックアップを作成する AWS アカウントとリージョンを選択します。また、デフォルトの Amazon S3 暗号化キーを使用する代わりに、お客様が管理する独自のキーを選択してデータを暗号化することもできます。</block>
   <block id="9c9310d7ed198614b0a3e0a92ad1c650" category="inline-image-macro">Cloud Volumes ONTAP システムから AWS S3 にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。</block>
@@ -2249,10 +2186,8 @@
   <block id="4202d66422e7e0486d0b7e129ef4a74c" category="inline-link">このBlueXPサブスクリプションを購読します</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace のページ</block>
   <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">サブスクリプションを AWS クレデンシャルに関連付けます</block>
-  <block id="34e987c96f88333f910607093c88d41f" category="paragraph">Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> 次に<block ref="5b8e6a3cc3aa95595ccde9be22e093ee" category="inline-link-rx"></block>。</block>
   <block id="c1ac36db4499486bba9e11cc3d2c6790" category="paragraph">また、バックアップを格納するストレージスペース用の AWS アカウントが必要です。</block>
   <block id="af7680d24e7ce67fad6006c6fc467b53" category="list-text">サポートされている AWS リージョン</block>
-  <block id="ce648319d45a9a1e763cf027842a0260" category="list-text">デフォルトの Amazon S3 暗号化キーを使用する代わりに、アクティブ化ウィザードでお客様が管理するデータ暗号化キーを選択できます。この場合は、暗号化管理キーがすでに設定されている必要があります。<block ref="cec2a2aa7c177fd504439377209f1e4a" category="inline-link-rx"></block>。</block>
   <block id="ce03951df7fb3e2e2a2d44f1f519bfc7" category="list-text">必要なAWS Connector権限</block>
   <block id="02c17660d0f6b51d0aeadd6bfd390921" category="paragraph">ポリシーの具体的な権限を次に示します。</block>
   <block id="5fc7bffc6ccf29fc2aae8be1237ab6b8" category="list-text">必要なAWS Cloud Volumes ONTAP 権限</block>
@@ -2262,16 +2197,13 @@
   <block id="7ed26bbb75f4d5a15f22c2e06ce64775" category="list-text">デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別のAWSアカウントを使用する場合は、次の作業を行う必要があります。</block>
   <block id="172483accc796d1a4b4deb4fe01ad8d4" category="list-text">権限「s3：PutBucketPolicy」と「s3：PutOwnershipControls」が、BlueXPコネクタに権限を付与するIAMロールに含まれていることを確認します。</block>
   <block id="70762168244eed6d4b30ab53961acada" category="inline-link">詳細については、「方法」を参照してください</block>
-  <block id="7a5694ab81955cab1df533aecf5b621f" category="list-text">デスティネーションAWSアカウントのクレデンシャルをBlueXPに追加します。<block ref="30ba017617a87d5bf31b4d6429094c83" category="inline-link-rx"></block>。</block>
   <block id="cf8c3678cd107c70b39f91362bc50612" category="list-text">2番目のアカウントのユーザクレデンシャルに次の権限を追加します。</block>
   <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link">AWS での Cloud Volumes ONTAP の起動</block>
-  <block id="de8166bbd2cfa133eaeed2915628dfbe" category="paragraph">を参照してください<block ref="497bfdbba9caf2f6a6f7d799eda40dc3" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
   <block id="d4aafebf40fcb8d9e66d2e757262f049" category="list-text">クラウドプロバイダとして Amazon Web Services を選択し、シングルノードまたは HA システムを選択します。</block>
   <block id="b44abc3e5e8508124c9a497fba2888b2" category="list-text">[ 詳細と資格情報 ] ページに入力します。</block>
   <block id="a56e82f1b2b801aa90b2b1831bcd84f4" category="list-text">バックアップの格納に使用する AWS アカウント。これは、 Cloud Volumes ONTAP システムが配置されているアカウントとは異なる場合があります。</block>
   <block id="fb03128f43a982e985025c970d7947c6" category="paragraph">バックアップに別のAWSアカウントを使用する場合は、デスティネーションのAWSアカウントのクレデンシャルをBlueXPに追加し、「s3：PutBucketPolicy」および「s3：PutOwnerBucketshipControls」権限をBlueXPに付与するIAMロールに追加する必要があります。</block>
   <block id="0ea4b8f8e49e76c407dc92eef3ef1c15" category="inline-link">独自の暗号化キーの使用方法を参照してください</block>
-  <block id="c405c27a75a970faab6a45d722272f0e" category="list-text">デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択してデータの暗号化を管理するか。 <block ref="bc512376b7a797d916a8cc982884f1f3" category="inline-link-rx"></block>）。</block>
   <block id="d4f871b7d459c4ece286a475f033ca49" category="summary">SAP HANAデータベースのバックアップをスケジュール設定またはオンデマンドで作成します。</block>
   <block id="613bbcbbbc87937c088f5ca502714159" category="section-title">SAP HANAデータベースホストを追加します</block>
   <block id="54f922a09b59b7f2fce83cc984324d03" category="paragraph">ポリシーを割り当ててバックアップを作成するには、SAP HANAデータベースホストを手動で追加する必要があります。SAP HANAデータベースホストの自動検出はサポートされていません。</block>
@@ -2327,7 +2259,6 @@
   <block id="0f00cbe3f53cc394d366dd2245df4f68" category="paragraph">お客様は、無料トライアル期間中、または BYOL ライセンスを超えていない場合は、従量課金制サブスクリプションから料金を請求されることはありません。</block>
   <block id="20e92bedd41f67c18b032dfcce8e6443" category="list-text">Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。</block>
   <block id="c04e9a5a6565b2a7f08b4191d93602f6" category="inline-link">これらの容量ベースのライセンスパッケージの詳細については、こちらをご覧ください</block>
-  <block id="15117a805dc21b83a72d3b993a76f167" category="paragraph"><block ref="0b3d0999528dc9bb1b2a5ebd17f87563" category="inline-link-rx"></block>。</block>
   <block id="8ceedd80ab3ad72f595a01a7d5ea8d33" category="inline-link">価格の詳細については、BlueXP Marketplaceのサービスを参照してください</block>
   <block id="e43ad9b040def21d45a51d9708f62291" category="list-text">AWS<block ref="51e50f75a76548a6f8d655afc8a2e3ab" category="inline-link-rx"></block>。</block>
   <block id="0b781a3ed3b0bf571ebc9b36f9d4056e" category="list-text">Azure<block ref="477b4f8f0e4ff2940c9440f2ccae1310" category="inline-link-rx"></block>。</block>
@@ -2335,7 +2266,6 @@
   <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">年間契約を使用する</block>
   <block id="2ad823c02fc1acdb11ec531ccd53e0f5" category="paragraph">AWSを使用している場合は、で2つの年間契約が提供されます<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> Cloud Volumes ONTAP システムとオンプレミスの ONTAP システムで使用できます。1年、2年、または3年の期間が用意されています。</block>
   <block id="5f0364e373bcb99c02ad1b8359683908" category="inline-link">Cloud Volumes ONTAP のライセンスに関するトピック</block>
-  <block id="798aac57a47adfaf930d9def9b4bbe02" category="paragraph">を参照してください<block ref="d58b2dbf2a4616ceca06f8773ed8f738" category="inline-link-rx"></block> このライセンスオプションの詳細については、を参照してください。</block>
   <block id="d24c531f67e59e16184a6f74c9a59f91" category="paragraph">このオプションを使用する場合は、Cloud Volumes ONTAP 作業環境を作成するときに年間契約を設定し、AWS Marketplaceに登録するように要求するBlueXPを設定できます。</block>
   <block id="70af97100aa32faf0090b5c729f50df0" category="paragraph">ネットアップが提供するお客様所有のライセンスには、 1 年、 2 年、 3 年の期間があります。バックアップ対象のソース ONTAP ボリュームの論理使用容量（ _Before_any 効率化）で計算され、保護するデータに対してのみ料金が発生します。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp Support Site</block>
@@ -2352,7 +2282,6 @@
   <block id="c1b2dc0798d3960e25b8a12c751f53ec" category="list-text">_ ライセンスの追加 _ ダイアログで、ライセンス情報を入力し、 * ライセンスの追加 * をクリックします。</block>
   <block id="cb365723ea49a8e0727d9887fcd819ad" category="list-text">バックアップライセンスのシリアル番号があり、 NSS アカウントを知っている場合は、 * シリアル番号を入力 * オプションを選択してその情報を入力します。</block>
   <block id="bae190eec3db4a0dd635ae72756acde8" category="inline-link">NSSアカウントをBlueXPに追加します</block>
-  <block id="fc76651edf85f11e6b8f2a81226ab59d" category="paragraph">お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、<block ref="6d9745cd4f1d60b55f06aef4c5cb6ec4" category="inline-link-rx"></block>。</block>
   <block id="664bf8c6e31ba8a710f5213d1874cd18" category="list-text">バックアップライセンスファイル（ダークサイトにインストールする場合に必要）がある場合は、 * ライセンスファイルのアップロード * オプションを選択し、プロンプトに従ってファイルを添付します。</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">通知</block>
   <block id="b2b168bd64a341a85c749cb61bba40cb" category="inline-xref">ライセンスファイルをNetApp Support Siteから入手します</block>
@@ -2370,11 +2299,9 @@
   <block id="a9719b40ac1cc40ef3fda03d4222bfe1" category="summary">EKS Kubernetes クラスタ上の永続ボリュームから Amazon S3 ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="3b6e95e672031eae644a9bc637b96e34" category="doc">Kubernetes の永続ボリュームのデータを Amazon S3 にバックアップします</block>
   <block id="e3cbbf46a38a7810b06b73af7fc91cf1" category="list-text">クラスタのバックエンドストレージに AWS で Cloud Volumes ONTAP が使用されている必要があります。</block>
-  <block id="2622e674b3c7dc032fe079b44d6b5ede" category="list-text">BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>。</block>
   <block id="6da925233b9932574b8fe9e01984bc5b" category="paragraph">Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。S3 バケットは、 Cloud Volumes ONTAP システムと同じ AWS アカウントおよびリージョンに自動的に作成され、バックアップファイルが格納されます。</block>
   <block id="afcc40ad784e1e6906127f77c09356b1" category="paragraph">Kubernetes の永続ボリュームを S3 にバックアップする前に、次の要件を読み、サポートされている構成になっていることを確認してください。</block>
   <block id="d160dbae93e3bd1b19adc45c1a288b6a" category="paragraph">VPC エンドポイントはオプションです。</block>
-  <block id="91e227517267fea3ffdbb117f9de554a" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="b008743209457997d1cdda737bb04357" category="inline-link-rx"></block>。</block>
   <block id="cb064ad5855a7d173c8bf2a8df10527c" category="list-text">Cloud Volumes ONTAP システムはKubernetesクラスタと同じAWSリージョンに配置する必要があり、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。</block>
   <block id="1b132f8325705f3dc0afb743012c7e89" category="list-text">AWS Backup 権限が必要です</block>
   <block id="ddb2145ba96507afdc3bec7ae412c714" category="list-text">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="ff3f0e305ab9e473aa2748fcb96c0189" category="inline-link-rx"></block>。</block>
@@ -2442,7 +2369,6 @@
   <block id="0f7d9319c95a8be1492e74601c4b3259" category="list-text">*事象の説明 *：実行したエラーメッセージやトラブルシューティング手順など、問題の詳細な概要 を入力します。</block>
   <block id="002c6f26fb01affb37b8cf3cef7a1fb0" category="list-text">*その他のメールアドレス*：この問題 を他のユーザーに知らせる場合は、追加のメールアドレスを入力します。</block>
   <block id="baaf0e61add7d12cf8d12e023d5aef18" category="inline-image-macro">ネットアップサポートでケースを作成できるケースの作成フォームのスクリーンショット。</block>
-  <block id="a2ff30886e1baf1e7d5045b5fc24f5b9" category="paragraph"><block ref="a2ff30886e1baf1e7d5045b5fc24f5b9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="18f487556417bb6d9721a7005ae097c9" category="paragraph">ポップアップにサポートケース番号が表示されます。ネットアップのサポート担当者がケースを確認し、すぐに対応させていただきます。</block>
   <block id="04e15da1deae9568b4dcda64fbb0c8d5" category="paragraph">サポートケースの履歴を確認するには、[*設定]、[タイムライン*]の順にクリックして、[サポートケースの作成]という名前のアクションを探します。 右端のボタンをクリックすると、アクションを展開して詳細を表示できます。</block>
   <block id="5c56753585e89a84941bb3a78bc681af" category="paragraph">ケースを作成しようとすると、次のエラーメッセージが表示される場合があります。</block>
@@ -2687,20 +2613,14 @@
   <block id="27635a52fe4c34c39ffc6430f4244ec6" category="list-text">[Organization's Cases]*で[View]*をクリックすると、会社に関連付けられているすべてのケースが表示されます。</block>
   <block id="059e856250b59be3069246887b74a23c" category="list-text">正確な日付範囲を選択するか、別の期間を選択して、日付範囲を変更します。</block>
   <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">[Case Management]ページのテーブルの上にあるオプションのスクリーンショット。正確な日付範囲、または過去7日、30日、または3カ月を選択できます。</block>
-  <block id="7fcba8aeefa9960d3fc3fa08b360ba2e" category="paragraph"><block ref="7fcba8aeefa9960d3fc3fa08b360ba2e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">列の内容をフィルタリングします。</block>
   <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">[Status]列のフィルタオプションのスクリーンショット。[Active]や[Closed]など、特定のステータスに一致するケースを除外できます。</block>
-  <block id="37709be3a43df07d5975287545d0ba12" category="paragraph"><block ref="37709be3a43df07d5975287545d0ba12" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">テーブルに表示されるプラスアイコン</block>
-  <block id="1614dc8e47c0492434152c990d6c1040" category="list-text">をクリックして、テーブルに表示される列を変更します <block ref="effeab06130cddc8360822b2b706805b" category="inline-image-macro-rx" type="image"></block> 次に、表示する列を選択します。</block>
   <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">表に表示できる列を示すスクリーンショット。</block>
-  <block id="5de408d7cbad49634fb25f9047498132" category="paragraph"><block ref="5de408d7cbad49634fb25f9047498132" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">テーブルの最後の列に表示される3つの点を持つアイコン</block>
-  <block id="98efef1c8a47ed5791b41944e8ff4ec2" category="list-text">をクリックして既存のケースを管理します <block ref="a0b152b50a56901a75affebabc26ed61" category="inline-image-macro-rx" type="image"></block> 使用可能なオプションのいずれかを選択します。</block>
   <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*ケースの表示*:特定のケースの詳細を表示します。</block>
   <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*ケースをクローズ*：ケースをクローズする理由の詳細を入力し、*ケースをクローズ*をクリックします。</block>
   <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">テーブルの最後の列でメニューを選択した後に実行できる操作を示すスクリーンショット。</block>
-  <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a5e6246728060cb5f413df6fa5adbf0c" category="inline-link-macro">Cloud Volumes ONTAP データをAzure Blobにバックアップしています</block>
   <block id="1eea998a6969261ae6e45e41459d7ae2" category="list-text">ONTAP 9.13.0以降を使用している場合、[参照と復元]および[検索と復元]では、フォルダ内のすべてのファイルとサブフォルダとともにフォルダを復元できます。</block>
   <block id="e7dd5c3025a4bc62e595b708efedd1e5" category="paragraph">9.11.1より前のバージョンのONTAP を使用している場合、リストア処理でリストアできるのは選択したフォルダとそのフォルダ内のファイルのみです。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
@@ -2711,8 +2631,6 @@
   <block id="d926847e4634e19a1aa7358becc0fa27" category="paragraph">「別のタイプのNSSユーザーがすでに存在するため、このアカウントではNSS顧客タイプは許可されていません。」</block>
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">既存のお客様レベルのNSSアカウントがあり、パートナーレベルのアカウントを追加しようとする場合も同様です。</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">ログインに成功すると、ネットアップはNSSのユーザ名を保存します。</block>
-  <block id="452cd4df7b0d5eb1156519a2f3b0206b" category="paragraph">これはシステムによって生成されたIDで、電子メールにマッピングされます。[*NSS Management*]ページで、から電子メールを表示できます <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
-  <block id="fd02e84624a2fdfd58787131aa2820b5" category="list-text">ログイン認証情報トークンを更新する必要がある場合は、の[認証情報の更新*]オプションも使用できます <block ref="0d0843f26c0819e5369f690fefbf68b7" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">このオプションを使用すると、再度ログインするように求められます。これらのアカウントのトークンは90日後に期限切れになります。このことを通知する通知が投稿されます。</block>
   <block id="aa581d4a856d4e4b679f430d75b6675b" category="list-text">Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
   <block id="0ddf34ad5270eddf503a40460693fa5f" category="list-text">Kubernetes永続ボリュームのバックアップとリストア <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
@@ -2721,7 +2639,6 @@
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">以前は、フォルダをリストアしたときに、そのフォルダのファイルのみがリストアされました。サブフォルダやサブフォルダ内のファイルはリストアされませんでした。ONTAP 9.13.0以降を使用している場合は、選択したフォルダ内のすべてのサブフォルダとファイルが復元されます。これにより、トップレベルフォルダに複数のフォルダがネストされている場合に、時間とコストを大幅に節約できます。</block>
   <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">詳細フィルタの使用方法を参照してください</block>
-  <block id="aa3492539222da5bc85fd5614f489f71" category="paragraph">[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 <block ref="f726054cf0d935cd51c2a5edb3b3fd0c" category="inline-link-rx"></block>。</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。</block>
   <block id="30c580a99dd8f8145066f47bf26ac29f" category="paragraph">このスクリーンショットは、「過去1週間」に「Volume_1」という名前のボリュームに対するすべての「Volume」「Backup」ジョブを検索する方法を示しています。</block>
   <block id="51b623efdc27fe6f448c8ac3c9969630" category="paragraph">ほとんどのフィルタはわかりやすいものです。「ワークロード」のフィルタを使用すると、次のカテゴリのジョブを表示できます。</block>
@@ -2768,7 +2685,6 @@
   <block id="1dc45daaf063a4c51a123d4f491b6b42" category="list-text">単一のジョブのJSONファイルをダウンロードするには、[Actions]メニューを選択します <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> ジョブの場合は、*[Download JSON File]*を選択し、ダウンロードディレクトリでファイルを探します。</block>
   <block id="7bec9aba9b1ad2e1a26decb16eb04dc7" category="section-title">BlueXP通知センターでバックアップとリストアのアラートを確認します</block>
   <block id="c36393beabb226bcf16fa0bdfb5851c2" category="paragraph">BlueXP通知センターでは、開始したバックアップジョブとリストアジョブの進捗状況が追跡されるため、処理が成功したかどうかを確認できます。</block>
-  <block id="b3506b7d9f752c93488710d594220a60" category="paragraph">BlueXPの通知リストではアラートを確認できるだけでなく、アラートとして通知をEメールで送信するようにBlueXPを設定することもできます。これにより、システムにログインしていないときでも重要なシステムアクティビティに関する情報を受け取ることができます。<block ref="255bd8ee961ab1582d001d4f6c77e40f" category="inline-link-rx"></block>。</block>
   <block id="cb66415666da247e57ab2b85246fb1c6" category="paragraph">Eメールアラートは次のイベントによってトリガーされます。</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">イベント</block>
   <block id="f04eba667839806ceb188d5cdf29e14f" category="cell">重大度レベル</block>
@@ -2792,8 +2708,6 @@
   <block id="57c3b4ba3c60295d45a2554606080eef" category="section-title">APIを使用して、オンプレミスのONTAP ボリュームをONTAP S3にバックアップする機能</block>
   <block id="720734599c08f49ea57d729ec9f12d53" category="section-title">Azureストレージアカウントのゾーン冗長性の側面をLRSからZRSに変更する機能</block>
   <block id="a7393f4b2940dc4b2ad20a62564d25be" category="section-title">ジョブモニタの機能拡張</block>
-  <block id="37ead9c61d06cf605bf6ef53ce2c8b21" category="list-text">すべてのジョブをレポートするためのCSVファイルをダウンロードできるほか、単一のジョブのJSONファイルをダウンロードして詳細を確認できるようになりました。<block ref="66069a05d43f728baec5f6540c7eac38" category="inline-link-rx"></block>。</block>
-  <block id="220577050b1ecc839ba3ad281c6d2862" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> および<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
   <block id="8577d7fd44fe39164228bbbe19ab37b5" category="paragraph">いずれかのボリュームのバックアップポリシーで「年単位」のバックアップラベルを選択すると、作成されるSnapshotコピーのサイズが非常に大きくなります。デフォルトでは、これらの年単位のSnapshotは、オブジェクトストレージに転送されたあとにソースシステムから自動的に削除されます。このデフォルト動作は、「年単位のSnapshotの削除」セクションから変更できます。</block>
   <block id="550e2d4456467c22193939aa0029676d" category="inline-image-macro">[Advanced Settings]ページの[Yearly Snapshots]エントリのスクリーンショット。</block>
   <block id="824924c3b132c056f8e7a92e2b64399e" category="paragraph"><block ref="824924c3b132c056f8e7a92e2b64399e" category="inline-image-macro-rx" type="image"></block></block>
@@ -2804,15 +2718,6 @@
   <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。を参照してください <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間は、各ソース ONTAP システムで設定されているタイムゾーンに基づきます。UIからユーザが指定した時間にバックアップ処理をスケジュールすることはできません。詳細については、システムエンジニアにお問い合わせください。</block>
   <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="42fe5b7d13b47e1a54bdeba0b60b6fe4" category="list-text"><block ref="42fe5b7d13b47e1a54bdeba0b60b6fe4" category="inline-link-rx"></block></block>
-  <block id="9782e9b134ce2961f9658af915ee4113" category="list-text"><block ref="9782e9b134ce2961f9658af915ee4113" category="inline-link-rx"></block></block>
-  <block id="d1830c648563b369c87ce51dd1eefe60" category="list-text"><block ref="d1830c648563b369c87ce51dd1eefe60" category="inline-link-rx"></block></block>
-  <block id="323b89c418724269f9abecade7c834d3" category="list-text"><block ref="323b89c418724269f9abecade7c834d3" category="inline-link-rx"></block></block>
-  <block id="8359638cbd1b68fd640fa0f309480550" category="list-text"><block ref="8359638cbd1b68fd640fa0f309480550" category="inline-link-rx"></block></block>
-  <block id="2ea7e7f07a1904fc4427a42a7aba9533" category="list-text"><block ref="2ea7e7f07a1904fc4427a42a7aba9533" category="inline-link-rx"></block></block>
-  <block id="1a9500ce2c4bdf3774a1abc05bae9ae2" category="list-text"><block ref="1a9500ce2c4bdf3774a1abc05bae9ae2" category="inline-link-rx"></block></block>
-  <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
-  <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">作業を開始する前に</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">データストアと仮想マシンをクラウドプロバイダにバックアップする前に、次の要件を確認して、サポートされる構成があることを確認してください。</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">BlueXP</block>
@@ -2858,18 +2763,12 @@
   <block id="42d7d856cc8f6a2f82ed10cd8356e7d2" category="inline-link">BlueXPの導入モードの詳細については、こちらをご覧ください</block>
   <block id="d7cfe6967f3004ef3386a27fe99a4610" category="inline-link">デスティネーションとしてのONTAP S3との統合</block>
   <block id="7126662a353f79c46a7ccefe46dc4c0a" category="sidebar">ONTAP ボリュームのデータを保護</block>
-  <block id="a08b19468c2c1ca9e62c072d8f0b1897" category="paragraph">詳細については、を参照してください <block ref="f2f2cc81b566c493fa151c100741f24d" category="inline-link-macro-rx"></block>。</block>
   <block id="18a49ef13ab2949d420634845599ca86" category="paragraph">コネクタを作成したら、*[ストレージ]*&gt;* Canvas *&gt;* My Working Environments *&gt;*[Add Working Environment]*をクリックし、プロンプトに従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSx作業環境への接続が確立されていることを確認します。コネクタは、FSx作業環境のクラスタ管理IPアドレスに接続できる必要があります。</block>
-  <block id="9c2fdb3ded170db997a9fcf800fcf26c" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。</block>
-  <block id="c395006d6063b66336be768382280c9e" category="paragraph">のすべてのエンドポイントのリストを参照してください<block ref="684a3f4234dd7d8f8b7d90e00da95138" category="inline-link-rx"></block>、<block ref="fd66fc554da543d0f7f94dcde36b2a2f" category="inline-link-rx"></block>または<block ref="2484264a704a749bc992bec76f43f13d" category="inline-link-rx"></block> クラウド環境：</block>
-  <block id="da51e9451a525419419d8c9da2b6fd19" category="paragraph"><block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
-  <block id="1733b24a3114e19949a64706ed91c2af" category="list-text"><block ref="1733b24a3114e19949a64706ed91c2af" category="inline-link-rx"></block></block>
   <block id="11222d6b8c3052f6f5e7aaaa5b23b929" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。を参照してください <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> を参照してください。ifdef：aws []</block>
   <block id="3835d8f8839ebb8c540019c7da03ff7a" category="list-text">ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。</block>
   <block id="56387194e2baefbedf3b4e19ea5780fe" category="paragraph">バックアップとリカバリは、次の目的で使用できます。</block>
   <block id="06548d8c3dd532a955281943d00e4ae0" category="paragraph">次の図は、コンポーネント間の関係を示しています。</block>
   <block id="27af9a77d19fed3cc5992a809811dc11" category="paragraph">バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではこのオブジェクトストアの名前を次のように指定します。<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block>。このオブジェクトストアは削除しないでください。</block>
-  <block id="6433bf341a35460ce346cdf0fc05e1b8" category="paragraph">バックアップコピーはに関連付けられます<block ref="5c84ace7b3e4263476ddf0c264272cee" category="inline-link-rx"></block> BlueXPコネクタが配置されています。</block>
   <block id="610778054da9c0e7c61921555da9ddc9" category="paragraph">同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。</block>
   <block id="901e4135beeedb7bfd5ee52fd37bb24b" category="summary">SAP HANAとOracleのバックアップを指定したホストにマウントできます。</block>
   <block id="eb39fd3aff5524b4e17bd84f6095e3f8" category="paragraph">アプリケーション向けのBlueXPバックアップ/リカバリでは、OracleとHANAのバックアップを代替ホストにマウントできます。</block>
@@ -2912,7 +2811,6 @@
   <block id="b6ab006e15763beb32e46fa733e431c5" category="list-text">[Google Cloud Access Key]フィールドで、データ暗号化のキーを指定します。</block>
   <block id="354cf0aa3581eabc1f6d8eceadc0a09c" category="list-text">[Google Cloud Secret Key]フィールドで、データ暗号化のパスワードを指定します。</block>
   <block id="d7b96aa97b3e598d4361c8900425e794" category="paragraph">BlueXPを使用してFSx for ONTAP 作業環境を作成し、ボリュームや追加のデータサービスを追加、管理する必要があります。また、AWSでコネクタを作成して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにする必要があります。</block>
-  <block id="1538d61881a69e4651fec9a240216459" category="paragraph">データベースがホストされているFSx for ONTAP 作業環境を作成する必要があります。詳細については、を参照してください <block ref="44e37fc8d2d76ee1d15cd4a20acb0e0e" category="inline-link-macro-rx"></block> および <block ref="0e7e3006696ac3877ee032d5edb264d7" category="inline-link-macro-rx"></block>。</block>
   <block id="fb8b20b7f11dc7e27e25699346303340" category="paragraph">FSx for ONTAP 作業環境は、BlueXPまたはAWSを使用して作成できます。AWSを使用してを作成した場合は、BlueXPのONTAP システム用FSXを検出する必要があります。</block>
   <block id="4c2f287db7a16e371d2d39b0cc02d906" category="paragraph">アカウント管理者はAWSでコネクタを作成し、BlueXPでパブリッククラウド環境内のリソースとプロセスを管理する必要があります。</block>
   <block id="1064da901ed63fc45457d16f540a119b" category="list-text">FSx for ONTAP の作業環境とデータベースの管理には、同じコネクタを使用する必要があります。</block>
@@ -2992,7 +2890,6 @@
   <block id="f41d81011039cf5b858be58b20be3d6c" category="list-text">アプリケーションインベントリを更新すると、アプリケーションの現在のストレージレイアウトが反映されます。</block>
   <block id="a5e6ecead112df3e4d309c64d21be613" category="paragraph">SnapCenter ポリシーまたはリソースグループに変更がある場合は、保護関係を更新する必要があります。</block>
   <block id="bfc753d118aff511e46dfe2d0d56a3d2" category="paragraph">BlueXPを使用してAzure NetApp Files 作業環境を作成し、ボリュームや追加のデータサービスを追加および管理する必要があります。Azureでコネクタを作成して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにすることも必要です。</block>
-  <block id="c79eb0bf5a61fc9579b3f63e3958e469" category="paragraph">データベースがホストされているAzure NetApp Files 作業環境を作成する必要があります。詳細については、を参照してください <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> および <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
   <block id="0496db92b8208ffdfc7b84a2c4d6cbbb" category="paragraph">BlueXPのアカウント管理者は、Azureにコネクタを導入して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにする必要があります。</block>
   <block id="f20cd1b900b89f55ebfb06447e182090" category="summary">SnapCenter Plug-in for Oracleを各Oracleデータベースホストにインストールします。</block>
   <block id="26e69212cf0e8683966f91f304e90a98" category="doc">SnapCenter Plug-in for Oracleをインストールし、データベースホストを追加します</block>
@@ -3131,7 +3028,6 @@
   <block id="d9242f06d616d0d0d92448044927a033" category="paragraph">使用可能な SAP HANA データベースを検出したあと、それらのリソースをリソースグループに追加してデータ保護処理を実行できます。</block>
   <block id="ae2f6000d9cdad6b8f7e1ca8fca0b847" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。</block>
   <block id="303186f87efbb1a1e40a3fc0ec6e6093" category="inline-link-macro">ジョブステータスを監視します</block>
-  <block id="68d046b9a8962ae0010a1cefd19c1d06" category="paragraph">詳細については、を参照してください <block ref="b4cf0288780d5d0e2f85669557469600" category="inline-link-macro-rx"></block>。</block>
   <block id="0188976d1f9fb8029533d4b5186f90c3" category="paragraph">APIを直接実行するか、UIを使用して、アプリケーション向けにBlueXPの外部に公開されているAPIのいずれかにAPI呼び出しを行うと、ヘッダー、ロール、要求の本文、 また、API情報はBlueXPのタイムラインに記録され、監査エントリはタイムラインに永久に保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。</block>
   <block id="20fbb2bb26c0caf0b8c33c09a6e533a1" category="paragraph">アプリケーション向けBlueXPのバックアップ/リカバリでは、ホストIP、要求の本文、処理名、トリガー日時、一部のヘッダー、 およびAPIの動作状態。</block>
   <block id="f5a7e026415e6e5b4407141bc4fa907c" category="admonition">エージェントIDはコネクタに関連付けられています。SAP HANAホストの登録時に使用したコネクタが存在しない場合、新しいコネクタのエージェントIDが異なるため、そのアプリケーションの以降のバックアップは失敗します。ホストのコネクタIDを変更する必要があります。詳細については、を参照してください <block ref="4b11848a5adf71adef354eb21ebeb753" category="inline-xref-macro-rx"></block>。</block>
@@ -3185,13 +3081,10 @@
   <block id="0406d87994376530b1790388ad802782" category="list-text">ストレージレイアウト：データファイルとログファイルについては、AzureでサポートされるのはNFSv4.1のみです。</block>
   <block id="42e425dae5e7413132b90400bbb33808" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> BlueXPにサインアップします</block>
   <block id="156c302d186fc36d9d944c5d74b971af" category="inline-link-macro">BlueXPにサインアップします</block>
-  <block id="86cdb13f402501082c09d3ff1d18c3c4" category="paragraph">BlueXPにはWebベースのコンソールからアクセスできます。BlueXPの利用を開始するには、まず既存のNetApp Support Site クレデンシャルを使用するか、ネットアップクラウドログインアカウントを作成して登録します。詳細については、を参照してください <block ref="1acc5dbc95f3a26042b5658edb951be6" category="inline-link-macro-rx"></block>。</block>
   <block id="662fe3f67afee00c7f9b35a9bd01d360" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> BlueXPにログインします</block>
   <block id="bf37a573ae6da944ed70ea37577a213d" category="inline-link-macro">BlueXPにログインします</block>
-  <block id="4e97718a046fd36250cdfe3491a9239f" category="paragraph">BlueXPに登録すると、Webベースのコンソールからログインできます。詳細については、を参照してください <block ref="688fe2978b698aa3e4b280dcbc845309" category="inline-link-macro-rx"></block>。</block>
   <block id="30d729ce87872cad680bf7f100b01d55" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> BlueXPアカウントを管理します</block>
   <block id="f2b686d839a94b2d7f1e0a55d1c7c302" category="inline-link-macro">BlueXPアカウントを管理します</block>
-  <block id="dfd6cee0505a8621ba0368d051f805db" category="paragraph">ユーザー、サービスアカウント、ワークスペース、コネクタを管理することで、アカウントを管理できます。詳細については、を参照してください <block ref="fcb84eb72ec949e55a5c9e7d28d32bcf" category="inline-link-macro-rx"></block>。</block>
   <block id="114d7a56da5e14c3d189a1a69624528a" category="summary">Oracleデータベースのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="c066778903c1630636c66b7ab67c5eac" category="list-text">ネットアップのクラウドストレージ：</block>
   <block id="b4a24579448becaf9a35dcdcc85012a0" category="admonition">Azure NetApp Files はSAN環境をサポートしていません。</block>
@@ -3271,7 +3164,6 @@
   <block id="f14e4ba3132569df67c3379a18ffd5b7" category="paragraph">*注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。</block>
   <block id="584eab89c38498b5c5274ae652e93c92" category="paragraph">BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。各 LIF を関連付ける IPspace を選択する必要があります。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。</block>
   <block id="83d4153ed0b73bf98f157af1a9cede5d" category="list-text">必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPのバックアップ/リカバリ接続（ポート443を経由）と、Storage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。</block>
-  <block id="2307489b5314449344f4d0679e78804b" category="list-text">ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 <block ref="d9defc1077847b67f008853c06990134" category="inline-link-rx"></block>)</block>
   <block id="2ac4b31a1e8119be12fc66295f51743e" category="paragraph">BlueXPのバックアップとリカバリの「Search &amp; Restore」機能を使用するには、コネクタがGoogle Cloud BigQueryサービスにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。</block>
   <block id="490d27127d1be5dafeff633874e98723" category="paragraph">バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。</block>
   <block id="f20f604abbd5f4c6fa3dce28e510083d" category="paragraph">あとでバックアップサービスを設定するときに、BlueXPのバックアップとリカバリでキーを入力する必要があります。</block>
@@ -3306,7 +3198,6 @@
   <block id="7e38f9a72cbc25afebba8d6b4458bd82" category="paragraph"><block ref="7e38f9a72cbc25afebba8d6b4458bd82" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6b5e7ab6febfd6a4a5bddb81d91929ad" category="list-text">必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPバックアップ/リカバリサービス接続（ポート443経由）、およびStorage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。</block>
   <block id="38a41519c158162d9909827a50d93703" category="paragraph">BlueXPのバックアップとリカバリは、コネクタがクラウドに導入されている場合はAzure Governmentのリージョンでサポートされ、オンプレミスにインストールされている場合はサポートされません。また、Azure MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。</block>
-  <block id="33031ace3642e5c4fde4a8d722fee9a3" category="list-text">ポート443を介してBlueXPバックアップおよびリカバリサービスとBLOBオブジェクトストレージへのHTTPS接続 <block ref="5bf1914e1013b2901a1aed42fbd7a1ac" category="inline-link-rx"></block>)</block>
   <block id="94ca0ea412cad9f041e0df7a8d667032" category="list-text">BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタとAzure Synapse SQLサービスの間の通信用にポート1433が開いている必要があります。</block>
   <block id="d7dfe92566ef01cc606946052bc069db" category="paragraph">BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタがAzure Synapse WorkspaceとData Lake Storageアカウントにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。</block>
   <block id="833e066c6a0d7a5bb4b5347a5a0cd500" category="list-text">クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、Azureから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。</block>
@@ -3322,7 +3213,6 @@
   <block id="dd18c0c541bc275d66476e68ad00dbfe" category="list-text">必要に応じてファイアウォールルールを更新して、指定したポート（通常はポート443）を介してONTAP からオブジェクトストレージへのBlueXPバックアップ/リカバリサービスの接続と、Storage VMからDNSサーバへのポート53（TCP / UDP）経由の名前解決トラフィックを許可します。</block>
   <block id="3286d58803294a9601c966ac257608d5" category="paragraph">StorageGRID へのバックアップを設定する際、テナントアカウントのS3アクセスキーとシークレットキーを入力するようにバックアップウィザードで求められます。テナントアカウントを使用すると、バックアップの格納に使用するStorageGRID バケットをBlueXPのバックアップとリカバリで認証してアクセスできるようになります。StorageGRID が誰が要求を行うかを認識できるようにするには、キーが必要です。</block>
   <block id="9bbe0ee1e1e96c5abb69993ee0671a43" category="inline-link-macro">BlueXPのバックアップとリカバリの最新情報</block>
-  <block id="da16f7b86058b0067c69643c1d57778c" category="admonition">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> BlueXPのバックアップとリカバリの各リリースの新機能を確認するには、次の手順を実行します<block ref="665cecca74760cbd23ea14978e32ba89" category="inline-link-rx"></block> 新しい機能を使用する場合。</block>
   <block id="b95bd07a0f4f64d48d1643a4406ce216" category="inline-link-macro">BlueXPのバックアップデータとリカバリデータをダークサイトにバックアップする方法を説明します</block>
   <block id="b43f5a4ac0049b67620f35ce2841f259" category="paragraph">インターネットに接続されていないサイトにコネクタがインストールされている場合は、BlueXPのバックアップとリカバリの設定データのローカルバックアップを定期的に作成することを強く推奨します。 <block ref="e362ad6232a5b9d107ea1203fc9178f4" category="inline-link-macro-rx"></block>。</block>
   <block id="60397124d8fb7c1ba3027a2310ed6ee4" category="list-text">BlueXPのバックアップとリカバリへのポート443経由のアウトバウンドインターネット接続（「ダーク」サイトにコネクタがインストールされている場合は不要）</block>
@@ -3364,7 +3254,6 @@
   <block id="908abf4dd9a1ea00edbe55bea91d6964" category="paragraph">GCPを使用している場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Google Cloud Marketplaceでのプライベートオファーとして利用できます。ネットアップからプライベートオファーが提供されたら、BlueXPのバックアップとリカバリのアクティブ化時にGoogle Cloud Marketplaceからサブスクライブする際に年間プランを選択できます。</block>
   <block id="1ef27d8ce33d6626bd77a4ae3f7b5f47" category="section-title">BlueXPのバックアップとリカバリのBYOLライセンスを使用</block>
   <block id="5cf4ead1ec9d21f6de70fb6080bd7481" category="paragraph">BYOL BlueXPバックアップ/リカバリライセンスはフローティングライセンスで、BlueXPアカウントに関連付けられているすべてのシステムで合計容量が共有されます。ONTAP システムの場合は、CLIコマンドを実行して、必要な容量を概算できます<block ref="2a47fed7b3c4b7d59e03f10c018cf5cc" prefix=" " category="inline-code"></block> をクリックします。</block>
-  <block id="d95a328c11f4185818d313cf84e3e584" category="paragraph">必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。<block ref="c110e5a4a66d7429a8ced7dc2264a8f5" category="inline-link-rx"></block>。</block>
   <block id="78eb4db020e2c993d3997277acf3700c" category="section-title">BlueXPのバックアップとリカバリのライセンスファイルを入手します</block>
   <block id="0ad06cd0a0c0ed5de701c184445a2831" category="paragraph">BlueXPバックアップとリカバリのライセンスを購入したら、BlueXPバックアップとリカバリのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。</block>
   <block id="df1557a9b76e8e22566ae571ed66d8d5" category="list-text">BlueXPバックアップ/リカバリライセンスのシリアル番号を入力します。</block>
@@ -3393,7 +3282,6 @@
   <block id="d99dbec9e129fae3d2af16de204bf685" category="paragraph">BlueXPのバックアップとリカバリでは、1つのバックアップファイルを削除したり、ボリュームのすべてのバックアップを削除したり、作業環境内のすべてのボリュームのすべてのバックアップを削除したりできます。すべてのバックアップを削除するのは、不要になったバックアップや、ソースボリュームを削除したあとにすべてのバックアップを削除する場合などです。</block>
   <block id="d59a13b57c5e2706923c61e62bee2e46" category="admonition">バックアップがある作業環境またはクラスタを削除する場合は、システムを削除する前に * バックアップを削除する必要があります。システムを削除しても、BlueXPのバックアップとリカバリでバックアップが自動的に削除されることはなく、システムの削除後にバックアップを削除する機能は現在UIでサポートされていません。残りのバックアップについては、引き続きオブジェクトストレージのコストが発生します。</block>
   <block id="5a98e602b34836fe8c4e2343c0a17c72" category="paragraph">作業環境のすべてのバックアップを削除しても、この作業環境のボリュームの以降のバックアップは無効になりません。作業環境ですべてのボリュームのバックアップの作成を停止するには、バックアップを非アクティブ化します <block ref="d1964673468c58ea1746cfa9741b745a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="460e047d146628ef179f79a937d9a2ee" category="paragraph">BlueXPのバックアップとリカバリのユーザインターフェイスでソースボリュームを削除することはできません。ただし、Canvas、およびのVolume Detailsページを開くことはできます<block ref="dba67842c565a3de511625a65edbb94a" category="inline-link-rx"></block>。</block>
   <block id="b394a2e101f1acb9e28922479ca7ab1b" category="section-title">作業環境でのBlueXPのバックアップとリカバリの非アクティブ化</block>
   <block id="b5412d7989235296fcffa07cbdc14f4a" category="paragraph">作業環境でBlueXPのバックアップとリカバリを無効にすると、システム上の各ボリュームのバックアップとボリュームのリストアも無効になります。既存のバックアップは削除されません。この作業環境からバックアップ・サービスの登録を解除することはありません。基本的には、すべてのバックアップおよびリストア処理を一定期間停止できます。</block>
   <block id="85bb57d16d278aef3a547cf5cc9bfeb0" category="section-title">作業環境のBlueXPバックアップおよびリカバリの登録を解除します</block>
@@ -3406,13 +3294,11 @@
   <block id="3eb635444f2c91af4f0b9c5e7eb8ce2e" category="paragraph">Web UIから利用できるBlueXPのバックアップとリカバリ機能は、RESTful APIからも利用できます。</block>
   <block id="12a2037b721e887383ad92ab04c54ed9" category="paragraph">BlueXPのバックアップとリカバリAPIの使用を開始するには、ユーザトークン、BlueXPアカウントID、およびBlueXPコネクタIDを取得する必要があります。</block>
   <block id="364d76798fa90eb8899a1b8798fd1791" category="paragraph">次の例は、AzureクラウドのEast-US-2リージョンで、日単位、時間単位、週単位のラベルが180日に設定された新しいポリシーを使用して、作業環境でBlueXPのバックアップとリカバリをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。</block>
-  <block id="16f8d7fb6b488cf9914e01cad7b0556f" category="paragraph">BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます<block ref="323898002645c2363c910f7c119fd4d6" category="inline-link-rx"></block>。</block>
   <block id="c8468a884f0ab2232cc07e56fa1167b5" category="paragraph">バックアップファイルから本番環境のシステムにデータをリストアするには、有効なBlueXPバックアップ/リカバリライセンスが必要です。</block>
   <block id="64964208f145e571ed736f861e9c039d" category="admonition">少なくとも1つの作業環境でBlueXPのバックアップとリカバリをアクティブ化し、初期のバックアップファイルが存在している必要があります。</block>
   <block id="6acd4c1b8451ea4f17bfc7e1933cbf8b" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリューム、またはソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。</block>
   <block id="0c555ba22cb5e8113dd4e789e23704a4" category="paragraph">BlueXPのバックアップとリカバリでは、選択したバックアップに基づいて新しいボリュームが作成されます。可能です <block ref="62168a5d0f839a246ab4456ea89ba04c" category="inline-link-macro-rx"></block> 必要に応じて。</block>
   <block id="5b8dbbc2163786a4aed9331d66f16125" category="list-text">BlueXPのバックアップとリカバリには、選択したバックアップファイル内のフォルダとファイルが表示されます。</block>
-  <block id="b43e581e1473b92019eade9530729dd7" category="paragraph">検索処理では、 ONTAP ボリュームに対応するすべてのローカル Snapshot コピーも検索されます。ローカル Snapshot コピーからデータをリストアする方が、バックアップファイルからリストアするよりも高速で低コストなので、 Snapshot からデータをリストアできます。Snapshotは新しいボリュームとしてリストアできます<block ref="9b321c216c1645df5c4b93fc1f28c28e" category="inline-link-rx"></block> （BlueXPのバックアップとリカバリではありません）。</block>
   <block id="cfc95951efd0924eb8070fedaa5642d6" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリュームとしてリストアすることも、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることもできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。</block>
   <block id="5151b71f4334ced29891809607db72e2" category="paragraph">以前に設定したコネクタでBlueXPのバックアップとリカバリをすでに使用している場合は、ここでBlueXPユーザロールにAthena権限とGlue権限を追加する必要があります。これらは新しい機能で、検索とリストアに必要です。</block>
   <block id="c7f84d712371c078a0f573c78d714469" category="paragraph">以前に設定したコネクタでBlueXPのバックアップとリカバリをすでに使用している場合は、ここでBlueXPユーザロールにAzure Synapse WorkspaceとData Lake Storageアカウントの権限を追加する必要があります。これらは新しい機能で、検索とリストアに必要です。</block>
@@ -3425,7 +3311,6 @@
   <block id="a2271679a96260c288cd66073902da0e" category="paragraph"><block ref="a2271679a96260c288cd66073902da0e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fca3c4957d64cf60890e21812fc96491" category="paragraph"><block ref="fca3c4957d64cf60890e21812fc96491" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2e296c588565e76c03b76150123be87b" category="paragraph"><block ref="2e296c588565e76c03b76150123be87b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="79a8350314594d452d6f23bd4007870c" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="04783d4bbdbfb6af9e5fb891b016edd7" category="inline-link-rx"></block>。</block>
   <block id="c5c6fa9af350eaec4534adb8d69aca21" category="paragraph">BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
   <block id="8cb55f46ef474f5ba921cfab3f13a0f9" category="list-text">BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
   <block id="a87e646eef7b4c62c6f10238632178fc" category="paragraph">BlueXPのバックアップとリカバリは、Kubernetes作業環境からいつでも直接実行できます。</block>
@@ -3469,7 +3354,6 @@
   <block id="268d802389e270ab5e24c75f3d0e2c74" category="paragraph">作業環境でBlueXPのバックアップとリカバリを無効にすると、システム上の各ボリュームのバックアップが無効になり、またボリュームをリストアする機能も無効になります。既存のバックアップは削除されません。この作業環境からバックアップ・サービスの登録を解除することはありません。基本的には、すべてのバックアップおよびリストア処理を一定期間停止できます。</block>
   <block id="da8d73509c0c2153651e6a7ca8760c5b" category="paragraph">バックアップ機能の使用が不要になり、作業環境でのバックアップに対する課金を停止する場合は、作業環境のBlueXPバックアップ/リカバリの登録を解除できます。通常、この機能は、 Kubernetes クラスタを削除する予定でバックアップサービスをキャンセルする場合に使用します。</block>
   <block id="e7abaddb0f4517d0be715be9b3734101" category="paragraph"><block ref="e7abaddb0f4517d0be715be9b3734101" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6b1e722aeab09aab87ef3478fa353d18" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、を使用したサブスクリプションです<block ref="92655de6fae7d07ed3897ce19d51b88d" category="inline-link-rx"></block> は、BlueXPのバックアップとリカバリを有効にする前に必要です。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="2dcb14e4aff486ad01ca943b2718d3a3" category="inline-link-rx"></block>。</block>
   <block id="167ad7df13dea30d4df6fa06947396fe" category="summary">BlueXPのバックアップとリカバリは、1つのGoogleアーカイブストレージクラスとほとんどのリージョンでサポートされます。</block>
   <block id="0718118055dc2edc791fa29a90a786fe" category="section-title">BlueXPのバックアップとリカバリでサポートされるGoogleアーカイブストレージクラス</block>
   <block id="2675b391654ae179f83f2893ef5337eb" category="paragraph">オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
@@ -3479,11 +3363,9 @@
   <block id="ef08fc33d8b9b410529dc05986b2e248" category="paragraph">APIの新機能を使用して、BlueXPのバックアップとリカバリを使用してボリュームSnapshotをONTAP S3にバックアップできます。この機能は、現時点ではオンプレミスのONTAP システムでのみ使用できます。詳細な手順については、ブログを参照してください<block ref="8bfab3c14784f20047e4459b814ebfe4" category="inline-link-rx"></block>。</block>
   <block id="bcd4bdef20ff7dec0587f35facdeb7be" category="paragraph">Cloud Volumes ONTAP システムからAzureストレージへのバックアップを作成する場合、BlueXPのバックアップとリカバリでは、コスト最適化のためにローカル冗長性（LRS）を使用してBlobコンテナがデフォルトでプロビジョニングされます。異なるゾーン間でデータを複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="4788963de19a5204a352f3308b0395d8" category="inline-link">BlueXPのバックアップとリカバリから送信されるアラートをすべて確認します</block>
-  <block id="960c0ab25a72da6f7d7346baac33e363" category="list-text">「Scheduled job failure」と「Restore job completes but with warnings」という2つの新しいバックアップジョブアラートが追加されました。<block ref="3e116d9df9448a73fe644888b390168f" category="inline-link-rx"></block>。</block>
   <block id="81ddb60f2f70b21c8b419a542095feca" category="list-text">ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのCloud Volumes ONTAP システムおよびオンプレミスのONTAP システムでは、現時点ではユーザが開始したジョブのみが表示されます。</block>
   <block id="fc310628dedc46ee8ac6f1897c186fda" category="paragraph">バックアップファイルは、最初にGoogle Standardストレージクラスで作成されます。BlueXPのバックアップとリカバリ機能を使用して、古いバックアップをGoogleアーカイブストレージに階層化し、コストをさらに最適化できるようになりました。前回のリリースでは、オンプレミスのONTAP クラスタでのみこの機能がサポートされていました。現在Google Cloudに導入されているCloud Volumes ONTAP システムがサポートされています。</block>
   <block id="e68d1e3d6921b76241efb524321aa6e4" category="paragraph">ONTAP システムからGoogle Cloud Storageにデータをバックアップする際に、Googleが管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを選択してデータを暗号化できるようになりました。まずGoogleでお客様が管理する暗号化キーを設定し、BlueXPのバックアップとリカバリをアクティブ化する際に詳細を入力するだけです。</block>
-  <block id="257e6171122162cbdf069b6cc28454db" category="paragraph">以前のリリースでは、BlueXPのバックアップとリカバリでGoogle Cloud Storageバケットにアクセスするためのサービスアカウントに「Storage Admin」ロールが必要でした。これで、一連の権限を減らしてサービスアカウントに割り当てるカスタムロールを作成できるようになりました。<block ref="cdc0823dc4910df979845484c27cfc1d" category="inline-link-rx"></block>。</block>
   <block id="84de382f6f987d08aa5bf0c0a261f58d" category="list-text">に登録しておきます<block ref="0f3e5f4110c169fa97f2cec0c13d22d7" category="inline-link-rx"></block>、<block ref="564c46d47e4fef703ab2a0ee02042ed6" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="d2b7b18749598619ee5eafb271b407ec" category="inline-link-macro-rx"></block> ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス</block>
   <block id="810ff1f59b608a3fc8af53aa3c03422d" category="paragraph"><block ref="810ff1f59b608a3fc8af53aa3c03422d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7411cd39afe6df9a82e44e18423ac4fe" category="paragraph"><block ref="7411cd39afe6df9a82e44e18423ac4fe" category="inline-image-macro-rx" type="image"></block></block>
@@ -3511,7 +3393,6 @@
   <block id="902bb596e10b0fa8fd5cd370d111c674" category="paragraph"><block ref="902bb596e10b0fa8fd5cd370d111c674" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dede22a4e69b15db157ccc83c1630857" category="paragraph"><block ref="dede22a4e69b15db157ccc83c1630857" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca3b878e03761ce72b45e65e691fc21d" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、AWS MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です<block ref="9296c8c8fbdfd99d4e3518357794ba73" category="inline-link-rx"></block> BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
-  <block id="ece8af07a27f459dd2c2067125e8bc9e" category="list-text">Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合は、作業環境に権限を付与するIAMロールに、BlueXPの最新のバックアップとリカバリに特化した新しいS3権限のセットを含める必要があります<block ref="3c61028fb80314ea69a6aa9a4d505d2c" category="inline-link-rx"></block>。</block>
   <block id="c9ed2ea5f696ad45cdf3e2d878847dff" category="list-text">BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>AWS GovCloud リージョンを含む。</block>
   <block id="cedbcbae4c70d4b87ce5f29b61acf62c" category="paragraph"><block ref="cedbcbae4c70d4b87ce5f29b61acf62c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8624e31c0599d3f721e6d3e7a7736115" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> システムでBlueXPのバックアップとリカバリを有効にします</block>
@@ -3522,11 +3403,9 @@
   <block id="a3fbb210cbf493dd0f19b6076f3d09fa" category="inline-image-macro">BlueXPのバックアップ/リカバリが、クラスタ上のボリュームおよびバックアップファイルが配置されているAWS S3ストレージとのプライベート接続を介して通信する仕組みを示す図。</block>
   <block id="63d3eb6f2f98576c2498f90790ab2bb1" category="paragraph"><block ref="63d3eb6f2f98576c2498f90790ab2bb1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ab5fa169ba0382fc4d1ce0ff935c36a4" category="paragraph">BlueXPのバックアップとリカバリは、コネクタがクラウドに導入されている場合はGovCloudリージョンでサポートされ、オンプレミスにインストールされている場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。</block>
-  <block id="06ba587465dc228ecef08dfe451c6d8c" category="list-text">ポート443を介してBlueXPバックアップおよびリカバリサービスとS3オブジェクトストレージへのHTTPS接続 <block ref="e55fc914b3d027a7a2463283008a8fbf" category="inline-link-rx"></block>)</block>
   <block id="f03cf0e2cb39ed9263cca4159230f282" category="paragraph">BlueXPのバックアップとリカバリをセットアップするときに、使用するIPspaceを指定するように求められます。これらの LIF が関連付けられている IPspace を選択します。これは、「デフォルト」の IPspace または作成したカスタム IPspace です。</block>
   <block id="132598d89b5e84bc5af9cc03e23a4175" category="list-text">必要に応じてファイアウォールルールを更新して、ONTAP からオブジェクトストレージへのBlueXPのバックアップおよびリカバリ接続（ポート443経由）、およびStorage VMからDNSサーバへの名前解決トラフィック（TCP / UDP）を許可します。</block>
   <block id="0767994029638623b0279d117f71bcc7" category="list-text">クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、AWSから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。</block>
-  <block id="245af4eb42c00ad6c748e59fb4b83b1d" category="paragraph">デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。<block ref="cec2a2aa7c177fd504439377209f1e4a" category="inline-link-rx"></block>。</block>
   <block id="f98bd8688162885c52860bed1262784f" category="paragraph">プライベートエンドポイントとの通信にポート80（HTTP）を使用している場合は、すべて設定されています。クラスタでBlueXPのバックアップとリカバリを有効にすることができます。</block>
   <block id="4addbe3fd43e1a48fd8eb999d5f3b487" category="section-title">BlueXPのバックアップとリカバリを有効にする</block>
   <block id="f3d3616df99b7525a49fa9d5c9b2660d" category="list-text">アカウントのBlueXPバックアップ/リカバリライセンスがない場合は、この時点で、使用する課金方法を選択するように求められます。AWSから従量課金制（PAYGO）のBlueXP Marketplaceサービスにサブスクライブするか（複数のサブスクリプションがある場合は1つ選択する必要があります）、ネットアップからBlueXPバックアップ/リカバリBYOLライセンスを購入してアクティブ化できます。 <block ref="bce0911f49e923e839a36aaf0ede034d" category="inline-link-macro-rx"></block></block>
@@ -3543,7 +3422,6 @@
   <block id="815289240ead1921d67ba2c1e806a37b" category="paragraph">オンプレミスコネクタで重大な障害が発生した場合は、新しいコネクタをインストールし、BlueXPのバックアップとリカバリのデータを新しいコネクタにリストアする必要があります。</block>
   <block id="eced51eb44e5e285c2a52b0b05c4b03b" category="paragraph">BlueXPのバックアップとリカバリシステムを動作状態に戻すには、次の4つのタスクを実行する必要があります。</block>
   <block id="6b7f0194ee0161c1ec6ef481e87fdaa2" category="list-text">BlueXPのバックアップとリカバリデータベースをリストア</block>
-  <block id="b1aff7145ed9a93368ed789d8a6d42fd" category="paragraph">新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です<block ref="d77ae51b7aa47031957bd13dfa8d8fa8" category="inline-link-rx"></block>。</block>
   <block id="a68527cebf1aaeae64bda2645985b661" category="list-text">次のコマンドを使用して、BlueXPのバックアップとリカバリのMySQL DBをリストアします。</block>
   <block id="391b3817ffe9fe659a3a443a7fba86f2" category="list-text">次のSQLコマンドを使用して、BlueXPのバックアップとリカバリのMySQL DBが正しくリストアされたことを確認します。</block>
   <block id="dc79d96009c6f59868049e029c8bb68e" category="list-text">作業環境に関連付けられたStorageGRID システムの詳細を使用して、バックアップとリカバリのデータベースを更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。</block>
@@ -3585,11 +3463,9 @@
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
   <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">データストアをクラウドにバックアップ</block>
   <block id="febda1467d687047522ece2d9d4680b8" category="summary">BlueXPのバックアップとリカバリサービスは、ONTAP クラスタデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。バックアップは、ほぼ期間のリカバリやクローニングに使用されるボリューム Snapshot コピーとは関係なく、パブリックまたはプライベートのクラウドアカウントのオブジェクトストアに自動的に生成されて格納されます。</block>
-  <block id="b0633b8fc7276f8e9a7f9ba97c212551" category="paragraph">サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます<block ref="52a8d8c521fd6d51982efde4bc1bb1fd" category="inline-link-rx"></block>。</block>
   <block id="3daba77ab92b57915950a36f17f965c3" category="summary">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="6192be65cd3fbb101c0f789fab9eae08" category="inline-link">BlueXPのエッジキャッシング</block>
   <block id="0a190b7a7b571c1c4ae19e069137c2ac" category="paragraph">BYOLライセンスの管理には、BlueXPデジタルウォレットを使用します。BlueXPデジタルウォレットから、新しいライセンスの追加、既存ライセンスの更新、ライセンスステータスの表示を行うことができます。</block>
-  <block id="ee3c97eeb652fa9d260a05c339bc1004" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="2011e54262643b9060a004b0df801155" category="inline-link-rx"></block>。</block>
   <block id="0553876f11122be0920f9fa9c803d152" category="inline-image-macro">BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。</block>
   <block id="3ef315abed0cef6dcc1d41cb39b4322b" category="paragraph"><block ref="3ef315abed0cef6dcc1d41cb39b4322b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">ライセンスの料金を支払ってNetApp Support Site に登録すると、BlueXPデジタルウォレット内のライセンスが自動的に更新され、[Data Services Licenses]ページに5~10分後に変更が反映されます。</block>
@@ -3627,7 +3503,6 @@
   <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="cell">手順</block>
   <block id="edebbfa87f6d2ec28837893a293192be" category="cell">クラウドの導入</block>
   <block id="189d1f2a5730c1cfef756190279d38e9" category="inline-link">コネクタLinux仮想マシンに接続しています</block>
-  <block id="41329afdd0c2345224823d63b0597ea0" category="cell">の手順に従ってください<block ref="87e3254567f43c8ac012dfb521f689b3" category="inline-link-rx"></block> 使用しているクラウドプロバイダによって異なります。</block>
   <block id="d20756c02f9913587a3e83e30f0e10d3" category="cell">手動インストール</block>
   <block id="28c6311d2829dc94403ada5d3380ba87" category="cell">Linuxシステムにログインします。</block>
   <block id="e09161f04f94284e07a0714770d92acf" category="list-text">コマンドを入力してサービスを再起動します。</block>
@@ -3641,7 +3516,6 @@
   <block id="dcb73ed45cf0756ddb50a72607921a55" category="list-text">登録することで、無償トライアルの終了後にサービスが中断されることがなくなります。トライアルが終了すると、バックアップしたデータの量に応じて1時間ごとに課金されます。</block>
   <block id="e54de5915bdbe139637cbbcc25f87fb6" category="paragraph">無償トライアル中やBYOLライセンスを超えていない場合は、従量課金制サブスクリプションから請求されることはありません。</block>
   <block id="e0dc422915e1979552ba5565e14ce286" category="list-text">Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージです。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスのONTAP データはバックアップできません。</block>
-  <block id="9bf18ccfa9bc25aeb3a63e6e237b9363" category="paragraph">このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します<block ref="f1f7c973fce685b876017d26d677c721" category="inline-link-rx"></block>。BlueXPでAWSクレデンシャルに割り当てることができるアクティブなサブスクリプションは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAP システムの料金も支払う必要があります。</block>
   <block id="d22f1915c8293b6f49d0b06129807ca5" category="list-text">Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスのONTAP データはバックアップできません。</block>
   <block id="6e61fbc9ca4c7e1fac15fae1b823c181" category="paragraph">BlueXPバックアップ/リカバリのBYOLライセンスをお持ちでない場合は、BlueXPの右下にあるチャットアイコンをクリックして購入してください。</block>
   <block id="eb1562e850045c7fa9f6c944656359a5" category="paragraph">インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している場合、つまりオフラインのオンプレミスサイトのホストにBlueXPコネクタを導入している場合は、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。シリアル番号と NSS アカウントを使用してライセンスをアクティブ化することは、オフライン（ダークサイト）でのインストールには利用できません。</block>
@@ -3682,7 +3556,6 @@
   <block id="10db664972ef4288920326f44f4f3a44" category="paragraph">Amazon FSx for NetApp ONTAP またはCloud Volumes ONTAP SANレイアウトで、SnapCenter Plug-in for OracleがASMディスクグループにOracleデータファイル以外の外部ファイルを検出した場合は、接続とコピーのリストアが実行されます。外部ファイルには、次のタイプが1つ以上ある可能性があります。</block>
   <block id="fa1ec4e51afd35e28a50d8d0539c45d1" category="paragraph">プラグインは、UIまたはスクリプトを使用して導入することも、手動で導入することもできます。</block>
   <block id="c870531773e82c374eb4125c8029e25e" category="inline-link">コネクタ間の切り替え</block>
-  <block id="74d39f4b6fe0e32c5cfa2ed86891bf44" category="list-text"><block ref="74d39f4b6fe0e32c5cfa2ed86891bf44" category="inline-link-rx"></block></block>
   <block id="f7ee644dab1f17ea82c6cfcd19e39fae" category="paragraph">各バックアップポリシーには、バックアップファイルに適用可能な_Labels &amp; Retention__というセクションがあります。ボリュームに適用されるSnapshotポリシーは、BlueXPのバックアップとリカバリで認識されるポリシーのいずれかである必要があります。そうでない場合、バックアップファイルは作成されません。</block>
   <block id="1152b46be2b09f9273e95c2cb3ead800" category="paragraph">これらの機能はどちらもバックアップファイルを保護するため、ランサムウェア攻撃がバックアップに試みられた場合にデータをリカバリするための有効なバックアップファイルを常に保持できます。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionを有効にすると、BlueXPのバックアップとリカバリのアクティブ化でプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。</block>
   <block id="f3ec603ab9c35660f371c0fc057b7fd1" category="list-text">クラスタでONTAP 9.11.1以降が実行されている必要があります</block>
@@ -3695,10 +3568,7 @@
   <block id="679a2d98f8c7c05c4944b0d161a6d567" category="section-title">バックアップファイルでAWS Chinaリージョンがサポートされるようになりました</block>
   <block id="aad236ec8e2b61a79fb4bb3a416a2e06" category="paragraph">クラスタでONTAP 9.12.1以降が実行されている場合、AWS China Beijing（cn-north-1）リージョンとNingxia（cn-northwest-1）リージョンがバックアップファイルのデスティネーションとしてサポートされるようになりました。</block>
   <block id="c93bfe725726f47fe3bfcc0e95f8ec7d" category="inline-link">オンプレミスのONTAP データをAmazon S3にバックアップします</block>
-  <block id="afe182ec329d300711f89a81223f8fe1" category="paragraph">BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。を参照してください<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> および<block ref="98f7c8e7ee596af91f0142606f0617c9" category="inline-link-rx"></block> を参照してください。</block>
   <block id="4d5789e8f025b3895d94f1b6a7225e4a" category="list-text">アプリケーション（ハイブリッド）向けのBlueXPのバックアップとリカバリは、SaaSコントロールプレーンから実行されます</block>
-  <block id="53eb0fdde70aa10525b581e17b5d6f86" category="paragraph">これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限モード」でバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。<block ref="18611796b9b4332697b6f9bb72b16e0b" category="inline-link-rx"></block>。を参照してください<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> および<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
-  <block id="f1a109ae8d953da8e05cf5534df6b22b" category="list-text">ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
   <block id="c37f218ac8b5f7e0cde5a786f9719774" category="list-text">Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを使用してデータを暗号化できます。クロスリージョンキーとクロスプロジェクトキーの両方がサポートされているため、CMEKキーのプロジェクトとは異なるバケット用のプロジェクトを選択できます。お客様が管理する独自のキーを使用する場合は、次の手順を実行します。</block>
   <block id="4820dd32c48fc26474e2ba8062d9714c" category="list-text">アクティベーションウィザードでこの情報を追加できるように、キーリングとキー名が必要です。<block ref="f8e0e63bffb58004a25f7278cd43c42c" category="inline-link-rx"></block>。</block>
   <block id="da656c40a6b524cf42f5c9ad7d171f05" category="list-text">これらの必要な権限がコネクタの役割に含まれていることを確認する必要があります。</block>
@@ -3706,8 +3576,6 @@
   <block id="9af84f05d8931a3676e35cb449e96606" category="list-text">プロジェクトでGoogleの「Cloud Key Management Service（KMS）」APIが有効になっていることを確認する必要があります。を参照してください<block ref="5b19b983398533c382bb79968f58dbf1" category="inline-link-rx"></block> を参照してください。</block>
   <block id="db058563d6eb243b453d48635769d049" category="list-text">HSM（ハードウェアバックアップ）キーとソフトウェア生成キーの両方がサポートされています。</block>
   <block id="90a4c64194204c56808168a2ae360226" category="summary">BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制または年間マーケットプレイスサブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（Bring Your Own License）を購入します。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。</block>
-  <block id="a1b95a0752037fb03aeac1bffa4cae06" category="list-text">「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています<block ref="6a291086b9b2e2c1bf57350866f6f726" category="inline-link-rx"></block> サービスCloud Volumes ONTAP システムにプロビジョニングされた容量3TiBにつき、BlueXPエッジキャッシュエッジシステムを1つ導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。</block>
-  <block id="b765ae890c1f39770cf3cb7111f9e4e9" category="list-text">（最新のから）次の S3 権限を確認します<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
   <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
   <block id="5a0e26d771129c9b2e2c18c2a55a2693" category="paragraph">Cloud BackupのUIおよびAPIから開始されたユーザ開始のバックアップ処理とリストア処理、および実行中のスケジュールされたバックアップ処理などのシステム開始のジョブは、どちらも[Job Monitoring]タブで使用できます。ただし、これは、ONTAP 9.13.0以降を実行するCloud Volumes ONTAP システムと、ONTAP 9.13.1以降を実行するオンプレミスのONTAP システムにのみ該当します。以前のバージョンのONTAP を実行している場合は、ユーザが開始したジョブのみが表示されます。</block>
   <block id="72c7fe989ff4840809134384de3dd80c" category="admonition">ONTAP システムを9.13.xにアップグレードしたあとに、スケジュールされたバックアップ処理がジョブモニタに表示されない場合は、BlueXPのバックアップ/リカバリサービスを再起動する必要があります。 <block ref="bdf197dfe0363b0f0f92ecc4a997870a" category="inline-link-macro-rx"></block>。</block>
@@ -3727,19 +3595,13 @@
   <block id="d71a9f98c71cbdae83167ae47b9abd46" category="list-text">Azureにコネクタをインストールしておきます。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
   <block id="f96d0e888e1613a76bd4fa2299a7ad28" category="paragraph">BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。コネクタとCloud Volumes ONTAP システムをダークサイト（「プライベートモード」）に導入する場合は、BYOLライセンスを使用する必要があります。</block>
   <block id="40d2dc321bf0d1e8c62d93ca99421fb6" category="inline-link">詳細については、BlueXPの導入モードを参照してください</block>
-  <block id="9bdb9115093e8aa84dec92faff760639" category="list-text">コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。<block ref="f89ca42e30b46213947b09b3e423225b" category="inline-link-rx"></block>。</block>
   <block id="98eef7e95983b72b4d417c12eaef0df7" category="inline-link">Azureで標準モードでコネクタを導入する（フルインターネットアクセス）</block>
-  <block id="c5261a70ab43b0f7ff9e379c3dd22250" category="list-text"><block ref="c5261a70ab43b0f7ff9e379c3dd22250" category="inline-link-rx"></block></block>
   <block id="25ea6f476e6d2e28d6075e5526758673" category="inline-link">制限モードでのコネクタの取り付け（制限されたアウトバウンドアクセス）</block>
-  <block id="495de462669f046d0acd7f65804a3be8" category="list-text"><block ref="495de462669f046d0acd7f65804a3be8" category="inline-link-rx"></block></block>
   <block id="f59ba9544b91f15bf21dc9731d8101ed" category="paragraph">BlueXPのバックアップとリカバリを、BlueXP Connectorがクラウドプロバイダやインターネットにアクセスできる自社のホストシステムに導入されているSaaS環境で使用すると、BlueXPのバックアップとリカバリの重要な設定データがすべてクラウドにバックアップされて格納されます。インターネットアクセスがないサイト（「制限モード」または「ダークサイト」）でBlueXPのバックアップとリカバリを使用している場合、BlueXPのバックアップとリカバリの情報はローカルコネクタシステムにのみ格納されます。</block>
   <block id="01f6b31ae6611c8f5e0bcc21952f1327" category="paragraph">BlueXPの重要なバックアップ/リカバリデータを接続されたStorageGRID システムにバックアップする方法と、必要に応じて新しいコネクタにデータをリストアする方法について説明します。</block>
   <block id="b5e4425a80571820c3fc81b638ce52be" category="summary">BlueXPのバックアップとリカバリサービス（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続ボリューム、データベース、仮想マシンに、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
   <block id="d1ce73c34fafec004ce6d188a1769e33" category="list-text">コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
-  <block id="87e1e8ba74e4d22e27c54e05c219e4d7" category="list-text">このコネクタは、インターネットアクセスがフルまたは制限されたAWSリージョン（「標準」または「制限」モード）にインストールできます。<block ref="f89ca42e30b46213947b09b3e423225b" category="inline-link-rx"></block>。</block>
   <block id="0e58108645de369af6e83522b7945f2b" category="inline-link">AWSでコネクタを標準モードで導入する（フルインターネットアクセス）</block>
-  <block id="9724d186565542eee6893c676a229d57" category="list-text"><block ref="9724d186565542eee6893c676a229d57" category="inline-link-rx"></block></block>
-  <block id="87b9a328b6b45ae7a3e9970b19b56dc3" category="list-text">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>。ポリシーにこれらの権限がすべて含まれていない場合は、を参照してください<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
   <block id="d79a952c269a34bdcb05a2155867602b" category="paragraph">*注：リストア対象のデータを含むバックアップ・ファイルがアーカイブ・ストレージ（ONTAP 9.10.1以降）に格納されている場合は、リストア処理に長い時間がかかり、コストが発生します。また、デスティネーションクラスタでボリュームのリストアにはONTAP 9.10.1以降、ファイルのリストアには9.11.1、Google Archive and StorageGRID には9.12.1、フォルダのリストアには9.13.1も実行されている必要があります。</block>
   <block id="5d8a63e586bb4dfbba4ae7d992161e1c" category="admonition">システムのONTAP バージョンが9.13.1より前の場合、バックアップファイルにDataLock &amp; Ransomwareが設定されていると、フォルダやファイルを復元できません。この場合、バックアップファイルからボリューム全体をリストアし、必要なファイルにアクセスできます。</block>
   <block id="c2d4eb2ee4a0b78ea11dd0bb39d93ab0" category="list-text">バックアップファイルにDataLockおよびRansomware保護が設定されている場合、フォルダレベルのリストアはONTAP のバージョンが9.13.1以降の場合にのみサポートされます。以前のバージョンのONTAP を使用している場合は、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。</block>
@@ -3749,12 +3611,9 @@
   <block id="20f2d0bb5e696b331efc736ffadbb3f3" category="paragraph">リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降で使用可能）にある場合、リストア処理にはより長い時間がかかり、追加コストが発生します。デスティネーションクラスタでも、ボリュームのリストアにはONTAP 9.10.1以降、ファイルのリストアには9.11.1、Google Archive and StorageGRID には9.12.1、フォルダのリストアには9.13.1が実行されている必要があります。</block>
   <block id="3ddfa13cbce20cc68cd19aca6f181eb0" category="list-text">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、「High」リストア優先度はサポートされません。</block>
   <block id="ffe805c4c11acb4a1a49af6779cd50aa" category="sidebar">バックアップポリシーの設定</block>
-  <block id="fe107c08b013bc42a913f733a5dd6173" category="paragraph">Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> 次に<block ref="5b8e6a3cc3aa95595ccde9be22e093ee" category="inline-link-rx"></block>。</block>
-  <block id="6625a3a4daaa21e2cd890698ab4c568a" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、Google MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です<block ref="1a9048fea9c114882abdde44d164e6a2" category="inline-link-rx"></block> BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="2dcb14e4aff486ad01ca943b2718d3a3" category="inline-link-rx"></block>。</block>
   <block id="3e538c61c4cc98a57d724177580fb8f2" category="inline-link">Google Marketplaceで提供されているNetApp BlueXPサービス</block>
   <block id="21b58e8c34c8a77c9e8eb04d515a7066" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です<block ref="2f77b898579aea53ee2a78f06369878a" category="inline-link-rx"></block>。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
   <block id="5afb323d4a36e6ab79cd9d765c5934f7" category="inline-link">お客様が管理する独自の暗号化キーの設定の詳細については、こちらをご覧ください</block>
-  <block id="82e4d7bffd878c91fac874e48e729020" category="paragraph">顧客管理暗号化キー（CMEK）のプロジェクトとは別のプロジェクトにあるバケットを選択できるようになりました。<block ref="c27debe559c9dc72a10bc811f768bbff" category="inline-link-rx"></block>。</block>
   <block id="f02fabcd80f3df012a3b734db72a8a04" category="inline-link">AWS Marketplaceで提供されるNetApp BlueXPサービス</block>
   <block id="7eb75a0482cc00856d6f59785ed2196a" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です<block ref="72b5d28b0fc68220ca561b42693848df" category="inline-link-rx"></block>。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
   <block id="e59cc93e05cd1a09fee0d3400cb6594b" category="inline-link">Azure Marketplaceで提供されるNetApp BlueXPサービス</block>
@@ -3793,4 +3652,148 @@
   <block id="c325ed37b6a44d9e765cfd2dd7779cfb" category="paragraph">ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムで、システム開始ジョブ（進行中のバックアップ処理など）を*[ジョブ監視]*タブで確認できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
   <block id="62bcc3625fd0e0ab73db7f861ea43e38" category="list-text">コネクタホストシステムで、ディレクトリを「/opt/application/netapp/cbs」に変更します。</block>
   <block id="471862806e2663ce1f62d2a75294c7f4" category="list-text">インデックスカタログのバックアップzipファイルを安全な場所から「/opt/application/netapp/cbs」フォルダの新しいコネクタホストにコピーします。</block>
+  <block id="4e4c67e8658214022378968dae080ce5" category="list-text">「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています<block ref="0e8295000b498583f7b721745920fe19" category="inline-link-rx"></block> サービスCloud Volumes ONTAP システムにプロビジョニングされた容量3TiBにつき、BlueXPエッジキャッシュエッジシステムを1つ導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。</block>
+  <block id="83e6a84bd8ee7bed2013f07c3bd590c7" category="paragraph"><block ref="e8c794dc8a2003f8106407fa82df9679" category="inline-link-rx"></block>。</block>
+  <block id="7d17ede22a66ff897bf29e0913870d0b" category="paragraph">このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します<block ref="3e7d826ab39799649c48f6e2f8f11222" category="inline-link-rx"></block>。BlueXPでAWSクレデンシャルに割り当てることができるアクティブなサブスクリプションは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAP システムの料金も支払う必要があります。</block>
+  <block id="ad05f3c2a42e28f22c97d13c62c20e21" category="paragraph">を参照してください<block ref="fe3dd1b4143f543014e8974529e1079b" category="inline-link-rx"></block> このライセンスオプションの詳細については、を参照してください。</block>
+  <block id="4d6157a62532904beb4910b24be9f6fb" category="paragraph">必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block>。</block>
+  <block id="30fc689a9c3cd4222329fe3a4c818a33" category="paragraph">お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、<block ref="06a3bc9d474b5d4e44d1a2733cac785a" category="inline-link-rx"></block>。</block>
+  <block id="bd2181ebe83d3e14c692cc0ecf0b8124" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="b553b83f4f3ab8ad7adf12f36cefd6a6" category="inline-link-rx"></block>。</block>
+  <block id="6da26906aaee33f2713c2ade001a6c1c" category="paragraph">BlueXPにはWebベースのコンソールからアクセスできます。BlueXPの利用を開始するには、まず既存のNetApp Support Site クレデンシャルを使用するか、ネットアップクラウドログインアカウントを作成して登録します。詳細については、を参照してください <block ref="3d0080f10d263832ae8d693dec77976c" category="inline-link-macro-rx"></block>。</block>
+  <block id="694f23a894c7ab8f8ca341d42f4a872a" category="paragraph">BlueXPに登録すると、Webベースのコンソールからログインできます。詳細については、を参照してください <block ref="26287b6dbb93c9f00b57f2d18838bae3" category="inline-link-macro-rx"></block>。</block>
+  <block id="cd6d41c57830d090b559d13f4cb1acca" category="paragraph">ユーザー、サービスアカウント、ワークスペース、コネクタを管理することで、アカウントを管理できます。詳細については、を参照してください <block ref="3b8087b18103c5a86a32656fd8065ecb" category="inline-link-macro-rx"></block>。</block>
+  <block id="4235965736b9e1e3dd699fde8f6f73ac" category="paragraph">サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます<block ref="804faa4f81a5cffbc00a90ef504a2fbd" category="inline-link-rx"></block>。</block>
+  <block id="4f05ae706b300f473408b4c787786f71" category="list-text">BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています<block ref="d9402e229f205a91caf82712b1637f11" category="inline-link-rx"></block>。</block>
+  <block id="92490379d9b5dee2a5a37001cb55e664" category="paragraph">Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> 次に<block ref="630dd2aae912349621adf70336b8d324" category="inline-link-rx"></block>。</block>
+  <block id="0f66f2296645800ca15c524b02cff8c4" category="list-text">デフォルトの Amazon S3 暗号化キーを使用する代わりに、アクティブ化ウィザードでお客様が管理するデータ暗号化キーを選択できます。この場合は、暗号化管理キーがすでに設定されている必要があります。<block ref="c9562b880df747e2a8aa25f072c81683" category="inline-link-rx"></block>。</block>
+  <block id="5fe3e34349759dffe52dbd52b6db6252" category="list-text">このコネクタは、インターネットアクセスがフルまたは制限されたAWSリージョン（「標準」または「制限」モード）にインストールできます。<block ref="30d3d302b7eb1435cdb8dd90d49c0322" category="inline-link-rx"></block>。</block>
+  <block id="02156a4727415877195dc5302fa69275" category="list-text"><block ref="02156a4727415877195dc5302fa69275" category="inline-link-rx"></block></block>
+  <block id="cece7a4197fc949363b19b037491518c" category="list-text"><block ref="cece7a4197fc949363b19b037491518c" category="inline-link-rx"></block></block>
+  <block id="686e9ec96f6b42269349b5200de1a61f" category="list-text"><block ref="686e9ec96f6b42269349b5200de1a61f" category="inline-link-rx"></block></block>
+  <block id="09d55acee0d2e46c4a540d0e06e78f8f" category="list-text">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>。ポリシーにこれらの権限がすべて含まれていない場合は、を参照してください<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
+  <block id="613541ab07dc059cf2673b90bd75200e" category="list-text">Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合は、作業環境に権限を付与するIAMロールに、BlueXPの最新のバックアップとリカバリに特化した新しいS3権限のセットを含める必要があります<block ref="35d63ba18c6cc65ea408ab719bcabf7f" category="inline-link-rx"></block>。</block>
+  <block id="537beb6d275369ee9b838a1267f0cd74" category="list-text">デスティネーションAWSアカウントのクレデンシャルをBlueXPに追加します。<block ref="60e54fe2f9df764924a56a06b3f91e2b" category="inline-link-rx"></block>。</block>
+  <block id="8834ef5b795e75f072e111cefc5da860" category="paragraph">を参照してください<block ref="3718aa4b740ed1680c17ac188cf71498" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
+  <block id="35970a86e95dfa285ae2d209be5e0a59" category="list-text">デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択してデータの暗号化を管理するか。 <block ref="63418ab87bc7f6a4e58e1fd19ddff248" category="inline-link-rx"></block>）。</block>
+  <block id="98bc722c8a51275b6caa67e5b5b48fa1" category="paragraph">データベースがホストされているAzure NetApp Files 作業環境を作成する必要があります。詳細については、を参照してください <block ref="fe7164b79c117b9e67b42376afa1aa7a" category="inline-link-macro-rx"></block> および <block ref="b2b6dac70d562bf17ac71d9769e14c06" category="inline-link-macro-rx"></block>。</block>
+  <block id="1a32befc97779db82154e5ad2ab3fdf5" category="paragraph">詳細については、を参照してください <block ref="d800fe698b253b0ddb93087a1f8d0ef9" category="inline-link-macro-rx"></block>。</block>
+  <block id="52ba8ac12050d2494572b940a0d65b25" category="list-text"><block ref="52ba8ac12050d2494572b940a0d65b25" category="inline-link-rx"></block></block>
+  <block id="9d06990508d25d367d9158c6558eb9c8" category="list-text"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
+  <block id="2e0c742f4616eb27b5b7646aa790edfe" category="list-text"><block ref="2e0c742f4616eb27b5b7646aa790edfe" category="inline-link-macro-rx"></block></block>
+  <block id="cf14bff66a8b72d3675db8ffe0f02ee3" category="list-text"><block ref="cf14bff66a8b72d3675db8ffe0f02ee3" category="inline-link-macro-rx"></block></block>
+  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">これはシステムによって生成されたIDで、電子メールにマッピングされます。[*NSS Management*]ページで、から電子メールを表示できます <block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
+  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">ログイン認証情報トークンを更新する必要がある場合は、の[認証情報の更新*]オプションも使用できます <block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> メニュー。</block>
+  <block id="1bb5620ed3998fd776980cad36e22c9a" category="paragraph"><block ref="1bb5620ed3998fd776980cad36e22c9a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9748f351c4d16d0c4d18b2ae55b47a99" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="c9aff78f9846421ce008e556f4151f92" category="inline-link-rx"></block>。</block>
+  <block id="698d055ff2d2109face4d8309d53ca3a" category="list-text">コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。<block ref="30d3d302b7eb1435cdb8dd90d49c0322" category="inline-link-rx"></block>。</block>
+  <block id="7267e5107424dfdf5f98e75bc686cc7c" category="list-text"><block ref="7267e5107424dfdf5f98e75bc686cc7c" category="inline-link-rx"></block></block>
+  <block id="9aab86e518619c6471977a282a5c11a5" category="paragraph"><block ref="9aab86e518619c6471977a282a5c11a5" category="inline-link-rx"></block></block>
+  <block id="4c75b99552d91f14eb977c2ed794730f" category="paragraph">を参照してください<block ref="8198e799bf373d0d471ff3f551725308" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
+  <block id="c0b041ab0557d62205d9f7c2fbff6598" category="paragraph"><block ref="1dea076a83901241f0583b1eba278b63" category="inline-link-rx"></block>。</block>
+  <block id="c66667800eedd16eeee2c65a9c675986" category="list-text">オンプレミスクラスタを検出して、BlueXPの作業環境に追加しました。を参照してください<block ref="3af4d178b14b8cd8e18ee55cb6bdac06" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="c306b081efdd6935cb1a3b72cedef051" category="paragraph"><block ref="ae9eece53d3424b3b3c2b5d7aaae5ba2" category="inline-link-rx"></block>。</block>
+  <block id="b8c4390ff667478ec0b60750dee2c4c7" category="list-text"><block ref="b8c4390ff667478ec0b60750dee2c4c7" category="inline-link-rx"></block></block>
+  <block id="c89f481c3b46af99ed7620462173a07c" category="list-text"><block ref="c89f481c3b46af99ed7620462173a07c" category="inline-link-rx"></block></block>
+  <block id="2aeeba0020a7848f7902186fbd8cb9e8" category="list-text"><block ref="2aeeba0020a7848f7902186fbd8cb9e8" category="inline-link-rx"></block></block>
+  <block id="d4a1ca5e593cb72661adda86d030f425" category="admonition">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。インターネットに接続されていないサイトにインストールする場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> BlueXPのバックアップとリカバリの各リリースの新機能を確認するには、次の手順を実行します<block ref="164e4794420610da956934de57a9da8a" category="inline-link-rx"></block> 新しい機能を使用する場合。</block>
+  <block id="f2952cd66b2c1d62b092c2ae5559eabf" category="list-text">StorageGRID はである必要があります<block ref="27661aa20e8b873c50bd0587758b98a1" category="inline-link-rx"></block>。</block>
+  <block id="bc199847b8f34640b8ff543d338f0ead" category="paragraph">検索処理では、 ONTAP ボリュームに対応するすべてのローカル Snapshot コピーも検索されます。ローカル Snapshot コピーからデータをリストアする方が、バックアップファイルからリストアするよりも高速で低コストなので、 Snapshot からデータをリストアできます。Snapshotは新しいボリュームとしてリストアできます<block ref="e8608a07f1140ab080666e48adb90501" category="inline-link-rx"></block> （BlueXPのバックアップとリカバリではありません）。</block>
+  <block id="c2e1ae9092ad1a2b4bccebec9b7fbd42" category="list-text">ある場合<block ref="a7e016fe79f350912ccb5dfe261d7ecb" category="inline-link-rx"></block> または<block ref="d3d508974cb975126e687a6961f332c5" category="inline-link-rx"></block> アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。</block>
+  <block id="fea98b7ef5d8a09fc1a41665820ca44e" category="paragraph">データベースがホストされているFSx for ONTAP 作業環境を作成する必要があります。詳細については、を参照してください <block ref="99bdda3a8ebb4e92b4deac45aac1de8f" category="inline-link-macro-rx"></block> および <block ref="221c300fec5ef905fe42ac89652a6952" category="inline-link-macro-rx"></block>。</block>
+  <block id="a0d7123195422176879325aa271d0cdd" category="paragraph">詳細については、を参照してください <block ref="14c6f59d76430134dbb391388827f95a" category="inline-link-macro-rx"></block>。</block>
+  <block id="4959ab34e6f20ad5ca2abb7f8cd1121a" category="list-text">BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>。</block>
+  <block id="4ea687180e3b5ed4365ac5795d915faf" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="7a47df0de69aaae590cb7a4afe438e24" category="inline-link-rx"></block>。</block>
+  <block id="dac5248f5cebf44974062c72a96f3814" category="list-text">Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください<block ref="c1b63d6997bc4d668191e151cb9b8092" category="inline-link-rx"></block> または<block ref="23a633d2f31911781b4c35e0d8f7c8b9" category="inline-link-rx"></block>。</block>
+  <block id="bd416abf433c7b177026beb68bf7befe" category="paragraph">Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> 次に<block ref="630dd2aae912349621adf70336b8d324" category="inline-link-rx"></block>。</block>
+  <block id="2de9d70ab4a441dd019daa1623e4e1aa" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、Google MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です<block ref="1a9048fea9c114882abdde44d164e6a2" category="inline-link-rx"></block> BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
+  <block id="1cd233a36e1f7dc77f3653908663d446" category="list-text">事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block>。</block>
+  <block id="c6d0aba5a4df18df97543934ad4a1185" category="list-text"><block ref="c6d0aba5a4df18df97543934ad4a1185" category="inline-link-rx"></block></block>
+  <block id="548e6841e3441d35da2414e7a61ba449" category="paragraph">を参照してください<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
+  <block id="187e15fe582f53b6ed739ea360c9f408" category="list-text">ウィザードの各ページを設定し、システムを導入します を参照してください<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block>。</block>
+  <block id="19876dc921287243c303e7c43a14df3f" category="cell">の手順に従ってください<block ref="814636d53832f91c925bc44c968204b3" category="inline-link-rx"></block> 使用しているクラウドプロバイダによって異なります。</block>
+  <block id="190883b84e441e0bd227971c892ce575" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="7327129ba68875466d1d1f22b67d23f4" category="inline-link-rx"></block>。</block>
+  <block id="dcc0a57c090669b2acd4fdb77815ff64" category="paragraph">BlueXPの通知リストではアラートを確認できるだけでなく、アラートとして通知をEメールで送信するようにBlueXPを設定することもできます。これにより、システムにログインしていないときでも重要なシステムアクティビティに関する情報を受け取ることができます。<block ref="f55b5f666e66870081886e35a4868f02" category="inline-link-rx"></block>。</block>
+  <block id="99450b8ec06590f50cb42ac08c39a833" category="paragraph"><block ref="47f3d491aa1b57e2669ac4e98ec3c3dd" category="inline-link-rx"></block>。</block>
+  <block id="3c1c17ea503d5e9470f8439096f625f6" category="paragraph">これらの手順は、を実行している場合にのみ必要です<block ref="677834f72462157379b8c91854842dcc" category="inline-link-rx"></block>。</block>
+  <block id="30841bc51126a71dc016db7a2c8353ce" category="list-text">オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください<block ref="3af4d178b14b8cd8e18ee55cb6bdac06" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="58dfc41708fb11fcdb19c198d9a62ddd" category="list-text"><block ref="58dfc41708fb11fcdb19c198d9a62ddd" category="inline-link-rx"></block></block>
+  <block id="327e32511f0c97676e41ea866aac0721" category="list-text">ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 <block ref="e228b87eff1d3a92b4544cd5652fc5ad" category="inline-link-rx"></block>)</block>
+  <block id="c55a4ed0f55f8209574960c04bd36597" category="paragraph">顧客管理暗号化キー（CMEK）のプロジェクトとは別のプロジェクトにあるバケットを選択できるようになりました。<block ref="2425c9129a22c7135ee8a04ae0dae970" category="inline-link-rx"></block>。</block>
+  <block id="cfc826b330f7a25cc3c4e115a9fcca13" category="paragraph">BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="bb86d78b7593b3e1252f277b7dd6e017" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="e440c82aa05a4e6e5bc3191ceeece3ae" category="paragraph">これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限モード」でバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。<block ref="0eb8533d49e65dbfdd979d6ceb88ebff" category="inline-link-rx"></block>。を参照してください<block ref="27ee532be7d9f80c345fcb2108369dd1" category="inline-link-rx"></block> および<block ref="eb65204a82ae962a8410421a1d6516bd" category="inline-link-rx"></block>。</block>
+  <block id="3e5afb80ef2b2c6b108c664e6550be33" category="list-text">ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
+  <block id="3f95b7ff004c9ea7ba2c076aa81ddbd8" category="list-text">すべてのジョブをレポートするためのCSVファイルをダウンロードできるほか、単一のジョブのJSONファイルをダウンロードして詳細を確認できるようになりました。<block ref="c5e8ac86e60de65889ee067b8ca8ac22" category="inline-link-rx"></block>。</block>
+  <block id="aca6a48e798dafa8a873544468b60e06" category="list-text">「Scheduled job failure」と「Restore job completes but with warnings」という2つの新しいバックアップジョブアラートが追加されました。<block ref="a4848a9ae757d04f84e693376feb04c0" category="inline-link-rx"></block>。</block>
+  <block id="cb388daef1ecf4d75abae922da7c4ccd" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
+  <block id="7397c46a6bf6fde87c1217e8c8bbab15" category="list-text">[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 <block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>。</block>
+  <block id="72577c9cc3c11c1b1c16727589471767" category="paragraph">この機能は、オンプレミスクラスタがONTAP 9.12.1以降を使用し、StorageGRID システムが11.4以降を使用している場合に使用できます。<block ref="a928050165abd52aa438367540434489" category="inline-link-rx"></block>。</block>
+  <block id="3171c3474d761b0543c2bd83d1d3f702" category="paragraph">DataLockとRansomware Protectionは、Azure Blobに保存されたバックアップファイルでサポートされるようになりました。Cloud Volumes ONTAP またはオンプレミスONTAP システムでONTAP 9.12.1以降を実行している場合、バックアップファイルをロックしてスキャンし、ランサムウェアの可能性を検出できるようになりました。<block ref="2045a684ba4b47f5626fcfb6a06714da" category="inline-link-rx"></block>。</block>
+  <block id="5df99ce910070abbda065759347f25b3" category="paragraph"><block ref="4f80ba7b64beb474546685a97f9eb3b0" category="inline-link-rx"></block>。</block>
+  <block id="3c718c5f17f9fcfc63a7338e836856c8" category="paragraph">この機能は、オンプレミスクラスタでONTAP 9.12.1以降を使用し、StorageGRID システムで11.3以上を使用している場合に使用できます。<block ref="b82e63d60c4d06f5682d15a56c05b007" category="inline-link-rx"></block>。</block>
+  <block id="85d6a3e13464f9ef61ac713c37b8f174" category="paragraph">以前のリリースでは、BlueXPのバックアップとリカバリでGoogle Cloud Storageバケットにアクセスするためのサービスアカウントに「Storage Admin」ロールが必要でした。これで、一連の権限を減らしてサービスアカウントに割り当てるカスタムロールを作成できるようになりました。<block ref="75740d83aea3391a75bdf8fb0dfe10a6" category="inline-link-rx"></block>。</block>
+  <block id="c89564af11ef846a4ab221b1ae9b0943" category="paragraph"><block ref="4ab4188a7e1e15339fd18b35288f7c72" category="inline-link-rx"></block>。
+<block ref="7658b4baf69b55f9dc87e3a8319a4640" category="inline-link-rx"></block>。</block>
+  <block id="cf31f6b1c4754291a84cda70013dfbd4" category="paragraph">[ジョブ監視]ページをフィルタリングして、必要なジョブとアクションを表示したら、そのデータの.csvファイルを生成してダウンロードできるようになりました。次に、情報を分析したり、組織内の他のユーザーにレポートを送信したりできます。<block ref="6613b38610e78b89213a7c8c3c136440" category="inline-link-rx"></block>。</block>
+  <block id="fa2934d386823619966e2cc6e222496c" category="paragraph">のすべてのエンドポイントのリストを参照してください<block ref="42eb7f749d4ba3adb326aa0a5756ba02" category="inline-link-rx"></block>、<block ref="96a9d4916fc49c8f082f1cb217b818c4" category="inline-link-rx"></block>または<block ref="4f16be4d60318c8ffb97ef574631956d" category="inline-link-rx"></block> クラウド環境：</block>
+  <block id="518b921b544208d26c417e22257f9587" category="paragraph"><block ref="ff0f3f0bff366294cf9c9999af41484f" category="inline-link-rx"></block>。</block>
+  <block id="0d4049cdae5db488541b661594c050ab" category="paragraph">このオプションは、作業環境でCloud Backupをアクティブ化する場合に使用できます。この設定は、あとでで変更することもできます<block ref="c20e7ea7f67bc0463da40cfb9de3ef52" category="inline-link-rx"></block>。</block>
+  <block id="720f47fa02f5f4e3c7022d72c154168f" category="paragraph">これで、ボリュームのバックアップ関係を削除できるようになります。これにより、新しいバックアップファイルの作成を停止してソースボリュームを削除し、既存のすべてのバックアップファイルを保持する場合に、アーカイブメカニズムを実現できます。これにより、必要に応じて、あとでソースストレージシステムからスペースを消去しながら、バックアップファイルからボリュームをリストアできるようになります。<block ref="ea8952e952ca52cb9d95821042c7cf0d" category="inline-link-rx"></block>。</block>
+  <block id="d2a21580f3d24acff2efa28990b6a41a" category="paragraph">Cloud Backupは、BlueXP Notificationサービスに統合されています。Cloud Backup通知を表示するには、BlueXPメニューバーの通知ベルをクリックします。また、システムにログインしていないときでも重要なシステムアクティビティを通知できるように、メールで通知を送信するようにBlueXPを構成することもできます。このEメールは、バックアップとリストアのアクティビティに注意する必要があるすべての受信者に送信できます。<block ref="559cd1e2eab76a99e01313e29f7c7404" category="inline-link-rx"></block>。</block>
+  <block id="308d7a42614d81a9bfee171e43129c28" category="paragraph"><block ref="24b2cbcdbb919784c98ac0f341af030b" category="inline-link-rx"></block>。</block>
+  <block id="ff977b3bda8bd49c8895b8e27c7ac01a" category="paragraph">には、次の更新が行われています<block ref="34f4049f89ba8890765cc171e2590532" category="inline-link-rx"></block>：</block>
+  <block id="17f47b7c1b637ccdb258e9324672295c" category="paragraph">最後のリリースで導入された、Amazon S3バケットに格納されたバックアップ向けの_DataLockとRansomware Protection_forが含まれます。このリリースでは、StorageGRID システムに格納されたバックアップファイルのサポートが拡張されています。クラスタがONTAP 9.11.1以降を使用していて、StorageGRID システムがバージョン11.6.0.3以降を実行している場合、この新しいバックアップポリシーオプションを使用できます。<block ref="6e0b9608f1ba1040184a3e955da31f87" category="inline-link-rx"></block>。</block>
+  <block id="72e4241b97e5dcf5222db5c1346cd6e5" category="paragraph">状況に応じて<block ref="0675f343561e34593b3974118982449f" category="inline-link-rx"></block> バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてクラウドバックアップセットアップウィザードを開始できます。</block>
+  <block id="1f184e67cc26d932b818db63df683324" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXPで有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、効率的でポリシーベースのバックアップとリストアを実現します。Amazon FSX for NetApp ONTAP 上にあるOracleデータベースのバックアップとリストアを実行できます。
+<block ref="7cfd73f52a7d273785490cb7a68d9c5b" category="inline-link-rx"></block>。</block>
+  <block id="7c25b79ad059154686c7d342679713ff" category="paragraph">Azure BLOBストレージにバックアップファイルを保存するユーザが、ボリュームとファイルのリストア方法を検索してリストアできるようになりました。<block ref="e3d7ab8aadfeeb6efca0c0cb70aa3002" category="inline-link-rx"></block>。</block>
+  <block id="f248ae67b245b68973e4ad9510bcd770" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェア（2022年8月）を使用して導入されたコネクタに、次の権限が含まれます。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="d5b6e1cdf774193e7e920adcc4958d6f" category="inline-link-rx"></block>。</block>
+  <block id="13cc419f9eec4864b183cd309490fa96" category="paragraph">Cloud Backupでランサムウェアセーフバックアップのオブジェクトロックがサポートされるようになりました。クラスタがONTAP 9.11.1以降を使用していて、バックアップのデスティネーションがAmazon S3の場合、_DataLockという新しいバックアップポリシーオプションとランサムウェア防御_が利用可能になりました。DataLockはバックアップファイルの変更や削除を防止します。ランサムウェア対策はバックアップファイルをスキャンして、ランサムウェアによるバックアップファイルへの攻撃の証拠を探します。<block ref="6e0b9608f1ba1040184a3e955da31f87" category="inline-link-rx"></block>。</block>
+  <block id="a0a86845199a713fefe6ac2a510c1f3b" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェアを使用して展開されたコネクタには、これらの権限が含まれています。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="a1358a7278422ac19edeaba6b3485166" category="inline-link-rx"></block>。</block>
+  <block id="5256ce9f634603c7974195d06a3810f9" category="paragraph">状況に応じて<block ref="faa8e7c446a7ba2fa85e0b9729d4b7be" category="inline-link-rx"></block> または<block ref="826767c7190992a148d6461504672381" category="inline-link-rx"></block> バックアップ先はキャンバス上の作業環境として存在し、オンプレミスのONTAP またはCloud Volumes ONTAP 作業環境（AzureまたはGCPにインストール）を移行先にドラッグしてバックアップセットアップウィザードを開始できます。</block>
+  <block id="20ffcdeb77d017e6cc4e95d5c53529a9" category="paragraph"><block ref="7658b4baf69b55f9dc87e3a8319a4640" category="inline-link-rx"></block>。
+<block ref="ebe6817b752fe80287c6b112c58862f8" category="inline-link-rx"></block>。</block>
+  <block id="0d571b86a4ac1f2d7a01abcad4e54b51" category="paragraph"><block ref="1706670f7ccc8b3920c02e07a29bc4b7" category="inline-link-rx"></block>。</block>
+  <block id="af9091a34041d22f15b1c8a327a57951" category="paragraph">前述のように、参照および復元操作用のコンテナが追加されたことで、Google CloudおよびStorageGRID システムに保存されているバックアップファイルからファイルの復元操作を実行できるようになりました。現在は、参照とリストアを使用して、すべてのパブリッククラウドプロバイダとStorageGRID からファイルをリストアできます。<block ref="4bc7c8e9ed5c5a5c6bdeb14f06726295" category="inline-link-rx"></block>。</block>
+  <block id="759bfd00aa9668f59a8dbc69a9620ef1" category="paragraph">Cloud Backupをアクティブ化したあとにKubernetesクラスタに新しい永続ボリュームを追加した場合は、以前にそれらのボリュームのバックアップを忘れずに設定する必要がありました。新しく作成したボリュームに自動的に適用するポリシーを選択できます<block ref="d2d4435857095ed7734722170e567751" category="inline-link-rx"></block> Cloud Backupをすでにアクティブ化しているクラスタの場合</block>
+  <block id="978c0e96c314f21cb16d2c24ae0624a9" category="paragraph">APIはにあります<block ref="09e8c3aae0da31a3bb4ba59e7440e87c" category="inline-link-rx"></block>。を参照してください <block ref="cf7847f4c926eb96d69d319dfdc23654" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="18761d8c202e79e8b99bf6f0ea7ec3eb" category="paragraph">ボリュームとファイルをリストアするための検索とリストアの方法は、AWSにバックアップファイルを格納するユーザ向けに4月に導入されました。Google Cloud Storageにバックアップファイルを保存するユーザーがこの機能を使用できるようになりました。<block ref="331e4b78e2b84f2bc1fc35b2d92671b9" category="inline-link-rx"></block>。</block>
+  <block id="79e7ae6e1f3618ce5e3dbaf9fb1541ea" category="paragraph"><block ref="ffe4df67e95bb2472093e9a3d0a7a76b" category="inline-link-rx"></block>。</block>
+  <block id="a4208eced8af02553d8e5579f39b9b33" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="44c761dee3b53dae29ddd56ac5dddd4f" category="inline-link-rx"></block>。</block>
+  <block id="15535e291980746e2353acd6a4780f1c" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、を使用したサブスクリプションです<block ref="92655de6fae7d07ed3897ce19d51b88d" category="inline-link-rx"></block> は、BlueXPのバックアップとリカバリを有効にする前に必要です。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
+  <block id="9178cbd8799c2d35e159c2e093e709aa" category="paragraph">既存のCloud Volumes ONTAP システムを検出し、BlueXPに追加できます。詳細については、を参照してください <block ref="2136955d725610e67d83c3e217237632" category="inline-link-macro-rx"></block>。</block>
+  <block id="e79e81b3acf16dda9f06cf14adb5455f" category="list-text"><block ref="e79e81b3acf16dda9f06cf14adb5455f" category="inline-link-macro-rx"></block></block>
+  <block id="3837ac4b515edb1636f46d683ea36887" category="list-text"><block ref="3837ac4b515edb1636f46d683ea36887" category="inline-link-macro-rx"></block></block>
+  <block id="669715937bcb1d707e831562ea780a12" category="list-text"><block ref="669715937bcb1d707e831562ea780a12" category="inline-link-macro-rx"></block></block>
+  <block id="999fda062456aa64cda225adf3042a94" category="paragraph">詳細については、を参照してください <block ref="f6a838e597c09b320bd6bf06ae488664" category="inline-link-macro-rx"></block>。</block>
+  <block id="a056c016c08cfd75fbca78e17f3cfad2" category="paragraph">REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください<block ref="bbce8743b66059a845b0f29400487045" category="inline-link-rx"></block>。</block>
+  <block id="90b83ba6de990dc4b3237c3a114e7b68" category="paragraph">BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます<block ref="09e8c3aae0da31a3bb4ba59e7440e87c" category="inline-link-rx"></block>。</block>
+  <block id="8eece0e9f65050638817f3ba24d0dd8e" category="list-text"><block ref="8eece0e9f65050638817f3ba24d0dd8e" category="inline-link-rx"></block></block>
+  <block id="c6d72977452e34a1491394765fcafbc7" category="list-text"><block ref="c6d72977452e34a1491394765fcafbc7" category="inline-link-rx"></block></block>
+  <block id="2c013a8ea38afc2e60446dd491ba9de4" category="list-text"><block ref="2c013a8ea38afc2e60446dd491ba9de4" category="inline-link-rx"></block></block>
+  <block id="c490eac8fe2144e59b599caa7ff364f2" category="list-text">ポート443を介してBlueXPバックアップおよびリカバリサービスとS3オブジェクトストレージへのHTTPS接続 <block ref="63b337bf4559a585c3373707ecfcc413" category="inline-link-rx"></block>)</block>
+  <block id="aa91817c0e1d6a16a1f290ad2357d467" category="list-text">AWSおよびAWS GovCloud環境では、追加のインバウンドおよびアウトバウンドのセキュリティグループルールが必要です。を参照してください<block ref="ed3ada480c52b8e0c09a903c9cf52508" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="94bf6d31d85a9e7f628b488ba9a25200" category="list-text">（最新のから）次の S3 権限を確認します<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
+  <block id="18f24dda344329f9ed1d258f6966501b" category="paragraph">デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。<block ref="c9562b880df747e2a8aa25f072c81683" category="inline-link-rx"></block>。</block>
+  <block id="a6b673d310713aa4bdd09f8fd19acf66" category="list-text">VPC S3 エンドポイントから証明書を取得します。これは、で行います<block ref="bee792b855389ef4e6c81f6aa6136d00" category="inline-link-rx"></block> 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。</block>
+  <block id="098009b96eb978c26fc692ed161a61b9" category="list-text">デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択して、データの暗号化を管理できます。 <block ref="0d0389fa7edb660bea6d9cdc92ebf8b3" category="inline-link-rx"></block>）。</block>
+  <block id="b46213c291fe93c05313fa11bc5d273c" category="paragraph">バックアップコピーはに関連付けられます<block ref="94ce6f448900468e79b10f5ddbf648fe" category="inline-link-rx"></block> BlueXPコネクタが配置されています。</block>
+  <block id="6e2e360627311aa9fdc0aa1c155bdccb" category="list-text"><block ref="6e2e360627311aa9fdc0aa1c155bdccb" category="inline-link-rx"></block></block>
+  <block id="e56cd3c9285bb567fdc13c165a1eb13e" category="list-text"><block ref="e56cd3c9285bb567fdc13c165a1eb13e" category="inline-link-rx"></block></block>
+  <block id="2bda192204fc86d57a53bf80ec29ad65" category="list-text">ポート443を介してBlueXPバックアップおよびリカバリサービスとBLOBオブジェクトストレージへのHTTPS接続 <block ref="73abec29c95edc01ed78226396cb9d9e" category="inline-link-rx"></block>)</block>
+  <block id="586fb4ce14563af75d1816e73c9d868a" category="list-text">AzureおよびAzure Government環境に追加のインバウンドセキュリティグループルールが必要です。を参照してください<block ref="179e195cc8e81b19d72f9ddb7460e81f" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="f1ebd763fa736e72b84cf27e02efb0a9" category="paragraph">BlueXPのバックアップとリカバリのユーザインターフェイスでソースボリュームを削除することはできません。ただし、Canvas、およびのVolume Detailsページを開くことはできます<block ref="ed99d2ded0f3ef2b0f1726a83d34978d" category="inline-link-rx"></block>。</block>
+  <block id="509259be6d5e15d8959f705cbe0cbcc1" category="paragraph"><block ref="509259be6d5e15d8959f705cbe0cbcc1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0972db30d942fdb65d1732e6e84bde99" category="paragraph"><block ref="0972db30d942fdb65d1732e6e84bde99" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cb6a777dd3c6e43b0dc441d38519d219" category="paragraph"><block ref="cb6a777dd3c6e43b0dc441d38519d219" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0f6cac2f77150840994f84044fc1b12b" category="list-text">をクリックして、テーブルに表示される列を変更します <block ref="b574dd55d604ddb721d869a0fc302007" category="inline-image-macro-rx" type="image"></block> 次に、表示する列を選択します。</block>
+  <block id="e65065c4fd326b9f3a1eeb9453c30d73" category="paragraph"><block ref="e65065c4fd326b9f3a1eeb9453c30d73" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6ba7d68d8b3ef0f3398afb9d3ea96172" category="list-text">をクリックして既存のケースを管理します <block ref="566c029d89e7d5421080767a37bf443e" category="inline-image-macro-rx" type="image"></block> 使用可能なオプションのいずれかを選択します。</block>
+  <block id="2ea260929e27ffcb623c8aa35689bd18" category="paragraph"><block ref="2ea260929e27ffcb623c8aa35689bd18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0736ad21b3bf8224269719357e7aadda" category="paragraph">新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です<block ref="d1d5d87c9450fbe53d901c1b5aa0b756" category="inline-link-rx"></block>。</block>
+  <block id="6c962f0e820a4789f1eba2c1a38f944d" category="list-text"><block ref="6c962f0e820a4789f1eba2c1a38f944d" category="inline-link-rx"></block></block>
+  <block id="8ff7f40c0012810703dc67d79b10ff7b" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> 以前の環境で使用できていたものです。</block>
+  <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block>。</block>
+  <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>。</block>
 </blocks>

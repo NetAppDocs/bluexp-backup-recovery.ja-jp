@@ -16,7 +16,7 @@ summary: BlueXPのバックアップとリカバリでは、ソースCloud Volum
 [role="lead"]
 BlueXPのバックアップとリカバリでは、ソースCloud Volumes ONTAP ボリュームの場所とは異なるAzureアカウントにバックアップファイルを作成できます。両方のアカウントは、BlueXP Connectorがインストールされているアカウントとは異なる場合があります。
 
-これらの手順は、を実行している場合にのみ必要です https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データの Azure BLOB ストレージへのバックアップ"^]。
+これらの手順は、を実行している場合にのみ必要です https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Cloud Volumes ONTAP データの Azure BLOB ストレージへのバックアップ"^]。
 
 この方法で設定を行うには、次の手順を実行します。
 

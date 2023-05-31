@@ -19,7 +19,7 @@ summary: バックアップの詳細を表示し、すべてのジョブのス�
 
 作業環境で開始されたジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。
 
-詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html["ジョブステータスを監視します"]。
+詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["ジョブステータスを監視します"]。
 
 
 
@@ -229,4 +229,4 @@ CAファイルはPEM形式である必要があります。
 
 アプリケーションをクラウドで保護するREST APIには、次のURLからアクセスできます。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/[]。
 
-REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["フェデレーテッド認証を使用してユーザトークンを作成します"]。
+REST APIにアクセスするには、フェデレーテッド認証を使用してユーザトークンを取得する必要があります。ユーザートークンの取得方法については、を参照してください https://docs.netapp.com/us-en/bluexp-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["フェデレーテッド認証を使用してユーザトークンを作成します"]。

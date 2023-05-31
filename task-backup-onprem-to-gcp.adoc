@@ -26,7 +26,7 @@ summary: いくつかの手順を実行して、オンプレミスのONTAP シ�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 構成がサポートされていることを確認します
 [role="quick-margin-list"]
-* オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
+* オンプレミスクラスタを検出し、BlueXPの作業環境として追加しました。を参照してください https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["ONTAP クラスタの検出"^] を参照してください。
 +
 ** クラスタでONTAP 9.7P5以降が実行されている（ONTAP 9.8P13以降を推奨）。
 ** クラスタには SnapMirror ライセンスがあります。このライセンスは、 Premium Bundle または Data Protection Bundle に含まれています。
@@ -92,7 +92,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["BlueXPのバックアップ�
 
 ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
 
 ONTAP の要件::
 +
@@ -142,8 +142,8 @@ Private Google AccessまたはPrivate Service Connectを使用している場合
 
 Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。ない場合は、ONTAP データをGoogle Cloudストレージにバックアップするために、その場所にコネクタを作成する必要があります。別のクラウドプロバイダやオンプレミスに導入されているコネクタは使用できません。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["コネクタをGCPにインストールする"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["コネクタをGCPにインストールする"^]
 
 
 
@@ -155,7 +155,7 @@ Google Cloud Platform VPCにコネクタがすでに導入されている場合�
 .手順
 . コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
-** ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
+** ポート443を介してBlueXPバックアップおよびリカバリサービスとGoogle CloudストレージへのHTTPS接続 (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["エンドポイントのリストを参照してください"^])
 ** ONTAP クラスタ管理 LIF へのポート 443 経由の HTTPS 接続
 
 

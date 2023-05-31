@@ -20,7 +20,7 @@ BlueXPを使用してCloud Volumes ONTAP 作業環境を作成し、ボリュー
 
 == Cloud Volumes ONTAP 作業環境を作成します
 
-既存のCloud Volumes ONTAP システムを検出し、BlueXPに追加できます。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html["既存のCloud Volumes ONTAP システムをBlueXPに追加する"]。
+既存のCloud Volumes ONTAP システムを検出し、BlueXPに追加できます。詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-adding-systems.html["既存のCloud Volumes ONTAP システムをBlueXPに追加する"]。
 
 
 
@@ -28,9 +28,9 @@ BlueXPを使用してCloud Volumes ONTAP 作業環境を作成し、ボリュー
 
 クラウド環境向けCloud Volumes ONTAP の導入は、いくつかの手順で開始できます。詳細については、次のいずれかを参照してください。
 
-* link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["AWS での Cloud Volumes ONTAP のクイックスタート"]
-* link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Azure での Cloud Volumes ONTAP のクイックスタート"]
-* link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Google Cloud の Cloud Volumes ONTAP のクイックスタート"]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-getting-started-aws.html["AWS での Cloud Volumes ONTAP のクイックスタート"]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-getting-started-azure.html["Azure での Cloud Volumes ONTAP のクイックスタート"]
+* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-getting-started-gcp.html["Google Cloud の Cloud Volumes ONTAP のクイックスタート"]
 
 
 Cloud Volumes ONTAP 作業環境とデータベースの両方を管理するには、同じコネクタを使用する必要があります。

@@ -20,7 +20,7 @@ BlueXPを使用してAzure NetApp Files 作業環境を作成し、ボリュー�
 
 == Azure NetApp Files 作業環境を作成します
 
-データベースがホストされているAzure NetApp Files 作業環境を作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html["Azure NetApp Files の詳細をご覧ください"] および link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-working-env.html["Azure NetApp Files 作業環境を作成します"]。
+データベースがホストされているAzure NetApp Files 作業環境を作成する必要があります。詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/concept-azure-netapp-files.html["Azure NetApp Files の詳細をご覧ください"] および link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-create-working-env.html["Azure NetApp Files 作業環境を作成します"]。
 
 
 
@@ -28,7 +28,7 @@ BlueXPを使用してAzure NetApp Files 作業環境を作成し、ボリュー�
 
 BlueXPのアカウント管理者は、Azureにコネクタを導入して、パブリッククラウド環境内のリソースとプロセスをBlueXPで管理できるようにする必要があります。
 
-詳細については、を参照してください link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["BlueXPからAzureにコネクタを作成します"]。
+詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-azure.html["BlueXPからAzureにコネクタを作成します"]。
 
 * コネクタからデータベースホストへの接続が確立されていることを確認します。
 * Azure NetApp Files の作業環境とデータベースが同じ仮想ネットワーク（VNet）にある場合は、コネクタを同じVNetに導入できます。

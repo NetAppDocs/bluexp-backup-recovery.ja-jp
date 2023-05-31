@@ -92,6 +92,6 @@ endif::gcp[]
 
 === バックアップコピーはネットアップアカウントに関連付けられています
 
-バックアップコピーはに関連付けられます https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["ネットアップアカウント"^] BlueXPコネクタが配置されています。
+バックアップコピーはに関連付けられます https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["ネットアップアカウント"^] BlueXPコネクタが配置されています。
 
 同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。

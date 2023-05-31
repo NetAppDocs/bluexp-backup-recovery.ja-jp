@@ -423,7 +423,7 @@ image:screenshot_restore_select_dest.png["リストアするファイルのボ�
 
 検索とリストアを使用して、ONTAP バックアップファイルからボリューム、フォルダ、またはファイルをリストアできます。検索とリストアでは、クラウドストレージに保存されている特定のプロバイダのすべてのバックアップから特定のボリューム、フォルダ、またはファイルを検索し、リストアを実行できます。正確な作業環境名やボリューム名がわからなくても、検索ではすべてのボリュームのバックアップファイルが検索されます。
 
-検索処理では、 ONTAP ボリュームに対応するすべてのローカル Snapshot コピーも検索されます。ローカル Snapshot コピーからデータをリストアする方が、バックアップファイルからリストアするよりも高速で低コストなので、 Snapshot からデータをリストアできます。Snapshotは新しいボリュームとしてリストアできます https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["キャンバスの[ボリュームの詳細]ページから選択します"^] （BlueXPのバックアップとリカバリではありません）。
+検索処理では、 ONTAP ボリュームに対応するすべてのローカル Snapshot コピーも検索されます。ローカル Snapshot コピーからデータをリストアする方が、バックアップファイルからリストアするよりも高速で低コストなので、 Snapshot からデータをリストアできます。Snapshotは新しいボリュームとしてリストアできます https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["キャンバスの[ボリュームの詳細]ページから選択します"^] （BlueXPのバックアップとリカバリではありません）。
 
 バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリュームとしてリストアすることも、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることもできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。
 
@@ -579,7 +579,7 @@ endif::gcp[]
 +
 ** アカウントにクラウドプロバイダの資格情報がない場合は、インデックスカタログの情報がコネクタに保存されます。
 ** ダークサイトでコネクタを使用している場合は、インデックスカタログ情報がコネクタに保存されます（コネクタバージョン3.9.25以上が必要です）。
-** ある場合 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS クレデンシャル"^] または https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。
+** ある場合 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["AWS クレデンシャル"^] または https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。
 +
 オンプレミスコネクタを使用している場合でも、コネクタ権限とクラウドプロバイダリソースの両方についてクラウドプロバイダの要件を満たしている必要があります。この実装を使用する場合は、前述のAWSとAzureの要件を参照してください。
 

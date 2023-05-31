@@ -74,7 +74,7 @@ Azure Blob Storage へのボリュームのバックアップを開始する前�
 image:diagram_cloud_backup_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 サポートされている ONTAP のバージョン:: ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
-ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
 +
 --
 BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイト（「プライベートモード」）に導入する場合は、BYOLライセンスを使用する必要があります。
@@ -82,12 +82,12 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。
 
 --
-コネクタの要件:: コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["詳細については、BlueXPの導入モードを参照してください"^]。
+コネクタの要件:: コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["詳細については、BlueXPの導入モードを参照してください"^]。
 +
 --
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Azureで標準モードでコネクタを導入する（フルインターネットアクセス）"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["制限モードでのコネクタの取り付け（制限されたアウトバウンドアクセス）"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Azureで標準モードでコネクタを導入する（フルインターネットアクセス）"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-restricted-mode.html["制限モードでのコネクタの取り付け（制限されたアウトバウンドアクセス）"^]
 
 
 --
@@ -162,7 +162,7 @@ BlueXPのバックアップとリカバリのBYOLライセンスの場合は、�
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
 
 ... [ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。
 
@@ -188,7 +188,7 @@ BlueXPのバックアップとリカバリでは、コストを最適化する�
 
 作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
 
-を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
+を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
 
 
 NOTE: リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <<enabling-bluexp-backup-and-recovery-on-an-existing-system,既存システムでBlueXPのバックアップとリカバリを有効にする>> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。
