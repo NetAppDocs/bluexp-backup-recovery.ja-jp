@@ -2086,7 +2086,6 @@
   <block id="01fc6bc870eb60d107c41c724b7c0f61" category="list-text">要件に応じて仕様ファイルを編集し、*参照*ボタンをクリックしてアップロードします。</block>
   <block id="46630b95005d23b3ccd9d9af01eed5bc" category="list-text">をクリックします <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> [*フィルタ]の横にある[*クローニング・オプション*&gt;*クローン*]を選択して、クローンを表示します。</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">[* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。</block>
-  <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。</block>
   <block id="bc75c7043b8e7365f3c8207f2cc978cc" category="summary">データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。</block>
   <block id="c48a955b9e2bd6b7c7d520e85a16d929" category="paragraph">データ損失が発生した場合は、データファイル、制御ファイル、またはその両方をリストアして、データベースをリカバリできます。</block>
   <block id="843aa7f2a542d8c13efb89db29c10118" category="list-text">Restore Scopeセクションで、次の操作を実行します。</block>
@@ -3796,4 +3795,5 @@
   <block id="8ff7f40c0012810703dc67d79b10ff7b" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> 以前の環境で使用できていたものです。</block>
   <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block>。</block>
   <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>。</block>
+  <block id="eeba430c3c4e0795629fe640359a8730" category="list-text">[Username]フィールドと[Password]フィールドに、管理者ロールを持つvCenterユーザのクレデンシャルを指定します。</block>
 </blocks>

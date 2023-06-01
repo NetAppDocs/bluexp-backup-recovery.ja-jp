@@ -30,7 +30,7 @@ NOTE: BlueXPでは、複数のSnapCenter Plug-in for VMware vSphereホストを�
 +
 デフォルトの8144ポートで実行されているオンプレミスのSnapCenter Plug-in for VMware vSphereホストと、任意のクラウドプロバイダ（Amazon Web Services、Microsoft Azure、Google Cloud Platform）またはオンプレミスで実行されているBlueXPコネクタインスタンスの間で通信が開かれていることを確認する必要があります。
 
-.. Username and Passwordフィールドで、管理者ロールを持つユーザのクレデンシャルを指定します。
+.. [Username]フィールドと[Password]フィールドに、管理者ロールを持つvCenterユーザのクレデンシャルを指定します。
 
 
 . [*Register] をクリックします。
