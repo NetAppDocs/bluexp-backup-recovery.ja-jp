@@ -18,6 +18,34 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2023年6月5日
+
+
+
+=== FlexGroupボリュームは、DataLockとランサムウェア対策を使用してバックアップおよび保護できます
+
+クラスタでONTAP 9.13.1以降が実行されている場合、FlexGroupボリュームのバックアップポリシーでDataLockとランサムウェア対策を使用できるようになりました。
+
+
+
+=== 新しいレポート機能
+
+[Reports]タブでバックアップインベントリレポートを生成できるようになりました。このレポートには、特定のアカウント、作業環境、またはSVMインベントリのすべてのバックアップが含まれます。Data Protection Job Activityレポートを作成することもできます。このレポートには、Snapshot、バックアップ、クローニング、およびリストアの各処理に関する情報が表示され、サービスレベルアグリーメントの監視に役立ちます。を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-report-inventory.html["データ保護の適用範囲に関するレポートを作成します"]。
+
+
+
+=== ジョブモニタの機能拡張
+
+[Job Monitor]ページで、_backup lifecycle_をジョブタイプとして確認できるようになりました。これにより、バックアップライフサイクル全体を追跡できます。BlueXPタイムラインでは、すべての処理の詳細を確認することもできます。を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["バックアップジョブとリストアジョブのステータスを監視します"]。
+
+
+
+=== ダークサイトのBlueXPの重要なバックアップファイルとリカバリファイルを自動でバックアップ
+
+インターネットアクセスのないサイト（「プライベートモード」環境）でBlueXPのバックアップとリカバリを使用している場合、BlueXPのバックアップとリカバリの情報はローカルコネクタシステムにのみ格納されます。この新機能では、BlueXPの重要なバックアップ/リカバリデータが接続されたStorageGRIDシステムのバケットに自動的にバックアップされるため、必要に応じてこのデータを新しいコネクタにリストアできます。 https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["詳細はこちら。"]
+
+
+
 == 2023年5月8日
 
 
@@ -88,7 +116,7 @@ ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システム�
 
 === 「制限付き」モードでCloud Volumes ONTAP システムからクラウドにデータをバックアップする機能
 
-これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限モード」でバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["BlueXPの導入モードの詳細については、こちらをご覧ください"^]。を参照してください https://docs.netapp.com/us-en/bluexp-backup-restore/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/bluexp-backup-restore/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
+これで、AWS、Azure、GCPの商用リージョンにインストールされているCloud Volumes ONTAP システムのデータを「制限モード」でバックアップできるようになりました。これを行うには、まず「制限された」商業地域にコネクタをインストールする必要があります。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["BlueXPの導入モードの詳細については、こちらをご覧ください"^]。を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
 
 
 
@@ -106,7 +134,7 @@ Cloud Volumes ONTAP システムからAzureストレージへのバックアッ�
 
 === ジョブモニタの機能拡張
 
-* ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。
+* ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。
 * すべてのジョブをレポートするためのCSVファイルをダウンロードできるほか、単一のジョブのJSONファイルをダウンロードして詳細を確認できるようになりました。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["詳細はこちら。"]。
 * 「Scheduled job failure」と「Restore job completes but with warnings」という2つの新しいバックアップジョブアラートが追加されました。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["BlueXPのバックアップとリカバリから送信されるアラートをすべて確認します"]。
 
@@ -179,7 +207,7 @@ DataLockとRansomware Protectionは、Azure Blobに保存されたバックア�
 
 ONTAP 9.12.1 GA以降を使用している場合、MetroCluster 構成でプライマリシステムに接続しているときにバックアップがサポートされるようになりました。バックアップ構成全体がセカンダリシステムに転送されるため、スイッチオーバー後もクラウドへのバックアップが自動的に続行されます。
 
-https://docs.netapp.com/us-en/bluexp-backup-restore/concept-ontap-backup-to-cloud.html#backup-limitations["詳細については、「バックアップの制限」を参照してください"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html#backup-limitations["詳細については、「バックアップの制限」を参照してください"]。
 
 
 
@@ -562,32 +590,3 @@ Cloud Backupをアクティブ化したあとにKubernetesクラスタに新し�
 === Cloud Backup APIを使用して、バックアップとリストアの処理を管理できるようになりました
 
 APIはにあります https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html[]。を参照してください link:api-backup-restore.html["このページです"] を参照してください。
-
-
-
-== 2022年5月2日
-
-
-
-=== Google Cloud Storageのバックアップファイルで検索とリストアがサポートされるようになりました
-
-ボリュームとファイルをリストアするための検索とリストアの方法は、AWSにバックアップファイルを格納するユーザ向けに4月に導入されました。Google Cloud Storageにバックアップファイルを保存するユーザーがこの機能を使用できるようになりました。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#prerequisites-2["Search  Restoreを使用してボリュームとファイルをリストアする方法を参照してください"]。
-
-
-
-=== Kubernetesクラスタ内に新しく作成されたボリュームにバックアップポリシーが自動的に適用されるように設定します
-
-Cloud Backupをアクティブ化したあとにKubernetesクラスタに新しい永続ボリュームを追加した場合は、以前にそれらのボリュームのバックアップを忘れずに設定する必要がありました。新しく作成したボリュームに自動的に適用するポリシーを選択できます。このオプションは、新しいKubernetesクラスタに対してCloud Backupをアクティブ化するときにセットアップウィザードで使用できます。
-
-
-
-=== Cloud Backupを作業環境でアクティブ化するには、ライセンスが必要になります
-
-Cloud Backupのライセンスの実装方法には、次の点が変更されています。
-
-* Cloud Backupをアクティブ化するには、クラウドプロバイダからPAYGO Marketplaceサブスクリプションに登録するか、ネットアップからBYOLライセンスを購入する必要があります。
-* 30日間無償トライアルは、クラウドプロバイダがPAYGOサブスクリプションを使用している場合にのみ利用できます。BYOLライセンスを使用している場合は利用できません。
-* 無料トライアルは、Marketplaceのサブスクリプションが開始された日から開始されます。たとえば、Cloud Volumes ONTAP システムのMarketplaceサブスクリプションを30日間使用した後で無料トライアルを有効にした場合、クラウドバックアップトライアルは利用できません。
-
-
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html["使用可能なライセンスモデルの詳細については、こちらをご覧ください"]。

@@ -34,6 +34,10 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: ライセンスをセットアップする
       url: "/task-licensing-cloud-backup.html"
+  - title: データ保護を監視
+    entries:
+    - title: データ保護の適用範囲に関するレポートを作成します
+      url: "/task-report-inventory.html"
     - title: バックアップジョブとリストアジョブのステータスを監視します
       url: "/task-monitor-backup-jobs.html"
   - title: ONTAP データのバックアップとリストア
@@ -199,7 +203,7 @@ sidebar:
     - title: Azure でマルチアカウントアクセスのバックアップを設定する
       flavor: azure
       url: "/reference-backup-multi-account-azure.html"
-    - title: ダークサイトにBlueXPのバックアップとリカバリのデータベースをバックアップします
+    - title: ダークサイトでBlueXPのバックアップ/リカバリデータベースをリストア
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: BlueXPのバックアップとリカバリを再開します
       url: "/reference-restart-backup.html"
