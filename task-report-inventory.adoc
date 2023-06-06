@@ -32,7 +32,7 @@ NOTE: レポートアクティビティはジョブ監視ログで監視され�
 BlueXPのバックアップとリカバリのレポートには、次の情報が表示されます。
 
 * *コネクタの場所*：オンプレミスまたはクラウド
-* *出典*：Cloud Volumes ONTAP、オンプレミス、アプリケーション、Kubernetes
+* *ソース*：Cloud Volumes ONTAPボリューム、オンプレミスのONTAPボリューム、アプリケーション、Kubernetes永続ボリューム
 * *デスティネーション*：任意のクラウドプロバイダ、NetApp StorageGRID、ONTAP S3
 * * ONTAPバージョン*：9.13.0
 

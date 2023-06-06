@@ -40,6 +40,14 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+=== 一致しないポリシーラベルに関する追加の通知アラート
+
+新しいバックアップアラート「Backup files were not created because Snapshot policy labels do not match」が追加されました。バックアップポリシーで定義された_label_inにSnapshotポリシーにmatching_label_inがない場合、バックアップファイルは作成されません。欠落しているラベルをボリュームSnapshotポリシーに追加するには、System ManagerまたはONTAP CLIを使用する必要があります。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["BlueXPのバックアップとリカバリから送信されるアラートをすべて確認します"]。
+
+
+
 === ダークサイトのBlueXPの重要なバックアップファイルとリカバリファイルを自動でバックアップ
 
 インターネットアクセスのないサイト（「プライベートモード」環境）でBlueXPのバックアップとリカバリを使用している場合、BlueXPのバックアップとリカバリの情報はローカルコネクタシステムにのみ格納されます。この新機能では、BlueXPの重要なバックアップ/リカバリデータが接続されたStorageGRIDシステムのバケットに自動的にバックアップされるため、必要に応じてこのデータを新しいコネクタにリストアできます。 https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["詳細はこちら。"]

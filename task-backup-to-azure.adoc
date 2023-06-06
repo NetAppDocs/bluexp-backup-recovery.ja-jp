@@ -180,6 +180,11 @@ BlueXPのバックアップとリカバリでは、コストを最適化する�
 --
 別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ:: デフォルトでは、バックアップは Cloud Volumes ONTAP システムと同じサブスクリプションを使用して作成されます。バックアップに別の Azure サブスクリプションを使用する場合は、が必要です link:reference-backup-multi-account-azure.html["Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます"]。
 データ暗号化にお客様が管理するキーを使用するために必要な情報:: Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、 Azure サブスクリプション、キー・ボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
++
+--
+Backup and Recoveryでは、権限モデルとして_AZUREアクセスポリシー_がサポートされていることに注意してください。現時点では、_Azure Role-Based Access Control_（Azure RBAC）権限モデルはサポートされていません。
+
+--
 
 
 

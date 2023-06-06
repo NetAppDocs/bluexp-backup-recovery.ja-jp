@@ -227,6 +227,8 @@ homepage:
       url: task-licensing-cloud-backup.html
     - title: バックアップジョブとリストアジョブのステータスを監視します
       url: task-monitor-backup-jobs.html
+    - title: データ保護の適用範囲に関するレポートを作成
+      url: task-report-inventory.html
   - title: ONTAP データをクラウドにバックアップ
     links:
     - title: Cloud Volumes ONTAP から Amazon S3 へ
