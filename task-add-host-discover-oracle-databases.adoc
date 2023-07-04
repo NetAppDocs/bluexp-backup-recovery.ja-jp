@@ -19,10 +19,10 @@ SnapCenter Plug-in for Oracleを各Oracleデータベースホストにインス
 * データベースホストでSSHが有効になっている場合は、次のいずれかの方法でプラグインをインストールできます。
 +
 ** UIからSSHオプションを使用してプラグインをインストールし、ホストを追加します。 <<SSHオプションを使用してUIからホストを追加します,詳細はこちら。>>。
-** スクリプトを使用してプラグインをインストールし、手動オプションを使用してUIからホストを追加します。 <<スクリプトを使用してプラグインをインストールし、手動オプションを使用してUIからホストを追加します,詳細はこちら。>>。
+** スクリプトを使用してプラグインをインストールし、手動オプションを使用してUIからホストを追加します。 <<Install the plug-in using script and add host from UI using manual option,詳細はこちら。>>。
 
 
-* SSHが無効になっている場合は、プラグインを手動でインストールし、UIからmanualオプションを使用してホストを追加します。 <<プラグインを手動でインストールし、手動オプションを使用してUIからホストを追加します,詳細はこちら。>>。
+* SSHが無効になっている場合は、プラグインを手動でインストールし、UIからmanualオプションを使用してホストを追加します。 <<Install the plug-in manually and add host from UI using manual option,詳細はこちら。>>。
 
 
 
@@ -51,6 +51,7 @@ SnapCenter Plug-in for Oracleを各Oracleデータベースホストにインス
 
 == SSHオプションを使用してUIからホストを追加します
 
+.手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 +
 ホストをすでに追加していて、別のホストを追加する場合は、*[アプリケーション]*>*[データベースの管理]*[追加]*をクリックし、手順5に進みます。
@@ -90,8 +91,10 @@ NOTE: SSH秘密鍵はアプリケーション内のどこにも保存されず�
 
 . [Configuration]ページで、次の手順を実行します。
 +
-.. root以外の（sudo）ユーザにsudoアクセスを設定するには、テキストを_/etc/sudoers.d/snapcenter_fileにコピーします。
-.. チェックボックスをオンにして、*[次へ]*をクリックします。
+.. Oracleデータベースを実行しているLinuxマシンにログインして、OracleデータベースホストでSnapCenterユーザのsudoアクセスを設定します。
+.. BlueXP UIに表示されたテキストをコピーします。
+.. Linuxマシンで_/etc/sudoers.d/snapcenter_fileを作成し、コピーしたテキストを貼り付けます。
+.. BlueXP UIで、チェックボックスを選択し、*[次へ]*をクリックします。
 
 
 . 詳細を確認し、*[アプリケーションの検出]*をクリックします。
@@ -99,10 +102,6 @@ NOTE: SSH秘密鍵はアプリケーション内のどこにも保存されず�
 ** プラグインをインストールすると、検出処理が開始されます。
 ** 検出処理が完了すると、ホスト上のすべてのデータベースが表示されます。データベースでOS認証が無効になっている場合は、*[設定]*をクリックしてデータベース認証を有効にします。詳細については、を参照してください <<Oracleデータベースのクレデンシャルを設定する>>。
 ** すべてのホストを表示するには、[*設定*]をクリックし、[*ホスト*]を選択します。
-+
-
-NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。
-
 ** [*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認し、要件に合わせて編集するか、新しいポリシーを作成します。
 
 
@@ -110,16 +109,14 @@ NOTE: 特定のホストを表示するフィルタが機能しない。フィ�
 
 
 
-== スクリプトを使用してプラグインをインストールし、手動オプションを使用してUIからホストを追加します
+== 手動オプションを使用してUIからホストを追加し、スクリプトを使用してプラグインをインストールします
 
 Oracleホストのroot以外のユーザアカウントに対してSSHキーベースの認証を設定し、次の手順を実行してプラグインをインストールします。
 
-* 始める前に *
-
+.作業を開始する前に
 コネクタへのSSH接続が有効になっていることを確認します。
 
-* 手順 *
-
+.手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . [*アプリケーションの検出*]をクリックします。
 . クラウドネイティブ*を選択し、*次へ*をクリックします。
@@ -146,13 +143,19 @@ Oracleホストのroot以外のユーザアカウントに対してSSHキーベ�
 
 . [Configuration]ページで、次の手順を実行します。
 +
-.. テキストをにコピーして、SnapCenter ユーザにsudoアクセスを設定します `/etc/sudoers.d/snapcenter` ファイル。
-.. チェックボックスをオンにして、*[次へ]*をクリックします。
+.. Oracleデータベースを実行しているLinuxマシンにログインして、OracleデータベースホストでSnapCenterユーザのsudoアクセスを設定します。
+.. BlueXP UIに表示されたテキストをコピーします。
+.. Linuxマシンで_/etc/sudoers.d/snapcenter_fileを作成し、コピーしたテキストを貼り付けます。
+.. BlueXP UIで、チェックボックスを選択し、*[次へ]*をクリックします。
 
 
 . Connector VMにログインします。
 . コネクタに付属のスクリプトを使用してプラグインをインストールします。
-`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
+`sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
++
+古いコネクタを使用している場合は、次のコマンドを実行してプラグインをインストールします。
+`sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
+
 +
 |===
 | 名前 | 説明 | 必須 | デフォルト 
@@ -214,16 +217,16 @@ OracleホストのSSHポートを指定します
 |===
 +
 例：
-`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
 
-. 詳細を確認し、*[アプリケーションの検出]*をクリックします。
++
+** `sudo  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+** `sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+
+
+. BlueXP UIで詳細を確認し、*[アプリケーションの検出]*をクリックします。
 +
 ** 検出処理が完了すると、ホスト上のすべてのデータベースが表示されます。データベースでOS認証が無効になっている場合は、*[設定]*をクリックしてデータベース認証を有効にします。詳細については、を参照してください <<Oracleデータベースのクレデンシャルを設定する>>。
 ** すべてのホストを表示するには、[*設定*]をクリックし、[*ホスト*]を選択します。
-+
-
-NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。
-
 ** [*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認し、要件に合わせて編集するか、新しいポリシーを作成します。
 
 
@@ -231,12 +234,11 @@ NOTE: 特定のホストを表示するフィルタが機能しない。フィ�
 
 
 
-== プラグインを手動でインストールし、手動オプションを使用してUIからホストを追加します
+== 手動オプションを使用してUIからホストを追加し、プラグインを手動でインストールします
 
 OracleデータベースホストでSSHキーベースの認証が有効になっていない場合は、次の手動手順を実行してプラグインをインストールし、manualオプションを使用してUIからホストを追加する必要があります。
 
-* 手順 *
-
+.手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . [*アプリケーションの検出*]をクリックします。
 . クラウドネイティブ*を選択し、*次へ*をクリックします。
@@ -261,17 +263,19 @@ FQDNまたはIPアドレスを使用して、コネクタがデータベース�
 .. 「 * 次へ * 」をクリックします。
 
 
-. [設定]ページで、次の手順を実行します。
+. [Configuration]ページで、次の手順を実行します。
 +
-.. テキストをにコピーして、SnapCenter ユーザにsudoアクセスを設定します `/etc/sudoers.d/snapcenter` ファイル。
-.. チェックボックスをオンにして、*[次へ]*をクリックします。
+.. Oracleデータベースを実行しているLinuxマシンにログインして、OracleデータベースホストでSnapCenterユーザのsudoアクセスを設定します。
+.. BlueXP UIに表示されたテキストをコピーします。
+.. Linuxマシンで_/etc/sudoers.d/snapcenter_fileを作成し、コピーしたテキストを貼り付けます。
+.. BlueXP UIで、チェックボックスを選択し、*[次へ]*をクリックします。
 
 
 . Connector VMにログインします。
 . SnapCenter Linuxホストプラグインバイナリをダウンロードします。
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
 +
-プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -po "cloudmanager_SCS_cloud:.*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
+プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager [1]-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -Po" cloudmanager_SCS_cloud：。*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
 
 . scpまたはその他の別の方法を使用して、上記のパスから各<non root user (sudo)> データベースホストの_/ home/oracle/.sc_netapp_pathに_snapcenter_linux_host_plugin_sc.bin_をコピーします。
 . root以外の（sudo）アカウントを使用してOracleデータベースホストにログインします。
@@ -285,18 +289,11 @@ FQDNまたはIPアドレスを使用して、コネクタがデータベース�
 . SPLを再起動します。 `systemctl restart spl`
 . コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
-. 詳細を確認し、*[アプリケーションの検出]*をクリックします。
+. BlueXP UIで詳細を確認し、*[アプリケーションの検出]*をクリックします。
 +
 ** 検出処理が完了すると、ホスト上のすべてのデータベースが表示されます。データベースでOS認証が無効になっている場合は、*[設定]*をクリックしてデータベース認証を有効にします。詳細については、を参照してください <<Oracleデータベースのクレデンシャルを設定する>>。
 ** すべてのホストを表示するには、[*設定*]をクリックし、[*ホスト*]を選択します。
-+
-
-NOTE: 特定のホストを表示するフィルタが機能しない。フィルタでホスト名を指定すると、すべてのホストが表示されます。
-
 ** [*設定]をクリックし、[*ポリシー]を選択して、組み込みポリシーを表示します。組み込みのポリシーを確認し、要件に合わせて編集するか、新しいポリシーを作成します。
-+
-BlueXP UIに移動します。
-
 
 
 
@@ -307,8 +304,7 @@ BlueXP UIに移動します。
 
 Oracleデータベースに対してデータ保護処理を実行する際に使用するデータベースクレデンシャルを設定する必要があります。
 
-* 手順 *
-
+.手順
 . データベースでOS認証が無効になっている場合は、*[設定]*をクリックしてデータベース認証を変更します。
 . ユーザ名、パスワード、およびポートの詳細を指定します。
 +
@@ -326,13 +322,11 @@ Oracleユーザにはsysdba権限が必要で、ASMユーザにはSYSASM権限�
 
 最新の新機能や機能拡張を利用するには、SnapCenter Plug-in for Oracleをアップグレードする必要があります。BlueXP UIまたはコマンドラインを使用してアップグレードできます。
 
-* 始める前に *
-
+.作業を開始する前に
 * ホストで実行中の処理がないことを確認します。
 
 
-* 手順 *
-
+.手順
 . [バックアップとリカバリ]*>*[アプリケーション]*>*[ホスト]*をクリックします。
 . いずれかのホストでプラグインアップグレードを利用できるかどうかを[Overall Status]列で確認します。
 . UIまたはコマンドラインを使用してプラグインをアップグレードします。
@@ -343,12 +337,23 @@ Oracleユーザにはsysdba権限が必要で、ASMユーザにはSYSASM権限�
 
  a| 
 .. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] ホストに対応し、*[プラグインのアップグレード]*をクリックします。
-.. チェックボックスを選択し、*[アップグレード]*をクリックします。
+.. [Configuration]ページで、次の手順を実行します。
++
+... Oracleデータベースを実行しているLinuxマシンにログインして、OracleデータベースホストでSnapCenterユーザのsudoアクセスを設定します。
+... BlueXP UIに表示されたテキストをコピーします。
+... Linuxマシンで_/etc/sudoers.d/snapcenter_fileを編集し、コピーしたテキストを貼り付けます。
+... BlueXP UIで、チェックボックスを選択し、*[アップグレード]*をクリックします。
+
+
 
  a| 
 .. コネクタVMにログインします。
 .. 次のスクリプトを実行します。
-`sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
+`sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
++
+古いコネクタを使用している場合は、次のコマンドを実行してプラグインをアップグレードします。
+`sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
+
 
 
 |===

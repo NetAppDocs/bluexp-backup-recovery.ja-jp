@@ -14,7 +14,7 @@ summary: BlueXPを使用すると、アプリケーションと整合性のあ�
 
 
 [role="lead"]
-BlueXPのアプリケーション向けバックアップ/リカバリサービスは、ネットアップのクラウドストレージで実行されるアプリケーションに、アプリケーションと整合性のあるデータ保護機能を提供するSaaSベースのサービスです。BlueXPのバックアップとリカバリでは、次のアプリケーションに対して、アプリケーションと整合性のある効率的なポリシーベースの保護を提供します。
+アプリケーション向けのBlueXPバックアップ/リカバリ機能は、NetAppクラウドストレージで実行されるアプリケーションに対して、アプリケーションと整合性のあるデータ保護機能を提供します。BlueXPのバックアップとリカバリでは、次のアプリケーションに対して、アプリケーションと整合性のある効率的なポリシーベースの保護を提供します。
 
 * Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベース
 * Azure NetApp Files 上にあるSAP HANAシステム
@@ -72,6 +72,7 @@ IMPORTANT: BlueXP SaaSインフラは、リージョン内のアベイラビリ�
 
 
 
+* Azure NetApp Files上のOracleデータベースのバックアップは、Oracle RMANを使用してカタログ化できます
 * ポリシーに基づいてバックアップを保持する
 * Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files にあるOracleデータベースのリストア
 +
@@ -79,6 +80,7 @@ IMPORTANT: BlueXP SaaSインフラは、リージョン内のアベイラビリ�
 ** SCNまで、時間が経過するまで、使用可能なすべてのログ、およびリカバリオプションなしでOracleデータベースをリカバリする場合
 
 
+* Azure NetApp Files上のOracleデータベースを別の場所にリストアしています
 * Amazon FSx for NetApp ONTAP およびCloud Volumes ONTAP 上にあるOracleデータベースのソースホストまたは代替ターゲットホストへのクローニング
 +
 ** 基本的なワンクリッククローン

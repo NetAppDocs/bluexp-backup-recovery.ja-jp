@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-cloud-native-app-data.html 
-keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
-summary: バックアップの詳細を表示し、すべてのジョブのステータスを監視します。 
+keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP, delete clone, audit data, CA certificate, host maintenance 
+summary: バックアップの詳細の表示、すべてのジョブのステータスの監視、クローンの削除、データの監査、コネクタの詳細の更新、CA証明書の設定、 およびホストを管理します。 
 ---
 = クラウドネイティブアプリケーションデータの保護を管理
 :hardbreaks:
@@ -23,6 +23,42 @@ summary: バックアップの詳細を表示し、すべてのジョブのス�
 
 
 
+== Oracleデータベースホストのメンテナンス
+
+管理者は、データベースホストを手動でメンテナンスモードにして、ホストでメンテナンスタスクを実行できます。アップグレード中はホストが自動的にメンテナンスモードになり、アップグレード後は自動的に本番モードに切り替わります。
+
+ホストをメンテナンスモードにすると、オンデマンド処理が失敗し、スケジュールされたジョブがスキップされます。
+
+
+NOTE: ホストをメンテナンスモードにする前に、そのホスト上のリソースに対するジョブが実行中かどうかを確認することはできません。
+
+.手順
+. BlueXP UIで、*[保護]*>*[バックアップとリカバリ]*>*[アプリケーション]*をクリックします
+. アプリケーションタイプとして* Oracle *を選択します。
+. [設定]*>*[ホスト]*をクリックします。
+. 次のいずれかを実行します。
++
+|===
+| 状況 | 手順 
+
+
+ a| 
+ホストをメンテナンスモードにする
+ a| 
+をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] ホストに対応し、*[メンテナンスモードを有効にする]*を選択します。
+
+
+
+ a| 
+ホストをメンテナンスモードから戻す
+ a| 
+をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] メンテナンス中のホストに対応し、*[メンテナンスモードを無効にする]*を選択します。
+
+|===
+
+
+
+
 == 監査データ
 
 APIを直接実行するか、UIを使用して、アプリケーション向けにBlueXPの外部に公開されているAPIのいずれかにAPI呼び出しを行うと、ヘッダー、ロール、要求の本文、 また、API情報はBlueXPのタイムラインに記録され、監査エントリはタイムラインに永久に保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。
@@ -35,6 +71,7 @@ APIを直接実行するか、UIを使用して、アプリケーション向け
 
 作成されたバックアップの総数、バックアップの作成に使用されたポリシー、データベースのバージョン、およびエージェントIDを表示できます。
 
+.手順
 . [*バックアップとリカバリ*>*アプリケーション*]をクリックします。
 . をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
 
@@ -48,6 +85,7 @@ IMPORTANT: エージェントIDはコネクタに関連付けられています�
 
 不要になったクローンは削除できます。
 
+.手順
 . をクリックします image:button_plus_sign_square.png["アイコンをクリックして操作を選択します"] [*フィルターの基準]の隣にある[*複製オプション*>*親の複製*]を選択します。
 . をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
 . Database Details（データベースの詳細）ページで、をクリックします image:button_plus_sign_square.png["アイコンをクリックして操作を選択します"] [*フィルターの基準]の隣にある[*クローン*]を選択します。
@@ -61,6 +99,25 @@ IMPORTANT: エージェントIDはコネクタに関連付けられています�
 
 アプリケーションホストの登録時に使用されたコネクタが存在しないか破損している場合は、新しいコネクタを導入する必要があります。新しいコネクタを導入したら、* connector-update * APIを実行して、古いコネクタを使用して登録されているすべてのホストのコネクタの詳細を更新する必要があります。
 
+OracleホストまたはSAP HANAホストのコネクタの詳細を更新したら、次の手順を実行してコネクタの詳細が正常に更新されたことを確認します。
+
+.手順
+. BlueXP Connector VMにログインし、次の手順を実行します。
++
+.. コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
+.. ベースマウントパスを取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+.. コネクタVMの_pem <base_mount_path>/client/certificate/_pathからプラグインホストの_/var/opt/snapcenter/spl/etc/にcertificate.pemをコピーします。
+
+
+. プラグインホストにログインし、次の手順を実行します。
++
+.. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
+`keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
+.. SPLを再起動します。 `systemctl restart spl`
+.. 次のいずれかを実行します。
++
 |===
 | 使用する環境 | 手順 
 
@@ -68,21 +125,19 @@ IMPORTANT: エージェントIDはコネクタに関連付けられています�
  a| 
 Oracleデータベースホスト
  a| 
-. すべてのを確認します link:task-add-host-discover-oracle-databases.html#prerequisites["前提条件"] 達成された。
-. [バックアップとリカバリ]*>*[アプリケーション]*をクリックします
-. をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
-. コネクターID *を修正します。
+... すべてのを確認します link:task-add-host-discover-oracle-databases.html#prerequisites["前提条件"] 達成された。
+... [バックアップとリカバリ]*>*[アプリケーション]*をクリックします
+... をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、 * 詳細を表示 * をクリックします。
+... コネクターID *を修正します。
 
-
-ifdef::azure[]
 
 
 
  a| 
 SAP HANAデータベースホスト
  a| 
-. すべてのを確認します link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["前提条件"] 達成された。
-. 次のコマンドを実行します。
+... すべてのを確認します link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["前提条件"] 達成された。
+... 次のコマンドを実行します。
 
 
 [listing]
@@ -94,30 +149,11 @@ curl --location --request PATCH
 --header 'Content-Type: application/json' \
 --data-raw '{
 "old_connector_id": "Old connector id that no longer exists",
-"new_connector_id": "New connector Id"
-}
+"new_connector_id": "New connector Id"}
 ----
 すべてのホストにSnapCenter Plug-in for SAP HANAサービスがインストールされて実行されている場合や、すべてのホストに新しいコネクタからアクセスできる場合は、コネクタの詳細が更新されます。
 
-endif::azure[]
-
 |===
-OracleホストまたはSAP HANAホストのコネクタの詳細を更新したら、次の手順を実行してコネクタの詳細が正常に更新されたことを確認します。
-
-. BlueXP Connector VMにログインし、次の手順を実行します。
-+
-.. コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
-`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
-.. ベースマウントパスを取得します。
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-.. コネクタVMの_certificate.p12 /client/certificate/_pathから<base_mount_path> プラグインホストの_/var/opt/snapcenter/spl/etc/にcertificate.p12をコピーします。
-
-
-. プラグインホストにログインし、次の手順を実行します。
-+
-.. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
-.. SPLを再起動します。 `systemctl restart spl`
 
 
 
@@ -134,16 +170,12 @@ OracleホストまたはSAP HANAホストのコネクタの詳細を更新した
 
 コネクタは、自己署名証明書を使用してプラグインと通信します。自己署名証明書は、インストールスクリプトによってキーストアにインポートされます。自己署名証明書をCA署名証明書に置き換えるには、次の手順を実行します。
 
-* 始める前に *
-
-次のコマンドを実行すると、<base_mount_path> を取得できます。
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-
-* 手順 *
-
+.手順
 . コネクタがプラグインに接続しているときにCA証明書をクライアント証明書として使用するには、コネクタで次の手順を実行します。
 +
 .. コネクタにログインします。
+.. 次のコマンドを実行して_<base_mount_path>_を取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 .. コネクタの_<base_mount_path> /client/certificate_inにある既存のファイルをすべて削除します。
 .. CA署名証明書とキーファイルをコネクタの_<base_mount_path> / client/certificate_にコピーします。
 +
@@ -153,18 +185,18 @@ OracleホストまたはSAP HANAホストのコネクタの詳細を更新した
 +
 例：openssl pkcs12 -inkey key.pem -in certificate.pem -export-out certificate.p12
 
-.. すべての中間CAとルートCAの証明書.p12と証明書をプラグインホスト（_/var/opt/snapcenter/spl/etc/_）にコピーします。
-+
-
-NOTE: 中間CA証明書とルートCA証明書の形式は.crt形式である必要があります。
-
 
 
 . プラグインホストで次の手順を実行して、コネクタから送信された証明書を検証します。
 +
 .. プラグインホストにログインします。
-.. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+.. すべての中間CAとルートCAの証明書.pemと証明書をコネクタからプラグインホスト（_/var/opt/snapcenter/spl/etc/_）にコピーします。
++
+
+NOTE: 中間CA証明書とルートCA証明書の形式は.crt形式である必要があります。
+
+.. _/var/opt/snapcenter/spl/etc _に移動し、keytoolコマンドを実行して証明書.pemファイルをインポートします。
+`keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. ルートCAと中間証明書をインポートします。
 `keytool -import -trustcacerts -keystore keystore.jks -storepass snapcenter -alias trustedca -file <certificate.crt>`
 +
@@ -182,13 +214,7 @@ NOTE: certificate.crtは、ルートCAと中間CAの証明書を参照します�
 
 CA証明書の名前は、プラグインホストのCloud Backupに登録されている名前と同じである必要があります。
 
-* 始める前に *
-
-次のコマンドを実行すると、<base_mount_path> を取得できます。
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-
-* 手順 *
-
+.手順
 . CA証明書を使用してプラグインをホストするには、プラグインホストで次の手順を実行します。
 +
 .. SPLのkeystore _/var/opt/snapcenter/spl/etc _が格納されているフォルダに移動します。
@@ -209,6 +235,8 @@ certificate.pemには、中間CAやルートCAなどの証明書のチェーン�
 . コネクタで次の手順を実行して、コネクタがプラグインの証明書を確認できるようにします。
 +
 .. root以外のユーザとしてコネクタにログインします。
+.. 次のコマンドを実行して_<base_mount_path>_を取得します。
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 .. serverディレクトリの下にあるルートCAファイルと中間CAファイルをコピーします。
 `cd <base_mount_path>`
 `mkdir server`

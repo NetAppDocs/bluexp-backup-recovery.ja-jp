@@ -22,6 +22,7 @@ summary: Oracleデータベースのバックアップを開始するには、�
 +
 ** RHEL 7.5以降および8.x
 ** OL 7.5以降および8.x
+** SLES 15 SP4
 
 
 * ネットアップのクラウドストレージ：
@@ -42,7 +43,7 @@ NOTE: Azure NetApp Files はSAN環境をサポートしていません。
 
 
 * データベースレイアウト：Oracle StandardおよびOracle Enterprise Standalone（従来型およびマルチテナントCDBおよびPDB）
-* データベースバージョン：12cR2、18c、19C、および21c
+* データベースのバージョン：19cと21c
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] BlueXPにサインアップします

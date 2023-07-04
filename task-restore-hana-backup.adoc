@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: task-restore-hana-backup.html 
+keywords: restore, mount application backups, SAP HANA database 
+summary: SAP HANAデータベースをクラウドからオンプレミスのSnapCenterサーバにリストアできます。 
+---
+= SAP HANAデータベースをリストア
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SAP HANAデータベースは同じホストにリストアできます。
+
+* 手順 *
+
+. BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
+. [Filter by]*フィールドで、フィルタ* Type *を選択し、ドロップダウンから* HANA *を選択します。
+. リストアするデータベースに対応する *View Details* をクリックし、 *Restore* をクリックします。
+. [Restore options]ページで、次のいずれかを指定します。
++
+.. NAS環境の場合は、オブジェクトストアからリストアするボリュームのエクスポート先となるホストのFQDNまたはIPアドレスを指定します。
+.. SAN環境の場合、オブジェクトストアからリストアするボリュームのLUNをマッピングするホストのイニシエータを指定します。
+
+
+. スナップショットがアーカイブストレージにある場合は、アーカイブストレージからデータをリストアする優先度を選択します。
++
+
+NOTE: クラウドプロバイダとしてAmazon Web ServicesまたはMicrosoft Azureを使用している場合にのみ、優先度を指定する必要があります。
+
+. ソースストレージに十分なスペースがないか、ソースストレージが停止している場合は、*[ストレージの場所を変更]*を選択します。
+. 「 * 次へ * 」をクリックします。
+. [ストレージマッピング]ページで、オブジェクトストアからリストアしたデータを格納する代替ストレージの場所の詳細を指定します。
+. 「 * 次へ * 」をクリックします。
+. 詳細を確認して、 * リストア * をクリックします。
+
+
+この処理では、指定したホスト上の選択したバックアップのストレージエクスポートのみが実行されます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。ボリュームを利用したあと、ストレージ管理者はONTAP クラスタからボリュームを削除できます。
+
+SAP HANAデータベースを起動する方法については、を参照してください。 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system copy workflow with SnapCenter 』"^] および https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system clone workflow with SnapCenter 』"^]。

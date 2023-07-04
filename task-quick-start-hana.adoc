@@ -20,7 +20,8 @@ summary: SAP HANAデータベースのバックアップを開始するには、
 [role="quick-margin-list"]
 * オペレーティングシステム
 +
-** SAP HANA認定のRHEL 7.5以降の8.xプラットフォーム
+** RHEL 7.6以降
+** SAP-HANA SPS07の場合はRHEL 8.1以降
 ** SLES 12 SP5以降および15 SPXプラットフォームは、SAP HANAによって認定されています
 
 
@@ -28,9 +29,8 @@ summary: SAP HANAデータベースのバックアップを開始するには、
 * ストレージレイアウト：データファイルとログファイルについては、AzureでサポートされるのはNFSv4.1のみです。
 * データベースレイアウト：
 +
-** シングルコンテナバージョン1.0SPS12
-** SAP HANA Multitenant Database Container（MDC）2.0SPS4、2.0SPS5、2.0SPS6（シングルテナントまたは複数テナント）
-** SAP HANAシングルホストシステム、SAP HANAマルチホストシステム（スタンバイホストなし）、HANAシステムレプリケーション
+** シングルテナントまたは複数テナントのSAP HANAマルチテナントデータベースコンテナ（MDC）2.0SPS5、2.0SPS6、2.0SPS7
+** SAP HANAシングルホストシステム、SAP HANAマルチホストシステム、HANAシステムレプリケーション
 
 
 * データベースホスト上のSAP HANAプラグイン

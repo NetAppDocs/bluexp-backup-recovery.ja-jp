@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-restore-cloud-native-oracle-data.html 
-keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
-summary: データファイル、制御ファイル、またはその両方をリストアし、データベースをリカバリします。 
+permalink: task-restore-cloud-native-oracle-data-to-original-location.html 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle, original location 
+summary: データ・ファイル、制御ファイル、またはその両方を元の場所にリストアし、データベースをリカバリします。 
 ---
-= クラウドネイティブのOracleデータベースをリストア
+= クラウドネイティブのOracleデータベースを元の場所にリストア
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,13 @@ summary: データファイル、制御ファイル、またはその両方を�
 
 
 [role="lead"]
-データ損失が発生した場合は、データファイル、制御ファイル、またはその両方をリストアして、データベースをリカバリできます。
+データ損失が発生した場合は、データファイル、制御ファイル、またはその両方を元の場所にリストアしてから、データベースをリカバリできます。
 
-* 始める前に *
-
+.作業を開始する前に
 Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースを正常にリストアするには、次のコマンドを実行する必要があります。
 `cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
-* 手順 *
-
+.手順
 . をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] リストアするデータベースに対応し、*[リストア]*をクリックします。
 . データベースのリストア先となるリストアポイントを選択し、*[元の場所にリストア]*をクリックします。
 . Restore Scopeセクションで、次の操作を実行します。
@@ -65,10 +63,6 @@ Amazon FSx for NetApp ONTAP またはCloud Volumes ONTAP SANレイアウトで�
 ** ASMパラメータファイル。
 +
 [*強制インプレースリストア*]オプションは、パラメータ、パスワード、アーカイブ・ログ・タイプの外部ファイルを上書きします。[強制的にインプレースリストア*]オプションを選択した場合は、最新のバックアップを使用する必要があります。
-
-+
-
-NOTE: ASMレイアウトでは、制御ファイルを含むデータファイル、またはiSCSIの制御ファイルのみをリストアし、表領域とPDBをリストアすることはできません。
 
 
 

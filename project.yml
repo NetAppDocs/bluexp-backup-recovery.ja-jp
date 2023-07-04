@@ -97,8 +97,8 @@ sidebar:
         url: "/task-restore-oracle-data.html"
       - title: SQL Server データベースをリストアする
         url: "/task-restore-sql-data.html"
-    - title: アプリケーションバックアップをマウント
-      url: "/task-mount-app-backup.html"
+      - title: SAP HANAデータベースをリストア
+        url: "/task-restore-hana-backup.html"
   - title: クラウドネイティブアプリケーションデータのバックアップとリストア
     entries:
     - title: クラウドネイティブアプリケーションのデータを保護
@@ -133,7 +133,11 @@ sidebar:
         flavor: azure
         url: "/task-backup-cloud-native-sap-hana-data.html"
     - title: クラウドネイティブのOracleデータベースをリストア
-      url: "/task-restore-cloud-native-oracle-data.html"
+      entries:
+      - title: 元の場所にリストアします
+        url: "/task-restore-cloud-native-oracle-data-to-original-location.html"
+      - title: 別の場所にリストアします
+        url: "/task-restore-cloud-native-oracle-data-to-alternate-location.html"
     - title: クラウドネイティブのSAP HANAデータベースをリストア
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-cloud-native-oracle-data.html 
-keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations 
-summary: Oracleデータベースのバックアップをスケジュール設定またはオンデマンドで作成します。 
+keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations, RMAN, catalog, RMAN catalog 
+summary: RMANを有効または無効にしてポリシーを作成し、ポリシーを割り当ててから、Oracleデータベースのスケジュールバックアップまたはオンデマンドバックアップを作成します。 
 ---
 = クラウドネイティブのOracleデータベースをバックアップ
 :hardbreaks:
@@ -14,7 +14,9 @@ summary: Oracleデータベースのバックアップをスケジュール設�
 
 
 [role="lead"]
-組み込みのポリシーまたは作成したポリシーを割り当てることで、バックアップを作成できます。
+組み込みのポリシーまたは作成したポリシーを割り当てて、スケジュールされたバックアップまたはオンデマンドバックアップを作成できます。
+
+ポリシーの作成時にカタログ化を有効にした場合は、Oracle Recovery Manager（RMAN）を使用してOracleデータベースバックアップをカタログ化することもできます。（RMAN）のカタログ化は、Azure NetApp Files上のデータベースでのみサポートされます。カタログ化されたバックアップは、あとでブロックレベルのリストア処理や表領域のポイントインタイムリカバリ処理に使用できます。カタログ化するためには、データベースの状態が少なくともマウント済み状態であることが必要です。
 
 
 
@@ -29,7 +31,8 @@ summary: Oracleデータベースのバックアップをスケジュール設�
 . ポリシー名を指定します。
 . （オプション）バックアップ名の形式を編集します。
 . スケジュールと保持の詳細を指定します。
-. （オプション）バックアップの成功後に実行してSnapshotをセカンダリストレージにコピーするポストスクリプトのパスとタイムアウト値を入力します。
+. スケジュールとして_daily_and_weekly_を 選択し、RMANカタログへの登録を有効にする場合は、*[Catalog backup with Oracle Recovery Manager（RMAN）]*を選択します。
+. （オプション）バックアップの成功後に実行するポストスクリプトのパスとタイムアウト値（Snapshotのセカンダリストレージへのコピーなど）を入力します。
 +
 必要に応じて、引数を指定することもできます。
 
@@ -75,17 +78,37 @@ SC_BACKUP_POLICY_NAME
  a| 
 sc_primary_data_volume_full_pathを指定します
  a| 
-区切り文字として「、」を使用して連結されたデータボリュームパスを指定します。ANFボリュームの場合、情報は「/」/｛anfaccount｝/｛subscription_id｝/｛resource_group｝/｛capacity_pool｝/｛VolumeName｝_を使用して連結されます
+区切り文字として「、」を使用して連結されたデータボリュームパスを指定します。
+Azure NetApp Filesボリュームの場合、情報はを使用して連結されます。
+_/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/providers/｛provider｝/netAppAccounts/｛anfaccount｝/capacityPools/｛capacity_pool｝/volumes/｛VolumeName｝_
 
 
 
  a| 
 sc_primary_archivelogs_volume_full_pathを指定します
  a| 
-区切り文字として「、」を使用して連結されたアーカイブログボリュームのパスを指定します。ANFボリュームの場合、情報は「/」/｛anfaccount｝/｛subscription_id｝/｛resource_group｝/｛capacity_pool｝/｛VolumeName｝_を使用して連結されます
+区切り文字として「、」を使用して連結されたアーカイブログボリュームのパスを指定します。
+Azure NetApp Filesの場合は、を使用して連結された情報
+_/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/providers/｛provider｝/netAppAccounts/｛anfaccount｝/capacityPools/｛capacity_pool｝/volumes/｛VolumeName｝_
 
 |===
 . [ 作成（ Create ） ] をクリックします。
+
+
+
+
+== RMANカタログリポジトリを設定します
+
+リカバリカタログデータベースをRMANカタログリポジトリとして設定できます。リポジトリを設定しない場合、デフォルトでは、ターゲット・データベースの制御ファイルがRMANカタログ・リポジトリになります。
+
+.作業を開始する前に
+ターゲット・データベースをRMANカタログ・データベースに手動で登録する必要があります。
+
+.手順
+. [アプリケーション]ページで、をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] >*詳細を表示*。
+. [Database details]セクションで、をクリックします image:icon-edit-pen.png["アイコンをクリックして編集します"] RMANカタログリポジトリを設定するには、次の手順を実行します。
+. RMANを使用してバックアップをカタログ化するためのクレデンシャルと、カタログリカバリデータベースのTransparent Network Substrate（TNS）名を指定します。
+. [*Configure*] をクリックします。
 
 
 
@@ -105,7 +128,7 @@ NOTE: Amazon FSx for NetApp ONTAP またはCloud Volumes ONTAP でASMディス�
 
 . ポリシーを選択し、* assign *をクリックします。
 +
-バックアップは、ポリシーで定義されたスケジュールに従って作成されます。
+バックアップは、ポリシーで定義されたスケジュールに従って作成されます。ポリシーでRMANカタログを有効にしている場合は、ワークフローの最後のバックアップでカタログ化処理が別のジョブとして起動されます。カタログ化の進捗状況はジョブモニタで確認できます。カタログ化が成功すると、*[バックアップの詳細]*に各バックアップのカタログのステータスが表示されます。
 
 +
 
@@ -123,6 +146,9 @@ NOTE: スケジュールされたバックアップ処理の実行には、サ�
 
 . [アプリケーション]ページで、をクリックします image:icon-action.png["アイコンをクリックして操作を選択します"] アプリケーションに対応して、*オンデマンドバックアップ*をクリックします。
 . アプリケーションに複数のポリシーが割り当てられている場合は、ポリシーと保持階層を選択し、*[バックアップの作成]*をクリックします。
++
+ポリシーでRMANカタログを有効にしている場合は、ワークフローの最後のバックアップでカタログ化処理が別のジョブとして起動されます。カタログ化の進捗状況はジョブモニタで確認できます。カタログ化が成功すると、*[バックアップの詳細]*に各バックアップのカタログのステータスが表示されます。
+
 
 
 
