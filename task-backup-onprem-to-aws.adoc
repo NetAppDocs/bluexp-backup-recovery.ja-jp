@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-aws.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3, govcloud, government 
-summary: オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
+summary: オンプレミスのONTAPシステムからAmazon S3クラウドストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= オンプレミスの ONTAP データの Amazon S3 へのバックアップ
+= オンプレミスの ONTAP データを Amazon S3 にバックアップ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,10 @@ summary: オンプレミスのONTAP システムからAmazon S3ストレージ�
 
 
 [role="lead"]
-オンプレミスのONTAP システムからAmazon S3ストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+オンプレミスのONTAPシステムからセカンダリストレージシステムおよびAmazon S3クラウドストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
 
-「オンプレミス ONTAP システム」には、 FAS 、 AFF 、 ONTAP Select の各システムが含まれます。
+
+NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Selectシステムが含まれます。
 
 
 
@@ -24,50 +25,59 @@ summary: オンプレミスのONTAP システムからAmazon S3ストレージ�
 
 これらの手順を実行すると、すぐに作業を開始できます。各手順の詳細については、このトピックの以降のセクションを参照してください。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 使用する構成方法を特定します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] 使用する接続方法を特定します
 [role="quick-margin-para"]
 オンプレミスのONTAP クラスタをパブリックインターネット経由でAWS S3に直接接続するか、VPNとAWS Direct Connectのどちらを使用してトラフィックをAWS S3にルーティングするかを選択します。
 
 [role="quick-margin-para"]
-<<接続オプションのネットワークダイアグラム,使用可能な接続方法を参照してください。>>
+<<接続方法を特定します>>。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] BlueXPコネクタを準備します
 [role="quick-margin-para"]
-AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。ない場合は、ONTAP データをAWS S3ストレージにバックアップするためのコネクタを作成する必要があります。また、コネクタのネットワーク設定をカスタマイズして AWS S3 に接続できるようにする必要があります。
+AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをAWS S3ストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタのネットワーク設定をカスタマイズして AWS S3 に接続できるようにする必要があります。
 
 [role="quick-margin-para"]
-<<コネクタを準備します,コネクタの作成方法および必要なネットワーク設定の定義方法を参照してください。>>
+<<BlueXPコネクタを準備します,コネクタの作成方法と、必要なネットワーク設定の定義方法について説明します。>>
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] オンプレミスのONTAP クラスタを準備
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] ライセンス要件を確認
 [role="quick-margin-para"]
-BlueXPのONTAP クラスタを検出し、クラスタが最小要件を満たしていることを確認し、クラスタがAWS S3に接続できるようにネットワーク設定をカスタマイズします。
+AWSとBlueXPの両方のライセンス要件を確認する必要があります。
 
 [role="quick-margin-para"]
-<<ONTAP クラスタを準備,オンプレミスの ONTAP クラスタを準備する方法をご確認ください。>>
+を参照してください <<ライセンス要件を確認>>。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] バックアップターゲットとしてAmazon S3を準備します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] ONTAPクラスタを準備
+[role="quick-margin-para"]
+BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをAWS S3に接続できるようにします。
+
+[role="quick-margin-para"]
+<<ONTAPクラスタを準備,ONTAPクラスタを準備する方法をご紹介します。>>
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップターゲットとしてAmazon S3を準備します
 [role="quick-margin-para"]
 ConnectorでS3バケットの作成と管理を行うための権限を設定します。また、オンプレミスのONTAP クラスタに対する権限を設定して、S3バケットに対してデータの読み取りと書き込みを行えるようにする必要があります。
 
 [role="quick-margin-para"]
-必要に応じて、デフォルトの Amazon S3 暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定することもできます。 <<AWS 環境を準備,AWS S3 環境で ONTAP バックアップを受け取る準備を整える方法をご紹介します。>>
+必要に応じて、デフォルトの Amazon S3 暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定することもできます。 <<バックアップターゲットとしてAmazon S3を準備します,AWS S3環境でONTAPバックアップを受信できるようにする方法をご紹介します。>>
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] システムでBlueXPのバックアップとリカバリを有効にします
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] ONTAPボリュームでバックアップをアクティブ化します
 [role="quick-margin-para"]
-作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化>バックアップボリューム*をクリックします。次に、セットアップウィザードに従って、デフォルトのバックアップポリシーおよび保持するバックアップの数を定義し、バックアップするボリュームを選択します。
+作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化>バックアップボリューム*をクリックします。次に、セットアップウィザードに従って、使用するレプリケーションポリシーとバックアップポリシー、およびバックアップするボリュームを選択します。
 
 [role="quick-margin-para"]
-<<BlueXPのバックアップとリカバリを有効にする,ボリュームでBlueXPのバックアップとリカバリをアクティブ化する方法をご覧ください。>>
+<<ONTAPボリュームでバックアップをアクティブ化します>>。
 
 
 
-== 接続オプションのネットワークダイアグラム
+== 接続方法を特定します
 
-オンプレミスの ONTAP システムから AWS S3 へのバックアップを設定する際に使用できる接続方法は 2 つあります。
+オンプレミスのONTAPシステムからAWS S3へのバックアップを設定する場合は、どちらの接続方法を使用するかを選択してください。
 
-* パブリック接続 - パブリック S3 エンドポイントを使用して、 ONTAP システムを AWS S3 に直接接続します。
-* プライベート接続 - VPN または AWS Direct Connect を使用して、プライベート IP アドレスを使用する VPC エンドポイントインターフェイス経由でトラフィックをルーティングします。
+* *パブリック接続*-パブリックS3エンドポイントを使用して、ONTAPシステムをAWS S3に直接接続します。
+* *プライベート接続*- VPNまたはAWS Direct Connectを使用し、プライベートIPアドレスを使用するVPCエンドポイントインターフェイスを介してトラフィックをルーティングします。
 
+
+必要に応じて、パブリック接続またはプライベート接続を使用して、レプリケートされたボリュームのセカンダリONTAPシステムに接続することもできます。
 
 次の図は、*パブリック接続*メソッドと、コンポーネント間の準備に必要な接続を示しています。オンプレミスにインストールしたコネクタや、AWS VPCに導入したコネクタを使用できます。
 
@@ -79,20 +89,22 @@ image:diagram_cloud_backup_onprem_aws_private.png["BlueXPのバックアップ/�
 
 
 
-== コネクタを準備します
+== BlueXPコネクタを準備します
 
 BlueXPコネクタは'BlueXP機能の主要なソフトウェアですONTAP データのバックアップとリストアにはコネクタが必要です。
 
 
 
-=== コネクタの作成または切り替え
+=== コネクタを作成または切り替えます
 
-AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。ない場合は、ONTAP データをAWS S3ストレージにバックアップするために、これらのいずれかの場所にコネクタを作成する必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。
+AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。
+
+そうでない場合は、ONTAPデータをAWS S3ストレージにバックアップするために、それらの場所の1つにコネクタを作成する必要があります。別のクラウドプロバイダに導入されているコネクタは使用できません。
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コネクタについて説明します"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["AWSにコネクタをインストールする"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["コネクタをオンプレミスにインストールする"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["AWS GovCloudリージョンへのコネクタのインストール"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["AWSにコネクタをインストールします"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["コネクタをオンプレミスにインストールします"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["AWS GovCloudリージョンにコネクタをインストールします"^]
 +
 BlueXPのバックアップとリカバリは、コネクタがクラウドに導入されている場合はGovCloudリージョンでサポートされ、オンプレミスにインストールされている場合はサポートされません。また、AWS MarketplaceからConnectorを導入する必要があります。BlueXP SaaS Webサイトから政府機関のリージョンにコネクタを導入することはできません。
 
@@ -100,7 +112,9 @@ BlueXPのバックアップとリカバリは、コネクタがクラウドに�
 
 
 
-=== コネクタのネットワーク要件
+=== コネクタのネットワーク要件を準備
+
+次のネットワーク要件が満たされていることを確認します。
 
 * コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。
 +
@@ -115,37 +129,78 @@ BlueXPのバックアップとリカバリは、コネクタがクラウドに�
 
 
 
-== ONTAP クラスタを準備
+== ライセンス要件を確認
+
+AWSとBlueXPの両方のライセンス要件を確認する必要があります。
+
+* クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、AWSから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
++
+** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplaceで提供されるNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
+** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
+
+
+* バックアップを格納するオブジェクトストレージスペース用の AWS サブスクリプションが必要です。
+
+
+*サポートされている地域*
+
+すべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 
-=== BlueXPでONTAP クラスタを検出します
+== ONTAPクラスタを準備
 
-ボリュームデータのバックアップを開始する前に、BlueXPでオンプレミスONTAP クラスタを検出する必要があります。クラスタを追加するには、クラスタ管理 IP アドレスと admin ユーザアカウントのパスワードが必要です。
+ソースのオンプレミスONTAPシステムと、セカンダリのオンプレミスONTAPまたはCloud Volumes ONTAPシステムを準備する必要があります。
 
+ONTAPクラスタの準備では、次の手順を実行します。
+
+* BlueXPでONTAPシステムを検出しましょう
+* ONTAPのシステム要件を確認
+* オブジェクトストレージにデータをバックアップするためのONTAPネットワークの要件を確認します
+* ボリュームをレプリケートするためのONTAPネットワークの要件を確認します
+
+
+
+
+=== BlueXPでONTAPシステムを検出しましょう
+
+ソースのオンプレミスONTAPシステムとセカンダリのオンプレミスONTAPシステムまたはCloud Volumes ONTAPシステムの両方が、BlueXPキャンバスで利用可能である必要があります。
+
+クラスタを追加するには、クラスタ管理 IP アドレスと admin ユーザアカウントのパスワードが必要です。
 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
 
 
 
-=== ONTAP の要件
+=== ONTAPのシステム要件を確認
 
-* ONTAP 9.7P5以降を使用することを推奨します。ONTAP 9.8P13以降を使用することを推奨します。
+次のONTAP要件が満たされていることを確認します。
+
+* ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
 * SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。
 +
 *注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
 
 +
-方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
+方法をご確認ください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
 
-* 時間とタイムゾーンが正しく設定されている。
+* 時間とタイムゾーンが正しく設定されている。方法をご確認ください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
+* データをレプリケートする場合は、データをレプリケートする前に、ソースボリュームとデスティネーションボリュームで互換性のあるONTAPバージョンが実行されていることを確認する必要があります。
 +
-方法を参照してください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["SnapMirror 関係に対して互換性のある ONTAP バージョンを表示します"^]。
 
 
 
 
 
-=== クラスタネットワークの要件
+=== オブジェクトストレージにデータをバックアップするためのONTAPネットワークの要件を確認します
+
+オブジェクトストレージに接続するシステムで、次の要件を設定する必要があります。
+
+* ファンアウトバックアップアーキテクチャの場合は、_primary_systemで次の設定を行います。
+* カスケードバックアップアーキテクチャの場合は、_secondary_systemで次の設定を行います。
+
+
+次のONTAPクラスタネットワーク要件が必要です。
 
 * クラスタには、コネクタからクラスタ管理 LIF へのインバウンド HTTPS 接続が必要です。
 * クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。これらのクラスタ間 LIF がオブジェクトストアにアクセスできる必要があります。
@@ -170,23 +225,38 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
 
 
 
-== ライセンス要件を確認
+=== ボリュームをレプリケートするためのONTAPネットワークの要件を確認します
 
-* クラスタでBlueXPのバックアップとリカバリをアクティブ化するには、AWSから従量課金制（PAYGO）のBlueXP Marketplaceサービスに登録するか、ネットアップからBlueXPバックアップとリカバリのBYOLライセンスを購入してアクティブ化する必要があります。これらのライセンスはアカウント用であり、複数のシステムで使用できます。
+BlueXPのバックアップとリカバリでバックアップをアクティブ化する前に、ソースシステムとデスティネーションシステムがONTAPのバージョンとネットワークの要件を満たしていることを確認してください。
+
+
+
+==== Cloud Volumes ONTAPネットワークの要件
+
+インスタンスのセキュリティグループには、必要なインバウンドおよびアウトバウンドルールが含まれている必要があります。具体的には、ICMPとポート11104および11105のルールです。これらのルールは、事前定義されたセキュリティグループに含まれています。
+
+
+
+==== オンプレミスのONTAPネットワークの要件
+
+* クラスタがオンプレミスにある場合は、企業ネットワークからクラウドプロバイダ内の仮想ネットワークへの接続が必要です。これは通常、 VPN 接続です。
+* ONTAP クラスタは、サブネット、ポート、ファイアウォール、およびクラスタの追加要件を満たしている必要があります。
 +
-** BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplaceで提供されるNetApp BlueXPサービス"^]。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。
-** BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
-
-
-* バックアップを格納するオブジェクトストレージスペース用の AWS サブスクリプションが必要です。
-+
-すべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+Cloud Volumes ONTAPまたはオンプレミスのシステムにレプリケートできるため、オンプレミスのONTAPシステムのピアリング要件を確認してください。を参照してください https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["クラスタピアリングの前提条件については、 ONTAP のドキュメントを参照してください"^]。
 
 
 
 
 
-== AWS 環境を準備
+== バックアップターゲットとしてAmazon S3を準備します
+
+Amazon S3をバックアップターゲットとして準備するには、次の手順を実行します。
+
+* S3権限を設定
+* （オプション）独自のS3バケットを作成します。（必要に応じて、サービスによってバケットが作成されます）。
+* （オプション）データ暗号化用にお客様が管理するAWSキーを設定します。
+* （オプション）VPCエンドポイントインターフェイスを使用して、システムにプライベート接続を設定します。
+
 
 
 
@@ -201,6 +271,8 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
 .手順
 . （最新のから）次の S3 権限を確認します https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS のドキュメント：「 Editing IAM policies"]。
 +
+[%collapsible]
+====
 [source, json]
 ----
 {
@@ -260,12 +332,18 @@ IPspace内のすべてのクラスタ間LIFがオブジェクトストアにア�
           ]
       },
 ----
+====
 +
 
 NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります `arn:aws-cn:s3:::netapp-backup-*`。
 
-. サービスをアクティブ化すると、バックアップウィザードにアクセスキーとシークレットキーの入力を求められます。これらのクレデンシャルは、 ONTAP がデータをバックアップして S3 バケットにリストアできるように ONTAP クラスタに渡されます。そのためには、次の権限を持つ IAM ユーザを作成する必要があります。
+. サービスをアクティブ化すると、バックアップウィザードからアクセスキーとシークレットキーの入力を求められます。これらのクレデンシャルは、 ONTAP がデータをバックアップして S3 バケットにリストアできるように ONTAP クラスタに渡されます。そのためには、以下の権限を持つ IAM ユーザを作成する必要があります。
 +
+を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User"^]。
+
++
+[%collapsible]
+====
 [source, json]
 ----
 {
@@ -318,11 +396,43 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
     ]
 }
 ----
-+
-を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User"^] を参照してください。
+====
 
 
 
+
+=== 独自のバケットを作成します
+
+デフォルトでは、サービスによってバケットが作成されます。独自のバケットを使用する場合は、バックアップアクティブ化ウィザードを開始する前にバケットを作成し、ウィザードでバケットを選択できます。
+
+独自のバケットを作成する場合は、バケット名として「netapp-backup」を使用する必要があります。  カスタム名を使用する必要がある場合は、を編集します `ontapcloud-instance-policy-netapp-backup` 既存のCVOにIAMRoleを割り当て、S3権限に次のリストを追加します。含める必要があります `“Resource”: “arn:aws:s3:::*”` バケットに関連付ける必要があるすべての権限を割り当てます。
+
+[%collapsible]
+====
+略称は「[
+    "S3：ListBucket"
+    "S3：GetBucketLocation"
+]
+リソース：arn：aws：s3：：：*、
+"Effect"："Allow"
+}、
+｛
+    略称は「[
+        "S3：GetObject"、
+        "S3：PutObject"、
+        "S3：DeleteObject"、
+        "S3：ListAllMyBuckets"、
+        "S3：PutObjectTagging"、
+        "S3：GetObjectTagging"、
+        "S3：RestoreObject"、
+        "S3：GetBucketObjectLockConfiguration"、
+        "S3：GetObjectRetention"、
+        "S3：PutBucketObjectLockConfiguration"、
+        "S3：PutObjectRetention"
+        ]
+    リソース：arn：aws：s3：：：*、
+
+====
 
 
 === データ暗号化用に、お客様が管理するAWSキーをセットアップ
@@ -339,7 +449,8 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
 
 オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["2番目の図"]。
 
-. Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
+.手順
+. Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["詳細については、AWS PrivateLink for Amazon S3を参照してください"^]。
 . BlueXPコネクタに関連付けられているセキュリティグループ設定を変更します。このポリシーを「 Custom 」（「 Full Access 」から）に変更する必要があります。また、変更する必要があります <<S3 権限をセットアップする,バックアップポリシーから S3 権限を追加します>> 前に示したように、
 +
 image:screenshot_backup_aws_sec_group.png["コネクタに関連付けられている AWS セキュリティグループのスクリーンショット。"]
@@ -385,72 +496,186 @@ Please enter Certificate: Press <Enter> when done
 
 
 
-== BlueXPのバックアップとリカバリを有効にする
+== ONTAPボリュームでバックアップをアクティブ化します
 
-BlueXPのバックアップとリカバリは、オンプレミスの作業環境からいつでも直接実行できます。
+オンプレミスの作業環境からいつでも直接バックアップをアクティブ化できます。
+
+ウィザードでは、次の主な手順を実行します。
+
+* <<バックアップするボリュームを選択します>>
+* <<バックアップ戦略を定義します>>
+* <<選択内容を確認します>>
+
+
+また可能です <<APIコマンドを表示します>> レビューステップでは、コードをコピーして、将来の作業環境のバックアップアクティベーションを自動化できます。
+
+
+
+=== ウィザードを開始します
 
 .手順
-. キャンバスから作業環境を選択し、右パネルのバックアップとリカバリサービスの横にある*Enable>Backup Volumes]をクリックします。
+. 次のいずれかの方法でバックアップとリカバリのアクティブ化ウィザードにアクセスします。
 +
-バックアップのAmazon S3デスティネーションがCanvas上の作業環境として存在する場合は、クラスタをAmazon S3作業環境にドラッグしてセットアップウィザードを開始できます。
+** BlueXPキャンバスで、作業環境を選択し、右パネルのバックアップとリカバリサービスの横にある*[有効化]>[ボリュームのバックアップ]*を選択します。
++
+バックアップのAmazon S3デスティネーションがCanvasの作業環境として存在する場合は、ONTAPクラスタをAmazon S3オブジェクトストレージにドラッグできます。
+
+** [バックアップとリカバリ]バーで*[ボリューム]*を選択します。[ボリューム]タブで、*[アクション（...）]*オプションを選択し、（オブジェクトストレージへのレプリケーションまたはバックアップがまだ有効になっていない）単一ボリュームに対して*[バックアップのアクティブ化]*を選択します。
+
 
 +
-image:screenshot_backup_onprem_enable.png["作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。"]
+ウィザードの[Introduction]ページには、ローカルSnapshot、レプリケーション、バックアップなどの保護オプションが表示されます。この手順で2番目のオプションを選択した場合は、1つのボリュームが選択された状態で[Define Backup Strategy]ページが表示されます。
 
-. プロバイダとして Amazon Web Services を選択し、 * Next * をクリックします。
-. プロバイダの詳細を入力し、 * 次へ * をクリックします。
+. 次のオプションに進みます。
 +
-.. バックアップの格納に使用する AWS アカウント、 AWS Access Key 、および Secret Key 。
+** BlueXPコネクタをすでにお持ちの場合は、これで準備は完了です。[次へ]*を選択します。
+** BlueXPコネクタをまだお持ちでない場合は、*[Add a Connector]*オプションが表示されます。を参照してください <<BlueXPコネクタを準備します>>。
+
+
+
+
+
+
+=== バックアップするボリュームを選択します
+
+保護するボリュームを選択します。FlexVolボリュームとFlexGroupボリュームのどちらを保護するかを選択できますが、保護するように選択した作業環境でこれらのボリュームを混在させることはできません。
+
+[NOTE]
+====
+* バックアップをアクティブ化できるのは、一度に1つのFlexGroupボリュームだけです。
+* 選択するボリュームのSnapLock設定も同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock準拠モードのボリュームは現在サポートされていません）。 ロックされたボリュームとロック解除されたボリュームの組み合わせは選択できません。
+
+
+====
+保護されたボリュームとは、Snapshotポリシー、レプリケーションポリシー、オブジェクトへのバックアップポリシーのうち1つ以上を含むボリュームです。
+
+
+NOTE: 選択したボリュームでSnapshotポリシーとレプリケーションポリシーがあとで選択したポリシーと異なる場合は、既存のポリシーが上書きされます。
+
+.手順
+. [Select Volumes]ページで、保護するボリュームを選択します。
++
+** 必要に応じて、行をフィルタして、特定のボリュームタイプや形式などのボリュームのみを表示し、選択を容易にします。
+** 最初のボリュームを選択したら、[All FlexVol Volumes]を選択できます。既存のFlexVolボリュームと今後追加されるFlexVolボリュームをすべてバックアップするには、最初に1つのボリュームを選択してから、タイトル行のボックスをオンにします。（image:button_backup_all_volumes.png[""]）。
++
+
+TIP: このオプションは、すべてのボリュームをバックアップし、新しいボリュームのバックアップを有効にする必要がないようにすることを推奨します。
+
+** 個々のボリュームをバックアップするには、各ボリュームのボックス（image:button_backup_1_volume.png[""]）。
+
+
+. 「 * 次へ * 」を選択します。
+
+
+
+
+=== バックアップ戦略を定義します
+
+バックアップ戦略を定義するには、次のオプションを設定します。
+
+* 1つまたはすべてのバックアップオプション（ローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップ）が必要かどうか
+* アーキテクチャ
+* ローカルSnapshotポリシー
+* レプリケーションのターゲットとポリシー
++
+
+NOTE: 選択したボリュームのSnapshotポリシーとレプリケーションポリシーがこの手順で選択したポリシーと異なる場合は、既存のポリシーが上書きされます。
+
+* オブジェクトストレージ情報（プロバイダ、暗号化、ネットワーク、バックアップポリシー、エクスポートオプション）へのバックアップ。
+
+
+.手順
+. [Define backup strategy]ページで、次のいずれかまたはすべてを選択します。デフォルトでは、3つすべてが選択されています。
++
+** *ローカルSnapshot *：レプリケーションまたはオブジェクトストレージへのバックアップを実行する場合は、ローカルSnapshotを作成する必要があります。
+** *レプリケーション*：別のONTAPストレージシステムにレプリケートされたボリュームを作成します。
+** *バックアップ*：ボリュームをオブジェクトストレージにバックアップします。
+
+
+. *アーキテクチャ*:レプリケーションとバックアップを選択した場合は'次のいずれかの情報フローを選択します
++
+** *カスケード*：情報は、プライマリからセカンダリからオブジェクトストレージへ、セカンダリからオブジェクトストレージへと流れます。
+** *ファンアウト*：プライマリからセカンダリへ、プライマリからオブジェクトストレージへ、情報が流れます。
++
+これらのアーキテクチャの詳細については、を参照してください link:concept-protection-journey.html["保護対策を計画しましょう"]。
+
+
+
+. *ローカルSnapshot *：既存のSnapshotポリシーを選択します。
++
+
+TIP: カスタムポリシーを作成する場合は、System ManagerまたはONTAP CLIを使用できます `snapmirror policy create` コマンドを実行しますを参照してください。
+
+. *レプリケーション*：次のオプションを設定します。
++
+** *レプリケーションターゲット*：デスティネーションの作業環境とSVMを選択します。必要に応じて、レプリケートするボリュームの名前に追加するデスティネーションアグリゲートとプレフィックスまたはサフィックスを選択します。
+** *レプリケーションポリシー*：既存のレプリケーションポリシーを選択します。
+
+
+. *オブジェクトにバックアップ*：*バックアップ*を選択した場合は、次のオプションを設定します。
++
+** *プロバイダ*：[Amazon Web Services]*を選択します。
+** *プロバイダ設定*：バックアップを保存するプロバイダの詳細とAWSリージョンを入力します。
 +
 アクセスキーとシークレットキーは、 ONTAP クラスタに S3 バケットへのアクセスを付与するために作成した IAM ユーザ用のものです。
 
-.. バックアップを格納する AWS リージョン。
-.. デフォルトの Amazon S3 暗号化キーを使用するか、お客様が管理する独自のキーを AWS アカウントから選択して、データの暗号化を管理できます。 (https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"]）。
-+
-image:screenshot_backup_provider_settings_aws.png["ONTAP システムから AWS S3 にボリュームをバックアップする際のクラウドプロバイダの詳細を示すスクリーンショット。"]
+** * Bucket *：既存のS3バケットを選択するか、新しいバケットを作成します。を参照してください https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["S3バケットを追加"^]。
+** *暗号化キー*：新しいS3バケットを作成した場合は、プロバイダから提供された暗号化キー情報を入力します。データの暗号化を管理するために、デフォルトのAmazon S3暗号化キーを使用するか、AWSアカウントからお客様が管理する独自のキーを選択するかを選択します。
 
-
-
-. アカウントのBlueXPバックアップ/リカバリライセンスがない場合は、この時点で、使用する課金方法を選択するように求められます。AWSから従量課金制（PAYGO）のBlueXP Marketplaceサービスにサブスクライブするか（複数のサブスクリプションがある場合は1つ選択する必要があります）、ネットアップからBlueXPバックアップ/リカバリBYOLライセンスを購入してアクティブ化できます。 link:task-licensing-cloud-backup.html["BlueXPのバックアップ/リカバリライセンスのセットアップ方法をご紹介します。"]
-. ネットワークの詳細を入力し、 * 次へ * をクリックします。
-+
-.. バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
-.. 必要に応じて、以前に設定した AWS PrivateLink を使用するかどうかを選択します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
-+
-image:screenshot_backup_onprem_aws_networking.png["ONTAP システムから AWS S3 にボリュームをバックアップする場合のネットワークの詳細を示すスクリーンショット。"]
-
-
-
-. デフォルト・ポリシーに使用するバックアップ・ポリシーの詳細を入力し、［*次へ*］をクリックします。既存のポリシーを選択するか、各セクションで選択した内容を入力して新しいポリシーを作成できます。
-+
-.. デフォルトポリシーの名前を入力します。名前を変更する必要はありません。
-.. バックアップスケジュールを定義し、保持するバックアップの数を選択します。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["選択可能な既存のポリシーのリストが表示されます"^]。
-.. ONTAP 9.11.1以降を使用している場合、_DataLockとランサムウェアによる防御設定のいずれかを設定することで、バックアップを削除攻撃やランサムウェアによる攻撃から保護することもできます。_DataLock_はバックアップファイルの変更や削除を防止します。_Ransomware protection_scanはバックアップファイルをスキャンして、バックアップファイルにランサムウェア攻撃の痕跡がないかどうかを確認します。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
-.. ONTAP 9.10.1以降を使用している場合は、S3 GlacierまたはS3 Glacier Deep Archiveストレージにバックアップを階層化して、コストをさらに最適化することもできます。 link:reference-aws-backup-tiers.html["アーカイブ階層の使用の詳細については、こちらをご覧ください"^]。
-+
-image:screenshot_backup_policy_aws.png["BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、スケジュールとバックアップの保持を選択できます。"]
 
 +
-*重要：* DataLockを使用する場合は、BlueXPのバックアップとリカバリをアクティブ化するときに最初のポリシーでDataLockを有効にする必要があります。
 
+NOTE: 既存のバケットを選択した場合、暗号化情報はすでに使用可能なため、ここで入力する必要はありません。
 
-
-. Select Volumes（ボリュームの選択）ページで、定義済みのバックアップポリシーを使用してバックアップするボリュームを選択します。特定のボリュームに異なるバックアップポリシーを割り当てる場合は、追加のポリシーを作成し、それらのボリュームにあとから適用できます。
 +
-** すべての既存ボリュームと今後追加されるすべてのボリュームをバックアップするには、[既存および将来のすべてのボリュームをバックアップ...]チェックボックスをオンにします。このオプションは、すべてのボリュームをバックアップし、新しいボリュームのバックアップを有効にする必要がないようにすることを推奨します。
-** 既存のボリュームのみをバックアップする場合は、タイトル行（image:button_backup_all_volumes.png[""]）。
-** 個々のボリュームをバックアップするには、各ボリュームのボックス（image:button_backup_1_volume.png[""]）。
+** *ネットワーク*：IPspace、およびプライベートエンドポイントを使用するかどうかを選択します。プライベートエンドポイントはデフォルトで無効になっています。
 +
-image:screenshot_backup_select_volumes.png["バックアップするボリュームを選択するスクリーンショット。"]
+... バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
+... 必要に応じて、以前に設定した AWS PrivateLink を使用するかどうかを選択します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["AWS PrivateLink for Amazon S3 の使用に関する詳細を参照してください"^]。
 
-** この作業環境に、この作業環境用に選択したバックアップスケジュールラベル（日次、週次など）に一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、「Export existing Snapshot copies to object storage as backup copies」というプロンプトが追加で表示されます。ボリュームを完全に保護するために、履歴Snapshotをすべてバックアップファイルとしてオブジェクトストレージにコピーする場合は、このチェックボックスをオンにします。
+
+** *バックアップポリシー*：既存のバックアップポリシーを選択します。
++
+
+TIP: カスタムポリシーを作成する場合は、System ManagerまたはONTAP CLIを使用できます `snapmirror policy create` コマンドを実行しますを参照してください。
+
+** *既存のSnapshotコピーをバックアップコピーとしてオブジェクトストレージにエクスポート*：この作業環境に、この作業環境に対して選択したバックアップスケジュールラベル（daily、weeklyなど）と一致する読み取り/書き込みボリュームのローカルSnapshotコピーがある場合は、この追加のプロンプトが表示されます。ボリュームを最大限に保護するために、履歴Snapshotをすべてオブジェクトストレージにバックアップファイルとしてコピーする場合は、このチェックボックスをオンにします。
 
 
-. [バックアップをアクティブ化]*をクリックすると、BlueXPのバックアップとリカバリによってボリュームの初期バックアップの作成が開始されます。
+. 「 * 次へ * 」を選択します。
+
+
+
+
+=== 選択内容を確認します
+
+これにより、選択内容を確認し、必要に応じて調整を行うことができます。
+
+.手順
+. [Review]ページで、選択内容を確認します。
+. 必要に応じて、Snapshotポリシーのラベルをレプリケーションポリシーおよびバックアップポリシーのラベルと自動的に同期する*チェックボックスをオンにします。これにより、レプリケーションポリシーとバックアップポリシーのラベルに一致するラベルを持つSnapshotが作成されます。
+. [バックアップのアクティブ化]*を選択します。
 
 
 .結果
-S3 バケットは、入力した S3 アクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
+BlueXPのバックアップとリカバリで、ボリュームの初期バックアップが作成されます。レプリケートされたボリュームとバックアップファイルのベースライン転送には、プライマリストレージシステムのデータのフルコピーが含まれます。以降の転送には、Snapshotコピーに含まれるプライマリデータの差分コピーが含まれます。
+
+レプリケートされたボリュームが、プライマリストレージボリュームと同期されるデスティネーションクラスタに作成されます。
+
+入力したS3アクセスキーとシークレットキーで指定されたサービスアカウントにS3バケットが作成され、バックアップファイルがそこに格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。
+
+を使用して、バックアップジョブとリストアジョブのステータスを監視することもできます link:task-monitor-backup-jobs.html["［ジョブ監視］パネル"^]。
+
+
+
+=== APIコマンドを表示します
+
+バックアップとリカバリのアクティブ化ウィザードで使用するAPIコマンドを表示し、必要に応じてコピーすることができます。これは、将来の作業環境でバックアップを自動的にアクティブ化する場合に必要になることがあります。
+
+.手順
+. バックアップとリカバリのアクティブ化ウィザードで、*[API要求の表示]*を選択します。
+. コマンドをクリップボードにコピーするには、*コピー*アイコンを選択します。
+
 
 
 

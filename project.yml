@@ -44,6 +44,8 @@ sidebar:
     entries:
     - title: ONTAP ボリュームのデータを保護
       url: "/concept-ontap-backup-to-cloud.html"
+    - title: 保護対策を計画しましょう
+      url: "/concept-protection-journey.html"
     - title: Cloud Volumes ONTAP を Amazon S3 にバックアップします
       flavor: aws
       url: "/task-backup-to-s3.html"
@@ -66,10 +68,10 @@ sidebar:
       url: "/task-backup-onprem-private-cloud.html"
     - title: ONTAP バックアップを管理します
       url: "/task-manage-backups-ontap.html"
-    - title: クラスタレベルのバックアップの設定を管理します
-      url: "/task-manage-backup-settings-ontap.html"
     - title: ONTAP バックアップからリストアする
       url: "/task-restore-backups-ontap.html"
+    - title: オブジェクト設定へのクラスタレベルのバックアップを管理します
+      url: "/task-manage-backup-settings-ontap.html"
   - title: オンプレミスのアプリケーションデータのバックアップとリストア
     entries:
     - title: オンプレミスアプリケーションのデータを保護
@@ -257,20 +259,22 @@ homepage:
       url: task-backup-onprem-private-cloud.html
   - title: ONTAP バックアップファイルを管理します
     links:
-    - title: ボリュームのバックアップを有効または無効にします
-      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
-    - title: 既存のバックアップポリシーを編集する
-      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
-    - title: 新しいバックアップポリシーを追加します
-      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
+    - title: 追加ボリュームでボリュームのバックアップを有効にします
+      url: task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment
+    - title: 既存のクラウドへのバックアップポリシーを編集する
+      url: task-manage-backups-ontap.html#edit-an-existing-backup-to-cloud-policy
+    - title: 新しいバックアップをクラウドポリシーに追加します
+      url: task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy
     - title: 既存のボリュームに割り当てられているポリシーを変更します
-      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
+      url: task-manage-backups-ontap.html#change-the-backup-settings-assigned-to-existing-volumes
     - title: ボリュームの手動バックアップを作成します
-      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
+      url: task-manage-backups-ontap.html#create-a-manual-volume-backup-at-any-time
     - title: 各ボリュームのバックアップのリストを表示します
-      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
+      url: task-manage-backups-ontap.html#view-the-list-of-backups-for-each-volume
+    - title: レプリケーション関係を管理します
+      url: task-manage-backups-ontap.html#manage-the-replication-relationship-with-the-source-volume
     - title: バックアップを削除します
-      url: task-manage-backups-ontap.html#deleting-backups
+      url: task-manage-backups-ontap.html#delete-backups
   - title: アプリケーションデータをクラウドにバックアップ
     links:
     - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ

@@ -1,0 +1,43 @@
+= BlueXPでONTAPシステムを検出しましょう
+:allow-uri-read: 
+
+
+ソースのオンプレミスONTAPシステムと、セカンダリのオンプレミスONTAPまたはCloud Volumes ONTAPシステムを準備する必要があります。
+
+ONTAPクラスタの準備では、次の手順を実行します。
+
+* BlueXPでONTAPシステムを検出しましょう
+* ONTAPのシステム要件を確認
+* オブジェクトストレージにデータをバックアップするためのONTAPネットワークの要件を確認します
+* ボリュームをレプリケートするためのONTAPネットワークの要件を確認します
+
+
+
+
+=== BlueXPでONTAPシステムを検出しましょう
+
+ソースのオンプレミスONTAPシステムとセカンダリのオンプレミスONTAPシステムまたはCloud Volumes ONTAPシステムの両方が、BlueXPキャンバスで利用可能である必要があります。
+
+クラスタを追加するには、クラスタ管理 IP アドレスと admin ユーザアカウントのパスワードが必要です。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["クラスタの検出方法について説明します"^]。
+
+
+
+=== ONTAPのシステム要件を確認
+
+次のONTAP要件が満たされていることを確認します。
+
+* ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
+* SnapMirror ライセンス（ Premium Bundle または Data Protection Bundle に含まれます）。
++
+*注：* BlueXPのバックアップとリカバリを使用する場合、「Hybrid Cloud Bundle」は必要ありません。
+
++
+方法をご確認ください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
+
+* 時間とタイムゾーンが正しく設定されている。方法をご確認ください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
+* データをレプリケートする場合は、データをレプリケートする前に、ソースボリュームとデスティネーションボリュームで互換性のあるONTAPバージョンが実行されていることを確認する必要があります。
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["SnapMirror 関係に対して互換性のある ONTAP バージョンを表示します"^]。
+
+
