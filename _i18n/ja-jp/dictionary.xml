@@ -1394,13 +1394,11 @@
   <block id="56b804288a96913690a4b3ca49ceea54" category="list-text">ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。コネクタは必ずオンプレミスに配置してください。</block>
   <block id="360446e3fb6e2087ba1eda4d6e9eafde" category="list-text">ノードのクラスタ間 LIF はオブジェクトストアにアクセスできます（コネクタが「ダーク」サイトに設置されている場合は不要）。</block>
   <block id="3778f3873debfe11e2ace6bb6af1e417" category="inline-link">StorageGRID のドキュメント</block>
-  <block id="c1d703bdf53bad5718c774b5ba1504f9" category="paragraph">StorageGRID は、次の要件を満たす必要があります。を参照してください<block ref="a9591d68f190d64ce21caf15a77d51e9" category="inline-link-rx"></block> を参照してください。</block>
   <block id="793640ee72b7150dff71a288a821c67c" category="list-text">サポートされている StorageGRID のバージョン</block>
   <block id="8a456872aea50fd247449bd552854586" category="list-text">StorageGRID 10.3 以降がサポートされます。</block>
   <block id="22c37949858e0a6877e1770be16db62b" category="paragraph">DataLockとRansomware Protectionをバックアップに使用するには、StorageGRID システムでバージョン11.6.0.3以降が実行されている必要があります。</block>
   <block id="ca00250851f3a70617fb3099c4414b66" category="list-text">S3 クレデンシャル</block>
   <block id="5a7e671d36e7ddbd948f2001988ffe33" category="inline-link">詳細については、StorageGRID のドキュメントを参照してください</block>
-  <block id="8891c4e57a35fdfe946dfc0b3b7397a7" category="list-text">StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。<block ref="6204e1ab37c5b3d32abd50f4f1f64c36" category="inline-link-rx"></block>。</block>
   <block id="d106fcaf30ac3fffe7a077d64962b14d" category="paragraph">これらのアクセスキーは、次の権限を持つユーザに関連付ける必要があります。</block>
   <block id="a1b7de43a5472d2ba57c5f863040eec2" category="list-text">オブジェクトのバージョン管理</block>
   <block id="168036087bcdae960471ab9c23a03efa" category="list-text">オブジェクトストアバケットでは、StorageGRID オブジェクトのバージョン管理を手動で有効にしないでください。</block>
@@ -2147,7 +2145,6 @@
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">詳細フィルタの使用方法を参照してください</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。</block>
   <block id="30c580a99dd8f8145066f47bf26ac29f" category="paragraph">このスクリーンショットは、「過去1週間」に「Volume_1」という名前のボリュームに対するすべての「Volume」「Backup」ジョブを検索する方法を示しています。</block>
-  <block id="51b623efdc27fe6f448c8ac3c9969630" category="paragraph">ほとんどのフィルタはわかりやすいものです。「ワークロード」のフィルタを使用すると、次のカテゴリのジョブを表示できます。</block>
   <block id="dd9313799fa929f642611d4d86e9e772" category="paragraph">特定の「SVM」内のデータを検索できるのは、最初に作業環境を選択した場合のみです。</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、優先度「高」はサポートされません。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォルダ内のすべてのファイルおよびサブフォルダをリストアできます。9.13.0より前のバージョンのONTAP を使用している場合は、そのフォルダのファイルのみがリストアされます。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
@@ -2159,7 +2156,6 @@
   <block id="95fa16fe802a71eca4c0ade2049c7325" category="inline-link">ストレージアカウントの複製方法の変更</block>
   <block id="fd32f35db4beea68175faf51895e4286" category="list-text">StorageGRID - StorageGRID サーバの詳細を取得し、StorageGRID サーバを検出できます</block>
   <block id="49f2fa5360686148867b942e73c164ea" category="summary">オンプレミスのONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="58d10a6e5e45d1a8458204e47220c68c" category="summary">スケジュールされているバックアップジョブ、または作業環境で開始したバックアップジョブとリストアジョブのステータスを監視できます。正常に完了したジョブ、実行中のジョブ、および失敗したジョブを表示して、問題の診断と修正を行うことができます。また、通知をEメールで送信するように設定することで、システムにログインしていないときでも重要なシステムアクティビティを通知することができます。</block>
   <block id="6e20e21fbdfeb7c2ac6f9d0235b820c4" category="section-title">ジョブモニタでバックアップジョブとリストアジョブのステータスを表示します</block>
   <block id="5b48d2885665cc3dce56d742d3ec50c4" category="paragraph">すべてのバックアップおよびリストア処理とそれらの現在のステータスのリストは、*ジョブ監視*タブで確認できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。</block>
   <block id="6c99ceac3d4ecb03d01e55de5bf1dadf" category="paragraph">バックアップとリストアのステータスは次のいずれかになります。</block>
@@ -2193,8 +2189,6 @@
   <block id="278d01e5af56273bae1bb99a98b370cd" category="cell">重要</block>
   <block id="4df68e0b98ba0691ff46f48eff2a2f3f" category="paragraph">システムでランサムウェア攻撃の可能性が検出されました</block>
   <block id="160157a33511dda5495776f0fcfc771d" category="paragraph">スケジュール済みジョブが失敗しました</block>
-  <block id="9b5f00722faa27f8d92c452deb45e908" category="list-text">通知を表示するには、を選択します<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>)を選択します。</block>
-  <block id="43a7ffdce907a49598d2965f30856cee" category="list-text">通知を確認します。</block>
   <block id="fb902a35540ad53bda044609815ee278" category="summary">オンプレミスのONTAP システムからNetApp StorageGRID システムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="4ab7d99363507ea7d2dfa59860eae018" category="summary">Cloud Volumes ONTAP システムからGoogle Cloudストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="2ec8fbded5e88799ebd7fdba2189b818" category="paragraph">Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
@@ -2938,7 +2932,6 @@
   <block id="db058563d6eb243b453d48635769d049" category="list-text">HSM（ハードウェアバックアップ）キーとソフトウェア生成キーの両方がサポートされています。</block>
   <block id="90a4c64194204c56808168a2ae360226" category="summary">BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制または年間マーケットプレイスサブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（Bring Your Own License）を購入します。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。</block>
   <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
-  <block id="5a0e26d771129c9b2e2c18c2a55a2693" category="paragraph">Cloud BackupのUIおよびAPIから開始されたユーザ開始のバックアップ処理とリストア処理、および実行中のスケジュールされたバックアップ処理などのシステム開始のジョブは、どちらも[Job Monitoring]タブで使用できます。ただし、これは、ONTAP 9.13.0以降を実行するCloud Volumes ONTAP システムと、ONTAP 9.13.1以降を実行するオンプレミスのONTAP システムにのみ該当します。以前のバージョンのONTAP を実行している場合は、ユーザが開始したジョブのみが表示されます。</block>
   <block id="72c7fe989ff4840809134384de3dd80c" category="admonition">ONTAP システムを9.13.xにアップグレードしたあとに、スケジュールされたバックアップ処理がジョブモニタに表示されない場合は、BlueXPのバックアップ/リカバリサービスを再起動する必要があります。 <block ref="bdf197dfe0363b0f0f92ecc4a997870a" category="inline-link-macro-rx"></block>。</block>
   <block id="f4ceecec904030bc411eb94dfb80f45a" category="paragraph">アドホックボリュームのバックアップに失敗しました</block>
   <block id="3765aea02f52c67dc2bb0f95b961f55e" category="paragraph">作業環境でバックアップのアクティブ化に失敗しました</block>
@@ -3134,8 +3127,6 @@
   <block id="cd979c7356414580d564b463e3fe798a" category="list-text">1つのクラスタで複数のDataLockモードを使用することはできません。</block>
   <block id="e7d60457cf8d5955e88e40aa083c07fa" category="list-text">FlexGroupボリュームでDataLockとランサムウェア対策を使用できるのは、ONTAP 9.13.1以降を使用している場合のみです。</block>
   <block id="5e5c52eb046d9534a5304cfb91b3736a" category="list-text">クラスタでONTAP 9.13.1以降が実行されている場合、FlexGroupボリュームのバックアップでDataLockとランサムウェア対策を使用できます。</block>
-  <block id="062059692404411848a017472898ba37" category="paragraph">開始したバックアップジョブまたはスケジュールされたバックアップジョブ、および開始したリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
-  <block id="747ab4e57729ad952df86b61ce8fa363" category="list-text">列（Working Environment、SVM、ユーザ名、ワークロード、ポリシー、 [Snapshot Label]）で、を選択します <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="ef01d887513738e3083dc9422947bd11" category="paragraph">[Job Monitoring]ページでは、バックアップポリシーやSnapshotラベルなどの複数のフィルタを使用して処理をフィルタリングできます。</block>
   <block id="d119f82d01fe8b24b109c5ce80991809" category="section-title">バックアップライフサイクルジョブを確認します</block>
   <block id="93d7343c1b7b9d802947b5e6175b94db" category="paragraph">バックアップライフサイクルフローの監視は、監査の完全性、説明責任、バックアップの安全性を支援します。バックアップのライフサイクルを追跡するために、すべてのバックアップコピーの有効期限を確認することができます。</block>
@@ -3961,7 +3952,6 @@ ifdef：aws []</block>
   <block id="861cb48bf82afb2d1addc6ef6c8ff905" category="doc">オンプレミスの ONTAP データを StorageGRID にバックアップ</block>
   <block id="1c217460a8591d40515e5ac52003a8a3" category="paragraph">オンプレミスのプライマリONTAPシステムからセカンダリストレージシステムおよびNetApp StorageGRIDシステムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="78cd41832e44ff3412f34a5c7037262b" category="paragraph">オンプレミスのONTAPクラスタをパブリックインターネット経由でStorageGRIDに直接接続する方法、またはVPNを使用してプライベートVPCエンドポイントインターフェイスを介してトラフィックをStorageGRIDにルーティングするかどうかを確認します。</block>
-  <block id="fbd75c16bafd2c07d83915ddf5e96776" category="paragraph">StorageGRIDまたはオンプレミスにすでにコネクタがデプロイされている場合は、すべて準備が完了しています。そうでない場合は、ONTAPデータをStorageGRIDにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがStorageGRIDに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。</block>
   <block id="d311cb365e159296336d1969d8b3eaa1" category="paragraph">StorageGRIDとBlueXPの両方のライセンス要件を確認する必要があります。</block>
   <block id="eb0c38f90fc27e7262d8f96bbee133fa" category="paragraph">BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをStorageGRIDに接続できるようにします。</block>
   <block id="343d4384d85ca06cf7070e8b9ce58985" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> バックアップターゲットとしてStorageGRIDを準備します</block>
@@ -3974,8 +3964,6 @@ ifdef：aws []</block>
   <block id="dd61dca07c56e04220c21764b917992f" category="section-title">コネクタのネットワーク要件を準備</block>
   <block id="420f74958ffaef4d8f08ce850e97c52e" category="list-text">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。プライベートモードでインストールされている場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> にアクセスし、BlueXPのバックアップとリカバリの各リリースの新機能を確認してください。新しい機能を使用する場合は、手順~に従ってください<block ref="164e4794420610da956934de57a9da8a" category="inline-link-rx"></block>。</block>
   <block id="2c4e4b23bf49a867077416ba2dd23a7d" category="list-text">SaaS環境でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがクラウドにバックアップされます。インターネットにアクセスできないサイトでBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDバケットにバックアップされます。プライベートモードサイトでコネクタに障害が発生した場合は、できます <block ref="21b30d1009822b1f508f80c6007a3164" category="inline-link-macro-rx"></block>。</block>
-  <block id="86a426afb07ffa9282c6529687b1ddd0" category="list-text">ファンアウトバックアップアーキテクチャを使用する場合は、プライマリストレージシステムで次の設定を行う必要があります。</block>
-  <block id="6e3d72c990b9259f1262b3a7a3403e5d" category="list-text">カスケードバックアップアーキテクチャを使用する場合は、セカンダリストレージシステムで次の設定を行う必要があります。</block>
   <block id="113b5e7186c305ad07d9c9c046e30198" category="list-text">を使用しているIPspaceがデフォルトと異なる場合は、オブジェクトストレージにアクセスするための静的ルートの作成が必要になることがあります。</block>
   <block id="08cdeb7ce64fda06111111c8fea66510" category="section-title">バックアップターゲットとしてStorageGRIDを準備します</block>
   <block id="ed7694068a182dc8a1f5bc691be01032" category="section-title">古いバックアップファイルをパブリッククラウドストレージにアーカイブする準備をします</block>
@@ -3986,7 +3974,6 @@ ifdef：aws []</block>
   <block id="337633c8e91ca2d8e0a8de99f528f661" category="list-text">「ドラフト」状態の既存のILMポリシーがある場合は、新しいILMポリシーを作成およびアクティブ化できません。<block ref="8f705117b479c6c746fcadf50adb4986" category="inline-link-rx"></block>。</block>
   <block id="c47ef8c4ea84fc2692a07f1f13a4dc0a" category="paragraph">バックアップのデスティネーションがキャンバスの作業環境として存在する場合は、ONTAPクラスタをオブジェクトストレージにドラッグできます。</block>
   <block id="f6403db43da3baca399962b8fdf07d76" category="list-text">*カスケード*：情報は、プライマリからセカンダリからオブジェクトストレージへ、セカンダリからオブジェクトストレージへと流れます。</block>
-  <block id="637991aaf3d0bbf10fb193c93774551a" category="list-text">*ファンアウト*：情報は、プライマリからセカンダリへ、ソースからオブジェクトストレージへと流れます。</block>
   <block id="749ef9bfd50fd41baeffea89c1ed7056" category="list-text">*プロバイダー*：* StorageGRID *を選択します。</block>
   <block id="d1928cac8c40b2b3b7b9d626779aa44b" category="list-text">*プロバイダ設定*：プロバイダゲートウェイノードのFQDNの詳細、ポート、アクセスキー、シークレットキーを入力します。</block>
   <block id="a77d2d2e75b6e2609083f1568a865982" category="paragraph">アクセスキーとシークレットキーは、ONTAPクラスタにバケットへのアクセスを許可するために作成したIAMユーザのものです。</block>
@@ -4054,7 +4041,6 @@ ifdef：aws []</block>
   <block id="fd8e00004c8fa188a1fbd959a0eb17ba" category="paragraph">入力したリソースグループにBLOBストレージコンテナが作成され、バックアップファイルがそこに格納されます。</block>
   <block id="e1ea8c5cdcdb91c8a11dbc07eb9caa42" category="admonition">ONTAPバックアップジョブ（アドホックジョブとスケジュール済みジョブの両方、スケジュール済みジョブはONTAP 9.13.0以降でのみ表示）およびすべてのリストアジョブのジョブの詳細が表示されます。進行中のジョブと完了したジョブの詳細が表示されます。</block>
   <block id="a43bcfae03cdf5644c6276826ab45140" category="paragraph">通知センターではアラートを確認できるだけでなく、特定のタイプの通知をEメールでアラートとして送信するようにBlueXPを設定することもできます。これにより、システムにログインしていないときでも重要なシステムアクティビティに関する情報を受け取ることができます。<block ref="f55b5f666e66870081886e35a4868f02" category="inline-link-rx"></block>。</block>
-  <block id="c116d91220698401a0a999c9099f35b2" category="paragraph">通知センターには多数のイベントが表示されますが、Eメールアラートがトリガーされるのは次のバックアップイベントとリストアイベントだけです。</block>
   <block id="910e8697aa5e0e59e920af3a4cf26b12" category="admonition">ONTAP 9.13.0以降では、Cloud Volumes ONTAPシステムとオンプレミスONTAPシステムのすべてのアラートが表示されます。Cloud Volumes ONTAP 9.13.0およびオンプレミスのONTAPを搭載したシステムでは、「リストアジョブは完了しましたが、警告あり」に関連するアラートのみが表示されます。</block>
   <block id="309311e3de2537adb09a82ea24c863ec" category="paragraph">デフォルトでは、「Critical」アラートと「Recommendation」アラートがすべてBlueXPアカウント管理者にEメールで送信されます。他のすべてのユーザと受信者は、通知メールを受信しないようにデフォルトで設定されています。ネットアップクラウドアカウントを使用しているBlueXPユーザや、バックアップとリストアのアクティビティに注意が必要なその他の受信者にEメールを送信できます。</block>
   <block id="62b4689602c4298e3a38df54594adea1" category="paragraph">BlueXPのバックアップとリカバリのEメールアラートを受け取るには、[Alerts and Notifications Settings]ページで通知の重大度タイプとして「Critical」、「Warning」、「Error」を選択する必要があります。</block>
@@ -4316,4 +4302,22 @@ ifdef：aws []</block>
   <block id="f717a77f4fa4c437e114a568e845c80e" category="sidebar">オブジェクト設定へのクラスタレベルのバックアップを管理します</block>
   <block id="a7b1a9069e674c0aac2afe848aefc5a0" category="sidebar">追加ボリュームでボリュームのバックアップを有効にします</block>
   <block id="90f7372e4d5f7acc9a7ad384567a8fb1" category="sidebar">レプリケーション関係を管理します</block>
+  <block id="4e94aca278bbfbf09c063f578946bd47" category="paragraph">オンプレミスに既にコネクタがデプロイされている場合は、すべて準備が完了しています。そうでない場合は、ONTAPデータをStorageGRIDにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがStorageGRIDに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。</block>
+  <block id="54c50d39294a1455c6b25fe6e2d434fb" category="paragraph">必要に応じて、オンプレミスの同じ場所にあるセカンダリONTAPシステムに接続してボリュームをレプリケートできます。</block>
+  <block id="cde30b836a89432bbe569f5477e106cb" category="paragraph">新しいバージョンのBlueXPバックアップ/リカバリでは、オブジェクトストレージへのバックアップの作成に加えて、Snapshotコピーやレプリケートされたボリュームのスケジュール設定と作成を行うことができます。これには、バージョン3.9.31以降のBlueXP Connectorが必要です。したがって、すべてのバックアップを管理するために、この最新リリースを入手することをお勧めします。</block>
+  <block id="40d44bba5c6a2c9aca170a8b84c19f0c" category="list-text">ファンアウトバックアップアーキテクチャを使用する場合は、_primary_storageシステムで次の設定を行う必要があります。</block>
+  <block id="e3bd260295f830fcbec8503fe0a5aef8" category="list-text">カスケードバックアップアーキテクチャを使用する場合は、_secondary_storageシステムで次の設定を行う必要があります。</block>
+  <block id="ef58a6d55100435043d388bfdf72c624" category="paragraph">StorageGRID は、次の要件を満たす必要があります。を参照してください<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="c794a55c739e453d58e6bcd42293fda2" category="list-text">StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。<block ref="71eb6cc3bcb687d271a4ec87759d7b9d" category="inline-link-rx"></block>。</block>
+  <block id="c3ca0f055412e6bfd28263e582bd783d" category="list-text">選択するボリュームのSnapLock設定も同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock準拠モードのボリュームは現在サポートされていません）。 ロックされているボリュームとロックされていないボリュームの組み合わせは選択できません。</block>
+  <block id="757ddf3a67f3bb933e1f0daa98d655c1" category="list-text">*アーキテクチャ*:レプリケーションとバックアップの両方を選択した場合は'次のいずれかの情報フローを選択します</block>
+  <block id="6265c5dd2df1738680598ec60ee975a7" category="list-text">*カスケード*：情報はプライマリからセカンダリに流れ、次にセカンダリからオブジェクトストレージに流れます。</block>
+  <block id="6330eaebaad367e2965b4ee081f23be3" category="summary">すべてのバックアップジョブとリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
+  <block id="de7564b6e4d771be6301318ae3cf3193" category="paragraph">開始したバックアップジョブまたはスケジュールされたバックアップジョブのステータス、および開始したリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
+  <block id="8d44a80823662750411d0c8c0de286df" category="paragraph">BlueXPのバックアップ/リカバリのUIとAPIを使用して開始したバックアップ処理とリストア処理、およびシステムで開始されるジョブ（スケジュールされているバックアップ処理など）は、[Job Monitoring]タブで確認できます。ただし、これは、ONTAP 9.13.0以降を実行するCloud Volumes ONTAP システムと、ONTAP 9.13.1以降を実行するオンプレミスのONTAP システムにのみ該当します。以前のバージョンのONTAP を実行している場合は、ユーザが開始したジョブのみが表示されます。</block>
+  <block id="11f3249974d1af28e5974c48a4560eeb" category="list-text">列（Working Environment、SVM、ユーザ名、ワークロード、ポリシー名、 [Snapshot Label]）で、を選択します <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="327b66d091add79b859ef84933343b9b" category="paragraph">ほとんどのフィルタはわかりやすいものです。「ワークロード」のフィルタを使用すると、次のカテゴリのジョブを表示できます。</block>
+  <block id="e0db2fdf8995a741b4ad4157a88c1cae" category="paragraph">通知センターには多数のバックアップおよびリストアイベントが表示されますが、Eメールアラートがトリガーされるのは次のイベントだけです。</block>
+  <block id="45b54b60106a7f59e33240f6ddaac7e1" category="list-text">BlueXPのメニューバーで、を選択します<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="5beb7331041291762b098f18521055a9" category="list-text">通知を確認します。</block>
 </blocks>
