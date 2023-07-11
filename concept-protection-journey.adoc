@@ -50,7 +50,7 @@ image:diagram-321-overview.png["ソースシステムに、Snapshotコピー、�
 
 レプリケートされたボリュームを別のONTAPストレージシステムに作成し、バックアップファイルをクラウドに作成することもできます。または、レプリケートされたボリュームまたはバックアップファイルを作成するだけで選択できます。
 
-要約すると、ONTAP作業環境内のボリュームまたはすべてのボリュームに対して作成できる有効な保護フローは次のとおりです。
+要約すると、ONTAP作業環境内のボリュームに対して作成できる有効な保護フローは次のとおりです。
 
 * ソースボリューム-> Snapshotコピー->レプリケートされたボリューム->バックアップファイル
 * ソースボリューム-> Snapshotコピー->バックアップファイル
@@ -87,11 +87,11 @@ NOTE: レプリケートされたボリュームまたはバックアップフ�
 
 レプリケートされたボリュームとバックアップファイルの両方を作成する場合は、ファンアウトアーキテクチャまたはカスケードアーキテクチャを選択してボリュームをバックアップできます。
 
-a_fan-out_architectureは、Snapshotコピーをデスティネーションストレージシステムとクラウド内のバックアップオブジェクトの両方に個別に転送します。
+ファンアウト*アーキテクチャは、Snapshotコピーをデスティネーションストレージシステムとクラウド内のバックアップオブジェクトの両方に個別に転送します。
 
 image:diagram-321-fanout-detailed.png["ボリュームのSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルを作成および更新する方法を示す図。"]
 
-a_cascade_architectureは、最初にSnapshotコピーをデスティネーションストレージシステムに転送し、次にそのコピーをクラウド内のバックアップオブジェクトに転送します。
+カスケード*アーキテクチャでは、Snapshotコピーが最初にデスティネーションストレージシステムに転送され、次にそのコピーがクラウド内のバックアップオブジェクトに転送されます。
 
 image:diagram-321-cascade-detailed.png["ボリュームのSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルを作成および更新する方法を示す図。"]
 
@@ -124,21 +124,25 @@ NetAppのデフォルトポリシーを使用してバックアップを作成�
 
 レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。カスタムポリシーは、System ManagerまたはONTAPコマンドラインインターフェイス（CLI）を使用して作成できます。
 
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["System Managerを使用してSnapshotポリシーを作成します"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["ONTAP CLIを使用してSnapshotポリシーを作成します"^]
+https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["System Managerを使用してレプリケーションポリシーを作成します"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["ONTAP CLIを使用してレプリケーションポリシーを作成します"^]
-https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["System Managerを使用してバックアップポリシーを作成します"^]
+https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["System Managerを使用してバックアップポリシーを作成"^]
 https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["ONTAP CLIを使用してバックアップポリシーを作成します"^]
 
+*注：* System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous *を選択し、オブジェクトポリシーにバックアップする場合は* Asynchronous *と* Back up to cloud *を選択します。
 
-NOTE: カスケードアーキテクチャを使用してカスタムポリシーを作成する場合は、レプリケートされたボリュームを作成するセカンダリシステムにオブジェクトへのバックアップポリシーを作成する必要があります。デフォルトのポリシーを使用している場合は、すべて設定されています。
-
-BleXPのバックアップおよびリカバリUIでは、オブジェクトストレージポリシーへのバックアップを作成できます。の項を参照してください link:task-manage-backups-ontap.html#add-a-new-backup-policy["新しいバックアップポリシーを追加しています"] を参照してください。Snapshotポリシーとレプリケーションポリシーは、System ManagerまたはONTAP CLIを使用して作成する必要があります。
+BlueXPのバックアップとリカバリのUIで、オブジェクトストレージポリシーへのバックアップを作成できます。の項を参照してください link:task-manage-backups-ontap.html#add-a-new-backup-policy["新しいバックアップポリシーを追加しています"] を参照してください。Snapshotポリシーとレプリケーションポリシーは、System ManagerまたはONTAP CLIを使用して作成する必要があります。
 
 ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。として_admin_vserver（Storage VM）を使用する必要があります `<vserver_name>` を参照してください。
 
 [cols="30,70"]
 |===
 | Policy概要の略 | コマンドを実行します 
+
+
+| 単純なSnapshotポリシー | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
 
 
 | クラウドへのシンプルなバックアップ | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
@@ -158,6 +162,34 @@ BleXPのバックアップおよびリカバリUIでは、オブジェクトス�
 |===
 
 NOTE: クラウドへのバックアップ関係に使用できるのはバックアップポリシーのみです。
+
+
+
+=== ポリシーはどこに配置されていますか？
+
+バックアップポリシーは、使用するバックアップアーキテクチャ（ファンアウトまたはカスケード）に応じてさまざまな場所に配置されます。レプリケーションポリシーとバックアップポリシーは同じようには設計されていません。2つのONTAPストレージシステムとオブジェクトへのバックアップでは、ストレージプロバイダがデスティネーションとして使用されるためです。
+
+Snapshotポリシーは常にプライマリストレージシステムに存在します。
+
+レプリケーションポリシーは常にセカンダリストレージシステムに存在します。
+
+オブジェクトへのバックアップポリシーは、ソースボリュームが配置されているシステム上に作成されます。ファンアウト構成の場合はプライマリクラスタ、カスケード構成の場合はセカンダリクラスタになります。
+
+これらの違いを表に示します。
+
+[cols="25,25,25,25"]
+|===
+| アーキテクチャ | スナップショットポリシー | レプリケーションポリシー | バックアップポリシー 
+
+
+| *ファンアウト* | プライマリ | セカンダリ | プライマリ 
+
+
+| *カスケード* | プライマリ | セカンダリ | セカンダリ 
+|===
+そのため、カスケードアーキテクチャを使用するときにカスタムポリシーを作成する場合は、レプリケートされたボリュームが作成されるセカンダリシステムにレプリケーションポリシーとオブジェクトへのバックアップポリシーを作成する必要があります。ファンアウトアーキテクチャを使用するときにカスタムポリシーを作成する場合は、複製されたボリュームが作成されるセカンダリシステムでレプリケーションポリシーを作成し、プライマリシステムでオブジェクトポリシーにバックアップする必要があります。
+
+すべてのONTAPシステムに存在するデフォルトのポリシーを使用している場合は、すべて設定されています。
 
 
 
@@ -195,29 +227,29 @@ https://www.netapp.tv/details/30567["BlueXPの導入モードに関するビデ�
 
 ifdef::aws[]
 
-* link:task-backup-to-s3.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"]。
-* link:task-backup-onprem-to-aws.html["オンプレミスの ONTAP データを Amazon S3 にバックアップ"]。
+* link:task-backup-to-s3.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"]
+* link:task-backup-onprem-to-aws.html["オンプレミスの ONTAP データを Amazon S3 にバックアップ"]
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* link:task-backup-to-azure.html["Cloud Volumes ONTAP データを Azure Blob にバックアップ"]。
-* link:task-backup-onprem-to-azure.html["オンプレミスの ONTAP データを Azure Blob にバックアップ"]。
+* link:task-backup-to-azure.html["Cloud Volumes ONTAP データを Azure Blob にバックアップ"]
+* link:task-backup-onprem-to-azure.html["オンプレミスの ONTAP データを Azure Blob にバックアップ"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:task-backup-to-gcp.html["Cloud Volumes ONTAP データを Google Cloud にバックアップ"]。
-* link:task-backup-onprem-to-gcp.html["オンプレミスの ONTAP データを Google Cloud にバックアップ"]。
+* link:task-backup-to-gcp.html["Cloud Volumes ONTAP データを Google Cloud にバックアップ"]
+* link:task-backup-onprem-to-gcp.html["オンプレミスの ONTAP データを Google Cloud にバックアップ"]
 
 
 endif::gcp[]
 
-* link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"]。
+* link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"]
 
 
 
