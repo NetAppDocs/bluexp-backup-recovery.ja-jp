@@ -329,6 +329,8 @@ storage.objects.update
 
 デフォルトでは、サービスによってバケットが作成されます。独自のバケットを使用する場合は、バックアップアクティブ化ウィザードを開始する前にバケットを作成し、ウィザードでバケットを選択できます。
 
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["独自のバケットの作成の詳細については、こちらをご覧ください"^]。
+
 
 
 === データ暗号化用の顧客管理暗号化キー（CMEK）を設定します

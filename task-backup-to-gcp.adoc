@@ -39,7 +39,7 @@ Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリューム�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] ライセンス要件を確認
 [role="quick-margin-para"]
-AzureとBlueXPの両方のライセンス要件を確認する必要があります。
+Google CloudとBlueXPの両方のライセンス要件を確認する必要があります。
 
 [role="quick-margin-para"]
 <<ライセンス要件を確認>>。
@@ -170,7 +170,7 @@ cloudkms.keyRings.setIamPolicy
 
 デフォルトでは、サービスによってバケットが作成されます。独自のバケットを使用する場合は、バックアップアクティブ化ウィザードを開始する前にバケットを作成し、ウィザードでバケットを選択できます。
 
-独自のバケットを作成する場合は、バケット名として「netapp-backup」を使用する必要があります。
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["独自のバケットの作成の詳細については、こちらをご覧ください"^]。
 
 
 
