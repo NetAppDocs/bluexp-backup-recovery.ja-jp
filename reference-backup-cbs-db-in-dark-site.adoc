@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database 
-summary: インターネットにアクセスできないサイト（「プライベートモード」）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDバケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。 
+summary: インターネットにアクセスできないサイト（「プライベートモード」）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。 
 ---
 = ダークサイトでBlueXPのバックアップとリカバリのデータをリストア
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: インターネットにアクセスできないサイト（「プラ�
 
 
 [role="lead"]
-インターネットアクセスのないサイト（「プライベートモード」または「ダークサイト」）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDバケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。
+インターネットにアクセスできないサイト（「プライベートモード」）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。
 
 BlueXPのバックアップとリカバリをクラウドプロバイダやインターネットにアクセスできる独自のホストシステムに導入されているSaaS環境で使用する場合は、BlueXPのバックアップとリカバリの重要な設定データがすべてクラウドにバックアップされて保護されます。コネクタ付きの問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的にリストアされます。
 
@@ -46,7 +46,7 @@ BlueXPのバックアップとリカバリシステムを動作状態に戻す�
 システムが正常に動作していることを確認したら、新しいバックアップファイルを作成することをお勧めします。
 
 .必要なもの
-バックアップファイルが保存されているStorageGRIDバケットから、最新のデータベースとインデックスのバックアップにアクセスする必要があります。
+バックアップファイルが保存されているStorageGRIDまたはONTAP S3バケットから、最新のデータベースとインデックスのバックアップにアクセスする必要があります。
 
 * BlueXPのバックアップとリカバリ用MySQLデータベースファイル
 +
@@ -131,7 +131,7 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 
 === ONTAP クラスタとStorageGRID システムを検出
 
-. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["オンプレミスのONTAP 作業環境をすべて検出できます"^] 以前の環境で使用できていたものです。
+. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["オンプレミスのONTAP 作業環境をすべて検出できます"^] 以前の環境で使用できていたものです。これには、S3サーバとして使用しているONTAPシステムも含まれます。
 . https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["StorageGRID システムを検出"^]。
 
 

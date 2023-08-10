@@ -66,6 +66,8 @@ sidebar:
       url: "/task-backup-onprem-to-gcp.html"
     - title: オンプレミスの ONTAP を StorageGRID にバックアップ
       url: "/task-backup-onprem-private-cloud.html"
+    - title: オンプレミスのONTAPをONTAP S3にバックアップ
+      url: "/task-backup-onprem-to-ontap-s3.html"
     - title: ONTAP バックアップを管理します
       url: "/task-manage-backups-ontap.html"
     - title: ONTAP バックアップからリストアする
@@ -257,6 +259,8 @@ homepage:
       flavor: gcp
     - title: オンプレミスの ONTAP から StorageGRID へ
       url: task-backup-onprem-private-cloud.html
+    - title: オンプレミスのONTAPからONTAP S3へ
+      url: task-backup-onprem-to-ontap-s3.html
   - title: ONTAP バックアップファイルを管理します
     links:
     - title: 追加ボリュームでボリュームのバックアップを有効にします
@@ -342,6 +346,8 @@ homepage:
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
     - title: BlueXPのバックアップとリカバリのユースケース
       url: https://bluexp.netapp.com/cloud-backup
+    - title: BlueXPのバックアップとリカバリのビデオ
+      url: https://youtube.com/playlist?list=PLdXI3bZJEw7modoLQEVUHoQ8DJyVk_1wU
     - title: BlueXP Webセミナー
       url: https://bluexp.netapp.com/events
 product-family:

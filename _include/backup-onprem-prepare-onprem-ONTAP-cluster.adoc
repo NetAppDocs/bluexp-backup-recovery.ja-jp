@@ -36,7 +36,7 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["�
 方法をご確認ください https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["クラスタライセンスを管理します"^]。
 
 * 時間とタイムゾーンが正しく設定されている。方法をご確認ください https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["クラスタ時間を設定します"^]。
-* データをレプリケートする場合は、データをレプリケートする前に、ソースボリュームとデスティネーションボリュームで互換性のあるONTAPバージョンが実行されていることを確認する必要があります。
+* データをレプリケートする場合は、データをレプリケートする前に、ソースシステムとデスティネーションシステムで互換性のあるONTAPバージョンが実行されていることを確認する必要があります。
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["SnapMirror 関係に対して互換性のある ONTAP バージョンを表示します"^]。
 

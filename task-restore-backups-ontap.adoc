@@ -154,6 +154,10 @@ NOTE: AzureアーカイブストレージからStorageGRID システムにデー
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム
 Cloud Volumes ONTAP | オンプレミスの ONTAP システム 
+
+
+| ONTAP S3の略 | オンプレミスの ONTAP システム
+Cloud Volumes ONTAP | オンプレミスの ONTAP システム 
 |===
 ifdef::aws[]
 
@@ -191,6 +195,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * StorageGRID の場合は、インターネットアクセスを使用するかどうかに関係なく、コネクタを社内に導入する必要があります
+* ONTAP S3の場合、コネクタは社内環境（インターネットアクセスの有無にかかわらず）またはクラウドプロバイダ環境に導入できます。
 
 
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
@@ -262,6 +267,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームを配置するONTAP クラスタのIPspaceを選択します。
+* ONTAP S3からリストアする場合は、ONTAP S3サーバのFQDNとONTAPがONTAP S3とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキーを選択します。 およびデスティネーションボリュームを配置するONTAPクラスタ内のIPspaceを指定します。
 +
 .. リストアしたボリュームに使用する名前を入力し、ボリュームを配置するStorage VMとアグリゲートを選択します。FlexGroup ボリュームをリストアするときは、複数のアグリゲートを選択できます。デフォルトでは、 * <source_volume_name> _ Restore * がボリューム名として使用されます。
 +
@@ -307,8 +313,13 @@ BlueXPのバックアップとリカバリでは、選択したバックアッ�
 
 ONTAP のバックアップから数ファイルしかリストアしない場合は、ボリューム全体をリストアするのではなく、フォルダまたは個々のファイルをリストアするように選択できます。フォルダとファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。
 
-*注：この時点では、フォルダまたは個 々 のファイルをオブジェクトストレージのバックアップファイルからのみリストアできます。現在のところ、ローカルSnapshotコピーまたはセカンダリ作業環境（レプリケートされたボリューム）にあるバックアップファイルからのファイルとフォルダのリストアはサポートされていません。
+[NOTE]
+====
+* フォルダまたは個 々 のファイルは、現時点ではオブジェクトストレージ内のバックアップファイルからのみリストアできます。現在のところ、ローカルSnapshotコピーまたはセカンダリ作業環境（レプリケートされたボリューム）にあるバックアップファイルからのファイルとフォルダのリストアはサポートされていません。
+* 現在、ONTAP S3オブジェクトストレージ内のボリュームからのファイルとフォルダのリストアはサポートされていません。
 
+
+====
 複数のファイルを選択した場合は、選択したデスティネーションボリュームにすべてのファイルがリストアされます。したがって、ファイルを別のボリュームにリストアする場合は、リストアプロセスを複数回実行する必要があります。
 
 ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォルダ内のすべてのファイルおよびサブフォルダをリストアできます。9.13.0より前のバージョンのONTAP を使用している場合は、そのフォルダのファイルのみがリストアされます。サブフォルダまたはサブフォルダ内のファイルはリストアされません。
@@ -500,6 +511,7 @@ endif::gcp[]
 * オブジェクトストレージ内のバックアップファイルにDataLockおよびRansomware保護が設定されている場合、フォルダレベルのリストアはONTAPのバージョンが9.13.1以降の場合にのみサポートされます。以前のバージョンのONTAP を使用している場合は、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。
 * オブジェクトストレージ内のバックアップファイルがアーカイブストレージにある場合、フォルダレベルのリストアはONTAPのバージョンが9.13.1以降の場合にのみサポートされます。以前のバージョンのONTAP を使用している場合は、アーカイブされていない新しいバックアップファイルからフォルダをリストアできます。または、アーカイブされたバックアップからボリューム全体をリストアしてから、必要なフォルダとファイルにアクセスできます。
 * AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、「High」リストア優先度はサポートされません。
+* 現在、ONTAP S3オブジェクトストレージ内のボリュームからのフォルダのリストアはサポートされていません。
 
 
 ====
@@ -538,6 +550,10 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム
 Cloud Volumes ONTAP | オンプレミスの ONTAP システム 
+
+
+| ONTAP S3の略 | オンプレミスの ONTAP システム
+Cloud Volumes ONTAP | オンプレミスの ONTAP システム 
 |===
 検索と復元の場合、コネクタは次の場所にインストールできます。
 
@@ -563,6 +579,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * StorageGRID の場合は、インターネットアクセスを使用するかどうかに関係なく、コネクタを社内に導入する必要があります
+* ONTAP S3の場合、コネクタは社内環境（インターネットアクセスの有無にかかわらず）またはクラウドプロバイダ環境に導入できます。
 
 
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
@@ -625,7 +642,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* StorageGRID の要件：
+* StorageGRIDおよびONTAP S3の要件：
 +
 構成に応じて、検索とリストアの2つの方法が実装されています。
 
@@ -690,7 +707,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* StorageGRID に格納されたバックアップ用に、コネクタまたはクラウドプロバイダの環境にスペースがプロビジョニングされます。
+* StorageGRIDまたはONTAP S3に格納されたバックアップの場合、コネクタまたはクラウドプロバイダ環境にスペースがプロビジョニングされます。
 
 
 作業環境でインデックス作成がすでに有効になっている場合は ' 次のセクションに進んでデータをリストアしてください
@@ -751,7 +768,7 @@ image:screenshot_restore_step2_search_restore.png["検索条件に一致する�
 ifdef::aws[]
 
 +
-*** Amazon S3 からリストアする場合、デスティネーションボリュームを配置する ONTAP クラスタ内の IPspace を選択し、 ONTAP クラスタに S3 バケットへのアクセスを許可するために作成したユーザのアクセスキーとシークレットキーを入力します。 さらに、必要に応じて、セキュアなデータ転送を行うためのプライベート VPC エンドポイントを選択できます。 link:task-backup-onprem-to-aws.html#cluster-networking-requirements["これらの要件の詳細を参照してください"]。
+*** Amazon S3 からリストアする場合、デスティネーションボリュームを配置する ONTAP クラスタ内の IPspace を選択し、 ONTAP クラスタに S3 バケットへのアクセスを許可するために作成したユーザのアクセスキーとシークレットキーを入力します。 さらに、必要に応じて、セキュアなデータ転送を行うためのプライベート VPC エンドポイントを選択できます。 link:task-backup-onprem-to-aws.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["これらの要件の詳細を参照してください"]。
 
 
 
@@ -762,19 +779,20 @@ endif::aws[]
 
 ifdef::azure[]
 
-* Azure Blobからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceを選択し、VNetとサブネットを選択してデータ転送を保護するプライベートエンドポイントを必要に応じて選択します。 link:task-backup-onprem-to-azure.html#requirements["これらの要件の詳細を参照してください"]。
+* Azure Blobからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceを選択し、VNetとサブネットを選択してデータ転送を保護するプライベートエンドポイントを必要に応じて選択します。 link:task-backup-onprem-to-azure.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["これらの要件の詳細を参照してください"]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Google Cloud Storageからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceと、オブジェクトストレージにアクセスするためのアクセスキーとシークレットキーを選択します。 link:task-backup-onprem-to-gcp.html#requirements["これらの要件の詳細を参照してください"]。
+* Google Cloud Storageからリストアする場合は、デスティネーションボリュームを配置するONTAP クラスタ内のIPspaceと、オブジェクトストレージにアクセスするためのアクセスキーとシークレットキーを選択します。 link:task-backup-onprem-to-gcp.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["これらの要件の詳細を参照してください"]。
 
 
 endif::gcp[]
 
-* StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームが配置されているONTAP クラスタのIPspaceを入力します。 link:task-backup-onprem-private-cloud.html#requirements["これらの要件の詳細を参照してください"]。
+* StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームが配置されているONTAP クラスタのIPspaceを入力します。 link:task-backup-onprem-private-cloud.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["これらの要件の詳細を参照してください"]。
+* ONTAP S3からリストアする場合は、ONTAP S3サーバのFQDNとONTAPがONTAP S3とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキーを選択します。 およびデスティネーションボリュームを配置するONTAPクラスタ内のIPspaceを指定します。 link:task-backup-onprem-to-ontap-s3.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["これらの要件の詳細を参照してください"]。
 
 
 .結果

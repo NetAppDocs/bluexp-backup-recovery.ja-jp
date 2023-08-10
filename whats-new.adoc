@@ -18,6 +18,50 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2023年8月1日
+
+[IMPORTANT]
+====
+重要なセキュリティ強化のため、パブリッククラウド環境内のバックアップおよびリカバリリソースを管理するために、コネクタに2つの追加エンドポイントへのアウトバウンドインターネットアクセスが必要になりました。これらのエンドポイントがファイアウォールでホワイトリストに登録されていない場合は、UIに「Service Unavailable」または「Failed to determine service status」というエラーが表示されます。
+
+\https://api.cloud.netapp.com
+\https://netapp-cloud-account.auth0.com/userinfo
+
+====
+
+
+=== S3に設定されたONTAPシステムでバケットへのボリュームのバックアップがサポートされるようになりました。
+
+Simple Storage Service（S3）用に設定されたONTAPシステムを使用して、オブジェクトストレージにボリュームをバックアップできるようになりました。これは、オンプレミスのONTAPシステムとCloud Volumes ONTAPシステムの両方でサポートされます。この構成は、クラウド環境およびインターネットアクセスのないオンプレミス環境（「プライベート」モード展開）でサポートされます。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-ontap-s3.html["詳細はこちら。"]。
+
+
+
+=== 保護対象ボリュームの既存のSnapshotをバックアップファイルに含めることができるようになりました。
+
+これまでは、（最新のSnapshotコピーから始めるのではなく）最初のバックアップファイルに読み書き可能ボリュームの既存のSnapshotコピーを含めることができました。読み取り専用ボリューム（データ保護ボリューム）の既存のSnapshotコピーがバックアップファイルに含まれていませんでした。「DP」ボリュームのバックアップファイルに古いSnapshotコピーを含めるように選択できるようになりました。
+
+バックアップウィザードの最後に、これらの「既存のSnapshot」を選択するためのプロンプトが表示されます。
+
+
+
+=== BlueXPのバックアップとリカバリでは、今後追加されるボリュームの自動バックアップはサポートされなくなります。
+
+これまでは、バックアップウィザードのチェックボックスをオンにして、選択したバックアップポリシーをクラスタに追加するすべてのボリュームに適用できました。この機能は、ユーザーからのフィードバックとこの機能の使用不足に基づいて削除されました。クラスタに追加された新しいボリュームのバックアップは、手動で有効にする必要があります。
+
+
+
+=== ジョブ監視ページが更新され、新機能が追加されました。
+
+[Job Monitoring]ページに、3-2-1バックアップ戦略に関する詳細情報が表示されるようになりました。また、バックアップ戦略に関連する追加のアラート通知も提供されます。
+
+[Backup lifecycle（バックアップライフサイクル）]タイプフィルタの名前が[Retention（保持）]に変更されました。このフィルタを使用して、バックアップのライフサイクルを追跡し、すべてのバックアップコピーの有効期限を特定します。「保持」ジョブタイプには、BlueXPのバックアップとリカバリで保護されているボリュームで開始されたSnapshot削除ジョブがすべてキャプチャされます。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["更新されたジョブモニタの詳細"]。
+
+
+
 == 2023年7月6日
 
 
@@ -616,61 +660,3 @@ Cloud Backupを使用して、SnapLock Enterpriseボリュームをパブリッ�
 * 毎年のスケジュールでバックアップを実行できるようになりました。年単位のバックアップの場合、デフォルトの保持期間は1ですが、この値を変更して、以前の多数のバックアップファイルにアクセスできるようにすることができます。
 * バックアップポリシーに名前を付けておくと、よりわかりやすいテキストでポリシーを識別できます。
 
-
-
-
-== 2022年6月14日
-
-
-
-=== インターネットにアクセスできないサイトのオンプレミスONTAP クラスタデータをバックアップするサポートが追加されました
-
-オンプレミスのONTAP クラスタが、インターネットにアクセスできないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）にある場合は、Cloud Backupを使用して、同じサイトにあるNetApp StorageGRID システムにボリュームデータをバックアップできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.19以降)もオフラインサイトに配置する必要があります。
-
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-private-cloud.html["オフラインサイトのStorageGRID にONTAP データをバックアップする方法を参照してください"]。
-
-
-
-=== Cloud Backup for Virtual Machines 1.1.0のGA版になりました
-
-SnapCenter Plug-in for VMware vSphereをBlueXPと統合することで、仮想マシン上のデータを保護できます。データストアをクラウドにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereにリストアする作業は簡単です。
-
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protect-vm-data.html["仮想マシンをクラウドに保護する方法については、こちらをご覧ください"]。
-
-
-
-=== クラウドのリストアインスタンスは、ONTAP の参照とリストア機能では必要ありません
-
-S3およびBLOBストレージからのファイルレベルの参照およびリストア処理に必要な、別のCloud Restoreインスタンス/仮想マシン。このインスタンスは使用していないときにシャットダウンされますが、ファイルのリストアに時間とコストがかかります。この機能は、必要に応じてコネクタに導入される無償のコンテナに置き換えられました。これには、次の利点があります。
-
-* ファイルレベルのリストア処理のための追加コストは不要です
-* ファイルレベルのリストア処理が高速化されます
-* Connectorがオンプレミスにインストールされている場合のクラウドからのファイルの参照とリストアの処理がサポートされます
-
-
-以前に使用していた場合は、Cloud Restoreインスタンス/VMが自動的に削除されることに注意してください。Cloud Backupプロセスが1日に1回実行され、古いCloud Restoreインスタンスがすべて削除されます。この変更は完全に透過的に行われます。データへの影響はなく、バックアップジョブやリストアジョブの変更は通知されません。
-
-
-
-=== Google CloudおよびStorageGRID ストレージからのファイルのサポートを参照してリストアできます
-
-前述のように、参照および復元操作用のコンテナが追加されたことで、Google CloudおよびStorageGRID システムに保存されているバックアップファイルからファイルの復元操作を実行できるようになりました。現在は、参照とリストアを使用して、すべてのパブリッククラウドプロバイダとStorageGRID からファイルをリストアできます。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restoring-ontap-data-using-browse-restore["参照リストアを使用してONTAP バックアップからボリュームとファイルをリストアする方法を参照してください"]。
-
-
-
-=== ドラッグアンドドロップして、Cloud Backup to S3ストレージを有効にします
-
-バックアップのAmazon S3デスティネーションがキャンバス上の作業環境として存在する場合、オンプレミスのONTAP クラスタまたはCloud Volumes ONTAP システム（AWSにインストール）をAmazon S3作業環境にドラッグしてセットアップウィザードを開始できます。
-
-
-
-=== Kubernetesクラスタ内に新しく作成されたボリュームにバックアップポリシーを自動的に適用します
-
-Cloud Backupをアクティブ化したあとにKubernetesクラスタに新しい永続ボリュームを追加した場合は、以前にそれらのボリュームのバックアップを忘れずに設定する必要がありました。新しく作成したボリュームに自動的に適用するポリシーを選択できます https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backups-kubernetes.html#setting-a-backup-policy-to-be-assigned-to-new-volumes["[バックアップ設定]ページから選択します"] Cloud Backupをすでにアクティブ化しているクラスタの場合
-
-
-
-=== Cloud Backup APIを使用して、バックアップとリストアの処理を管理できるようになりました
-
-APIはにあります https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html[]。を参照してください link:api-backup-restore.html["このページです"] を参照してください。

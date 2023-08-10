@@ -201,12 +201,12 @@ Snapshotポリシーは常にプライマリストレージシステムに存在
 
 バケットはBlueXPまたはクラウドプロバイダから作成できます。
 
-* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["BlueXPでS3バケットを作成"]
+* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["BlueXPでAmazon S3バケットを作成"]
 * https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html["BlueXPからAzure BLOBストレージアカウントを作成します"]
 * https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["BlueXPからGoogle Cloud Storageバケットを作成"]
 
 
-*注：*現時点では、StorageGRIDシステムでバックアップを作成する際に独自のS3バケットを使用することはできません。
+*注：*現時点では、StorageGRIDシステムまたはONTAP S3へのバックアップを作成するときに、独自のS3バケットを使用することはできません。
 
 「netapp-backup-xxxxxx」以外のバケットプレフィックスを使用する場合は、コネクタIAMロールのS3権限を変更する必要があります。詳細については、AWS S3へのバックアップの作成に関するトピックを参照してください。
 
@@ -274,6 +274,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"]
+* link:task-backup-onprem-to-ontap-s3.html["オンプレミスのONTAPをONTAP S3にバックアップ"]
 
 
 
@@ -302,7 +303,8 @@ endif::azure[]
 
 インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、BlueXPのバックアップとリカバリを使用してボリュームデータをバックアップできます。この場合は、同じサイトのLinuxホストにBlueXP Connectorを導入する必要があります。
 
-* ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。方法を参照してください  link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"] を参照してください。
+* ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。方法を参照してください link:task-backup-onprem-private-cloud.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"] を参照してください。
+* ローカルのオンプレミスONTAPシステムから、ローカルのオンプレミスONTAPシステムまたはS3オブジェクトストレージ用に構成されたCloud Volumes ONTAPシステムにデータをバックアップできます。方法を参照してください link:task-backup-onprem-to-ontap-s3.html["オンプレミスのONTAPデータをONTAP S3にバックアップ"] を参照してください。
 ifdef：aws []
 
 

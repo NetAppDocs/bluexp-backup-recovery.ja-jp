@@ -97,8 +97,6 @@ Header:
 
 次の例は、AzureクラウドのEast-US-2リージョンで、日単位、時間単位、週単位のラベルが180日に設定された新しいポリシーを使用して、作業環境でBlueXPのバックアップとリカバリをアクティブ化するAPI呼び出しを示しています。これにより、作業環境でのバックアップのみが有効になり、ボリュームはバックアップされません。
 
-「auto-backup-enabled」：「true」を選択すると、システムにすでに存在するすべてのボリュームと、以降のボリュームもバックアップされます。
-
 .API要求
 BlueXPアカウントIDが使用されていることがわかります `account-DpTFcxN3`、BlueXPコネクタID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`およびユーザートークン `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` をクリックします。
 

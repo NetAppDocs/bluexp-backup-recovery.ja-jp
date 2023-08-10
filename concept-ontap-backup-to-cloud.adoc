@@ -114,7 +114,28 @@ ifdef：aws []
 
 
 | オンプレミスの ONTAP システム | Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] Azure Blob endif：azure [] ifdef：gcp [] Google Cloud Storage endif：GCP [] NetApp StorageGRID 
+オンプレミスの ONTAP システム | ifdef：aws []
+
+Amazon S3
+
+endif：：aws[]
+
+
+ifdef：Azure []
+
+Azure Blob の略
+
+endif：：azure[]
+
+
+ifdef ::gcp[]
+
+Google クラウドストレージ
+
+endif：GCP []
+
+NetApp StorageGRID
+ONTAP S3の略 
 |===
 
 
@@ -143,6 +164,10 @@ ifdef：aws []
 
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム
+Cloud Volumes ONTAP | オンプレミスの ONTAP システム 
+
+
+| ONTAP S3の略 | オンプレミスの ONTAP システム
 Cloud Volumes ONTAP | オンプレミスの ONTAP システム 
 |===
 「オンプレミス ONTAP システム」とは、 FAS 、 AFF 、 ONTAP Select の各システムを指します。
@@ -231,6 +256,8 @@ BlueXPのバックアップとリカバリには、次の消費モデルがあ�
 * * Annual *：クラウドプロバイダの市場から年間契約。
 
 
+Backupライセンスは、オブジェクトストレージからのバックアップとリストアにのみ必要です。Snapshotコピーとレプリケートされたボリュームを作成するためのライセンスは必要ありません。
+
 
 
 === お客様所有のライセンスを使用
@@ -298,6 +325,8 @@ image:diagram-backup-recovery-general.png["BlueXPのバックアップおよび�
 
 === バックアップの保管場所
 
+バックアップは、バックアップのタイプに基づいて異なる場所に配置されます。
+
 * _Snapshotコピー_を、ソースの作業環境のソースボリュームに配置します。
 * _replicated volumes_セカンダリストレージシステム（Cloud Volumes ONTAPまたはオンプレミスのONTAPシステム）に配置します。
 * _バックアップコピー_は、BlueXPがクラウドアカウントに作成するオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではオブジェクトストアに「NetApp-backup-clusteruuid」という名前が付けられます。このオブジェクトストアは削除しないでください。
@@ -325,9 +354,11 @@ ifdef::gcp[]
 endif::gcp[]
 
 [+]
-** StorageGRIDでは、オブジェクトストアバケットに既存のストレージアカウントが使用されます。
+** StorageGRIDでは、BlueXPはS3バケットに既存のテナントアカウントを使用します。
 
 [+]
+** ONTAP S3では、BlueXPはS3バケットに既存のユーザアカウントを使用します。
+
 あとでクラスタのデスティネーションオブジェクトストアを変更する場合は、が必要になります link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["作業環境のBlueXPバックアップとリカバリの登録を解除します"^]をクリックし、新しいクラウドプロバイダ情報を使用してBlueXPのバックアップとリカバリを有効にします。
 
 
