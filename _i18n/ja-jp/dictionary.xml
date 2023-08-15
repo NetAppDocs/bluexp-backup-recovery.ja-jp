@@ -1822,7 +1822,6 @@
   <block id="f68bf28051d836364652b5a91d1bcd3a" category="list-text">BlueXPアカウントID (これはサポートサイトではテナントIDと呼ばれます)を入力し'[*Submit*]をクリックしてライセンスファイルをダウンロードします</block>
   <block id="56273f3344c87fabbf5196fba9816fff" category="inline-image-macro">ライセンスの取得ダイアログボックスを示すスクリーンショット。テナント ID を入力し、送信をクリックしてライセンスファイルをダウンロードします。</block>
   <block id="7ca3a83129f844a42c263755a0fa4a32" category="paragraph"><block ref="7ca3a83129f844a42c263755a0fa4a32" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="257ff1df6b80ed0bf9b3463d53be79f9" category="paragraph">BlueXPアカウントIDを確認するには、BlueXPの上部にある[*Account*]ドロップダウンを選択し、アカウントの横にある[*Manage Account*]をクリックします。アカウント ID は、 [ 概要 ] タブにあります。</block>
   <block id="8d080a0104c2b8b29f5fc2be913926af" category="list-text">BlueXPメニューから、「ガバナンス」&gt;「デジタルウォレット」をクリックし、「*データサービスライセンス*」タブを選択します。</block>
   <block id="ea9a2b9ac34c9aab133f21aa5b67976e" category="list-text">[ ライセンスの追加 ] をクリックします。</block>
   <block id="c1b2dc0798d3960e25b8a12c751f53ec" category="list-text">_ ライセンスの追加 _ ダイアログで、ライセンス情報を入力し、 * ライセンスの追加 * をクリックします。</block>
@@ -4456,7 +4455,6 @@ ONTAP S3の略</block>
   <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">バックアップファイルが保存されているStorageGRIDまたはONTAP S3バケットから、最新のデータベースとインデックスのバックアップにアクセスする必要があります。</block>
   <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> 以前の環境で使用できていたものです。これには、S3サーバとして使用しているONTAPシステムも含まれます。</block>
   <block id="ca8395d0f02816c74d48e7e263466096" category="section-title">2023年8月1日</block>
-  <block id="a94cc1f58758ef957ce137579b41fcfe" category="paragraph">重要なセキュリティ強化のため、パブリッククラウド環境内のバックアップおよびリカバリリソースを管理するために、コネクタに2つの追加エンドポイントへのアウトバウンドインターネットアクセスが必要になりました。これらのエンドポイントがファイアウォールでホワイトリストに登録されていない場合は、UIに「Service Unavailable」または「Failed to determine service status」というエラーが表示されます。</block>
   <block id="0d087a4d2e8c88a4f4a80cf0360fd410" category="paragraph">\https://api.cloud.netapp.com
 \https://netapp-cloud-account.auth0.com/userinfo</block>
   <block id="e752fa0925615f823987d88e457d59fd" category="section-title">S3に設定されたONTAPシステムでバケットへのボリュームのバックアップがサポートされるようになりました。</block>
@@ -4474,4 +4472,6 @@ ONTAP S3の略</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>。</block>
   <block id="f0de192c113fd89f1d8027714c573105" category="sidebar">オンプレミスのONTAPからONTAP S3へ</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXPのバックアップとリカバリのビデオ</block>
+  <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">BlueXPアカウントIDを確認するには、BlueXPの上部にある[*Account*]ドロップダウンを選択し、アカウントの横にある[*Manage Account*]をクリックします。アカウント ID は、 [ 概要 ] タブにあります。インターネットにアクセスできないプライベートモードのサイトでは、* account-DARKSITE1*を使用します。</block>
+  <block id="c098886cae0a337e7ab216f45f15ced7" category="paragraph">重要なセキュリティ強化のため、パブリッククラウド環境内のバックアップおよびリカバリリソースを管理するために、コネクタに2つの追加エンドポイントへのアウトバウンドインターネットアクセスが必要になりました。これらのエンドポイントがファイアウォールの「許可」リストに追加されていない場合は、UIに「Service Unavailable」または「Failed to determine service status」というエラーが表示されます。</block>
 </blocks>

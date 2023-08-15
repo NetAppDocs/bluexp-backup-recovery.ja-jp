@@ -64,6 +64,8 @@ sidebar:
     - title: オンプレミスの ONTAP から Google Cloud へのバックアップ
       flavor: gcp
       url: "/task-backup-onprem-to-gcp.html"
+    - title: オンプレミスのONTAPをONTAP S3にバックアップ
+      url: "/task-backup-onprem-to-ontap-s3.html"
     - title: オンプレミスの ONTAP を StorageGRID にバックアップ
       url: "/task-backup-onprem-private-cloud.html"
     - title: オンプレミスのONTAPをONTAP S3にバックアップ
@@ -257,6 +259,8 @@ homepage:
     - title: オンプレミスの ONTAP から Google Cloud へ
       url: task-backup-onprem-to-gcp.html
       flavor: gcp
+    - title: オンプレミスのONTAPからONTAP S3へ
+      url: task-backup-onprem-to-ontap-s3.html
     - title: オンプレミスの ONTAP から StorageGRID へ
       url: task-backup-onprem-private-cloud.html
     - title: オンプレミスのONTAPからONTAP S3へ
