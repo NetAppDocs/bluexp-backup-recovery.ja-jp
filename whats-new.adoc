@@ -22,10 +22,9 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 [IMPORTANT]
 ====
-重要なセキュリティ強化のため、パブリッククラウド環境内のバックアップおよびリカバリリソースを管理するために、コネクタに2つの追加エンドポイントへのアウトバウンドインターネットアクセスが必要になりました。これらのエンドポイントがファイアウォールの「許可」リストに追加されていない場合は、UIに「Service Unavailable」または「Failed to determine service status」というエラーが表示されます。
+重要なセキュリティ強化のため、パブリッククラウド環境内のバックアップとリカバリのリソースを管理するために、Connectorに追加のエンドポイントへのアウトバウンドインターネットアクセスが必要になりました。このエンドポイントがファイアウォールの[Allowed]リストに追加されていない場合は、UIに「Service Unavailable」または「Failed to determine service status」というエラーが表示されます。
 
-\https://api.cloud.netapp.com
-\https://netapp-cloud-account.auth0.com/userinfo
+\https://netapp-cloud-account.auth0.com
 
 ====
 

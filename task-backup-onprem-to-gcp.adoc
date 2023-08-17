@@ -34,7 +34,7 @@ NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Sel
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] BlueXPコネクタを準備します
 [role="quick-margin-para"]
-Google Cloudまたはオンプレミスにすでにコネクタがデプロイされている場合は、準備は完了です。そうでない場合は、ONTAPデータをGoogle CloudストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがGoogle Cloudに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。
+Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをGoogle CloudストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがGoogle Cloudに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。
 
 [role="quick-margin-para"]
 <<BlueXPコネクタを準備します,コネクタの作成方法と、必要なネットワーク設定の定義方法について説明します。>>
