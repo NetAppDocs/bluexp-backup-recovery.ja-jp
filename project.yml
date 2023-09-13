@@ -46,6 +46,8 @@ sidebar:
       url: "/concept-ontap-backup-to-cloud.html"
     - title: 保護対策を計画しましょう
       url: "/concept-protection-journey.html"
+    - title: ONTAPボリュームのポリシーを管理します。
+      url: "/task-create-policies-ontap.html"
     - title: Cloud Volumes ONTAP を Amazon S3 にバックアップします
       flavor: aws
       url: "/task-backup-to-s3.html"

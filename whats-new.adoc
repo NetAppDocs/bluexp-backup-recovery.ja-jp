@@ -18,6 +18,34 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2023年9月11日
+
+
+
+=== ONTAPデータの新しいポリシー管理
+
+このリリースには、UI内で、ONTAPデータのオブジェクトストレージへのバックアップ用のカスタムSnapshotポリシー、レプリケーションポリシー、およびポリシーを作成する機能が含まれています。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["ポリシーの詳細"]。
+
+
+
+=== ONTAP S3オブジェクトストレージ内のボリュームからのファイルとフォルダのリストアのサポート
+
+これまでは、ボリュームがONTAP S3オブジェクトストレージにバックアップされている場合、[Browse & Restore]機能を使用してファイルやフォルダをリストアすることはできませんでした。このリリースでは、この制限はなくなりました。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["データのリストアに関する詳細情報"]。
+
+
+
+=== SnapLockボリュームのバックアップとリストアのサポートの追加
+
+バックアップとリカバリで、SnapLockコンプライアンスまたはSnapLockエンタープライズ保護モードを使用して設定されたFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["ONTAPデータの保護に関する詳細情報"]。
+
+
+
 == 2023年8月1日
 
 [IMPORTANT]

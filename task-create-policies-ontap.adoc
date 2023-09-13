@@ -1,0 +1,195 @@
+---
+sidebar: sidebar 
+permalink: task-create-policies-ontap.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+summary: NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーによって、バックアップのタイプ、バックアップアーキテクチャ、ストレージシステム、バックアップ頻度が決まります。 
+---
+= ONTAPボリュームのバックアップポリシーを管理します。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーは、バックアップの頻度、バックアップが作成される時間、および保持されるバックアップファイルの数を制御します。
+
+アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードを開始する前にポリシーを作成する必要があります。
+
+デフォルトのバックアップポリシーについては、を参照してください。 link:concept-protection-journey.html["保護対策を計画しましょう"]。
+
+BlueXPのバックアップとリカバリでは、ONTAPデータのバックアップにSnapshot、レプリケーション、オブジェクトストレージへのバックアップの3種類が用意されています。使用するアーキテクチャとバックアップのタイプにより、ポリシーは異なる場所に配置されます。
+
+[cols="25,25,25,25"]
+|===
+| アーキテクチャ | Snapshotポリシーの格納場所 | レプリケーションポリシーの格納場所 | オブジェクトポリシーの格納場所へのバックアップ 
+
+
+| *ファンアウト* | プライマリ | セカンダリ | プライマリ 
+
+
+| *カスケード* | プライマリ | セカンダリ | セカンダリ 
+|===
+環境、設定、保護タイプに応じて、次のツールを使用してバックアップポリシーを作成します。
+
+* BlueXPのUI
+* System ManagerのUI
+* ONTAP CLI
+
+
+
+TIP: System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous *を選択し、オブジェクトポリシーにバックアップする場合は* Asynchronous *および* Back up to cloud *を選択します。
+
+
+
+== 作業環境のポリシーを表示する
+
+. BlueXP UIで、*[ボリューム]*>*[バックアップ設定]*を選択します。
+. [Backup Settings]ページで作業環境を選択し、*[Actions]*を選択します。 image:icon-action.png["アクションアイコン"] アイコンをクリックし、*[Policies management]*を選択します。
++
+[Policies]管理ページが表示されます。
+
++
+image:screenshot_policies_management.png["[ポリシー管理]ページ"]
+
++
+Snapshotポリシーはデフォルトで表示されます。
+
+. 作業環境の他のポリシーを表示するには、*[レプリケーションポリシー]*または*[バックアップポリシー]*を選択します。バックアップ計画に既存のポリシーを使用できる場合は、設定が完了します。特性の異なるポリシーが必要な場合は、このページから新しいポリシーを作成できます。
+
+
+
+
+== Snapshot ポリシーを作成します
+
+3-2-1戦略の一環として、*プライマリ*ストレージ・システム上にボリュームのSnapshotコピーを作成します。
+
+ポリシー作成プロセスの一環として、スケジュールと保持を示すSnapshotラベルとSnapMirrorラベルを特定します。事前定義されたラベルを使用するか、独自のラベルを作成できます。
+
+.手順
+. [ポリシー]ページで、*[新しいポリシーの作成]*>*[Snapshotポリシーの作成]*を選択します。
+. ポリシー名を指定します。
+. Snapshotスケジュールを選択します。最大5つのラベルを設定できます。または、スケジュールを作成します。
+. スケジュールを作成する場合は、次の手順を実行します。
++
+.. 毎時、毎日、毎週、毎月、または毎年の頻度を選択します。
+.. スケジュールと保持を示すSnapshotラベルを指定します。
+.. スナップショットを作成するタイミングと頻度を入力します。
+.. Retention：保持するSnapshotの数を入力します。
+
+
+. 「 * Create * 」を選択します。
+
+
+
+
+=== カスケードアーキテクチャを使用したSnapshotポリシーの例
+
+この例では、2つのクラスタを含むSnapshotポリシーを作成します。
+
+. クラスタ1：
++
+.. ポリシーページで[Cluster 1]を選択します。
+.. [Replication]セクションと[Backup to Object]ポリシーセクションは無視します。
+.. Snapshotポリシーを作成します。
+
+
+. クラスタ2：
++
+.. [Policy]ページで[Cluster 2]を選択します。
+.. [Snapshot policy]セクションは無視します。
+.. [Replication]および[Backup to]オブジェクトポリシーを設定します。
+
+
+
+
+
+
+== レプリケーションポリシーを作成します。
+
+3-2-1戦略には、別のストレージシステムにボリュームをレプリケートすることが含まれる場合があります。レプリケーションポリシーは*セカンダリ*ストレージシステムにあります。
+
+.手順
+. [ポリシー]ページで、*[新しいポリシーの作成]*>*[新しいレプリケーションポリシーの作成]*を選択します。
+. [ポリシーの詳細]セクションで、ポリシー名を指定します。
+. 各ラベルの保持期間を示すSnapMirrorラベル（最大5つ）を指定します。
+. 転送スケジュールを指定します。
+. 「 * Create * 」を選択します。
+
+
+
+
+== オブジェクトストレージへのバックアップポリシーの作成
+
+3-2-1の戦略には、ボリュームをオブジェクトストレージにバックアップすることが含まれます。
+
+このストレージポリシーは、バックアップアーキテクチャに応じて、さまざまなストレージシステムの場所に配置されます。
+
+* ファンアウト：プライマリストレージシステム
+* カスケード：セカンダリストレージシステム
+
+
+.手順
+. [ポリシー管理]ページで、*[新しいポリシーの作成]*>*[新しいバックアップポリシーの作成]*を選択します。
+. [ポリシーの詳細]セクションで、ポリシー名を指定します。
+. 各ラベルの保持期間を示すSnapMirrorラベル（最大5つ）を指定します。
+. 転送スケジュールやバックアップをアーカイブするタイミングなど、設定を指定します。
+. （オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。
++
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定に関する詳細情報"]。
+
+. （オプション）バックアップが変更または削除されないように保護するには、*[DataLock & Ransomware protection]*オプションを選択します。
++
+クラスタでONTAP 9.11.1以降を使用している場合は、_DataLock_and_Ransomware protection_を設定することで、バックアップを削除から保護できます。
+
++
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
+
+. 「 * Create * 」を選択します。
+
+
+
+
+== ポリシーを編集します。
+
+カスタムのSnapshot、レプリケーション、またはバックアップポリシーを編集できます。
+
+バックアップポリシーの変更は、そのポリシーを使用しているすべてのボリュームに反映されます。
+
+.手順
+. [ポリシー管理]ページでポリシーを選択し、*[操作]* image:icon-action.png["アクションアイコン"] アイコンをクリックし、*[ポリシーの編集]*を選択します。
++
+
+NOTE: このプロセスは、レプリケーションポリシーとバックアップポリシーについても同じです。
+
+. [Edit Policy]ページで、変更を行います。
+. [ 保存（ Save ） ] を選択します。
+
+
+
+
+== ポリシーを削除する
+
+どのボリュームにも関連付けられていないポリシーも削除できます。
+
+ボリュームに関連付けられているポリシーを削除する場合は、先にボリュームからポリシーを削除する必要があります。
+
+.手順
+. [ポリシー管理]ページでポリシーを選択し、*[操作]* image:icon-action.png["アクションアイコン"] アイコンをクリックし、*[Snapshotポリシーの削除]*を選択します。
+. 「 * 削除」を選択します。
+
+
+
+
+== 詳細については、こちらをご覧ください
+
+System ManagerまたはONTAP CLIを使用してポリシーを作成する手順については、以下を参照してください。
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["System Managerを使用してSnapshotポリシーを作成する"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["ONTAP CLIを使用したSnapshotポリシーの作成"^]
+https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["System Managerを使用してレプリケーションポリシーを作成します"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["ONTAP CLIを使用してレプリケーションポリシーを作成します"^]
+https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["System Managerを使用してオブジェクトストレージポリシーへのバックアップを作成する"^]
+https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["ONTAP CLIを使用したオブジェクトストレージポリシーへのバックアップの作成"^]
