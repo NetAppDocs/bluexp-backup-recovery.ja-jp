@@ -2094,7 +2094,6 @@
   <block id="01e76ab0dacc58799dc14adbdc705ac7" category="section-title">2023年3月9日</block>
   <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">フォルダレベルのリストア処理に、すべてのサブフォルダとファイルが含まれるようになりました</block>
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">以前は、フォルダをリストアしたときに、そのフォルダのファイルのみがリストアされました。サブフォルダやサブフォルダ内のファイルはリストアされませんでした。ONTAP 9.13.0以降を使用している場合は、選択したフォルダ内のすべてのサブフォルダとファイルが復元されます。これにより、トップレベルフォルダに複数のフォルダがネストされている場合に、時間とコストを大幅に節約できます。</block>
-  <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">詳細フィルタの使用方法を参照してください</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。</block>
   <block id="dd9313799fa929f642611d4d86e9e772" category="paragraph">特定の「SVM」内のデータを検索できるのは、最初に作業環境を選択した場合のみです。</block>
@@ -2990,7 +2989,6 @@
   <block id="cfc826b330f7a25cc3c4e115a9fcca13" category="paragraph">BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="bb86d78b7593b3e1252f277b7dd6e017" category="inline-link-rx"></block> を参照してください。</block>
   <block id="3f95b7ff004c9ea7ba2c076aa81ddbd8" category="list-text">すべてのジョブをレポートするためのCSVファイルをダウンロードできるほか、単一のジョブのJSONファイルをダウンロードして詳細を確認できるようになりました。<block ref="c5e8ac86e60de65889ee067b8ca8ac22" category="inline-link-rx"></block>。</block>
   <block id="aca6a48e798dafa8a873544468b60e06" category="list-text">「Scheduled job failure」と「Restore job completes but with warnings」という2つの新しいバックアップジョブアラートが追加されました。<block ref="a4848a9ae757d04f84e693376feb04c0" category="inline-link-rx"></block>。</block>
-  <block id="cb388daef1ecf4d75abae922da7c4ccd" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
   <block id="7397c46a6bf6fde87c1217e8c8bbab15" category="list-text">[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 <block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>。</block>
   <block id="72577c9cc3c11c1b1c16727589471767" category="paragraph">この機能は、オンプレミスクラスタがONTAP 9.12.1以降を使用し、StorageGRID システムが11.4以降を使用している場合に使用できます。<block ref="a928050165abd52aa438367540434489" category="inline-link-rx"></block>。</block>
   <block id="3171c3474d761b0543c2bd83d1d3f702" category="paragraph">DataLockとRansomware Protectionは、Azure Blobに保存されたバックアップファイルでサポートされるようになりました。Cloud Volumes ONTAP またはオンプレミスONTAP システムでONTAP 9.12.1以降を実行している場合、バックアップファイルをロックしてスキャンし、ランサムウェアの可能性を検出できるようになりました。<block ref="2045a684ba4b47f5626fcfb6a06714da" category="inline-link-rx"></block>。</block>
@@ -4581,4 +4579,6 @@ ONTAP S3の略</block>
   <block id="33846815732f0a61e794b0e44401b00f" category="admonition">カスタムポリシーを作成するには、を参照してください。
 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">ONTAPボリュームのポリシーを管理します。</block>
+  <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">アウトバウンド接続が制限されているサイトのCloud Volumes ONTAPシステムからデータをバックアップする機能</block>
+  <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。これには、商用地域のLinuxホストに「制限モード」でコネクタをインストールし、そこにCloud Volumes ONTAPシステムを展開する必要があります。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
 </blocks>

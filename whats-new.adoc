@@ -306,9 +306,9 @@ Cloud Volumes ONTAP システムからAzureストレージへのバックアッ�
 
 
 
-=== ダークサイトのCloud Volumes ONTAP システムからデータをバックアップする機能
+=== アウトバウンド接続が制限されているサイトのCloud Volumes ONTAPシステムからデータをバックアップする機能
 
-AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。そのためには、商用地域のLinuxホストにコネクタをインストールし、そこにCloud Volumes ONTAP システムを展開する必要があります。を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
+AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。これには、商用地域のLinuxホストに「制限モード」でコネクタをインストールし、そこにCloud Volumes ONTAPシステムを展開する必要があります。を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Cloud Volumes ONTAP データをAzure Blobにバックアップしています"]。
 
 
 
