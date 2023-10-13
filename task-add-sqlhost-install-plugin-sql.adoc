@@ -1,0 +1,380 @@
+---
+sidebar: sidebar 
+permalink: task-add-sqlhost-install-plugin-sql.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SQL, SQL, database, host, install, add host, discover 
+summary: 各SQLデータベースホストにSnapCenter Plug-in for SQLをインストールします。 
+---
+= SnapCenter Plug-in for SQL Serverのインストールとデータベースホストの追加
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+各SQLデータベースホストにSnapCenter Plug-in for SQL Serverをインストールし、データベースホストを追加し、データベースインスタンスを検出して、データベースインスタンスのクレデンシャルを設定する必要があります。
+
+
+
+== SnapCenter Plug-in for SQL Serverのインストール
+
+プラグイン* snapcenter_service_windows_host_plugin.exe *をダウンロードしてから、サイレントインストーラコマンドを実行してデータベースホストにプラグインをインストールする必要があります。
+
+.作業を開始する前に
+* 次の前提条件を満たしていることを確認する必要があります。
++
+** .Net 4.7.2がインストールされている
+** PowerShell 4.0がインストールされている
+** 5 GB以上のディスクスペースが利用可能です
+** 最小RAMサイズは4GBです。
+
+
+* APIを実行してお客様へのオンボーディングを完了する必要があります。詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Tenant%20Registration/createTenant[]
+
+
+.手順
+. コネクタホストからAPIを実行してプラグインをダウンロードします。
+`docker exec -it cloudmanager_scs_cloud curl 'http://127.0.0.1/api/v2/pluginpackage/windows'`
++
+ファイルの場所は、_/var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/sc-windows-host-plugin/snapcenter_service_windows_host_plugin.exe_<agent_version>です。
+
+. scpまたはその他の代替方法を使用して、コネクタから各MSSQL Serverデータベースホストに_snapcenter_service_windows_host_plugin.exe _をコピーします。
+. プラグインをインストールします。
+'"C：//snapcenter_service_windows_host_plugin.exe"<install_folder>/silent/debuglog" C：//HA_Suite_Silent_Install_SCSQL_fresh.log <install_folder>"/log" C：//install_folder/"BI_SNAPCENTER_PORT=8145 ISFeatureInstall=SCSQL'
+. 自己署名証明書を_/var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/client/certificate.pem_からMSSQL Serverデータベースホストにコピーします。
++
+デフォルトの証明書を使用しない場合は、自己署名証明書またはCA署名証明書を生成することもできます。
+
+. コネクタホストで、証明書を.pem形式から.crt形式に変換します。
+'openssl x509-outform der-in certificate.pem-out certificate.crt'
+. 証明書をダブルクリックして、* Personal *および* Trusted Root Certification Authorities *ストアに追加します。
+
+
+
+
+== SQL Serverデータベースホストの追加
+
+ホストFQDNを使用してMSSQLデータベースホストを追加する必要があります。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Host%20Management/AddHosts[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== パラメータ
+
+|===
+| 名前 | を入力します | 必須 
+
+
+ a| 
+住所
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+connector_id
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+プラグインタイプ
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+インストール方法
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+PLUGIN_PORT
+ a| 
+番号
+ a| 
+正しいです
+
+
+
+ a| 
+ユーザ名
+ a| 
+文字列
+ a| 
+正しいです
+
+|===
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード202が表示されます。
+
+例
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== 追加されたSQL Serverデータベースホストの表示
+
+このAPIを実行すると、追加されたすべてのSQL Serverデータベースホストを表示できます。
+
+' snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'を入手
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Host%20Management/GetHosts[]
+
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード200が表示されます。
+
+例
+
+[listing]
+----
+{
+  "num_records": 1,
+    "total_records": 1,
+    "records": [
+        {
+            "id": "85bd4603-08f7-45f4-ba8e-a0b1e2a0f4d0",
+            "addr": "scspa2722211001.rtp.openenglab.netapp.com",
+            "status": "Running",
+            "connector_id": "fBf8Iwbp4BscBfD02qBwWm6I03gGAesRclients",
+            "plugin_port": 8145,
+            "plugins": [
+                {
+                    "type": "mssql"
+                }
+            ],
+            "os_type": "windows",
+            "platform": "onprem",
+            "username": "administrator",
+            "operating_mode": "production"
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----
+
+
+== データベースインスタンスの検出
+
+このAPIを実行してホストIDを入力すると、すべてのMSSQLインスタンスを検出できます。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/discovery'
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Instances/MSSQLInstancesDiscoveryRequest[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== パラメータ
+
+|===
+| 名前 | を入力します | 必須 
+
+
+ a| 
+host_id
+ a| 
+文字列
+ a| 
+正しいです
+
+|===
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード202が表示されます。
+
+例
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== 検出されたデータベースインスタンスの表示
+
+このAPIを実行すると、検出されたすべてのデータベースインスタンスを表示できます。
+
+' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances'を入手
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Instances/GetMSSQLInstancesRequest[]
+
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード200が表示されます。
+
+例
+
+[listing]
+----
+{
+    "num_records": 2,
+    "total_records": 2,
+    "records": [
+        {
+            "id": "953e66de-10d9-4fd9-bdf2-bf4b0eaabfd7",
+            "name": "scspa2722211001\\NAMEDINSTANCE1",
+            "host_id": "85bd4603-08f7-45f4-ba8e-a0b1e2a0f4d0",
+            "status": "Running",
+            "auth_mode": 0,
+            "version": "",
+            "is_clustered": false,
+            "is_credentials_configured": false,
+            "protection_mode": ""
+        },
+        {
+            "id": "18e1b586-4c89-45bd-99c8-26268def787c",
+            "name": "scspa2722211001",
+            "host_id": "85bd4603-08f7-45f4-ba8e-a0b1e2a0f4d0",
+            "status": "Stopped",
+            "auth_mode": 0,
+            "version": "",
+            "is_clustered": false,
+            "is_credentials_configured": false,
+            "protection_mode": ""
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----
+
+
+== データベースインスタンスのクレデンシャルの設定
+
+このAPIを実行して、データベースインスタンスのクレデンシャルを検証および設定できます。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql//api/mssql/credentials-configuration'
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Instances/ConfigureCredentialRequest[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== パラメータ
+
+|===
+| 名前 | を入力します | 必須 
+
+
+ a| 
+host_id
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+インスタンスID
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+ユーザ名
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+パスワード
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+AUTH_MODE
+ a| 
+文字列
+ a| 
+正しいです
+
+|===
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード202が表示されます。
+
+例
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----

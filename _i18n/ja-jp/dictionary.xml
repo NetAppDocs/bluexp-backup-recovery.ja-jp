@@ -836,8 +836,6 @@
   <block id="e67d4d64b1a45fd340729c74de84b847" category="list-text">Connector VMにログインします。</block>
   <block id="274f1ac526644b363a1660f91b59759a" category="list-text">SnapCenter Linuxホストプラグインバイナリをダウンロードします。<block ref="2109844ce6213da69b1227dc07554bb8" prefix=" " category="inline-code"></block></block>
   <block id="da60bfd3c8edf7a67f3978209e164121" category="list-text">ベースマウントパスを取得します。<block ref="22ab9e84fb8aba7e93d8b90366ddca59" prefix=" " category="inline-code"></block></block>
-  <block id="e83ebe810e7607148882f52b5e3b71fd" category="list-text">connector VMのcopy_certificate.p12_from_&lt;base_mount_path&gt;/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。</block>
-  <block id="7550e76395e0f500b3d970b6fa0ec73f" category="list-text">_/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。<block ref="0d48a0d1a6daee261d59f76e1ce65f98" prefix=" " category="inline-code"></block></block>
   <block id="e4bed981c8dc4fe15a706f0b93160836" category="list-text">BlueXP UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
   <block id="d20aa4d7347d2818451332f0d49b2253" category="list-text">クラウドネイティブ*を選択し、*次へ*をクリックします。</block>
   <block id="61a6d655671eebbd633c1d84fae09e17" category="cell">状況</block>
@@ -1675,7 +1673,6 @@
   <block id="1c4f2e7b048fcee5d429a4ba9afe4175" category="paragraph">リカバリ後にデータベースを読み取り/書き込みモードで開く場合は、チェックボックスを選択します。</block>
   <block id="4b077d1c7e93e91ee6d4fb4a8eacdf33" category="list-text">「*次へ*」をクリックして詳細を確認します。</block>
   <block id="18a6c204240510c87aba39d6d8b5d26b" category="doc">オンプレミスアプリケーションのデータを保護</block>
-  <block id="ded90f27fe65ac910c74189d47b689e7" category="paragraph">オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。</block>
   <block id="f3753469514d2cda99cee390aa2bf172" category="list-text">SnapCenter サーバでは、各アプリケーションに使用可能なバックアップを少なくとも 1 つ用意する必要があります</block>
   <block id="29d7639a0c7b9ce1eeb1a132409265c0" category="paragraph">次の図は、クラウドにバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。</block>
   <block id="013e38cfdb2c6d0bb3f17b59760240ff" category="summary">BlueXPを使用すると、アプリケーションと整合性のある、Amazon FSX for NetApp ONTAP またはCloud Volumes ONTAP 上にあるOracle®データベースの効率的でポリシーベースのバックアップとリストアを実行できます。</block>
@@ -1761,17 +1758,13 @@
   <block id="2f17daad641775cccb25673e3b31136b" category="list-text">Cloud Native *&gt;* SAP HANA *を選択し、* Next *をクリックします。</block>
   <block id="0e53671fc8cff81722b57059b60e55f3" category="list-text">[*アプリケーション*]ページで、[*システムの追加*]をクリックします。</block>
   <block id="5b0cc95a598bb6ede67addc2262b79e2" category="list-text">[システムの詳細*]ページで、次の操作を実行します。</block>
-  <block id="32403f6c910a8a0d4190a977cd4bb5a5" category="list-text">システムタイプとしてMulti-tenantデータベースコンテナまたはSingle Containerを選択します。</block>
   <block id="e898199c829d90ae41784a78cdd2d6d9" category="list-text">SAP HANAシステムの名前を入力します。</block>
   <block id="a3df030ad26d42c5af0fcbd0e6f513d7" category="list-text">SAP HANA システムの SID を指定します。</block>
   <block id="d800d8f61fa1a641d5224e310e459b0c" category="list-text">HANAシステムがHANAシステムレプリケーションで構成されている場合は、* HANA System Replication（HSR）System *を有効にします。</block>
-  <block id="802a79f8e4284baac3abc3713a39791d" category="list-text">ユーザーストアキーの詳細を追加するには、[*HDB Secure User Store Keys*]テキストボックスをクリックします。</block>
   <block id="2145a09d2b376e7f0609f6fb4c6b5be5" category="paragraph">キー名、システムの詳細、ユーザー名、パスワードを指定し、*キーの追加*をクリックします。</block>
   <block id="b53a101b6e60770ada5a46695bb46566" category="paragraph">ユーザストアキーは削除または変更できます。</block>
-  <block id="50606df711052c72cb3650915aa18292" category="list-text">[ストレージ容量*]ページで、[*ストレージの追加]をクリックして、次の操作を実行します。</block>
   <block id="0b4d4df45dec0f187977abf3a0e77fca" category="list-text">作業環境を選択し、ネットアップアカウントを指定します。</block>
   <block id="d253da62a1a7bf3e4d5c1adf904b607a" category="list-text">必要なボリュームを選択します。</block>
-  <block id="160c15dad3c86fc7f11c9d0f725a510f" category="list-text">[ ストレージの追加 ] をクリックします。</block>
   <block id="5d74f0257578ebb70b128ed79394919f" category="list-text">すべての詳細を確認し、*システムの追加*をクリックします。</block>
   <block id="718c7b6c3378e6331dfacc19082eceda" category="section-title">非データボリュームを追加します</block>
   <block id="70ece8b209ed1c9476f13c0fa00e2a77" category="list-text">[*アプリケーション*]ページで、をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 非データボリュームを追加するシステムに対応し、*システム管理*&gt;*非データボリューム*を選択します。</block>
@@ -2021,7 +2014,6 @@
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="sidebar">バックアップを削除します</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">ブログとコミュニティ</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">ネットアップコミュニティ</block>
-  <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">BlueXPのすべてのマニュアル</block>
   <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">クラウドプロバイダ</block>
   <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">すべてのクラウドプロバイダ</block>
   <block id="6beccc67ff905f7da0b29dece26b0485" category="sidebar">Amazon Web Services の</block>
@@ -2223,7 +2215,6 @@
   <block id="a9d053f343dbeb5aa5043e32e745a751" category="summary">本番環境のデータベースであるソースのSAP HANAシステムからターゲットシステムへの更新を実行します。</block>
   <block id="3e1a90c2232c83a5583ba782a21c185a" category="doc">SAP HANAターゲットシステムを更新</block>
   <block id="6a2d5949052d8d9118cfcade0cfdd25c" category="list-text">最初の更新処理を実行する前に、SAP HANAターゲットシステムをインストールする必要があります。</block>
-  <block id="c1c067a0bb1a2fe75a7db399b7e238ad" category="list-text">ソースとターゲットのHANAシステムをクラウドバックアップに手動で追加する必要があります。</block>
   <block id="e58cfb63a12429814fc30c5d8f0e8d76" category="list-text">ソースシステムとターゲットシステムでSAP HANAデータベースのバージョンが同じであることを確認します。</block>
   <block id="9f4392bfcc6722ccfa013cf6e6660770" category="list-text">使用する更新スクリプトを決定しておく必要があります。更新スクリプトは、解決策 テクニカルレポートで提供されています。</block>
   <block id="d648af91bd5d8a9bfbf67955f22a64fc" category="inline-link">自動化スクリプトの例</block>
@@ -2244,7 +2235,6 @@
   <block id="158a3a34d49db71bd2f895fba2c38243" category="list-text">[*アプリケーション*]ページで、をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> アイコンをクリックして、更新するシステムに対応するアクションを選択し、*[システムの更新]*を選択します。</block>
   <block id="f573ee64ef887f8b0f16bdb22bf2dd34" category="list-text">[システムの更新]*ページで、次の操作を実行します。</block>
   <block id="521e5b4ee67bb67042f49209b8653819" category="list-text">ソースシステムとSnapshotコピーを選択</block>
-  <block id="445c03c33e1539bd0b41eb36082d3cb2" category="list-text">新しいボリュームにアクセスできるエクスポートアドレスを入力します。</block>
   <block id="5b1b42f6958d8e1fc337204814ce7e96" category="list-text">プリスクリプト、ポストスクリプト、およびエラーが発生したスクリプトパスを入力します。失敗時スクリプトは、システム更新処理が失敗した場合にのみ実行されます。</block>
   <block id="d687cb57e7c0a2bc72631659265b9d28" category="list-text">[* 更新 * ] をクリックします。</block>
   <block id="9efea5dc57ddf655c92c407f96dd1337" category="paragraph">アプリケーションデータをクラウドにバックアップするポリシーを作成する必要があります。</block>
@@ -2388,11 +2378,8 @@
   <block id="822058ba42fc85efab976ebaa9802beb" category="section-title">SnapCenter Plug-in for SAP HANA Databaseをアップグレードします</block>
   <block id="f35f5a5ebccba047b1925b74505fdfbe" category="paragraph">最新の新機能や機能拡張を利用するには、SnapCenter Plug-in for SAP HANAデータベースをアップグレードする必要があります。</block>
   <block id="6c2313e6302e3ddccaf89724b45a5b06" category="list-text">次のスクリプトを実行します。<block ref="9a9e1cb603fe75305e4d36be20ae9261" prefix=" " category="inline-code"></block></block>
-  <block id="82079d60037e9d0df21acad72b86e52d" category="list-text">（オプション）HDBSQL OSユーザを変更します。</block>
   <block id="1cb5dc89376339563335539bf6e6b34f" category="paragraph">SAP HANAシステムを削除する前に、関連付けられているバックアップをすべて削除し、保護を解除する必要があります。</block>
-  <block id="ed610882a056fb1f63c13e2a503a9aad" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。</block>
   <block id="d9242f06d616d0d0d92448044927a033" category="paragraph">使用可能な SAP HANA データベースを検出したあと、それらのリソースをリソースグループに追加してデータ保護処理を実行できます。</block>
-  <block id="ae2f6000d9cdad6b8f7e1ca8fca0b847" category="paragraph">マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。</block>
   <block id="303186f87efbb1a1e40a3fc0ec6e6093" category="inline-link-macro">ジョブステータスを監視します</block>
   <block id="0188976d1f9fb8029533d4b5186f90c3" category="paragraph">APIを直接実行するか、UIを使用して、アプリケーション向けにBlueXPの外部に公開されているAPIのいずれかにAPI呼び出しを行うと、ヘッダー、ロール、要求の本文、 また、API情報はBlueXPのタイムラインに記録され、監査エントリはタイムラインに永久に保持されます。API呼び出しのステータスとエラー応答も、処理の完了後に監査されます。ジョブなどの非同期API応答の場合、ジョブIDも応答の一部としてログに記録されます。</block>
   <block id="20fbb2bb26c0caf0b8c33c09a6e533a1" category="paragraph">アプリケーション向けBlueXPのバックアップ/リカバリでは、ホストIP、要求の本文、処理名、トリガー日時、一部のヘッダー、 およびAPIの動作状態。</block>
@@ -2460,7 +2447,6 @@
   <block id="71cb10bcaacfae27cc9bac41865e97f7" category="list-text">オンプレミスのセカンダリストレージからバックアップを保護</block>
   <block id="f38022cdfb27bcdacebc0633036b927c" category="list-text">SAP HANAアプリケーションを保護</block>
   <block id="0a2eb5b37c8e172647166550f43db124" category="list-text">VMware環境上にあるOracleアプリケーションやSQLアプリケーションを保護</block>
-  <block id="20bf35a5a6263705cb77bbd72a8cbce2" category="list-text">SnapCenter では、BlueXPのポリシーとラベルがない、または同じラベルが設定された日次、週次、または月次のポリシーを少なくとも1つ指定してください。</block>
   <block id="5422c69ce598c81146a4b7b614d9df97" category="list-text">asm_diskstringパラメータでは、次の設定を行う必要があります。</block>
   <block id="ee5ee458f53ce64efd817dfc25ec2b7c" category="list-text">AFD：* ASMFDを使用している場合</block>
   <block id="39296b55464746596bb049fba7d7e1f2" category="list-text">ORCL:* ASMlibを使用している場合</block>
@@ -2733,7 +2719,6 @@
   <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">データストアと仮想マシンのデータの保護を管理します</block>
   <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">デフォルトの8144ポートで実行されているオンプレミスのSnapCenter Plug-in for VMware vSphereホストと、任意のクラウドプロバイダ（Amazon Web Services、Microsoft Azure、Google Cloud Platform）またはオンプレミスで実行されているBlueXPコネクタインスタンスの間で通信が開かれていることを確認する必要があります。</block>
-  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。</block>
   <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">SnapCenter Plug-in for VMware vSphere 4.7P1以降を使用して、オンプレミスのセカンダリストレージからデータストアをバックアップする必要があります。</block>
   <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">データストアをバックアップするポリシーを作成します</block>
   <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはMicrosoft Azureをクラウドプロバイダとして使用する必要があります。</block>
@@ -2887,35 +2872,6 @@
   <block id="7eb75a0482cc00856d6f59785ed2196a" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です<block ref="72b5d28b0fc68220ca561b42693848df" category="inline-link-rx"></block>。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
   <block id="e59cc93e05cd1a09fee0d3400cb6594b" category="inline-link">Azure Marketplaceで提供されるNetApp BlueXPサービス</block>
   <block id="1ec47f8d2867e62133816fe5c965e4ea" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です<block ref="2fad159ac15feeefc5347d9f8b6dbeab" category="inline-link-rx"></block>。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
-  <block id="297636b2bcb79ee4ccd3bb7671403999" category="section-title">SAP HANAデータベースホストを削除します</block>
-  <block id="a2d13879a7b76ffe897fe8103b434355" category="paragraph">SAP HANAデータベースホストは、REST APIのみを使用して削除できます。</block>
-  <block id="b7f6974b5d69aff198f9237a0a2c094d" category="list-text">SAP HANAデータベースホストを削除するには、次の手順を実行します。</block>
-  <block id="200afc5eca1ab2aaaf44d39b4e461f2a" category="list-text">GET REST APIを使用して、削除する必要があるSAP HANAデータベースホストのIDを取得します。<block ref="51dad906998af1627cfd8c445b8b43ab" prefix=" " category="inline-code"></block>
-  <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-   <block ref="a641cfb5b011b5cb49303b34c80a6cfb" prefix=" " category="inline-code"></block>
-   <block ref="f3b599239bed41162cfb754c5bb9df44" prefix=" " category="inline-code"></block>
-       <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-           <block ref="ed7b8bd22adb1714fa637cd7b3b4331b" prefix=" " category="inline-code"></block>
-           <block ref="f7c6ee9d9565c48c4aa24578d992f34b" prefix=" " category="inline-code"></block>
-           <block ref="095c01fe765e288681985447a475baee" prefix=" " category="inline-code"></block>
-           <block ref="db764a9381e247045b4f4a6c09e121b0" prefix=" " category="inline-code"></block>
-       <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
-   <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
-  <block id="51a11f42ba598ff4a34cf79c1f4610af" category="list-text">下記のREST APIのIDを渡してSAP HANAデータベースホストを削除します。<block ref="60ca3266dc3cf7874e88782aed985504" prefix=" " category="inline-code"></block></block>
-  <block id="d8328889034337fbd81cf76d0c3dce07" category="list-text">次のコマンドを使用して、データベースホストからSAP HANA Linuxプラグインをアンインストールします。<block ref="45dc69782ede4b4cd03c3ab1172c0756" prefix=" " category="inline-code"></block></block>
-  <block id="190be79bcda9073c7cc174d89a62b124" category="section-title">SAP HANAデータベースホストを変更</block>
-  <block id="b5c57e960c8315130e111d59c3f6629e" category="paragraph">SAP HANAデータベースホストを追加したら、REST APIを使用してホスト名またはプラグインポートを変更できます。</block>
-  <block id="25e29ce32228dfb20b227bafb1c5eff6" category="list-text">GET REST APIを使用して、削除する必要があるSAP HANAデータベースホストのIDを取得します。<block ref="51dad906998af1627cfd8c445b8b43ab" prefix=" " category="inline-code"></block>
-  <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-   <block ref="a641cfb5b011b5cb49303b34c80a6cfb" prefix=" " category="inline-code"></block>
-   <block ref="f3b599239bed41162cfb754c5bb9df44" prefix=" " category="inline-code"></block>
-       <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-           <block ref="ed7b8bd22adb1714fa637cd7b3b4331b" prefix=" " category="inline-code"></block>
-           <block ref="f7c6ee9d9565c48c4aa24578d992f34b" prefix=" " category="inline-code"></block>
-           <block ref="095c01fe765e288681985447a475baee" prefix=" " category="inline-code"></block>
-           <block ref="db764a9381e247045b4f4a6c09e121b0" prefix=" " category="inline-code"></block>
-       <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
-   <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
   <block id="c325ed37b6a44d9e765cfd2dd7779cfb" category="paragraph">ONTAP 9.13.1以降を実行しているオンプレミスのONTAP システムで、システム開始ジョブ（進行中のバックアップ処理など）を*[ジョブ監視]*タブで確認できるようになりました。以前のバージョンのONTAP では、ユーザが開始したジョブのみが表示されます。</block>
   <block id="4e4c67e8658214022378968dae080ce5" category="list-text">「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています<block ref="0e8295000b498583f7b721745920fe19" category="inline-link-rx"></block> サービスCloud Volumes ONTAP システムにプロビジョニングされた容量3TiBにつき、BlueXPエッジキャッシュエッジシステムを1つ導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。</block>
   <block id="83e6a84bd8ee7bed2013f07c3bd590c7" category="paragraph"><block ref="e8c794dc8a2003f8106407fa82df9679" category="inline-link-rx"></block>。</block>
@@ -3198,7 +3154,6 @@
   <block id="7c5673794ab84049a1575a551e904955" category="admonition">QoSは、タイプが「手動」の容量プールにのみ適用されます。</block>
   <block id="d8e8e1e9be8176a39942efc9316a29da" category="paragraph">接続とコピーのリストア処理については、Microsoft Azureポータルにアクセスしてボリュームを選択し、*[編集]*をクリックして*[ Snapshotパスを隠す]*を有効にします。</block>
   <block id="9ecc57e66b15cefd0125186929dc1975" category="admonition">ホスト名は、HSRレプリケーションで使用されるホストのホスト名と同じである必要があります。</block>
-  <block id="4b5d09f1726d80469776849660024054" category="list-text">次の場所にある* sudoer.txt *の内容をコピーします。_/var/lib/docker/volumes/service-manager [1]-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -Po "cloudmanager_SCS_cloud：.*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_</block>
   <block id="d15dde190bd80c4b67a19bec549b644a" category="list-text">rootユーザアカウントを使用してSAP HANAシステムホストにログインします。</block>
   <block id="185df8fc7d6cba2b3dc4ddbb241610fe" category="paragraph-title">始める前に</block>
   <block id="2d38677e8a4946bdca4b843432495b0d" category="list-text">コネクタに付属のスクリプトを使用してプラグインをインストールします。<block ref="712ebead777e5d0341cb4c470ac313e6" prefix=" " category="inline-code"></block></block>
@@ -3207,12 +3162,8 @@
   <block id="32ded8361c7915052bda371f53ac1cd2" category="paragraph">プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager [1]-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -Po" cloudmanager_SCS_cloud：。*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_</block>
   <block id="2b331824c3cc83f2a2e03c85bb44862f" category="list-text">SnapCenter ユーザにsudoを設定します。詳細については、を参照してください <block ref="5e3b9649d708169ed88a9a242f31b61c" category="inline-xref-macro-rx"></block>。</block>
   <block id="a64a15a54bc15fd76d581f201d8597db" category="paragraph">古いコネクタを使用している場合は、次のコマンドを実行してプラグインをアップグレードします。<block ref="54993491d663e6aaf93dc6ed29ee78c5" prefix=" " category="inline-code"></block></block>
-  <block id="c1c67d1a62632a7d21817e74b7a9b4b6" category="list-text">プラグインホストを選択します。
-（オプション）ホストが追加されていない場合は、*[プラグインホストを追加]*をクリックします。</block>
   <block id="010678b7a184d05aec2abd32b800f89b" category="paragraph">左側のナビゲーションペインで、BlueXP * Canvas *を選択して新しい作業環境を追加します。</block>
   <block id="6127a1470e4ac9558619287c2c509e80" category="paragraph">UIからSAP HANAシステムを変更または削除できます。</block>
-  <block id="d65cdf24414c885f7a1b05c0cbb361d5" category="list-text">UIまたは下記のREST APIを使用して、SAP HANAデータベースホストに関連付けられているすべてのシステムを削除します。<block ref="0c0baa47c52b612c6253de1836b4f5e6" prefix=" " category="inline-code"></block></block>
-  <block id="bfd23c3bc8b4cf882aac94054775463a" category="list-text">以下のパッチAPIを使用してホスト名またはプラグインポートを変更してください。<block ref="3df630cb139718471dc01612fab9397c" prefix=" " category="inline-code"></block><block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block><block ref="a37ea85e4042f80d9f4b6f965b1b2646" prefix=" " category="inline-code"></block><block ref="a783ebe0e7707148dae78011dee49146" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
   <block id="51276db22ab007bf8378ddc5150c089e" category="section-title">2023年7月4日</block>
   <block id="91abdc8faafafce1c7b76b1ecb8b37a6" category="list-text">SAP HANAシステム</block>
   <block id="bd8b9d76d990f261019903335a2c9e94" category="list-text">Azure NetApp Filesセカンダリ保護が有効な非データボリュームおよびグローバル非データボリュームの接続とコピーリストアをサポートします</block>
@@ -3235,11 +3186,9 @@
   <block id="e7abe879ad8765bcf5e173bd23f0644d" category="paragraph">データ損失が発生した場合は、データファイル、制御ファイル、またはその両方を元の場所にリストアしてから、データベースをリカバリできます。</block>
   <block id="a5233c6b5d691a32f2faf916f0baebe1" category="summary">SAP HANAデータベースをクラウドからオンプレミスのSnapCenterサーバにリストアできます。</block>
   <block id="4916c64add300658e04310a106e04012" category="doc">SAP HANAデータベースをリストア</block>
-  <block id="33f890a5e5f85b7caf971e2a72c73036" category="paragraph">SAP HANAデータベースは同じホストにリストアできます。</block>
   <block id="4b214d6e7bd95c0516f3f50fc89a0e3e" category="list-text">[Filter by]*フィールドで、フィルタ* Type *を選択し、ドロップダウンから* HANA *を選択します。</block>
   <block id="839eae4432b00e9cfcdd83d532a31b83" category="list-text">[Restore options]ページで、次のいずれかを指定します。</block>
   <block id="eee7cd91c87d431eb526192fb8d8f8fa" category="list-text">スナップショットがアーカイブストレージにある場合は、アーカイブストレージからデータをリストアする優先度を選択します。</block>
-  <block id="0a7a7ddc8742b5a7471a5c2d0a3cecb0" category="admonition">クラウドプロバイダとしてAmazon Web ServicesまたはMicrosoft Azureを使用している場合にのみ、優先度を指定する必要があります。</block>
   <block id="cfca0342d906d31ff717aa42ed391bcb" category="list-text">ソースストレージに十分なスペースがないか、ソースストレージが停止している場合は、*[ストレージの場所を変更]*を選択します。</block>
   <block id="d0aa9f6dc927738d3c07012b7c8b6e03" category="list-text">[ストレージマッピング]ページで、オブジェクトストアからリストアしたデータを格納する代替ストレージの場所の詳細を指定します。</block>
   <block id="d3cb840d450fe62742c860611a591afe" category="paragraph">この処理では、指定したホスト上の選択したバックアップのストレージエクスポートのみが実行されます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。ボリュームを利用したあと、ストレージ管理者はONTAP クラスタからボリュームを削除できます。</block>
@@ -3355,13 +3304,11 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="bb4f335f0d25871a3b9c36796484e4bb" category="list-text">コンソールツリーで、*[証明書]*をダブルクリックします。</block>
   <block id="62cf2c06af955668bade109f16b05be8" category="list-text">[Trusted Root Certification Authorities]ストア*を右クリックします。</block>
   <block id="f4139147b1b7b2fc4471626b33811546" category="list-text">[インポート]*をクリックして証明書をインポートし、*[証明書のインポートウィザード]*の手順に従います。</block>
-  <block id="5f9593f53c029e05ad3fe317372bbbb7" category="paragraph">SAP HANAソースシステムのデータを使用して、SAP HANAターゲットシステムの更新を実行できます。これを使用して、現在の本番環境のデータをテストシステムに提供できます。クラウドバックアップでは、ソースシステムからSnapshotコピーを選択し、そのSnapshotコピーに基づいて新しいAzure NetApp Filesボリュームを作成できます。サンプルのスクリプトを使用して、SAP HANAデータベースをリカバリするためにデータベースホストで必要な処理を実行します。</block>
   <block id="3205bfd250f7e652581ed45c1db8eb26" category="list-text">新しいボリュームの「最大スループット数」は、手動のQuality of Service（QoS；サービス品質）容量プールを含むターゲットシステムのボリュームから選択されます。
 自動QoS容量プールの場合、スループットはソースボリュームの容量で定義されます。</block>
   <block id="170cf8aa630273f26a308eb9c95fb49a" category="list-text">SnapCenterサーバ4.6以降</block>
   <block id="a60ee7cfb0bf03a2eb61a9b068a5f2bf" category="list-text">次の機能を使用する場合は、SnapCenterサーバ4.7以降を使用してください。</block>
   <block id="d3456e6a0908a4918170d02ea0c3ee84" category="list-text">バックアップのストレージエクスポート</block>
-  <block id="0d85057e25566698a3c3dc29d49db941" category="list-text">次の機能を使用する場合は、SnapCenterサーバ4.9を使用してください。</block>
   <block id="b8507ca67617589814152570680713d8" category="list-text">Oracleデータベースバックアップをマウントします</block>
   <block id="b1736bc032b4a5b6d651f60785db87f7" category="list-text">代替ストレージにリストアします</block>
   <block id="94a7d215d3c763dcc4768c5097b88e2c" category="summary">バックアップの詳細の表示、すべてのジョブのステータスの監視、クローンの削除、データの監査、コネクタの詳細の更新、CA証明書の設定、 およびホストを管理します。</block>
@@ -3378,7 +3325,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="4dc136998723b1723dd65fb967c4745d" category="paragraph">ホストをメンテナンスモードから戻す</block>
   <block id="3261eb27fd899680f932574f52ee49e3" category="paragraph">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> メンテナンス中のホストに対応し、*[メンテナンスモードを無効にする]*を選択します。</block>
   <block id="2cd898c5523193b070234ed5d34c815d" category="list-text">コネクタVMの_pem &lt;base_mount_path&gt;/client/certificate/_pathからプラグインホストの_/var/opt/snapcenter/spl/etc/にcertificate.pemをコピーします。</block>
-  <block id="d3794a65ac38525b0f295e41c150ee12" category="list-text">_/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。<block ref="11eedec2593dcf6deecf4133d03a7613" prefix=" " category="inline-code"></block></block>
   <block id="40827a860546af59127b7a2ff41eb4ce" category="list-text">次のいずれかを実行します。</block>
   <block id="3a42f0d8ab8360d2ee5a9c291f78ccf8" category="list-text">次のコマンドを実行して_&lt;base_mount_path&gt;_を取得します。<block ref="22ab9e84fb8aba7e93d8b90366ddca59" prefix=" " category="inline-code"></block></block>
   <block id="3717efafcaa340ed61240daf5d7a6b9b" category="list-text">すべての中間CAとルートCAの証明書.pemと証明書をコネクタからプラグインホスト（_/var/opt/snapcenter/spl/etc/_）にコピーします。</block>
@@ -4576,4 +4522,229 @@ ONTAP S3の略</block>
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">クラウドプロバイダのファイルサービスのサポート</block>
   <block id="f6185bb12f5e53c800be8cda7fbca65b" category="paragraph">クラウドプロバイダのファイルサービスとそのインフラ、またはサービスを使用する解決策に関連するテクニカルサポートについては、該当する製品のBlueXPドキュメントの「困ったときは」を参照してください。</block>
   <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">BlueXPおよびそのストレージソリューションとサービスに固有のテクニカルサポートを受けるには、以下に記載されているサポートオプションを使用してください。</block>
+  <block id="eb018f0a377269905eb589a99448cf57" category="section-title">2023年10月13日</block>
+  <block id="d9a26494c95cbef43a71fa2585292af3" category="list-text">Microsoft SQL Serverデータベース</block>
+  <block id="270a06ed19fec772bcfb084931cae13d" category="list-text">Amazon FSx for NetApp ONTAP上にあるMicrosoft SQL Serverデータベースのバックアップ、リストア、リカバリをサポート</block>
+  <block id="d4da4ec044327991fbcd43ca1778c38f" category="list-text">すべての処理がREST APIでのみサポートされます。</block>
+  <block id="3b05cd173ffd47ef0b4346901ab9e0d3" category="list-text">システムの更新時に、スクリプトではなくワークフローを使用してボリュームの自動マウントおよびアンマウントが実行されます。</block>
+  <block id="29db6fe351e2079efe0622a1b5bd15f4" category="list-text">追加、削除、編集、削除、保守、 UIヲシヨウシタフラクインホストノアツフクレエト</block>
+  <block id="b4445605950c5dae15c10f509d6f0f79" category="list-text">データロックとランサムウェア対策をサポート</block>
+  <block id="188502bd01986373f9c31291dc835e82" category="list-text">StorageGRIDからアーカイブ階層へのバックアップの移動をサポート</block>
+  <block id="541019d49feaf31b8000318aac636f92" category="list-text">MongoDB、MySQL、PostgreSQLの各アプリケーションデータをオンプレミスのONTAPシステムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRIDにバックアップできます。必要に応じてデータをリストアできます。</block>
+  <block id="11a3809c55f7c25dbda24854a827db05" category="section-title">仮想マシンのBlueXPバックアップとリカバリの機能拡張</block>
+  <block id="60a7ad592c196ecee9eebdab38d4ed7e" category="list-text">コネクタプロキシ配置モデルのサポート</block>
+  <block id="82725bf31262afb73c02d0bbce2d3389" category="paragraph">BlueXPのすべてのバックアップ処理とリカバリ処理用のジョブが作成されます。すべてのジョブと、各タスクの一部として実行されるすべてのサブタスクを監視できます。</block>
+  <block id="65e3ba6149c87f14c99c67806cbe8899" category="doc">MongoDB、MySQL、PostgreSQLデータベースのリストア</block>
+  <block id="eb92df223c0140de30f9a1bfb050ab30" category="paragraph">MongoDB、MySQL、PostgreSQLのデータベースを任意のホストにリストアできます。</block>
+  <block id="b89cd7529d8b58accf14d298da485e40" category="list-text">[Filter by]*フィールドで、フィルタ* Type *を選択し、ドロップダウンから* MongoDB *、* MySQL *、または* PostgreSQL *を選択します。</block>
+  <block id="0aa96c72f941184ee1fddb9f1e93bb8e" category="paragraph">[ストレージの場所の変更]*を選択した場合は、デスティネーションボリュームにサフィックスを追加できます。このチェックボックスをオンにしていない場合、デフォルトではデスティネーションボリュームに*_restore *が追加されます。</block>
+  <block id="1b7f45b11a0b3c23c673c7b492b95608" category="list-text">Amazon FSx for NetApp ONTAP上にあるMicrosoft SQL Serverデータベース</block>
+  <block id="517bdb688e6c84b0e18a16f2d57e6b65" category="section-title">Microsoft SQL Serverデータベースの保護</block>
+  <block id="427c0c21d4da0306e332645c2d0885cc" category="list-text">ホストを手動で追加してプラグインを導入する</block>
+  <block id="3974ae13f8a1f2a9ced9b4edf794e919" category="list-text">データベースの手動検出</block>
+  <block id="9c2f9028ae71359c5989e7895d825384" category="list-text">Amazon FSx for NetApp ONTAP上のSQL Serverインスタンスをバックアップ</block>
+  <block id="005935debd617b1d21ee33bc1decbc01" category="list-text">ポリシーに基づくスケジュールされたバックアップ</block>
+  <block id="09463b4b21cca932be39c18ad78a5842" category="list-text">Microsoft SQL Serverインスタンスのログバックアップ</block>
+  <block id="b387ef5ecece4fdf341cd40a2e974951" category="list-text">データベースを元の場所にリストア</block>
+  <block id="587dd10f4ff0a4218b9e6cf664ddccc6" category="list-text">バックアップはSQL Serverインスタンスに対してのみサポートされます。</block>
+  <block id="4d6796db789f823d90158e326dd2f45e" category="list-text">フェイルオーバークラスタインスタンス（FCI）構成はサポートされない</block>
+  <block id="d8857d2c7de259a1526f243b862d6e51" category="list-text">BlueXP UIではSQLデータベース固有の処理がサポートされない</block>
+  <block id="ba6967a5092def4a6f5a7a11e4b419b4" category="paragraph">Microsoft SQL Serverデータベース固有の処理は、すべてREST APIを実行して実行します。</block>
+  <block id="c9739a96cc0c081597fb757f6922b81b" category="list-text">別の場所へのリストアはサポートされていません</block>
+  <block id="aaa14c52f8ab40d691dbaa0e0accaf05" category="summary">各SQLデータベースホストにSnapCenter Plug-in for SQLをインストールします。</block>
+  <block id="cb465f84fc2fa964f57db77216bdbdbf" category="doc">SnapCenter Plug-in for SQL Serverのインストールとデータベースホストの追加</block>
+  <block id="fe9579e8db11464e1fbc8b14bd3ac64a" category="paragraph">各SQLデータベースホストにSnapCenter Plug-in for SQL Serverをインストールし、データベースホストを追加し、データベースインスタンスを検出して、データベースインスタンスのクレデンシャルを設定する必要があります。</block>
+  <block id="08bf99571b9b82afc673fb035d644b54" category="section-title">SnapCenter Plug-in for SQL Serverのインストール</block>
+  <block id="c40ea3874f348e43e57fb1101b4b2a6f" category="paragraph">プラグイン* snapcenter_service_windows_host_plugin.exe *をダウンロードしてから、サイレントインストーラコマンドを実行してデータベースホストにプラグインをインストールする必要があります。</block>
+  <block id="954ad5658c84798f7b1c55aa74b22532" category="list-text">次の前提条件を満たしていることを確認する必要があります。</block>
+  <block id="21e4202c3ee900d38275eabeac7d9598" category="list-text">.Net 4.7.2がインストールされている</block>
+  <block id="d6b5f75ce7d1601c4c91df6325ace553" category="list-text">PowerShell 4.0がインストールされている</block>
+  <block id="d27121a4aecaa4be2b69e420dae5864f" category="list-text">5 GB以上のディスクスペースが利用可能です</block>
+  <block id="40a9ba36f79f8ec6ceba274601a7e7cd" category="list-text">最小RAMサイズは4GBです。</block>
+  <block id="5647ce1798fff3b8d7059b740850a8ba" category="list-text">APIを実行してお客様へのオンボーディングを完了する必要があります。詳細については、以下を参照してください。<block ref="ff9af33ae93b9ea753b85111c1bb4f78" category="inline-link-rx"></block></block>
+  <block id="8d0b9bb4ef0c4282c5ce4c8ac803ffef" category="list-text">コネクタホストからAPIを実行してプラグインをダウンロードします。<block ref="3cbce18f076b94178b1b686c273c9f52" prefix=" " category="inline-code"></block></block>
+  <block id="c46f2c1e7cece7711fa93ceffa5b946b" category="paragraph">ファイルの場所は、_/var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/sc-windows-host-plugin/snapcenter_service_windows_host_plugin.exe_&lt;agent_version&gt;です。</block>
+  <block id="15e1905699c6d15bec3a24f6b6f7ae4d" category="list-text">scpまたはその他の代替方法を使用して、コネクタから各MSSQL Serverデータベースホストに_snapcenter_service_windows_host_plugin.exe _をコピーします。</block>
+  <block id="f5fe27280bc5a294bce5e07589cec0da" category="list-text">プラグインをインストールします。
+'"C：//snapcenter_service_windows_host_plugin.exe"&lt;install_folder&gt;/silent/debuglog" C：//HA_Suite_Silent_Install_SCSQL_fresh.log &lt;install_folder&gt;"/log" C：//install_folder/"BI_SNAPCENTER_PORT=8145 ISFeatureInstall=SCSQL'</block>
+  <block id="2fa63a1a862e1a3e085e9db0061167cb" category="list-text">自己署名証明書を_/var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/client/certificate.pem_からMSSQL Serverデータベースホストにコピーします。</block>
+  <block id="6b6be07cee8e3ec8cb1dba2da7cef557" category="paragraph">デフォルトの証明書を使用しない場合は、自己署名証明書またはCA署名証明書を生成することもできます。</block>
+  <block id="17afa11613a55a7bb8cf4c9c6059e5fc" category="list-text">コネクタホストで、証明書を.pem形式から.crt形式に変換します。
+'openssl x509-outform der-in certificate.pem-out certificate.crt'</block>
+  <block id="370b04f1aa72c5c5c1e0bbae86f8cfff" category="list-text">証明書をダブルクリックして、* Personal *および* Trusted Root Certification Authorities *ストアに追加します。</block>
+  <block id="93aeb9a2132e6f8160d289af3bbd5644" category="section-title">SQL Serverデータベースホストの追加</block>
+  <block id="4399183c2c7007fff4bbf707b1f04a13" category="paragraph">ホストFQDNを使用してMSSQLデータベースホストを追加する必要があります。</block>
+  <block id="a85945882541fbef38f38e088491ff39" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'</block>
+  <block id="aafb212ffe1e43a6b2073be689998e1f" category="paragraph">詳細については、以下を参照してください。<block ref="c017ac367d82118efe33e9edf91b01ce" category="inline-link-rx"></block></block>
+  <block id="2a44b2caaf84a8da94f2abe59810d8d3" category="paragraph">このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。</block>
+  <block id="3225a10b07f1580f10dee4abc3779e6c" category="section-title">パラメータ</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">を入力します</block>
+  <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">必須</block>
+  <block id="3ef9a0d7fab5d2bcabf0978c0a35244e" category="paragraph">住所</block>
+  <block id="b45cffe084dd3d20d928bee85e7b0f21" category="paragraph">文字列</block>
+  <block id="f827cf462f62848df37c5e1e94a4da74" category="paragraph">正しいです</block>
+  <block id="2b69d2ab5aec459dabdafdaa2bf52655" category="paragraph">connector_id</block>
+  <block id="b5e4cf8f15340fe583549c72bb27e387" category="paragraph">プラグインタイプ</block>
+  <block id="dac82a1f4d600b10cf3def8851bb0781" category="paragraph">インストール方法</block>
+  <block id="b1bc248a7ff2b2e95569f56de68615df" category="paragraph">番号</block>
+  <block id="14c4b06b824ec593239362517f538b29" category="paragraph">ユーザ名</block>
+  <block id="d64ed3e9c10229648e069f56e32f4c8e" category="section-title">応答</block>
+  <block id="f031e50c868376b26c4a5bb9a2f7a1f3" category="paragraph">APIが正常に実行されると、応答コード202が表示されます。</block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">例</block>
+  <block id="4696ee250f842f44c04adb21b847e87d" category="section-title">追加されたSQL Serverデータベースホストの表示</block>
+  <block id="31bc9159740971fb9dc74609c30c4db2" category="paragraph">このAPIを実行すると、追加されたすべてのSQL Serverデータベースホストを表示できます。</block>
+  <block id="a0680349450a6524501f3b1691973317" category="paragraph">' snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'を入手</block>
+  <block id="039b59ff3193133f8a35f93c887b8566" category="paragraph">詳細については、以下を参照してください。<block ref="999902e84118ca4b248b249437dd5328" category="inline-link-rx"></block></block>
+  <block id="ad6a5a04a03dcd1c7ddf68e41cca0167" category="paragraph">APIが正常に実行されると、応答コード200が表示されます。</block>
+  <block id="1c4d441cefa0a8fa4eb54aa8bfc1ddaf" category="section-title">データベースインスタンスの検出</block>
+  <block id="ee581a2186d7bd0d10dc336318d625e4" category="paragraph">このAPIを実行してホストIDを入力すると、すべてのMSSQLインスタンスを検出できます。</block>
+  <block id="f4ca8afc79d8fe4cce889ea13120d0bd" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/discovery'</block>
+  <block id="29152cb1595a2170e9ca099a0ed46cfc" category="paragraph">詳細については、以下を参照してください。<block ref="418542270b6e1faa620e3805d0e63f99" category="inline-link-rx"></block></block>
+  <block id="8396f175b8a7f69db14f4d12e415869d" category="paragraph">host_id</block>
+  <block id="4817d7c5bfbb82d69274eb709a10fe7b" category="section-title">検出されたデータベースインスタンスの表示</block>
+  <block id="81f51e4104d179eaf15c8b24ac8bc89a" category="paragraph">このAPIを実行すると、検出されたすべてのデータベースインスタンスを表示できます。</block>
+  <block id="9cd6d90751e08036172df22e21b9502d" category="paragraph">' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances'を入手</block>
+  <block id="51547d7a40b38b2025c43cfa5e37c344" category="paragraph">詳細については、以下を参照してください。<block ref="e6cccd2a7e8d81abf532712d71c7ecee" category="inline-link-rx"></block></block>
+  <block id="6cade9418d2953a83e67c4eef00aea73" category="section-title">データベースインスタンスのクレデンシャルの設定</block>
+  <block id="c3a69dae6b2b3822ecca1e687f77d66c" category="paragraph">このAPIを実行して、データベースインスタンスのクレデンシャルを検証および設定できます。</block>
+  <block id="cdf0fd50cb211928756a59b401044161" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql//api/mssql/credentials-configuration'</block>
+  <block id="2df6fd7718098d10437cb4e49c440f36" category="paragraph">詳細については、以下を参照してください。<block ref="d6982c00d01bece0ea3e7e55011bce6e" category="inline-link-rx"></block></block>
+  <block id="2eef3504d993383a677995e93a4f9f76" category="paragraph">インスタンスID</block>
+  <block id="5f4dcc3b5aa765d61d8327deb882cf99" category="paragraph">パスワード</block>
+  <block id="c2f317611e4ff4d753766c5bc5aec5b0" category="paragraph">AUTH_MODE</block>
+  <block id="ccb96b4d60af322f1f0f10d1acb10195" category="summary">Microsoft SQL Serverデータベースのバックアップを開始するには、いくつかの手順を実行します。</block>
+  <block id="4083fee85864d55c66d5e0b21a7928b3" category="list-text">Windows * 2016</block>
+  <block id="0a412bceaa4a8d671231ab04d2e0296e" category="list-text">Windows 2019</block>
+  <block id="3ffd22c07b48a1c76b76f941ad1cad96" category="list-text">Windows 2022</block>
+  <block id="07ef77a1b7ac63f701c543115924abb8" category="list-text">NetAppクラウドストレージ：Amazon FSx for NetApp ONTAP</block>
+  <block id="5beef1beb6565ceb9f5849d1265b9f73" category="list-text">ストレージレイアウト：SAN（iSCSI）</block>
+  <block id="7be5a6388bd087b8bf70e58fee91d770" category="paragraph">NAS構成はサポートされていません。</block>
+  <block id="3d70aee8377c8fd2c6ab572c1ce710d7" category="list-text">データベースのバージョン：</block>
+  <block id="c9cf486f968bed470720b8014710f2cf" category="list-text">Microsoft SQL Server 2016</block>
+  <block id="f6d2c8f6c5f57ce5542457131b856e66" category="list-text">Microsoft SQL Server 2019</block>
+  <block id="1969e2463b90c3e6d0f8a9e57e6e6790" category="list-text">Microsoft SQL Server 2022</block>
+  <block id="e8052b6372945ef61c70f02e7fcee945" category="list-text">データベース構成：</block>
+  <block id="5c80f101108a356211fcb26b3f83eabb" category="list-text">スタンドアロン</block>
+  <block id="4d82a1ec1af02725042c8c785564ee7a" category="list-text">NetApp ONTAP 対応の Amazon FSX</block>
+  <block id="4bca56bf446030b30e5509102dc7d31d" category="paragraph">BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.12.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
+  <block id="bcbbe01c67d093d1c5217f38a5c8bb3f" category="list-text">ポリシーでアーカイブストレージを設定している場合は、アーカイブ階層を選択します。</block>
+  <block id="a271ff9e1d0739d62e4ef10ba279b1e9" category="list-text">データロックとランサムウェア対策を設定</block>
+  <block id="6ee247c1c78655e4971dd99925015322" category="list-text">コネクタVMのcopy_certificate.pem_from_certificate/client/certificate/_path &lt;base_mount_path&gt;をプラグインホストの_/var/opt/snapcenter/spl/etc/にコピーします。</block>
+  <block id="48d029428403cd451e9e9977113b8c28" category="list-text">_/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.pemをインポートします。<block ref="d29553c6cbdee9fd0a8fc198c6e1bbe1" prefix=" " category="inline-code"></block></block>
+  <block id="baf1519220b3476b87f2b72bf2f67230" category="list-text">_/var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -PO "cloudmanager_SCS_cloud:.*？にある* sudoer.txt *の内容をコピーします。"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_</block>
+  <block id="480a5ae9d6c54a41b779f14faf22d588" category="paragraph">プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -po "cloudmanager_SCS_cloud:.*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_</block>
+  <block id="a2e1d1f9e874911e6c678a7fdfcd1671" category="list-text">_/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。<block ref="d29553c6cbdee9fd0a8fc198c6e1bbe1" prefix=" " category="inline-code"></block></block>
+  <block id="c1586a5991b11f49efb2a70834e56e16" category="list-text">BlueXP * UIで、*[保護]*&gt;*[バックアップとリカバリ]*&gt;*[アプリケーション]*を選択します。</block>
+  <block id="c5c2c06388567c8010b829d486201edd" category="list-text">[アプリケーションの検出]*を選択します。</block>
+  <block id="0618a9ddd7e88e70d7479dfa35e01d86" category="list-text">Cloud Native *&gt;* SAP HANA *を選択し、* Next *を選択します。</block>
+  <block id="5aeb727bef86ad9ccaac5a82e7e66777" category="list-text">[アプリケーション]ページで、*[システムの追加]*を選択します。</block>
+  <block id="69c4d962a907629ca02789bb2119ada9" category="list-text">[System Type]で、[Multi-tenant database container]または[Global Non-Data Volumes]を選択します。</block>
+  <block id="24299d01b3bb01ee051a1b601c8a8df9" category="list-text">（任意）OSDBユーザを変更します。</block>
+  <block id="4e747b9eff790cc47a77ad567b2b8bfb" category="list-text">[HDB Secure User Store Keys]*テキストボックスを選択して、ユーザストアキーの詳細を追加します。</block>
+  <block id="83b4aeed58c081c1701c2ad6bcd70cca" category="list-text">[ホストの詳細]*ページで、次の操作を実行します。</block>
+  <block id="0e464be44c9a16be3ffaf49a158aa196" category="list-text">[新しいホストを追加]*または*[既存のホストを使用]*を選択します。</block>
+  <block id="1a02c8892f8416d639609a335d521127" category="list-text">[Using SSH]*または*[Manual]*を選択します。</block>
+  <block id="b3eb143877addb049a483b7d3074ca84" category="paragraph">[Manual]に、ホストのFQDNまたはIP、コネクタ、ユーザ名、SSHポート、プラグインポートを入力します。 必要に応じて、SSH秘密鍵を追加して検証します。</block>
+  <block id="9a559c034a3ca9c2382dcd0d38f3e6b8" category="paragraph">SSHの場合は、ホストのFQDNまたはIP、コネクタ、ユーザ名、およびプラグインポートを入力します。</block>
+  <block id="ea78d93af5c804e83d45cdb58b884610" category="list-text">[ホスト設定]ページで、設定要件を満たしているかどうかを確認します。</block>
+  <block id="63881970bbaf0571639ad5dff80f02aa" category="paragraph">確認するチェックボックスをオンにします。</block>
+  <block id="c5f8fde5dae5abbe87d152101d5d20ae" category="list-text">[ストレージフットプリント]ページで*[ストレージの追加]*を選択し、次の手順を実行します。</block>
+  <block id="bbe06e5eec2cc084e2340e2dc6400440" category="list-text">[ストレージの追加]*を選択します。</block>
+  <block id="61f4a5353c44bbf9bbfa8e2bb857577c" category="list-text">すべての詳細を確認し、*[システムの追加]*を選択します。</block>
+  <block id="bb97e08485a32b1b60213ae78dc73ac8" category="paragraph">マルチテナントデータベースコンテナタイプをSAP HANAシステムに追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。</block>
+  <block id="13b8c4a95d7b28028a271913dee6da39" category="paragraph">マルチテナントデータベースコンテナタイプがSAP HANAシステムの追加後に、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。</block>
+  <block id="add1dde657a589d908a9cde160eee44b" category="list-text">。[ホストの詳細]*ページで、次の操作を実行します。</block>
+  <block id="000d02ad3bd664c7ea6bd8e52da45932" category="admonition">スケジュール済みジョブは、ジョブ完了時刻から5分（最大）後にBlueXPの[Job Monitor]ページに表示されます。</block>
+  <block id="63d1835869ddb853434e7e3db1b546e0" category="summary">SQLデータベースをクラウドから同じホストにリストアできます。</block>
+  <block id="3424cc7da1d16af06bb6970242ec18c0" category="doc">Microsoft SQL Serverテタヘスノリストア</block>
+  <block id="fec03b8cc4c44aaabe7c63f81c986be7" category="paragraph">Microsoft SQL Serverデータベースは同じホストにリストアできます。まずデータベースのリストを取得してから、データベースをリストアする必要があります。</block>
+  <block id="0a558dd1d7f549e5bb6315bf53077bdf" category="section-title">データベースのリストを表示する</block>
+  <block id="c23ebb820414168ef3ebfccce54446a7" category="paragraph">このAPIを実行すると、データベースのリストを表示できます。</block>
+  <block id="e7fbfce4d9fbdb422a76ed4547091ed5" category="paragraph">' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases'を入手</block>
+  <block id="fb8d99a8d958b48eda414f1fc374d17e" category="paragraph">詳細については、以下を参照してください。<block ref="99a98b4ff9e35f9bd5870047483675c8" category="inline-link-rx"></block></block>
+  <block id="3db7e44dcba18afa9414359baa6b1855" category="section-title">MSSQLデータベースのリストアとリカバリ</block>
+  <block id="924dd545d1cad07f5913f5abdcf05870" category="paragraph">このAPIを実行してMSSQLデータベースを復元できます。</block>
+  <block id="020dd1e6ac6217f75e0d57668257cf42" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases/{id}/restore'</block>
+  <block id="3d584902b99b583c0aba1c81c5cfdb31" category="paragraph">ここで、_id_は、ビューデータベースAPIを実行して取得したMSSQLデータベースIDです。詳細については、を参照してください <block ref="bce1e003aa5f7dcae20591d29f8df376" category="inline-xref-macro-rx"></block>。</block>
+  <block id="8fc108ad806760c879e9230a69685908" category="paragraph">詳細については、以下を参照してください。<block ref="750ccf486ad0c1766b6fedb08f88b26d" category="inline-link-rx"></block></block>
+  <block id="8a277038af43b865467968046e7a000b" category="paragraph">バックアップID</block>
+  <block id="f1d5929d1df959a6acff0193e3ca2e77" category="paragraph">上書きデータベース</block>
+  <block id="c506ff134babdd6e68ab3e6350e95305" category="paragraph">ブール値</block>
+  <block id="ac622749dcfadf56eeb7a1f93137789b" category="paragraph">retain_replication_settings</block>
+  <block id="f8320b26d30ab433c5a54546d21f414c" category="paragraph">いいえ</block>
+  <block id="2d832d9239feee194c8e9a91fc096811" category="paragraph">リカバリモード</block>
+  <block id="ac3c8b97f4b281b8134853d957d21cfa" category="paragraph">サポートされている文字列は、_Operational_、_Nonoperational_、および_ReadOnly_です。</block>
+  <block id="880905045bc381284d782e85c6604380" category="paragraph">undo_file_directory</block>
+  <block id="6fd11dd3594a4c62311aae93219b377d" category="paragraph">リストアタイプ</block>
+  <block id="206e3718af092fd1d12f80cae771ccac" category="list-text">MongoDB</block>
+  <block id="62a004b95946bb97541afa471dcca73a" category="list-text">MySQL</block>
+  <block id="399bd1ee587245ecac6f39beaa99886f" category="list-text">PostgreSQL</block>
+  <block id="b3b5981b5c14115139a4ba794d8c793a" category="paragraph">SAP HANAデータベースは任意のホストにリストアできます。</block>
+  <block id="c82ab188948ddcbdff4e3d7a532e7e12" category="paragraph">SAP HANAソースシステムのデータを使用して、SAP HANAターゲットシステムの更新を実行できます。これを使用して、現在の本番環境のデータをテストシステムに提供できます。BlueXPのバックアップとリカバリでは、ソースシステムからSnapshotコピーを選択し、そのSnapshotコピーに基づいて新しいAzure NetApp Filesボリュームを作成できます。サンプルのスクリプトを使用して、SAP HANAデータベースをリカバリするためにデータベースホストで必要な処理を実行します。</block>
+  <block id="ff843b4e5e355ba5f31708ace563ca57" category="list-text">ソースとターゲットのHANAシステムをBlueXPのバックアップとリカバリに手動で追加する必要があります。</block>
+  <block id="b2604b8680084825e527aff6193ee920" category="list-text">プラグインをバージョン3.0にアップグレードする必要があります。</block>
+  <block id="76f0a90c84b9977f916f987012ea9e29" category="list-text">マウントパスは、ソースとターゲットの両方のSAP HANAシステムのデータボリュームで同じである必要があります。</block>
+  <block id="1a7ec5a4c5530349d629d5779cc7a842" category="list-text">最初の更新処理の前に、「/etc/fstab」ファイルにターゲットSAP HANAシステムのデータボリュームのエントリがないことを確認してください。</block>
+  <block id="17801831df8690e9e2ba7c5584adac8d" category="list-text">システムの更新時に、スクリプトではなくワークフローを使用してボリュームの自動マウントおよびアンマウントが実行されます。</block>
+  <block id="a5962e1d1985c8bb9326550afd4c702d" category="list-text">（オプション）新しいボリュームにアクセスできるエクスポートアドレスを入力します。</block>
+  <block id="c1fabf9acc4a184cd74cde0d01093de1" category="list-text">（任意）Maximum storage throughput（MIB;最大ストレージスループット）を入力します。</block>
+  <block id="ba4b1fdd90381666d97a2e59fb00966e" category="paragraph">BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.11.1以降で実行されている場合、StorageGRIDシステムは11.6.0.3以降です。アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
+  <block id="9a6113d5326dfb90b5db6b0741ca8825" category="list-text">ポリシーでアーカイブストレージを設定している場合は、アーカイブ階層を指定します。</block>
+  <block id="7f2e7c1f843724479ad33af92042ed17" category="cell">を選択した場合は</block>
+  <block id="592a3b45c9297fe905b909e9ac714fad" category="cell">実行する手順</block>
+  <block id="22c52a6e95d8c684b8eb086270330ab0" category="list-text">ドロップダウンからStorageGRIDを選択するか、StorageGRIDクラスタを追加します。</block>
+  <block id="b69c04cbc4cab46d7ef82b0687e311c1" category="list-text">ドロップダウンからStorageGRIDクラスタを選択するか、クラスタを追加します。</block>
+  <block id="a7abc6648bf0f980d7382b0d6c64a0e0" category="paragraph">BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.11.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
+  <block id="495b38ce22b9921d524af6512fbadb82" category="paragraph">データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。仮想マシン向けのBlueXPバックアップ/リカバリでは、コネクタプロキシ導入モデルもサポートされます。</block>
+  <block id="7148963c1fe9bd20799d84596b688191" category="list-text">プロキシが設定されたコネクタを展開するには、すべての発信コネクタコールがプロキシサーバ経由でルーティングされることを確認します。</block>
+  <block id="7cf1f6b25cc54596cbc34164085a3299" category="summary">ポリシーを作成して割り当て、SQLデータベースのオンデマンドバックアップを作成します。</block>
+  <block id="3330b65184d2418caf781c3b2d954ec2" category="doc">クラウドネイティブのMicrosoft SQL Serverデータベースをバックアップ</block>
+  <block id="b43a9686ddd2ab877e9ecc5c9ac38847" category="paragraph">作成したポリシーを割り当てて、スケジュールバックアップまたはオンデマンドバックアップを作成できます。</block>
+  <block id="aad49551351256549bb40d89b7e44dc6" category="section-title">バックアップポリシーの作成</block>
+  <block id="60a92f58e9d87bec38c55e4c409257d0" category="paragraph">このAPIを実行してバックアップポリシーを作成できます。</block>
+  <block id="fe0e6faf28179a3c98f94b4a628030ef" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backup/policies'</block>
+  <block id="d1e1d2350616ae448c2c5f90ef0b0fc2" category="paragraph">詳細については、以下を参照してください。<block ref="a85d1c770d5e5866b41b99ebeee98206" category="inline-link-rx"></block></block>
+  <block id="b068931cc450442b63f5b3d276ea4297" category="paragraph">名前</block>
+  <block id="4778aad2c248689435962249f68b925d" category="paragraph">バックアップタイプ</block>
+  <block id="f412f3f1d8557afb3106c9512cefee73" category="paragraph">コピーのみのバックアップ</block>
+  <block id="c41ff142f11e4c249906d563ec5aaf92" category="paragraph">is_system_defined</block>
+  <block id="2ec907f69df4ccec2c4186f122fda4e7" category="paragraph">backup_name_format</block>
+  <block id="c4d98dbd5badae901761ab6422fa3e70" category="paragraph">開始時刻</block>
+  <block id="fdb3374343fbd86c32d9c3a4a3f09abb" category="paragraph">時間間隔</block>
+  <block id="e5d9c0128ea8329fd9487b6de2fa2dbc" category="paragraph">分間隔</block>
+  <block id="f7b3a8f3455de677ae040a5f4e384326" category="paragraph">保持タイプ</block>
+  <block id="0cac4fe46ccd0085d94017bad554fea9" category="paragraph">保持数</block>
+  <block id="305d28898e362717b3ad3d0181c15636" category="paragraph">終了時刻</block>
+  <block id="e1da8f5f41a3e28ca94b84b31c3ca15b" category="paragraph">APIが正常に実行されると、応答コード201が表示されます。</block>
+  <block id="3085603f0133dc9a98cbf7274a497af9" category="section-title">SQLデータベースインスタンスへのポリシーの割り当て</block>
+  <block id="85db300bbf3d600e965c4285adfd05ba" category="paragraph">このAPIを実行して、SQLデータベースインスタンスにポリシーを割り当てることができます。</block>
+  <block id="e51c6c754da7f9fe4cef080ef47ecf6f" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/{id}/policy-assignment'</block>
+  <block id="8e44fab620f20377568ba74aabbde7b3" category="paragraph">ここで、_id_は、DISCOVERデータベースインスタンスAPIを実行して取得したMSSQLインスタンスIDです。詳細については、を参照してください <block ref="e644e627b67ede40a16e6044c1513b0a" category="inline-link-macro-rx"></block>。</block>
+  <block id="28c20f9925fe62aab2600e7884b997a8" category="paragraph">ここでは、IDの配列を入力します。例：</block>
+  <block id="52a0b8ae37ef51698580df45a96b787f" category="paragraph">詳細については、以下を参照してください。<block ref="a710463455080e679e877c246e7b7d15" category="inline-link-rx"></block></block>
+  <block id="6c4e6d5940a93fcf9cfb1c5d53280da3" category="section-title">オンデマンドバックアップの作成</block>
+  <block id="8c0be4da88941592cef6fa5830f6793f" category="paragraph">このAPIを実行すると、オンデマンドバックアップを作成できます。</block>
+  <block id="b1a4099d18b0533c89d005201fd90c72" category="paragraph">' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'</block>
+  <block id="1d47257b0ebeeecd8a90506b424ef2d1" category="paragraph">詳細については、以下を参照してください。<block ref="8036b06aa038df00c81b08102864fa4d" category="inline-link-rx"></block></block>
+  <block id="b80bb7740288fda1f201890375a60c8f" category="paragraph">ID</block>
+  <block id="3de029d1f2e7f5abc188e1684d4e4005" category="admonition">これはMSSQLデータベースインスタンスのIDです。</block>
+  <block id="4562f0d0d33d5117041bff91f9fadb94" category="paragraph">リソースタイプ</block>
+  <block id="cab0ca13ed5233521e8178702bad40f8" category="paragraph">policy_id</block>
+  <block id="e18f9de3af904d3630a91a45d1c8eae0" category="section-title">バックアップの表示</block>
+  <block id="56d781cd40a338a41972e201fd08621e" category="paragraph">これらのAPIを実行すると、すべてのバックアップを一覧表示したり、特定のバックアップの詳細を表示したりできます。</block>
+  <block id="6d8c070460107d62495704aaf1bad176" category="paragraph">' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'を入手</block>
+  <block id="1b81cc73dcb071bc023bcf4be4d7e64a" category="paragraph">' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups/{id}'を入手</block>
+  <block id="aedade97989d44aa9c1debd97284c314" category="paragraph">詳細については、以下を参照してください。<block ref="837bc8e0f022c24e2fdb2c934adf99c9" category="inline-link-rx"></block></block>
+  <block id="ab414934858114c45b862fbf3a2f8f9d" category="list-text">MongoDB、MySQL、PostgreSQLでは、データバックアップと各バックアップの終了日のみが表示されます。バックアップを選択して、特定のホストでストレージのエクスポートを実行できます。</block>
+  <block id="b990e3bc53a993c1bb7ffa70e2c933ce" category="list-text">StorageGRIDを使用している場合は、ONTAP 9.12.1以降を使用してください。</block>
+  <block id="a2d862330d4e63170bca9d0f51144971" category="paragraph">Oracle、Microsoft SQL、SAP HANA、MongoDB、MySQL、 オンプレミスのONTAPシステムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRIDに至るまで、PostgreSQLアプリケーションのデータをバックアップできます。</block>
+  <block id="2c0ff6d2d5f06f0642fa97f6503759c8" category="list-text">次の機能を使用する場合は、SnapCenterサーバ4.9以降を使用してください。</block>
+  <block id="cc85bc216febb004b3c0a27e902bba3c" category="list-text">MongoDB、MySQL、PostgreSQLのアプリケーションを保護する場合は、SnapCenter Server 4.9P1を使用する必要があります。</block>
+  <block id="78f574473b6c7ae09ac2b3653050e608" category="list-text">SnapCenterで、BlueXPのポリシーとラベルがない、または同じラベルのない日次、週次、または月次のポリシーを1つ以上設定</block>
+  <block id="06820b13b19298866efcc3db6ac97bf5" category="sidebar">REST APIを使用してクラウドネイティブのSQL Serverデータベースをバックアップ</block>
+  <block id="c9451ea35f35ed30a32348021953a59c" category="sidebar">ホストの追加とSnapCenter Plug-in for SQL Serverのインストール</block>
+  <block id="54bab37592758bedbe84c23554e20c3a" category="sidebar">SQL Server データベースをバックアップする</block>
+  <block id="f055d7dc297e937dbedf854f4e8d5f28" category="sidebar">クラウドネイティブのSQL Serverデータベースをリストア</block>
+  <block id="eacd1d0a9374cb22a99c806b2924cf90" category="sidebar">クラウドネイティブのSQL Serverデータベースをバックアップ</block>
+  <block id="6240606371654cf871393e757b75ae12" category="sidebar">クラウドネイティブのSQL Serverデータをリストア</block>
 </blocks>

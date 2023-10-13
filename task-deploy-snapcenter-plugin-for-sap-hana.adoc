@@ -59,7 +59,7 @@ NOTE: ホスト名は、HSRレプリケーションで使用されるホスト�
 . Connector VMにログインします。
 . SnapCenter Linuxホストプラグインバイナリをダウンロードします。
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. 次の場所にある* sudoer.txt *の内容をコピーします。_/var/lib/docker/volumes/service-manager [1]-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -Po "cloudmanager_SCS_cloud：.*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
+. _/var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -PO "cloudmanager_SCS_cloud:.*？にある* sudoer.txt *の内容をコピーします。"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
 . rootユーザアカウントを使用してSAP HANAシステムホストにログインします。
 . 手順3でコピーしたテキストを_/etc/sudoers.d/snapcenter_fileにコピーして、root以外のユーザにsudoアクセスを設定します。
 +
@@ -162,7 +162,7 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 . SnapCenter Linuxホストプラグインバイナリをダウンロードします。
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
 +
-プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager [1]-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -Po" cloudmanager_SCS_cloud：。*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
+プラグインのバイナリは次の場所にあります。_cd /var/lib/docker/volumes/service-manager-2_cloudmanager_SCS_cloud_volume/_data/$（sudo docker ps | grep -po "cloudmanager_SCS_cloud:.*？"|sed -e 's/*$//'| cut-f2-d"："）/sc-linux-host-plugin_
 
 . scpまたはその他の方法を使用して、各<non root user (sudo)> HANAデータベースホストの_/ home/sapan/.sc_netapp_pathに上記のパスから_snapcenter_linux_host_plugin_sc.bin_をコピーします。
 . root以外のアカウント（sudo）を使用してSAP HANAデータベースホストにログインします。
@@ -170,9 +170,9 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
 . sudo SnapCenter ユーザとしてSAP HANAプラグインをインストールします。
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
-. connector VMのcopy_certificate.p12_from_<base_mount_path>/client/certificate/_pathを、プラグインホスト上の_/var/opt/snapcenter/spl/etc/にコピーします。
+. コネクタVMのcopy_certificate.pem_from_certificate/client/certificate/_path <base_mount_path>をプラグインホストの_/var/opt/snapcenter/spl/etc/にコピーします。
 . _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行して証明書をインポートします。
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+`keytool -import -alias agentcert -file certificate.pem -keystore keystore.jks -deststorepass snapcenter -noprompt`
 . SPLを再起動します。 `systemctl restart spl`
 . コネクタから次のコマンドを実行して、コネクタからプラグインに到達できることを確認します。
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
@@ -210,20 +210,18 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 
 * 手順 *
 
-. BlueXP* UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。
-. [*アプリケーションの検出*]をクリックします。
-. Cloud Native *>* SAP HANA *を選択し、* Next *をクリックします。
-. [*アプリケーション*]ページで、[*システムの追加*]をクリックします。
+. BlueXP * UIで、*[保護]*>*[バックアップとリカバリ]*>*[アプリケーション]*を選択します。
+. [アプリケーションの検出]*を選択します。
+. Cloud Native *>* SAP HANA *を選択し、* Next *を選択します。
+. [アプリケーション]ページで、*[システムの追加]*を選択します。
 . [システムの詳細*]ページで、次の操作を実行します。
 +
-.. システムタイプとしてMulti-tenantデータベースコンテナまたはSingle Containerを選択します。
+.. [System Type]で、[Multi-tenant database container]または[Global Non-Data Volumes]を選択します。
 .. SAP HANAシステムの名前を入力します。
 .. SAP HANA システムの SID を指定します。
-.. （オプション）HDBSQL OSユーザを変更します。
-.. プラグインホストを選択します。
-（オプション）ホストが追加されていない場合は、*[プラグインホストを追加]*をクリックします。
+.. （任意）OSDBユーザを変更します。
 .. HANAシステムがHANAシステムレプリケーションで構成されている場合は、* HANA System Replication（HSR）System *を有効にします。
-.. ユーザーストアキーの詳細を追加するには、[*HDB Secure User Store Keys*]テキストボックスをクリックします。
+.. [HDB Secure User Store Keys]*テキストボックスを選択して、ユーザストアキーの詳細を追加します。
 +
 キー名、システムの詳細、ユーザー名、パスワードを指定し、*キーの追加*をクリックします。
 
@@ -232,18 +230,36 @@ HANAホストでSSHキーベースの認証が有効になっていない場合�
 
 
 
-. 「 * 次へ * 」をクリックします。
-. [ストレージ容量*]ページで、[*ストレージの追加]をクリックして、次の操作を実行します。
+. 「 * 次へ * 」を選択します。
+. [ホストの詳細]*ページで、次の操作を実行します。
++
+.. [新しいホストを追加]*または*[既存のホストを使用]*を選択します。
+.. [Using SSH]*または*[Manual]*を選択します。
++
+[Manual]に、ホストのFQDNまたはIP、コネクタ、ユーザ名、SSHポート、プラグインポートを入力します。 必要に応じて、SSH秘密鍵を追加して検証します。
+
++
+SSHの場合は、ホストのFQDNまたはIP、コネクタ、ユーザ名、およびプラグインポートを入力します。
+
+.. 「 * 次へ * 」を選択します。
+
+
+. [ホスト設定]ページで、設定要件を満たしているかどうかを確認します。
++
+確認するチェックボックスをオンにします。
+
+. 「 * 次へ * 」を選択します。
+. [ストレージフットプリント]ページで*[ストレージの追加]*を選択し、次の手順を実行します。
 +
 .. 作業環境を選択し、ネットアップアカウントを指定します。
 +
 左側のナビゲーションペインで、BlueXP * Canvas *を選択して新しい作業環境を追加します。
 
 .. 必要なボリュームを選択します。
-.. [ ストレージの追加 ] をクリックします。
+.. [ストレージの追加]*を選択します。
 
 
-. すべての詳細を確認し、*システムの追加*をクリックします。
+. すべての詳細を確認し、*[システムの追加]*を選択します。
 
 
 UIからSAP HANAシステムを変更または削除できます。
@@ -252,43 +268,9 @@ SAP HANAシステムを削除する前に、関連付けられているバック
 
 
 
-=== SAP HANAデータベースホストを削除します
-
-SAP HANAデータベースホストは、REST APIのみを使用して削除できます。
-
-* 手順 *
-
-. UIまたは下記のREST APIを使用して、SAP HANAデータベースホストに関連付けられているすべてのシステムを削除します。
-`DELETE /saphana/anf/systems/(id)`
-. SAP HANAデータベースホストを削除するには、次の手順を実行します。
-+
-.. GET REST APIを使用して、削除する必要があるSAP HANAデータベースホストのIDを取得します。
-`GET /saphana/hosts`
-   `{`
-    `"num_records": 1,`
-    `"records": [`
-        `{`
-            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
-            `"host_name": "galaxy-vm134.netapp.com",`
-            `"port": 443,`
-            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
-       
-`}`
-    `]`
-`}`
-.. 下記のREST APIのIDを渡してSAP HANAデータベースホストを削除します。
-`DELETE /saphana/hosts/(id)`
-.. 次のコマンドを使用して、データベースホストからSAP HANA Linuxプラグインをアンインストールします。
-`/opt/NetApp/snapcenter/spl/installation/plugins/uninstall`
-
-
-
-
-
-
 === 非データボリュームを追加します
 
-マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。
+マルチテナントデータベースコンテナタイプをSAP HANAシステムに追加したら、HANAシステムのデータボリューム以外のボリュームを追加できます。
 
 使用可能な SAP HANA データベースを検出したあと、それらのリソースをリソースグループに追加してデータ保護処理を実行できます。
 
@@ -304,7 +286,7 @@ SAP HANAデータベースホストは、REST APIのみを使用して削除で�
 
 === グローバルな非データボリュームを追加します
 
-マルチテナントデータベースコンテナまたは単一コンテナタイプのSAP HANAシステムを追加したら、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。
+マルチテナントデータベースコンテナタイプがSAP HANAシステムの追加後に、HANAシステムのグローバルデータボリューム以外のボリュームを追加できます。
 
 * 手順 *
 
@@ -316,39 +298,14 @@ SAP HANAデータベースホストは、REST APIのみを使用して削除で�
 +
 .. System Type（システムタイプ）ドロップダウンから、* Global Non-Data Volume（グローバル非データボリューム）*を選択します。
 .. SAP HANAシステムの名前を入力します。
+
+
+. 。[ホストの詳細]*ページで、次の操作を実行します。
++
 .. SAP HANAシステムの関連付けられたSIDを指定します。
 .. プラグインホストを選択します
 .. 「 * 次へ * 」をクリックします。
 .. すべての詳細を確認し、*システムの追加*をクリックします。
 
 
-
-
-
-
-=== SAP HANAデータベースホストを変更
-
-SAP HANAデータベースホストを追加したら、REST APIを使用してホスト名またはプラグインポートを変更できます。
-
-* 手順 *
-
-. GET REST APIを使用して、削除する必要があるSAP HANAデータベースホストのIDを取得します。 `GET /saphana/hosts`
-   `{`
-    `"num_records": 1,`
-    `"records": [`
-        `{`
-            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
-            `"host_name": "galaxy-vm134.netapp.com",`
-            `"port": 443,`
-            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
-       
-`}`
-    `]`
-`}`
-. 以下のパッチAPIを使用してホスト名またはプラグインポートを変更してください。
-`PATCH /saphana/hosts/(id)`
-`{`
-`"host_name": "vm136.dummy.com",`
-`"port": 8145,`
-`}`
 

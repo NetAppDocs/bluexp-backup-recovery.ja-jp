@@ -1,0 +1,328 @@
+---
+sidebar: sidebar 
+permalink: task-backup-cloud-native-sql-data.html 
+keywords: BlueXP, scheduled backups, on-demand backups, create policy, SQL database 
+summary: ポリシーを作成して割り当て、SQLデータベースのオンデマンドバックアップを作成します。 
+---
+= クラウドネイティブのMicrosoft SQL Serverデータベースをバックアップ
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+作成したポリシーを割り当てて、スケジュールバックアップまたはオンデマンドバックアップを作成できます。
+
+
+
+== バックアップポリシーの作成
+
+このAPIを実行してバックアップポリシーを作成できます。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backup/policies'
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Backup%20Policies/MSSQLBackupPolicyService_CreateMSSQLBackupPolicy[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== パラメータ
+
+|===
+| 名前 | を入力します | 必須 
+
+
+ a| 
+名前
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+バックアップタイプ
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+コピーのみのバックアップ
+ a| 
+文字列
+ a| 
+いいえ
+
+
+
+ a| 
+is_system_defined
+ a| 
+文字列
+ a| 
+いいえ
+
+
+
+ a| 
+backup_name_format
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+schedule_type
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+開始時刻
+ a| 
+番号
+ a| 
+正しいです
+
+
+
+ a| 
+時間間隔
+ a| 
+番号
+ a| 
+正しいです
+
+
+
+ a| 
+分間隔
+ a| 
+番号
+ a| 
+正しいです
+
+
+
+ a| 
+保持タイプ
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+保持数
+ a| 
+番号
+ a| 
+正しいです
+
+
+
+ a| 
+終了時刻
+ a| 
+番号
+ a| 
+正しいです
+
+|===
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード201が表示されます。
+
+例
+
+[listing]
+----
+{
+    "_links": {
+    "self": {
+        "href": "/api/resourcelink"
+      }
+    }
+}
+----
+
+
+== SQLデータベースインスタンスへのポリシーの割り当て
+
+このAPIを実行して、SQLデータベースインスタンスにポリシーを割り当てることができます。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/{id}/policy-assignment'
+
+ここで、_id_は、DISCOVERデータベースインスタンスAPIを実行して取得したMSSQLインスタンスIDです。詳細については、を参照してください link:task-add-sqlhost-install-plugin-sql.html#discover-the-database-instances["データベースインスタンスの検出"]。
+
+ここでは、IDの配列を入力します。例：
+
+[listing]
+----
+[
+  "c9f3e68d-1f9c-44dc-b9af-72a9dfc54320"
+]
+----
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Policy%20Assignment/PostMSSQLInstanceAssignPolicyRequest[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード202が表示されます。
+
+例
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== オンデマンドバックアップの作成
+
+このAPIを実行すると、オンデマンドバックアップを作成できます。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Backups/CreateMSSQLBackupRequest[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== パラメータ
+
+|===
+| 名前 | を入力します | 必須 
+
+
+ a| 
+ID
+
+
+NOTE: これはMSSQLデータベースインスタンスのIDです。
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+リソースタイプ
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+policy_id
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+schedule_type
+ a| 
+文字列
+ a| 
+正しいです
+
+|===
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード202が表示されます。
+
+例
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== バックアップの表示
+
+これらのAPIを実行すると、すべてのバックアップを一覧表示したり、特定のバックアップの詳細を表示したりできます。
+
+' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'を入手
+
+' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups/{id}'を入手
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Backups/MSSQLGetBackupsRequest[]
+
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード200が表示されます。
+
+例
+
+[listing]
+----
+{
+    "total_records": 1,
+    "num_records": 1,
+    "records": [
+        {
+            "backup_id": "602d7796-8074-43fc-a178-eee8c78566ac",
+            "resource_id": "a779578d-cf78-46f3-923d-b9223255938c",
+            "backup_name": "Hourly_policy2_scspa2722211001_NAMEDINSTANCE1_2023_08_08_07_02_01_81269_0",
+            "policy_name": "policy2",
+            "schedule_type": "Hourly",
+            "start_time": "2023-08-08T07:02:10.203Z",
+            "end_time": "0001-01-01T00:00:00Z",
+            "backup_status": "success",
+            "backup_type": "FullBackup"
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----

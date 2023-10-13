@@ -16,7 +16,7 @@ summary: BlueXPやオンプレミスのSnapCenter にアプリケーションの
 [role="lead"]
 アプリケーション向けのBlueXPバックアップ/リカバリ機能は、オンプレミスのONTAP プライマリからクラウドプロバイダに至るまで、アプリケーションと整合性のあるSnapshotを保護するためのデータ保護機能を提供します。
 
-オンプレミスのONTAP システムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRID に、Oracle、Microsoft SQL、SAP HANAのアプリケーションデータをバックアップできます。
+Oracle、Microsoft SQL、SAP HANA、MongoDB、MySQL、 オンプレミスのONTAPシステムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRIDに至るまで、PostgreSQLアプリケーションのデータをバックアップできます。
 
 アプリケーションのBlueXPのバックアップとリカバリの詳細については、以下を参照してください。
 
@@ -44,16 +44,17 @@ summary: BlueXPやオンプレミスのSnapCenter にアプリケーションの
 *** SnapCenter サーバを登録解除します
 
 
-** 次の機能を使用する場合は、SnapCenterサーバ4.9を使用してください。
+** 次の機能を使用する場合は、SnapCenterサーバ4.9以降を使用してください。
 +
 *** Oracleデータベースバックアップをマウントします
 *** 代替ストレージにリストアします
 
 
+** MongoDB、MySQL、PostgreSQLのアプリケーションを保護する場合は、SnapCenter Server 4.9P1を使用する必要があります。
 
 
 * SnapCenter サーバでは、各アプリケーションに使用可能なバックアップを少なくとも 1 つ用意する必要があります
-* SnapCenter では、BlueXPのポリシーとラベルがない、または同じラベルが設定された日次、週次、または月次のポリシーを少なくとも1つ指定してください。
+* SnapCenterで、BlueXPのポリシーとラベルがない、または同じラベルのない日次、週次、または月次のポリシーを1つ以上設定
 
 
 次の図は、クラウドにバックアップする場合の各コンポーネントと、それらの間の準備に必要な接続を示しています。

@@ -67,6 +67,9 @@ SnapCenter サーバとBlueXPの間で通信するためには、ポートが開
 ** HANAバイナリ、HANAアーカイブログボリューム、HANA共有ボリュームなどの非データボリューム（NDV）リソース
 
 
+* MongoDB
+* MySQL
+* PostgreSQL
 
 
 次のデータベースは表示されません。

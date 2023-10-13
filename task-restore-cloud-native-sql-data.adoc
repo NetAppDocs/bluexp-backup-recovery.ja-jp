@@ -1,0 +1,182 @@
+---
+sidebar: sidebar 
+permalink: task-restore-cloud-native-sql-data.html 
+keywords: restore, SQL database, BlueXP 
+summary: SQLデータベースをクラウドから同じホストにリストアできます。 
+---
+= Microsoft SQL Serverテタヘスノリストア
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Microsoft SQL Serverデータベースは同じホストにリストアできます。まずデータベースのリストを取得してから、データベースをリストアする必要があります。
+
+
+
+== データベースのリストを表示する
+
+このAPIを実行すると、データベースのリストを表示できます。
+
+' snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases'を入手
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Databases/GetMSSQLDatabasesRequest[]
+
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード200が表示されます。
+
+例
+
+[listing]
+----
+{
+    "num_records": 3,
+    "total_records": 3,
+    "records": [
+        {
+            "id": "348901e5-aeaa-419f-88b1-80240de3b1fe",
+            "name": "DB4",
+            "hostname": "scspa2722211001.rtp.openenglab.netapp.com",
+            "size": 0.078125,
+            "instance_id": "454c8413-5351-41fc-88bf-f20fb050ec87",
+            "instance": "scspa2722211001\\NAMEDINSTANCE1",
+            "db_status": "Normal",
+            "db_access": "eUndefined",
+            "db_type": "User",
+            "recovery_mode": "Full"
+        },
+        {
+            "id": "c79d33ab-7322-4ed6-92f5-51ad7a6944e0",
+            "name": "DB5",
+            "hostname": "scspa2722211001.rtp.openenglab.netapp.com",
+            "size": 0.078125,
+            "instance_id": "454c8413-5351-41fc-88bf-f20fb050ec87",
+            "instance": "scspa2722211001\\NAMEDINSTANCE1",
+            "db_status": "Normal",
+            "db_access": "eUndefined",
+            "db_type": "User",
+            "recovery_mode": "Full"
+        },
+        {
+            "id": "40d6f35a-f4fb-48bc-8e0a-0ac93ddf0888",
+            "name": "model",
+            "hostname": "scspa2722211001.rtp.openenglab.netapp.com",
+            "size": 0.015625,
+            "instance_id": "454c8413-5351-41fc-88bf-f20fb050ec87",
+            "instance": "scspa2722211001\\NAMEDINSTANCE1",
+            "db_status": "Normal",
+            "db_access": "eUndefined",
+            "db_type": "System",
+            "recovery_mode": "Full"
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----
+
+
+== MSSQLデータベースのリストアとリカバリ
+
+このAPIを実行してMSSQLデータベースを復元できます。
+
+' POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases/{id}/restore'
+
+ここで、_id_は、ビューデータベースAPIを実行して取得したMSSQLデータベースIDです。詳細については、を参照してください <<データベースのリストを表示する>>。
+
+詳細については、以下を参照してください。 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Database%20Restore/RestoreMSSQLDatabaseRequest[]
+
+このAPIは、BlueXP UIの*[ジョブモニタ]*タブから追跡できるジョブを作成します。
+
+
+
+=== パラメータ
+
+|===
+| 名前 | を入力します | 必須 
+
+
+ a| 
+バックアップID
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+上書きデータベース
+ a| 
+ブール値
+ a| 
+正しいです
+
+
+
+ a| 
+retain_replication_settings
+ a| 
+ブール値
+ a| 
+いいえ
+
+
+
+ a| 
+リカバリモード
+ a| 
+文字列
+
+サポートされている文字列は、_Operational_、_Nonoperational_、および_ReadOnly_です。
+ a| 
+正しいです
+
+
+
+ a| 
+undo_file_directory
+ a| 
+文字列
+ a| 
+正しいです
+
+
+
+ a| 
+リストアタイプ
+ a| 
+文字列
+ a| 
+正しいです
+
+|===
+
+
+=== 応答
+
+APIが正常に実行されると、応答コード202が表示されます。
+
+例
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----

@@ -19,6 +19,9 @@ summary: バックアップの詳細の表示、すべてのジョブのステ�
 
 作業環境で開始されたジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。
 
+
+NOTE: スケジュール済みジョブは、ジョブ完了時刻から5分（最大）後にBlueXPの[Job Monitor]ページに表示されます。
+
 詳細については、を参照してください link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["ジョブステータスを監視します"]。
 
 
@@ -113,7 +116,7 @@ OracleホストまたはSAP HANAホストのコネクタの詳細を更新した
 
 . プラグインホストにログインし、次の手順を実行します。
 +
-.. _/var/opt/snapcenter/spl/etcに移動し、keytoolコマンドを実行してcertificate.p12ファイルをインポートします。
+.. _/var/opt/snapcenter/spl/etc _に移動し、keytoolコマンドを実行して証明書.pemファイルをインポートします。
 `keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. SPLを再起動します。 `systemctl restart spl`
 .. 次のいずれかを実行します。

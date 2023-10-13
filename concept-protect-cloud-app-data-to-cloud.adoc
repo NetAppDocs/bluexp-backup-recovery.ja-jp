@@ -18,6 +18,7 @@ summary: BlueXPを使用すると、アプリケーションと整合性のあ�
 
 * Amazon FSx for NetApp ONTAP 、Cloud Volumes ONTAP 、Azure NetApp Files 上にあるOracleデータベース
 * Azure NetApp Files 上にあるSAP HANAシステム
+* Amazon FSx for NetApp ONTAP上にあるMicrosoft SQL Serverデータベース
 
 
 
@@ -139,4 +140,37 @@ IMPORTANT: BlueXP SaaSインフラは、リージョン内のアベイラビリ�
 
 * HSR構成では、2ノードのHSRのみがサポートされます（1プライマリおよび1セカンダリ）。
 * リストア処理中にポストスクリプトが失敗した場合、保持はトリガーされません
+
+
+
+
+== Microsoft SQL Serverデータベースの保護
+
+
+
+=== の機能
+
+* ホストを手動で追加してプラグインを導入する
+* データベースの手動検出
+* Amazon FSx for NetApp ONTAP上のSQL Serverインスタンスをバックアップ
++
+** オンデマンドバックアップ
+** ポリシーに基づくスケジュールされたバックアップ
+** Microsoft SQL Serverインスタンスのログバックアップ
+
+
+* データベースを元の場所にリストア
+
+
+
+
+=== 制限
+
+* バックアップはSQL Serverインスタンスに対してのみサポートされます。
+* フェイルオーバークラスタインスタンス（FCI）構成はサポートされない
+* BlueXP UIではSQLデータベース固有の処理がサポートされない
++
+Microsoft SQL Serverデータベース固有の処理は、すべてREST APIを実行して実行します。
+
+* 別の場所へのリストアはサポートされていません
 
