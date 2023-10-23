@@ -135,9 +135,9 @@ BYOLライセンスの管理には、BlueXPデジタルウォレットを使用�
 
 === BlueXPのバックアップとリカバリのライセンスファイルを入手します
 
-BlueXPのバックアップとリカバリ（Cloud Backup）ライセンスを購入したら、BlueXPのバックアップとリカバリのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。
+BlueXPバックアップとリカバリ（Cloud Backup）のライセンスを購入したら、BlueXPのバックアップとリカバリのシリアル番号とNetApp Support Site（NSS）アカウントを入力するか、NetAppライセンスファイル（NLF）をアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。
 
-インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している（BlueXP Connectorを https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["プライベートモード"^]では、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。プライベートモードのインストールでは、シリアル番号とNSSアカウントを使用してライセンスをアクティブ化することはできません。
+インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している（BlueXP Connectorを https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["プライベートモード"^]では、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。プライベートモードのインストールでは、シリアル番号とNetApp Support Siteアカウントを使用してライセンスをアクティブ化することはできません。
 
 .作業を開始する前に
 開始する前に、次の情報が必要です。

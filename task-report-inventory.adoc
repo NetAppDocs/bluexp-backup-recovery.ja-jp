@@ -53,7 +53,7 @@ Backup Inventoryレポートには、次の情報などが表示されます。
 * DataLockとランサムウェア対策のステータス（ガバナンス、コンプライアンス、なし）
 * アーカイブ有効ステータス
 * バックアップコピーの数
-* バックアップ・タイプ（スケジュール・バックアップまたはユーザーが開始したアドホック・バックアップ）
+* バックアップ・タイプ（スケジュール・バックアップまたはユーザーが開始するアドホック・バックアップ）
 * ストレージクラス
 * Snapshot ラベル
 
@@ -83,6 +83,7 @@ Backup Inventoryレポートには、次のチャートが表示されます。
 TIP: 複数の作業環境とSVMを選択できます。
 
 . 期間（[Last 24 hours]、[week]、または[month]）を選択します。
+. 選択したレポートに応じて、レポートのセクション（[Snapshot Policies]、[Replication Policies]、または[Backup Policies]）を確認します。
 . （オプション）ジョブステータスで結果をフィルタリングします。
 . （オプション）*[Download CSV]*を選択して、レポートの内容を.csv形式でエクスポートします。
 
@@ -93,7 +94,7 @@ TIP: 複数の作業環境とSVMを選択できます。
 
 プロアクティブな監視により、エコシステム内のすべてのリソースの監視に必要な労力を軽減できます。ONTAP 9.13.0以降では、Snapshot、バックアップ、クローニング、リストアの各処理に関する情報がデータ保護ジョブアクティビティレポートに表示されるようになりました。この情報は、SLAを監視したり、バックアップとリカバリの速度を追跡したりする際に使用できます。
 
-レポート『環境BlueXP Backup and Recovery Operations for Cloud Volumes ONTAP、オンプレミス、アプリケーション、Kubernetes』
+レポート『環境BlueXP Backup and Recovery Operations for Cloud Volumes ONTAP、オンプレミス、アプリケーション、Kubernetes data』
 
 Data Protection Job Activityレポートには、次の情報などが表示されます。
 

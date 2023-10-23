@@ -882,7 +882,6 @@
   <block id="a3caba4397a73eb091b3374d44a36510" category="list-text">Azure ストレージへの VNet プライベートエンドポイントを有効化これは、ONTAP クラスタからVNetへのExpressRouteまたはVPN接続があり、コネクタとBLOBストレージ間の通信を仮想プライベートネットワーク（*プライベート*接続）で維持する場合に必要です。</block>
   <block id="ff3e862b2a18f8bce76ed20224f2e575" category="paragraph">すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
   <block id="39476a4d8825e098719d72ca18619ed8" category="list-text">バックアップを配置するオブジェクトストレージスペース用の Azure サブスクリプションが必要です。</block>
-  <block id="1619bac39deaef2fc2adb60633af222f" category="paragraph">必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAP データをバックアップする場合は、バックアップから同じ作業環境または別の作業環境に 1 つ以上の _ ファイル _ をリストアすることもできます。</block>
   <block id="02fe91ecafd3cfc37675f0776294605f" category="inline-link-macro">詳細な機能については、こちらをご覧ください</block>
   <block id="6176afad6a7761beffa9af008f2ae633" category="inline-link">簡単なデモをご覧ください</block>
   <block id="a9840ddd0211114f18d80718c08ddb05" category="paragraph"><block ref="a9840ddd0211114f18d80718c08ddb05" category="inline-link-rx"></block></block>
@@ -894,7 +893,6 @@
   <block id="4dee49a9c46b2664e49d7142dc11104d" category="list-text">Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block> デフォルトでは</block>
   <block id="59cbb06daac31886728833270d8bf9a2" category="list-text">GCPでは、Google Cloud Storageバケット用のストレージアカウントを持つ新規または既存のプロジェクトを使用します。</block>
   <block id="800de79585a9dadbf8cf5d2e105d09bb" category="list-text">StorageGRID では、オブジェクトストアバケットに既存のストレージアカウントが使用されます。</block>
-  <block id="b5f2f8ae72382a141b81a0a0040bdad2" category="section-title">バックアップは午前 0 時に作成されます</block>
   <block id="9d4d346f8d68a04c07546d05864bce31" category="list-text">毎時バックアップは、毎時 5 分に開始されます。</block>
   <block id="07704c3b46fd42d29ebe46644d5f6447" category="list-text">日次バックアップは、毎日午前 0 時を過ぎた直後に開始されます。</block>
   <block id="e6810e9f98ecbf425d91e0dc05f65de5" category="list-text">週次バックアップは、日曜日の朝の午前 0 時を過ぎた直後に開始されます</block>
@@ -1067,8 +1065,6 @@
   <block id="09f886550e235192e436c0e4a062288b" category="list-text">SVM-DR ボリュームバックアップは、次の制限事項でサポートされます。</block>
   <block id="ed09c1b67736709db40a3664c46e855a" category="list-text">バックアップは ONTAP セカンダリからのみサポートされます。</block>
   <block id="27e92fcddc23071f7a376e1c06fa20d6" category="list-text">MetroCluster のサポート：</block>
-  <block id="84c7d283de0aa36ab8316be3e98f7f95" category="list-text">ONTAP 9.12.1 GA以降を使用している場合は、プライマリシステムに接続されているときにバックアップがサポートされます。バックアップ構成全体がセカンダリシステムに転送されるため、スイッチオーバー後もクラウドへのバックアップが自動的に続行されます。セカンダリシステムにバックアップを設定する必要はありません（実際には、セットアップは制限されています）。</block>
-  <block id="1c56c2d187d14cd1052a9152c839b453" category="list-text">ONTAP 9.12.0以前のバージョンでは、ONTAP セカンダリ・システムからのみバックアップがサポートされます。</block>
   <block id="6413e2887d9fc1bca42a1d8fa137281d" category="list-text">現時点では、FlexGroup ボリュームのバックアップはサポートされていません。</block>
   <block id="ff65f252d2a0aa40e634cf2ad7eaa2d3" category="list-text">[今すぐバックアップ]ボタンを使用したアドホック・ボリューム・バックアップは'データ保護ボリュームではサポートされていません</block>
   <block id="3dd0180637528cde8671a0c957cf90da" category="list-text">SM-BC 設定はサポートされません。</block>
@@ -1457,7 +1453,6 @@
   <block id="51610f62d18ca7d65b1b6ede56b0ec28" category="list-text">Azure Blob からリストアする場合は、デスティネーションボリュームを配置する ONTAP クラスタ内の IPspace を選択し、オブジェクトストレージにアクセスする Azure サブスクリプションを選択します。また、 VNet とサブネットを選択して、データ転送を安全に行うプライベートエンドポイントを選択することもできます。</block>
   <block id="8e4c50ba47b740ee23a3b8d84d794692" category="list-text">Google Cloud Storage からリストアする場合は、オブジェクトストレージ、バックアップが格納されているリージョン、およびデスティネーションボリュームが配置される ONTAP クラスタ内の IPspace にアクセスするために、 Google Cloud Project とアクセスキーとシークレットキーを選択します。</block>
   <block id="7af0d0a640485c14ebea27a93041e711" category="list-text">StorageGRID StorageGRID からリストアする場合は、StorageGRID サーバのFQDNとONTAP とのHTTPS通信に使用するポートを入力し、オブジェクトストレージへのアクセスに必要なアクセスキーとシークレットキー、およびデスティネーションボリュームを配置するONTAP クラスタのIPspaceを選択します。</block>
-  <block id="0be2cc016222329564ba86576a1d69ee" category="list-text">リストアしたボリュームに使用する名前を入力し、ボリュームを配置するStorage VMとアグリゲートを選択します。FlexGroup ボリュームをリストアするときは、複数のアグリゲートを選択できます。デフォルトでは、 * &lt;source_volume_name&gt; _ Restore * がボリューム名として使用されます。</block>
   <block id="9763ccd6f6f7cd192255a18d4e2c5a16" category="inline-image-macro">リストアする新しいボリュームの名前を入力するスクリーンショット。</block>
   <block id="7766d2d18828bfdebdf9558da5b44366" category="paragraph"><block ref="7766d2d18828bfdebdf9558da5b44366" category="inline-image-macro-rx" type="image"></block></block>
   <block id="15c25e27b550e844257a7920d4c7a5ea" category="paragraph">また、（ ONTAP 9.10.1 以降で使用可能な）アーカイブストレージ階層にあるバックアップファイルからボリュームをリストアする場合は、リストア優先度を選択できます。</block>
@@ -1514,7 +1509,6 @@
   <block id="ba3609ae3949104249c2d1af6114a9e1" category="list-text">ソースフォルダ/ファイルがある場所と同じ宛先作業環境およびボリュームを選択した場合は、「ソースフォルダパスを保持」を選択して、ソース構造内に存在していたのと同じフォルダにフォルダまたはファイルを復元できます。同じフォルダとサブフォルダがすべて存在している必要があります。フォルダは作成されません。ファイルを元の場所にリストアする場合は、ソースファイルを上書きするか、新しいファイルを作成するかを選択できます。</block>
   <block id="33de9caf9e73a2815b32070111ac99d4" category="list-text">リストアの進行状況を確認できるように、 * リストア * をクリックするとリストアダッシュボードに戻ります。また、*ジョブ監視*タブをクリックしてリストアの進捗状況を確認することもできます。</block>
   <block id="1c60eafb2bcc4dfa9a04abebcbb62b4e" category="section-title">検索とリストアを使用した ONTAP データのリストア</block>
-  <block id="ddc1dd6e781e5ceee9400e96abd01aca" category="paragraph">フォルダやファイルは、元のボリュームの場所、同じ作業環境内の別のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
   <block id="42c4ab8961cdba5beaf8c8b46bfb4bc4" category="paragraph">開始する前に、リストアするボリュームやファイルの名前や場所を把握しておく必要があります。</block>
   <block id="08f59a930621019b7b2d289b74ed3bf2" category="section-title">サポートされている作業環境とオブジェクトストレージプロバイダの検索とリストア</block>
   <block id="1c01241cf7c3489f40f6f12fb4239c09" category="paragraph">検索と復元の場合、コネクタは次の場所にインストールできます。</block>
@@ -1571,7 +1565,6 @@
   <block id="e09cd23a3f64c40b39bba1a2fb22c7fd" category="inline-image-macro">検索条件に一致するすべてのバックアップを表示する方法を示すスクリーンショット。</block>
   <block id="f13515ea414632814764890822fe8887" category="paragraph"><block ref="f13515ea414632814764890822fe8887" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8be1e1a6d2ac4b49f49a7f1f37997551" category="list-text">ボリューム、フォルダ、またはファイルのリストア先を選択し、*リストア*をクリックします。</block>
-  <block id="92a755b6d9fa88006d2c9e3907a504a5" category="list-text">ボリュームについては、元の作業環境を選択するか、別の作業環境を選択できます。FlexGroup ボリュームをリストアするときは、複数のアグリゲートを選択できます。</block>
   <block id="74b5efa4496e2e9e98c43dd6f32429ec" category="list-text">フォルダの場合は、元の場所にリストアすることも、作業環境、ボリューム、フォルダなどの別の場所を選択することもできます。</block>
   <block id="eaea7e11b9b9011f44311456a9459522" category="list-text">ファイルの場合は、元の場所にリストアするか、作業環境、ボリューム、フォルダなどの別の場所を選択できます。元の場所を選択する場合は、ソースファイルを上書きするか、新しいファイルを作成するかを選択できます。</block>
   <block id="149fb738a290d4d7e242bb7a559fed06" category="inline-link-macro">これらの要件の詳細を参照してください</block>
@@ -2169,10 +2162,8 @@
   <block id="d7cfe6967f3004ef3386a27fe99a4610" category="inline-link">デスティネーションとしてのONTAP S3との統合</block>
   <block id="7126662a353f79c46a7ccefe46dc4c0a" category="sidebar">ONTAP ボリュームのデータを保護</block>
   <block id="18a49ef13ab2949d420634845599ca86" category="paragraph">コネクタを作成したら、*[ストレージ]*&gt;* Canvas *&gt;* My Working Environments *&gt;*[Add Working Environment]*をクリックし、プロンプトに従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSx作業環境への接続が確立されていることを確認します。コネクタは、FSx作業環境のクラスタ管理IPアドレスに接続できる必要があります。</block>
-  <block id="3835d8f8839ebb8c540019c7da03ff7a" category="list-text">ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。</block>
   <block id="56387194e2baefbedf3b4e19ea5780fe" category="paragraph">バックアップとリカバリは、次の目的で使用できます。</block>
   <block id="06548d8c3dd532a955281943d00e4ae0" category="paragraph">次の図は、コンポーネント間の関係を示しています。</block>
-  <block id="27af9a77d19fed3cc5992a809811dc11" category="paragraph">バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではこのオブジェクトストアの名前を次のように指定します。<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block>。このオブジェクトストアは削除しないでください。</block>
   <block id="610778054da9c0e7c61921555da9ddc9" category="paragraph">同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。</block>
   <block id="47abe672471325a3aa63fcd85f6e3367" category="list-text">NAS環境の場合は、オブジェクトストアからリストアするボリュームのエクスポート先となるホストのFQDNまたはIPアドレスを指定します。</block>
   <block id="831b20d8b0ff4f1e50aecadcdcdc885d" category="list-text">SAN環境の場合、オブジェクトストアからリストアするボリュームのLUNをマッピングするホストのイニシエータを指定します。</block>
@@ -2608,7 +2599,6 @@
   <block id="c8468a884f0ab2232cc07e56fa1167b5" category="paragraph">バックアップファイルから本番環境のシステムにデータをリストアするには、有効なBlueXPバックアップ/リカバリライセンスが必要です。</block>
   <block id="64964208f145e571ed736f861e9c039d" category="admonition">少なくとも1つの作業環境でBlueXPのバックアップとリカバリをアクティブ化し、初期のバックアップファイルが存在している必要があります。</block>
   <block id="5b8dbbc2163786a4aed9331d66f16125" category="list-text">BlueXPのバックアップとリカバリには、選択したバックアップファイル内のフォルダとファイルが表示されます。</block>
-  <block id="cfc95951efd0924eb8070fedaa5642d6" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリュームとしてリストアすることも、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることもできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。</block>
   <block id="3909c405c5c3e8aaab7d2079c933cb0f" category="paragraph">ご覧のように、名前の一部を知っておくだけで、BlueXPのバックアップとリカバリでは、検索に一致するすべてのバックアップファイルが検索されます。</block>
   <block id="cde27c2ee36cb857ffdbfe24fb0f0fef" category="paragraph">この機能を有効にすると、BlueXPのバックアップとリカバリによって、ボリュームのSVMでSnapDiff v3が有効になり、次の処理が実行されます。</block>
   <block id="091c3b75fcc63b578a3277a3c06221b8" category="list-text">に登録しておきます<block ref="b82eb11d49725bb5c7ee9cfd96e7991d" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="a7c7886675f758752089ea0caddfb19c" category="inline-link-macro-rx"></block> ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス</block>
@@ -3042,7 +3032,6 @@
   <block id="dd4543716a6056c2ae27a8132114fdf7" category="list-text">*デスティネーション*：任意のクラウドプロバイダ、NetApp StorageGRID、ONTAP S3</block>
   <block id="e692b7fe3cb28b404bc6ca3af827d329" category="list-text">* ONTAPバージョン*：9.13.0</block>
   <block id="cb43048793076d3b50ea5dc6ba1e276c" category="section-title">バックアップインベントリレポートを作成します</block>
-  <block id="744e03ca9de30802973248efa9a63423" category="paragraph">BlueXPの[Backup and recovery Reports]タブでは、[Backup Inventory]レポートを作成してその内容をフィルタリングできます。Backup Inventoryレポートでは、特定のアカウント、作業環境、またはSVMインベントリのすべてのバックアップを表示できます。</block>
   <block id="25d0ed1de7efcdaaece83057c2756e57" category="paragraph">Backup Inventoryレポートには、次の情報などが表示されます。</block>
   <block id="f00e42ce9cfb8f79aa0acd52b34455ab" category="list-text">アカウント、作業環境、およびSVM</block>
   <block id="6edfddc7ea34dfa23f5f2a25a3af154f" category="list-text">保護されているボリュームと保護されていないボリューム</block>
@@ -3052,7 +3041,6 @@
   <block id="4f19973809c9f50819d754c5d361feaf" category="list-text">DataLockとランサムウェア対策のステータス（ガバナンス、コンプライアンス、なし）</block>
   <block id="edb1f7df1c92279bbf8db022953e164b" category="list-text">アーカイブ有効ステータス</block>
   <block id="20e266a6449440b3d67b85ead1217fb1" category="list-text">バックアップコピーの数</block>
-  <block id="42cc4dfa35a0b138461f5a0c4d4e085a" category="list-text">バックアップ・タイプ（スケジュール・バックアップまたはユーザーが開始したアドホック・バックアップ）</block>
   <block id="dd8c5eff0fd4dd0b3760e41db59bfb3a" category="list-text">ストレージクラス</block>
   <block id="765c798c0aa1aec3ca7ca68ec68f7e28" category="list-text">Snapshot ラベル</block>
   <block id="c3701c973b22b5daa3d8508d20412d6a" category="admonition">Backup Inventoryレポートには、期限切れまたは失敗したバックアップ情報は含まれません。</block>
@@ -3072,7 +3060,6 @@
   <block id="9c45376ca047b231750db710316d88f1" category="list-text">（オプション）*[Download CSV]*を選択して、レポートの内容を.csv形式でエクスポートします。</block>
   <block id="a28d17eeb154e6438fb5bb2ee152ad16" category="section-title">Data Protection Job Activityレポートを作成します</block>
   <block id="d1a5e05b6fa32d7e732631d7be6bb196" category="paragraph">プロアクティブな監視により、エコシステム内のすべてのリソースの監視に必要な労力を軽減できます。ONTAP 9.13.0以降では、Snapshot、バックアップ、クローニング、リストアの各処理に関する情報がデータ保護ジョブアクティビティレポートに表示されるようになりました。この情報は、SLAを監視したり、バックアップとリカバリの速度を追跡したりする際に使用できます。</block>
-  <block id="ff7551dc4db7de0fd9c26ce70b231cb9" category="paragraph">レポート『環境BlueXP Backup and Recovery Operations for Cloud Volumes ONTAP、オンプレミス、アプリケーション、Kubernetes』</block>
   <block id="a85e760999107df75174b2541f8ad4e5" category="paragraph">Data Protection Job Activityレポートには、次の情報などが表示されます。</block>
   <block id="63a675511a9f5c9715e777ac4620c78c" category="list-text">ジョブ・タイプ（バックアップまたはリストア）</block>
   <block id="82cf382f9069c5ed2ac1e0548f6d3d23" category="list-text">リソース名（ボリュームまたはアプリケーション）</block>
@@ -3557,12 +3544,9 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="4f93f3ca615e6f04f63dc2a5c6e51255" category="list-text">*ファンアウト*：プライマリストレージシステムからセカンダリ_および_に、プライマリストレージからオブジェクトストレージに情報が流れます。</block>
   <block id="f25d5a15011bb6fb94fa2a25a3142559" category="inline-link-macro">保護対策を計画しましょう</block>
   <block id="43960f0643d883b88bfdcf2bec0f408e" category="paragraph">これらのアーキテクチャの詳細については、を参照してください <block ref="26e6d65b3efbcdaf9fdb0f41b6ffe1ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="8a9e02ee3ebb850e1d927a26ad44bec8" category="list-text">*ローカルSnapshot *：既存のSnapshotポリシーを選択します。</block>
   <block id="bb259e1451f14e6ee7317954d4ae3d1f" category="inline-link">&lt;block ref="9548712dac96ee54830150eacbdaba5e" prefix=" " category='inline-code'/&gt;用のONTAP CLI</block>
-  <block id="935a290b2488ed77eee3aeea3fa35089" category="admonition">カスタムポリシーを作成する場合は、System ManagerまたはONTAP CLIを使用できます<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block> コマンドを実行しますを参照してください<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block>。</block>
   <block id="213a83a67c5e44c90f0095122508333a" category="list-text">*レプリケーション*：次のオプションを設定します。</block>
   <block id="34bc9b86892e33a64c4e60c365bdd964" category="list-text">*レプリケーションターゲット*：デスティネーションの作業環境とSVMを選択します。必要に応じて、レプリケートするボリュームの名前に追加するデスティネーションアグリゲートとプレフィックスまたはサフィックスを選択します。</block>
-  <block id="f73bc0572b8b01db85607914e16b8be0" category="list-text">*レプリケーションポリシー*：既存のレプリケーションポリシーを選択します。</block>
   <block id="4664a31b832c67aff8eca0b294275b24" category="list-text">*オブジェクトにバックアップ*：*バックアップ*を選択した場合は、次のオプションを設定します。</block>
   <block id="ce182ee406d8f3ee95a365ecbd21b287" category="list-text">*プロバイダ*：* Google Cloud *を選択します。</block>
   <block id="240c7b804a6cc97101595949fa6f4019" category="list-text">*プロバイダ設定*：バックアップを保存するプロバイダの詳細と地域を入力します。</block>
@@ -3570,7 +3554,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="da0548d3a8553d8564284dcd029706f5" category="list-text">*暗号化キー*：新しいGoogleバケットを作成した場合は、プロバイダから提供された暗号化キー情報を入力します。データの暗号化を管理するために、デフォルトのGoogle Cloud暗号化キーを使用するか、Googleアカウントからお客様が管理する独自のキーを選択するかを選択します。</block>
   <block id="9d83a21cd37d72af555469c7ed0d2ec9" category="paragraph">独自の顧客管理キーを使用する場合は、キーボールトとキー情報を入力します。</block>
   <block id="b3aa83b2922f617a64fa1875bdb6aad9" category="admonition">既存のGoogle Cloudバケットを選択した場合、暗号化情報はすでに使用可能なため、ここで入力する必要はありません。</block>
-  <block id="56a79d6c89c72f6add2a4e9118883393" category="list-text">*バックアップポリシー*：既存のバックアップポリシーを選択します。</block>
   <block id="1637762bf8b62862e92c5779dd292872" category="section-title">選択内容を確認します</block>
   <block id="6ff9dd41947ac05f6484a120fb4310b2" category="paragraph">これにより、選択内容を確認し、必要に応じて調整を行うことができます。</block>
   <block id="5e60167ed1d8120de85b8b38a5697af4" category="list-text">[Review]ページで、選択内容を確認します。</block>
@@ -3755,7 +3738,6 @@ Cloud Volumes ONTAP</block>
   <block id="48571775d8de6aed87d8f8d075e1eb4a" category="paragraph">カテゴリまたは間隔のバックアップの最大数に達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます（古いバックアップはスペースを消費し続けません）。</block>
   <block id="aade39e687ab9fab1294ac7a9d4e92be" category="paragraph">クラスタでONTAP 9.11.1以降を使用している場合は、オブジェクトストレージ内のバックアップを削除やランサムウェア攻撃から保護できます。各バックアップポリシーでは、特定の期間にわたってバックアップファイルに適用可能な_DataLockとRansomware Protection_の セクションを提供しています。_DataLock_は'バックアップファイルの変更または削除を防止します_Ransomware protection_scanバックアップファイルをスキャンして、バックアップファイルの作成時とバックアップファイルのデータのリストア時にランサムウェア攻撃が発生した証拠を探します。</block>
   <block id="862c33469bbdb829da4d537ae8e3703f" category="paragraph">バックアップするボリュームがFabricPoolアグリゲートにあり、そのボリュームに以外の階層化ポリシーが割り当てられている場合は、注意が必要な事項がいくつかあります<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>：</block>
-  <block id="924fcd0066c19907c4bd54c4856cf98a" category="list-text">レプリケーション対象として一度に選択できるFlexGroupボリュームは1つだけです。FlexGroupボリュームごとにバックアップを個別にアクティブ化する必要があります。</block>
   <block id="9ca2dd7028a589f084da9ccd2e31f8ba" category="paragraph">FlexVolボリュームに関する制限はありません。作業環境内のすべてのFlexVolボリュームを選択し、同じバックアップポリシーを割り当てることができます。</block>
   <block id="d259f3905ce3425b99746d8c67d3a49b" category="list-text">では、次の機能がサポートされます<block ref="364ecdc9d3d10126b8b1871a04c6e08f" category="inline-link-rx"></block>ただし、BlueXPのバックアップとリカバリのレプリケーション機能を使用している場合は適用されません。</block>
   <block id="27c6b4b9b51b34d742cb3f51782e8bd8" category="list-text">ボリュームAからボリュームBへ、およびボリュームBからボリュームCへのレプリケーションを行うカスケード構成はサポートされていませんサポートには、ボリュームAからボリュームBへのレプリケーションが含まれます</block>
@@ -3932,7 +3914,6 @@ ifdef：aws []</block>
   <block id="abb8243f73c63e089a9cc6cdf95785b2" category="paragraph">次のオプションについて説明します。</block>
   <block id="9aa0d02835133517fefa42429e73ace5" category="list-text">使用する保護機能（Snapshotコピー、レプリケートされたボリューム、クラウドへのバックアップ</block>
   <block id="85c221c528aa48303ce42bd715536fcc" category="list-text">使用するバックアップアーキテクチャ（ボリュームのカスケードバックアップまたはファンアウトバックアップ</block>
-  <block id="7b0e593ff97832cb79e91a868e8d660e" category="list-text">デフォルトのバックアップポリシーを使用するか、または作業を開始する前にカスタムポリシーを作成する必要がありますか</block>
   <block id="f53a4fccf3f0875b00c8fa67a6206306" category="list-text">開始前にサービスでクラウドバケットを作成するか、オブジェクトストレージコンテナを作成するか</block>
   <block id="00b5b9b1074f9d54a5f002412e9e7ebf" category="list-text">使用しているBlueXP Connector導入モード（標準モード、制限モード、プライベートモード）</block>
   <block id="3209a4c33cdeb9752d5832ca2409b75c" category="section-title">どの保護機能を使用しますか</block>
@@ -3949,7 +3930,6 @@ ifdef：aws []</block>
   <block id="f46d552561904382654668028ef332b7" category="list-text">ソースボリューム-&gt; Snapshotコピー-&gt;レプリケートされたボリューム-&gt;バックアップファイル</block>
   <block id="6e0f3f7af71dbdcd66969d229d562636" category="list-text">ソースボリューム-&gt; Snapshotコピー-&gt;バックアップファイル</block>
   <block id="416d6dba97115e0823c4346a7315efbf" category="list-text">ソースボリューム-&gt; Snapshotコピー-&gt;レプリケートされたボリューム</block>
-  <block id="2238a8ec7857db8e22c0ca21e7faff3d" category="admonition">レプリケートされたボリュームまたはバックアップファイルの初回作成時には、ソースデータのフルコピーが含まれます。これはベースライン転送と呼ばれます。以降の転送では、ソースデータの差分コピー（Snapshot）のみが含まれます。</block>
   <block id="82cb98664bb5dbaf2f4b1f186155317d" category="section-title">さまざまなバックアップ方法の比較</block>
   <block id="8d4622541c56b47641b741cdbe4f8ddf" category="paragraph">次の表に、3つのバックアップ方法の一般的な比較を示します。オブジェクトストレージスペースは通常、オンプレミスのディスクストレージよりも安価ですが、クラウドからデータを頻繁にリストアする可能性がある場合は、クラウドプロバイダからの出力料金によって、削減量の一部を削減できます。クラウドのバックアップファイルからデータをリストアする頻度を特定する必要があります。</block>
   <block id="e2a9bf899dffb889ffbede3dd4e5cc0e" category="inline-link-macro">アーカイブストレージの設定</block>
@@ -3982,13 +3962,8 @@ ifdef：aws []</block>
   <block id="26600063cc603e6d6e1f22a21fde1a3d" category="cell">Snapshotコピーは1回だけ送信されるため、ソースストレージシステムのパフォーマンスへの影響が少なくなります</block>
   <block id="ec56411e6ab7919a698db099e7ce9d99" category="cell">ポリシー、ネットワーク、ONTAPの設定はすべてソースシステムで実行されるため、セットアップが簡単です</block>
   <block id="2de573829fbd9b8bb14cbeb57e049422" category="cell">ネットワークとONTAPの設定も、セカンダリシステムから行う必要があります。</block>
-  <block id="81089c8191b9977660e2fb73d84b5393" category="section-title">Snapshot、レプリケーション、およびバックアップにデフォルトのバックアップポリシーを使用しますか</block>
-  <block id="9889969dac5cb95d460c85639c519710" category="paragraph">NetAppのデフォルトポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードを開始する前にポリシーを作成する必要があります。</block>
-  <block id="043cc0d4df28aaa71af4b8c2c2fed53e" category="list-text">デフォルトのSnapshotポリシーは、hourly、daily、およびweeklyのSnapshotコピーを作成し、hourlyのSnapshotコピーを6個、dailyを2個、weeklyを2個保持します。</block>
   <block id="3b2f21b03e64b2a3ead5db6760474df3" category="list-text">デフォルトのレプリケーションポリシーでは、日単位Snapshotコピーと週単位Snapshotコピーがレプリケートされ、日単位Snapshotコピーは7個、週単位Snapshotコピーは52個保持されます。</block>
   <block id="a67640f7cdcc52eaa3b856d6e91a1c2b" category="list-text">デフォルトのバックアップポリシーでは、日単位Snapshotコピーと週単位Snapshotコピーがレプリケートされ、日単位Snapshotコピーは7個、週単位Snapshotコピーは52個保持されます。</block>
-  <block id="1711f5c46c237530499df8bd10af41fc" category="paragraph">レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。カスタムポリシーは、System ManagerまたはONTAPコマンドラインインターフェイス（CLI）を使用して作成できます。</block>
-  <block id="d4c627b86ea7fcc97aab9ca0d343fcbe" category="inline-link">ONTAP CLIを使用してSnapshotポリシーを作成します</block>
   <block id="350061f867dc1c5e72f04f985e74baee" category="inline-link">ONTAP CLIを使用してバックアップポリシーを作成します</block>
   <block id="8cb2e913decbf9b532c186901104e076" category="inline-link-macro">新しいバックアップポリシーを追加しています</block>
   <block id="61dc4b0620e6a61c45bae3557cb28951" category="paragraph">ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。として_admin_vserver（Storage VM）を使用する必要があります<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block> を参照してください。</block>
@@ -4048,7 +4023,6 @@ ifdef：aws []</block>
   <block id="9dccd044e84ddfcbc80bd29ce7dc6e8d" category="paragraph">*注：*リストアするデータを含むバックアップファイルがアーカイブクラウドストレージ（ONTAP 9.10.1以降）にある場合、リストア処理に時間がかかり、コストがかかります。また、デスティネーションクラスタでボリュームのリストアにはONTAP 9.10.1以降、ファイルのリストアには9.11.1、Google Archive and StorageGRID には9.12.1、フォルダのリストアには9.13.1も実行されている必要があります。</block>
   <block id="bc6bfb0b14fd7cced8ee62c645d8aa17" category="paragraph">*注：*ボリュームは任意のタイプのバックアップファイルからリストアできますが、フォルダまたは個 々 のファイルは、現時点ではオブジェクトストレージのバックアップファイルからのみリストアできます。</block>
   <block id="6570e12596b3149578b487431c923c26" category="section-title">ブラウズおよびリストアを使用してボリュームをリストアします</block>
-  <block id="e3b9b7f5b64aa67090861f80cd124bff" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。クラウドバックアップを使用する場合は、元の作業環境のボリューム、またはソースの作業環境と同じクラウドアカウントにある別の作業環境にデータをリストアできます。オンプレミスの ONTAP システムにボリュームをリストアすることもできます。</block>
   <block id="bb52ad67a6160989e585657353648e45" category="paragraph">レプリケートされたボリュームからリストアする場合は、元の作業環境、Cloud Volumes ONTAPまたはオンプレミスのONTAPシステムにボリュームをリストアできます。</block>
   <block id="44f3c574b5983f4ad30068b5afb3882a" category="paragraph">このように、ボリュームのリストアを実行するには、ソースの作業環境名、Storage VM、ボリューム名、およびバックアップファイルの日付を確認しておく必要があります。</block>
   <block id="c884a3e70e8bce1d15f993ac9cb50a73" category="paragraph">[場所]列には、バックアップファイル（Snapshot）が*ローカル*（ソースシステム上のSnapshotコピー）、*セカンダリ*（セカンダリONTAPシステム上のレプリケートされたボリューム）、または*オブジェクトストレージ*（オブジェクトストレージ内のバックアップファイル）のいずれであるかが表示されます。リストアするファイルを選択します。</block>
@@ -4120,18 +4094,10 @@ ifdef：aws []</block>
   <block id="1de16ec5bb8b26ffbf7189e724790630" category="paragraph">要約すると、ONTAP作業環境内のボリュームに対して作成できる有効な保護フローは次のとおりです。</block>
   <block id="62fab0bd5cf92ab36f27224d46c5f233" category="paragraph">ファンアウト*アーキテクチャは、Snapshotコピーをデスティネーションストレージシステムとクラウド内のバックアップオブジェクトの両方に個別に転送します。</block>
   <block id="f47293eaa2dd8607290525b210ac8d72" category="paragraph">カスケード*アーキテクチャでは、Snapshotコピーが最初にデスティネーションストレージシステムに転送され、次にそのコピーがクラウド内のバックアップオブジェクトに転送されます。</block>
-  <block id="3477dac7879a3f44096cb4f68455f180" category="inline-link">System Managerを使用してSnapshotポリシーを作成します</block>
   <block id="c614d93309389f7373130aa7f9186f5d" category="inline-link">System Managerを使用してレプリケーションポリシーを作成します</block>
   <block id="8a95d969b59555a0a73e2a674b580a6e" category="inline-link">ONTAP CLIを使用してレプリケーションポリシーを作成します</block>
   <block id="096dfb23f9de3e352342395b7762f0ba" category="inline-link">System Managerを使用してバックアップポリシーを作成</block>
-  <block id="b7ad321010459984fa60de2cd7631626" category="paragraph"><block ref="244560fcf5d380e290ecd4b178a412c9" category="inline-link-rx"></block>
-<block ref="d8ea6acc45a89d2ab361031769419dd5" category="inline-link-rx"></block>
-<block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
-<block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
-<block ref="21814359fa3d01fa463924248dc4810b" category="inline-link-rx"></block>
-<block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
   <block id="bf322ff91252b9377a00e3301a9fb8de" category="paragraph">*注：* System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous *を選択し、オブジェクトポリシーにバックアップする場合は* Asynchronous *と* Back up to cloud *を選択します。</block>
-  <block id="8c84db8980c0dedab8ce56db7fdbd716" category="paragraph">BlueXPのバックアップとリカバリのUIで、オブジェクトストレージポリシーへのバックアップを作成できます。の項を参照してください <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> を参照してください。Snapshotポリシーとレプリケーションポリシーは、System ManagerまたはONTAP CLIを使用して作成する必要があります。</block>
   <block id="434e82511bf6b4566a7be6239e737769" category="cell">単純なSnapshotポリシー</block>
   <block id="c404f3312a8eec0338ecbc78bdc024ec" category="cell"><block ref="cfcc1000298a724899b278b1bbdc36d0" prefix="" category="inline-code"></block></block>
   <block id="cc5c8f317eab661af83024bda7eef553" category="section-title">ポリシーはどこに配置されていますか？</block>
@@ -4267,9 +4233,7 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="5aaf7cdbb020e8e504b7be6fac6ad19b" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。方法を参照してください <block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="66d66525e3042eb76508c798726d8853" category="list-text">ローカルのオンプレミスONTAPシステムから、ローカルのオンプレミスONTAPシステムまたはS3オブジェクトストレージ用に構成されたCloud Volumes ONTAPシステムにデータをバックアップできます。方法を参照してください <block ref="033f1a63473843a2d0a7ec99f2bb4e1c" category="inline-link-macro-rx"></block> を参照してください。
 ifdef：aws []</block>
-  <block id="97c283f935484effb434f460b5c8bb40" category="paragraph">BlueXPのバックアップとリカバリ（Cloud Backup）ライセンスを購入したら、BlueXPのバックアップとリカバリのシリアル番号とNSSアカウントを入力するか、NLFライセンスファイルをアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。</block>
   <block id="f3cd3d23d33dfe26418bbc5243171a69" category="inline-link">プライベートモード</block>
-  <block id="9c36143e2141885b9a382c2f1220cff9" category="paragraph">インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している（BlueXP Connectorを<block ref="6426a8a427a5eadce24d979d317c10cc" category="inline-link-rx"></block>では、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。プライベートモードのインストールでは、シリアル番号とNSSアカウントを使用してライセンスをアクティブ化することはできません。</block>
   <block id="e3286b69a705d4ed944e904722ab7c8f" category="paragraph">開始する前に、次の情報が必要です。</block>
   <block id="343317df2f561bc3e097210aa7130d31" category="list-text">BlueXPバックアップ/リカバリのシリアル番号</block>
   <block id="079aeecf06b109e4316b0a68ea943f2b" category="paragraph">この番号は、SOから確認するか、アカウントチームにお問い合わせください。</block>
@@ -4319,7 +4283,6 @@ endif：GCP []
 NetApp StorageGRID
 ONTAP S3の略</block>
   <block id="6aea87da9521ec65982cf1cd716dd84e" category="paragraph">Backupライセンスは、オブジェクトストレージからのバックアップとリストアにのみ必要です。Snapshotコピーとレプリケートされたボリュームを作成するためのライセンスは必要ありません。</block>
-  <block id="f53b35304b02e60ceed6340d8695c774" category="paragraph">バックアップは、バックアップのタイプに基づいて異なる場所に配置されます。</block>
   <block id="45bdc387f181cccf76e7a810e96688ad" category="paragraph">[+]
 ** StorageGRIDでは、BlueXPはS3バケットに既存のテナントアカウントを使用します。</block>
   <block id="fd749272599b095f7a34398408b6b874" category="paragraph">[+]
@@ -4333,12 +4296,10 @@ ONTAP S3の略</block>
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
-  <block id="adeedaaab4bc8a3fb427741e55cd66b6" category="summary">開始したローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始したリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
   <block id="1ca3bd8f6dc961579b0cb3fd37bec744" category="paragraph">開始したローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始したリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
   <block id="06bf7dd6f0ab94d87f59e43fc93b6d3c" category="section-title">ジョブモニタでのジョブステータスの表示</block>
   <block id="7413106917b419812ee4fa6eba953c99" category="paragraph">[ジョブ監視]タブでは、Snapshot、レプリケーション、オブジェクトストレージへのバックアップ、およびリストア処理のすべてと現在のステータスのリストを表示できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。</block>
   <block id="402bab7d605cd8ea629df214c4351f69" category="paragraph">ステータスは次のいずれかになります。</block>
-  <block id="24019e8dc50e55c4647c9f69a4448eb5" category="paragraph">BlueXPのバックアップとリカバリのUIとAPIから開始したSnapshot、レプリケーション、オブジェクトストレージへのバックアップ、リストア処理、およびシステムで開始されるジョブ（スケジュールされているバックアップ処理など）は、[Job Monitoring]タブで確認できます。ただし、これは、ONTAP 9.13.0以降を実行するCloud Volumes ONTAP システムと、ONTAP 9.13.1以降を実行するオンプレミスのONTAP システムにのみ該当します。以前のバージョンのONTAP を実行している場合は、ユーザが開始したジョブのみが表示されます。</block>
   <block id="ac624cf312f41265d4598a7409f6c357" category="list-text">列（Working Environment、SVM、ユーザ名、ワークロード、ポリシー名、 Snapshotラベル）、 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="743978dcd7046c82225d9b638969fd96" category="paragraph">[Job Monitoring]ページでは、ポリシー、Snapshotラベル、処理のタイプ（保護、リストア、保持など）、保護のタイプ（ローカルSnapshot、レプリケーション、クラウドへのバックアップ）などの複数のフィルタを使用して処理をフィルタリングできます。</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">デフォルトでは、[Job Monitoring]ページには、過去24時間の保護ジョブとリカバリジョブが表示されます。タイムフレームは、タイムフレームフィルタを使用して変更できます。</block>
@@ -4348,10 +4309,8 @@ ONTAP S3の略</block>
   <block id="17b4d0b2054bd5ed8d8b6430dc8f6936" category="list-text">[保護タイプ]フィルタを使用して検索できるのは、[保護]の[タイプ]を選択した場合のみです。</block>
   <block id="2dfc0d74279ba9eea9d3eb95a8ec80af" category="paragraph">ジョブタイプ（スケジュール済みまたはオンデマンド）、SnapMirrorバックアップタイプ（初期または定期的）の開始時刻と終了時刻、期間、作業環境からオブジェクトストレージに転送されたデータの量、平均転送速度、ポリシー名、保持ロックの有効化、ランサムウェアスキャンの実行などの詳細を表示できます。 保護ソースの詳細と保護ターゲットの詳細。</block>
   <block id="f1a15f873b659fefcf2800c9489b580b" category="section-title">保持（バックアップライフサイクル）ジョブの確認</block>
-  <block id="d9b6033ef3f394f8074723c6dcb784d9" category="paragraph">保存（バックアップライフサイクル）フローの監視は、監査の完全性、説明責任、バックアップの安全性を支援します。バックアップのライフサイクルを追跡するために、すべてのバックアップコピーの有効期限を確認することができます。</block>
   <block id="86fa0897ffcce46e8eca8c43e8684ef8" category="paragraph">バックアップライフサイクルジョブは、削除された、または削除対象のキューにあるすべてのSnapshotコピーを追跡します。ONTAP 9.13以降では、[Job Monitoring]ページで[Retention]というすべてのジョブタイプを確認できます。</block>
   <block id="cd1b897c85b8fe28d7eeba9cb930852d" category="paragraph">「保持」ジョブタイプには、BlueXPのバックアップとリカバリで保護されているボリュームで開始されたSnapshot削除ジョブがすべてキャプチャされます。</block>
-  <block id="7ef34b031a64c8523d3cc6b68b45c80f" category="list-text">[Retention]のジョブタイプを選択します。</block>
   <block id="9e35f94818feb2156d0744e4be9fb2ea" category="cell">処理のタイプ</block>
   <block id="630469b1210edbcdbdfbbd418f05c1ca" category="cell">アラートレベル</block>
   <block id="cfa4593b1fb6aea2e32d9928f2c4349b" category="cell">Eメール送信済み</block>
@@ -4399,7 +4358,6 @@ ONTAP S3の略</block>
   <block id="300f031c227ed1b4448a8bb51abec2bb" category="paragraph">\https://netapp-cloud-account.auth0.com</block>
   <block id="809c75c03a253c08bfaa32177821bc49" category="list-text">選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock Complianceモードのボリュームには、ONTAP 9.14以降が必要です）。</block>
   <block id="437f900a689b3effaba13525bf426e50" category="inline-link-macro">ポリシーを作成する</block>
-  <block id="e4847718f673436ca61df1d6ff85e9ad" category="admonition">UIを使用してカスタムポリシーを作成する方法については、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
   <block id="63ded913a4470920f93edd534ec90156" category="section-title">2023年9月11日</block>
   <block id="101143ec501ddd03e76bf93ad136c2de" category="section-title">ONTAPデータの新しいポリシー管理</block>
   <block id="d3744875712ea1e210c10ab00d139b5b" category="paragraph">このリリースには、UI内で、ONTAPデータのオブジェクトストレージへのバックアップ用のカスタムSnapshotポリシー、レプリケーションポリシー、およびポリシーを作成する機能が含まれています。</block>
@@ -4414,13 +4372,10 @@ ONTAP S3の略</block>
   <block id="115e674b1dc0942f53bc91e279bbd7eb" category="inline-link">ONTAPデータの保護に関する詳細情報</block>
   <block id="5ea7c922bf64f9c4520ccdf833e34e39" category="paragraph"><block ref="287ce1c3ffcd9fd04ac3fb9608fef690" category="inline-link-rx"></block>。</block>
   <block id="7b666c0edc9876b87778d0969629cfbf" category="list-text">[バックアップとリカバリ]バーで*[ボリューム]*を選択します。[ボリューム]タブで、*[操作]* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> アイコンをクリックし、（オブジェクトストレージへのレプリケーションまたはバックアップがまだ有効になっていない）単一のボリュームに対して*[バックアップのアクティブ化]*を選択します。</block>
-  <block id="fee16c8f65e9221b33938ce4c94bb0de" category="admonition">カスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
-  <block id="c1e74c6339bd5a7ce0c8f49560afe41d" category="list-text">*バックアップポリシー*：既存のオブジェクトストレージへのバックアップポリシーを選択します。</block>
   <block id="718dfdf9ba4cd59f98163d4d75844472" category="list-text">SnapLock Complianceボリューム（ONTAP 9.14以降が必要）</block>
   <block id="ef8c31bba1fe5a62e7a6cfedbb9d29da" category="summary">NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーによって、バックアップのタイプ、バックアップアーキテクチャ、ストレージシステム、バックアップ頻度が決まります。</block>
   <block id="defb6c38e16057d80b8b116a92ab8665" category="doc">ONTAPボリュームのバックアップポリシーを管理します。</block>
   <block id="7ee9b8ccc530c51b1215b5f1266eee5e" category="paragraph">NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーは、バックアップの頻度、バックアップが作成される時間、および保持されるバックアップファイルの数を制御します。</block>
-  <block id="1023513b30fa21977b0dbd6b2e65992c" category="paragraph">アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードを開始する前にポリシーを作成する必要があります。</block>
   <block id="c5e61d7841bf9a1c1ef625157d503535" category="paragraph">デフォルトのバックアップポリシーについては、を参照してください。 <block ref="26e6d65b3efbcdaf9fdb0f41b6ffe1ab" category="inline-link-macro-rx"></block>。</block>
   <block id="bea7279384d85082d745d10903672658" category="paragraph">BlueXPのバックアップとリカバリでは、ONTAPデータのバックアップにSnapshot、レプリケーション、オブジェクトストレージへのバックアップの3種類が用意されています。使用するアーキテクチャとバックアップのタイプにより、ポリシーは異なる場所に配置されます。</block>
   <block id="9c2cf3d903ec11e031aac200337d550f" category="cell">Snapshotポリシーの格納場所</block>
@@ -4439,10 +4394,8 @@ ONTAP S3の略</block>
   <block id="296b9ff4c428eb1b284df172e8f937be" category="paragraph"><block ref="296b9ff4c428eb1b284df172e8f937be" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0829ebf3236644a786e081485a185704" category="paragraph">Snapshotポリシーはデフォルトで表示されます。</block>
   <block id="490ebe8423732c19d7c4ed267db26f2f" category="list-text">作業環境の他のポリシーを表示するには、*[レプリケーションポリシー]*または*[バックアップポリシー]*を選択します。バックアップ計画に既存のポリシーを使用できる場合は、設定が完了します。特性の異なるポリシーが必要な場合は、このページから新しいポリシーを作成できます。</block>
-  <block id="8fb446fc6204f4002da66fd95a8ebf7d" category="section-title">Snapshot ポリシーを作成します</block>
   <block id="cbad557bcb30ebd6fc0cb19c52d98918" category="paragraph">3-2-1戦略の一環として、*プライマリ*ストレージ・システム上にボリュームのSnapshotコピーを作成します。</block>
   <block id="87d7b16c83e147764f7157c544e8b1f0" category="paragraph">ポリシー作成プロセスの一環として、スケジュールと保持を示すSnapshotラベルとSnapMirrorラベルを特定します。事前定義されたラベルを使用するか、独自のラベルを作成できます。</block>
-  <block id="5bbd322028180cb2d9c51ea786314b04" category="list-text">[ポリシー]ページで、*[新しいポリシーの作成]*&gt;*[Snapshotポリシーの作成]*を選択します。</block>
   <block id="b7eb033e2f95b4885d2ab78242e53701" category="list-text">ポリシー名を指定します。</block>
   <block id="8ea6a94b6e34dd5df6320e7e8b8a2514" category="list-text">Snapshotスケジュールを選択します。最大5つのラベルを設定できます。または、スケジュールを作成します。</block>
   <block id="4b97d1b547dd6a60145647bd089cb09b" category="list-text">スケジュールを作成する場合は、次の手順を実行します。</block>
@@ -4461,17 +4414,13 @@ ONTAP S3の略</block>
   <block id="e2db720dd9637e04a09a88a6c179ea4c" category="list-text">[Policy]ページで[Cluster 2]を選択します。</block>
   <block id="0ef5b185a636e8d973f33fc4c87833bd" category="list-text">[Snapshot policy]セクションは無視します。</block>
   <block id="8dd072d2922c8edc60aa60c9bc0cdc46" category="list-text">[Replication]および[Backup to]オブジェクトポリシーを設定します。</block>
-  <block id="b67380033d7d5bdab053c0dad43a80c0" category="section-title">レプリケーションポリシーを作成します。</block>
   <block id="3dec072d7e14f395b6012bebe3b45fad" category="paragraph">3-2-1戦略には、別のストレージシステムにボリュームをレプリケートすることが含まれる場合があります。レプリケーションポリシーは*セカンダリ*ストレージシステムにあります。</block>
-  <block id="a279488f43a48271cf71b391369880a3" category="list-text">[ポリシー]ページで、*[新しいポリシーの作成]*&gt;*[新しいレプリケーションポリシーの作成]*を選択します。</block>
   <block id="82927e590f678cf898b673e8ed85274d" category="list-text">各ラベルの保持期間を示すSnapMirrorラベル（最大5つ）を指定します。</block>
   <block id="d034072367cfae53d523d1b9d4c614d7" category="list-text">転送スケジュールを指定します。</block>
-  <block id="f578bfb9ea0e0cda707a0426ef4bdd1e" category="section-title">オブジェクトストレージへのバックアップポリシーの作成</block>
   <block id="4a9a4e09559bd837deb6b0db0f17b586" category="paragraph">3-2-1の戦略には、ボリュームをオブジェクトストレージにバックアップすることが含まれます。</block>
   <block id="1a730740674df2bc24af9ce2e66da7df" category="paragraph">このストレージポリシーは、バックアップアーキテクチャに応じて、さまざまなストレージシステムの場所に配置されます。</block>
   <block id="7c8ffe07bb7dc70647a194385ea66773" category="list-text">ファンアウト：プライマリストレージシステム</block>
   <block id="96ab2d22b4464dc324915df8e5067ca9" category="list-text">カスケード：セカンダリストレージシステム</block>
-  <block id="868680c8c14bb13ca00e6f4892aeb3c3" category="list-text">[ポリシー管理]ページで、*[新しいポリシーの作成]*&gt;*[新しいバックアップポリシーの作成]*を選択します。</block>
   <block id="bfd2bf5ca91b1984485de4fe52e739a9" category="list-text">転送スケジュールやバックアップをアーカイブするタイミングなど、設定を指定します。</block>
   <block id="ddb011fe917012a700049a04ecd807d0" category="list-text">（オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。</block>
   <block id="88b38144f5678f838e589bb3f66fb7c3" category="inline-link">アーカイブストレージの設定に関する詳細情報</block>
@@ -4508,8 +4457,6 @@ ONTAP S3の略</block>
   <block id="78720f30e58d9a141f5d550176409702" category="admonition">カスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
   <block id="311000e4ce9d283fb43e8211781ee9e3" category="list-text">[バックアップとリカバリ]バーで*[ボリューム]*を選択します。[ボリューム]タブで、*[操作]* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> アイコンをクリックし、（オブジェクトストレージへのレプリケーションまたはバックアップがまだ有効になっていない）単一のボリュームに対して*[バックアップのアクティブ化]*を選択します。</block>
   <block id="e89b128dbf2037e11616e345055bbd03" category="list-text">選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock Complianceモードのボリュームは現在サポートされていません。ONTAP 9.14以降が必要です。）</block>
-  <block id="33846815732f0a61e794b0e44401b00f" category="admonition">カスタムポリシーを作成するには、を参照してください。
-<block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">ONTAPボリュームのポリシーを管理します。</block>
   <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">アウトバウンド接続が制限されているサイトのCloud Volumes ONTAPシステムからデータをバックアップする機能</block>
   <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。これには、商用地域のLinuxホストに「制限モード」でコネクタをインストールし、そこにCloud Volumes ONTAPシステムを展開する必要があります。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
@@ -4747,4 +4694,91 @@ ONTAP S3の略</block>
   <block id="f055d7dc297e937dbedf854f4e8d5f28" category="sidebar">クラウドネイティブのSQL Serverデータベースをリストア</block>
   <block id="eacd1d0a9374cb22a99c806b2924cf90" category="sidebar">クラウドネイティブのSQL Serverデータベースをバックアップ</block>
   <block id="6240606371654cf871393e757b75ae12" category="sidebar">クラウドネイティブのSQL Serverデータをリストア</block>
+  <block id="b91f5702154a342b0f24808369863324" category="list-text">*ローカルSnapshot *：既存のSnapshotポリシーを選択するか、新しいSnapshotポリシーを作成します。</block>
+  <block id="1a9240d843443385061b2272dcfbfff0" category="admonition">Snapshotをアクティブ化する前にカスタムポリシーを作成する場合は、System ManagerまたはONTAP CLIを使用します。<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block> コマンドを実行しますを参照してください<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block>。</block>
+  <block id="e26dd0d96691532707185229fc0a17cb" category="admonition">Snapshotをアクティブ化する前にこのサービスを使用してカスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="adb25d95d88c1a7014ebf4a12b42eec9" category="paragraph">ポリシーを作成するには、*[新しいポリシーの作成]*を選択し、次の手順を実行します。</block>
+  <block id="b9ebe3d0d7df348b69f3c32d402c98f6" category="list-text">ポリシーの名前を入力します。</block>
+  <block id="5b85cfab1f375787e03761e9b8a1f060" category="list-text">最大5つのスケジュール（通常は異なる周波数）を選択します。</block>
+  <block id="d56f5a6cd93df4bc06d2a6c256936c63" category="list-text">*レプリケーションポリシー*：既存のレプリケーションポリシーを選択するか、新しいレプリケーションポリシーを作成します。</block>
+  <block id="0773e77bb0db21a781b5bbb39f7a4ee7" category="list-text">*バックアップポリシー*：既存のバックアップポリシーを選択するか、新しいバックアップポリシーを作成します。</block>
+  <block id="c14db437f776a13459f3d49279cc036d" category="admonition">ポリシーはSystem ManagerまたはONTAP CLIで作成できます。ONTAP CLIを使用してカスタムポリシーを作成するには<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block> コマンド、を参照してください。<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block>。</block>
+  <block id="9cf82e73e2aa4201ca0b35cdc9ff3edf" category="admonition">UIを使用してバックアップをアクティブ化する前にカスタムポリシーを作成する方法については、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="fb2530f9293a4ba59cfd3ca6492bb972" category="section-title">2023年10月23日</block>
+  <block id="9b12782cbbc42b370b4d4bc260b1898e" category="section-title">3-2-1バックアップのアクティブ化中のポリシー作成</block>
+  <block id="356e8ead16eb5dbd3c579052a76bad44" category="paragraph">これまでは、Snapshot、レプリケーション、またはバックアップを開始する前にカスタムポリシーを作成する必要がありました。ONTAP 9.8 P5以降では、BlueXPのバックアップとリカバリのUIを使用して、バックアップのアクティブ化プロセスでポリシーを作成できるようになりました。</block>
+  <block id="75d1ce5c6ad2c6caeaeb5dea13c8ed1b" category="section-title">オンデマンドのクイックリストアのサポート</block>
+  <block id="176b76bad16e5fd8729393946eb26540" category="paragraph">BlueXPでは、クラウドストレージからCloud Volumes ONTAPシステムへボリュームの「クイックリストア」を実行できるようになりました。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。クイックリストアでは、バックアップファイル全体をリストアするのではなく、バックアップファイルからボリュームにメタデータをリストアできます。</block>
+  <block id="e3ed7c0a3f545b64d6f1678b54a9e0f3" category="paragraph">Cloud Volumes ONTAPデスティネーションシステムでONTAPバージョン9.13.0以降が実行されている必要があります。</block>
+  <block id="c0a5dc14978eb11df924b206a11f8b19" category="paragraph">BlueXPのバックアップとリカバリのジョブモニタに、クイックリストアジョブに関する情報が表示されるようになりました。</block>
+  <block id="209a2213c8478f88b6a43752e3a502ac" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。オブジェクトストレージのバックアップを使用する場合は、元の作業環境内のボリューム、ソースの作業環境と同じクラウドアカウントにある別の作業環境、またはオンプレミスのONTAPシステムにデータをリストアできます。</block>
+  <block id="896c3888b79484c9760825887d60adb2" category="paragraph">ONTAP 9.13.0以降を使用してCloud Volumes ONTAPシステムにクラウドバックアップをリストアする場合は、「クイックリストア」処理を実行することができます。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。クイックリストアでは、バックアップファイル全体をリストアするのではなく、バックアップファイルからボリュームにメタデータをリストアできます。高速リストアは、パフォーマンスやレイテンシの影響を受けやすいアプリケーションには推奨されません。また、アーカイブストレージ内のバックアップではサポートされません。</block>
+  <block id="d32e1d93e3ad3960f0013d75a50ca107" category="admonition">クイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみ、FlexGroupボリュームに対してサポートされます。また、SnapLockボリュームでサポートされるのは、ソースシステムでONTAP 9.11.0以降が実行されていた場合のみです。</block>
+  <block id="2f7ffcf09fd8291d200be9f94baef41d" category="list-text">リストアしたボリュームに使用する名前を入力し、ボリュームを配置するStorage VMとアグリゲートを選択します。FlexGroupボリュームをリストアする場合は、複数のアグリゲートを選択する必要があります。デフォルトでは、 * &lt;source_volume_name&gt; _ Restore * がボリューム名として使用されます。</block>
+  <block id="fcde2c072e8aee2aa6a09b37c7ceee0a" category="paragraph">ONTAP 9.13.0以降を使用してオブジェクトストレージからCloud Volumes ONTAPシステムにバックアップをリストアする場合は、「クイックリストア」処理を実行できます。</block>
+  <block id="8744543543bca2e8e7812d7c7a8f7f81" category="paragraph">バックアップファイルからa_full volume__をリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリュームとして、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることも、オンプレミスのONTAPシステムにリストアすることもできます。</block>
+  <block id="a6d6bf68742281a10bad1dc24bbe8bfc" category="paragraph">_foldersまたはfiles_を元のボリュームの場所、同じ作業環境内の別のボリューム、同じクラウドアカウントを使用する別の作業環境、またはオンプレミスのONTAPシステム上のボリュームにリストアできます。</block>
+  <block id="0662a540906c0c217caad41d6b214451" category="list-text">クイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみ、FlexGroupボリュームに対してサポートされます。SnapLockボリュームのクイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.11.0以降が実行されている場合にのみサポートされます。FlexVolボリュームの最小要件はありません。</block>
+  <block id="9ea8586e1304278c3a05061b433c1169" category="list-text">ボリュームについては、元の作業環境を選択するか、別の作業環境を選択できます。FlexGroupボリュームをリストアする場合は、複数のアグリゲートを選択する必要があります。</block>
+  <block id="161194bbe48a2135489734e9a8253dbc" category="list-text">*ローカルSnapshot *：既存のSnapshotポリシーを選択するか、作成します。</block>
+  <block id="86f7231a6add4e3af6c22d160f1fef1b" category="admonition">バックアップをアクティブ化する前にカスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="e55e33fb51399237a97d05cee7b9666a" category="list-text">*レプリケーションポリシー*：既存のレプリケーションポリシーを選択するか作成します。</block>
+  <block id="467647313d3b271591c978d30d0a3f45" category="admonition">レプリケーションをアクティブ化する前にカスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="2283ed1c2d2204e889a93d07486e3a8b" category="list-text">*バックアップポリシー*：オブジェクトストレージへの既存のバックアップポリシーを選択するか作成します。</block>
+  <block id="94564c9b3e87da6b96d2202774fb278d" category="list-text">クラウドストレージからCloud Volumes ONTAPシステムへのボリュームの「クイックリストア」を実行できるため、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリに最適です。</block>
+  <block id="19fe226921eb8023a05c222ee84c5db8" category="paragraph">バックアップは、バックアップのタイプに基づいて別の場所に格納されます。</block>
+  <block id="fc2fd0a50056e9aa6d11714c9450981b" category="list-text">レプリケーション対象として一度に選択できるFlexGroupボリュームは1つだけです。FlexGroupボリュームごとにバックアップを個別にアクティブ化する必要があります。</block>
+  <block id="3a3d9f6ee5fa05f3aa042e0258eebf58" category="list-text">バックアップポリシーにボリュームが割り当てられていないときにバックアップポリシーを作成または編集する場合、保持されるバックアップの最大数は1018です。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。</block>
+  <block id="fa5ec1bbbde705a6b3fbd36d5f35b9f9" category="list-text">ONTAP 9.12.1 GA以上を使用している場合は、プライマリシステムに接続しているときにバックアップがサポートされます。バックアップ構成全体がセカンダリシステムに転送されるため、スイッチオーバー後もクラウドへのバックアップが自動的に続行されます。セカンダリシステムにバックアップを設定する必要はありません（実際には、セットアップは制限されています）。</block>
+  <block id="a1e9108dbd21ffa07a61d3c3e7ecf506" category="list-text">ONTAP 9.12.0以前を使用している場合、バックアップはONTAPセカンダリシステムからのみサポートされます。</block>
+  <block id="c4ce3de681a449c685ec946915a5eb8a" category="list-text">クイックリストアの制限事項：</block>
+  <block id="31e082fed011780fb88072846029c3e5" category="list-text">デスティネーションの場所は、ONTAP 9.13.0以降を使用するCloud Volumes ONTAPシステムである必要があります。</block>
+  <block id="e84bd2928737b9826c8c54b6f73863db" category="list-text">アーカイブストレージにあるバックアップではサポートされません。</block>
+  <block id="b5f44cc87942dc7d5bfe6c4b26750821" category="list-text">FlexGroupボリュームは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみサポートされます。</block>
+  <block id="82f72f137722b68957ddade43e2defd1" category="list-text">SnapLockボリュームは、クラウドバックアップの作成元のソースシステムでONTAP 9.11.0以降が実行されている場合にのみサポートされます。</block>
+  <block id="ce2a08fb730f789e2b1cd4e7afc9f682" category="paragraph">アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードの実行前または実行中にポリシーを作成できます。</block>
+  <block id="ff9a9beae7e6760ee494147f435ae537" category="section-title">Snapshotを開始する前にSnapshotポリシーを作成する</block>
+  <block id="f2d390fa1db9923459b003140db5abec" category="list-text">[ポリシー]ページで、*[ポリシーの作成]*&gt;*[Snapshotポリシーの作成]*を選択します。</block>
+  <block id="4dab151c833afe1024538e7c9e3a409e" category="section-title">レプリケーションを開始する前にレプリケーションポリシーを作成する</block>
+  <block id="cd1ca0eeb8fdb932e286f62f9740d679" category="list-text">[ポリシー]ページで、*[ポリシーの作成]*&gt;*[レプリケーションポリシーの作成]*を選択します。</block>
+  <block id="726883ae3f1569950c0fe4f48e4d1105" category="section-title">バックアップを開始する前に、オブジェクトストレージへのバックアップポリシーを作成する</block>
+  <block id="443b26b79fa41de26ed76ff524457f1b" category="list-text">[ポリシー管理]ページで、*[ポリシーの作成]*&gt;*[バックアップポリシーの作成]*を選択します。</block>
+  <block id="267898099f8e68a62b670fd699a1d3f5" category="admonition">Snapshotをアクティブ化する前にカスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="c12d5fb21a1fcbc94b85e916ae79b879" category="admonition">レプリケーションをアクティブ化する前にカスタムポリシーを作成するには、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="410aed6a48c92fe5a14c0f80aea2e49d" category="list-text">*バックアップポリシー*：既存のオブジェクトストレージへのバックアップポリシーを選択するか、新しいポリシーを作成します。</block>
+  <block id="2ce2db49b07d0bd2d1dada807c65d175" category="paragraph">保護するボリュームを選択します。保護されたボリュームとは、Snapshotポリシー、レプリケーションポリシー、オブジェクトへのバックアップポリシーのうち1つ以上のポリシーが設定されているボリュームです。</block>
+  <block id="91b1870e279924acdf3d4248405f1f98" category="list-text">最初のボリュームを選択したら、[All FlexVol Volumes]を選択できます。（FlexGroupボリュームは一度に1つしか選択できません）。 既存のFlexVolボリュームをすべてバックアップするには、最初に1つのボリュームをオンにしてから、タイトル行のボックスをオンにします。（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="6f016177210af1e863aa59b8f2e97752" category="list-text">*バックアップポリシー*：既存のオブジェクトへのバックアップストレージポリシーを選択します。</block>
+  <block id="f149f54356387e5794adb107c0cc0a7d" category="paragraph">BlueXPの[Backup and recovery Reports]タブでは、[Backup Inventory]レポートを作成してその内容をフィルタリングできます。Backup Inventoryレポートでは、特定のアカウント、作業環境、またはSVMインベントリのすべてのバックアップを表示できます。</block>
+  <block id="09d75137b3fb689dc33f1373da0ca50b" category="list-text">バックアップ・タイプ（スケジュール・バックアップまたはユーザーが開始するアドホック・バックアップ）</block>
+  <block id="bb556c03f0c66474f3d3666fd4354e8e" category="list-text">選択したレポートに応じて、レポートのセクション（[Snapshot Policies]、[Replication Policies]、または[Backup Policies]）を確認します。</block>
+  <block id="dae5b12aa472c177c1e2583718010f3e" category="paragraph">レポート『環境BlueXP Backup and Recovery Operations for Cloud Volumes ONTAP、オンプレミス、アプリケーション、Kubernetes data』</block>
+  <block id="661d052ba9e14a07c1387ef54569e445" category="summary">開始またはスケジュールされたローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始またはスケジュールされたリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
+  <block id="9ee483d0200a76af92f0e7ffaf360da9" category="paragraph">BlueXPのバックアップとリカバリのUIおよびAPIから開始したSnapshot、レプリケーション、オブジェクトストレージへのバックアップ、リストア処理は、[Job Monitoring]タブで確認できます。</block>
+  <block id="97ed68d89be18084aed5cb3445ac40c1" category="paragraph">保持（または_backup lifecycle _）フローの監視は、監査の完全性、説明責任、およびバックアップの安全性を支援します。バックアップのライフサイクルを追跡するために、すべてのバックアップコピーの有効期限を確認することができます。</block>
+  <block id="67e8772c27eee052c978af0d5760e36a" category="list-text">ジョブ・タイプとして[Retention]を選択します。</block>
+  <block id="b240fec42fab4d1361745cc3f51165ed" category="list-text">*ローカルSnapshot *：既存のSnapshotポリシーを選択するか、ポリシーを作成します。</block>
+  <block id="528899f511e6aa452ca3bf4d1e27defe" category="list-text">*レプリケーションポリシー*：既存のレプリケーションポリシーを選択するか、ポリシーを作成します。</block>
+  <block id="f840f9756698d2642c682c57635ce422" category="list-text">*バックアップポリシー*：既存のバックアップポリシーを選択するか、ポリシーを作成します。</block>
+  <block id="29ec9eea05a4e021ec0af54e27e66224" category="list-text">*バックアップポリシー*：既存のオブジェクトストレージへのバックアップポリシーを選択するか作成します。</block>
+  <block id="abb095c3ca764fa12daa893d7e619ae1" category="paragraph">必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAPデータをバックアップする場合は、バックアップからフォルダまたは1つ以上の_files_を同じ作業環境または異なる作業環境にリストアすることもできます。</block>
+  <block id="c0e14bdf7e581929bb61c30f0455c35e" category="paragraph">バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではこのオブジェクトストアの名前を次のように指定します。<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block>。このオブジェクトストアは削除しないでください。</block>
+  <block id="3e8d942114ddd71bc4d36aca5db8bb0a" category="list-text">ONTAP S3では、S3バケット用の既存のユーザアカウントが使用されます。</block>
+  <block id="ada0ea0c378e640dcf914757628491a1" category="section-title">バックアップが作成されるタイミング</block>
+  <block id="f73591df3bffa1bec575368324f40233" category="paragraph">BlueXPバックアップとリカバリ（Cloud Backup）のライセンスを購入したら、BlueXPのバックアップとリカバリのシリアル番号とNetApp Support Site（NSS）アカウントを入力するか、NetAppライセンスファイル（NLF）をアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。</block>
+  <block id="4bfcf52b215e00901db793339d1f5b9e" category="paragraph">インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している（BlueXP Connectorを<block ref="6426a8a427a5eadce24d979d317c10cc" category="inline-link-rx"></block>では、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。プライベートモードのインストールでは、シリアル番号とNetApp Support Siteアカウントを使用してライセンスをアクティブ化することはできません。</block>
+  <block id="ac2c17b7d9121a38bd0676675759e2d0" category="list-text">デフォルトのバックアップポリシーを使用するか、カスタムポリシーを作成する必要があるか</block>
+  <block id="379c9cb0dad843f8d57008637a4d83e7" category="admonition">レプリケートされたボリュームまたはバックアップファイルの初回作成時には、ソースデータのフルコピーが含まれます。これは_ベースライン転送_と呼ばれます。以降の転送では、ソースデータの差分コピー（Snapshot）のみが含まれます。</block>
+  <block id="46a85142d5afdcb478818dd355fabecd" category="section-title">Snapshotコピー、レプリケーション、およびバックアップにデフォルトのバックアップポリシーを使用するか</block>
+  <block id="8ebfc273389c1b045abce8c48c051970" category="paragraph">NetAppのデフォルトポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードの開始前または使用中にポリシーを作成できます。</block>
+  <block id="4299e803df046f181c6d05e5bcc4a853" category="list-text">デフォルトのSnapshotポリシーは、hourly、daily、およびweeklyのSnapshotコピーを作成し、hourlyのSnapshotコピーを6個、dailyを2個、weeklyを2個保持します。</block>
+  <block id="d15db32d5d9df007a971f75a2640c71c" category="paragraph">レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。</block>
+  <block id="748a8c28fe1e967321c785cb4c772c2c" category="paragraph">カスタムポリシーは、BlueXPのバックアップリカバリ、System Manager、またはONTAPコマンドラインインターフェイス（CLI）を使用して作成できます。</block>
+  <block id="82f49efcbf889d6eb769da07e9bfa832" category="paragraph"><block ref="1d5508fcd8027e26b48962bd984558d5" category="inline-link-rx"></block>
+<block ref="25d9216966497b44f1274c2fdc3f62ee" category="inline-link-rx"></block>
+<block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
+<block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
+<block ref="21814359fa3d01fa463924248dc4810b" category="inline-link-rx"></block>
+<block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
+  <block id="d0c161747fe8a725393203f97ccd685c" category="paragraph">BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> を参照してください。</block>
 </blocks>

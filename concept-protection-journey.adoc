@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protection-journey.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
+keywords: backing up, restoring, recovery, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
 summary: BlueXPのバックアップとリカバリサービスでは、ソースボリュームのコピーを最大3つ作成してデータを保護できます。ボリュームでこのサービスを有効にするときに選択できるオプションは多数あるため、準備ができるように選択内容を確認する必要があります。 
 ---
 = 保護対策を計画しましょう
@@ -20,7 +20,7 @@ BlueXPのバックアップとリカバリサービスでは、ソースボリ�
 
 * 使用する保護機能（Snapshotコピー、レプリケートされたボリューム、クラウドへのバックアップ
 * 使用するバックアップアーキテクチャ（ボリュームのカスケードバックアップまたはファンアウトバックアップ
-* デフォルトのバックアップポリシーを使用するか、または作業を開始する前にカスタムポリシーを作成する必要がありますか
+* デフォルトのバックアップポリシーを使用するか、カスタムポリシーを作成する必要があるか
 * 開始前にサービスでクラウドバケットを作成するか、オブジェクトストレージコンテナを作成するか
 * 使用しているBlueXP Connector導入モード（標準モード、制限モード、プライベートモード）
 
@@ -58,7 +58,7 @@ image:diagram-321-overview.png["ソースシステムに、Snapshotコピー、�
 
 
 
-NOTE: レプリケートされたボリュームまたはバックアップファイルの初回作成時には、ソースデータのフルコピーが含まれます。これはベースライン転送と呼ばれます。以降の転送では、ソースデータの差分コピー（Snapshot）のみが含まれます。
+NOTE: レプリケートされたボリュームまたはバックアップファイルの初回作成時には、ソースデータのフルコピーが含まれます。これは_ベースライン転送_と呼ばれます。以降の転送では、ソースデータの差分コピー（Snapshot）のみが含まれます。
 
 
 
@@ -113,19 +113,21 @@ image:diagram-321-cascade-detailed.png["ボリュームのSnapshotコピーを�
 |===
 
 
-== Snapshot、レプリケーション、およびバックアップにデフォルトのバックアップポリシーを使用しますか
+== Snapshotコピー、レプリケーション、およびバックアップにデフォルトのバックアップポリシーを使用するか
 
-NetAppのデフォルトポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードを開始する前にポリシーを作成する必要があります。
+NetAppのデフォルトポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードの開始前または使用中にポリシーを作成できます。
 
 * デフォルトのSnapshotポリシーは、hourly、daily、およびweeklyのSnapshotコピーを作成し、hourlyのSnapshotコピーを6個、dailyを2個、weeklyを2個保持します。
 * デフォルトのレプリケーションポリシーでは、日単位Snapshotコピーと週単位Snapshotコピーがレプリケートされ、日単位Snapshotコピーは7個、週単位Snapshotコピーは52個保持されます。
 * デフォルトのバックアップポリシーでは、日単位Snapshotコピーと週単位Snapshotコピーがレプリケートされ、日単位Snapshotコピーは7個、週単位Snapshotコピーは52個保持されます。
 
 
-レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。カスタムポリシーは、System ManagerまたはONTAPコマンドラインインターフェイス（CLI）を使用して作成できます。
+レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["System Managerを使用してSnapshotポリシーを作成します"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["ONTAP CLIを使用してSnapshotポリシーを作成します"^]
+カスタムポリシーは、BlueXPのバックアップリカバリ、System Manager、またはONTAPコマンドラインインターフェイス（CLI）を使用して作成できます。
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["System Managerを使用してSnapshotポリシーを作成する"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["ONTAP CLIを使用したSnapshotポリシーの作成"^]
 https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["System Managerを使用してレプリケーションポリシーを作成します"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["ONTAP CLIを使用してレプリケーションポリシーを作成します"^]
 https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["System Managerを使用してバックアップポリシーを作成"^]
@@ -133,7 +135,7 @@ https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#descr
 
 *注：* System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous *を選択し、オブジェクトポリシーにバックアップする場合は* Asynchronous *と* Back up to cloud *を選択します。
 
-BlueXPのバックアップとリカバリのUIで、オブジェクトストレージポリシーへのバックアップを作成できます。の項を参照してください link:task-manage-backups-ontap.html#add-a-new-backup-policy["新しいバックアップポリシーを追加しています"] を参照してください。Snapshotポリシーとレプリケーションポリシーは、System ManagerまたはONTAP CLIを使用して作成する必要があります。
+BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください link:task-manage-backups-ontap.html#add-a-new-backup-policy["新しいバックアップポリシーを追加しています"] を参照してください。
 
 ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。として_admin_vserver（Storage VM）を使用する必要があります `<vserver_name>` を参照してください。
 
