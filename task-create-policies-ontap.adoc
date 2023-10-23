@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-create-policies-ontap.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーによって、バックアップのタイプ、バックアップアーキテクチャ、ストレージシステム、バックアップ頻度が決まります。 
 ---
 = ONTAPボリュームのバックアップポリシーを管理します。
@@ -141,9 +141,9 @@ Snapshotポリシーはデフォルトで表示されます。
 . [ポリシーの詳細]セクションで、ポリシー名を指定します。
 . 各ラベルの保持期間を示すSnapMirrorラベル（最大5つ）を指定します。
 . 転送スケジュールやバックアップをアーカイブするタイミングなど、設定を指定します。
-. （オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。
+. （オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。バックアップファイルをアーカイブストレージに直接送信するには、「Archive after days」に「* 0 *」と入力します。
 +
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定に関する詳細情報"]。
+link:concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定に関する詳細情報"]。
 
 . （オプション）バックアップが変更または削除されないように保護するには、*[DataLock & Ransomware protection]*オプションを選択します。
 +

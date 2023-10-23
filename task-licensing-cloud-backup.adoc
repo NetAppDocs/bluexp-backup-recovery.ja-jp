@@ -50,6 +50,9 @@ BlueXPのバックアップとリカバリには、いくつかのPAYGOプラン
 
 * Cloud Volumes ONTAP データとオンプレミスのONTAP データをバックアップできる「クラウドバックアップ」パッケージ。
 * Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージです。これには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスのONTAP データはバックアップできません。
++
+このオプションにはバックアップとリカバリのPAYGOサブスクリプションも必要ですが、対象となるCloud Volumes ONTAPシステムには料金は発生しません。
+
 * 「CVO Edge Cache」パッケージは、「CVO Professional」パッケージと同じ機能を備えていますが、のサポートも含まれています https://docs.netapp.com/us-en/bluexp-edge-caching/concept-gfc.html["BlueXPのエッジキャッシング"^] サービスCloud Volumes ONTAP システムにプロビジョニングされた容量3TiBにつき、BlueXPエッジキャッシュエッジシステムを1つ導入することができます。このオプションはAzureとGoogleのマーケットプレイスで利用でき、オンプレミスのONTAP データをバックアップすることはできません。
 
 

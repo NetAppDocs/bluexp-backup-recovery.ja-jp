@@ -608,8 +608,6 @@
   <block id="6c28e9f31a1540537e96cfb66aff6920" category="list-text">バックアップポリシーでアーカイブストレージを設定している場合、DataLockとRansomwareによる保護は利用できません。</block>
   <block id="96832c8d3beeed50f75c2178388e9ff6" category="list-text">DataLockを有効にすると、すべてのボリュームバックアップがロックされます。1つのクラスタに、ロックされたボリュームバックアップとロックされていないボリュームバックアップを混在させることはできません。</block>
   <block id="9ee754e4742a85085c00a0da15114de7" category="section-title">アーカイブストレージの設定</block>
-  <block id="3f88d585791651a3799485ca0c6328aa" category="paragraph">特定のクラウドストレージを使用している場合、一定期間経過した古いバックアップファイルを低コストのストレージクラス/アクセス階層に移動できます。DataLockを有効にした場合は、アーカイブストレージを使用できません。</block>
-  <block id="244bf1b38515bb301b6d835e3906b9a1" category="paragraph">アーカイブ階層内のデータは、必要なときにすぐにアクセスすることはできず、読み出しコストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。</block>
   <block id="373e31603b5a78ab3bc84cbe57c892b5" category="paragraph">各バックアップポリシーには、バックアップファイルに適用できる_Archival Policy_に関するセクションがあります。</block>
   <block id="7efe72f6baeb19dc4e15e1feb217b66a" category="inline-image-macro">バックアップポリシーを作成するときのアーカイブポリシーの設定のスクリーンショット。</block>
   <block id="bff3ba9699160e0c8d9eccbf41cf51f7" category="paragraph"><block ref="bff3ba9699160e0c8d9eccbf41cf51f7" category="inline-image-macro-rx" type="image"></block></block>
@@ -1008,8 +1006,6 @@
   <block id="913b0ac6158d64b39b9d1e539ad326d3" category="list-text">SnapMirrorデータ保護（DP）デスティネーションボリューム</block>
   <block id="53356882cec477de26a5ac4371a30b82" category="list-text">SnapLock Enterpriseボリューム（ONTAP 9.11.1以降が必要）</block>
   <block id="bab09e9304b5c4bff1eb4287ce6071b7" category="list-text">FlexGroup ボリューム（ONTAP 9.12.1以降が必要）</block>
-  <block id="92524402c108ab284bc6798e0addc26d" category="inline-xref">Backup and Restoreの制限事項</block>
-  <block id="459e9c0a518eab1d9e4ab7cdc89584d8" category="paragraph">の項を参照してください <block ref="253106289c94848c578475b45290aa80" category="inline-xref-macro-rx"></block> を参照してください。</block>
   <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">コスト</block>
   <block id="d14d70754e8322b819c6bc86af6beefd" category="paragraph">* リソース料金 *</block>
   <block id="fe66ea47b1e195d0a8f311d62ee027d8" category="paragraph">リソース料金は、オブジェクトストレージの容量、クラウドへのバックアップファイルの書き込みと読み取りのために、クラウドプロバイダに支払われます。</block>
@@ -1324,26 +1320,6 @@
   <block id="b0e03676724b8b6468356ef104a66e4f" category="section-title">ファイルレベルのリストアで、元のソースファイルを上書きするオプションが追加されました</block>
   <block id="f3e2c168c189da079b62c6ff6558a640" category="paragraph">以前は、元のボリュームにリストアされたファイルは、「Restore_&lt; file_name &gt;」というプレフィックスの新しいファイルとして常にリストアされていました。ボリューム上の元の場所にファイルをリストアする際に、元のソースファイルを上書きできるようになりました。この機能は、参照およびリストア方法と検索およびリストア方法の両方を使用して、リストア処理を実行する場合に使用できます。</block>
   <block id="736c2dbf2aa9f4b08b97a4f719b3cf5e" category="section-title">ドラッグアンドドロップして、StorageGRID システムへのクラウドバックアップを有効にします</block>
-  <block id="15471566ffb385e256937957990dd60d" category="section-title">2022年8月18日</block>
-  <block id="5f98181f93bdb66aed67b6ec6ca0e6a1" category="section-title">検索とリストアがAzure Blobでのバックアップファイルでサポートされるようになりました</block>
-  <block id="a2824b49f1c7526bf0e925b86c7b293c" category="inline-link">Search &amp; Restoreを使用してボリュームとファイルをリストアする方法を参照してください</block>
-  <block id="df69045929c0c3d81d05d291d9a65cdf" category="inline-link">必要に応じて、これらの権限を追加する方法を参照してください</block>
-  <block id="3b360b98b3f98a4a19cae6eee4917697" category="section-title">バックアップファイルを削除攻撃やランサムウェア攻撃から保護する機能が追加されました</block>
-  <block id="0d12e2bc2bcdc88948dc22492e4465d5" category="inline-link">必要に応じて、これらの権限を追加する方法を参照してください</block>
-  <block id="9fa4d73f6f3d752a69adeebba1959edb" category="section-title">Cloud Backupで、カスタムSnapMirrorラベルを使用して作成したポリシーがサポートされるようになりまし</block>
-  <block id="387856638678798c3ffb0e38b39170c6" category="paragraph">以前は、Cloud Backupであらかじめ定義されているSnapMirrorラベル（hourly、daily、weekly、hourly、yearlyなど）のみがサポートされていました。これで、System ManagerまたはCLIを使用して作成したカスタムのSnapMirrorラベルを含むSnapMirrorポリシーがCloud Backupで検出されるようになります。これらの新しいラベルはCloud BackupのUIで公開されており、SnapMirrorラベルを使用してボリュームをクラウドにバックアップできます。</block>
-  <block id="a50aef84191a2a8583dff3169f0e9722" category="section-title">ONTAP システムのバックアップポリシーも強化されました</block>
-  <block id="49ed93361b6144f58f401017aa6361d0" category="paragraph">一部のバックアップポリシーのページが再設計され、各ONTAP クラスタのボリュームに使用できるすべてのバックアップポリシーが表示されるようになりました。これにより、使用可能なポリシーの詳細を簡単に確認できるため、ボリュームに最適なポリシーを適用できます。</block>
-  <block id="c386ae49c48be8bcc2fbd19ab4807c0a" category="section-title">ドラッグアンドドロップして、Azure BlobやGoogle Cloud StorageへのCloud Backupを有効にします</block>
-  <block id="b6f2e1a880ce20ab3d1039056746fa33" category="paragraph">この機能はAmazon S3バケットに対してはすでに存在します。</block>
-  <block id="02e3f175b6b6db384cc8a9f19dfd8b6a" category="section-title">2022年7月13日</block>
-  <block id="f2c95e400c19071fbcd562467ddc48b3" category="section-title">SnapLock Enterpriseボリュームのバックアップがサポートされるようになりました</block>
-  <block id="b5c6b00b01586b598af43c9744b7abbf" category="paragraph">Cloud Backupを使用して、SnapLock Enterpriseボリュームをパブリッククラウドとプライベートクラウドにバックアップできるようになりました。この機能を使用するには、ONTAP システムでONTAP 9.11.1以降が実行されている必要があります。ただし、SnapLock Complianceボリュームは、現在のところサポートされていません。</block>
-  <block id="975ab611b7133feabb2a325e663f8347" category="section-title">オンプレミスコネクタを使用して、パブリッククラウドにバックアップファイルを作成できるようになりました</block>
-  <block id="8d2224260491150c834f946712c069a0" category="paragraph">以前は、バックアップファイルの作成場所と同じクラウドプロバイダにConnectorを導入する必要がありました。オンプレミスに導入されたコネクタを使用して、オンプレミスのONTAP システムからAmazon S3、Azure Blob、Google Cloud Storageへのバックアップファイルを作成できるようになりました。（StorageGRID システムでバックアップファイルを作成する場合は、オンプレミスコネクタが常に必要でした）。</block>
-  <block id="f42fcdabb7c9a7075b26292ed8cb7a23" category="section-title">ONTAP システムのバックアップポリシーを作成する場合には、追加の機能を使用できます</block>
-  <block id="cd359ec6a578adbdedd6582f88b84401" category="list-text">毎年のスケジュールでバックアップを実行できるようになりました。年単位のバックアップの場合、デフォルトの保持期間は1ですが、この値を変更して、以前の多数のバックアップファイルにアクセスできるようにすることができます。</block>
-  <block id="42a0fcc08cab0bf2248dfca3aecd8ec9" category="list-text">バックアップポリシーに名前を付けておくと、よりわかりやすいテキストでポリシーを識別できます。</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link-macro">詳細については、こちらをご覧ください</block>
   <block id="dd115af180e43b9284746f0724f2e436" category="admonition">各SAP HANAデータベースホストにJava 11（64ビット）Oracle JavaまたはOpenJDKがインストールされていることを確認します。</block>
   <block id="2eeb194bf5c17f3408edda6fb4570318" category="summary">アプリケーションデータをONTAP からAzureにバックアップするには、いくつかの手順を実行します。</block>
@@ -2739,7 +2715,6 @@
   <block id="197747cde80c31576877de78be696240" category="section-title">BlueXPのアプリケーション向けバックアップとリカバリの機能拡張（クラウドネイティブ）</block>
   <block id="abfdb85669faee0a0fe78a3ddd25158b" category="list-text">ハイブリッドREST APIが変更され、クラウドネイティブAPIと連携するようになりました。</block>
   <block id="6aed75aba7c0fd43b22d758888e056e5" category="list-text">クラウドネイティブのOracleデータベースのクローニングをサポート</block>
-  <block id="7f7d1a32b5fedca3a771d2900e5395cd" category="section-title">クラウドネイティブアプリケーションのデータを保護するためのサポートが追加されました</block>
   <block id="dc553b3a8ff149a0efb878a07b9d8ec0" category="doc">クラウドネイティブアプリケーションデータの保護を管理</block>
   <block id="f48626282fa7688ef2e0f91ee72f0675" category="doc">クラウドネイティブのOracleデータベースをリストア</block>
   <block id="634e2ab135fc91c3a377e944e4ac17ef" category="paragraph">Oracle 21cデータベースがstarted状態の場合、リストア処理は失敗します。データベースを正常にリストアするには、次のコマンドを実行する必要があります。<block ref="160ee41b32c5f5be43397b4b028828c5" prefix=" " category="inline-code"></block></block>
@@ -2941,13 +2916,6 @@
   <block id="ff977b3bda8bd49c8895b8e27c7ac01a" category="paragraph">には、次の更新が行われています<block ref="34f4049f89ba8890765cc171e2590532" category="inline-link-rx"></block>：</block>
   <block id="17f47b7c1b637ccdb258e9324672295c" category="paragraph">最後のリリースで導入された、Amazon S3バケットに格納されたバックアップ向けの_DataLockとRansomware Protection_forが含まれます。このリリースでは、StorageGRID システムに格納されたバックアップファイルのサポートが拡張されています。クラスタがONTAP 9.11.1以降を使用していて、StorageGRID システムがバージョン11.6.0.3以降を実行している場合、この新しいバックアップポリシーオプションを使用できます。<block ref="6e0b9608f1ba1040184a3e955da31f87" category="inline-link-rx"></block>。</block>
   <block id="72e4241b97e5dcf5222db5c1346cd6e5" category="paragraph">状況に応じて<block ref="0675f343561e34593b3974118982449f" category="inline-link-rx"></block> バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてクラウドバックアップセットアップウィザードを開始できます。</block>
-  <block id="1f184e67cc26d932b818db63df683324" category="paragraph">Cloud Backup for Applicationsは、NetApp Cloud Storageで実行されているアプリケーションにデータ保護機能を提供するSaaSベースのサービスです。BlueXPで有効になっているアプリケーション向けCloud Backupは、アプリケーションと整合性のある、効率的でポリシーベースのバックアップとリストアを実現します。Amazon FSX for NetApp ONTAP 上にあるOracleデータベースのバックアップとリストアを実行できます。
-<block ref="7cfd73f52a7d273785490cb7a68d9c5b" category="inline-link-rx"></block>。</block>
-  <block id="7c25b79ad059154686c7d342679713ff" category="paragraph">Azure BLOBストレージにバックアップファイルを保存するユーザが、ボリュームとファイルのリストア方法を検索してリストアできるようになりました。<block ref="e3d7ab8aadfeeb6efca0c0cb70aa3002" category="inline-link-rx"></block>。</block>
-  <block id="f248ae67b245b68973e4ad9510bcd770" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェア（2022年8月）を使用して導入されたコネクタに、次の権限が含まれます。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="d5b6e1cdf774193e7e920adcc4958d6f" category="inline-link-rx"></block>。</block>
-  <block id="13cc419f9eec4864b183cd309490fa96" category="paragraph">Cloud Backupでランサムウェアセーフバックアップのオブジェクトロックがサポートされるようになりました。クラスタがONTAP 9.11.1以降を使用していて、バックアップのデスティネーションがAmazon S3の場合、_DataLockという新しいバックアップポリシーオプションとランサムウェア防御_が利用可能になりました。DataLockはバックアップファイルの変更や削除を防止します。ランサムウェア対策はバックアップファイルをスキャンして、ランサムウェアによるバックアップファイルへの攻撃の証拠を探します。<block ref="6e0b9608f1ba1040184a3e955da31f87" category="inline-link-rx"></block>。</block>
-  <block id="a0a86845199a713fefe6ac2a510c1f3b" category="paragraph">この機能を使用するには、Connectorロールで追加の権限が必要です。バージョン3.9.21ソフトウェアを使用して展開されたコネクタには、これらの権限が含まれています。以前のリリースを使用してコネクタを導入した場合は、権限を手動で追加する必要があります。<block ref="a1358a7278422ac19edeaba6b3485166" category="inline-link-rx"></block>。</block>
-  <block id="5256ce9f634603c7974195d06a3810f9" category="paragraph">状況に応じて<block ref="faa8e7c446a7ba2fa85e0b9729d4b7be" category="inline-link-rx"></block> または<block ref="826767c7190992a148d6461504672381" category="inline-link-rx"></block> バックアップ先はキャンバス上の作業環境として存在し、オンプレミスのONTAP またはCloud Volumes ONTAP 作業環境（AzureまたはGCPにインストール）を移行先にドラッグしてバックアップセットアップウィザードを開始できます。</block>
   <block id="a4208eced8af02553d8e5579f39b9b33" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="44c761dee3b53dae29ddd56ac5dddd4f" category="inline-link-rx"></block>。</block>
   <block id="15535e291980746e2353acd6a4780f1c" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、を使用したサブスクリプションです<block ref="92655de6fae7d07ed3897ce19d51b88d" category="inline-link-rx"></block> は、BlueXPのバックアップとリカバリを有効にする前に必要です。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
   <block id="9178cbd8799c2d35e159c2e093e709aa" category="paragraph">既存のCloud Volumes ONTAP システムを検出し、BlueXPに追加できます。詳細については、を参照してください <block ref="2136955d725610e67d83c3e217237632" category="inline-link-macro-rx"></block>。</block>
@@ -3685,7 +3653,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="66e7c889f1d203b98d4330686da2e2cd" category="list-text">複数のFlexVolボリュームを一度にセカンダリシステムにレプリケートします。</block>
   <block id="5cb11ed35306a1eb272c0463127877ee" category="list-text">UIを使用して、レプリケートされたボリュームをソースシステムまたは別のシステムにリストアします。</block>
   <block id="2eb3c16f8718eea213343bfcb6e0d47c" category="inline-xref">レプリケーションの制限事項</block>
-  <block id="348b37c61721a69ca9bbc044a78f4f30" category="paragraph">を参照してください <block ref="b628dcca4075ba68cf7ed87cb4366871" category="inline-xref-macro-rx"></block> BlueXPのバックアップとリカバリでは使用できないレプリケーション機能のリストについては、を参照してください。</block>
   <block id="da1c5c4591d63a85c5ceaf08f009708d" category="paragraph">*オブジェクト機能へのバックアップ：*</block>
   <block id="2ef86679dc81862bbea0ea37e255ca59" category="paragraph">*リストア機能：*</block>
   <block id="ba8be4a78d73005d396b001c480790d5" category="list-text">ローカルのSnapshotコピー、レプリケートされたボリューム、またはオブジェクトストレージ内のバックアップされたボリュームから、特定の時点のデータをリストアします。</block>
@@ -4185,7 +4152,6 @@ ifdef：aws []</block>
   <block id="cfb67c066deff155999e8b4bab9d5bd1" category="list-text">ONTAPクラスタは、バックアップ処理とリストア処理のために、ユーザ指定のポートを介してクラスタ間LIFからONTAP S3サーバへのHTTPS接続を開始します。ポートはバックアップのセットアップ時に設定できます。</block>
   <block id="30984c716386c83803363a08cb1784ca" category="list-text">ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。</block>
   <block id="a82a5bb2727df3f1958829955576a139" category="list-text">を使用しているIPspaceがデフォルトと異なる場合は、オブジェクトストレージにアクセスするための静的ルートの作成が必要になることがあります。</block>
-  <block id="a2784dc104b15a83917a09f317720881" category="paragraph">BlueXPのバックアップとリカバリでバックアップをアクティブ化する前に、ソースシステムとデスティネーションシステムが次のネットワーク要件を満たしていることを確認してください。</block>
   <block id="49245543ad6be948bdde6584e5642a93" category="list-text">クラスタが社内にある場合は、社内ネットワークからクラウドプロバイダ内の仮想ネットワークへの接続が必要です。これは通常、 VPN 接続です。</block>
   <block id="6da2ce1a0bc0894620f6c533f7a2f2b4" category="section-title">バックアップターゲットとしてのONTAP S3の準備</block>
   <block id="c3bf5d608f066a6b405a40012a2fc10c" category="inline-link">ONTAP S3のドキュメント</block>
@@ -4422,9 +4388,7 @@ ONTAP S3の略</block>
   <block id="7c8ffe07bb7dc70647a194385ea66773" category="list-text">ファンアウト：プライマリストレージシステム</block>
   <block id="96ab2d22b4464dc324915df8e5067ca9" category="list-text">カスケード：セカンダリストレージシステム</block>
   <block id="bfd2bf5ca91b1984485de4fe52e739a9" category="list-text">転送スケジュールやバックアップをアーカイブするタイミングなど、設定を指定します。</block>
-  <block id="ddb011fe917012a700049a04ecd807d0" category="list-text">（オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。</block>
   <block id="88b38144f5678f838e589bb3f66fb7c3" category="inline-link">アーカイブストレージの設定に関する詳細情報</block>
-  <block id="2f06c0f9a9c55e002f0fca564655709f" category="paragraph"><block ref="2b8c84e24d5058cbeba0f5b8c6d03c2f" category="inline-link-rx"></block>。</block>
   <block id="de7befde4d7cc6f9bdfc275272097393" category="list-text">（オプション）バックアップが変更または削除されないように保護するには、*[DataLock &amp; Ransomware protection]*オプションを選択します。</block>
   <block id="2d9688ca19f23219c0b4f9a9455f77b5" category="paragraph">クラスタでONTAP 9.11.1以降を使用している場合は、_DataLock_and_Ransomware protection_を設定することで、バックアップを削除から保護できます。</block>
   <block id="8b8b4afe72e073cb2f31b19794927e17" category="paragraph"><block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>。</block>
@@ -4705,12 +4669,7 @@ ONTAP S3の略</block>
   <block id="c14db437f776a13459f3d49279cc036d" category="admonition">ポリシーはSystem ManagerまたはONTAP CLIで作成できます。ONTAP CLIを使用してカスタムポリシーを作成するには<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block> コマンド、を参照してください。<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block>。</block>
   <block id="9cf82e73e2aa4201ca0b35cdc9ff3edf" category="admonition">UIを使用してバックアップをアクティブ化する前にカスタムポリシーを作成する方法については、を参照してください。 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
   <block id="fb2530f9293a4ba59cfd3ca6492bb972" category="section-title">2023年10月23日</block>
-  <block id="9b12782cbbc42b370b4d4bc260b1898e" category="section-title">3-2-1バックアップのアクティブ化中のポリシー作成</block>
-  <block id="356e8ead16eb5dbd3c579052a76bad44" category="paragraph">これまでは、Snapshot、レプリケーション、またはバックアップを開始する前にカスタムポリシーを作成する必要がありました。ONTAP 9.8 P5以降では、BlueXPのバックアップとリカバリのUIを使用して、バックアップのアクティブ化プロセスでポリシーを作成できるようになりました。</block>
-  <block id="75d1ce5c6ad2c6caeaeb5dea13c8ed1b" category="section-title">オンデマンドのクイックリストアのサポート</block>
   <block id="176b76bad16e5fd8729393946eb26540" category="paragraph">BlueXPでは、クラウドストレージからCloud Volumes ONTAPシステムへボリュームの「クイックリストア」を実行できるようになりました。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。クイックリストアでは、バックアップファイル全体をリストアするのではなく、バックアップファイルからボリュームにメタデータをリストアできます。</block>
-  <block id="e3ed7c0a3f545b64d6f1678b54a9e0f3" category="paragraph">Cloud Volumes ONTAPデスティネーションシステムでONTAPバージョン9.13.0以降が実行されている必要があります。</block>
-  <block id="c0a5dc14978eb11df924b206a11f8b19" category="paragraph">BlueXPのバックアップとリカバリのジョブモニタに、クイックリストアジョブに関する情報が表示されるようになりました。</block>
   <block id="209a2213c8478f88b6a43752e3a502ac" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。オブジェクトストレージのバックアップを使用する場合は、元の作業環境内のボリューム、ソースの作業環境と同じクラウドアカウントにある別の作業環境、またはオンプレミスのONTAPシステムにデータをリストアできます。</block>
   <block id="896c3888b79484c9760825887d60adb2" category="paragraph">ONTAP 9.13.0以降を使用してCloud Volumes ONTAPシステムにクラウドバックアップをリストアする場合は、「クイックリストア」処理を実行することができます。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。クイックリストアでは、バックアップファイル全体をリストアするのではなく、バックアップファイルからボリュームにメタデータをリストアできます。高速リストアは、パフォーマンスやレイテンシの影響を受けやすいアプリケーションには推奨されません。また、アーカイブストレージ内のバックアップではサポートされません。</block>
   <block id="d32e1d93e3ad3960f0013d75a50ca107" category="admonition">クイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみ、FlexGroupボリュームに対してサポートされます。また、SnapLockボリュームでサポートされるのは、ソースシステムでONTAP 9.11.0以降が実行されていた場合のみです。</block>
@@ -4781,4 +4740,27 @@ ONTAP S3の略</block>
 <block ref="21814359fa3d01fa463924248dc4810b" category="inline-link-rx"></block>
 <block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
   <block id="d0c161747fe8a725393203f97ccd685c" category="paragraph">BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="22edee525474fff8dff91ac36bee6386" category="paragraph">BlueXPのバックアップとリカバリを使用してセカンダリONTAPシステムにレプリケートされたボリュームを作成する場合は、ソースシステムとデスティネーションシステムが次のネットワーク要件を満たしていることを確認してください。</block>
+  <block id="f1d5b892646c28fdb747b890f0787976" category="section-title">バックアップのアクティブ化中の3-2-1バックアップポリシーの作成</block>
+  <block id="1a169799fb63ccdda2e672c25d0ab2d2" category="paragraph">これまでは、Snapshot、レプリケーション、またはバックアップを開始する前にカスタムポリシーを作成する必要がありました。BlueXPのバックアップとリカバリのUIを使用して、バックアップのアクティブ化プロセスでポリシーを作成できるようになりました。</block>
+  <block id="09aac1469e7bc1d8f162de80ea67cdc3" category="section-title">ONTAPボリュームのオンデマンドのクイックリストアのサポート</block>
+  <block id="1d2fad969d5ec82be3bae65922e81ae0" category="paragraph">Cloud Volumes ONTAPデスティネーションシステムでONTAPバージョン9.13.0以降が実行されている必要があります。<block ref="b1f838c6239cc5d42e2bbd74d1b6c2a2" category="inline-link-rx"></block>。</block>
+  <block id="a508551aa743c3098667d5ae32149739" category="paragraph">BlueXPのバックアップとリカバリのジョブモニタには、クイックリストアジョブの進捗状況も表示されます。</block>
+  <block id="f63476943179d5dd83527cd0b9c7ade4" category="section-title">最初に標準ストレージに書き込むのではなく、バックアップデータを即座にアーカイブ可能</block>
+  <block id="cc702ed839181d5a4eb3655eba656f65" category="paragraph">これで、データを標準のクラウドストレージに書き込む代わりに、バックアップファイルをすぐにアーカイブストレージに送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープバックアップ環境に取って代わるユーザに特に役立ちます。</block>
+  <block id="9aa936e4dd7e0d3efaa0a77d15dc632b" category="list-text">Cloud Volumes ONTAPとBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」パッケージを使用する場合、バックアップとリカバリのPAYGOサブスクリプションが必要になりました。これは以前は必要ありませんでした。対象となるCloud Volumes ONTAPシステムのバックアップとリカバリのサブスクリプション料金は発生しませんが、新しいボリュームでバックアップを設定する場合は必要です。</block>
+  <block id="0cfaa5ae5082470bafba0615d45f7751" category="paragraph">を参照してください <block ref="d040451a2351bab208828c79c3596d9a" category="inline-link-macro-rx"></block> BlueXPのバックアップとリカバリでは使用できないレプリケーション機能のリストについては、を参照してください。</block>
+  <block id="9e767927964c6ec4f221f081786309ff" category="inline-link-macro">バックアップとリストアの制限事項</block>
+  <block id="7c28f64a5610cc1e75581e2ea3dc7138" category="paragraph">の項を参照してください <block ref="ac80a7f05dc0391b19d593c75503912d" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="7082ff4f578c0dfc350f7dba294cc6af" category="paragraph">特定のクラウドストレージを使用している場合、一定期間経過した古いバックアップファイルを低コストのストレージクラス/アクセス階層に移動できます。また、標準のクラウドストレージに書き込まれることなく、バックアップファイルをすぐにアーカイブストレージに送信することもできます。DataLockを有効にした場合は、アーカイブストレージを使用できません。</block>
+  <block id="10d6dae9dea0d7acf070167883c1271a" category="list-text">（オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。バックアップファイルをアーカイブストレージに直接送信するには、「Archive after days」に「* 0 *」と入力します。</block>
+  <block id="e19fdb00900d5bd2fa83624f8c18a460" category="paragraph"><block ref="0c2d0936bf813db900df081191632aa8" category="inline-link-macro-rx"></block>。</block>
+  <block id="5d8aef9555e5438ddeff623786db2956" category="summary">既知の制限事項には、このリリースの製品でサポートされていない機能、またはこのリリースと正しく相互運用できない機能が記載されています。これらの制限事項を慎重に確認してください</block>
+  <block id="482723983a4f2af954e36ff41e567451" category="doc">既知の制限</block>
+  <block id="aa0373aa24c3795f9860b49e074ec0b5" category="section-title">ONTAPのバックアップとリストアの制限事項</block>
+  <block id="5a8f207b587cd09b18047f9ee3e8cdc1" category="paragraph">AWS、Azure、Googleのクラウドストレージを使用している場合は、一定の日数が経過したら、古いバックアップファイルを低コストのアーカイブストレージクラス/アクセス階層に移動できます。また、標準のクラウドストレージに書き込まれることなく、バックアップファイルをすぐにアーカイブストレージに送信することもできます。「Archive after days」に「* 0 *」と入力するだけで、バックアップファイルをアーカイブストレージに直接送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープの解決策にバックアップを取って代わるユーザに特に役立ちます。</block>
+  <block id="0bfadff6ad45440425fe5f23292524af" category="paragraph">アーカイブ層のデータには、必要なときにすぐにアクセスできないため、読み出しコストが高くなるため、バックアップファイルのアーカイブを決定する前に、バックアップファイルからデータをリストアする頻度を検討する必要があります。</block>
+  <block id="09e167bf2b5bda581990fa1f93a488dc" category="list-text">DataLockを有効にしている場合、アーカイブストレージは使用できません。</block>
+  <block id="324aabe08d5432a326f39205133865e5" category="list-text">「* 0 *日」（すぐにアーカイブ）を選択した後、アーカイブポリシーを変更することはできません。</block>
+  <block id="ead9580c0d6ff558e5f419a89f784e01" category="paragraph">このオプションにはバックアップとリカバリのPAYGOサブスクリプションも必要ですが、対象となるCloud Volumes ONTAPシステムには料金は発生しません。</block>
 </blocks>
