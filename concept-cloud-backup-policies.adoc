@@ -66,6 +66,7 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 ====
 * DataLockとRansomware Protectionを使用する場合は、最初のバックアップポリシーを作成し、そのクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに有効にする必要があります。
 * 設定後は、クラスタのDataLock保護とRansomware保護を無効にすることはできません。この機能は、クラスタでは有効にしないでください。
+* BlueXPがボリュームデータをリストアするときにバックアップファイルをスキャンしてランサムウェアを検出すると、クラウドプロバイダからバックアップファイルの内容にアクセスするための追加の出力コストが発生します。
 
 
 ====

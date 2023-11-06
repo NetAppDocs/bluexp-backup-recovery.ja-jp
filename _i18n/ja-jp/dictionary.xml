@@ -1459,7 +1459,6 @@
   <block id="666ed8be10916b8df1e91c68afc70837" category="inline-image-macro">リストアするボリュームおよびバックアップを選択するスクリーンショット。</block>
   <block id="3241f00f6afec47c1dd4ded721e91f06" category="paragraph"><block ref="3241f00f6afec47c1dd4ded721e91f06" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ba1ccf94a083bfd57735e245a4f6c008" category="list-text">「*次へ」をクリックすると、ボリュームバックアップのフォルダとファイルのリストが表示されます。</block>
-  <block id="ebbb5acf9eeef476ac9814c657f478a6" category="paragraph">+ランサムウェアからの保護がバックアップファイルに対して有効になっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にしている場合）、データをリストアする前にバックアップファイルでランサムウェアスキャンを実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。</block>
   <block id="7bb9fd3f9e0a378a25dd32a5202de877" category="inline-image-macro">リストアするアイテムに移動できるようにする[アイテムの選択]ページのスクリーンショット。</block>
   <block id="f0d4d7f2cce1062f2b862ef90b4ef0c0" category="paragraph">[+]<block ref="fc9c529c4f71392c736c88c8ef2b4e72" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca22cc6140bd8c54eb21a12417ea6dee" category="list-text">[アイテムの選択]ページで、復元するフォルダまたはファイルを選択し、[続行]をクリックします。アイテムの検索を支援するために、次の手順を実行します。</block>
@@ -3683,7 +3682,6 @@ Cloud Volumes ONTAP</block>
   <block id="cacc0f1cc9cd6741d9e30b806ce36daf" category="paragraph">ONTAP システムでBlueXPのバックアップとリカバリを使用すると、リソース料金とサービス料金の2種類のコストが発生します。これらの料金はどちらも、サービスのオブジェクトへのバックアップ部分に適用されます。</block>
   <block id="1854bdaf3ded217ffdff52794b6c84fc" category="paragraph">Snapshotコピーやレプリケートされたボリュームの保存に必要なディスクスペース以外は、Snapshotコピーやレプリケートされたボリュームの作成に料金はかかりません。</block>
   <block id="da8845e5304a59d7d37af79e23b5072b" category="list-text">オブジェクトストレージへのバックアップについては、クラウドプロバイダにオブジェクトストレージのコストを支払います。</block>
-  <block id="78e2dd72962866a86860001ab2ade24b" category="list-text">アーカイブオブジェクトストレージに移動されたバックアップファイルからボリュームデータをリストアする必要がある場合は、クラウドプロバイダからGiB単位の読み出し料金と要求単位の料金を別途請求します。</block>
   <block id="060b6e252a88502e803f6fdc3115b5d9" category="paragraph">サービス料金はNetAppに支払われ、オブジェクトストレージへの_create_backupsと、それらのバックアップからのto_restore_volumes（ファイル）のコストの両方をカバーします。料金は、オブジェクトストレージで保護したデータに対してのみ発生します。これは、オブジェクトストレージにバックアップされるONTAPボリュームのソースの使用済み論理容量（ONTAPによる削減率）から計算されます。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。</block>
   <block id="255e7de3fa398fdd52f91ef58bfebde4" category="paragraph">Cloud Volumes ONTAP またはオンプレミスのONTAP システムでBlueXPのバックアップとリカバリを有効にすると、データのフルバックアップが実行されます。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。オブジェクトストレージへのバックアップは、上に構築されます<block ref="d8c60b64404c334d98470563ebc11aa0" category="inline-link-rx"></block>。</block>
   <block id="435d2218ff597c0925356208def09d75" category="admonition">クラウドプロバイダ環境から直接実行してクラウドバックアップファイルを管理または変更すると、ファイルが破損し、構成がサポートされない可能性があります。</block>
@@ -3993,7 +3991,6 @@ ifdef：aws []</block>
   <block id="bb52ad67a6160989e585657353648e45" category="paragraph">レプリケートされたボリュームからリストアする場合は、元の作業環境、Cloud Volumes ONTAPまたはオンプレミスのONTAPシステムにボリュームをリストアできます。</block>
   <block id="44f3c574b5983f4ad30068b5afb3882a" category="paragraph">このように、ボリュームのリストアを実行するには、ソースの作業環境名、Storage VM、ボリューム名、およびバックアップファイルの日付を確認しておく必要があります。</block>
   <block id="c884a3e70e8bce1d15f993ac9cb50a73" category="paragraph">[場所]列には、バックアップファイル（Snapshot）が*ローカル*（ソースシステム上のSnapshotコピー）、*セカンダリ*（セカンダリONTAPシステム上のレプリケートされたボリューム）、または*オブジェクトストレージ*（オブジェクトストレージ内のバックアップファイル）のいずれであるかが表示されます。リストアするファイルを選択します。</block>
-  <block id="ef0fcda1c8af84b95c5ba9db58b558ed" category="paragraph">オブジェクトストレージでバックアップファイルを選択し、そのバックアップに対してランサムウェア対策がアクティブになっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にしている場合）は、データをリストアする前に、バックアップファイルに対してランサムウェアスキャンを追加で実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。</block>
   <block id="4f77ec7cb4d938e815d515d86daf431e" category="list-text">オブジェクトストレージからバックアップファイルをリストアするときに、オンプレミスのONTAPシステムを選択し、オブジェクトストレージへのクラスタ接続をまだ設定していない場合は、追加情報の入力を求めるプロンプトが表示されます。</block>
   <block id="f75114a933eef4dfbad580f177284e12" category="paragraph">BlueXPのバックアップとリカバリでは、選択したバックアップに基づいて新しいボリュームが作成されます。</block>
   <block id="310dbba96c4cb79d0f5f822051257fc8" category="section-title">ブラウズおよびリストアを使用して'フォルダとファイルをリストアします</block>
@@ -4763,4 +4760,10 @@ ONTAP S3の略</block>
   <block id="09e167bf2b5bda581990fa1f93a488dc" category="list-text">DataLockを有効にしている場合、アーカイブストレージは使用できません。</block>
   <block id="324aabe08d5432a326f39205133865e5" category="list-text">「* 0 *日」（すぐにアーカイブ）を選択した後、アーカイブポリシーを変更することはできません。</block>
   <block id="ead9580c0d6ff558e5f419a89f784e01" category="paragraph">このオプションにはバックアップとリカバリのPAYGOサブスクリプションも必要ですが、対象となるCloud Volumes ONTAPシステムには料金は発生しません。</block>
+  <block id="bfcf2f3ddacfecb0010a2a12007c49bf" category="paragraph">オブジェクトストレージでバックアップファイルを選択し、そのバックアップに対してランサムウェア対策がアクティブになっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にしている場合）は、データをリストアする前に、バックアップファイルに対してランサムウェアスキャンを追加で実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。（バックアップファイルの内容にアクセスするために、クラウドプロバイダから追加の出力コストが発生します）。</block>
+  <block id="b35840b98f7248c2e0c3a6b17bd33299" category="paragraph">[+]
+また、バックアップファイルに対してランサムウェア対策が有効になっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にした場合）は、データをリストアする前に、バックアップファイルに対してランサムウェアスキャンを追加で実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。（バックアップファイルの内容にアクセスするために、クラウドプロバイダから追加の出力コストが発生します）。</block>
+  <block id="f1f644db5655e70aeceadaa6b299010c" category="list-text">BlueXPがボリュームデータをリストアするときにバックアップファイルをスキャンしてランサムウェアを検出すると、クラウドプロバイダからバックアップファイルの内容にアクセスするための追加の出力コストが発生します。</block>
+  <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">アーカイブオブジェクトストレージに移動されたバックアップファイルからボリュームデータをリストアする場合は、クラウドプロバイダからGiB単位の読み出し料金と要求単位の料金を別途請求します。</block>
+  <block id="832fd1c3441239683a98428c909ca909" category="list-text">ボリュームデータのリストアプロセス中にバックアップファイルをスキャンしてランサムウェアを検出する場合（クラウドバックアップに対してDataLockとRansomware Protectionを有効にしている場合）は、クラウドプロバイダからの追加の出力コストも発生します。</block>
 </blocks>
