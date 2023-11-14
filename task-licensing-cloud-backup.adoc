@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
 summary: BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制または年間マーケットプレイスサブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（Bring Your Own License）を購入します。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。 
 ---
 = BlueXPのバックアップとリカバリのライセンスをセットアップ
@@ -30,7 +30,7 @@ link:concept-ontap-backup-to-cloud.html#cost["BlueXPのバックアップとリ�
 
 == 30 日間の無償トライアルをご利用いただけます
 
-BlueXPのバックアップとリカバリの30日間無償トライアルは、クラウドプロバイダのマーケットプレイスで提供されている従量課金制サブスクリプションでご利用いただけます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAP システムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無料トライアルを開始すると、20日以内に無料トライアルを利用できます。
+クラウドプロバイダのマーケットプレイスで従量課金制サブスクリプションに登録すると、BlueXPバックアップ/リカバリの30日間無償トライアルを利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAPシステムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無償トライアルを開始すると、残り20日間の無償トライアルを利用できます。
 
 無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["作業環境からBlueXPバックアップおよびリカバリの登録を解除します"] トライアルが終了する前に、請求は行われません。
 
@@ -41,7 +41,7 @@ BlueXPのバックアップとリカバリの30日間無償トライアルは、
 従量課金制の場合、クラウドプロバイダにオブジェクトストレージのコストとネットアップのバックアップライセンスのコストを1時間単位で支払うことになります。無償トライアルを利用されている場合や、お客様が独自のライセンスを使用（ BYOL ）されている場合も、サブスクリプションを設定する必要があります。
 
 * 登録することで、無償トライアルの終了後にサービスが中断されることがなくなります。トライアルが終了すると、バックアップしたデータの量に応じて1時間ごとに課金されます。
-* BYOL ライセンスで許可されている数を超えるデータをバックアップした場合、データバックアップは従量課金制サブスクリプションを使用して続行されます。たとえば、 BYOL ライセンスが 10TiB の場合、 10TiB を超える容量はすべて PAYGO サブスクリプションによって課金されます。
+* BYOLライセンスで許可されている数を超えるデータをバックアップした場合は、従量課金制サブスクリプションを通じてデータのバックアップとリストアの処理を継続できます。たとえば、 BYOL ライセンスが 10TiB の場合、 10TiB を超える容量はすべて PAYGO サブスクリプションによって課金されます。
 
 
 無償トライアル中やBYOLライセンスを超えていない場合は、従量課金制サブスクリプションから請求されることはありません。
@@ -62,7 +62,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 ifdef::aws[]
 
-* AWS https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* AWS https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
 
 
 endif::aws[]
@@ -76,7 +76,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* GCP ： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* Google Cloud https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
 
 
 endif::gcp[]
@@ -85,11 +85,13 @@ endif::gcp[]
 
 == 年間契約を使用する
 
-BlueXPのバックアップとリカバリの料金は、年単位の契約を購入して年単位で支払うことができます。
+BlueXPのバックアップとリカバリの料金は、年単位の契約を購入して年単位で支払うことができます。期間は1年、2年、3年から選択できます。
+
+市場で年間契約を結んでいるパートナー様の場合、BlueXPのバックアップとリカバリの消費量はすべてその契約に基づいて請求されます。BYOLでは、年単位のマーケットプレイス契約を組み合わせることはできません。
 
 ifdef::aws[]
 
-AWSを使用している場合は、で2つの年間契約が提供されます https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace のページ"^] Cloud Volumes ONTAP システムとオンプレミスの ONTAP システムで使用できます。1年、2年、または3年の期間が用意されています。
+AWSを使用している場合は、で2つの年間契約が提供されます https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace のページ"^] Cloud Volumes ONTAPシステムとオンプレミスのONTAPシステムの場合：
 
 * Cloud Volumes ONTAP データとオンプレミスの ONTAP データをバックアップできる「クラウドバックアップ」プラン。
 +
@@ -108,17 +110,30 @@ endif::aws[]
 
 ifdef::azure[]
 
-Azureをご利用の場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Azure Marketplaceでのプライベートオファーとして提供されます。ネットアップからプライベートオファーが提供されたら、BlueXPのバックアップとリカバリのアクティブ化時にAzure Marketplaceでサブスクライブする際に年間プランを選択できます。
+Azureを使用している場合は、 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Azure Marketplaceのページ"^] Cloud Volumes ONTAPシステムとオンプレミスのONTAPシステムの場合：
+
+* Cloud Volumes ONTAP データとオンプレミスの ONTAP データをバックアップできる「クラウドバックアップ」プラン。
++
+このオプションを使用する場合は、 Marketplace のページでサブスクリプションを設定してから、を設定します https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe["サブスクリプションをAzureクレデンシャルに関連付ける"^]。BlueXPでAzureクレデンシャルに割り当てることができるアクティブなサブスクリプションは1つだけなので、この年間契約サブスクリプションを使用してCloud Volumes ONTAPシステムの料金も支払う必要があります。
+
+* Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、ライセンスを使用するCloud Volumes ONTAP システムのバックアップが無制限に含まれます（バックアップ容量はライセンス容量にはカウントされません）。このオプションでは、オンプレミスのONTAP データはバックアップできません。
++
+を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP のライセンスに関するトピック"^] このライセンスオプションの詳細については、を参照してください。
+
++
+このオプションを使用する場合は、Cloud Volumes ONTAP作業環境の作成時に年間契約を設定でき、BlueXPからAzure Marketplaceへのサブスクライブを求めるメッセージが表示されます。
+
+
 
 endif::azure[]
 
 ifdef::gcp[]
 
-GCPを使用している場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Google Cloud Marketplaceでのプライベートオファーとして利用できます。ネットアップからプライベートオファーが提供されたら、BlueXPのバックアップとリカバリのアクティブ化時にGoogle Cloud Marketplaceからサブスクライブする際に年間プランを選択できます。
+GCPを使用している場合は、ネットアップの営業担当者に連絡して年間契約を購入してください。この契約は、Google Cloud Marketplaceでのプライベートオファーとして利用できます。
+
+ネットアップからプライベートオファーが提供されたら、BlueXPのバックアップとリカバリのアクティブ化時にGoogle Cloud Marketplaceからサブスクライブする際に年間プランを選択できます。
 
 endif::gcp[]
-
-市場で年間契約を結んでいるパートナー様の場合、BlueXPのバックアップとリカバリの消費量はすべてその契約に基づいて請求されます。BYOLでは、年単位のマーケットプレイス契約を組み合わせることはできません。
 
 
 
@@ -238,7 +253,7 @@ BlueXPのバックアップとリカバリのBYOLライセンスを使用して�
 
 BYOLライセンスの期限が切れると、次の2つのことが起こります。
 
-* 使用しているアカウントにマーケットプレイスアカウントがある場合、バックアップサービスは引き続き実行されますが、 PAYGO ライセンスモデルに移行します。バックアップに使用されている容量に基づいて料金が発生します。
+* 使用しているアカウントにMarketplaceのPAYGOアカウントがある場合、バックアップサービスは引き続き実行されますが、PAYGOライセンスモデルに移行します。バックアップに使用されている容量に基づいて料金が発生します。
 * 使用しているアカウントにMarketplaceアカウントがない場合、バックアップサービスは引き続き実行されますが、警告は引き続き表示されます。
 
 
