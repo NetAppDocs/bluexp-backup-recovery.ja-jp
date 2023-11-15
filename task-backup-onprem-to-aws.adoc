@@ -362,12 +362,7 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
             "Resource": "arn:aws:s3:::netapp-backup-*",
             "Effect": "Allow",
             "Sid": "backupPolicy"
-        }
-    ]
-}
-{
-    "Version": "2012-10-17",
-    "Statement": [
+        },
         {
             "Action": [
                 "s3:ListBucket",

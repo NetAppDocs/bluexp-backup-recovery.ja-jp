@@ -4772,4 +4772,7 @@ ONTAP S3の略</block>
   <block id="61f06895b4fcad7d6460158ccfc33c17" category="paragraph">BYOLはタームベース（1、2、または3年）の_および_容量ベース（1TiB単位）です。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量を指定した場合は「 10TiB 」とします。</block>
   <block id="bc74d224d8eebb9d1f7a6a0cca3c6a3d" category="paragraph">AWSを使用する場合は、1年、2年、3年の2年間契約を選択できます。</block>
   <block id="a31db27d8aef7db23d51910ceb960041" category="paragraph">Azureをご利用の場合は、1年、2年、3年の2年間契約をご用意しています。</block>
+  <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">ジョブモニタでのスケジュール済みジョブのサポート</block>
+  <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">BlueXPのバックアップおよびリカバリジョブモニタでは、以前にスケジュールされたボリュームからオブジェクトストアへのバックアップおよびリストアジョブを監視しましたが、UIまたはAPIを使用してスケジュールされたローカルのSnapshot、レプリケーション、バックアップ、およびリストアジョブは監視しません。</block>
+  <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">BlueXPのバックアップとリカバリのジョブモニタに、ローカルのSnapshot、レプリケーション、オブジェクトストレージへのバックアップに関するスケジュール済みジョブが追加されました。</block>
 </blocks>
