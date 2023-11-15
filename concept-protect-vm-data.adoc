@@ -26,7 +26,7 @@ BlueXPの仮想マシン向けバックアップ/リカバリ機能は、デー�
 ** SnapCenter Plug-in for VMware vSphere 4.7P1以降を使用して、オンプレミスのセカンダリストレージからデータストアをバックアップする必要があります。
 
 
-* ONTAP 9.8 以降
+* ONTAP 9.8以降
 * BlueXP
 * NFSデータストアとVMFSデータストアがサポートされます。VVOLはサポートされません。
 * VMFSをサポートするには、SnapCenter Plug-in for VMware vSphereホストが4.9以降で実行されている必要があります。SnapCenter Plug-in for VMware vSphereホストを以前のバージョンから4.9リリースにアップグレードした場合は、VMFSデータストアのバックアップを作成してください。

@@ -129,7 +129,7 @@ spec:
 
 
 --
-ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+ライセンス要件:: BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの[Details  Credentials]ページからサブスクライブできます。"^]。
 +
 --
 BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。
@@ -177,4 +177,5 @@ image:screenshot_backup_select_volumes_k8s.png["バックアップする永続�
 Kubernetes ダッシュボードが表示され、バックアップの状態を監視できます。
 
 .次の手順
-可能です link:task-manage-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] Azure 内の同じまたは別の Kubernetes クラスタ（同じリージョン内）に新しいボリュームとして配置する必要があります。
+可能です link:task-manage-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。
+また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] Azure 内の同じまたは別の Kubernetes クラスタ（同じリージョン内）に新しいボリュームとして配置する必要があります。

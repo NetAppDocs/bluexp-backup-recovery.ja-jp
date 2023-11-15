@@ -128,7 +128,7 @@ image:screenshot_auto_backup_k8s.png["Kubernetesクラスタ上の今後すべ�
 .手順
 . [*Kubernetes *] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] をソースボリュームとして選択し、 * Details & Backup List * を選択します。
 +
-image:screenshot_backup_view_k8s_backups_button.png["1 つのボリュームで使用できる [ 詳細とバックアップリスト ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_view_k8s_backups_button.png["1つのボリュームで使用できる[Details  Backup List]ボタンを示すスクリーンショット。"]
 
 +
 すべてのバックアップファイルのリストが、ソースボリューム、デスティネーションの場所、およびバックアップの詳細とともに表示されます。
@@ -176,7 +176,7 @@ image:screenshot_delete_all_backups_k8s.png["作業環境のすべてのバッ�
 .手順
 . [*Kubernetes *] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] をソースボリュームとして選択し、 * Details & Backup List * を選択します。
 +
-image:screenshot_backup_view_k8s_backups_button.png["1 つのボリュームで使用できる [ 詳細とバックアップリスト ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_view_k8s_backups_button.png["1つのボリュームで使用できる[Details  Backup List]ボタンを示すスクリーンショット。"]
 
 +
 すべてのバックアップファイルのリストが表示されます。
@@ -200,7 +200,7 @@ image:screenshot_delete_we_backups.png["ボリュームのすべてのバック�
 .手順
 . [*Kubernetes *] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] をソースボリュームとして選択し、 * Details & Backup List * を選択します。
 +
-image:screenshot_backup_view_k8s_backups_button.png["1 つのボリュームで使用できる [ 詳細とバックアップリスト ] ボタンを示すスクリーンショット"]
+image:screenshot_backup_view_k8s_backups_button.png["1つのボリュームで使用できる[Details  Backup List]ボタンを示すスクリーンショット。"]
 
 +
 すべてのバックアップファイルのリストが表示されます。

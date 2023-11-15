@@ -244,7 +244,7 @@ Cloud Volumes ONTAPまたはオンプレミスのシステムにレプリケー�
 
 このONTAPシステムは、次の要件を満たしている必要があります。
 
-サポートされている ONTAP のバージョン:: オンプレミスのONTAPシステムにはONTAP 9.8以降が必要です。
+サポートされるONTAPのバージョン:: オンプレミスのONTAPシステムにはONTAP 9.8以降が必要です。
 Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。
 S3 クレデンシャル:: ONTAP S3ストレージへのアクセスを制御するS3ユーザを作成しておく必要があります。 https://docs.netapp.com/us-en/ontap/s3-config/create-s3-user-task.html["詳細については、ONTAP S3のドキュメントを参照してください。"^]。
 +

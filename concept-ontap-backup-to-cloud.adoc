@@ -104,15 +104,27 @@ ifdef：aws []
 
 
 | AWS の Cloud Volumes ONTAP | AWS の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Amazon S3 endif：aws []ifdef：azure[] 
+オンプレミスの ONTAP システム | Amazon S3
+
+endif：：aws[]
+
+
+ifdef：Azure [] 
 
 
 | Azure の Cloud Volumes ONTAP | Azure の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Azure Blob endif：Azure[] ifdef：GCP [] 
+オンプレミスの ONTAP システム | Azure Blob の略
+
+endif：：azure[]
+
+
+ifdef ::gcp[] 
 
 
 | Google の Cloud Volumes ONTAP | Google の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Google Cloud Storage endif：GCP [] 
+オンプレミスの ONTAP システム | Google クラウドストレージ
+
+endif：GCP [] 
 
 
 | オンプレミスの ONTAP システム | Cloud Volumes ONTAP
@@ -154,15 +166,30 @@ ONTAP S3の略
 
 
 | Amazon S3 | AWS の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
+オンプレミスの ONTAP システム | AWS の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：aws[]
+
+
+ifdef：Azure [] 
 
 
 | Azure Blob の略 | Azure の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
+オンプレミスの ONTAP システム | Azure の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：azure[]
+
+
+ifdef ::gcp[] 
 
 
 | Google クラウドストレージ | Google の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
+オンプレミスの ONTAP システム | Google の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：GCP [] 
 
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム

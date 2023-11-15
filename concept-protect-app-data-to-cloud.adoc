@@ -30,7 +30,7 @@ Oracle、Microsoft SQL、SAP HANA、MongoDB、MySQL、 オンプレミスのONTA
 
 クラウドプロバイダへのアプリケーションデータのバックアップを開始する前に、次の要件を読み、サポートされる構成があることを確認してください。
 
-* ONTAP 9.8 以降
+* ONTAP 9.8以降
 * BlueXP
 * SnapCenterサーバ4.6以降
 +

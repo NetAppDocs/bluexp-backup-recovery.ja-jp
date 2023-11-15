@@ -77,7 +77,7 @@ Google Cloud Storageへのボリュームのバックアップを開始する前
 
 image:diagram_cloud_backup_cvo_google.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
-サポートされている ONTAP のバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
+サポートされるONTAPのバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
 サポートされる GCP リージョン:: BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
 GCP サービスアカウント:: 事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["サービスアカウントの作成方法について説明します"^]。
 
@@ -86,7 +86,7 @@ GCP サービスアカウント:: 事前定義された Storage Admin ロール�
 
 == ライセンス要件を確認
 
-BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、Google MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["このBlueXPサブスクリプションを購読します"^] BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、Google MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["このBlueXPサブスクリプションを購読します"^] BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["作業環境ウィザードの[Details  Credentials]ページからサブスクライブできます。"^]。
 
 BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"^]。
 
@@ -211,7 +211,7 @@ BluXPのバックアップとリカバリを有効にするのは簡単です。
 
 サービスアカウントがすでに設定されている必要があります。Cloud Volumes ONTAP システムの作成時にサービスアカウントを選択しなかった場合は、システムをオフにして、GCPコンソールからCloud Volumes ONTAP にサービスアカウントを追加する必要があります。
 
-を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["GCP での Cloud Volumes ONTAP の起動"^] を Cloud Volumes ONTAP 参照してください。
+を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["GCPでのCloud Volumes ONTAPの起動"^] を Cloud Volumes ONTAP 参照してください。
 
 .手順
 . BlueXPのキャンバスで*[Add Working Environment]*を選択し、クラウドプロバイダを選択して*[Add New]*を選択します。Cloud Volumes ONTAPの作成*を選択します。
@@ -235,7 +235,7 @@ image:screenshot_backup_to_gcp_new_env.png["作業環境ウィザードでサー
 +
 image:screenshot_backup_to_gcp.png["は、作業環境ウィザードのBlueXPのバックアップとリカバリオプションを示しています。"]
 
-. ウィザードの各ページを設定し、システムを導入します を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["GCP での Cloud Volumes ONTAP の起動"^]。
+. ウィザードの各ページを設定し、システムを導入します を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["GCPでのCloud Volumes ONTAPの起動"^]。
 
 
 

@@ -76,7 +76,7 @@ Azure Blob Storage へのボリュームのバックアップを開始する前�
 
 image:diagram_cloud_backup_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
-サポートされている ONTAP のバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
+サポートされるONTAPのバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
 サポートされている Azure リージョン:: BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
 +
 --
@@ -90,7 +90,7 @@ BlueXPのバックアップとリカバリでは、コストを最適化する�
 
 == ライセンス要件を確認
 
-BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの詳細  資格情報ページから購読できます"^]。
+BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの[Details  Credentials]ページからサブスクライブできます。"^]。
 
 BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["BYOL ライセンスの管理方法について説明します"]。コネクタとCloud Volumes ONTAP システムをダークサイト（「プライベートモード」）に導入する場合は、BYOLライセンスを使用する必要があります。
 

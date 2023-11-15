@@ -39,7 +39,7 @@ ONTAPボリュームのデータは、バックアップを作成した場所（
 
 NOTE: 少なくとも1つの作業環境でBlueXPのバックアップとリカバリをアクティブ化し、初期のバックアップファイルが存在している必要があります。
 
-image:screenshot_restore_dashboard.png["[ リストアダッシュボード ] には '[ 参照とリストア ] または [ 検索とリストア ] 機能を使用するためのオプションが表示されます"]
+image:screenshot_restore_dashboard.png["[リストア]ダッシュボードには、[参照とリストア]または[検索とリストア]機能を使用するためのオプションが表示されます。"]
 
 ご覧のように、リストアダッシュボードでは、 * 参照と復元 * と * 検索と復元 * の 2 つの異なる方法でバックアップファイルからデータを復元できます。
 
@@ -89,9 +89,9 @@ image:screenshot_restore_dashboard.png["[ リストアダッシュボード ] �
 
 使用するリストア処理のタイプに応じた要件とリストア手順を確認します。
 
-* <<Restoring volumes using Browse & Restore,ブラウズおよびリストアを使用してボリュームをリストアします>>
-* <<Restoring folders and files using Browse & Restore,ブラウズおよびリストアを使用して'フォルダとファイルをリストアします>>
-* <<Restoring ONTAP data using Search & Restore,検索とリストアを使用して'ボリューム'フォルダ'およびファイルをリストアします>>
+* <<Restoring volumes using Browse & Restore,参照とリストアを使用したボリュームのリストア>>
+* <<Restoring folders and files using Browse & Restore,参照と復元を使用したフォルダとファイルの復元>>
+* <<Restoring ONTAP data using Search & Restore,検索と復元を使用したボリューム、フォルダ、ファイルの復元>>
 
 
 
@@ -140,15 +140,30 @@ NOTE: AzureアーカイブストレージからStorageGRID システムにデー
 
 
 | Amazon S3 | AWS の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
+オンプレミスの ONTAP システム | AWS の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：aws[]
+
+
+ifdef：Azure [] 
 
 
 | Azure Blob の略 | Azure の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
+オンプレミスの ONTAP システム | Azure の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：azure[]
+
+
+ifdef ::gcp[] 
 
 
 | Google クラウドストレージ | Google の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
+オンプレミスの ONTAP システム | Google の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：GCP [] 
 
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム
@@ -215,7 +230,7 @@ NOTE: クイックリストアは、クラウドバックアップの作成元�
 
 レプリケートされたボリュームからリストアする場合は、元の作業環境、Cloud Volumes ONTAPまたはオンプレミスのONTAPシステムにボリュームをリストアできます。
 
-image:diagram_browse_restore_volume.png["ブラウズおよびリストアを使用してボリューム・リストアを実行するフローを示す図"]
+image:diagram_browse_restore_volume.png["次の図は、[参照とリストア]を使用してボリュームのリストア処理を実行するフローを示しています。"]
 
 このように、ボリュームのリストアを実行するには、ソースの作業環境名、Storage VM、ボリューム名、およびバックアップファイルの日付を確認しておく必要があります。
 
@@ -356,7 +371,7 @@ ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォ�
 . ファイルがリストアされます。
 
 
-image:diagram_browse_restore_file.png["ブラウズおよびリストアを使用してファイルのリストア操作を実行するフローを示す図"]
+image:diagram_browse_restore_file.png["Browse  Restoreを使用してファイルの復元操作を実行するフローを示した図。"]
 
 このように、フォルダまたはファイルのリストアを実行するには、作業環境名、ボリューム名、バックアップファイルの日付、およびフォルダ/ファイル名を知っている必要があります。
 
@@ -408,7 +423,8 @@ endif::gcp[]
 [+]
 また、バックアップファイルに対してランサムウェア対策が有効になっている場合（バックアップポリシーでDataLockとRansomware Protectionを有効にした場合）は、データをリストアする前に、バックアップファイルに対してランサムウェアスキャンを追加で実行するように求められます。バックアップファイルでランサムウェアをスキャンすることを推奨します。（バックアップファイルの内容にアクセスするために、クラウドプロバイダから追加の出力コストが発生します）。
 
-[+]image:screenshot_restore_select_files.png["リストアするアイテムに移動できるようにする[アイテムの選択]ページのスクリーンショット。"]
+[+]
+image:screenshot_restore_select_files.png["リストアするアイテムに移動できるようにする[アイテムの選択]ページのスクリーンショット。"]
 
 . [アイテムの選択]ページで、復元するフォルダまたはファイルを選択し、[続行]をクリックします。アイテムの検索を支援するために、次の手順を実行します。
 +
@@ -544,15 +560,30 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 
 
 | Amazon S3 | AWS の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AWSオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：aws [] ifdef：azure[] 
+オンプレミスの ONTAP システム | AWS の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：aws[]
+
+
+ifdef：Azure [] 
 
 
 | Azure Blob の略 | Azure の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AzureオンプレミスONTAP システムのCloud Volumes ONTAP 。endif：azure[] ifdef：gCP[] 
+オンプレミスの ONTAP システム | Azure の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：azure[]
+
+
+ifdef ::gcp[] 
 
 
 | Google クラウドストレージ | Google の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | GoogleオンプレミスONTAP システムのCloud Volumes ONTAP ：GCP[] 
+オンプレミスの ONTAP システム | Google の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：GCP [] 
 
 
 | NetApp StorageGRID | オンプレミスの ONTAP システム
@@ -656,7 +687,7 @@ endif::gcp[]
 +
 ** アカウントにクラウドプロバイダの資格情報がない場合は、インデックスカタログの情報がコネクタに保存されます。
 ** プライベート（ダーク）サイトでコネクタを使用している場合、インデックスカタログ情報はコネクタに保存されます（コネクタのバージョン3.9.25以降が必要です）。
-** ある場合 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["AWS クレデンシャル"^] または https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。
+** ある場合 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["AWSクレデンシャル"^] または https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html["Azure のクレデンシャル"^] アカウントでは、クラウドに展開されたコネクタと同様に、インデックスカタログがクラウドプロバイダに格納されます。（両方のクレデンシャルがある場合は、デフォルトでAWSが選択されます）。
 +
 オンプレミスコネクタを使用している場合でも、コネクタ権限とクラウドプロバイダリソースの両方についてクラウドプロバイダの要件を満たしている必要があります。この実装を使用する場合は、前述のAWSとAzureの要件を参照してください。
 
@@ -681,7 +712,7 @@ endif::gcp[]
 . ボリューム、フォルダ、またはファイルがリストアされます。
 
 
-image:diagram_search_restore_vol_file.png["Search  Restoreを使用してボリューム'フォルダ'またはファイルのリストア操作を実行するフローを示す図"]
+image:diagram_search_restore_vol_file.png["Search  Restoreを使用してボリューム、フォルダ、またはファイルのリストア処理を実行するフローを示す図。"]
 
 ご覧のように、名前の一部を知っておくだけで、BlueXPのバックアップとリカバリでは、検索に一致するすべてのバックアップファイルが検索されます。
 
@@ -742,7 +773,7 @@ image:screenshot_restore_enable_indexing.png["インデックスカタログを�
 . [* Restore * （復元） ] タブをクリックすると、 [Restore Dashboard （復元ダッシュボード） ] が表示されます。
 . [ 検索と復元 ] セクションで、 [ * 検索と復元 * ] をクリックします。
 +
-image:screenshot_restore_start_search_restore.png["リストアダッシュボードから [ 検索と復元 ] ボタンを選択するスクリーンショット。"]
+image:screenshot_restore_start_search_restore.png["[Restore Dashboard]から[Search  Restore]ボタンを選択するスクリーンショット。"]
 
 . [リストアする検索（Search to Restore）]ページから、次の
 +
@@ -753,7 +784,7 @@ image:screenshot_restore_start_search_restore.png["リストアダッシュボ�
 
 . [*検索（* Search）]をクリックすると、検索結果（Search Results）領域に、検索に一致するファイル、フォルダ、またはボリュームを含むすべてのリソースが表示されます。
 +
-image:screenshot_restore_step1_search_restore.png["検索条件と検索結果を示すスクリーンショットが [ 検索とリストア ] ページに表示されます"]
+image:screenshot_restore_step1_search_restore.png["[Search  Restore]ページの検索条件と検索結果を示すスクリーンショット。"]
 
 . リストアするデータがあるリソースを探し、*[すべてのバックアップを表示]*をクリックして、一致するボリューム、フォルダ、またはファイルを含むすべてのバックアップファイルを表示します。
 +

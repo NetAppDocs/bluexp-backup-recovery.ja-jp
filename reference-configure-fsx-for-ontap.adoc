@@ -34,7 +34,7 @@ FSx for ONTAP 作業環境は、BlueXPまたはAWSを使用して作成できま
 
 * FSx for ONTAP の作業環境とデータベースの管理には、同じコネクタを使用する必要があります。
 * FSx for ONTAP の作業環境とデータベースが同じ仮想プライベートクラウド（VPC）内にある場合は、コネクタを同じVPCに導入できます。
-* FSx for ONTAP の作業環境とデータベースが異なるVPCにある場合：
+* FSx for ONTAPの作業環境とデータベースが異なるVPCにある場合：
 +
 ** FSx for ONTAP でNAS（NFS）ワークロードが設定されている場合は、どちらかのVPCにコネクタを作成できます。
 ** SANワークロードのみが設定されていて、NAS（NFS）ワークロードを使用する予定がない場合は、FSx for ONTAP システムが作成されたVPCにコネクタを作成する必要があります。
@@ -46,7 +46,8 @@ NOTE: NAS（NFS）ワークロードを使用する場合は、データベー�
 
 
 
-コネクタを作成したら、*[ストレージ]*>* Canvas *>* My Working Environments *>*[Add Working Environment]*をクリックし、プロンプトに従って作業環境を追加します。コネクタからOracleデータベースホストおよびFSx作業環境への接続が確立されていることを確認します。コネクタは、FSx作業環境のクラスタ管理IPアドレスに接続できる必要があります。
+コネクタを作成したら、*[ストレージ]*>* Canvas *>* My Working Environments *>*[Add Working Environment]*をクリックし、プロンプトに従って作業環境を追加します。
+コネクタからOracleデータベースホストおよびFSx作業環境への接続が確立されていることを確認します。コネクタは、FSx作業環境のクラスタ管理IPアドレスに接続できる必要があります。
 
 * [ストレージ]*>* Canvas *>* My Working Environments *>*[作業環境の追加]*をクリックして、作業環境を追加します。
 +

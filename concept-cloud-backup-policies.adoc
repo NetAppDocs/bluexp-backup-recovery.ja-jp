@@ -76,7 +76,7 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 
 DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。これは「不変ストレージ」とも呼ばれます。この機能は、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。バックアップ・ファイルがロック（および保持）される期間をDataLockの保持期間と呼びますこの値は、定義したバックアップポリシーのスケジュールと保持の設定に加え、14日間のバッファに基づきます。30日未満のDataLock保持ポリシーは、最小30日に切り上げられます。
 
-古いバックアップは、バックアップポリシーの保持期間が過ぎても、DataLockの保持期間が過ぎると削除されるのではなく、注意してください。
+古いバックアップは、バックアップポリシーの保持期間が終了した後ではなく、DataLockの保持期間が終了した後に削除されることに注意してください。
 
 この機能の例をいくつか見てみましょう。
 
@@ -186,16 +186,47 @@ DataLockは_Compliion_modeに設定されており、保持期間中にユーザ
 
 [cols="55,45"]
 |===
-| ソースの作業環境 | バックアップファイルデスティネーションifdef：aws [] 
+| ソースの作業環境 | バックアップファイルの保存先
 
 
-| AWS の Cloud Volumes ONTAP | Amazon S3 endif：aws []ifdef：azure[] 
+ifdef：aws [] 
 
 
-| Azure の Cloud Volumes ONTAP | Azure Blob endif：Azure[]ifdef: GCP []endif：GCP [] 
+| AWS の Cloud Volumes ONTAP | Amazon S3
+
+endif：：aws[]
 
 
-| オンプレミスの ONTAP システム | ifdef：aws [] Amazon S3 endif：aws [] ifdef：azure[] Azure Blob endif：azure [] ifdef：gcp [] endif：：gcp [] NetApp StorageGRID 
+ifdef：Azure [] 
+
+
+| Azure の Cloud Volumes ONTAP | Azure Blob の略
+
+endif：：azure[]
+
+ifdef ::gcp[]
+
+endif：GCP [] 
+
+
+| オンプレミスの ONTAP システム | ifdef：aws []
+
+Amazon S3
+
+endif：：aws[]
+
+
+ifdef：Azure []
+
+Azure Blob の略
+
+endif：：azure[]
+
+ifdef ::gcp[]
+
+endif：GCP []
+
+NetApp StorageGRID 
 |===
 
 
@@ -250,7 +281,7 @@ ifdef::azure[]
 
 * Azureの場合：
 +
-** クラスタでONTAP 9.12.1以降が実行されている必要があります
+** クラスタでONTAP 9.12.1以降が実行されている必要があります。
 ** コネクタは、クラウドまたはオンプレミスに導入できます
 
 
@@ -371,14 +402,17 @@ endif::gcp[]
 
 ifdef::aws[]
 
-+** AWSでは、AWS_S3 Glacier Deep Archive_storageにバックアップを階層化できます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
+[+]
+** AWSの場合、バックアップをAWS_S3 Glacier_or_S3 Glacier Deep Archive_storageに階層化できます。 link:reference-aws-backup-tiers.html["AWS アーカイブストレージの詳細は、こちらをご覧ください"^]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-+** Azureでは、古いバックアップを_Azure Archive_storageに階層化できます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
+[+]
+** Azureの場合、古いバックアップを_Azure Archive_storageに階層化できます。 link:reference-azure-backup-tiers.html["Azure アーカイブストレージの詳細については、こちらをご覧ください"^]。
 
 endif::azure[]
 
-[+]link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。
+[+]
+link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。

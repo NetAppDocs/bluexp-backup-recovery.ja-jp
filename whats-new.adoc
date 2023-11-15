@@ -473,7 +473,7 @@ ONTAP システムからGoogle Cloud Storageにデータをバックアップす
 
 インターネットアクセスのないサイト（ダークサイトまたはオフラインサイトとも呼ばれます）のオンプレミスのONTAP クラスタからStorageGRID にデータをバックアップする場合は、必要に応じて検索とリストアのオプションを使用してデータをリストアできるようになりました。この機能を使用するには、BlueXPコネクタ(バージョン3.9.25以上)がオフラインサイトに配置されている必要があります。
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["検索とリストアを使用してONTAP データをリストアする方法を参照してください"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["検索と復元を使用してONTAPデータを復元する方法"]。
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["コネクターをオフラインサイトにインストールする方法を参照してください"]。
 
 

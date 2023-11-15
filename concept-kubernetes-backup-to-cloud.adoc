@@ -45,31 +45,60 @@ BlueXPのバックアップとリカバリでは、Kubernetesボリュームを�
 
 [cols="45,40"]
 |===
-| ソースの作業環境 | バックアップファイルデスティネーションifdef：aws [] 
+| ソースの作業環境 | バックアップファイルの保存先
 
 
-| AWS の Kubernetes クラスタ | Amazon S3 endif：aws []ifdef：azure[] 
+ifdef：aws [] 
 
 
-| Azure の Kubernetes クラスタ | Azure Blob endif：Azure[] ifdef：GCP [] 
+| AWS の Kubernetes クラスタ | Amazon S3
+
+endif：：aws[]
 
 
-| Google の Kubernetes クラスタ | Google Cloud Storage endif：GCP [] 
+ifdef：Azure [] 
+
+
+| Azure の Kubernetes クラスタ | Azure Blob の略
+
+endif：：azure[]
+
+
+ifdef ::gcp[] 
+
+
+| Google の Kubernetes クラスタ | Google クラウドストレージ
+
+endif：GCP [] 
 |===
 Kubernetes バックアップファイルから次の作業環境にボリュームをリストアできます。
 
 [cols="40,45"]
 |===
-| バックアップファイルの場所 | デスティネーション作業環境ifdef：aws [] 
+| バックアップファイルの場所 | デスティネーションの作業環境
+
+ifdef：aws [] 
 
 
-| Amazon S3 | AWS endifのKubernetesクラスタ：aws [] ifdef：azure[] 
+| Amazon S3 | AWS の Kubernetes クラスタ
+
+endif：：aws[]
 
 
-| Azure Blob の略 | Azure endifのKubernetesクラスタ：azure[] ifdef：gCP[] 
+ifdef：Azure [] 
 
 
-| Google クラウドストレージ | Google endifのKubernetesクラスタ：GCP [] 
+| Azure Blob の略 | Azure の Kubernetes クラスタ
+
+endif：：azure[]
+
+
+ifdef ::gcp[] 
+
+
+| Google クラウドストレージ | Google の Kubernetes クラスタ
+
+endif：GCP [] 
 |===
 
 

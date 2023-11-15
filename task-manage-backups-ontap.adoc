@@ -313,9 +313,11 @@ link:reference-google-backup-tiers.html["Googleアーカイブストレージの
 
 endif::gcp[]
 
-[+]image:screenshot_backup_modify_policy_page2.png["BlueXPのバックアップとリカバリ用のアーカイブストレージ設定への階層化を示すスクリーンショット。"]
+[+]
+image:screenshot_backup_modify_policy_page2.png["BlueXPのバックアップとリカバリ用のアーカイブストレージ設定への階層化を示すスクリーンショット。"]
 
-+アーカイブストレージに階層化されたバックアップファイルは、アーカイブへのバックアップの階層化を停止した場合、その階層に残ります。これらのファイルは自動的に標準階層に戻されません。新しいボリュームバックアップのみが標準階層に配置されます。
+[+]
+アーカイブへのバックアップの階層化を停止した場合、アーカイブストレージに階層化されたバックアップファイルはその階層に残ります。アーカイブされたバックアップファイルは自動的に標準階層に戻されません。新しいボリュームバックアップのみが標準階層に配置されます。
 
 
 
@@ -373,7 +375,8 @@ link:reference-google-backup-tiers.html["Googleアーカイブストレージの
 
 endif::gcp[]
 
-[+]image:screenshot_backup_modify_policy_page2.png["BlueXPのバックアップとリカバリ用のアーカイブストレージ設定への階層化を示すスクリーンショット。"]
+[+]
+image:screenshot_backup_modify_policy_page2.png["BlueXPのバックアップとリカバリ用のアーカイブストレージ設定への階層化を示すスクリーンショット。"]
 
 
 

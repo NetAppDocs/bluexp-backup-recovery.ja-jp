@@ -219,4 +219,5 @@ S3 バケットは、 Cloud Volumes ONTAP システムと同じ AWS アカウン
 Kubernetes ダッシュボードが表示され、バックアップの状態を監視できます。
 
 .次の手順
-可能です link:task-manage-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] AWS の同じまたは別の Kubernetes クラスタ（同じリージョン内）上の新しいボリュームとして。
+可能です link:task-manage-backups-kubernetes.html["ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール"^]。
+また可能です link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["バックアップファイルからボリューム全体をリストアする"^] AWS の同じまたは別の Kubernetes クラスタ（同じリージョン内）上の新しいボリュームとして。

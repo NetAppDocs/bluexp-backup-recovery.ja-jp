@@ -41,7 +41,7 @@ API呼び出しを行うときは、Authorizationヘッダーにユーザート�
 .手順
 . NetApp BlueXP Webサイトからユーザートークンを取得します
 +
-次のリンクからリフレッシュトークンを生成してください：https://services.cloud.netapp.com/refresh-token/リフレッシュトークンは、ユーザートークンを生成するために使用する英数字文字列です。
+次のリンクからリフレッシュトークンを生成してください。https://services.cloud.netapp.com/refresh-token/.リフレッシュトークンは、ユーザートークンを生成するために使用する英数字文字列です。
 
 +
 [source, http]
