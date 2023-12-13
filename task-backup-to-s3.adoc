@@ -182,9 +182,15 @@ BlueXPに権限を付与するIAMロールには、最新ののS3権限が含ま
         },
 ----
 ====
+[NOTE]
+====
+AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成する場合は、上記および以下の権限セットのall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。
 
-NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります `arn:aws-cn:s3:::netapp-backup-*`。
+* AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例： `arn:aws-us-gov:s3:::netapp-backup-*`。
+* AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例： `arn:aws-cn:s3:::netapp-backup-*`。
 
+
+====
 必要なAWS Cloud Volumes ONTAP 権限:: Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合は、作業環境に権限を付与するIAMロールに、BlueXPの最新のバックアップとリカバリに特化した新しいS3権限のセットを含める必要があります https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-iam-roles.html["Cloud Volumes ONTAP ポリシー"^]。
 +
 --

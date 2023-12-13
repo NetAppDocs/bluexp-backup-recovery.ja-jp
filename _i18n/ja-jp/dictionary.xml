@@ -130,7 +130,6 @@
   <block id="a6e42fec71384a3a5d77eba684fba2c9" category="inline-link">AWS のドキュメント：「 Editing IAM policies</block>
   <block id="09d55acee0d2e46c4a540d0e06e78f8f" category="paragraph">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>。ポリシーにこれらの権限がすべて含まれていない場合は、を参照してください<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
   <block id="02c17660d0f6b51d0aeadd6bfd390921" category="paragraph">ポリシーの具体的な権限を次に示します。</block>
-  <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
   <block id="5fc7bffc6ccf29fc2aae8be1237ab6b8" category="list-text">必要なAWS Cloud Volumes ONTAP 権限</block>
   <block id="4739ea782eb59e2b0593d9f546ccdb1c" category="inline-link">Cloud Volumes ONTAP ポリシー</block>
   <block id="613541ab07dc059cf2673b90bd75200e" category="list-text">Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合は、作業環境に権限を付与するIAMロールに、BlueXPの最新のバックアップとリカバリに特化した新しいS3権限のセットを含める必要があります<block ref="35d63ba18c6cc65ea408ab719bcabf7f" category="inline-link-rx"></block>。</block>
@@ -4615,38 +4614,13 @@ ONTAP S3の略</block>
   <block id="27481ab02cd2907ee58a87a01de37de2" category="list-text">サービスをアクティブ化すると、バックアップウィザードからアクセスキーとシークレットキーの入力を求められます。これらのクレデンシャルは、 ONTAP がデータをバックアップして S3 バケットにリストアできるように ONTAP クラスタに渡されます。そのためには、以下の権限を持つ IAM ユーザを作成する必要があります。</block>
   <block id="b539613501183cf10b8570ed60939fea" category="inline-link">AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">を参照してください<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>。</block>
-  <block id="24c3f29f7b3c09228614448507eb27eb" category="paragraph">独自のバケットを作成する場合は、バケット名として「netapp-backup」を使用する必要があります。カスタム名を使用する必要がある場合は、を編集します<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 既存のCVOにIAMRoleを割り当て、S3権限に次のリストを追加します。含める必要があります<block ref="a99022ed92fce54cbefc53cc3a7bb0a9" prefix=" " category="inline-code"></block> バケットに関連付ける必要があるすべての権限を割り当てます。</block>
-  <block id="50b086f5a622de5e2ad8e86ada10bc12" category="paragraph">略称は「[
-    "S3：ListBucket"
-    "S3：GetBucketLocation"
-]
-リソース：arn：aws：s3：：：*、
-"Effect"："Allow"
-}、
-｛
-    略称は「[
-        "S3：GetObject"、
-        "S3：PutObject"、
-        "S3：DeleteObject"、
-        "S3：ListAllMyBuckets"、
-        "S3：PutObjectTagging"、
-        "S3：GetObjectTagging"、
-        "S3：RestoreObject"、
-        "S3：GetBucketObjectLockConfiguration"、
-        "S3：GetObjectRetention"、
-        "S3：PutBucketObjectLockConfiguration"、
-        "S3：PutObjectRetention"
-        ]
-    リソース：arn：aws：s3：：：*、</block>
   <block id="868fb9c55d4ddac7523d9c4697eb9d9f" category="section-title">データ暗号化用に、お客様が管理するAWSキーをセットアップ</block>
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">デフォルトのAmazon S3暗号化キーを使用してオンプレミスクラスタとS3バケット間でやり取りされるデータを暗号化する場合は、デフォルトのインストールでそのタイプの暗号化が使用されるため、すべての暗号化キーが設定されます。</block>
   <block id="e2eb08f750d15308f8411635e75fc5e7" category="inline-link">独自のキーの使用方法を参照してください</block>
   <block id="de4ef5a5f97836ab944189954e7907e4" category="paragraph">デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。<block ref="4f334d1f128fd0a003f5f48bc9fc4cbc" category="inline-link-rx"></block>。</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">VPCエンドポイントインターフェイスを使用して、システムにプライベート接続を設定します</block>
   <block id="d37ada70a820c5c84f992a48e05045cf" category="inline-link-macro">最初のダイアグラム</block>
-  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>。</block>
   <block id="7cb65d7424b08922f4902800ae6b79d0" category="inline-link-macro">2番目の図</block>
-  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>。</block>
   <block id="b08fc812a1a1619370d32b6eda413475" category="inline-link">詳細については、AWS PrivateLink for Amazon S3を参照してください</block>
   <block id="13cd6093990a3e2c61bd412a51d79d85" category="list-text">Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。<block ref="305e52fbffac106a7d23bf32a329bc5d" category="inline-link-rx"></block>。</block>
   <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">バックアップポリシーから S3 権限を追加します</block>
@@ -4874,4 +4848,14 @@ ONTAP S3の略</block>
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
+  <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成する場合は、次の2つの権限セットのall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。</block>
+  <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例：<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>。</block>
+  <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例：<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
+  <block id="c791030455c6b061d69eaa3110693967" category="paragraph">独自のバケットを作成する場合は、バケット名として「netapp-backup」を使用する必要があります。カスタム名を使用する必要がある場合は、を編集します<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 既存のCVOにIAMRoleを割り当て、S3権限に次のリストを追加します。</block>
+  <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">カスタムバケットがAWS GovCloudまたはAWS Chinaリージョンにある場合は、権限のall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。</block>
+  <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例：<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>。</block>
+  <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例：<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>。</block>
+  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>。</block>
+  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>。</block>
+  <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成する場合は、上記および以下の権限セットのall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。</block>
 </blocks>
