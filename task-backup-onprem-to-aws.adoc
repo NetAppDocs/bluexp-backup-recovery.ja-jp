@@ -466,10 +466,6 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 .手順
 . Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["詳細については、AWS PrivateLink for Amazon S3を参照してください"^]。
-. BlueXPコネクタに関連付けられているセキュリティグループ設定を変更します。このポリシーを「 Custom 」（「 Full Access 」から）に変更する必要があります。また、変更する必要があります <<S3 権限をセットアップする,バックアップポリシーから S3 権限を追加します>> 前に示したように、
-+
-image:screenshot_backup_aws_sec_group.png["コネクタに関連付けられている AWS セキュリティグループのスクリーンショット。"]
-
 +
 プライベートエンドポイントとの通信にポート80（HTTP）を使用している場合は、すべて設定されています。クラスタでBlueXPのバックアップとリカバリを有効にすることができます。
 
