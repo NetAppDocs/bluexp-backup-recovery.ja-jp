@@ -18,6 +18,39 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2023年12月15日
+
+
+
+=== ローカルSnapshotコピーとレプリケーションSnapshotコピーで使用できるレポート
+
+以前は、バックアップコピーに関するレポートのみを生成できました。ローカルSnapshotコピーとレプリケーションSnapshotコピーに関するレポートも作成できるようになりました。
+
+これらのレポートでは、次の操作を実行できます。
+
+* 重要なデータが組織のポリシーに従って保護されていることを確認します。
+* ボリュームグループのバックアップがスムーズに実行されたことを確認します。
+* 本番環境のデータに対する保護の証明を提供
+
+
+を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-report-inventory.html["データ保護の適用範囲に関するレポートを作成します"]。
+
+
+
+=== ボリュームで並べ替えとフィルタリングに使用できるカスタムタグ付け
+
+ONTAP 9.13.1以降では、カスタムタグをボリュームに追加できるようになりました。これにより、複数の作業環境内および複数の作業環境間でボリュームをグループ化できます。これにより、BlueXPのバックアップとリカバリのUIページでボリュームをソートしたり、レポートでフィルタリングしたりできます。
+
+
+
+=== 30日間保持されるバックアップをカタログ化
+
+以前は、Catalog.zipのバックアップは7日間保持されていました。現在、それらは30日間保持されます。
+
+を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["ダークサイトでのBlueXPのバックアップとリカバリデータのリストア"]。
+
+
+
 == 2023年10月23日
 
 
@@ -37,6 +70,14 @@ BlueXPでは、クラウドストレージからCloud Volumes ONTAPシステム�
 Cloud Volumes ONTAPデスティネーションシステムでONTAPバージョン9.13.0以降が実行されている必要があります。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["データのリストアに関する詳細情報"]。
 
 BlueXPのバックアップとリカバリのジョブモニタには、クイックリストアジョブの進捗状況も表示されます。
+
+
+
+=== オンプレミスのONTAPデータのStorageGRIDバケットへのバックアップ保持数の増加
+
+StorageGRIDは、BlueXPのバックアップ/リカバリからオンプレミスのONTAPデータのバックアップを1つのバケットに最大30個保持できるようになりました。以前は、バケット内のバックアップの最大数は7でした。
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-private-cloud.html["オンプレミスのONTAP データをStorageGRID にバックアップする方法の詳細については、こちらをご覧ください"]。
 
 
 
