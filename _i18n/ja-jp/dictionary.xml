@@ -531,8 +531,6 @@
   <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">コミュニティ</block>
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
   <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">BlueXPコミュニティに参加して、進行中のディスカッションをフォローしたり、新しいディスカッションを作成したりできます。</block>
-  <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">mailto ： ng-cloudmanager-feedback@netapp.com [ フィードバックメール ]</block>
-  <block id="6702efec14563f45f1ee2f8c613b8ad8" category="paragraph">お客様のご意見をお考えください。フィードバックを送信して、BlueXPの改善に役立ててください。</block>
   <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">ネットアップサポートと一緒にケースを作成します</block>
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">上記のセルフサポートオプションに加え、サポートを有効にしたあとで問題が発生した場合は、ネットアップサポートの担当者と相談して解決できます。</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="list-title">始める前に</block>
@@ -2562,15 +2560,11 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="d1e78885195470cf33cb8f9291c0bba6" category="list-text">AWSの場合、30日間の保持期間を使用してバケットのオブジェクトロックを有効にする必要があります。</block>
   <block id="bc8f2392396da79157f4c431c6896bbc" category="list-text">Azureの場合は、バージョンレベルの変更不可をサポートするストレージクラスを作成する必要があります。</block>
   <block id="bd83bdfad11f4eb2160cecbaafa5771f" category="section-title">どのBlueXP Connector導入モードを使用していますか</block>
-  <block id="4b758548b6a16028d0d7c1e443c285bd" category="paragraph">すでにBlueXPを使用してストレージを管理している場合は、BlueXP Connectorがインストールされています。BlueXPのバックアップとリカバリで同じコネクタを使用する予定なら、準備は万端です。別のコネクタを使用する必要がある場合は、バックアップとリカバリの実装を開始する前に、コネクタをインストールする必要があります。</block>
   <block id="40f7e0f171ae7f38e670d73e8a4c284b" category="paragraph">BlueXPには複数の導入モードが用意されており、ビジネスやセキュリティの要件に合わせてBlueXPを使用できます。_Standard mode__はBlueXP SaaSレイヤを活用してすべての機能を提供しますが、_restricted mode_and_private mode__は接続が制限されている組織で使用できます。</block>
   <block id="fb67e88bd0479a55df78c8a83275d5e7" category="inline-link">BlueXPの導入モードに関するビデオをご覧ください</block>
   <block id="72e192cdf7601017af8b339164635167" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>。
 <block ref="86b5ac5922ab7c62d6a8a3ff686cf32a" category="inline-link-rx"></block>。</block>
-  <block id="b41bae1862cc28338655904ad32e407e" category="section-title">完全なインターネット接続を備えたサイトのサポート</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">サポートされているバックアップ先の完全なリストを参照してください</block>
-  <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">インターネットに完全に接続されたサイト（「標準モード」または「SaaSモード」とも呼ばれます）でBlueXPのバックアップとリカバリを使用する場合は、BlueXPで管理しているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成できます。 また、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成できます。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
-  <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダのバックアップトピックを参照してください。コネクタをLinuxマシンに手動でインストールするか、特定のクラウドプロバイダに導入する必要がある場合は、いくつかの制限事項があります。</block>
   <block id="b4a611717e08ba4c0f2fa5390556e4e1" category="list-text"><block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block></block>
   <block id="4ee1036b0252e5c9c4406ffc2dd45603" category="inline-link-macro">オンプレミスの ONTAP データを Amazon S3 にバックアップ</block>
   <block id="7f5adf3b5d9ef637dacd0fcd7017c33f" category="list-text"><block ref="7f5adf3b5d9ef637dacd0fcd7017c33f" category="inline-link-macro-rx"></block></block>
@@ -2585,12 +2579,8 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="80288d2da91f9794088785363d31b6b5" category="list-text"><block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block></block>
   <block id="26170b18548ee3b6f0b39b9db8ffed13" category="inline-link-macro">オンプレミスのONTAPをONTAP S3にバックアップ</block>
   <block id="2a6174ce3d27995b8923b0872f99c9dd" category="list-text"><block ref="2a6174ce3d27995b8923b0872f99c9dd" category="inline-link-macro-rx"></block></block>
-  <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">インターネット接続が制限されているサイトのサポート</block>
-  <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
   <block id="8f573a29259b458aa4c98898b8a3c1ab" category="list-text">AWSの商用リージョンにインストールされているCloud Volumes ONTAP システムからAmazon S3にデータをバックアップできます。方法を参照してください <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
   <block id="322dc3fe4f51cc3ad6da0648bfc1aaf0" category="list-text">Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。方法を参照してください <block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
-  <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">インターネットに接続されていないサイトをサポート</block>
-  <block id="ef96453aea07412d08268c286055e516" category="paragraph">インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、BlueXPのバックアップとリカバリを使用してボリュームデータをバックアップできます。この場合は、同じサイトのLinuxホストにBlueXP Connectorを導入する必要があります。</block>
   <block id="5aaf7cdbb020e8e504b7be6fac6ad19b" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。方法を参照してください <block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="66d66525e3042eb76508c798726d8853" category="list-text">ローカルのオンプレミスONTAPシステムから、ローカルのオンプレミスONTAPシステムまたはS3オブジェクトストレージ用に構成されたCloud Volumes ONTAPシステムにデータをバックアップできます。方法を参照してください <block ref="033f1a63473843a2d0a7ec99f2bb4e1c" category="inline-link-macro-rx"></block> を参照してください。
 ifdef：aws []</block>
@@ -4874,4 +4864,13 @@ ONTAP S3の略</block>
   <block id="d022d12f96f41872be0c2dbe7f553aa5" category="list-text">レポートの選択に応じて、レポートのタブ（[Local Snapshot]、[Replication]、[Backup]）を確認します。</block>
   <block id="93f66acb069f7a06ab0ee856c98d2746" category="paragraph"><block ref="93f66acb069f7a06ab0ee856c98d2746" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f803143ce95b805b1f67a186b607f0a2" category="paragraph">[Job Monitoring]ページでは、ポリシー、Snapshotラベル、処理タイプ（保護、リストア、保持など）、ボリュームのカスタムタグ、保護タイプ（ローカルSnapshot、レプリケーション、クラウドへのバックアップ）など、複数のフィルタを使用して処理をフィルタリングできます。</block>
+  <block id="ed1a67a206c44665ed4e8af600e8efb0" category="admonition">Snapshotには一意の名前を付ける必要があります。名前が一意でないと、リストア処理が正常に</block>
+  <block id="1dc07a81431924d105e577843fab46a1" category="paragraph">すでにBlueXPを使用してストレージを管理している場合は、BlueXP Connectorがインストールされています。BlueXPのバックアップとリカバリで同じコネクタを使用する予定なら、準備は万端です。別のコネクタを使用する必要がある場合は、バックアップとリカバリの実装を開始する前に、コネクタを導入する必要があります。</block>
+  <block id="a291b3163a4794d9131365f0a3dcc467" category="section-title">標準モード使用時のサポート</block>
+  <block id="df8cd79f58be84231ee05f3d91442113" category="paragraph">BlueXPのバックアップとリカバリは、インターネットに完全に接続された標準モードのサイトで完全にサポートされています。この場合、BlueXPで管理されているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成したり、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成したりできます。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
+  <block id="655545eef6e8f8de57e231bcae036156" category="paragraph">有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダのバックアップトピックを参照してください。コネクタが特定のクラウドプロバイダに配置されている場合、またはコネクタがLinuxマシンに手動でインストールされている場合は、いくつかの制限がある場合があります。</block>
+  <block id="ef4fa6e95e8fb4a58af199a2ba2b425e" category="section-title">制限モードヲシヨウスルバアイノサポート</block>
+  <block id="1667d929b1ab016a8cfa3414df6283ee" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されたサイトの制限モードでサポートされます。この場合、バックアップファイルを作成できるのは限られたクラウドプロバイダのセットだけです。BlueXP Connectorは制限された地域に導入する必要があります。</block>
+  <block id="43c11931374ad33282cc54a70addc852" category="section-title">プライベートモードヲシヨウスルバアイノサポート</block>
+  <block id="db8e2db8da88a405c16b644f4e2e7271" category="paragraph">BlueXPのバックアップとリカバリは、インターネットに接続されていないプライベートモードサイトでサポートされます。この場合、バックアップファイルを作成できるオブジェクトストレージプロバイダは限られています。同じオンプレミスサイトのLinuxホストにBlueXP Connectorを導入する必要があります。</block>
 </blocks>
