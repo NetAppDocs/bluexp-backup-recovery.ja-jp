@@ -2359,7 +2359,6 @@ NetApp StorageGRID</block>
   <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">パートナーアカウントまたはリセラーアカウントをお持ちの場合は、1つ以上のNSSアカウントを追加することはできますが、お客様レベルのアカウントと一緒に追加することはできません。</block>
   <block id="c0e0b7ff0de9558404e9b77ece42948a" category="list-text">[NSS Management]&gt;[Add NSS Account]*を選択します。</block>
   <block id="85b9386ed443776127e099931d73448a" category="list-text">プロンプトが表示されたら、*続行*を選択してMicrosoftログインページにリダイレクトします。</block>
-  <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">ネットアップは、サポートとライセンスに固有の認証サービスのアイデンティティプロバイダとして Microsoft Azure Active Directory を使用しています。</block>
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">ログインページで、NetApp Support Siteの登録 E メールアドレスとパスワードを入力して認証プロセスを実行します。</block>
   <block id="cbc6cc3bb022583403171b447b2a962c" category="paragraph">これらのアクションにより、BlueXPはライセンスのダウンロード、ソフトウェアのアップグレード検証、および将来のサポート登録などの目的でNSSアカウントを使用できます。</block>
   <block id="ec084bb25ed5b934c09b361069c246b2" category="list-text">NSSアカウントは、お客様レベルのアカウントである必要があります（ゲストアカウントや一時アカウントではありません）。複数のお客様レベルのNSSアカウントを設定できます。</block>
@@ -4408,23 +4407,14 @@ ONTAP S3の略</block>
   <block id="d7ad4310488d33140bc425dbb1e98838" category="list-text">コネクター（Connector）&gt;コネクターを管理（Manage Connectors）*をクリックし、コネクター名を選択して、コネクターIDをコピーします。</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">仮想マシンはクラウドからオンプレミスのSnapCenter にリストアできます。</block>
   <block id="ffa1e37a2c6478ff157a0a7d25a607e9" category="doc">仮想マシンのデータをクラウドからリストア</block>
-  <block id="95513dac8a621e64dcee2a0f311b0e66" category="paragraph">仮想マシンのデータをクラウドからオンプレミスのvCenterにリストアできます。バックアップは、作成された場所とまったく同じ場所にリストアされます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">複数のデータストアにまたがる仮想マシンはリストアできません。</block>
   <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">すべてのが満たされていることを確認します <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 仮想マシンをクラウドからリストアする前に、</block>
   <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">BlueXP UIで、*[保護]*&gt;*[バックアップとリカバリ]*&gt;*[仮想マシン]*&gt;* SnapCenter Plug-in for VMware vSphere *をクリックし、SnapCenter Plug-in for VMware vSphereホストを選択します。</block>
   <block id="873069930fc1357e9cd4216822243f14" category="admonition">ソース仮想マシンを別の場所（vMotion）に移動した場合にユーザがBlueXPからその仮想マシンのリストアをトリガーすると、バックアップが作成されたソースの場所に仮想マシンがリストアされます。</block>
-  <block id="6c0dd80335ed3d649017aa79a23eddae" category="list-text">データストアまたは仮想マシンからリストアできます。</block>
-  <block id="5d920b501536441ea32ecc24679c72a2" category="cell">状況</block>
-  <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">データストアからリストアします</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアするデータストアに対応し、*詳細の表示*をクリックします。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">リストアするバックアップに対応する* Restore *をクリックします。</block>
-  <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">バックアップからリストアする仮想マシンを選択します。</block>
-  <block id="0b204b102ed08f6af904a33d81026023" category="list-text">[* Archival Restore Priority]を選択し、[* Next]をクリックします。</block>
-  <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">このオプションは、アーカイブ設定が構成されているポリシーを使用して仮想マシンが保護されている場合にのみ使用できます。Amazon Web Servicesでサポートされているアーカイブリストアの優先度は、高、標準、および低です。また、Microsoft Azureでサポートされているアーカイブリストアの優先度は高および標準です。</block>
-  <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">仮想マシンからリストアします</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアする仮想マシンに対応して、*リストア*をクリックします。</block>
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">仮想マシンのリストアに使用するバックアップを選択します。</block>
-  <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VMは、バックアップの作成元と同じ場所にリストアされます。</block>
   <block id="b56d3b8789da77177b36c40271c2f56a" category="summary">AKS Kubernetes クラスタ上の永続ボリュームから Azure BLOB ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="0ac13b02a6ba476a62c040dff30366e9" category="doc">Kubernetes の永続ボリュームのデータを Azure BLOB ストレージにバックアップする</block>
   <block id="161bfedea918a2206e107c928981572c" category="list-text">クラスタのバックエンドストレージに Azure 上の Cloud Volumes ONTAP が使用されている必要があります。</block>
@@ -4777,37 +4767,6 @@ ONTAP S3の略</block>
   <block id="7b3531405cf0ef11d1ff0b6e4af62659" category="sidebar">ダークサイトでBlueXPのバックアップ/リカバリデータベースをリストア</block>
   <block id="64d3d37e27efd6f22e6fa648ce465b2e" category="sidebar">BlueXPのバックアップとリカバリを再開します</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知識とサポート</block>
-  <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">データ保護の適用範囲に関するレポートを作成</block>
-  <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">ONTAP データをクラウドにバックアップ</block>
-  <block id="998e825e50e0075b888cb10290b5aad3" category="sidebar">オンプレミスのONTAPをONTAP S3にバックアップ</block>
-  <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">ONTAP バックアップファイルを管理します</block>
-  <block id="a7b1a9069e674c0aac2afe848aefc5a0" category="sidebar">追加ボリュームでボリュームのバックアップを有効にします</block>
-  <block id="9ad6a8ad1e5cd26c5022383b87ca0567" category="sidebar">既存のボリュームに割り当てられているポリシーを変更します</block>
-  <block id="0dcde7b293f3d0e01f5ffaf43f982c8d" category="sidebar">ボリュームの手動バックアップを作成します</block>
-  <block id="90f7372e4d5f7acc9a7ad384567a8fb1" category="sidebar">レプリケーション関係を管理します</block>
-  <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">アプリケーションデータをクラウドにバックアップ</block>
-  <block id="b7814feabc73eee3174693c2ffa692c8" category="sidebar">クラウドネイティブのOracleデータベースをバックアップ</block>
-  <block id="5da2654bf0788a90ff3e2ff74e45e114" category="sidebar">クラウドネイティブのSAP HANAデータベースをバックアップ</block>
-  <block id="eacd1d0a9374cb22a99c806b2924cf90" category="sidebar">クラウドネイティブのSQL Serverデータベースをバックアップ</block>
-  <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">データストアをクラウドにバックアップ</block>
-  <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">クラウドからデータをリストア</block>
-  <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">ONTAP ボリュームのデータをリストアします</block>
-  <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">オンプレミスのOracleアプリケーションデータをリストア</block>
-  <block id="6002846df6663ea571e55d74bd085335" category="sidebar">オンプレミスのSQL Serverアプリケーションデータをリストア</block>
-  <block id="2f1042d0e59ea2a8ebfd0fb9bb5c169f" category="sidebar">クラウドネイティブのOracleアプリケーションデータをリストア</block>
-  <block id="54d6597fa185df5cd22caa81d7e9d4d9" category="sidebar">クラウドネイティブのSAP HANAアプリケーションデータをリストア</block>
-  <block id="6240606371654cf871393e757b75ae12" category="sidebar">クラウドネイティブのSQL Serverデータをリストア</block>
-  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Kubernetesボリュームデータをリストア</block>
-  <block id="4001622cdabc59603efa5eed8e44df9e" category="sidebar">Kubernetes のデータをクラウドにバックアップ</block>
-  <block id="a856f192005c2a27d642572c6eabcaf3" category="sidebar">KubernetesクラスタをAmazon S3にバックアップ</block>
-  <block id="d8aa0af6f24f3e5cbb56b502233a7241" category="sidebar">KubernetesクラスタをAzure Blobにバックアップ</block>
-  <block id="f91d920c6ff7bb789d8210aebe92e10e" category="sidebar">KubernetesクラスタをGoogle Cloudにバックアップ</block>
-  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">ブログとコミュニティ</block>
-  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">ネットアップコミュニティ</block>
-  <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXPのバックアップとリカバリに関するブログ</block>
-  <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXPのバックアップとリカバリのユースケース</block>
-  <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXPのバックアップとリカバリのビデオ</block>
-  <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP Webセミナー</block>
   <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">クラウドプロバイダ</block>
   <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">すべてのクラウドプロバイダ</block>
   <block id="6beccc67ff905f7da0b29dece26b0485" category="sidebar">Amazon Web Services の</block>
@@ -4818,15 +4777,6 @@ ONTAP S3の略</block>
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
-  <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成する場合は、次の2つの権限セットのall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。</block>
-  <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例：<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>。</block>
-  <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例：<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
-  <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">カスタムバケットがAWS GovCloudまたはAWS Chinaリージョンにある場合は、権限のall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。</block>
-  <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例：<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>。</block>
-  <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例：<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>。</block>
-  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>。</block>
-  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>。</block>
-  <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成する場合は、上記および以下の権限セットのall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。</block>
   <block id="8017dc46d55f13a6a86439ecb091248d" category="section-title">2023年12月15日</block>
   <block id="7ab0753b80059fbad40a2fd72c4592ce" category="section-title">ローカルSnapshotコピーとレプリケーションSnapshotコピーで使用できるレポート</block>
   <block id="9e6cfaae073aa85c2c955e17e29074a8" category="paragraph">以前は、バックアップコピーに関するレポートのみを生成できました。ローカルSnapshotコピーとレプリケーションSnapshotコピーに関するレポートも作成できるようになりました。</block>
@@ -4841,36 +4791,83 @@ ONTAP S3の略</block>
   <block id="2a7d8d5d92a8e8110b2bc2ab71c0c002" category="paragraph">以前は、Catalog.zipのバックアップは7日間保持されていました。現在、それらは30日間保持されます。</block>
   <block id="16f6196e265bdbd3f9da022848c51d8a" category="inline-link">ダークサイトでのBlueXPのバックアップとリカバリデータのリストア</block>
   <block id="89b2c6f6be45f8f05d713b7bae69cd15" category="paragraph">を参照してください<block ref="5596168e45150b1d53148898addeba07" category="inline-link-rx"></block>。</block>
-  <block id="08953d12d492df51bc90f2f43cd41a5e" category="section-title">オンプレミスのONTAPデータのStorageGRIDバケットへのバックアップ保持数の増加</block>
-  <block id="c07f9ba29ac424f316877aae26aa07b0" category="paragraph">StorageGRIDは、BlueXPのバックアップ/リカバリからオンプレミスのONTAPデータのバックアップを1つのバケットに最大30個保持できるようになりました。以前は、バケット内のバックアップの最大数は7でした。</block>
-  <block id="a4304a5e5ad0523cd1e2516efcbb04ea" category="inline-link">オンプレミスのONTAP データをStorageGRID にバックアップする方法の詳細については、こちらをご覧ください</block>
-  <block id="9fa7efa5e741bc1c7fa825541ca578ff" category="paragraph"><block ref="c5cc080595ac6d000b39fc62e24bb795" category="inline-link-rx"></block>。</block>
-  <block id="37cad79be3887e5af23a3b72ee504d6d" category="paragraph">必要に応じて、カスタムタグを検索して、特定のタグを持つボリュームのみを表示します。</block>
-  <block id="7c3caa9c3fd1fb1fcc416313f95f520c" category="paragraph"><block ref="7c3caa9c3fd1fb1fcc416313f95f520c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="49feba59aa7ad0370913ee7881a2b607" category="paragraph">このデータは1日1回午前0時にバックアップされ、各ファイルのコピーは最大30個保持されます。コネクタが複数のオンプレミスONTAP作業環境を管理している場合、BlueXPのバックアップファイルとリカバリファイルは、最初にアクティブ化した作業環境のバケットに配置されます。</block>
-  <block id="e18a212580deea6e1168cf2df519b5f9" category="paragraph">独自のバケットを作成する場合は、「netapp-backup」で始まるバケット名を使用する必要があります。カスタムの名前を使用する必要がある場合は、[Setup S3 permissions]セクションで使用するポリシーを編集して、独自のカスタムバケットプレフィックスに一致するリソースARNを使用します。</block>
-  <block id="2dcb89b10f74019d9a3c831460feb047" category="summary">BlueXPのバックアップ/リカバリレポートを使用すると、組織で定義されたポリシーに従って重要なデータを確実に保護し、コンプライアンスプロセスの監査を効率的にサポートできます。Backup inventoryレポートでは、すべてのローカルSnapshotコピー、レプリケーション、およびバックアップを表示できます。</block>
-  <block id="264f9f7063a386a1c61f47d1330c657c" category="paragraph">BlueXPの[Backup and recovery Reports]タブでは、[Backup Inventory]レポートを作成してその内容をフィルタリングできます。Backup Inventoryレポートでは、すべてのローカルSnapshotコピー、セカンダリストレージへのレプリケーション、特定のアカウント、作業環境、またはSVMインベントリのバックアップを表示できます。</block>
-  <block id="c41a31890959544c6523af684561abe5" category="list-text">ターゲット</block>
-  <block id="ce3c72bb17e9e75c64f8ddb597b24de8" category="list-text">適用されたポリシー</block>
-  <block id="7a17628d164aaaf3b67bbf67f3ace740" category="list-text">ローカルSnapshotコピー、レプリケーション、またはバックアップコピーの数</block>
-  <block id="2efdb59bdb9318d558fc5d7af5b6404e" category="list-text">ローカルSnapshot、レプリケーション、またはバックアップが1つ以上あるボリュームの数（表示されているタブによる）</block>
-  <block id="355454effdd54e97bcd6f8c9ed946504" category="inline-image-macro">バックアップインベントリレポートの例</block>
-  <block id="d08879467c6493ef59052f6379e81e0f" category="paragraph"><block ref="d08879467c6493ef59052f6379e81e0f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ef16ddee8e5ddacc361e250bd6c8bdb4" category="list-text">アカウントレベルまたはカスタムのレポートスコープを選択します。</block>
-  <block id="c4164f47b30d87e7888c12f3fdbe8af8" category="list-text">レポートのフィルタを選択します。</block>
-  <block id="c6f01c78bfe0a0a495cb5d3ed77824a9" category="list-text">個のボリューム</block>
-  <block id="344ec8079925c0a9d42c79d780542bb4" category="list-text">Protection：レポートに表示する保護のタイプ（ローカルSnapshotコピー、レプリケーション、またはバックアップ）を選択します。3つすべてを選択できます。また、保護されていないボリュームを含めるかどうかを選択します。</block>
-  <block id="d022d12f96f41872be0c2dbe7f553aa5" category="list-text">レポートの選択に応じて、レポートのタブ（[Local Snapshot]、[Replication]、[Backup]）を確認します。</block>
-  <block id="93f66acb069f7a06ab0ee856c98d2746" category="paragraph"><block ref="93f66acb069f7a06ab0ee856c98d2746" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f803143ce95b805b1f67a186b607f0a2" category="paragraph">[Job Monitoring]ページでは、ポリシー、Snapshotラベル、処理タイプ（保護、リストア、保持など）、ボリュームのカスタムタグ、保護タイプ（ローカルSnapshot、レプリケーション、クラウドへのバックアップ）など、複数のフィルタを使用して処理をフィルタリングできます。</block>
-  <block id="ed1a67a206c44665ed4e8af600e8efb0" category="admonition">Snapshotには一意の名前を付ける必要があります。名前が一意でないと、リストア処理が正常に</block>
-  <block id="1dc07a81431924d105e577843fab46a1" category="paragraph">すでにBlueXPを使用してストレージを管理している場合は、BlueXP Connectorがインストールされています。BlueXPのバックアップとリカバリで同じコネクタを使用する予定なら、準備は万端です。別のコネクタを使用する必要がある場合は、バックアップとリカバリの実装を開始する前に、コネクタを導入する必要があります。</block>
-  <block id="a291b3163a4794d9131365f0a3dcc467" category="section-title">標準モード使用時のサポート</block>
-  <block id="df8cd79f58be84231ee05f3d91442113" category="paragraph">BlueXPのバックアップとリカバリは、インターネットに完全に接続された標準モードのサイトで完全にサポートされています。この場合、BlueXPで管理されているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成したり、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成したりできます。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
-  <block id="655545eef6e8f8de57e231bcae036156" category="paragraph">有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダのバックアップトピックを参照してください。コネクタが特定のクラウドプロバイダに配置されている場合、またはコネクタがLinuxマシンに手動でインストールされている場合は、いくつかの制限がある場合があります。</block>
-  <block id="ef4fa6e95e8fb4a58af199a2ba2b425e" category="section-title">制限モードヲシヨウスルバアイノサポート</block>
-  <block id="1667d929b1ab016a8cfa3414df6283ee" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されたサイトの制限モードでサポートされます。この場合、バックアップファイルを作成できるのは限られたクラウドプロバイダのセットだけです。BlueXP Connectorは制限された地域に導入する必要があります。</block>
-  <block id="43c11931374ad33282cc54a70addc852" category="section-title">プライベートモードヲシヨウスルバアイノサポート</block>
-  <block id="db8e2db8da88a405c16b644f4e2e7271" category="paragraph">BlueXPのバックアップとリカバリは、インターネットに接続されていないプライベートモードサイトでサポートされます。この場合、バックアップファイルを作成できるオブジェクトストレージプロバイダは限られています。同じオンプレミスサイトのLinuxホストにBlueXP Connectorを導入する必要があります。</block>
+  <block id="d59e0b46782e48a01966e5c7ccc38d17" category="paragraph">NetAppでは、サポートとライセンスに固有の認証サービスのIDプロバイダとしてMicrosoftエントラIDを使用します。</block>
+  <block id="7460c264ec9185e5da4ecd95b8cabe8d" category="paragraph"><block ref="7460c264ec9185e5da4ecd95b8cabe8d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
+  <block id="4b758548b6a16028d0d7c1e443c285bd" category="paragraph">すでにBlueXPを使用してストレージを管理している場合は、BlueXP Connectorがインストールされています。BlueXPのバックアップとリカバリで同じコネクタを使用する予定なら、準備は万端です。別のコネクタを使用する必要がある場合は、バックアップとリカバリの実装を開始する前に、コネクタをインストールする必要があります。</block>
+  <block id="b41bae1862cc28338655904ad32e407e" category="section-title">完全なインターネット接続を備えたサイトのサポート</block>
+  <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">インターネットに完全に接続されたサイト（「標準モード」または「SaaSモード」とも呼ばれます）でBlueXPのバックアップとリカバリを使用する場合は、BlueXPで管理しているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成できます。 また、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成できます。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
+  <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダのバックアップトピックを参照してください。コネクタをLinuxマシンに手動でインストールするか、特定のクラウドプロバイダに導入する必要がある場合は、いくつかの制限事項があります。</block>
+  <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">インターネット接続が制限されているサイトのサポート</block>
+  <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
+  <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">インターネットに接続されていないサイトをサポート</block>
+  <block id="ef96453aea07412d08268c286055e516" category="paragraph">インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、BlueXPのバックアップとリカバリを使用してボリュームデータをバックアップできます。この場合は、同じサイトのLinuxホストにBlueXP Connectorを導入する必要があります。</block>
+  <block id="628b6da02e99f426a81f25cb6fc98d4a" category="summary">BlueXPのバックアップ/リカバリレポートを使用すると、組織で定義されたポリシーに従って重要なデータを確実に保護し、コンプライアンスプロセスの監査を効率的にサポートできます。バックアップインベントリレポートでは、特定のアカウント、作業環境、またはSVMインベントリのすべてのバックアップを表示できます。</block>
+  <block id="f149f54356387e5794adb107c0cc0a7d" category="paragraph">BlueXPの[Backup and recovery Reports]タブでは、[Backup Inventory]レポートを作成してその内容をフィルタリングできます。Backup Inventoryレポートでは、特定のアカウント、作業環境、またはSVMインベントリのすべてのバックアップを表示できます。</block>
+  <block id="fe6088e55d445ff8c5e73198a4b10d33" category="list-text">バックアップターゲット</block>
+  <block id="44558cf0d95753fc793030cefd55087b" category="list-text">バックアップポリシーが適用されました</block>
+  <block id="20e266a6449440b3d67b85ead1217fb1" category="list-text">バックアップコピーの数</block>
+  <block id="ccf68adbbbaa71c4ed09254c95dc35ed" category="list-text">対象となるボリュームのうち、少なくとも1つのバックアップが含まれているボリュームの数</block>
+  <block id="4eb47739f755a1148ef510f3d10ca279" category="paragraph">Backup Inventoryレポートには、次のチャートが表示されます。</block>
+  <block id="8aab504f5ceeb44f855ca81302865568" category="list-text">*ボリュームのバックアップステータス*：選択した範囲について、保護されているボリュームと保護されていないボリュームとの比較が表示されます。</block>
+  <block id="c9ef4c767ef6317e3bedf50654e6f9db" category="list-text">*バックアップ数別のボリューム*：このボリュームで使用可能なバックアップコピーの数でボリュームをグループ化します。</block>
+  <block id="da8b2e21cf3fbf1deb6e54876d0bb30e" category="admonition">複数の作業環境とSVMを選択できます。</block>
+  <block id="bb556c03f0c66474f3d3666fd4354e8e" category="list-text">選択したレポートに応じて、レポートのセクション（[Snapshot Policies]、[Replication Policies]、または[Backup Policies]）を確認します。</block>
+  <block id="7c6f87c6386a4b34232097d33f03a21f" category="list-text">（オプション）ジョブステータスで結果をフィルタリングします。</block>
+  <block id="24c3f29f7b3c09228614448507eb27eb" category="paragraph">独自のバケットを作成する場合は、バケット名として「netapp-backup」を使用する必要があります。カスタム名を使用する必要がある場合は、を編集します<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 既存のCVOにIAMRoleを割り当て、S3権限に次のリストを追加します。含める必要があります<block ref="a99022ed92fce54cbefc53cc3a7bb0a9" prefix=" " category="inline-code"></block> バケットに関連付ける必要があるすべての権限を割り当てます。</block>
+  <block id="50b086f5a622de5e2ad8e86ada10bc12" category="paragraph">略称は「[
+    "S3：ListBucket"
+    "S3：GetBucketLocation"
+]
+リソース：arn：aws：s3：：：*、
+"Effect"："Allow"
+}、
+｛
+    略称は「[
+        "S3：GetObject"、
+        "S3：PutObject"、
+        "S3：DeleteObject"、
+        "S3：ListAllMyBuckets"、
+        "S3：PutObjectTagging"、
+        "S3：GetObjectTagging"、
+        "S3：RestoreObject"、
+        "S3：GetBucketObjectLockConfiguration"、
+        "S3：GetObjectRetention"、
+        "S3：PutBucketObjectLockConfiguration"、
+        "S3：PutObjectRetention"
+        ]
+    リソース：arn：aws：s3：：：*、</block>
+  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>。</block>
+  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>。</block>
+  <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">バックアップポリシーから S3 権限を追加します</block>
+  <block id="f59bbb6de7b8eafb6ccb2f617135ff84" category="list-text">BlueXPコネクタに関連付けられているセキュリティグループ設定を変更します。このポリシーを「 Custom 」（「 Full Access 」から）に変更する必要があります。また、変更する必要があります <block ref="52cd24ecfd99d5b16a10d03c54f9d16b" category="inline-xref-macro-rx"></block> 前に示したように、</block>
+  <block id="54979ba354582c6f2824abc12558cf5a" category="inline-image-macro">コネクタに関連付けられている AWS セキュリティグループのスクリーンショット。</block>
+  <block id="9fffc2ed11f6ca99ac2677ff1c97fd9a" category="paragraph"><block ref="9fffc2ed11f6ca99ac2677ff1c97fd9a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c9cfba3160309eb4416746c049e4b9da" category="paragraph">このデータは1日1回午前0時にバックアップされ、各ファイルの最大7つのコピーが保持されます。コネクタが複数のオンプレミスONTAP作業環境を管理している場合、BlueXPのバックアップファイルとリカバリファイルは、最初にアクティブ化した作業環境のバケットに配置されます。</block>
+  <block id="6a0946e9e6df1feca77ae10577f6057c" category="paragraph"><block ref="6a0946e9e6df1feca77ae10577f6057c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="743978dcd7046c82225d9b638969fd96" category="paragraph">[Job Monitoring]ページでは、ポリシー、Snapshotラベル、処理のタイプ（保護、リストア、保持など）、保護のタイプ（ローカルSnapshot、レプリケーション、クラウドへのバックアップ）などの複数のフィルタを使用して処理をフィルタリングできます。</block>
+  <block id="b1314bfff132a050766ce5d32ac976de" category="section-title">データストアの保護の解除</block>
+  <block id="24e973d26bb253c7b5fb8a764db6860a" category="paragraph">以前に保護されていたデータストアの保護を解除できます。クラウドバックアップを削除する場合や、クラウドへのバックアップを中止する場合は、データストアの保護を解除できます。データストアは、保護が解除されたあとに再度保護することができます。</block>
+  <block id="2c86bcd8467882ddafa5699064a113a9" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> をクリックし、*[保護解除]*をクリックします。</block>
+  <block id="331f8541bc1d88d7b3a99d070122fc1c" category="paragraph">仮想マシンのデータをクラウドからオンプレミスのvCenterにリストアできます。仮想マシンは、バックアップが作成された場所とまったく同じ場所にリストアすることも、別の場所にリストアすることもできます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
+  <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">別の場所にリストアする場合は、次の手順を実行します。</block>
+  <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">ソースvCenterとデスティネーションvCenterがリンクモードであることを確認します。</block>
+  <block id="b9d3026a416c9548a1ce214ae1cac290" category="list-text">ソースクラスタとデスティネーションクラスタの詳細が両方のSnapCenter Plug-in for VMware vSphereホストのBlueXPキャンバスとリンクモードのvCenterで追加されていることを確認します。</block>
+  <block id="e1a91a510a1e1994581033bf34c8a34e" category="list-text">BlueXP Canvasの別の場所に対応するWorking Environment（WE）が追加されていることを確認します。</block>
+  <block id="d180a4da8965c4cd5488cd05903774f0" category="list-text">仮想マシンを元の場所にリストアすることも、データストアまたは仮想マシンから別の場所にリストアすることもできます。</block>
+  <block id="db5366d69994d30376d1a970dcebb9ce" category="cell">仮想マシンをリストアする対象</block>
+  <block id="ccc5c5f6926c7affe9ddb8b5fd8e78d0" category="paragraph">データストアから元の場所</block>
+  <block id="0ff9c86e6cb7e9150a24770fd6ae4e8d" category="list-text">バックアップからリストアする仮想マシンを選択し、* Next *（次へ）をクリックします。</block>
+  <block id="4e732f3a4af9bd149e3901ae89613eca" category="list-text">*オリジナル*が選択されていることを確認し、*続行*をクリックします。</block>
+  <block id="05aff9b89c6c077ab1119387a7d6852b" category="list-text">アーカイブ設定が構成されたポリシーを使用して仮想マシンが保護されている場合は、*[アーカイブリストア優先度]*を選択し、*[次へ]*をクリックします。</block>
+  <block id="4064eae8789a1dea97cfc09ac17d017a" category="paragraph">Amazon Web Servicesでサポートされているアーカイブリストアの優先度は、高、標準、および低です。また、Microsoft Azureでサポートされているアーカイブリストアの優先度は高および標準です。</block>
+  <block id="c0df5d97adcf3825af806d990e658e67" category="paragraph">データストアカラヘツノバショ</block>
+  <block id="2f663ab73d99f410b05e9f748fdb9f69" category="list-text">[代替（Alternate）]*を選択します。</block>
+  <block id="1825907f18d398bff7d7bf89210651db" category="list-text">代替のvCenter Server、ESXiホスト、データストア、およびネットワークを選択します。</block>
+  <block id="5f13633d652590518e2dc9e07d7f16b0" category="list-text">リストア後にVMの名前を指定し、*[続行]*をクリックします。</block>
+  <block id="0236f808af929087f6a9616d379b96a4" category="paragraph">仮想マシンから元の場所へ</block>
+  <block id="ccb90cb50d99e7cb9712a836810d4fae" category="paragraph">仮想マシンから別の場所へ</block>
+  <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024年2月1日</block>
+  <block id="a409179aac0b12213b3fa77e0a22bd61" category="list-text">代替保存場所への仮想マシンのリストアのサポート</block>
+  <block id="9c75b0f26dddf07ed827e32aaf28bee9" category="list-text">データストアの保護解除のサポート</block>
 </blocks>

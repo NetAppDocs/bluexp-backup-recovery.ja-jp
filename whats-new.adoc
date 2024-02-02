@@ -18,6 +18,18 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2024年2月1日
+
+
+
+=== 仮想マシンのBlueXPバックアップとリカバリの機能拡張
+
+* 代替保存場所への仮想マシンのリストアのサポート
+* データストアの保護解除のサポート
+
+
+
+
 == 2023年12月15日
 
 
@@ -70,14 +82,6 @@ BlueXPでは、クラウドストレージからCloud Volumes ONTAPシステム�
 Cloud Volumes ONTAPデスティネーションシステムでONTAPバージョン9.13.0以降が実行されている必要があります。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["データのリストアに関する詳細情報"]。
 
 BlueXPのバックアップとリカバリのジョブモニタには、クイックリストアジョブの進捗状況も表示されます。
-
-
-
-=== オンプレミスのONTAPデータのStorageGRIDバケットへのバックアップ保持数の増加
-
-StorageGRIDは、BlueXPのバックアップ/リカバリからオンプレミスのONTAPデータのバックアップを1つのバケットに最大30個保持できるようになりました。以前は、バケット内のバックアップの最大数は7でした。
-
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-private-cloud.html["オンプレミスのONTAP データをStorageGRID にバックアップする方法の詳細については、こちらをご覧ください"]。
 
 
 

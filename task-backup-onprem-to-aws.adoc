@@ -269,15 +269,6 @@ Amazon S3をバックアップターゲットとして準備するには、次�
 * オンプレミスの ONTAP クラスタの権限。 S3 バケットに対してデータの読み取りと書き込みを行うことができます。
 
 
-[NOTE]
-====
-AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成する場合は、次の2つの権限セットのall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。
-
-* AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例： `arn:aws-us-gov:s3:::netapp-backup-*`。
-* AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例： `arn:aws-cn:s3:::netapp-backup-*`。
-
-
-====
 .手順
 . （最新のから）次の S3 権限を確認します https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS のドキュメント：「 Editing IAM policies"]。
 +
@@ -342,6 +333,10 @@ AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成す�
       }
 ----
 ====
++
+
+NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります `arn:aws-cn:s3:::netapp-backup-*`。
+
 . サービスをアクティブ化すると、バックアップウィザードからアクセスキーとシークレットキーの入力を求められます。これらのクレデンシャルは、 ONTAP がデータをバックアップして S3 バケットにリストアできるように ONTAP クラスタに渡されます。そのためには、以下の権限を持つ IAM ユーザを作成する必要があります。
 +
 を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User"^]。
@@ -407,45 +402,32 @@ AWS GovCloudまたはAWS Chinaリージョンでバックアップを作成す�
 
 link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["独自のバケットの作成の詳細については、こちらをご覧ください"^]。
 
-独自のバケットを作成する場合は、「netapp-backup」で始まるバケット名を使用する必要があります。カスタムの名前を使用する必要がある場合は、[Setup S3 permissions]セクションで使用するポリシーを編集して、独自のカスタムバケットプレフィックスに一致するリソースARNを使用します。
+独自のバケットを作成する場合は、バケット名として「netapp-backup」を使用する必要があります。カスタム名を使用する必要がある場合は、を編集します `ontapcloud-instance-policy-netapp-backup` 既存のCVOにIAMRoleを割り当て、S3権限に次のリストを追加します。含める必要があります `“Resource”: “arn:aws:s3:::*”` バケットに関連付ける必要があるすべての権限を割り当てます。
 
 [%collapsible]
 ====
-[source, json]
-----
-{
-    "Action": [
-        "S3:ListBucket"
-        "S3:GetBucketLocation"
-    ]
-    "Resource": "arn:aws:s3:::*",
-    "Effect": "Allow"
-},
-{
-    "Action": [
-        "S3:GetObject",
-        "S3:PutObject",
-        "S3:DeleteObject",
-        "S3:ListAllMyBuckets",
-        "S3:PutObjectTagging",
-        "S3:GetObjectTagging",
-        "S3:RestoreObject",
-        "S3:GetBucketObjectLockConfiguration",
-        "S3:GetObjectRetention",
-        "S3:PutBucketObjectLockConfiguration",
-        "S3:PutObjectRetention"
-    ]
-    "Resource": "arn:aws:s3:::*",
-}
-----
-====
-[NOTE]
-====
-カスタムバケットがAWS GovCloudまたはAWS Chinaリージョンにある場合は、権限のall_Resource_sectionsの下にあるAWSリソース名「arn」を変更する必要があります。
-
-* AWS GovCloudリージョンの場合は、「aws」を「aws-us-gov」に変更する必要があります。例： `arn:aws-us-gov:s3:::*`。
-* AWS Chinaリージョンの場合は、「aws」を「aws-cn」に変更する必要があります。例： `arn:aws-cn:s3:::-*`。
-
+略称は「[
+    "S3：ListBucket"
+    "S3：GetBucketLocation"
+]
+リソース：arn：aws：s3：：：*、
+"Effect"："Allow"
+}、
+｛
+    略称は「[
+        "S3：GetObject"、
+        "S3：PutObject"、
+        "S3：DeleteObject"、
+        "S3：ListAllMyBuckets"、
+        "S3：PutObjectTagging"、
+        "S3：GetObjectTagging"、
+        "S3：RestoreObject"、
+        "S3：GetBucketObjectLockConfiguration"、
+        "S3：GetObjectRetention"、
+        "S3：PutBucketObjectLockConfiguration"、
+        "S3：PutObjectRetention"
+        ]
+    リソース：arn：aws：s3：：：*、
 
 ====
 
@@ -460,12 +442,16 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 === VPCエンドポイントインターフェイスを使用して、システムにプライベート接続を設定します
 
-標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます link:task-backup-onprem-to-aws.html#identify-the-connection-method["最初のダイアグラム"]。
+標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["最初のダイアグラム"]。
 
-オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます link:task-backup-onprem-to-aws.html#identify-the-connection-method["2番目の図"]。
+オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["2番目の図"]。
 
 .手順
 . Amazon VPC コンソールまたはコマンドラインを使用して、インターフェイスエンドポイント設定を作成します。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["詳細については、AWS PrivateLink for Amazon S3を参照してください"^]。
+. BlueXPコネクタに関連付けられているセキュリティグループ設定を変更します。このポリシーを「 Custom 」（「 Full Access 」から）に変更する必要があります。また、変更する必要があります <<S3 権限をセットアップする,バックアップポリシーから S3 権限を追加します>> 前に示したように、
++
+image:screenshot_backup_aws_sec_group.png["コネクタに関連付けられている AWS セキュリティグループのスクリーンショット。"]
+
 +
 プライベートエンドポイントとの通信にポート80（HTTP）を使用している場合は、すべて設定されています。クラスタでBlueXPのバックアップとリカバリを有効にすることができます。
 
