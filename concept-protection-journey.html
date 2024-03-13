@@ -1,0 +1,2862 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>保護対策を計画しましょう | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="保護対策を計画しましょう | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/concept-protection-journey.html" />
+	<meta property="og:description" content="BlueXPのバックアップとリカバリサービスでは、ソースボリュームのコピーを最大3つ作成してデータを保護できます。ボリュームでこのサービスを有効にするときに選択できるオプションは多数あるため、準備ができるように選択内容を確認する必要があります。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="BlueXPのバックアップとリカバリサービスでは、ソースボリュームのコピーを最大3つ作成してデータを保護できます。ボリュームでこのサービスを有効にするときに選択できるオプションは多数あるため、準備ができるように選択内容を確認する必要があります。">
+  <meta name="keywords" content=" backing up, restoring, recovery, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ja-jp/bluexp-backup-recovery/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/bluexp-backup-recovery/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ja-jp/bluexp-backup-recovery/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/bluexp-backup-recovery/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/concept-protection-journey.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-protection-journey.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/bluexp-backup-recovery/js/na-search.js'></script><script src='/ja-jp/bluexp-backup-recovery/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ja-jp/bluexp-backup-recovery/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/bluexp-backup-recovery/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/bluexp-backup-recovery/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/bluexp-backup-recovery/js/jszip.min.js'></script><script src='/ja-jp/bluexp-backup-recovery/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ja-jp/bluexp-backup-recovery/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/ja/">
+                <image id="ie-header-logo" src="/ja-jp/bluexp-backup-recovery/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/ja/support-and-training/documentation/">ドキュメント</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ja-jp/bluexp-backup-recovery/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">日本語</span>
+                    <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-protection-journey.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ja-jp/bluexp-backup-recovery/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">すべてのNetApp</span>
+                    <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/ja/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">サポート</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb-ja.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">ナレッジ ベース</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">トレーニング</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ja-jp/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ja-jp/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">すべてのドキュメント</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">クラウド ドキュメント</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/ja-jp/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ja-jp/bluexp-backup-recovery/">-->
+      BlueXP backup and recovery
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ja-jp/bluexp-backup-recovery/concept-protection-journey.html">
+  
+  <div class="custom-dropdown-select unselected flavor" title="すべてのクラウドプロバイダ">
+    <label>クラウドプロバイダ</label>
+    <span>すべてのクラウドプロバイダ</span>
+    <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ja-jp/bluexp-backup-recovery/aws/concept-protection-journey.html">Amazon Web Services の
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ja-jp/bluexp-backup-recovery/gcp/concept-protection-journey.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ja-jp/bluexp-backup-recovery/azure/concept-protection-journey.html">Microsoft Azure
+    </li>
+    
+    
+    <li data-url="/ja-jp/bluexp-backup-recovery/concept-protection-journey.html">すべてのクラウドプロバイダ</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ja-jp/bluexp-backup-recovery/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ja-jp/bluexp-backup-recovery/search.html" 
+        data-type="widget"
+        data-placeholder="ドキュメントを検索"
+        data-no-results-found="{query}に一致する結果は見つかりませんでした"
+        data-did-you-mean="{suggestion}で検索しています。"
+        data-no-results-found-did-you-mean="{query}に一致する結果は見つかりませんでした。{suggestion}で検索しますか？"
+        data-results-found="{hitCount}件の結果が見つかりました"
+        data-error-message="エラーが発生しました。もう一度お試しください。"
+        data-error-reset="検索をリセット"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXPのバックアップとリカバリのドキュメント"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/bluexp-backup-recovery/index.html">
+        BlueXPのバックアップとリカバリのドキュメント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リリースノート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> リリースノート</div>-->
+         リリースノート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新機能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/whats-new.html">
+        新機能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="既知の制限"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-limitations.html">
+        既知の制限
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="はじめに"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> はじめに</div>-->
+         はじめに
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXPのバックアップとリカバリについて説明します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-backup-to-cloud.html">
+        BlueXPのバックアップとリカバリについて説明します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ライセンスをセットアップする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-licensing-cloud-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-licensing-cloud-backup.html">
+        ライセンスをセットアップする
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データ保護を監視"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> データ保護を監視</div>-->
+         データ保護を監視
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データ保護の適用範囲に関するレポートを作成します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-report-inventory.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-report-inventory.html">
+        データ保護の適用範囲に関するレポートを作成します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="バックアップジョブとリストアジョブのステータスを監視します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-monitor-backup-jobs.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-monitor-backup-jobs.html">
+        バックアップジョブとリストアジョブのステータスを監視します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP データのバックアップとリストア"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> ONTAP データのバックアップとリストア</div>-->
+         ONTAP データのバックアップとリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP ボリュームのデータを保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-ontap-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html">
+        ONTAP ボリュームのデータを保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護対策を計画しましょう"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-protection-journey.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-protection-journey.html">
+        保護対策を計画しましょう
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAPボリュームのポリシーを管理します。"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-create-policies-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-create-policies-ontap.html">
+        ONTAPボリュームのポリシーを管理します。
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP を Amazon S3 にバックアップします"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-to-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-to-s3.html">
+        Cloud Volumes ONTAP を Amazon S3 にバックアップします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP を Azure Blob にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-to-azure.html">
+        Cloud Volumes ONTAP を Azure Blob にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP を Google Cloud にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-to-gcp.html">
+        Cloud Volumes ONTAP を Google Cloud にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスの ONTAP から Amazon S3 へのバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-onprem-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-onprem-to-aws.html">
+        オンプレミスの ONTAP から Amazon S3 へのバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスの ONTAP を Azure Blob にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-onprem-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-onprem-to-azure.html">
+        オンプレミスの ONTAP を Azure Blob にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスの ONTAP から Google Cloud へのバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-onprem-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-onprem-to-gcp.html">
+        オンプレミスの ONTAP から Google Cloud へのバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスのONTAPをONTAP S3にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-onprem-to-ontap-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-onprem-to-ontap-s3.html">
+        オンプレミスのONTAPをONTAP S3にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスの ONTAP を StorageGRID にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-onprem-private-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-onprem-private-cloud.html">
+        オンプレミスの ONTAP を StorageGRID にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP バックアップを管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-manage-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-manage-backups-ontap.html">
+        ONTAP バックアップを管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP バックアップからリストアする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-restore-backups-ontap.html">
+        ONTAP バックアップからリストアする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オブジェクト設定へのクラスタレベルのバックアップを管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-manage-backup-settings-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-manage-backup-settings-ontap.html">
+        オブジェクト設定へのクラスタレベルのバックアップを管理します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスのアプリケーションデータのバックアップとリストア"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> オンプレミスのアプリケーションデータのバックアップとリストア</div>-->
+         オンプレミスのアプリケーションデータのバックアップとリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスアプリケーションのデータを保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-protect-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-protect-app-data-to-cloud.html">
+        オンプレミスアプリケーションのデータを保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapCenter サーバを登録します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-register-snapcenter-server.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-register-snapcenter-server.html">
+        SnapCenter サーバを登録します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションをバックアップするポリシーを作成する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-create-policies-apps.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-create-policies-apps.html">
+        アプリケーションをバックアップするポリシーを作成する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-app-data-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-app-data-to-aws.html">
+        オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-app-data-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-app-data-to-azure.html">
+        オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスアプリケーションのデータをGoogle Cloudにバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-app-data-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-app-data-to-gcp.html">
+        オンプレミスアプリケーションのデータをGoogle Cloudにバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスのアプリケーションデータをStorageGRID にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-app-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-app-data-to-storagegrid.html">
+        オンプレミスのアプリケーションデータをStorageGRID にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションの保護を管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-manage-app-backups.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-manage-app-backups.html">
+        アプリケーションの保護を管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="オンプレミスアプリケーションのデータをリストア"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> オンプレミスアプリケーションのデータをリストア</div>-->
+         オンプレミスアプリケーションのデータをリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Oracle データベースをリストアします"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-restore-oracle-data.html">
+        Oracle データベースをリストアします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SQL Server データベースをリストアする"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-restore-sql-data.html">
+        SQL Server データベースをリストアする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SAP HANAデータベースをリストア"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-hana-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-restore-hana-backup.html">
+        SAP HANAデータベースをリストア
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="MongoDB、MySQL、PostgreSQLデータベースのリストア"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-customplugin-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-restore-customplugin-backup.html">
+        MongoDB、MySQL、PostgreSQLデータベースのリストア
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブアプリケーションデータのバックアップとリストア"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドネイティブアプリケーションデータのバックアップとリストア</div>-->
+         クラウドネイティブアプリケーションデータのバックアップとリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブアプリケーションのデータを保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-protect-cloud-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-protect-cloud-app-data-to-cloud.html">
+        クラウドネイティブアプリケーションのデータを保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブのOracleデータベースをバックアップ"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドネイティブのOracleデータベースをバックアップ</div>-->
+         クラウドネイティブのOracleデータベースをバックアップ
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クイックスタート"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-quick-start-oracle.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-quick-start-oracle.html">
+        クイックスタート
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP のFSXを設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/reference-configure-fsx-for-ontap.html">
+        ONTAP のFSXを設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP を設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-configure-cloud-volumes-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/reference-configure-cloud-volumes-ontap.html">
+        Cloud Volumes ONTAP を設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure NetApp Files を設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-configure-azure-netapp-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/reference-configure-azure-netapp-files.html">
+        Azure NetApp Files を設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapCenter Plug-in for Oracleをインストールし、データベースホストを追加します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-add-host-discover-oracle-databases.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-add-host-discover-oracle-databases.html">
+        SnapCenter Plug-in for Oracleをインストールし、データベースホストを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Oracle データベースをバックアップする"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-backup-cloud-native-oracle-data.html">
+        Oracle データベースをバックアップする
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブのSAP HANAデータベースをバックアップ"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドネイティブのSAP HANAデータベースをバックアップ</div>-->
+         クラウドネイティブのSAP HANAデータベースをバックアップ
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クイックスタート"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-quick-start-hana.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-quick-start-hana.html">
+        クイックスタート
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure NetApp Files を設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-configure-azure-netapp-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/reference-configure-azure-netapp-files.html">
+        Azure NetApp Files を設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapCenter Plug-in for SAP HANAをインストールし、データベースホストを追加します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-deploy-snapcenter-plugin-for-sap-hana.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-deploy-snapcenter-plugin-for-sap-hana.html">
+        SnapCenter Plug-in for SAP HANAをインストールし、データベースホストを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SAP HANA データベースをバックアップする"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-cloud-native-sap-hana-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-backup-cloud-native-sap-hana-data.html">
+        SAP HANA データベースをバックアップする
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="REST APIを使用してクラウドネイティブのSQL Serverデータベースをバックアップ"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> REST APIを使用してクラウドネイティブのSQL Serverデータベースをバックアップ</div>-->
+         REST APIを使用してクラウドネイティブのSQL Serverデータベースをバックアップ
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クイックスタート"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-quick-start-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-quick-start-sql.html">
+        クイックスタート
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP のFSXを設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/reference-configure-fsx-for-ontap.html">
+        ONTAP のFSXを設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ホストの追加とSnapCenter Plug-in for SQL Serverのインストール"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-add-sqlhost-install-plugin-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-add-sqlhost-install-plugin-sql.html">
+        ホストの追加とSnapCenter Plug-in for SQL Serverのインストール
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SQL Server データベースをバックアップする"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-backup-cloud-native-sql-data.html">
+        SQL Server データベースをバックアップする
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブのOracleデータベースをリストア"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドネイティブのOracleデータベースをリストア</div>-->
+         クラウドネイティブのOracleデータベースをリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="元の場所にリストアします"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-original-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html">
+        元の場所にリストアします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="別の場所にリストアします"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-alternate-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-alternate-location.html">
+        別の場所にリストアします
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブのSAP HANAデータベースをリストア"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-cloud-native-sap-hana-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-restore-cloud-native-sap-hana-data.html">
+        クラウドネイティブのSAP HANAデータベースをリストア
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブのSQL Serverデータベースをリストア"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-restore-cloud-native-sql-data.html">
+        クラウドネイティブのSQL Serverデータベースをリストア
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブなOracleデータベースをクローニング"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドネイティブなOracleデータベースをクローニング</div>-->
+         クラウドネイティブなOracleデータベースをクローニング
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クローンの概念と要件"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-clone-cloud-native-oracle-concepts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/concept-clone-cloud-native-oracle-concepts.html">
+        クローンの概念と要件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブなOracleデータベースをクローニング"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-clone-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/bluexp-backup-recovery/task-clone-cloud-native-oracle-data.html">
+        クラウドネイティブなOracleデータベースをクローニング
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SAP HANAターゲットシステムを更新"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-refresh-sap-hana-target-system.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-refresh-sap-hana-target-system.html">
+        SAP HANAターゲットシステムを更新
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドネイティブアプリケーションデータの保護を管理"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-manage-cloud-native-app-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-manage-cloud-native-app-data.html">
+        クラウドネイティブアプリケーションデータの保護を管理
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="仮想マシンのデータのバックアップとリストア"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 仮想マシンのデータのバックアップとリストア</div>-->
+         仮想マシンのデータのバックアップとリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="仮想マシンのデータを保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-protect-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-protect-vm-data.html">
+        仮想マシンのデータを保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapCenter Plug-in for VMware vSphereホストを登録"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-register-snapCenter-plug-in-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
+        SnapCenter Plug-in for VMware vSphereホストを登録
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアをバックアップするポリシーを作成します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-create-policies-vms.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-create-policies-vms.html">
+        データストアをバックアップするポリシーを作成します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアをAmazon Web Servicesにバックアップする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-vm-data-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-vm-data-to-aws.html">
+        データストアをAmazon Web Servicesにバックアップする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアをMicrosoft Azureにバックアップする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-vm-data-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-vm-data-to-azure.html">
+        データストアをMicrosoft Azureにバックアップする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアをGoogle Cloud Platformにバックアップする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-vm-data-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-vm-data-to-gcp.html">
+        データストアをGoogle Cloud Platformにバックアップする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアをStorageGRID にバックアップする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-vm-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-vm-data-to-storagegrid.html">
+        データストアをStorageGRID にバックアップする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアと仮想マシンのデータの保護を管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-manage-vm-data-in-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-manage-vm-data-in-cloud.html">
+        データストアと仮想マシンのデータの保護を管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="仮想マシンのデータをリストアします"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-restore-vm-data.html">
+        仮想マシンのデータをリストアします
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kubernetes データのバックアップとリストア"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Kubernetes データのバックアップとリストア</div>-->
+         Kubernetes データのバックアップとリストア
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kubernetes のデータを保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-kubernetes-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-kubernetes-backup-to-cloud.html">
+        Kubernetes のデータを保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Amazon S3 にバックアップします"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-kubernetes-to-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-kubernetes-to-s3.html">
+        Amazon S3 にバックアップします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure Blob にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-kubernetes-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-kubernetes-to-azure.html">
+        Azure Blob にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud にバックアップ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-backup-kubernetes-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-backup-kubernetes-to-gcp.html">
+        Google Cloud にバックアップ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kubernetes のバックアップを管理"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-manage-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-manage-backups-kubernetes.html">
+        Kubernetes のバックアップを管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Kubernetes バックアップからリストア"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-restore-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-restore-backups-kubernetes.html">
+        Kubernetes バックアップからリストア
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="REST API で自動化"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/api-backup-restore.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/bluexp-backup-recovery/api-backup-restore.html">
+        REST API で自動化
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="参照"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 参照</div>-->
+         参照
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="バックアップポリシーの設定"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/concept-cloud-backup-policies.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/concept-cloud-backup-policies.html">
+        バックアップポリシーの設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポート対象の AWS アーカイブストレージ階層"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-aws-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-aws-backup-tiers.html">
+        サポート対象の AWS アーカイブストレージ階層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートされている Azure アーカイブアクセス層"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-azure-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-azure-backup-tiers.html">
+        サポートされている Azure アーカイブアクセス層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートされているGoogleアーカイブストレージ階層"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-google-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-google-backup-tiers.html">
+        サポートされているGoogleアーカイブストレージ階層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure でマルチアカウントアクセスのバックアップを設定する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-backup-multi-account-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-backup-multi-account-azure.html">
+        Azure でマルチアカウントアクセスのバックアップを設定する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ダークサイトでBlueXPのバックアップ/リカバリデータベースをリストア"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-backup-cbs-db-in-dark-site.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html">
+        ダークサイトでBlueXPのバックアップ/リカバリデータベースをリストア
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXPのバックアップとリカバリを再開します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/reference-restart-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/reference-restart-backup.html">
+        BlueXPのバックアップとリカバリを再開します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="知識とサポート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 知識とサポート</div>-->
+         知識とサポート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートに登録します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-support-registration.html">
+        サポートに登録します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ヘルプを表示します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/bluexp-backup-recovery/task-get-help.html">
+        ヘルプを表示します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法的通知"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/concept-protection-journey.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/bluexp-backup-recovery/legal-notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ja-jp/bluexp-backup-recovery"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ja-jp/bluexp-backup-recovery"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ja-jp/bluexp-backup-recovery/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">保護対策を計画しましょう</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-02-02 07:52:30 +0000">02/02/2024</time>
+        
+    
+    
+        <span>共同作成者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ja-jp/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />変更を提案</span>
+        <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.ja-jp/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ja-jp/bluexp-backup-recovery/concept-protection-journey.html&page-title=保護対策を計画しましょう" class="page-nav-contribute-link" role="button">ドキュメントの変更をリクエスト</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/concept-protection-journey.adoc" class="page-nav-contribute-link" role="button">このページを編集</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >フィードバックを送るには</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ja-jp/bluexp-backup-recovery/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ja-jp/bluexp-backup-recovery/pdfs/fullsite-sidebar/BlueXPのバックアップとリカバリに関するドキュメント.pdf" >
+                    <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>このドキュメント ページのPDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/はじめに.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            はじめに
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/データ保護を監視.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            データ保護を監視
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/ONTAP_データのバックアップとリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            ONTAP データのバックアップとリストア
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/オンプレミスのアプリケーションデータのバックアップとリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            オンプレミスのアプリケーションデータのバックアップとリストア
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/オンプレミスアプリケーションのデータをリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            オンプレミスアプリケーションのデータをリストア
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/クラウドネイティブアプリケーションデータのバックアップとリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドネイティブアプリケーションデータのバックアップとリストア
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/クラウドネイティブのOracleデータベースをバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドネイティブのOracleデータベースをバックアップ
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/クラウドネイティブのSAP_HANAデータベースをバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドネイティブのSAP HANAデータベースをバックアップ
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/REST_APIを使用してクラウドネイティブのSQL_Serverデータベースをバックアップ.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            REST APIを使用してクラウドネイティブのSQL Serverデータベースをバックアップ
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/クラウドネイティブのOracleデータベースをリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドネイティブのOracleデータベースをリストア
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/クラウドネイティブなOracleデータベースをクローニング.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドネイティブなOracleデータベースをクローニング
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/仮想マシンのデータのバックアップとリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            仮想マシンのデータのバックアップとリストア
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/Kubernetes_データのバックアップとリストア.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Kubernetes データのバックアップとリストア
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/参照.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            参照
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/bluexp-backup-recovery/pdfs/sidebar/知識とサポート.pdf" 
+            
+          >
+            <img src="/ja-jp/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            知識とサポート
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ja-jp/bluexp-backup-recovery/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>PDF版ドキュメントのセット<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>BlueXPのバックアップとリカバリサービスでは、ソースボリュームのコピーを最大3つ作成してデータを保護できます。ボリュームでこのサービスを有効にするときに選択できるオプションは多数あるため、準備ができるように選択内容を確認する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>次のオプションについて説明します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>使用する保護機能（Snapshotコピー、レプリケートされたボリューム、クラウドへのバックアップ</p>
+</li>
+<li>
+<p>使用するバックアップアーキテクチャ（ボリュームのカスケードバックアップまたはファンアウトバックアップ</p>
+</li>
+<li>
+<p>デフォルトのバックアップポリシーを使用するか、カスタムポリシーを作成する必要があるか</p>
+</li>
+<li>
+<p>開始前にサービスでクラウドバケットを作成するか、オブジェクトストレージコンテナを作成するか</p>
+</li>
+<li>
+<p>使用しているBlueXP Connector導入モード（標準モード、制限モード、プライベートモード）</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="どの保護機能を使用しますか">どの保護機能を使用しますか</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>使用する機能を選択する前に、各機能の機能と提供する保護の種類について簡単に説明します。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 77.7778%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">バックアップタイプ</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スナップショット</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ソースボリューム内のボリュームのポイントインタイムイメージをSnapshotコピーとして読み取り専用で作成します。Snapshotコピーを使用して、個 々 のファイルをリカバリしたり、ボリュームの内容全体をリストアしたりできます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">レプリケーション</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データのセカンダリコピーを別のONTAPストレージシステムに作成し、セカンダリデータを継続的に更新します。データは最新の状態に維持され、必要なときにいつでも利用できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クラウドバックアップ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">保護や長期アーカイブの目的で、データのバックアップをクラウドに作成します。必要に応じて、ボリューム、フォルダ、または個 々 のファイルをバックアップから同じ作業環境または異なる作業環境にリストアできます。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>スナップショットはすべてのバックアップ方法の基礎であり、バックアップおよびリカバリサービスを使用するために必要です。Snapshot コピーは、ボリュームの読み取り専用のポイントインタイムイメージです。イメージには Snapshot コピーが最後に作成されたあとに発生したファイルへの変更だけが記録されるため、ストレージスペースは最小限しか消費せず、パフォーマンスのオーバーヘッドもわずかです。次の図に示すように、ボリューム上に作成されたSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルがソースボリュームに加えられた変更と同期されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram-321-overview.png" alt="ソースシステムに、Snapshotコピー、セカンダリストレージシステム上のレプリケートされたボリューム、およびオブジェクトストレージ内のバックアップファイルとして、バックアップファイルがどのように存在するかを示す図。"></span></p>
+</div>
+<div class="paragraph">
+<p>レプリケートされたボリュームを別のONTAPストレージシステムに作成し、バックアップファイルをクラウドに作成することもできます。または、レプリケートされたボリュームまたはバックアップファイルを作成するだけで選択できます。</p>
+</div>
+<div class="paragraph">
+<p>要約すると、ONTAP作業環境内のボリュームに対して作成できる有効な保護フローは次のとおりです。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ソースボリューム&#8594; Snapshotコピー&#8594;レプリケートされたボリューム&#8594;バックアップファイル</p>
+</li>
+<li>
+<p>ソースボリューム&#8594; Snapshotコピー&#8594;バックアップファイル</p>
+</li>
+<li>
+<p>ソースボリューム&#8594; Snapshotコピー&#8594;レプリケートされたボリューム</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+レプリケートされたボリュームまたはバックアップファイルの初回作成時には、ソースデータのフルコピーが含まれます。これは_ベースライン転送_と呼ばれます。以降の転送では、ソースデータの差分コピー（Snapshot）のみが含まれます。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="さまざまなバックアップ方法の比較">さまざまなバックアップ方法の比較</h3>
+<div class="paragraph">
+<p>次の表に、3つのバックアップ方法の一般的な比較を示します。オブジェクトストレージスペースは通常、オンプレミスのディスクストレージよりも安価ですが、クラウドからデータを頻繁にリストアする可能性がある場合は、クラウドプロバイダからの出力料金によって、削減量の一部を削減できます。クラウドのバックアップファイルからデータをリストアする頻度を特定する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。 <a href="concept-cloud-backup-policies.html#datalock-and-ransomware-protection">"DataLockとランサムウェアによる保護の詳細をご確認ください"</a> および <a href="concept-cloud-backup-policies.html#archival-storage-settings">"アーカイブストレージの設定"</a>。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18.3673%;">
+<col style="width: 18.3673%;">
+<col style="width: 22.4489%;">
+<col style="width: 18.3673%;">
+<col style="width: 22.4492%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">バックアップタイプ</th>
+<th class="tableblock halign-left valign-top">バックアップ速度</th>
+<th class="tableblock halign-left valign-top">バックアップコスト</th>
+<th class="tableblock halign-left valign-top">リストア速度</th>
+<th class="tableblock halign-left valign-top">リストアコスト</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>スナップショット</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">高</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">低（ディスクスペース）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">高</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">低</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>レプリケーション</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">中</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">中（ディスクスペース）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">中</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">中（ネットワーク）</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>クラウドバックアップ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">低</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">低（オブジェクトスペース）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">低</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">高額（プロバイダ料金）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用するバックアップアーキテクチャ">使用するバックアップアーキテクチャ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>レプリケートされたボリュームとバックアップファイルの両方を作成する場合は、ファンアウトアーキテクチャまたはカスケードアーキテクチャを選択してボリュームをバックアップできます。</p>
+</div>
+<div class="paragraph">
+<p>ファンアウト*アーキテクチャは、Snapshotコピーをデスティネーションストレージシステムとクラウド内のバックアップオブジェクトの両方に個別に転送します。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram-321-fanout-detailed.png" alt="ボリュームのSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルを作成および更新する方法を示す図。"></span></p>
+</div>
+<div class="paragraph">
+<p>カスケード*アーキテクチャでは、Snapshotコピーが最初にデスティネーションストレージシステムに転送され、次にそのコピーがクラウド内のバックアップオブジェクトに転送されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram-321-cascade-detailed.png" alt="ボリュームのSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルを作成および更新する方法を示す図。"></span></p>
+</div>
+<div class="sect2">
+<h3 id="さまざまなアーキテクチャの選択肢の比較">さまざまなアーキテクチャの選択肢の比較</h3>
+<div class="paragraph">
+<p>次の表は、ファンアウトアーキテクチャとカスケードアーキテクチャの比較を示しています。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ファンアウト</th>
+<th class="tableblock halign-left valign-top">カスケード</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshotコピーが2つの異なるシステムに送信されるため、ソースシステムのパフォーマンスへの影響が小さい</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshotコピーは1回だけ送信されるため、ソースストレージシステムのパフォーマンスへの影響が少なくなります</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ポリシー、ネットワーク、ONTAPの設定はすべてソースシステムで実行されるため、セットアップが簡単です</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ネットワークとONTAPの設定も、セカンダリシステムから行う必要があります。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="snapshotコピーレプリケーションおよびバックアップにデフォルトのバックアップポリシーを使用するか">Snapshotコピー、レプリケーション、およびバックアップにデフォルトのバックアップポリシーを使用するか</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetAppのデフォルトポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードの開始前または使用中にポリシーを作成できます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>デフォルトのSnapshotポリシーは、hourly、daily、およびweeklyのSnapshotコピーを作成し、hourlyのSnapshotコピーを6個、dailyを2個、weeklyを2個保持します。</p>
+</li>
+<li>
+<p>デフォルトのレプリケーションポリシーでは、日単位Snapshotコピーと週単位Snapshotコピーがレプリケートされ、日単位Snapshotコピーは7個、週単位Snapshotコピーは52個保持されます。</p>
+</li>
+<li>
+<p>デフォルトのバックアップポリシーでは、日単位Snapshotコピーと週単位Snapshotコピーがレプリケートされ、日単位Snapshotコピーは7個、週単位Snapshotコピーは52個保持されます。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。</p>
+</div>
+<div class="paragraph">
+<p>カスタムポリシーは、BlueXPのバックアップリカバリ、System Manager、またはONTAPコマンドラインインターフェイス（CLI）を使用して作成できます。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html" target="_blank" rel="noopener">"System Managerを使用してSnapshotポリシーを作成する"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html" target="_blank" rel="noopener">"ONTAP CLIを使用したSnapshotポリシーの作成"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html" target="_blank" rel="noopener">"System Managerを使用してレプリケーションポリシーを作成します"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html" target="_blank" rel="noopener">"ONTAP CLIを使用してレプリケーションポリシーを作成します"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy" target="_blank" rel="noopener">"System Managerを使用してバックアップポリシーを作成"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description" target="_blank" rel="noopener">"ONTAP CLIを使用してバックアップポリシーを作成します"</a></p>
+</div>
+<div class="paragraph">
+<p><strong>注：</strong> System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous <strong>を選択し、オブジェクトポリシーにバックアップする場合は</strong> Asynchronous <strong>と</strong> Back up to cloud *を選択します。</p>
+</div>
+<div class="paragraph">
+<p>BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください <a href="task-manage-backups-ontap.html#add-a-new-backup-policy">"新しいバックアップポリシーを追加しています"</a> を参照してください。</p>
+</div>
+<div class="paragraph">
+<p>ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。として_admin_vserver（Storage VM）を使用する必要があります <code>&lt;vserver_name&gt;</code> を参照してください。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Policy概要の略</th>
+<th class="tableblock halign-left valign-top">コマンドを実行します</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">単純なSnapshotポリシー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クラウドへのシンプルなバックアップ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapmirror policy create -policy &lt;policy_name&gt; -transfer-priority normal -vserver &lt;vserver_name&gt; -create-snapshot-on-source false -type vault</code><br>
+<code>snapmirror policy add-rule -policy &lt;policy_name&gt; -vserver &lt;vserver_name&gt; -snapmirror-label &lt;snapmirror_label&gt; -keep</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DataLockとランサムウェア対策でクラウドにバックアップ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapmirror policy create -policy CloudBackupService-Enterprise -snapshot-lock-mode enterprise -vserver &lt;vserver_name&gt;</code><br>
+<code>snapmirror policy add-rule -policy CloudBackupService-Enterprise -retention-period 30days</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アーカイブストレージクラスを使用したクラウドへのバックアップ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapmirror policy create -vserver &lt;vserver_name&gt; -policy &lt;policy_name&gt; -archive-after-days &lt;days&gt; -create-snapshot-on-source false -type vault</code><br>
+<code>snapmirror policy add-rule -policy &lt;policy_name&gt; -vserver &lt;vserver_name&gt; -snapmirror-label &lt;snapmirror_label&gt; -keep</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">別のストレージシステムへのシンプルなレプリケーション</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapmirror policy create -policy &lt;policy_name&gt; -type async-mirror -vserver &lt;vserver_name&gt;</code><br>
+<code>snapmirror policy add-rule -policy &lt;policy_name&gt; -vserver &lt;vserver_name&gt; -snapmirror-label &lt;snapmirror_label&gt; -keep</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+クラウドへのバックアップ関係に使用できるのはバックアップポリシーのみです。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="ポリシーはどこに配置されていますか">ポリシーはどこに配置されていますか？</h3>
+<div class="paragraph">
+<p>バックアップポリシーは、使用するバックアップアーキテクチャ（ファンアウトまたはカスケード）に応じてさまざまな場所に配置されます。レプリケーションポリシーとバックアップポリシーは同じようには設計されていません。2つのONTAPストレージシステムとオブジェクトへのバックアップでは、ストレージプロバイダがデスティネーションとして使用されるためです。</p>
+</div>
+<div class="paragraph">
+<p>Snapshotポリシーは常にプライマリストレージシステムに存在します。</p>
+</div>
+<div class="paragraph">
+<p>レプリケーションポリシーは常にセカンダリストレージシステムに存在します。</p>
+</div>
+<div class="paragraph">
+<p>オブジェクトへのバックアップポリシーは、ソースボリュームが配置されているシステム上に作成されます。ファンアウト構成の場合はプライマリクラスタ、カスケード構成の場合はセカンダリクラスタになります。</p>
+</div>
+<div class="paragraph">
+<p>これらの違いを表に示します。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">アーキテクチャ</th>
+<th class="tableblock halign-left valign-top">スナップショットポリシー</th>
+<th class="tableblock halign-left valign-top">レプリケーションポリシー</th>
+<th class="tableblock halign-left valign-top">バックアップポリシー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ファンアウト</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">プライマリ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">セカンダリ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">プライマリ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>カスケード</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">プライマリ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">セカンダリ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">セカンダリ</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>そのため、カスケードアーキテクチャを使用するときにカスタムポリシーを作成する場合は、レプリケートされたボリュームが作成されるセカンダリシステムにレプリケーションポリシーとオブジェクトへのバックアップポリシーを作成する必要があります。ファンアウトアーキテクチャを使用するときにカスタムポリシーを作成する場合は、複製されたボリュームが作成されるセカンダリシステムでレプリケーションポリシーを作成し、プライマリシステムでオブジェクトポリシーにバックアップする必要があります。</p>
+</div>
+<div class="paragraph">
+<p>すべてのONTAPシステムに存在するデフォルトのポリシーを使用している場合は、すべて設定されています。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="独自のオブジェクトストレージコンテナを作成しますか">独自のオブジェクトストレージコンテナを作成しますか</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>作業環境のオブジェクトストレージにバックアップファイルを作成すると、デフォルトでは、バックアップおよびリカバリサービスによって、設定したオブジェクトストレージアカウントにバックアップファイル用のコンテナ（バケットまたはストレージアカウント）が作成されます。AWSバケットまたはGCPバケットのデフォルトの名前は「netapp-backup-gp &lt;uuid&gt;」です。Azure BLOBストレージアカウントの名前は「netappbackup &lt;uuid&gt;」です。</p>
+</div>
+<div class="paragraph">
+<p>特定のプレフィックスを使用したり、特別なプロパティを割り当てたりする場合は、オブジェクトプロバイダアカウントでコンテナを自分で作成できます。独自のコンテナを作成する場合は、アクティブ化ウィザードを開始する前にコンテナを作成する必要があります。コンテナは、ONTAPボリュームのバックアップファイルの格納専用に使用する必要があります。それ以外の目的に使用することはできません。バックアップアクティベーションウィザードは、選択したアカウントとクレデンシャル用にプロビジョニングされたコンテナを自動的に検出し、使用するコンテナを選択できるようにします。</p>
+</div>
+<div class="paragraph">
+<p>バケットはBlueXPまたはクラウドプロバイダから作成できます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html">"BlueXPでAmazon S3バケットを作成"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html">"BlueXPからAzure BLOBストレージアカウントを作成します"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html">"BlueXPからGoogle Cloud Storageバケットを作成"</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>*注：*現時点では、StorageGRIDシステムまたはONTAP S3へのバックアップを作成するときに、独自のS3バケットを使用することはできません。</p>
+</div>
+<div class="paragraph">
+<p>「netapp-backup-xxxxxx」以外のバケットプレフィックスを使用する場合は、コネクタIAMロールのS3権限を変更する必要があります。詳細については、AWS S3へのバックアップの作成に関するトピックを参照してください。</p>
+</div>
+<div class="sect2">
+<h3 id="バケットの詳細設定">バケットの詳細設定</h3>
+<div class="paragraph">
+<p>古いバックアップファイルをアーカイブストレージに移動する場合、またはDataLockおよびRansomware Protectionを有効にしてバックアップファイルをロックし、ランサムウェアの可能性がないかスキャンする場合は、特定の構成設定でコンテナを作成する必要があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>現時点では、クラスタでONTAP 9.10.1以降のソフトウェアを使用している場合、独自のバケット上のアーカイブストレージはAWS S3ストレージでサポートされています。デフォルトでは、バックアップはS3_Standard_storageクラスで開始されます。適切なライフサイクルルールを使用してバケットを作成します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>バケットのスコープ全体のオブジェクトを30日後にS3_Standard-IA_に移動します。</p>
+</li>
+<li>
+<p>「smc_push_to_archive：true」タグのオブジェクトを_Glacier Flexible Retrieval_（旧S3 Glacier）に移動します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>DataLockとランサムウェア対策は、クラスタでONTAP 9.11.1以降のソフトウェアを使用している場合はAWSストレージ、ONTAP 9.12.1以降のソフトウェアを使用している場合はAzureストレージでサポートされます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>AWSの場合、30日間の保持期間を使用してバケットのオブジェクトロックを有効にする必要があります。</p>
+</li>
+<li>
+<p>Azureの場合は、バージョンレベルの変更不可をサポートするストレージクラスを作成する必要があります。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="どのbluexp-connector導入モードを使用していますか">どのBlueXP Connector導入モードを使用していますか</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>すでにBlueXPを使用してストレージを管理している場合は、BlueXP Connectorがインストールされています。BlueXPのバックアップとリカバリで同じコネクタを使用する予定なら、準備は万端です。別のコネクタを使用する必要がある場合は、バックアップとリカバリの実装を開始する前に、コネクタをインストールする必要があります。</p>
+</div>
+<div class="paragraph">
+<p>BlueXPには複数の導入モードが用意されており、ビジネスやセキュリティの要件に合わせてBlueXPを使用できます。_Standard mode<em>はBlueXP SaaSレイヤを活用してすべての機能を提供しますが、_restricted mode_and_private mode</em>は接続が制限されている組織で使用できます。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html" target="_blank" rel="noopener">"BlueXPの導入モードの詳細については、こちらをご覧ください"</a>。<br>
+<a href="https://www.netapp.tv/details/30567">"BlueXPの導入モードに関するビデオをご覧ください"</a>。</p>
+</div>
+<div class="sect2">
+<h3 id="完全なインターネット接続を備えたサイトのサポート">完全なインターネット接続を備えたサイトのサポート</h3>
+<div class="paragraph">
+<p>インターネットに完全に接続されたサイト（「標準モード」または「SaaSモード」とも呼ばれます）でBlueXPのバックアップとリカバリを使用する場合は、BlueXPで管理しているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成できます。 また、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成できます。 <a href="concept-ontap-backup-to-cloud.html#supported-backup-destinations">"サポートされているバックアップ先の完全なリストを参照してください"</a>。</p>
+</div>
+<div class="paragraph">
+<p>有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダのバックアップトピックを参照してください。コネクタをLinuxマシンに手動でインストールするか、特定のクラウドプロバイダに導入する必要がある場合は、いくつかの制限事項があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="task-backup-to-s3.html">"Cloud Volumes ONTAP データを Amazon S3 にバックアップします"</a></p>
+</li>
+<li>
+<p><a href="task-backup-onprem-to-aws.html">"オンプレミスの ONTAP データを Amazon S3 にバックアップ"</a></p>
+</li>
+<li>
+<p><a href="task-backup-to-azure.html">"Cloud Volumes ONTAP データを Azure Blob にバックアップ"</a></p>
+</li>
+<li>
+<p><a href="task-backup-onprem-to-azure.html">"オンプレミスの ONTAP データを Azure Blob にバックアップ"</a></p>
+</li>
+<li>
+<p><a href="task-backup-to-gcp.html">"Cloud Volumes ONTAP データを Google Cloud にバックアップ"</a></p>
+</li>
+<li>
+<p><a href="task-backup-onprem-to-gcp.html">"オンプレミスの ONTAP データを Google Cloud にバックアップ"</a></p>
+</li>
+<li>
+<p><a href="task-backup-onprem-private-cloud.html">"オンプレミスの ONTAP データを StorageGRID にバックアップ"</a></p>
+</li>
+<li>
+<p><a href="task-backup-onprem-to-ontap-s3.html">"オンプレミスのONTAPをONTAP S3にバックアップ"</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="インターネット接続が制限されているサイトのサポート">インターネット接続が制限されているサイトのサポート</h3>
+<div class="paragraph">
+<p>BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（「制限モード」とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AWSの商用リージョンにインストールされているCloud Volumes ONTAP システムからAmazon S3にデータをバックアップできます。方法を参照してください <a href="task-backup-to-s3.html">"Cloud Volumes ONTAP データを Amazon S3 にバックアップします"</a>。</p>
+</li>
+<li>
+<p>Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。方法を参照してください <a href="task-backup-to-azure.html">"Cloud Volumes ONTAP データを Azure Blob にバックアップ"</a>。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="インターネットに接続されていないサイトをサポート">インターネットに接続されていないサイトをサポート</h3>
+<div class="paragraph">
+<p>インターネットに接続されていないサイト（「プライベートモード」または「ダーク」サイトとも呼ばれます）では、BlueXPのバックアップとリカバリを使用してボリュームデータをバックアップできます。この場合は、同じサイトのLinuxホストにBlueXP Connectorを導入する必要があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。方法を参照してください <a href="task-backup-onprem-private-cloud.html">"オンプレミスの ONTAP データを StorageGRID にバックアップ"</a> を参照してください。</p>
+</li>
+<li>
+<p>ローカルのオンプレミスONTAPシステムから、ローカルのオンプレミスONTAPシステムまたはS3オブジェクトストレージ用に構成されたCloud Volumes ONTAPシステムにデータをバックアップできます。方法を参照してください <a href="task-backup-onprem-to-ontap-s3.html">"オンプレミスのONTAPデータをONTAP S3にバックアップ"</a> を参照してください。<br>
+ifdef：aws []</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ja-jp/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ja-jp/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">このページ</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">ご利用規約</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">このページに関するフィードバックをお寄せください</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/bluexp-backup-recovery/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/bluexp-backup-recovery/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/bluexp-backup-recovery/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/bluexp-backup-recovery/js/ie-tabbed-blocks.js'></script>
+    <script src='/ja-jp/bluexp-backup-recovery/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
