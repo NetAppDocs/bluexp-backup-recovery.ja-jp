@@ -1232,14 +1232,10 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="d111236cacc86fadca19453883d94b63" category="paragraph">次の表に、2つの方法の機能比較を示します。</block>
   <block id="1181e345cf6d2eaef5900c975d430d7d" category="cell">参照と復元</block>
   <block id="7d0014a7ab187c6931fc2183a6074420" category="cell">検索とリストア</block>
-  <block id="d04e8ed2daf2cfbac4df96c77bda4638" category="cell">フォルダ形式の構造を参照して、1つのバックアップファイル内のボリューム、フォルダ、またはファイルを検索します</block>
-  <block id="7a035a915239cf76211880a31a8e3764" category="cell">すべてのバックアップファイル*のボリューム、フォルダ、ファイルを、ボリューム名またはボリューム名の一部または全部、サイズの範囲、および追加の検索フィルタで検索します</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">ファイルが削除または名前変更されており、元のファイル名がわからない場合は、はファイルリカバリを処理しません</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">新しく作成 / 削除 / 名前変更されたディレクトリと新しく作成 / 削除 / 名前変更されたファイルを処理します</block>
   <block id="c6df30fd69d443c5f65257f03e22d182" category="cell">クラウドプロバイダのリソースを追加する必要はありません</block>
-  <block id="69c1077679bcc01dbd9a597c194c6524" category="cell">クラウドからリストアする場合は、アカウントごとに追加のバケットとパブリッククラウドプロバイダのリソースが必要</block>
   <block id="f487cfb88239842615093e7eb26153a0" category="cell">クラウドプロバイダのコストを追加する必要はありません</block>
-  <block id="c97cce3cb42ee080e929331eb7a9798e" category="cell">クラウドからリストアする場合は、バックアップやボリュームをスキャンして検索結果を検索する際に追加コストが必要になります</block>
   <block id="36bce3524e4446bfe42ccad6f813430a" category="paragraph">この表には、バックアップファイルが配置されている場所に基づいて、有効なリストア処理のリストが表示されます。</block>
   <block id="a09aa546b6aa449c6baf91e8d0ebb636" category="cell">バックアップタイプ</block>
   <block id="cdabcc59f5dffd726bced2c44fc05f05" category="cell">*ボリュームのリストア*</block>
@@ -1313,7 +1309,6 @@ Cloud Volumes ONTAP</block>
   <block id="5d8a63e586bb4dfbba4ae7d992161e1c" category="admonition">システムのONTAP バージョンが9.13.1より前の場合、バックアップファイルにDataLock &amp; Ransomwareが設定されていると、フォルダやファイルを復元できません。この場合、バックアップファイルからボリューム全体をリストアし、必要なファイルにアクセスできます。</block>
   <block id="6570e12596b3149578b487431c923c26" category="section-title">ブラウズおよびリストアを使用してボリュームをリストアします</block>
   <block id="209a2213c8478f88b6a43752e3a502ac" category="paragraph">バックアップファイルからボリュームをリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。オブジェクトストレージのバックアップを使用する場合は、元の作業環境内のボリューム、ソースの作業環境と同じクラウドアカウントにある別の作業環境、またはオンプレミスのONTAPシステムにデータをリストアできます。</block>
-  <block id="896c3888b79484c9760825887d60adb2" category="paragraph">ONTAP 9.13.0以降を使用してCloud Volumes ONTAPシステムにクラウドバックアップをリストアする場合は、「クイックリストア」処理を実行することができます。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。クイックリストアでは、バックアップファイル全体をリストアするのではなく、バックアップファイルからボリュームにメタデータをリストアできます。高速リストアは、パフォーマンスやレイテンシの影響を受けやすいアプリケーションには推奨されません。また、アーカイブストレージ内のバックアップではサポートされません。</block>
   <block id="d32e1d93e3ad3960f0013d75a50ca107" category="admonition">クイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみ、FlexGroupボリュームに対してサポートされます。また、SnapLockボリュームでサポートされるのは、ソースシステムでONTAP 9.11.0以降が実行されていた場合のみです。</block>
   <block id="bb52ad67a6160989e585657353648e45" category="paragraph">レプリケートされたボリュームからリストアする場合は、元の作業環境、Cloud Volumes ONTAPまたはオンプレミスのONTAPシステムにボリュームをリストアできます。</block>
   <block id="9336df9a96bed9adb0f67170b2dad2b3" category="inline-image-macro">次の図は、[参照とリストア]を使用してボリュームのリストア処理を実行するフローを示しています。</block>
@@ -1341,7 +1336,6 @@ Cloud Volumes ONTAP</block>
   <block id="2f7ffcf09fd8291d200be9f94baef41d" category="list-text">リストアしたボリュームに使用する名前を入力し、ボリュームを配置するStorage VMとアグリゲートを選択します。FlexGroupボリュームをリストアする場合は、複数のアグリゲートを選択する必要があります。デフォルトでは、 * &lt;source_volume_name&gt; _ Restore * がボリューム名として使用されます。</block>
   <block id="9763ccd6f6f7cd192255a18d4e2c5a16" category="inline-image-macro">リストアする新しいボリュームの名前を入力するスクリーンショット。</block>
   <block id="7766d2d18828bfdebdf9558da5b44366" category="paragraph"><block ref="7766d2d18828bfdebdf9558da5b44366" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="fcde2c072e8aee2aa6a09b37c7ceee0a" category="paragraph">ONTAP 9.13.0以降を使用してオブジェクトストレージからCloud Volumes ONTAPシステムにバックアップをリストアする場合は、「クイックリストア」処理を実行できます。</block>
   <block id="15c25e27b550e844257a7920d4c7a5ea" category="paragraph">また、（ ONTAP 9.10.1 以降で使用可能な）アーカイブストレージ階層にあるバックアップファイルからボリュームをリストアする場合は、リストア優先度を選択できます。</block>
   <block id="e4b253d57f3284f01d23fe6d890c954f" category="paragraph"><block ref="cacf15576b46da141d22ed2be2ccc0c6" category="inline-link-macro-rx"></block>。</block>
   <block id="953633132ca38597559bcac180010ac2" category="paragraph"><block ref="e84408fa2ad67b16ce499fc31f7f4f81" category="inline-link-macro-rx"></block>。</block>
@@ -1416,7 +1410,6 @@ Cloud Volumes ONTAP</block>
   <block id="20f2d0bb5e696b331efc736ffadbb3f3" category="paragraph">リストアするボリュームのバックアップファイルがアーカイブストレージ（ONTAP 9.10.1以降で使用可能）にある場合、リストア処理にはより長い時間がかかり、追加コストが発生します。デスティネーションクラスタでも、ボリュームのリストアにはONTAP 9.10.1以降、ファイルのリストアには9.11.1、Google Archive and StorageGRID には9.12.1、フォルダのリストアには9.13.1が実行されている必要があります。</block>
   <block id="123d4cc43e1a5345167ea23371a1a2c3" category="list-text">オブジェクトストレージ内のバックアップファイルにDataLockおよびRansomware保護が設定されている場合、フォルダレベルのリストアはONTAPのバージョンが9.13.1以降の場合にのみサポートされます。以前のバージョンのONTAP を使用している場合は、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。</block>
   <block id="151be02e2bd1749a3dd2015c36005736" category="list-text">オブジェクトストレージ内のバックアップファイルがアーカイブストレージにある場合、フォルダレベルのリストアはONTAPのバージョンが9.13.1以降の場合にのみサポートされます。以前のバージョンのONTAP を使用している場合は、アーカイブされていない新しいバックアップファイルからフォルダをリストアできます。または、アーカイブされたバックアップからボリューム全体をリストアしてから、必要なフォルダとファイルにアクセスできます。</block>
-  <block id="0662a540906c0c217caad41d6b214451" category="list-text">クイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみ、FlexGroupボリュームに対してサポートされます。SnapLockボリュームのクイックリストアは、クラウドバックアップの作成元のソースシステムでONTAP 9.11.0以降が実行されている場合にのみサポートされます。FlexVolボリュームの最小要件はありません。</block>
   <block id="3ddfa13cbce20cc68cd19aca6f181eb0" category="list-text">AzureアーカイブストレージからStorageGRID システムにデータをリストアする場合、「High」リストア優先度はサポートされません。</block>
   <block id="24ac68c9fd3a2031d9d90480b0b100c4" category="list-text">現在、ONTAP S3オブジェクトストレージ内のボリュームからのフォルダのリストアはサポートされていません。</block>
   <block id="42c4ab8961cdba5beaf8c8b46bfb4bc4" category="paragraph">開始する前に、リストアするボリュームやファイルの名前や場所を把握しておく必要があります。</block>
@@ -1495,7 +1488,6 @@ Cloud Volumes ONTAP</block>
   <block id="e09cd23a3f64c40b39bba1a2fb22c7fd" category="inline-image-macro">検索条件に一致するすべてのバックアップを表示する方法を示すスクリーンショット。</block>
   <block id="f13515ea414632814764890822fe8887" category="paragraph"><block ref="f13515ea414632814764890822fe8887" category="inline-image-macro-rx" type="image"></block></block>
   <block id="66786dceb7a3e837a21752a2db70307e" category="list-text">データのリストアに使用するバックアップファイルを探し、*[リストア]*をクリックします。</block>
-  <block id="1b2207e0e63b5e8d114fd13b0ecb4a7e" category="paragraph">検索結果からは、検索結果にファイルが含まれているローカルボリュームの Snapshot コピーも特定されます。リストアは、クラウドバックアップファイルから行うか、Snapshotコピーから行うかを選択できます。</block>
   <block id="8be1e1a6d2ac4b49f49a7f1f37997551" category="list-text">ボリューム、フォルダ、またはファイルのリストア先を選択し、*リストア*をクリックします。</block>
   <block id="9ea8586e1304278c3a05061b433c1169" category="list-text">ボリュームについては、元の作業環境を選択するか、別の作業環境を選択できます。FlexGroupボリュームをリストアする場合は、複数のアグリゲートを選択する必要があります。</block>
   <block id="74b5efa4496e2e9e98c43dd6f32429ec" category="list-text">フォルダの場合は、元の場所にリストアすることも、作業環境、ボリューム、フォルダなどの別の場所を選択することもできます。</block>
@@ -2154,7 +2146,6 @@ PDB クローンワークフローの場合、このパラメータの値は事�
   <block id="71dc99a235b204c380fc1f0d4ff3d988" category="paragraph">毎年のバックアップは、オブジェクトストレージに転送されたあとにソースシステムから自動的に削除されます。このデフォルト動作は変更できます <block ref="84fdcd8fda5ef8d60546cc911ec3f8e9" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="23433a4a1c369f850662f43bac40d8ae" category="section-title">DataLockとランサムウェアによる保護</block>
   <block id="2565631610247b4b3c1e22a4efb7394f" category="paragraph">BlueXPのバックアップとリカバリは、DataLockとランサムウェア対策をボリュームのバックアップに提供します。これらの機能を使用すると、バックアップファイルをロックしてスキャンし、バックアップファイルでランサムウェアの可能性を検出できます。この設定はオプションで、クラスタのボリュームバックアップの保護を強化する場合にバックアップポリシーで定義できます。</block>
-  <block id="1152b46be2b09f9273e95c2cb3ead800" category="paragraph">これらの機能はどちらもバックアップファイルを保護するため、ランサムウェア攻撃がバックアップに試みられた場合にデータをリカバリするための有効なバックアップファイルを常に保持できます。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。DataLockとRansomware Protectionを有効にすると、BlueXPのバックアップとリカバリのアクティブ化でプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。</block>
   <block id="f45d40d2c3943b450f3c1c0ff3ac37f4" category="inline-link">詳細については、DataLockとRansomwareによる保護ブログをご覧ください</block>
   <block id="9119c5c13d4a250d1b7c806e437d4713" category="paragraph"><block ref="340a0b0e8509133a13996f4ac0d4f8c7" category="inline-link-rx"></block>。</block>
   <block id="aa254718f2c52dc147bfd8f98b0c4840" category="inline-link">Cloud Insights およびCloud Secure</block>
@@ -2164,7 +2155,6 @@ PDB クローンワークフローの場合、このパラメータの値は事�
   <block id="9f6fa998ef483bd08f4d11dca07b347a" category="list-text">設定後は、クラスタのDataLock保護とRansomware保護を無効にすることはできません。この機能は、クラスタでは有効にしないでください。</block>
   <block id="f1f644db5655e70aeceadaa6b299010c" category="list-text">BlueXPがボリュームデータをリストアするときにバックアップファイルをスキャンしてランサムウェアを検出すると、クラウドプロバイダからバックアップファイルの内容にアクセスするための追加の出力コストが発生します。</block>
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">DataLockとは</block>
-  <block id="17fe40afa4bdb095e9bf108ac5b5b34c" category="paragraph">DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。これは「不変ストレージ」とも呼ばれます。この機能は、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。バックアップ・ファイルがロック（および保持）される期間をDataLockの保持期間と呼びますこの値は、定義したバックアップポリシーのスケジュールと保持の設定に加え、14日間のバッファに基づきます。30日未満のDataLock保持ポリシーは、最小30日に切り上げられます。</block>
   <block id="dc52d5a83e31ec66da3344056a4e4e39" category="paragraph">古いバックアップは、バックアップポリシーの保持期間が終了した後ではなく、DataLockの保持期間が終了した後に削除されることに注意してください。</block>
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">この機能の例をいくつか見てみましょう。</block>
   <block id="f88d31c8fba76a471a02f0b65a9ac963" category="list-text">月単位のバックアップスケジュールを、保持期間が12の場合、各バックアップは、削除される12カ月（14日を足したもの）だけロックされます。</block>
@@ -2265,14 +2255,12 @@ NetApp StorageGRID</block>
   <block id="00913a42b009e85b8960c2fdad53a54a" category="list-text">コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。</block>
   <block id="e3e16bb73c0250a6a229fb457b4f957e" category="section-title">制限事項</block>
-  <block id="6c28e9f31a1540537e96cfb66aff6920" category="list-text">バックアップポリシーでアーカイブストレージを設定している場合、DataLockとRansomwareによる保護は利用できません。</block>
   <block id="fabcd9ebb5b6eb0b33f162417010c768" category="list-text">BlueXPのバックアップとリカバリをアクティブ化するときに選択するDataLockオプションを、そのクラスタのすべてのバックアップポリシーに使用する必要があります。</block>
   <block id="cd979c7356414580d564b463e3fe798a" category="list-text">1つのクラスタで複数のDataLockモードを使用することはできません。</block>
   <block id="96832c8d3beeed50f75c2178388e9ff6" category="list-text">DataLockを有効にすると、すべてのボリュームバックアップがロックされます。1つのクラスタに、ロックされたボリュームバックアップとロックされていないボリュームバックアップを混在させることはできません。</block>
   <block id="9630a54f038cd0c834e3dfc055ceeb96" category="list-text">DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。BlueXPのバックアップとリカバリをアクティブ化したあとにこの機能を有効にすることはできません。</block>
   <block id="e7d60457cf8d5955e88e40aa083c07fa" category="list-text">FlexGroupボリュームでDataLockとランサムウェア対策を使用できるのは、ONTAP 9.13.1以降を使用している場合のみです。</block>
   <block id="9ee754e4742a85085c00a0da15114de7" category="section-title">アーカイブストレージの設定</block>
-  <block id="5a8f207b587cd09b18047f9ee3e8cdc1" category="paragraph">AWS、Azure、Googleのクラウドストレージを使用している場合は、一定の日数が経過したら、古いバックアップファイルを低コストのアーカイブストレージクラス/アクセス階層に移動できます。また、標準のクラウドストレージに書き込まれることなく、バックアップファイルをすぐにアーカイブストレージに送信することもできます。「Archive after days」に「* 0 *」と入力するだけで、バックアップファイルをアーカイブストレージに直接送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープの解決策にバックアップを取って代わるユーザに特に役立ちます。</block>
   <block id="0bfadff6ad45440425fe5f23292524af" category="paragraph">アーカイブ層のデータには、必要なときにすぐにアクセスできないため、読み出しコストが高くなるため、バックアップファイルのアーカイブを決定する前に、バックアップファイルからデータをリストアする頻度を検討する必要があります。</block>
   <block id="09e167bf2b5bda581990fa1f93a488dc" category="list-text">DataLockを有効にしている場合、アーカイブストレージは使用できません。</block>
   <block id="324aabe08d5432a326f39205133865e5" category="list-text">「* 0 *日」（すぐにアーカイブ）を選択した後、アーカイブポリシーを変更することはできません。</block>
@@ -3318,7 +3306,6 @@ ifdef：aws []</block>
   <block id="0b6515b0d85be4c32021431c5119a675" category="list-text">AWS Access Keyフィールドで、データ暗号化のキーを指定します。</block>
   <block id="095a532bc2c4eed2ec2c64b6008b497f" category="list-text">AWS Secret Keyフィールドで、データ暗号化のパスワードを指定します。</block>
   <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">アーカイブ層は1回限りのアクティビティであり、あとで設定することはできないため、設定することを推奨します。</block>
-  <block id="b5e4425a80571820c3fc81b638ce52be" category="summary">BlueXPのバックアップとリカバリサービス（Cloud Backup）は、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続ボリューム、データベース、仮想マシンに、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
   <block id="c756b6b1ba6b752239a8d49eda5ad2a4" category="doc">BlueXPのバックアップとリカバリに関するドキュメント</block>
   <block id="6bf80475cfcaeeaa5036e79e644302f5" category="summary">GKE Kubernetes クラスタ上の永続ボリュームから Google Cloud ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="9cb5c4f70a9ab55a2786587a76bd9009" category="doc">Kubernetes の永続ボリュームのデータを Google Cloud ストレージにバックアップする</block>
@@ -4021,7 +4008,6 @@ ifdef：aws []</block>
   <block id="ba8be4a78d73005d396b001c480790d5" category="list-text">ローカルのSnapshotコピー、レプリケートされたボリューム、またはオブジェクトストレージ内のバックアップされたボリュームから、特定の時点のデータをリストアします。</block>
   <block id="ca636232aaf17fe5d8fef3b105b4363c" category="list-text">ボリューム、フォルダ、または個々のファイルをソースシステムまたは別のシステムにリストアする。</block>
   <block id="8d3b14a9e537b12cc786825ea2f9e4cb" category="list-text">別のサブスクリプション / アカウントを使用して、または別のリージョンにある作業環境にデータをリストアする。</block>
-  <block id="94564c9b3e87da6b96d2202774fb278d" category="list-text">クラウドストレージからCloud Volumes ONTAPシステムへのボリュームの「クイックリストア」を実行できるため、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリに最適です。</block>
   <block id="29296806c9458e6f9b360ca27eab0dac" category="list-text">データはブロックレベルでリストアされ、元のACLを維持したまま、指定した場所に直接データが配置されます。</block>
   <block id="90004223d681b1085ee8ff58039b08bb" category="list-text">単一ファイルのリストア用に個 々 のフォルダやファイルを簡単に選択できる、参照可能で検索可能なファイルカタログです。</block>
   <block id="d534535e4c4475054dbf0db3811fb673" category="section-title">バックアップとリストア処理でサポートされる作業環境</block>
@@ -4870,4 +4856,57 @@ ONTAP S3の略</block>
   <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024年2月1日</block>
   <block id="a409179aac0b12213b3fa77e0a22bd61" category="list-text">代替保存場所への仮想マシンのリストアのサポート</block>
   <block id="9c75b0f26dddf07ed827e32aaf28bee9" category="list-text">データストアの保護解除のサポート</block>
+  <block id="1e4355acc1dfc611f2f5aa191e3468f4" category="list-text">クラウドストレージからCloud Volumes ONTAPシステムまたはオンプレミスシステムにボリュームの_quick restore_を 実行できるため、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリに最適です。</block>
+  <block id="196996ba80340493c0f9064d3dd14aa5" category="summary">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPデータ、Kubernetesの永続ボリューム、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
+  <block id="2d67cd05b64a3416bc8bae12b4ef5685" category="section-title">2024年3月12日</block>
+  <block id="e713d6072685bf32f36150e9f76ce0c1" category="section-title">クラウドバックアップからオンプレミスのONTAPボリュームへの「迅速なリストア」が可能</block>
+  <block id="5a9ee632cba573d0f7355f7d12d908ca" category="paragraph">クラウドストレージからオンプレミスのONTAPデスティネーションボリュームへのボリュームの_クイックリストア_を実行できるようになりました。以前は、Cloud Volumes ONTAPシステムにのみクイックリストアを実行できました。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。迅速なリストアは、フルボリュームリストアよりもはるかに高速です。クラウドSnapshotからONTAPデスティネーションボリュームにメタデータをリストアします。ソースは、AWS S3、Azure Blob、Google Cloud Services、NetApp StorageGRIDのいずれかです。</block>
+  <block id="07f61dfe973846130f7066ef7bc459ef" category="paragraph">オンプレミスのONTAPデスティネーションシステムでONTAPバージョン9.14.1以降が実行されている必要があります。</block>
+  <block id="1a68bb97275f0f5acd506d7ad906fa05" category="paragraph">これは、検索とリストアのプロセスではなく、参照とリストアのプロセスを使用して実行できます。</block>
+  <block id="2c3b2694da8405de44d10ad024f9a37a" category="paragraph">詳細については、を参照してください<block ref="d2c90c25b1a6379e29db7390401794cc" category="inline-link-rx"></block>。</block>
+  <block id="0b15186b9aa75ae921c55dd69591ae94" category="section-title">Snapshotコピーとレプリケーションコピーからファイルとフォルダをリストアする機能</block>
+  <block id="8f859da29f9bc64e255dd02fc2821d0a" category="paragraph">以前は、AWS、Azure、Google Cloud Servicesのバックアップコピーからのみファイルとフォルダをリストアできました。ローカルSnapshotコピーとレプリケーションコピーからファイルとフォルダをリストアできるようになりました。</block>
+  <block id="71931edd27b41979c47f73ca3194f9c3" category="paragraph">この機能は、参照とリストアのプロセスではなく、検索とリストアのプロセスを使用して実行できます。</block>
+  <block id="014fb6165915bb2267eed517efab9cb5" category="cell">フォルダ形式の構造を参照して、単一のバックアップファイル内のボリューム、フォルダ、またはファイルを検索します。</block>
+  <block id="c601431e32ca59eda5545781d799fc84" category="cell">部分的または完全なボリューム名、部分的または完全なフォルダ/ファイル名、サイズ範囲、および追加の検索フィルタを使用して、*すべてのバックアップファイル*のボリューム、フォルダ、またはファイルを検索します。</block>
+  <block id="ba3b7ed6a9e20a17536af523c17d7d72" category="cell">クラウドからリストアする場合は、アカウントごとにバケットとパブリッククラウドプロバイダのリソースが追加で必要になります。</block>
+  <block id="e4da0c30ee3e36e87eec129bd901c319" category="cell">クラウドからリストアする場合は、バックアップやボリュームをスキャンして検索結果を検索する際に追加コストが必要になります。</block>
+  <block id="bc7f13477d0119c48bad565ccf971e6a" category="cell">クイックリストアがサポートされています。</block>
+  <block id="acf00c252198c9be0294aaf561c5d662" category="cell">クイックリストアはサポートされていません。</block>
+  <block id="4392d15c8884c7cc66b17ff794eb41d2" category="cell">*オブジェクトストアから（バックアップ）*</block>
+  <block id="a4e7ccecf7c1ff2d3e2de88d9f7559d4" category="cell">*プライマリ（スナップショット）から*</block>
+  <block id="c1ad4111606308626e152e2bc5089a8b" category="cell">*セカンダリ・システムから（レプリケーション）*</block>
+  <block id="a019a781742609ed7930e84dd4bbbfe7" category="cell">デスティネーションの作業環境へ
+
+ifdef：aws []</block>
+  <block id="508c69ac69618e417c42c1ec4f1802fe" category="cell">AWS の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：aws[]
+
+
+
+ifdef：Azure []</block>
+  <block id="a57e78a7b424a1f155d5c251bf4bfe16" category="cell">Azure の Cloud Volumes ONTAP
+オンプレミスの ONTAP システム
+
+endif：：azure[]
+
+
+
+ifdef ::gcp[]</block>
+  <block id="f6bc09197fbc5599ccf48032f3ead672" category="cell">オンプレミスのONTAPシステムへ</block>
+  <block id="c1b52fe790511b9298f4b5f6a53599f4" category="paragraph">ONTAP 9.13.0以降を使用してCloud Volumes ONTAPシステムにクラウドバックアップをリストアする場合、またはONTAP 9.14.1を実行しているオンプレミスのONTAPシステムにクラウドバックアップをリストアする場合は、_quick restore_operationを実行するオプションがあります。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。クイックリストアでは、バックアップファイル全体をリストアするのではなく、バックアップファイルからボリュームにメタデータをリストアできます。高速リストアは、パフォーマンスやレイテンシの影響を受けやすいアプリケーションには推奨されません。また、アーカイブストレージ内のバックアップではサポートされません。</block>
+  <block id="7a2007148011e973184940a379d2cfeb" category="paragraph">ONTAP 9.13.0以降を使用するCloud Volumes ONTAPシステム、またはONTAP 9.14.1を実行するオンプレミスのONTAPシステムにオブジェクトストレージからバックアップをリストアする場合は、_quick restore_operationを実行するオプションがあります。</block>
+  <block id="83d21a839062d4ca006d1f2910616c06" category="list-text">[次へ]*をクリックして、通常リストアとクイックリストアのどちらを実行するかを選択します。</block>
+  <block id="0c3da5360ee5d0f95ea59ce872785636" category="inline-image-macro">通常のリストアプロセスとクイックリストアプロセスを示すスクリーンショット。</block>
+  <block id="dccddafd5c384963cd964ee3029e662a" category="paragraph"><block ref="dccddafd5c384963cd964ee3029e662a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2618b905cdc9e04055a7d6a5328eebfb" category="list-text">*通常のリストア*：高いパフォーマンスが必要なボリュームでは、通常のリストアを使用します。リストアプロセスが完了するまでボリュームは使用できません。</block>
+  <block id="64063115b259542737cce343064e3233" category="list-text">*クイックリストア*：リストアされたボリュームとデータはすぐに使用可能になります。高速リストアプロセスではデータへのアクセスが通常より遅くなる可能性があるため、ハイパフォーマンスが必要なボリュームではこのオプションを使用しないでください。</block>
+  <block id="406385bac6b7601aab1eff5d8a317cc3" category="paragraph">検索結果には、検索対象のファイルを含むローカルボリュームのSnapshotコピーとリモートでレプリケートされたボリュームが含まれていることが示されます。リストアは、クラウドバックアップファイルから、Snapshotコピーから、またはレプリケートされたボリュームから選択できます。</block>
+  <block id="6b1625dd335c098ed2ca98e2429bd8b5" category="paragraph">これらの機能はどちらもバックアップファイルを保護するため、ランサムウェア攻撃がバックアップに試みられた場合にデータをリカバリするための有効なバックアップファイルを常に保持できます。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。[DataLock and Ransomware Protection]オプションを有効にすると、BlueXPのバックアップとリカバリのアクティブ化でプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。</block>
+  <block id="b03c01f8cf077f9dee5804db15487474" category="paragraph">DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。これは_不変ストレージ_とも呼ばれます。この機能では、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。 バックアップファイルがロック（および保持）される期間は、DataLock保持期間と呼ばれます。定義したバックアップポリシーのスケジュールと保持設定に加え、14日間のバッファに基づいて設定されます。30日未満のDataLock保持ポリシーは、最小30日に切り上げられます。</block>
+  <block id="d1fe7d408368bfebc413888300892008" category="list-text">バックアップポリシーでアーカイブストレージを設定している場合、DataLockとランサムウェアからの保護機能は使用できません。</block>
+  <block id="7bdfdec65541ae8037e909dd7d0643dd" category="paragraph">AWS、Azure、Googleのクラウドストレージを使用している場合は、一定の日数が経過したら、古いバックアップファイルを低コストのアーカイブストレージクラスまたはアクセス階層に移動できます。また、標準のクラウドストレージに書き込まれることなく、バックアップファイルをすぐにアーカイブストレージに送信することもできます。「Archive after days」に「* 0 *」と入力するだけで、バックアップファイルをアーカイブストレージに直接送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープの解決策にバックアップを取って代わるユーザに特に役立ちます。</block>
+  <block id="8e867c14e8b5b20149da48500624662f" category="list-text">すべてのデータブロックをアーカイブクラウドストレージに送信するために「0」を選択した場合でも、メタデータブロックは常に標準のクラウドストレージに書き込まれます。</block>
 </blocks>
