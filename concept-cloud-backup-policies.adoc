@@ -4,7 +4,7 @@ permalink: concept-cloud-backup-policies.html
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: BlueXPのバックアップとリカバリでは、オンプレミスのONTAP システムとCloud Volumes ONTAP システムのさまざまな設定を使用してバックアップポリシーを作成できます。 
 ---
-= BlueXPのバックアップ/リカバリポリシーの設定
+= オブジェクトへのバックアップポリシーのオプション
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: BlueXPのバックアップとリカバリでは、オンプレミス�
 
 
 [role="lead"]
-BlueXPのバックアップとリカバリでは、オンプレミスのONTAP システムとCloud Volumes ONTAP システムのさまざまな設定を使用してバックアップポリシーを作成できます。
+BlueXPのバックアップとリカバリでは、オンプレミスのONTAPシステムとCloud Volumes ONTAPシステムのさまざまな設定を使用してバックアップポリシーを作成できます。
 
 
 NOTE: これらのポリシー設定は、オブジェクトストレージへのバックアップにのみ関連します。これらの設定は、Snapshotポリシーやレプリケーションポリシーには影響しません。Snapshotとレプリケーションについても、今後同様のポリシー設定が追加される予定です。
 
 
 
-== バックアップスケジュール
+== バックアップスケジュールのオプション
 
 BlueXPのバックアップとリカバリでは、作業環境（クラスタ）ごとに一意のスケジュールで複数のバックアップポリシーを作成できます。RPO（目標復旧時点）が異なるボリュームには、異なるバックアップポリシーを割り当てることができます。
 
@@ -52,7 +52,7 @@ image:screenshot_backup_schedule_settings.png["バックアップポリシー作
 
 
 
-== DataLockとランサムウェアによる保護
+== DataLockとランサムウェア対策のオプション
 
 BlueXPのバックアップとリカバリは、DataLockとランサムウェア対策をボリュームのバックアップに提供します。これらの機能を使用すると、バックアップファイルをロックしてスキャンし、バックアップファイルでランサムウェアの可能性を検出できます。この設定はオプションで、クラスタのボリュームバックアップの保護を強化する場合にバックアップポリシーで定義できます。
 
@@ -64,8 +64,8 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 
 [CAUTION]
 ====
-* DataLockとRansomware Protectionを使用する場合は、最初のバックアップポリシーを作成し、そのクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに有効にする必要があります。
-* 設定後は、クラスタのDataLock保護とRansomware保護を無効にすることはできません。この機能は、クラスタでは有効にしないでください。
+* DataLockとRansomware Protectionを使用する場合は、最初のバックアップポリシーを作成し、そのクラスタに対してBlueXPのバックアップとリカバリをアクティブ化するときに有効にすることができます。この機能は、BlueXPのバックアップとリカバリの詳細設定を使用してあとで有効にすることができます。
+* DataLockとRansomware Protectionは、コスト削減のためにクラスタを設定したあとに無効にすることができます。
 * BlueXPがボリュームデータをリストアするときにバックアップファイルをスキャンしてランサムウェアを検出すると、クラウドプロバイダからバックアップファイルの内容にアクセスするための追加の出力コストが発生します。
 
 
@@ -96,7 +96,10 @@ DataLockは、バックアップファイルが一定期間変更または削除
 
 ランサムウェアスキャンは、バックアップとリストアのプロセスで3ポイント実行されます。
 
-* バックアップファイルが作成されたとき
+* バックアップファイルが作成されたとき。
++
+必要に応じて、ランサムウェアスキャンのスケジュールを有効または無効にできます。
+
 +
 スキャンは、クラウドストレージに初めて書き込まれたとき、*次の*バックアップファイルが書き込まれたときに、バックアップファイルに対しては実行されません。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。
 
@@ -112,11 +115,15 @@ DataLockは、バックアップファイルが一定期間変更または削除
 
 
 
-=== DataLockとRansomware Protectionの設定
+=== DataLockとRansomware Protectionのオプション
 
 各バックアップポリシーには、バックアップファイルに適用可能な_DataLockとRansomware Protection_に関する セクションが用意されています。
 
 image:screenshot_datalock_ransomware_settings.png["バックアップポリシー作成時のAWS、Azure、StorageGRID のDataLockとRansProtectionの設定のスクリーンショット"]
+
+スケジュールされたランサムウェア対策スキャンはデフォルトで有効になっています。スキャン頻度のデフォルト設定は7日間です。スキャンは最新のSnapshotコピーに対してのみ実行されます。[Advanced Settings]ページのオプションを使用して、最新のSnapshotコピーに対してスケジュールされたランサムウェアスキャンを有効または無効にできます。有効にすると、スキャンはデフォルトで7日ごとに実行されます。このスケジュールを数日または数週間に変更したり、無効にしたりすることで、コストを節約できます。
+
+を参照してください link:manage-backup-settings-ontap.html["[Advanced Settings]ページでランサムウェア対策オプションを更新する方法"]。
 
 各バックアップポリシーについて、次の設定から選択できます。
 
@@ -240,6 +247,9 @@ ifdef::aws[]
 ** コネクタは、クラウドまたはオンプレミスに導入できます
 ** 次のS3権限は、コネクタに権限を付与するIAMロールに含まれている必要があります。これらは、リソースarn：aws：s3：：：NetApp-backup-*」の「backupS3Policy」セクションに含まれています。
 +
+.AWS S3権限
+[%collapsible]
+====
 *** S3 ： GetObjectVersionTagging
 *** S3 ： GetBucketObjectLockConfiguration
 *** S3：GetObjectVersionAcl
@@ -266,10 +276,11 @@ ifdef::aws[]
 *** S3 ： PutObjectRetention
 *** S3 ： GetBucketLocation
 *** S3 ： GetObjectVersion
+
+
+====
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["必要な権限をコピーして貼り付けることができる、ポリシーの完全なJSON形式を表示します"^]。
-
-
 
 
 
@@ -296,6 +307,9 @@ endif::azure[]
 ** コネクタは、オンプレミスに導入する必要があります（インターネットにアクセスできるサイトまたはインターネットにアクセスできないサイトにインストールできます）。
 ** 次のS3権限は、コネクタに権限を提供するIAMロールに含める必要があります。
 +
+.StorageGRID S3権限
+[%collapsible]
+====
 *** S3 ： GetObjectVersionTagging
 *** S3 ： GetBucketObjectLockConfiguration
 *** S3：GetObjectVersionAcl
@@ -323,6 +337,7 @@ endif::azure[]
 *** S3 ： GetObjectVersion
 
 
+====
 
 
 
@@ -335,13 +350,13 @@ endif::azure[]
 * BlueXPのバックアップとリカバリをアクティブ化するときに選択するDataLockオプションを、そのクラスタのすべてのバックアップポリシーに使用する必要があります。
 * 1つのクラスタで複数のDataLockモードを使用することはできません。
 * DataLockを有効にすると、すべてのボリュームバックアップがロックされます。1つのクラスタに、ロックされたボリュームバックアップとロックされていないボリュームバックアップを混在させることはできません。
-* DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。BlueXPのバックアップとリカバリをアクティブ化したあとにこの機能を有効にすることはできません。
+* DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。この機能は、[詳細設定]オプションを使用してあとで有効または無効にすることができます。
 * FlexGroupボリュームでDataLockとランサムウェア対策を使用できるのは、ONTAP 9.13.1以降を使用している場合のみです。
 
 
 
 
-== アーカイブストレージの設定
+== アーカイブストレージのオプション
 
 AWS、Azure、Googleのクラウドストレージを使用している場合は、一定の日数が経過したら、古いバックアップファイルを低コストのアーカイブストレージクラスまたはアクセス階層に移動できます。また、標準のクラウドストレージに書き込まれることなく、バックアップファイルをすぐにアーカイブストレージに送信することもできます。「Archive after days」に「* 0 *」と入力するだけで、バックアップファイルをアーカイブストレージに直接送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープの解決策にバックアップを取って代わるユーザに特に役立ちます。
 

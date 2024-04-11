@@ -52,6 +52,10 @@ sidebar:
       url: "/concept-protection-journey.html"
     - title: ONTAPボリュームのポリシーを管理します。
       url: "/task-create-policies-ontap.html"
+    - title: オブジェクトへのバックアップポリシーのオプション
+      url: "/concept-cloud-backup-policies.html"
+    - title: "[Advanced Settings]でオブジェクトへのバックアップオプションを管理します。"
+      url: "/task-manage-backup-settings-ontap.html"
     - title: Cloud Volumes ONTAP を Amazon S3 にバックアップします
       flavor: aws
       url: "/task-backup-to-s3.html"
@@ -78,8 +82,6 @@ sidebar:
       url: "/task-manage-backups-ontap.html"
     - title: ONTAP バックアップからリストアする
       url: "/task-restore-backups-ontap.html"
-    - title: オブジェクト設定へのクラスタレベルのバックアップを管理します
-      url: "/task-manage-backup-settings-ontap.html"
   - title: オンプレミスのアプリケーションデータのバックアップとリストア
     entries:
     - title: オンプレミスアプリケーションのデータを保護
@@ -220,8 +222,6 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: 参照
     entries:
-    - title: バックアップポリシーの設定
-      url: "/concept-cloud-backup-policies.html"
     - title: サポート対象の AWS アーカイブストレージ階層
       url: "/reference-aws-backup-tiers.html"
     - title: サポートされている Azure アーカイブアクセス層
