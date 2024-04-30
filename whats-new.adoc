@@ -18,6 +18,25 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2024年4月30日
+
+
+
+=== ランサムウェアの定期的なスキャンを有効または無効にする機能
+
+以前は、ランサムウェアスキャンを有効または無効にすることはできましたが、スケジュールされたスキャンではこれを行うことはできませんでした。
+
+このリリースでは、[Advanced Settings]ページのオプションを使用して、最新のSnapshotコピーに対してスケジュールされたランサムウェアスキャンを有効または無効にできるようになりました。有効にすると、スキャンはデフォルトで毎週実行されます。このスケジュールを数日または数週間に変更したり、無効にしたりすることで、コストを節約できます。
+
+詳細については、次の情報を参照してください。
+
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backup-settings-ontap.html["バックアップ設定の管理"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["ONTAPボリュームのポリシーを管理します。"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["オブジェクトへのバックアップポリシーの設定"]
+
+
+
+
 == 2024年4月4日
 
 
