@@ -92,9 +92,9 @@ image:screenshot_restore_dashboard.png["[リストア]ダッシュボードに�
 
 使用するリストア処理のタイプに応じた要件とリストア手順を確認します。
 
-* <<Restoring volumes using Browse & Restore,参照とリストアを使用したボリュームのリストア>>
-* <<Restoring folders and files using Browse & Restore,参照と復元を使用したフォルダとファイルの復元>>
-* <<Restoring ONTAP data using Search & Restore,検索と復元を使用したボリューム、フォルダ、ファイルの復元>>
+* <<参照とリストアを使用したボリュームのリストア,参照とリストアを使用したボリュームのリストア>>
+* <<参照と復元を使用したフォルダとファイルの復元,参照と復元を使用したフォルダとファイルの復元>>
+* <<restore-ontap-data-using-search-restore,検索と復元を使用したボリューム、フォルダ、ファイルの復元>>
 
 
 
@@ -306,19 +306,19 @@ ifdef::aws[]
 
 
 
-link:reference-aws-backup-tiers.html#restoring-data-from-archival-storage["AWS アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+link:reference-aws-backup-tiers.html#restore-data-from-archival-storage["AWS アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+link:reference-azure-backup-tiers.html#restore-data-from-archival-storage["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。
+link:reference-google-backup-tiers.html#restore-data-from-archival-storage["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。
 
 endif::gcp[]
 
@@ -414,19 +414,19 @@ ifdef::aws[]
 
 
 
-link:reference-aws-backup-tiers.html#restoring-data-from-archival-storage["AWS アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+link:reference-aws-backup-tiers.html#restore-data-from-archival-storage["AWS アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
+link:reference-azure-backup-tiers.html#restore-data-from-archival-storage["Azure アーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。
+link:reference-google-backup-tiers.html#restore-data-from-archival-storage["Googleのアーカイブストレージからのリストアの詳細については、こちらをご覧ください"]。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。
 
 endif::gcp[]
 
@@ -504,7 +504,7 @@ image:screenshot_restore_select_dest.png["リストアするファイルのボ�
 
 
 
-== 検索とリストアを使用した ONTAP データのリストア
+== 検索とリストアを使用したONTAPデータのリストア
 
 検索とリストアを使用して、ONTAP バックアップファイルからボリューム、フォルダ、またはファイルをリストアできます。[Search & Restore]を使用すると、すべてのバックアップから特定のボリューム、フォルダ、またはファイルを検索し、リストアを実行できます。作業環境名、ボリューム名、ファイル名を正確に把握しておく必要はありません。すべてのボリュームバックアップファイルが検索されます。
 
@@ -773,7 +773,7 @@ image:screenshot_restore_enable_indexing.png["インデックスカタログを�
 
 === 検索とリストアを使用して'ボリューム'フォルダ'およびファイルをリストアします
 
-お先にどうぞ <<Enabling the Indexed Catalog for each working environment,作業環境のインデックス作成を有効にしました>>では、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。
+お先にどうぞ <<enable-the-indexed-catalog-for-each-working-environment,作業環境のインデックス作成を有効にしました>>では、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。
 
 .手順
 . BlueXPメニューから、*Protection > Backup and recovery*を選択します。

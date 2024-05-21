@@ -390,7 +390,7 @@ endif::gcp[]
 [+]
 ** ONTAP S3では、BlueXPはS3バケットに既存のユーザアカウントを使用します。
 
-あとでクラスタのデスティネーションオブジェクトストアを変更する場合は、が必要になります link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["作業環境のBlueXPバックアップとリカバリの登録を解除します"^]をクリックし、新しいクラウドプロバイダ情報を使用してBlueXPのバックアップとリカバリを有効にします。
+あとでクラスタのデスティネーションオブジェクトストアを変更する場合は、が必要になります link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["作業環境のBlueXPバックアップとリカバリの登録を解除します"^]をクリックし、新しいクラウドプロバイダ情報を使用してBlueXPのバックアップとリカバリを有効にします。
 
 
 
@@ -405,9 +405,9 @@ NOTE: ボリュームに適用されるSnapshotポリシーには、レプリケ
 
 カテゴリまたは間隔のバックアップの最大数に達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます（古いバックアップはスペースを消費し続けません）。
 
-を参照してください link:concept-cloud-backup-policies.html#backup-schedules["バックアップスケジュール"^] 使用可能なスケジュールオプションの詳細については、を参照してください。
+を参照してください link:concept-cloud-backup-policies.html["バックアップスケジュール"^] 使用可能なスケジュールオプションの詳細については、を参照してください。
 
-できることに注意してください link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time["ボリュームのオンデマンドバックアップを作成する"] スケジュールバックアップから作成されたバックアップファイルに加え、いつでも Backup Dashboard からアクセスできます。
+できることに注意してください link:task-manage-backups-ontap.html#create-a-manual-volume-backup-at-any-time["ボリュームのオンデマンドバックアップを作成する"] スケジュールバックアップから作成されたバックアップファイルに加え、いつでも Backup Dashboard からアクセスできます。
 
 
 TIP: データ保護ボリュームのバックアップの保持期間は、ソースの SnapMirror 関係の定義と同じです。API を使用して必要に応じてこの値を変更できます。
@@ -430,8 +430,8 @@ TIP: データ保護ボリュームのバックアップの保持期間は、ソ
 
 詳細については、次の情報を参照してください。
 
-* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェア対策の仕組み"]。
-* link:manage-backup-settings-ontap.html["[Advanced Settings]ページでランサムウェア対策オプションを更新する方法"]。
+* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["DataLockとランサムウェア対策の仕組み"]。
+* link:task-manage-backup-settings-ontap.html["[Advanced Settings]ページでランサムウェア対策オプションを更新する方法"]。
 
 
 
@@ -475,11 +475,11 @@ endif::gcp[]
 
 * StorageGRID では、バックアップは _Standard_storage クラスに関連付けられます。
 +
-オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルを特定の日数後にパブリッククラウドアーカイブストレージにアーカイブできます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。
+オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルを特定の日数後にパブリッククラウドアーカイブストレージにアーカイブできます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 link:task-backup-onprem-private-cloud.html#prepare-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。
 
 
 
-を参照してください link:concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定"] 古いバックアップファイルのアーカイブの詳細については、を参照してください。
+を参照してください link:concept-cloud-backup-policies.html#archival-storage-options["アーカイブストレージの設定"] 古いバックアップファイルのアーカイブの詳細については、を参照してください。
 
 
 

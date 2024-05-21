@@ -32,7 +32,7 @@ link:concept-ontap-backup-to-cloud.html#cost["BlueXPのバックアップとリ�
 
 クラウドプロバイダのマーケットプレイスで従量課金制サブスクリプションに登録すると、BlueXPバックアップ/リカバリの30日間無償トライアルを利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAPシステムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無償トライアルを開始すると、残り20日間の無償トライアルを利用できます。
 
-無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["作業環境からBlueXPバックアップおよびリカバリの登録を解除します"] トライアルが終了する前に、請求は行われません。
+無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["作業環境からBlueXPバックアップおよびリカバリの登録を解除します"] トライアルが終了する前に、請求は行われません。
 
 
 
@@ -213,7 +213,7 @@ BlueXPには、BlueXPのバックアップとリカバリをアクティブに�
 
 === BlueXPのバックアップとリカバリのBYOLライセンスを更新します
 
-ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
+ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitor-operations-status-using-the-notification-center["通知"]。
 
 image:screenshot_services_license_expire.png["BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。"]
 

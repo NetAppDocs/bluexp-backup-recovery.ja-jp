@@ -64,7 +64,7 @@ NOTE: レプリケートされたボリュームまたはバックアップフ�
 
 次の表に、3つのバックアップ方法の一般的な比較を示します。オブジェクトストレージスペースは通常、オンプレミスのディスクストレージよりも安価ですが、クラウドからデータを頻繁にリストアする可能性がある場合は、クラウドプロバイダからの出力料金によって、削減量の一部を削減できます。クラウドのバックアップファイルからデータをリストアする頻度を特定する必要があります。
 
-クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェアによる保護の詳細をご確認ください"] および link:concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定"]。
+クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["DataLockとランサムウェアによる保護の詳細をご確認ください"] および link:concept-cloud-backup-policies.html#archival-storage-options["アーカイブストレージの設定"]。
 
 [cols="18,18,22,18,22"]
 |===
@@ -120,7 +120,7 @@ NetAppのデフォルトポリシーを使用してバックアップを作成�
 
 レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。
 
-BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください link:task-manage-backups-ontap.html#add-a-new-backup-policy["新しいバックアップポリシーを追加しています"] を参照してください。
+BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["新しいバックアップポリシーを追加しています"] を参照してください。
 
 BlueXPのバックアップリカバリを使用してカスタムポリシーを作成するだけでなく、System ManagerまたはONTAPコマンドラインインターフェイス（CLI）を使用することもできます。
 

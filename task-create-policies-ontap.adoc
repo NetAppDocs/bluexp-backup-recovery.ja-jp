@@ -152,14 +152,14 @@ Snapshotコピー、レプリケーション、オブジェクトストレージ
 . 転送スケジュールやバックアップをアーカイブするタイミングなど、設定を指定します。
 . （オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。バックアップファイルをアーカイブストレージに直接送信するには、「Archive after days」に「* 0 *」と入力します。
 +
-link:concept-cloud-backup-policies.html#archival-storage-settings["アーカイブストレージの設定に関する詳細情報"]。
+link:concept-cloud-backup-policies.html#archival-storage-options["アーカイブストレージの設定に関する詳細情報"]。
 
 . （オプション）バックアップが変更または削除されないように保護するには、*[DataLock & Ransomware protection]*オプションを選択します。
 +
 クラスタでONTAP 9.11.1以降を使用している場合は、_DataLock_and_Ransomware protection_を設定することで、バックアップを削除から保護できます。
 
 +
-link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["使用可能なDataLock設定の詳細については、こちらを参照してください"^]。
 
 . 「 * Create * 」を選択します。
 

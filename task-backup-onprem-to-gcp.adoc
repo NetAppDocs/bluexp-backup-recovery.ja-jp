@@ -58,7 +58,7 @@ BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たし
 Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。また、オンプレミスのONTAPクラスタでGoogle Cloudバケットに対するデータの読み取りと書き込みができるように、権限を設定する必要があります。
 
 [role="quick-margin-para"]
-必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <<Prepare Google Cloud as your backup target,Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。>>
+必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <<Prepare Google Cloud storage as your backup target,Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] ONTAPボリュームでバックアップをアクティブ化します
 [role="quick-margin-para"]

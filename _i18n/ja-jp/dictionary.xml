@@ -438,7 +438,6 @@
   <block id="29ec9eea05a4e021ec0af54e27e66224" category="list-text">*バックアップポリシー*：既存のオブジェクトストレージへのバックアップポリシーを選択するか作成します。</block>
   <block id="5434b58cc632a508fca184ec8cb34294" category="inline-link-macro">使用可能なDataLock設定の詳細については、こちらを参照してください</block>
   <block id="b1e78dfdd8adc3005cff56ffd24b2af1" category="inline-xref">この機能を使用するためのシステムの設定方法を参照してください</block>
-  <block id="da0f161911ade8ba5f822031519efb79" category="paragraph">クラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムがバージョン11.4以降を使用している場合は、特定の日数が経過したあとに古いバックアップをパブリッククラウドのアーカイブ階層に階層化することを選択できます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <block ref="c2797d22435b48dabeada89d48523cd9" category="inline-xref-macro-rx"></block>。</block>
   <block id="1f56b8f69150cdfb9829cf942c51a8d3" category="list-text">*バックアップをパブリッククラウドに階層化*：バックアップを階層化するクラウドプロバイダを選択し、プロバイダの詳細を入力します。</block>
   <block id="b9cc781dc30db6bd9fb4cf5550c741f4" category="paragraph">新しいStorageGRIDクラスタを選択または作成します。StorageGRIDクラスタを作成してBlueXPで検出できるようにする方法については、を参照してください<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block>。</block>
   <block id="9bdfbf10688e2b38e82b1ddeb1a0af32" category="paragraph">BlueXPのバックアップとリカバリで、ボリュームの初期バックアップが作成されます。レプリケートされたボリュームとバックアップファイルのベースライン転送には、ソースデータのフルコピーが含まれます。以降の転送には、Snapshotコピーに含まれるプライマリストレージデータの差分コピーが含まれます。</block>
@@ -1187,11 +1186,9 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="f714412b5bd41c3d4daeaaefe95b9062" category="section-title">BlueXPのバックアップとリカバリでサポートされるAzure Blobアクセス階層</block>
   <block id="8fb345995433b95f0008d77ee6840097" category="paragraph">バックアップファイルが最初に作成されるときは、 _Cool _ アクセス層に保存されます。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、必要に応じてすぐにアクセスできます。</block>
   <block id="677bc0580cb25ec1cc210c28e0ca26a7" category="inline-xref">アーカイブストレージからのデータのリストア</block>
-  <block id="6fd192e87d4bb2c6b2a6ed47a38e69f6" category="paragraph">ソースクラスタで ONTAP 9.10.1 以降が実行されている場合は、コストをさらに最適化するために、特定の日数（通常は 30 日以上）後に _Cool _To Azure Archive_storage からバックアップを階層化することを選択できます。この階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。次のセクション About を参照してください <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
   <block id="caf604f4a0dfbf1c3594c2a85bd12f8d" category="paragraph">このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、Azureアカウントでコンテナをセットアップするときにライフサイクルルールを設定しないでください。</block>
   <block id="07e61ccfcb604b4d08fc03603677751d" category="inline-link">Azure Blob アクセス階層の概要について説明します</block>
   <block id="e298f51ca48eff0d92cee75ca43aaa3a" category="paragraph"><block ref="ac0a406faf148be2b386c73b962697e7" category="inline-link-rx"></block>。</block>
-  <block id="8d48e4dda22be2effe1ea5edec4201bf" category="section-title">アーカイブストレージからのデータのリストア</block>
   <block id="3ae75226b076757df064bb407b8fb4ff" category="paragraph">古いバックアップファイルをアーカイブストレージに保存するのは Cool ストレージよりもはるかに安価ですが、リストア処理用に Azure Archive のバックアップファイルからデータにアクセスするには時間がかかり、コストも高くなります。</block>
   <block id="ac5891530b16517c8b74ff26f80d280e" category="list-text">Azure Archive からデータをリストアするのにどれくらいのコストがかかりますか？</block>
   <block id="9754935d363dc7a017268d2b2278bfc2" category="list-text">Azure Archive からデータを取得する際に選択できるリストア優先度は 2 つあります。</block>
@@ -1248,11 +1245,8 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="8425d41c6f9d3b6f077b56c4d49651a4" category="paragraph">いずれかのリストア方式を使用する前に、固有のリソース要件に対応するように環境を設定しておく必要があります。これらの要件については、以降のセクションで説明します。</block>
   <block id="91679e5e03d41aefa89ddfa7649b05d2" category="paragraph">使用するリストア処理のタイプに応じた要件とリストア手順を確認します。</block>
   <block id="ab298a1df9e049ac3ba4c02e893cc475" category="inline-xref">参照とリストアを使用したボリュームのリストア</block>
-  <block id="380f9eb66bdfb4e5051453ff8bdcd0aa" category="list-text"><block ref="b8a07354ed62d0e3c05c83c3517bc38b" category="inline-xref-macro-rx"></block></block>
   <block id="abbf2484b45da9fd7be677fe96c511eb" category="inline-xref">参照と復元を使用したフォルダとファイルの復元</block>
-  <block id="17c981b300f2af812caf64b9a2093463" category="list-text"><block ref="19fee869bed89515b1fdf17b227a6fea" category="inline-xref-macro-rx"></block></block>
   <block id="8996e9eaff78ab540aab279a66de20ac" category="inline-xref">検索と復元を使用したボリューム、フォルダ、ファイルの復元</block>
-  <block id="67e7c5cb86f955703ed9f6730af64fd6" category="list-text"><block ref="2695406f56a43b731bc71bc11df2f690" category="inline-xref-macro-rx"></block></block>
   <block id="685a6ba7b83ab5e286920feb961c08bb" category="section-title">[参照と復元]を使用してONTAPデータを復元します</block>
   <block id="0b3f49c6af1cb012e5ed8d65df97f121" category="paragraph">ボリューム、フォルダ、またはファイルのリストアを開始する前に、リストアするボリュームの名前、作業環境の名前、ボリュームが配置されているSVM、およびリストア元のバックアップファイルのおおよその日付を確認しておく必要があります。ONTAPデータは、Snapshotコピー、レプリケートされたボリューム、またはオブジェクトストレージに格納されているバックアップからリストアできます。</block>
   <block id="9dccd044e84ddfcbc80bd29ce7dc6e8d" category="paragraph">*注：*リストアするデータを含むバックアップファイルがアーカイブクラウドストレージ（ONTAP 9.10.1以降）にある場合、リストア処理に時間がかかり、コストがかかります。また、デスティネーションクラスタでボリュームのリストアにはONTAP 9.10.1以降、ファイルのリストアには9.11.1、Google Archive and StorageGRID には9.12.1、フォルダのリストアには9.13.1も実行されている必要があります。</block>
@@ -1336,9 +1330,6 @@ Cloud Volumes ONTAP</block>
   <block id="9763ccd6f6f7cd192255a18d4e2c5a16" category="inline-image-macro">リストアする新しいボリュームの名前を入力するスクリーンショット。</block>
   <block id="7766d2d18828bfdebdf9558da5b44366" category="paragraph"><block ref="7766d2d18828bfdebdf9558da5b44366" category="inline-image-macro-rx" type="image"></block></block>
   <block id="15c25e27b550e844257a7920d4c7a5ea" category="paragraph">また、（ ONTAP 9.10.1 以降で使用可能な）アーカイブストレージ階層にあるバックアップファイルからボリュームをリストアする場合は、リストア優先度を選択できます。</block>
-  <block id="e4b253d57f3284f01d23fe6d890c954f" category="paragraph"><block ref="cacf15576b46da141d22ed2be2ccc0c6" category="inline-link-macro-rx"></block>。</block>
-  <block id="953633132ca38597559bcac180010ac2" category="paragraph"><block ref="e84408fa2ad67b16ce499fc31f7f4f81" category="inline-link-macro-rx"></block>。</block>
-  <block id="a4601bed84cfcc515268c444afd2de52" category="paragraph"><block ref="bb0b0cd162d3c161f2efdc6c31126950" category="inline-link-macro-rx"></block>。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。</block>
   <block id="331e823e611c54b97405788cbceb2421" category="list-text">リストアの進行状況を確認できるように、 * リストア * をクリックするとリストアダッシュボードに戻ります。</block>
   <block id="f75114a933eef4dfbad580f177284e12" category="paragraph">BlueXPのバックアップとリカバリでは、選択したバックアップに基づいて新しいボリュームが作成されます。</block>
   <block id="860f07d2ed109437af4b64fd8713b385" category="paragraph">アーカイブストレージにあるバックアップファイルからボリュームをリストアする場合は、アーカイブ階層とリストアの優先順位によって数分から数時間かかることがあります。［*ジョブ監視*］タブをクリックすると、リストアの進行状況を確認できます。</block>
@@ -1401,7 +1392,6 @@ Cloud Volumes ONTAP</block>
   <block id="62813012ad9cc198c144b40ee8b9d777" category="list-text">フォルダにカーソルを合わせて、をクリックできます <block ref="f6625f52b1c71dcdec014baa14bc9e40" category="inline-image-macro-rx" type="image"></block> 行の末尾にあるサブフォルダをドリルダウンし、フォルダを選択します。</block>
   <block id="ba3609ae3949104249c2d1af6114a9e1" category="list-text">ソースフォルダ/ファイルがある場所と同じ宛先作業環境およびボリュームを選択した場合は、「ソースフォルダパスを保持」を選択して、ソース構造内に存在していたのと同じフォルダにフォルダまたはファイルを復元できます。同じフォルダとサブフォルダがすべて存在している必要があります。フォルダは作成されません。ファイルを元の場所にリストアする場合は、ソースファイルを上書きするか、新しいファイルを作成するかを選択できます。</block>
   <block id="33de9caf9e73a2815b32070111ac99d4" category="list-text">リストアの進行状況を確認できるように、 * リストア * をクリックするとリストアダッシュボードに戻ります。また、*ジョブ監視*タブをクリックしてリストアの進捗状況を確認することもできます。</block>
-  <block id="1c60eafb2bcc4dfa9a04abebcbb62b4e" category="section-title">検索とリストアを使用した ONTAP データのリストア</block>
   <block id="32a5a6e9bac1803dcf735369d5ba9090" category="paragraph">検索とリストアを使用して、ONTAP バックアップファイルからボリューム、フォルダ、またはファイルをリストアできます。[Search &amp; Restore]を使用すると、すべてのバックアップから特定のボリューム、フォルダ、またはファイルを検索し、リストアを実行できます。作業環境名、ボリューム名、ファイル名を正確に把握しておく必要はありません。すべてのボリュームバックアップファイルが検索されます。</block>
   <block id="cbbff6455a4c909cfd52dafeca5260db" category="paragraph">検索処理では、ONTAPボリュームのすべてのローカルSnapshotコピー、セカンダリストレージシステム上のレプリケートされたすべてのボリューム、およびオブジェクトストレージに存在するすべてのバックアップファイルが検索されます。ローカルSnapshotコピーまたはレプリケートされたボリュームからデータをリストアする方が、オブジェクトストレージ内のバックアップファイルからリストアするよりも短時間でコストを抑えることができるため、これらの場所からデータをリストアすることもできます。</block>
   <block id="8744543543bca2e8e7812d7c7a8f7f81" category="paragraph">バックアップファイルからa_full volume__をリストアすると、BlueXPのバックアップとリカバリでは、バックアップのデータを使用して_new_volumeが作成されます。データは、元の作業環境のボリュームとして、ソースの作業環境と同じクラウドアカウントにある別の作業環境にリストアすることも、オンプレミスのONTAPシステムにリストアすることもできます。</block>
@@ -1472,7 +1462,6 @@ Cloud Volumes ONTAP</block>
   <block id="e016f6fcb5a977bef723854890b3c1cb" category="paragraph">作業環境内のボリュームのサイズ、および3つすべてのバックアップ場所のバックアップファイルの数によっては、最初のインデックス作成プロセスに最大1時間かかることがあります。その後は、 1 時間ごとに差分変更を反映して透過的に更新され、最新の状態が維持されます。</block>
   <block id="2a35c64a629740823e349ab7d8194529" category="section-title">検索とリストアを使用して'ボリューム'フォルダ'およびファイルをリストアします</block>
   <block id="525771ad8c8d45a1f0506d1712926a4f" category="inline-xref">作業環境のインデックス作成を有効にしました</block>
-  <block id="d8f72a8a92dc78e63f20c27cea79ddbe" category="paragraph">お先にどうぞ <block ref="9314b8a97cab98202a58ea7476f5d80f" category="inline-xref-macro-rx"></block>では、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。</block>
   <block id="56ff4fd3df0fde32d3c1dcf4cb5bcdb7" category="list-text">[ 検索と復元 ] セクションで、 [ * 検索と復元 * ] をクリックします。</block>
   <block id="8f283cf99c9393300284fe54e3d41e97" category="inline-image-macro">[Restore Dashboard]から[Search &amp; Restore]ボタンを選択するスクリーンショット。</block>
   <block id="827adac6e37a6c58c103d232f7a79440" category="paragraph"><block ref="311110a0553c8da839bc4bc66aca30d7" category="inline-image-macro-rx" type="image"></block></block>
@@ -1737,7 +1726,6 @@ Cloud Volumes ONTAP</block>
   <block id="52f2d33185b5d0760fde801c7c14e04f" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> バックアップターゲットとしてGoogle Cloudを準備します</block>
   <block id="061189bcae2d45b758f44b801f0cafa0" category="paragraph">Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。また、オンプレミスのONTAPクラスタでGoogle Cloudバケットに対するデータの読み取りと書き込みができるように、権限を設定する必要があります。</block>
   <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。</block>
-  <block id="3142575a0ab456d6fc41027f31a44400" category="paragraph">必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <block ref="24a7679356370a79eec97a5aa8f7e0f4" category="inline-xref-macro-rx"></block></block>
   <block id="16ae299379e5fdbc7715a4c6e2533475" category="paragraph">オンプレミスのONTAPシステムからGoogle Cloud Storageへのバックアップを構成する場合は、どちらの接続方法を使用するかを選択します。</block>
   <block id="7f43aa219ca8f8b1e73ade5230b138c6" category="list-text">*パブリック接続*-パブリックGoogleエンドポイントを使用して、ONTAPシステムをGoogle Cloud Storageに直接接続します。</block>
   <block id="4138f0eeac306f5f13e14f810cfd131c" category="list-text">*プライベート接続*- VPNまたはGoogle Cloud Interconnectを使用し、プライベートIPアドレスを使用するプライベートGoogle Accessインターフェイスを介してトラフィックをルーティングします。</block>
@@ -1835,7 +1823,6 @@ Cloud Volumes ONTAP</block>
   <block id="bf125f3150943c9c18a4cd821384babe" category="paragraph">ソースボリュームと同期されるデスティネーションクラスタにレプリケートされたボリュームが作成されます。</block>
   <block id="a3c584a28c3b65e7dd15a0fab91559ce" category="paragraph">Google Cloud Storageバケットは、入力したGoogleアクセスキーとシークレットキーで指定されたサービスアカウントに自動的に作成され、そこにバックアップファイルが格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。</block>
   <block id="30d334a4a47bf8bcc0a713cea94b6d98" category="list-text">また可能です <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> Google の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。</block>
-  <block id="94a7d215d3c763dcc4768c5097b88e2c" category="summary">バックアップの詳細の表示、すべてのジョブのステータスの監視、クローンの削除、データの監査、コネクタの詳細の更新、CA証明書の設定、 およびホストを管理します。</block>
   <block id="dc553b3a8ff149a0efb878a07b9d8ec0" category="doc">クラウドネイティブアプリケーションデータの保護を管理</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="section-title">ジョブを監視する</block>
   <block id="a5cae278ab84c15ead127cbc4d6b2fc5" category="paragraph">作業環境で開始されたジョブのステータスを監視できます。これにより、正常に完了したジョブ、現在実行中のジョブ、および失敗したジョブを表示できるため、問題を診断して修正できます。</block>
@@ -2274,8 +2261,6 @@ NetApp StorageGRID</block>
   <block id="862c21f94072591ed68930b5432494ac" category="paragraph">[+]
 ** Azureの場合、古いバックアップを_Azure Archive_storageに階層化できます。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
   <block id="98c5dd0d4e4b94048525760a7e30fd9f" category="inline-link-macro">StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください</block>
-  <block id="441c18d944ac4c193a895113937933f0" category="paragraph">[+]
-<block ref="363267dd6106568fded10aaeda2ee302" category="inline-link-macro-rx"></block>。</block>
   <block id="243263104c829e77835d632f591230d5" category="summary">ネットアップテクニカルサポートでサポートケースをオープンするには、まずNetApp Support Site アカウントをBlueXPに追加し、サポートに登録する必要があります。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">サポートに登録します</block>
   <block id="ece19bab46695021f109a5e50f08bebe" category="paragraph">BlueXPとそのストレージソリューションおよびサービスに固有のテクニカルサポートを受けるには、サポート登録が必要です。Cloud Volumes ONTAPシステムの主要なワークフローを有効にするには、サポート登録も必要です。</block>
@@ -2434,7 +2419,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="8d4622541c56b47641b741cdbe4f8ddf" category="paragraph">次の表に、3つのバックアップ方法の一般的な比較を示します。オブジェクトストレージスペースは通常、オンプレミスのディスクストレージよりも安価ですが、クラウドからデータを頻繁にリストアする可能性がある場合は、クラウドプロバイダからの出力料金によって、削減量の一部を削減できます。クラウドのバックアップファイルからデータをリストアする頻度を特定する必要があります。</block>
   <block id="6ee3062ac668cf28f71bf489fd741bcd" category="inline-link-macro">DataLockとランサムウェアによる保護の詳細をご確認ください</block>
   <block id="e2a9bf899dffb889ffbede3dd4e5cc0e" category="inline-link-macro">アーカイブストレージの設定</block>
-  <block id="d55eb6c501a441c7d0dea092acee6757" category="paragraph">クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。 <block ref="492dec6eb028f140c092b28cfb259760" category="inline-link-macro-rx"></block> および <block ref="a57ecb59892033dcb01091d0db7f437d" category="inline-link-macro-rx"></block>。</block>
   <block id="ddb99ca7cced831bad7ef70c4a866fbf" category="cell">バックアップ速度</block>
   <block id="e1cc17541eaf2c504e414ddff25f2eab" category="cell">バックアップコスト</block>
   <block id="ffe53eb9663918ea5038c796f2cb2f26" category="cell">リストア速度</block>
@@ -2483,7 +2467,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
 <block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
   <block id="bf322ff91252b9377a00e3301a9fb8de" category="paragraph">*注：* System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous *を選択し、オブジェクトポリシーにバックアップする場合は* Asynchronous *と* Back up to cloud *を選択します。</block>
   <block id="8cb2e913decbf9b532c186901104e076" category="inline-link-macro">新しいバックアップポリシーを追加しています</block>
-  <block id="d0c161747fe8a725393203f97ccd685c" category="paragraph">BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="61dc4b0620e6a61c45bae3557cb28951" category="paragraph">ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。として_admin_vserver（Storage VM）を使用する必要があります<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block> を参照してください。</block>
   <block id="dbb3987abbdf9be78435bfb97c6a1e83" category="cell">Policy概要の略</block>
   <block id="434e82511bf6b4566a7be6239e737769" category="cell">単純なSnapshotポリシー</block>
@@ -2562,7 +2545,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="5ef05167488611c5bd4ff0f410595ce4" category="section-title">30 日間の無償トライアルをご利用いただけます</block>
   <block id="aff1f6e6b4bed13be2c27f1b42f5b97f" category="paragraph">クラウドプロバイダのマーケットプレイスで従量課金制サブスクリプションに登録すると、BlueXPバックアップ/リカバリの30日間無償トライアルを利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAPシステムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無償トライアルを開始すると、残り20日間の無償トライアルを利用できます。</block>
   <block id="aca2e72b026ee1e0a7582484746f43ed" category="inline-link-macro">作業環境からBlueXPバックアップおよびリカバリの登録を解除します</block>
-  <block id="e54090ec02cffc5025d030f0a386c9e2" category="paragraph">無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします <block ref="c2935260c294740f9f8b38e657590234" category="inline-link-macro-rx"></block> トライアルが終了する前に、請求は行われません。</block>
   <block id="094ba72a3fdb39776632245f235f26be" category="section-title">BlueXPのバックアップとリカバリのPAYGOサブスクリプションを利用</block>
   <block id="9fddc1f9c7fd56a9a852b0bd4cd2e8e7" category="paragraph">従量課金制の場合、クラウドプロバイダにオブジェクトストレージのコストとネットアップのバックアップライセンスのコストを1時間単位で支払うことになります。無償トライアルを利用されている場合や、お客様が独自のライセンスを使用（ BYOL ）されている場合も、サブスクリプションを設定する必要があります。</block>
   <block id="dcb73ed45cf0756ddb50a72607921a55" category="list-text">登録することで、無償トライアルの終了後にサービスが中断されることがなくなります。トライアルが終了すると、バックアップしたデータの量に応じて1時間ごとに課金されます。</block>
@@ -2637,7 +2619,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="f914a0b78ceecabe51b4eca3467359e2" category="paragraph">BlueXPには、BlueXPのバックアップとリカバリをアクティブにするためのライセンスが追加されています。</block>
   <block id="a7a2e296ff3e4bd717ab8d87223bae0e" category="section-title">BlueXPのバックアップとリカバリのBYOLライセンスを更新します</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">通知</block>
-  <block id="bd2181ebe83d3e14c692cc0ecf0b8124" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="b553b83f4f3ab8ad7adf12f36cefd6a6" category="inline-link-rx"></block>。</block>
   <block id="0553876f11122be0920f9fa9c803d152" category="inline-image-macro">BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。</block>
   <block id="3ef315abed0cef6dcc1d41cb39b4322b" category="paragraph"><block ref="3ef315abed0cef6dcc1d41cb39b4322b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3d2aca918343e87b5a15dddf47015bdd" category="paragraph">BlueXPのバックアップとリカバリのライセンスは、有効期限が切れる前に更新できるため、データのバックアップとリストアが中断されることはありません。</block>
@@ -2748,7 +2729,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="2df585918dfe79cb1c0f8dfb403b8933" category="paragraph">オンデマンドバックアップはいつでも作成することができ、ボリュームの現在の状態をキャプチャすることができます。これは、ボリュームに非常に重要な変更が加えられていて、そのデータを保護するために次回のスケジュールされたバックアップを待つ必要がない場合に便利です。また、この機能を使用して、現在バックアップされていないボリュームのバックアップを作成し、現在の状態をキャプチャすることもできます。</block>
   <block id="b96031c917c2ba0727d0fbc30fa81d55" category="paragraph">ボリュームのオブジェクトに対する一時的なSnapshotコピーまたはバックアップを作成できます。アドホックレプリケーションボリュームは作成できません。</block>
   <block id="75f0ab2aa06321fc5a92c205273b43b6" category="paragraph">バックアップ名にはタイムスタンプが含まれるため、他のスケジュールされたバックアップからオンデマンドバックアップを特定できます。</block>
-  <block id="0abd8676736bf0004d7c3dfe1d7d84bc" category="paragraph">このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection_を有効にした場合、オンデマンドバックアップにもDataLockが設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 <block ref="9735b9b89fbfc01e5e59dd9cae927830" category="inline-link-macro-rx"></block>。</block>
   <block id="34654042ecfc4226d89a0eec5901d43e" category="inline-link">ONTAP CLIを使用してSnapshotを削除する方法を参照してください</block>
   <block id="57cb86318c67c4a35e81edad7ab08d71" category="paragraph">アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。Snapshotの名前はで始まります<block ref="3fbd2a9ee3863b8841029b21d6bf8e89" prefix=" " category="inline-code"></block>。<block ref="7e565776b86561f26a3208af24c76dc9" category="inline-link-rx"></block>。</block>
   <block id="a7ddc69bf51887dfb9d3f72e57328bff" category="admonition">オンデマンドボリュームバックアップは、データ保護ボリュームではサポートされません。</block>
@@ -2837,7 +2817,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
 アーカイブへのバックアップの階層化を停止した場合、アーカイブストレージに階層化されたバックアップファイルはその階層に残ります。アーカイブされたバックアップファイルは自動的に標準階層に戻されません。新しいボリュームバックアップのみが標準階層に配置されます。</block>
   <block id="d70158cbe3d27c50e0d0084d0e2de55a" category="paragraph">作業環境でBlueXPのバックアップとリカバリを有効にすると、最初に選択したすべてのボリュームが定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective （ RPO ；目標復旧時点）が異なるボリュームに対して異なるバックアップポリシーを割り当てる場合は、そのクラスタに追加のポリシーを作成し、そのポリシーを他のボリュームに割り当てることができます。</block>
   <block id="35ca84c9ac716ce66e06cc6b1cf45a92" category="inline-xref">その作業環境内のボリュームにポリシーを適用します</block>
-  <block id="08cdc078320307d73fe3da23cd24ca2d" category="paragraph">作業環境内の特定のボリュームに新しいバックアップポリシーを適用する場合は、最初にそのバックアップポリシーを作業環境に追加する必要があります。すると <block ref="b42a84e654e63c87505d24dafe97d92c" category="inline-xref-macro-rx"></block>。</block>
   <block id="0e0be9ba931ce338721ad79ef94ce582" category="list-text">このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに初期ポリシーで_DataLockとRansomware Protection_を有効にした場合は、追加のポリシーで同じDataLock設定（ガバナンスまたはコンプライアンス）を設定する必要があります。BlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection _を有効にしなかった場合は、DataLockを使用する新しいポリシーを作成できません。</block>
   <block id="fad93ca72d69f3c96e90c9dd91575804" category="list-text">AWSでバックアップを作成するときに、BlueXPのバックアップとリカバリをアクティブ化するときに最初のバックアップポリシーで_S3 Glacier_or_S3 Glacier Deep Archive_を 選択した場合、その階層がそのクラスタの今後のバックアップポリシーで使用できる唯一のアーカイブ階層になります。最初のバックアップポリシーでアーカイブ階層を選択しなかった場合、以降のポリシーでは_S3 Glacierが唯一のアーカイブオプションになります。</block>
   <block id="b0c8709479ef86a9f56014938f57b9c1" category="list-text">[Backup Settings_] ページで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 新しいポリシーを追加する作業環境で、 [ ポリシーの管理 ] を選択します。</block>
@@ -2853,7 +2832,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="53775c897cfb7fba4b875a6f0ce56341" category="admonition">バックアップがある作業環境またはクラスタを削除する場合は、システムを削除する前に * バックアップを削除する必要があります。システムを削除しても、BlueXPのバックアップとリカバリではバックアップは自動的に削除されません。また、システムの削除後にバックアップを削除する機能は現在UIでサポートされていません。残りのバックアップについては、引き続きオブジェクトストレージのコストが発生します。</block>
   <block id="0ce8d63d4994f1d55a979cecaac4fc58" category="section-title">作業環境のすべてのバックアップファイルを削除します</block>
   <block id="990222def8053839fd07dd4a3c81e9dc" category="inline-xref">ここで説明するようにします</block>
-  <block id="6b8f63c8ef98440d33861174ffb90cc2" category="paragraph">作業環境のオブジェクトストレージ上のバックアップをすべて削除しても、この作業環境内のボリュームの以降のバックアップが無効になることはありません。作業環境ですべてのボリュームのバックアップの作成を停止するには、バックアップを非アクティブ化します <block ref="d1964673468c58ea1746cfa9741b745a" category="inline-xref-macro-rx"></block>。</block>
   <block id="b7726bf807f669806d064d7e428c02fc" category="paragraph">この処理は、Snapshotコピーやレプリケートされたボリュームには影響しません。これらのタイプのバックアップファイルは削除されません。</block>
   <block id="39f75ab0749a8e899ecdac553021f7a3" category="inline-image-macro">作業環境を選択した後に使用できる [ バックアップ設定 ] ボタンを示すスクリーンショット。</block>
   <block id="ac5b968dc1da129cef2402b01e65b50a" category="paragraph"><block ref="ac5b968dc1da129cef2402b01e65b50a" category="inline-image-macro-rx" type="image"></block></block>
@@ -2877,8 +2855,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="495f64bce7d9d754a435527baf769353" category="paragraph">この機能は、システムでONTAP 9.12.1以降が実行されている場合にのみ使用できます。</block>
   <block id="1173c80b35af26bafcc4b74670bfa9c8" category="inline-link">そこからボリュームを削除します</block>
   <block id="f1ebd763fa736e72b84cf27e02efb0a9" category="paragraph">BlueXPのバックアップとリカバリのユーザインターフェイスでソースボリュームを削除することはできません。ただし、Canvas、およびのVolume Detailsページを開くことはできます<block ref="ed99d2ded0f3ef2b0f1726a83d34978d" category="inline-link-rx"></block>。</block>
-  <block id="363dd40a6bd97f0a2141aad89ca63628" category="inline-link-macro">ボリュームのバックアップをすべて削除します</block>
-  <block id="a608a5b2ba3f4fc5d8688ccb62bd58c6" category="admonition">関係を削除したあとでボリュームバックアップファイルを個別に削除することはできません。ただし、 <block ref="bb956afafe9f01650c0afdf910a172df" category="inline-link-macro-rx"></block> すべてのバックアップ・ファイルを削除する場合</block>
   <block id="b824bc22ee9f92a715b2811c4e959405" category="list-text">[* Volumes （ボリューム） ] タブで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> ソースボリュームの*[バックアップ]*&gt;*[関係の削除]*を選択します。</block>
   <block id="75bbbcfb0d1b2d6943bf646b047718bf" category="inline-image-macro">単一のボリュームのバックアップ関係を削除する方法を示すスクリーンショット。</block>
   <block id="b2915a1c35fde4ad968abffe7bdbcb2c" category="paragraph"><block ref="b2915a1c35fde4ad968abffe7bdbcb2c" category="inline-image-macro-rx" type="image"></block></block>
@@ -3218,7 +3194,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="ae23bee4c78e8568b6dddf5191feac02" category="list-text">FSx for ONTAPシステムとの間でのデータのレプリケートはサポートされていません。</block>
   <block id="0c23616cc33d59b54422397ae3ade277" category="list-text">ボリュームの1回限りのレプリケーションを作成することはできません。</block>
   <block id="21d64258a41a5b12606a567cacffa6cc" category="list-text">オンプレミスのONTAPシステムからレプリケーションを作成する場合、ターゲットのCloud Volumes ONTAPシステムのONTAPのバージョンが9.8、9.9、または9.11の場合は、mirror-vaultポリシーのみが許可されます。</block>
-  <block id="70fd0d5da8464033c7ff5b8ef964dc64" category="section-title">オブジェクトへのバックアップに関する制限事項</block>
   <block id="3a3d9f6ee5fa05f3aa042e0258eebf58" category="list-text">バックアップポリシーにボリュームが割り当てられていないときにバックアップポリシーを作成または編集する場合、保持されるバックアップの最大数は1018です。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">DP ボリュームをバックアップする場合は、次の点に注意してください。</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">SnapMirrorラベルが設定された関係<block ref="b17c9a947d4e38d7975718380fab6b7a" prefix=" " category="inline-code"></block> および<block ref="02d69a40f5f4cdc817176fabd085b511" prefix=" " category="inline-code"></block> クラウドにバックアップできない。</block>
@@ -3569,7 +3544,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="1d1f829431c9386d582ffb5743db4e57" category="doc">Googleアーカイブストレージクラスとリストアの読み出し時間</block>
   <block id="0718118055dc2edc791fa29a90a786fe" category="section-title">BlueXPのバックアップとリカバリでサポートされるGoogleアーカイブストレージクラス</block>
   <block id="ba9d8863610ca6cf8a9d81a9d08b4ff0" category="paragraph">バックアップファイルが最初に作成されるときは、_Standard_storageに保存されます。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、すぐにアクセスすることもできます。</block>
-  <block id="2675b391654ae179f83f2893ef5337eb" category="paragraph">オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
   <block id="c2e5d30cd0abf0804ca8396b9b1f8c56" category="paragraph">このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、Googleアカウントでバケットをセットアップするときにライフサイクルルールを設定しないでください。</block>
   <block id="ce438ee45b86179bda77bf3e35381fab" category="inline-link">Googleのストレージクラスについて説明します</block>
   <block id="6ee8bcc3a0d1b2140035e4aba95e8380" category="paragraph"><block ref="75c9271cc9749f3d160922047bd03bc4" category="inline-link-rx"></block>。</block>
@@ -3828,10 +3802,8 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="bfd2bf5ca91b1984485de4fe52e739a9" category="list-text">転送スケジュールやバックアップをアーカイブするタイミングなど、設定を指定します。</block>
   <block id="10d6dae9dea0d7acf070167883c1271a" category="list-text">（オプション）一定の日数が経過した後に古いバックアップファイルを低コストのストレージクラスまたはアクセス階層に移動するには、* Archive *オプションを選択し、データがアーカイブされるまでの経過日数を指定します。バックアップファイルをアーカイブストレージに直接送信するには、「Archive after days」に「* 0 *」と入力します。</block>
   <block id="88b38144f5678f838e589bb3f66fb7c3" category="inline-link-macro">アーカイブストレージの設定に関する詳細情報</block>
-  <block id="e19fdb00900d5bd2fa83624f8c18a460" category="paragraph"><block ref="0c2d0936bf813db900df081191632aa8" category="inline-link-macro-rx"></block>。</block>
   <block id="de7befde4d7cc6f9bdfc275272097393" category="list-text">（オプション）バックアップが変更または削除されないように保護するには、*[DataLock &amp; Ransomware protection]*オプションを選択します。</block>
   <block id="2d9688ca19f23219c0b4f9a9455f77b5" category="paragraph">クラスタでONTAP 9.11.1以降を使用している場合は、_DataLock_and_Ransomware protection_を設定することで、バックアップを削除から保護できます。</block>
-  <block id="8b8b4afe72e073cb2f31b19794927e17" category="paragraph"><block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>。</block>
   <block id="fb6e9d876191a4c0c156e739e377be59" category="section-title">ポリシーを編集します。</block>
   <block id="b633d734395141aa32f026fd1762bc20" category="paragraph">カスタムのSnapshot、レプリケーション、またはバックアップポリシーを編集できます。</block>
   <block id="dab1e1444e686afc30710bb64ca8164a" category="paragraph">バックアップポリシーの変更は、そのポリシーを使用しているすべてのボリュームに反映されます。</block>
@@ -4062,15 +4034,12 @@ ONTAP S3の略</block>
   <block id="fd749272599b095f7a34398408b6b874" category="paragraph">[+]
 ** ONTAP S3では、BlueXPはS3バケットに既存のユーザアカウントを使用します。</block>
   <block id="300f1e3267c07b741075e9933a54f8e9" category="inline-link-macro">作業環境のBlueXPバックアップとリカバリの登録を解除します</block>
-  <block id="4ccb5cdbd86084205ce720c00322b5ec" category="paragraph">あとでクラスタのデスティネーションオブジェクトストアを変更する場合は、が必要になります <block ref="f6e1bc3e19f78af5ecdbf1a616ed4b9f" category="inline-link-macro-rx"></block>をクリックし、新しいクラウドプロバイダ情報を使用してBlueXPのバックアップとリカバリを有効にします。</block>
   <block id="47c63e2d9d67be358326c1eff2c87d12" category="section-title">カスタマイズ可能なバックアップスケジュールと保持設定</block>
   <block id="80e5d7506c9e9290f3f3bcdbc8d7813a" category="paragraph">作業環境でBlueXPのバックアップとリカバリを有効にすると、選択したすべてのボリュームが選択したポリシーを使用してバックアップされます。Snapshotコピー、レプリケートされたボリューム、およびバックアップファイルに対して別 々 のポリシーを選択できます。Recovery Point Objective（RPO；目標復旧時点）が異なる特定のボリュームに異なるバックアップポリシーを割り当てる場合は、BlueXPのバックアップとリカバリがアクティブ化されたあとに、そのクラスタ用の追加のポリシーを作成してそれらのポリシーを他のボリュームに割り当てることができます。</block>
   <block id="2e15d79bbec0c847d20d0f428a238b39" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、毎月、および毎年のバックアップの組み合わせを選択できます。オブジェクトへのバックアップについては、3カ月、1年、7年間のバックアップと保持を提供するシステム定義のポリシーのいずれかを選択することもできます。ONTAP System Manager または ONTAP CLI を使用してクラスタに作成したバックアップ保護ポリシーも選択内容として表示されます。これには、カスタムのSnapMirrorラベルを使用して作成したポリシーも含まれ</block>
   <block id="3ded04ab14e3868e7d9393ed137519a9" category="admonition">ボリュームに適用されるSnapshotポリシーには、レプリケーションポリシーとオブジェクトへのバックアップポリシーで使用するラベルのいずれかが含まれている必要があります。一致するラベルが見つからない場合、バックアップファイルは作成されません。たとえば、「週単位」のレプリケートされたボリュームとバックアップファイルを作成する場合は、「週単位」のSnapshotコピーを作成するSnapshotポリシーを使用する必要があります。</block>
   <block id="48571775d8de6aed87d8f8d075e1eb4a" category="paragraph">カテゴリまたは間隔のバックアップの最大数に達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます（古いバックアップはスペースを消費し続けません）。</block>
-  <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">を参照してください <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 使用可能なスケジュールオプションの詳細については、を参照してください。</block>
   <block id="6afa359ae2adeabaa8893b6d6e04b569" category="inline-link-macro">ボリュームのオンデマンドバックアップを作成する</block>
-  <block id="1095f97c4bec173a213de0ca32a85186" category="paragraph">できることに注意してください <block ref="b7b6bc0e70e244618e72450b932ffb57" category="inline-link-macro-rx"></block> スケジュールバックアップから作成されたバックアップファイルに加え、いつでも Backup Dashboard からアクセスできます。</block>
   <block id="c1855e2778d4090a158417283de29dbc" category="admonition">データ保護ボリュームのバックアップの保持期間は、ソースの SnapMirror 関係の定義と同じです。API を使用して必要に応じてこの値を変更できます。</block>
   <block id="01ec9d3adb6b85775aeeda0d6d533e54" category="section-title">バックアップファイルの保護設定</block>
   <block id="230cb0e580e943163f3909777583f34f" category="paragraph">バックアップの保持期間は、バックアップスケジュールの保持期間と同じに14日を足したものです。たとえば、_WEEKLY_BACKUPに_5_Copiesを適用すると、各バックアップファイルが5週間ロックされます。_6_個のコピーを保持したMonthly _バックアップは、各バックアップ・ファイルを6か月ロックします。</block>
@@ -4081,8 +4050,6 @@ ONTAP S3の略</block>
   <block id="8096b90988a9db6e19ca744a574f4d08" category="paragraph">クラスタでONTAP 9.10.1以降を使用している場合は、BlueXPのバックアップとリカバリ用UIで、一定の日数が経過したら古いバックアップを_S3 Glacier_or_S3 Glacier Deep Archive_storageに階層化してコストをさらに最適化できます。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
   <block id="8a4cd67a3c51016538c2f2941f7e6b4e" category="paragraph">クラスタでONTAP 9.10.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_azure Archive_storageに階層化することができます。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
   <block id="8d7b8fa2561ec23e3022d66044bbdd6f" category="paragraph">クラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。 <block ref="60cdd04e7131e97598ce1c583d8c9a5e" category="inline-link-macro-rx"></block>。</block>
-  <block id="3ab813cb58ced99c324082878fbc9261" category="paragraph">オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルを特定の日数後にパブリッククラウドアーカイブストレージにアーカイブできます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <block ref="363267dd6106568fded10aaeda2ee302" category="inline-link-macro-rx"></block>。</block>
-  <block id="330ec284275e2a903b785453c26a379b" category="paragraph">を参照してください <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 古いバックアップファイルのアーカイブの詳細については、を参照してください。</block>
   <block id="ddc789c5369e25049124726fc1e7b889" category="section-title">FabricPool 階層化ポリシーに関する考慮事項</block>
   <block id="862c33469bbdb829da4d537ae8e3703f" category="paragraph">バックアップするボリュームがFabricPoolアグリゲートにあり、そのボリュームに以外の階層化ポリシーが割り当てられている場合は、注意が必要な事項がいくつかあります<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>：</block>
   <block id="e41bdc3c8d9b10f20f980345e66e82c3" category="list-text">FabricPool 階層化ボリュームの最初のバックアップでは、（オブジェクトストアからの）ローカルおよびすべての階層化データを読み取る必要があります。バックアップ処理では、オブジェクトストレージに階層化されたコールドデータは「再加熱」されません。</block>
@@ -4155,8 +4122,6 @@ ONTAP S3の略</block>
   <block id="6c962f0e820a4789f1eba2c1a38f944d" category="list-text"><block ref="6c962f0e820a4789f1eba2c1a38f944d" category="inline-link-rx"></block></block>
   <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">作成した管理者ユーザー資格情報を使用してBlueXPにログインします。</block>
   <block id="b47ed0a876023d6bae71fb57f4671fc8" category="list-text">バックアップの場所から新しいコネクタホストにMySQLバックアップをコピーします。次の例のファイル名「CBS_DB_Backup_23_05_2023.sql」を使用します。</block>
-  <block id="ee8d56e3bf2ec5617d7b8febb655c287" category="list-text">次のコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。</block>
-  <block id="bb319ca7a8d748d2ce5adf7548a5803c" category="list-text">次のコマンドを使用してMySQLコンテナシェルを入力します。</block>
   <block id="ea88528cf92a2583181519ef77cd0928" category="list-text">コンテナシェルで、「env」を導入します。</block>
   <block id="fb4d2049eb8a30a41f47794ab189550a" category="list-text">MySQL DBのパスワードが必要なので、キー「mysql_root_password」の値をコピーします。</block>
   <block id="a68527cebf1aaeae64bda2645985b661" category="list-text">次のコマンドを使用して、BlueXPのバックアップとリカバリのMySQL DBをリストアします。</block>
@@ -4614,7 +4579,6 @@ ONTAP S3の略</block>
   <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link">Azure で Cloud Volumes ONTAP を起動します</block>
   <block id="4c75b99552d91f14eb977c2ed794730f" category="paragraph">を参照してください<block ref="8198e799bf373d0d471ff3f551725308" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
   <block id="4f2a0931f8313551f535951dc36ca589" category="inline-xref">既存システムでBlueXPのバックアップとリカバリを有効にする</block>
-  <block id="c53a7ec6ddfd9f1e05e3e3cfcd2c964c" category="admonition">リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <block ref="a16f34e9e42db7156a23b1a727a1a752" category="inline-xref-macro-rx"></block> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。</block>
   <block id="03b5f9f162d01e816da54e835c8a9015" category="list-text">クラウドプロバイダとして* Microsoft Azure *を選択し、単一のノードまたはHAシステムを選択します。</block>
   <block id="d4181fc5781232f50f90b64c6aeddf08" category="list-text">Azure クレデンシャルの定義ページで、クレデンシャル名、クライアント ID 、クライアントシークレット、およびディレクトリ ID を入力し、 * 続行 * をクリックします。</block>
   <block id="75fbcb72666601f01ad81871d0888e80" category="list-text">詳細とクレデンシャルページに必要事項を入力し、 Azure Marketplace サブスクリプションが登録されていることを確認して、「 * Continue * 」をクリックします。</block>
@@ -4771,8 +4735,6 @@ ONTAP S3の略</block>
         "S3：PutObjectRetention"
         ]
     リソース：arn：aws：s3：：：*、</block>
-  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>。</block>
-  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>。</block>
   <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">バックアップポリシーから S3 権限を追加します</block>
   <block id="f59bbb6de7b8eafb6ccb2f617135ff84" category="list-text">BlueXPコネクタに関連付けられているセキュリティグループ設定を変更します。このポリシーを「 Custom 」（「 Full Access 」から）に変更する必要があります。また、変更する必要があります <block ref="52cd24ecfd99d5b16a10d03c54f9d16b" category="inline-xref-macro-rx"></block> 前に示したように、</block>
   <block id="54979ba354582c6f2824abc12558cf5a" category="inline-image-macro">コネクタに関連付けられている AWS セキュリティグループのスクリーンショット。</block>
@@ -4918,9 +4880,7 @@ ifdef：aws []</block>
   <block id="e3414eaea3759c338f18072fbecaa19f" category="paragraph">スケジュールされたランサムウェア対策スキャンはデフォルトで有効になっています。スキャン頻度のデフォルト設定は7日間です。スキャンは最新のSnapshotコピーに対してのみ実行されます。スケジュールされたスキャンを無効にして、コストを削減できます。[Advanced Settings]ページのオプションを使用して、最新のSnapshotコピーに対してスケジュールされたランサムウェアスキャンを有効または無効にできます。有効にすると、スキャンはデフォルトで毎週実行されます。このスケジュールを数日または数週間に変更したり、無効にしたりすることで、コストを節約できます。</block>
   <block id="0518809725b483d8fb74affb68a52a55" category="paragraph">詳細については、次の情報を参照してください。</block>
   <block id="56a32d1b7ebb6e4b6fd9b4fdf452a545" category="inline-link-macro">DataLockとランサムウェア対策の仕組み</block>
-  <block id="62ca9cbc3f8aec602122840db4b03221" category="list-text"><block ref="59f4f37319067dbfb884709419e3ff51" category="inline-link-macro-rx"></block>。</block>
   <block id="76b58aa0d11cd1d400e558a828802ece" category="inline-link-macro">[Advanced Settings]ページでランサムウェア対策オプションを更新する方法</block>
-  <block id="54561f4f95cd53f018b8034daddb9371" category="list-text"><block ref="2afb661236a3c9beb84de46fcd5481e6" category="inline-link-macro-rx"></block>。</block>
   <block id="45167bc71bd7fe459b6a35c45730024a" category="doc">オブジェクトへのバックアップポリシーのオプション</block>
   <block id="bb4705a61e0f0eca2849677cf42a43e5" category="paragraph">BlueXPのバックアップとリカバリでは、オンプレミスのONTAPシステムとCloud Volumes ONTAPシステムのさまざまな設定を使用してバックアップポリシーを作成できます。</block>
   <block id="216ef706f9f25f4eb179f940b530a4d5" category="admonition">これらのポリシー設定は、オブジェクトストレージへのバックアップにのみ関連します。これらの設定は、Snapshotポリシーやレプリケーションポリシーには影響しません。Snapshotとレプリケーションについても、今後同様のポリシー設定が追加される予定です。</block>
@@ -4970,7 +4930,6 @@ ifdef：aws []</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXPのバックアップとリカバリのビデオ</block>
   <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP Webセミナー</block>
   <block id="ed775139b29f7dce72403b2625d88609" category="paragraph">ソースクラスタで ONTAP 9.10.1 以降が実行されている場合は、特定の日数（通常は 30 日以上）が経過したあとに S3 Glacier Deep Archive_storage にバックアップを階層化して、コストをさらに最適化することができます。これを「0」または1～999日に設定できます。「0」日に設定した場合、後で1～999日に変更することはできません。</block>
-  <block id="8d9d296798f83841991dd908e86cc79b" category="paragraph">これらの階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
   <block id="d48498af5a5419c6130b506ce86226aa" category="paragraph">このリリースでは、[Advanced Settings]ページのオプションを使用して、最新のSnapshotコピーに対するランサムウェアスキャンを有効または無効にできるようになりました。有効にすると、スキャンはデフォルトで毎週実行されます。</block>
   <block id="b9efb0b81ee5dede04d703accaa3ac50" category="list-text"><block ref="b9efb0b81ee5dede04d703accaa3ac50" category="inline-link-rx"></block></block>
   <block id="4987d2d58127a881e304bbe4ce3b5f7b" category="list-text"><block ref="4987d2d58127a881e304bbe4ce3b5f7b" category="inline-link-rx"></block></block>
@@ -4993,4 +4952,66 @@ ifdef：aws []</block>
   <block id="24c8d17b3d2e5d56e90675c0755252e0" category="section-title">ランサムウェアの定期的なスキャンを有効または無効にする機能</block>
   <block id="1d5d9f598ed0ef9d579321fc5f2dea76" category="paragraph">以前は、ランサムウェアスキャンを有効または無効にすることはできましたが、スケジュールされたスキャンではこれを行うことはできませんでした。</block>
   <block id="c05a6e1c401ef496decb0a82c8e569e3" category="paragraph">このリリースでは、[Advanced Settings]ページのオプションを使用して、最新のSnapshotコピーに対してスケジュールされたランサムウェアスキャンを有効または無効にできるようになりました。有効にすると、スキャンはデフォルトで毎週実行されます。このスケジュールを数日または数週間に変更したり、無効にしたりすることで、コストを節約できます。</block>
+  <block id="8e0e573826fedf587c60fd10640e17c8" category="paragraph">ソースクラスタで ONTAP 9.10.1 以降が実行されている場合は、コストをさらに最適化するために、特定の日数（通常は 30 日以上）後に _Cool _To Azure Archive_storage からバックアップを階層化することを選択できます。この階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。次のセクション About を参照してください <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="bab29573e33c31960ca3e23e51a0db21" category="section-title">アーカイブストレージからデータをリストア</block>
+  <block id="7fe9efb1a5fafb19fa9b6e7fc992c504" category="paragraph"><block ref="e235420362596a5fcbb7fdd4a3380e91" category="inline-link-macro-rx"></block>。</block>
+  <block id="3c466b40e15796ebb4120cf801b8cb93" category="paragraph"><block ref="072e0f84c1263277af127585d1cb18c3" category="inline-link-macro-rx"></block>。</block>
+  <block id="a9dc8bb5efaac75ae86c6a34933da8e4" category="paragraph">これらの階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="bdb79327f3712ed9f0d2910964ca17d6" category="paragraph">[+]
+<block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
+  <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">オブジェクトへのバックアップの制限事項</block>
+  <block id="215d6f1bc8d7005b7bb981d9a3dc7b78" category="section-title">PodmanでRHEL 8+を使用する場合の制限事項</block>
+  <block id="38c44a50a75c15410df928f63928acf8" category="section-title">単一ファイルのリストアはサポートされない</block>
+  <block id="8d98ce1c70029af5a2d95ea5cd356016" category="paragraph">Podmanを使用している場合、単一ファイルのリストアとディレクトリのリストアの参照とリストア機能はサポートされません。Podmanを使用している場合は、他のすべてのタイプのリストア処理がサポートされているため、この問題が解決されるまで、次の他の方法を使用してデータをリストアできます。</block>
+  <block id="dbeaadfb952b8aa57d00264751776087" category="list-text">レプリケートされたボリュームが存在する場合は、レプリケートされたボリュームからファイルまたはフォルダをリストアします。</block>
+  <block id="e647cb9e3bb11f1dcf4383ae4ae00f0f" category="list-text">検索と復元機能を使用して、クラウドバックアップからファイルまたはフォルダを復元します。</block>
+  <block id="b760ac1d9088cf17812b95299a0f4c97" category="list-text">[Browse &amp; Restore]を使用してクラウドバックアップからボリュームをリストアし、必要なファイルまたはフォルダにアクセスします。</block>
+  <block id="58cbbdff8232fafaffb4ad6a56acd87a" category="section-title">クラウドバックアップのランサムウェアスキャンはサポートされていません</block>
+  <block id="f1c936121149a4d66e8504719aa508b6" category="inline-link-macro">ランサムウェアスキャンを無効にする方法をご覧ください</block>
+  <block id="346753a5d3dc5273a067b86995fbd568" category="paragraph">Podmanエンジンを使用している場合、ランサムウェアのクラウドバックアップのスキャンはサポートされていません。クラウドバックアップにDataLock &amp; Ransomware機能を使用している場合は、ランサムウェアスキャンを無効にする必要があります。 <block ref="f4c28073f17b68c88ffe0b411369b71f" category="inline-link-macro-rx"></block>。</block>
+  <block id="74fcd9275dc8f4544c3f2e6da14c3a0f" category="cell">Dockerコマンド</block>
+  <block id="9865e302853628bbfe9f8357d9e7514f" category="cell">Podmanコマンド</block>
+  <block id="62fbf3095f1e89aabae3804682809c2b" category="cell"><block ref="3d14b961bb7289e76bff64ac921cba5d" prefix="" category="inline-code"></block></block>
+  <block id="bf7ecaf7643e3be49e45cd82469534f1" category="cell"><block ref="55285eccf27fa61af2e97ac2832bdc01" prefix="" category="inline-code"></block></block>
+  <block id="2bd2b4226296570c863270e08d511da0" category="list-text">DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。</block>
+  <block id="4b049f120edc0f4092d8d8e236ea964b" category="list-text">DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用してMySQLコンテナシェルを入力します。</block>
+  <block id="d5523b519e89c779f9a7f347736d28f5" category="paragraph">このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection_を有効にした場合、オンデマンドバックアップにもDataLockが設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 <block ref="25ebe908c09aa768262b63d88362088a" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dd10969d67f6fda874725e718125867" category="paragraph">作業環境内の特定のボリュームに新しいバックアップポリシーを適用する場合は、最初にそのバックアップポリシーを作業環境に追加する必要があります。すると <block ref="1cac790bb65320561949ed86d1f04116" category="inline-xref-macro-rx"></block>。</block>
+  <block id="26df5a69757b9c77f32d1ff3fd841a9a" category="paragraph">作業環境のオブジェクトストレージ上のバックアップをすべて削除しても、この作業環境内のボリュームの以降のバックアップが無効になることはありません。作業環境ですべてのボリュームのバックアップの作成を停止するには、バックアップを非アクティブ化します <block ref="f309acb77998d5759c37adab9747d61c" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ccabb5f58c34ffd48f5d3b3d41985f1a" category="admonition">関係を削除したあとでボリュームバックアップファイルを個別に削除することはできません。ただし、ボリュームのバックアップはすべて削除できます。</block>
+  <block id="150316ac807c8abc9de05ff5720178a5" category="paragraph">クラウドから引き続き課金されます が提供する容量のオブジェクトストレージコストのプロバイダ バックアップは自分以外で使用します <block ref="f0fba6094ff5354e1300b0446d643e3c" category="inline-xref-macro-rx"></block>。</block>
+  <block id="43f4c1811765abf291168aea7f16a205" category="paragraph">クラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムがバージョン11.4以降を使用している場合は、特定の日数が経過したあとに古いバックアップをパブリッククラウドのアーカイブ階層に階層化することを選択できます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <block ref="bf8884094e353a761ed88341de6eaf54" category="inline-xref-macro-rx"></block>。</block>
+  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">標準のパブリックインターネット接続を使用する場合は、すべてのアクセス権がコネクタによって設定され、他に必要な操作はありません。このタイプの接続がに表示されます <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>。</block>
+  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">オンプレミスのデータセンターからVPCへのインターネット接続をよりセキュアにする場合は、バックアップアクティブ化ウィザードでAWS PrivateLink接続を選択できます。VPNまたはAWS Direct Connectを使用して、プライベートIPアドレスを使用するVPCエンドポイントインターフェイス経由でオンプレミスシステムに接続する場合は、この環境が必要です。このタイプの接続がに表示されます <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>。</block>
+  <block id="caa885480c7f4468155c50bb7cba287c" category="paragraph">あとでクラスタのデスティネーションオブジェクトストアを変更する場合は、が必要になります <block ref="0803b5afe80028804e210e739e19196f" category="inline-link-macro-rx"></block>をクリックし、新しいクラウドプロバイダ情報を使用してBlueXPのバックアップとリカバリを有効にします。</block>
+  <block id="67ee3e110e87eac0b86854c053955b09" category="paragraph">を参照してください <block ref="9fa061420d8aeb542eb735868c0b4774" category="inline-link-macro-rx"></block> 使用可能なスケジュールオプションの詳細については、を参照してください。</block>
+  <block id="0cea8da3cde1bdaa18b1319b2caa671d" category="paragraph">できることに注意してください <block ref="bc0dfd7f8044b0b340611816d4c4a208" category="inline-link-macro-rx"></block> スケジュールバックアップから作成されたバックアップファイルに加え、いつでも Backup Dashboard からアクセスできます。</block>
+  <block id="39f52aced1ac5da5b707ad1260c4dfa7" category="list-text"><block ref="ad89171cbd1732b91a32da37731e903d" category="inline-link-macro-rx"></block>。</block>
+  <block id="e0488eb5e46e8b3559f678fb3375fe83" category="list-text"><block ref="f39da789221971f7f372bd122012c224" category="inline-link-macro-rx"></block>。</block>
+  <block id="82b1ab2145f9360167878fb0aab9d78e" category="paragraph">オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルを特定の日数後にパブリッククラウドアーカイブストレージにアーカイブできます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
+  <block id="28af018ba458f766dcff23f60abd6827" category="paragraph">を参照してください <block ref="25e09e861cb627cbcd0c16e5c08ee6d8" category="inline-link-macro-rx"></block> 古いバックアップファイルのアーカイブの詳細については、を参照してください。</block>
+  <block id="5a1f79c0f67abb568ef997350bce7081" category="paragraph">オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="12d9e3e6bca9c44523088ebe2b508205" category="paragraph">必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <block ref="679b21076509c1a4c895226f7171e8ce" category="inline-xref-macro-rx"></block></block>
+  <block id="9274d8b34594d54c9ded6bce60335530" category="paragraph">無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします <block ref="45d31e67fc33e9fa27a1cf49eda4f564" category="inline-link-macro-rx"></block> トライアルが終了する前に、請求は行われません。</block>
+  <block id="9513e83b962e2a3ffa6edc4b46feac25" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="62b97dd999de3571d07e2528cb6b6363" category="inline-link-rx"></block>。</block>
+  <block id="323d3770e08ff241402a0c3bcc2b9fed" category="summary">バックアップの詳細の表示、すべてのジョブのステータスの監視、クローンの削除、監査データの削除、コネクタの詳細の更新、CA証明書の設定を行うことができます。 およびホストを管理します。</block>
+  <block id="6e76cf157a9da4f73d4367380e942a3f" category="paragraph">クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。 <block ref="41f5d0363680f0f70edb05636427b12e" category="inline-link-macro-rx"></block> および <block ref="60091673d77ccc83382ea728fd21045e" category="inline-link-macro-rx"></block>。</block>
+  <block id="2261f52224f9790614adc76ab2aa2301" category="paragraph">BlueXPのバックアップとリカバリのUIで、Snapshot、レプリケーション、オブジェクトストレージへのバックアップポリシーを作成できます。の項を参照してください <block ref="af61bc22e239d5322bb7ae1ef7c5ffac" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="2159bd9a6e8b2b983d8bb6cc43b01d98" category="admonition">リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <block ref="c917f8f516b9e0eb9478f5642522460c" category="inline-xref-macro-rx"></block> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。</block>
+  <block id="188fd7f75e50a8a882a75c15dcb630a1" category="section-title">2024年5月17日</block>
+  <block id="c817ad6139f116906ee3d7991cfdcba9" category="section-title">RHEL 8およびRHEL 9をオンプレミスコネクタに使用する場合の制限事項</block>
+  <block id="5462103113dfca7582cf43f266db09a2" category="inline-link">ホストの要件</block>
+  <block id="6aa3862f9073595cb60208eb918da431" category="paragraph">BlueXP Connectorバージョン3.9.40は、Red Hat Enterprise Linuxバージョン8および9の特定のバージョンをサポートしており、コネクタソフトウェアをRHEL 8または9ホストに手動でインストールする際に、場所に関係なく、<block ref="9b2a96babeed2ab711a4327ec7f34b5c" category="inline-link-rx"></block>。これらの新しいバージョンのRHELでは、DockerエンジンではなくPodmanエンジンが必要です。現時点では、BlueXPのバックアップとリカバリでPodmanエンジンを使用する場合には2つの制限があります。</block>
+  <block id="a12249435e2897b8262bf872eceb315c" category="paragraph">を参照してください<block ref="b39c49af0833241002651f8610590fbf" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="c6472844da6003c7b7e74ed16527d122" category="paragraph">次の手順には、新しいPodmanの手順が含まれています。</block>
+  <block id="92617b18f6079084c5380cf97f72f43a" category="list-text"><block ref="92617b18f6079084c5380cf97f72f43a" category="inline-link-rx"></block></block>
+  <block id="b682afa0ff8a1d136b51d3115421ac1b" category="list-text"><block ref="b682afa0ff8a1d136b51d3115421ac1b" category="inline-link-rx"></block></block>
+  <block id="8c10b03d547a79f12e4be387cd008855" category="list-text"><block ref="64106766a0115c58ac1976a627dae78e" category="inline-xref-macro-rx"></block></block>
+  <block id="657950c649165660c2b1df5994cc6ea1" category="list-text"><block ref="0198cacb5a3b3b848a16a5896a6b781e" category="inline-xref-macro-rx"></block></block>
+  <block id="c3c8ae924b0105406a696e4e3b08bd56" category="list-text"><block ref="28c71e441e3fed1e54d5e765ca1c9c87" category="inline-xref-macro-rx"></block></block>
+  <block id="6372a6d3f936c959504f2d36c657d180" category="paragraph"><block ref="4f9cff8e4a6e88cc7252cb113726df28" category="inline-link-macro-rx"></block>。</block>
+  <block id="6288a3651b56c4ff8019c4565a5a4dae" category="paragraph"><block ref="dd554c4e2639dc0ce343470be2537c01" category="inline-link-macro-rx"></block>。</block>
+  <block id="b48f6c0f91c12dc372d780831385f2f3" category="paragraph"><block ref="9cd661f11a3d57e0743695d693a10908" category="inline-link-macro-rx"></block>。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。</block>
+  <block id="8ba7d24c75d9a4c060c33cf7a127b666" category="section-title">検索とリストアを使用したONTAPデータのリストア</block>
+  <block id="c3bc11d3bdd05e4f1cbcfd5dcc1639fe" category="paragraph">お先にどうぞ <block ref="e49782369984109313e45bc161ecdd2d" category="inline-xref-macro-rx"></block>では、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。</block>
 </blocks>

@@ -433,4 +433,4 @@ ifdef::azure[]
 endif::azure[]
 
 [+]
-link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。
+link:task-backup-onprem-private-cloud.html#prepare-to-archive-older-backup-files-to-public-cloud-storage["StorageGRID からバックアップファイルをアーカイブする方法の詳細については、こちらをご覧ください"^]。

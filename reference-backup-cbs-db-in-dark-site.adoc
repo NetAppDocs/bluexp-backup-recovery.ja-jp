@@ -73,17 +73,27 @@ BlueXPのバックアップとリカバリシステムを動作状態に戻す�
 === BlueXPのバックアップとリカバリデータベースをリストア
 
 . バックアップの場所から新しいコネクタホストにMySQLバックアップをコピーします。次の例のファイル名「CBS_DB_Backup_23_05_2023.sql」を使用します。
-. 次のコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。
+. DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。
 +
 [source, cli]
 ----
 docker cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
 ----
-. 次のコマンドを使用してMySQLコンテナシェルを入力します。
++
+[source, cli]
+----
+podman cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
+----
+. DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用してMySQLコンテナシェルを入力します。
 +
 [source, cli]
 ----
 docker exec -it ds_mysql_1 sh
+----
++
+[source, cli]
+----
+podman exec -it ds_mysql_1 sh
 ----
 . コンテナシェルで、「env」を導入します。
 . MySQL DBのパスワードが必要なので、キー「mysql_root_password」の値をコピーします。

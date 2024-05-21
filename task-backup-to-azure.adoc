@@ -241,7 +241,7 @@ BluXPのバックアップとリカバリを有効にするのは簡単です。
 を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
 
 
-NOTE: リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <<enabling-bluexp-backup-and-recovery-on-an-existing-system,既存システムでBlueXPのバックアップとリカバリを有効にする>> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。
+NOTE: リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <<enable-bluexp-backup-and-recovery-on-cloud-volumes-ontap,既存システムでBlueXPのバックアップとリカバリを有効にする>> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。
 
 .手順
 . BlueXPのキャンバスで*[Add Working Environment]*を選択し、クラウドプロバイダを選択して*[Add New]*を選択します。Cloud Volumes ONTAPの作成*を選択します。

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-backups-ontap.html 
-keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup 
+keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup, bluexp 
 summary: Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップの管理では、バックアップスケジュールの変更、新しいバックアップポリシーの作成、ボリュームバックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行うことができます。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。 
 ---
 = ONTAPシステムのバックアップを管理します
@@ -136,7 +136,7 @@ image:screenshot_manage_backup_settings.png["複数のボリュームを選択�
 
 バックアップ名にはタイムスタンプが含まれるため、他のスケジュールされたバックアップからオンデマンドバックアップを特定できます。
 
-このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection_を有効にした場合、オンデマンドバックアップにもDataLockが設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLockとランサムウェアによる保護の詳細をご確認ください"^]。
+このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection_を有効にした場合、オンデマンドバックアップにもDataLockが設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["DataLockとランサムウェアによる保護の詳細をご確認ください"^]。
 
 アドホックバックアップを作成する場合、ソースボリューム上にSnapshotが作成されることに注意してください。このSnapshotは通常のSnapshotスケジュールの一部ではないため、offのままになりません。バックアップの完了後に、このSnapshotをソースボリュームから手動で削除できます。これにより、このSnapshotに関連するブロックが解放されます。Snapshotの名前はで始まります `cbs-snapshot-adhoc-`。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["ONTAP CLIを使用してSnapshotを削除する方法を参照してください"^]。
 
@@ -325,7 +325,7 @@ image:screenshot_backup_modify_policy_page2.png["BlueXPのバックアップと�
 
 作業環境でBlueXPのバックアップとリカバリを有効にすると、最初に選択したすべてのボリュームが定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective （ RPO ；目標復旧時点）が異なるボリュームに対して異なるバックアップポリシーを割り当てる場合は、そのクラスタに追加のポリシーを作成し、そのポリシーを他のボリュームに割り当てることができます。
 
-作業環境内の特定のボリュームに新しいバックアップポリシーを適用する場合は、最初にそのバックアップポリシーを作業環境に追加する必要があります。すると <<Changing the policy assigned to existing volumes,その作業環境内のボリュームにポリシーを適用します>>。
+作業環境内の特定のボリュームに新しいバックアップポリシーを適用する場合は、最初にそのバックアップポリシーを作業環境に追加する必要があります。すると <<既存のボリュームに割り当てられているバックアップ設定を変更します,その作業環境内のボリュームにポリシーを適用します>>。
 
 [NOTE]
 ====
@@ -393,7 +393,7 @@ CAUTION: バックアップがある作業環境またはクラスタを削除�
 
 === 作業環境のすべてのバックアップファイルを削除します
 
-作業環境のオブジェクトストレージ上のバックアップをすべて削除しても、この作業環境内のボリュームの以降のバックアップが無効になることはありません。作業環境ですべてのボリュームのバックアップの作成を停止するには、バックアップを非アクティブ化します <<Deactivating BlueXP backup and recovery for a working environment,ここで説明するようにします>>。
+作業環境のオブジェクトストレージ上のバックアップをすべて削除しても、この作業環境内のボリュームの以降のバックアップが無効になることはありません。作業環境ですべてのボリュームのバックアップの作成を停止するには、バックアップを非アクティブ化します <<作業環境でBlueXPのバックアップとリカバリを非アクティブ化します,ここで説明するようにします>>。
 
 この処理は、Snapshotコピーやレプリケートされたボリュームには影響しません。これらのタイプのバックアップファイルは削除されません。
 
@@ -452,7 +452,7 @@ image:screenshot_delete_one_backup.png["単一のバックアップファイル�
 BlueXPのバックアップとリカバリのユーザインターフェイスでソースボリュームを削除することはできません。ただし、Canvas、およびのVolume Detailsページを開くことはできます https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["そこからボリュームを削除します"]。
 
 
-NOTE: 関係を削除したあとでボリュームバックアップファイルを個別に削除することはできません。ただし、 link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["ボリュームのバックアップをすべて削除します"] すべてのバックアップ・ファイルを削除する場合
+NOTE: 関係を削除したあとでボリュームバックアップファイルを個別に削除することはできません。ただし、ボリュームのバックアップはすべて削除できます。
 
 .手順
 . [* Volumes （ボリューム） ] タブで、をクリックします image:screenshot_horizontal_more_button.gif["[ 詳細 ] アイコン"] ソースボリュームの*[バックアップ]*>*[関係の削除]*を選択します。
@@ -467,7 +467,7 @@ image:screenshot_delete_relationship_single.png["単一のボリュームのバ�
 
 作業環境でBlueXPのバックアップとリカバリを無効にすると、システム上の各ボリュームのバックアップとボリュームのリストアも無効になります。既存のバックアップは削除されません。この作業環境からバックアップ・サービスの登録を解除することはありません。基本的には、すべてのバックアップおよびリストア処理を一定期間停止できます。
 
-クラウドから引き続き課金されます が提供する容量のオブジェクトストレージコストのプロバイダ バックアップは自分以外で使用します <<作業環境のすべてのバックアップファイルを削除する,バックアップを削除します>>。
+クラウドから引き続き課金されます が提供する容量のオブジェクトストレージコストのプロバイダ バックアップは自分以外で使用します <<バックアップを削除します,バックアップを削除します>>。
 
 .手順
 . [* Volumes （ボリューム） ] タブで、 [* Backup Settings （バックアップ設定） ] を選択します。
