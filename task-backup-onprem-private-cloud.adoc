@@ -94,7 +94,7 @@ BlueXPコネクタは'BlueXP機能の主要なソフトウェアですONTAP デ�
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コネクタについて説明します"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["インターネットにアクセスできる Linux ホストにコネクタをインストールしています"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["インターネットにアクセスできない Linux ホストにコネクタをインストールしています"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["コネクタ間の切り替え"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["コネクタ間の切り替え"^]
 
 
 
@@ -112,7 +112,7 @@ BlueXPコネクタは'BlueXP機能の主要なソフトウェアですONTAP デ�
 
 ==== プライベートモード（ダークサイト）に関する考慮事項
 
-* BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。プライベートモードでインストールされている場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["BlueXPのバックアップとリカバリの最新情報"] にアクセスし、BlueXPのバックアップとリカバリの各リリースの新機能を確認してください。新しい機能を使用する場合は、手順~に従ってください https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Connector ソフトウェアをアップグレードします"^]。
+* BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。プライベートモードでインストールされている場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します link:whats-new.html["BlueXPのバックアップとリカバリの最新情報"] にアクセスし、BlueXPのバックアップとリカバリの各リリースの新機能を確認してください。新しい機能を使用する場合は、手順~に従ってください https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Connector ソフトウェアをアップグレードします"^]。
 +
 新しいバージョンのBlueXPバックアップ/リカバリでは、オブジェクトストレージへのバックアップの作成に加えて、Snapshotコピーやレプリケートされたボリュームのスケジュール設定と作成を行うことができます。これには、バージョン3.9.31以降のBlueXP Connectorが必要です。したがって、すべてのバックアップを管理するために、この最新リリースを入手することをお勧めします。
 

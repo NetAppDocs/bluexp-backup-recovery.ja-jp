@@ -62,7 +62,7 @@ BlueXPのバックアップとリカバリシステムを動作状態に戻す�
 
 === 新しいオンプレミスLinuxホストに新しいコネクタをインストールします
 
-新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします"^]。
+新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします"^]。
 
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします"^]
 . 作成した管理者ユーザー資格情報を使用してBlueXPにログインします。

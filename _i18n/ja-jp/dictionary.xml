@@ -327,7 +327,6 @@
   <block id="f6428d68ab8312cad4e05d9222dbabc5" category="inline-link">インターネットにアクセスできない Linux ホストにコネクタをインストールしています</block>
   <block id="c89f481c3b46af99ed7620462173a07c" category="list-text"><block ref="c89f481c3b46af99ed7620462173a07c" category="inline-link-rx"></block></block>
   <block id="c870531773e82c374eb4125c8029e25e" category="inline-link">コネクタ間の切り替え</block>
-  <block id="2aeeba0020a7848f7902186fbd8cb9e8" category="list-text"><block ref="2aeeba0020a7848f7902186fbd8cb9e8" category="inline-link-rx"></block></block>
   <block id="dd61dca07c56e04220c21764b917992f" category="section-title">コネクタのネットワーク要件を準備</block>
   <block id="aadbd6cd1f8b4e9deafea8f1d6c8333c" category="paragraph">コネクタが取り付けられているネットワークで次の接続が有効になっていることを確認します。</block>
   <block id="92a508a0037c85cca367ecb3e92a0fde" category="list-text">ポート443からStorageGRID ゲートウェイノードへのHTTPS接続</block>
@@ -336,7 +335,6 @@
   <block id="8e874375dafe4dcecab5a036da27e0aa" category="section-title">プライベートモード（ダークサイト）に関する考慮事項</block>
   <block id="9bbe0ee1e1e96c5abb69993ee0671a43" category="inline-link-macro">BlueXPのバックアップとリカバリの最新情報</block>
   <block id="f4cec0313eb4678996dc68cfe81c6f4f" category="inline-link">Connector ソフトウェアをアップグレードします</block>
-  <block id="420f74958ffaef4d8f08ce850e97c52e" category="list-text">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。プライベートモードでインストールされている場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> にアクセスし、BlueXPのバックアップとリカバリの各リリースの新機能を確認してください。新しい機能を使用する場合は、手順~に従ってください<block ref="164e4794420610da956934de57a9da8a" category="inline-link-rx"></block>。</block>
   <block id="cde30b836a89432bbe569f5477e106cb" category="paragraph">新しいバージョンのBlueXPバックアップ/リカバリでは、オブジェクトストレージへのバックアップの作成に加えて、Snapshotコピーやレプリケートされたボリュームのスケジュール設定と作成を行うことができます。これには、バージョン3.9.31以降のBlueXP Connectorが必要です。したがって、すべてのバックアップを管理するために、この最新リリースを入手することをお勧めします。</block>
   <block id="e13c78b71eaa74d8ecd0f16e0230146e" category="inline-link-macro">BlueXPのバックアップとリカバリのデータを新しいコネクタにリストアします</block>
   <block id="2c4e4b23bf49a867077416ba2dd23a7d" category="list-text">SaaS環境でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがクラウドにバックアップされます。インターネットにアクセスできないサイトでBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDバケットにバックアップされます。プライベートモードサイトでコネクタに障害が発生した場合は、できます <block ref="21b30d1009822b1f508f80c6007a3164" category="inline-link-macro-rx"></block>。</block>
@@ -617,7 +615,6 @@
   <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="cell">手順</block>
   <block id="edebbfa87f6d2ec28837893a293192be" category="cell">クラウドの導入</block>
   <block id="189d1f2a5730c1cfef756190279d38e9" category="inline-link">コネクタLinux仮想マシンに接続しています</block>
-  <block id="19876dc921287243c303e7c43a14df3f" category="cell">の手順に従ってください<block ref="814636d53832f91c925bc44c968204b3" category="inline-link-rx"></block> 使用しているクラウドプロバイダによって異なります。</block>
   <block id="d20756c02f9913587a3e83e30f0e10d3" category="cell">手動インストール</block>
   <block id="28c6311d2829dc94403ada5d3380ba87" category="cell">Linuxシステムにログインします。</block>
   <block id="e09161f04f94284e07a0714770d92acf" category="list-text">コマンドを入力してサービスを再起動します。</block>
@@ -4117,7 +4114,6 @@ ONTAP S3の略</block>
   <block id="a4981f0083fe431764b930206324bfe8" category="paragraph">このファイルはバケット内の次の場所にあります<block ref="9abc3fd112ebf9d8d228e5c5b3b930a4" prefix=" " category="inline-code"></block>という名前が付けられています<block ref="5f3198716099b7e0c9df490b9dd7b132" prefix=" " category="inline-code"></block>。</block>
   <block id="f0f8593cf8d423b69e3ba1407f6f5b05" category="section-title">新しいオンプレミスLinuxホストに新しいコネクタをインストールします</block>
   <block id="65432ae2b80d2de48c0eff9f34726b87" category="inline-link">Backupデータベースをリストアした後、Connectorソフトウェアを最新バージョンにアップグレードします</block>
-  <block id="0736ad21b3bf8224269719357e7aadda" category="paragraph">新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です<block ref="d1d5d87c9450fbe53d901c1b5aa0b756" category="inline-link-rx"></block>。</block>
   <block id="fb91cab4ff80a23255e3962dd363d180" category="inline-link">新しいオンプレミスLinuxホストにBlueXP Connectorをインストールします</block>
   <block id="6c962f0e820a4789f1eba2c1a38f944d" category="list-text"><block ref="6c962f0e820a4789f1eba2c1a38f944d" category="inline-link-rx"></block></block>
   <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">作成した管理者ユーザー資格情報を使用してBlueXPにログインします。</block>
@@ -4498,7 +4494,6 @@ ONTAP S3の略</block>
   <block id="51cca00855dd27ddbb729c64d6988680" category="inline-image-macro">AWS コンソールから VPC エンドポイントの DNS 名のスクリーンショット。</block>
   <block id="63c7ff1056127bdaee465b05c7c83d3c" category="paragraph"><block ref="63c7ff1056127bdaee465b05c7c83d3c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="667b744af05e085368d150edc4b8a344" category="inline-link">BlueXPコネクタをホストしているVMにログインします</block>
-  <block id="a6b673d310713aa4bdd09f8fd19acf66" category="list-text">VPC S3 エンドポイントから証明書を取得します。これは、で行います<block ref="bee792b855389ef4e6c81f6aa6136d00" category="inline-link-rx"></block> 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。</block>
   <block id="b11703e578eba56af91d25ee75ec1594" category="list-text">このコマンドの出力から、 S3 証明書のデータ（ BEGIN / END CERTIFICATE タグを含む、との間のすべてのデータ）をコピーします。</block>
   <block id="042284b067b431d7d21168a5ada6e448" category="list-text">ONTAP クラスタの CLI にログインし、次のコマンドを使用してコピーした証明書を適用します（代わりに独自の Storage VM 名を指定します）。</block>
   <block id="901a404d02799cf2fc58dfa5d97923ad" category="paragraph">バックアップのAmazon S3デスティネーションがCanvasの作業環境として存在する場合は、ONTAPクラスタをAmazon S3オブジェクトストレージにドラッグできます。</block>
@@ -5014,4 +5009,9 @@ ifdef：aws []</block>
   <block id="b48f6c0f91c12dc372d780831385f2f3" category="paragraph"><block ref="9cd661f11a3d57e0743695d693a10908" category="inline-link-macro-rx"></block>。Google Archiveストレージ階層内のバックアップファイルは、ほぼ即座にリストアされ、リストアの優先順位は不要です。</block>
   <block id="8ba7d24c75d9a4c060c33cf7a127b666" category="section-title">検索とリストアを使用したONTAPデータのリストア</block>
   <block id="c3bc11d3bdd05e4f1cbcfd5dcc1639fe" category="paragraph">お先にどうぞ <block ref="e49782369984109313e45bc161ecdd2d" category="inline-xref-macro-rx"></block>では、検索とリストアを使用して、ボリューム、フォルダ、およびファイルをリストアできます。これにより、幅広いフィルタを使用して、すべてのバックアップファイルからリストアするファイルまたはボリュームを検索できます。</block>
+  <block id="c6f5c592a27c54c4a47031416aebf062" category="cell">の手順に従ってください<block ref="571ca7d044081e209bcef30efa5d6ace" category="inline-link-rx"></block> 使用しているクラウドプロバイダによって異なります。</block>
+  <block id="a454364b080d416ad203233987bc1148" category="paragraph">新しいBlueXPコネクタをインストールするときは、元のコネクタにインストールしたものと同じリリースのソフトウェアをダウンロードしてください。BlueXPのバックアップとリカバリのデータベース構造を定期的に変更すると、新しいソフトウェアリリースと元のデータベースバックアップとの互換性がなくなる可能性があります。可能です<block ref="2e0a24ee8438c92516f1c39f0bf156f8" category="inline-link-rx"></block>。</block>
+  <block id="df0ff0042be8059301b11ae842882f69" category="list-text"><block ref="df0ff0042be8059301b11ae842882f69" category="inline-link-rx"></block></block>
+  <block id="26a96558efb5aff5b97e24187bdedaaa" category="list-text">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。プライベートモードでインストールされている場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> にアクセスし、BlueXPのバックアップとリカバリの各リリースの新機能を確認してください。新しい機能を使用する場合は、手順~に従ってください<block ref="2d7f0c488acd05ac12707e13e58fd7d1" category="inline-link-rx"></block>。</block>
+  <block id="8adbc3c324aa6698c29b0a7962b11b00" category="list-text">VPC S3 エンドポイントから証明書を取得します。これは、で行います<block ref="b93c91598d8e86da04085f6831b06e68" category="inline-link-rx"></block> 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。</block>
 </blocks>
