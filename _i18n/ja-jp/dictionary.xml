@@ -2962,7 +2962,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="c37f218ac8b5f7e0cde5a786f9719774" category="paragraph">Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを使用してデータを暗号化できます。クロスリージョンキーとクロスプロジェクトキーの両方がサポートされているため、CMEKキーのプロジェクトとは異なるバケット用のプロジェクトを選択できます。お客様が管理する独自のキーを使用する場合は、次の手順を実行します。</block>
   <block id="bb82d9df38eeba183c1f11642bc769b2" category="list-text">HSM（ハードウェアバックアップ）キーとソフトウェア生成キーの両方がサポートされます。</block>
   <block id="ae8eba8963c30867457e97dd99e8fff7" category="list-text">リージョナルキーのみがサポートされます。グローバルキーはサポートされません。</block>
-  <block id="3a3585e7353e26db7ebd817873594905" category="paragraph">BluXPのバックアップとリカバリを有効にするのは簡単です。手順は、既存のCloud Volumes ONTAPシステムと新規のシステムのどちらを使用しているかによって多少異なります。</block>
   <block id="4ef685c2962363dd871d0878a6b5088c" category="paragraph">作業環境のウィザードを完了して新しいCloud Volumes ONTAP システムを作成すると、BlueXPのバックアップとリカバリを有効にできます。</block>
   <block id="f436bcae123c67a5a4225fe3ca69b3a3" category="paragraph">サービスアカウントがすでに設定されている必要があります。Cloud Volumes ONTAP システムの作成時にサービスアカウントを選択しなかった場合は、システムをオフにして、GCPコンソールからCloud Volumes ONTAP にサービスアカウントを追加する必要があります。</block>
   <block id="fdbc311c4dd4bb425160f22f166435fa" category="inline-link">GCPでのCloud Volumes ONTAPの起動</block>
@@ -5014,4 +5013,8 @@ ifdef：aws []</block>
   <block id="df0ff0042be8059301b11ae842882f69" category="list-text"><block ref="df0ff0042be8059301b11ae842882f69" category="inline-link-rx"></block></block>
   <block id="26a96558efb5aff5b97e24187bdedaaa" category="list-text">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。プライベートモードでインストールされている場合は、コネクタソフトウェアを定期的に更新して、新しい機能にアクセスする必要があります。を確認します <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> にアクセスし、BlueXPのバックアップとリカバリの各リリースの新機能を確認してください。新しい機能を使用する場合は、手順~に従ってください<block ref="2d7f0c488acd05ac12707e13e58fd7d1" category="inline-link-rx"></block>。</block>
   <block id="8adbc3c324aa6698c29b0a7962b11b00" category="list-text">VPC S3 エンドポイントから証明書を取得します。これは、で行います<block ref="b93c91598d8e86da04085f6831b06e68" category="inline-link-rx"></block> 実行するコマンドエンドポイントの DNS 名を入力するときは、先頭に「 * 」を追加して、「 * 」を置き換えます。</block>
+  <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">サポートされている地域</block>
+  <block id="90463a14d4c78ea524911daef7d9cf71" category="paragraph">BlueXPのバックアップとリカバリは、Amazon Web Services、Microsoft Azure、Google Cloudの多くのリージョンでCloud Volumes ONTAPでサポートされています。</block>
+  <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">グローバルリージョンマップを使用して詳細を確認する</block>
+  <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
 </blocks>
