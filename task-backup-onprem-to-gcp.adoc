@@ -29,43 +29,28 @@ NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Sel
 [role="quick-margin-para"]
 オンプレミスのONTAPクラスタをパブリックインターネット経由でGoogle Cloud Storageに直接接続するか、VPNまたはGoogle Cloud Interconnectを使用してプライベートIPアドレスを使用するプライベートGoogle Accessインターフェイスを介してトラフィックをルーティングするかを選択します。
 
-[role="quick-margin-para"]
-<<接続方法を特定します>>。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] BlueXPコネクタを準備します
 [role="quick-margin-para"]
 Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをGoogle CloudストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがGoogle Cloudに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。
-
-[role="quick-margin-para"]
-<<BlueXPコネクタを準備します,コネクタの作成方法と、必要なネットワーク設定の定義方法について説明します。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] ライセンス要件を確認
 [role="quick-margin-para"]
 Google CloudとBlueXPの両方のライセンス要件を確認する必要があります。
 
-[role="quick-margin-para"]
-を参照してください <<ライセンス要件を確認>>。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] ONTAPクラスタを準備
 [role="quick-margin-para"]
 BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをGoogle Cloudに接続できるようにします。
-
-[role="quick-margin-para"]
-<<ONTAPクラスタを準備,ONTAPクラスタを準備する方法をご紹介します。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップターゲットとしてGoogle Cloudを準備します
 [role="quick-margin-para"]
 Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。また、オンプレミスのONTAPクラスタでGoogle Cloudバケットに対するデータの読み取りと書き込みができるように、権限を設定する必要があります。
 
 [role="quick-margin-para"]
-必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <<Prepare Google Cloud storage as your backup target,Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。>>
+必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] ONTAPボリュームでバックアップをアクティブ化します
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化>バックアップボリューム*をクリックします。次に、セットアップウィザードに従って、使用するレプリケーションポリシーとバックアップポリシー、およびバックアップするボリュームを選択します。
-
-[role="quick-margin-para"]
-<<ONTAPボリュームでバックアップをアクティブ化します>>。
 
 
 

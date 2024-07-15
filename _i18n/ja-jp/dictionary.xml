@@ -81,7 +81,6 @@
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">3つ</block>
   <block id="9d1cab52874c58bc5e9f7daf9d7e6663" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> ライセンス要件を確認</block>
   <block id="2431dbeea281025f7c870739a8d4fd06" category="paragraph">AWSとBlueXPの両方のライセンス要件を確認する必要があります。</block>
-  <block id="924d8d8267f7eb18476c2b6d9d3b9452" category="paragraph"><block ref="bd2c1a11f0e63723009063ed65c3e87f" category="inline-xref-macro-rx"></block>。</block>
   <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">4.</block>
   <block id="9664e082ac80bbdc73fccdbbbc5615b9" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> ボリュームをレプリケートするためのONTAPネットワークの要件を確認します</block>
   <block id="734ae6792aa130ab1f8ab369f6b65f98" category="paragraph">プライマリストレージシステムとセカンダリストレージシステムがONTAPのバージョンとネットワークの要件を満たしていることを確認します。</block>
@@ -1182,7 +1181,6 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="834584c768066ae32da6d93ce603642d" category="doc">Azure のアーカイブ階層およびリストアの読み出し時間</block>
   <block id="f714412b5bd41c3d4daeaaefe95b9062" category="section-title">BlueXPのバックアップとリカバリでサポートされるAzure Blobアクセス階層</block>
   <block id="8fb345995433b95f0008d77ee6840097" category="paragraph">バックアップファイルが最初に作成されるときは、 _Cool _ アクセス層に保存されます。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、必要に応じてすぐにアクセスできます。</block>
-  <block id="677bc0580cb25ec1cc210c28e0ca26a7" category="inline-xref">アーカイブストレージからのデータのリストア</block>
   <block id="caf604f4a0dfbf1c3594c2a85bd12f8d" category="paragraph">このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、Azureアカウントでコンテナをセットアップするときにライフサイクルルールを設定しないでください。</block>
   <block id="07e61ccfcb604b4d08fc03603677751d" category="inline-link">Azure Blob アクセス階層の概要について説明します</block>
   <block id="e298f51ca48eff0d92cee75ca43aaa3a" category="paragraph"><block ref="ac0a406faf148be2b386c73b962697e7" category="inline-link-rx"></block>。</block>
@@ -1722,7 +1720,6 @@ Cloud Volumes ONTAP</block>
   <block id="4fe600ffd12f47bf3dd1572a88dd9c01" category="paragraph">BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをGoogle Cloudに接続できるようにします。</block>
   <block id="52f2d33185b5d0760fde801c7c14e04f" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> バックアップターゲットとしてGoogle Cloudを準備します</block>
   <block id="061189bcae2d45b758f44b801f0cafa0" category="paragraph">Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。また、オンプレミスのONTAPクラスタでGoogle Cloudバケットに対するデータの読み取りと書き込みができるように、権限を設定する必要があります。</block>
-  <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。</block>
   <block id="16ae299379e5fdbc7715a4c6e2533475" category="paragraph">オンプレミスのONTAPシステムからGoogle Cloud Storageへのバックアップを構成する場合は、どちらの接続方法を使用するかを選択します。</block>
   <block id="7f43aa219ca8f8b1e73ade5230b138c6" category="list-text">*パブリック接続*-パブリックGoogleエンドポイントを使用して、ONTAPシステムをGoogle Cloud Storageに直接接続します。</block>
   <block id="4138f0eeac306f5f13e14f810cfd131c" category="list-text">*プライベート接続*- VPNまたはGoogle Cloud Interconnectを使用し、プライベートIPアドレスを使用するプライベートGoogle Accessインターフェイスを介してトラフィックをルーティングします。</block>
@@ -4944,11 +4941,9 @@ ifdef：aws []</block>
   <block id="24c8d17b3d2e5d56e90675c0755252e0" category="section-title">ランサムウェアの定期的なスキャンを有効または無効にする機能</block>
   <block id="1d5d9f598ed0ef9d579321fc5f2dea76" category="paragraph">以前は、ランサムウェアスキャンを有効または無効にすることはできましたが、スケジュールされたスキャンではこれを行うことはできませんでした。</block>
   <block id="c05a6e1c401ef496decb0a82c8e569e3" category="paragraph">このリリースでは、[Advanced Settings]ページのオプションを使用して、最新のSnapshotコピーに対してスケジュールされたランサムウェアスキャンを有効または無効にできるようになりました。有効にすると、スキャンはデフォルトで毎週実行されます。このスケジュールを数日または数週間に変更したり、無効にしたりすることで、コストを節約できます。</block>
-  <block id="8e0e573826fedf587c60fd10640e17c8" category="paragraph">ソースクラスタで ONTAP 9.10.1 以降が実行されている場合は、コストをさらに最適化するために、特定の日数（通常は 30 日以上）後に _Cool _To Azure Archive_storage からバックアップを階層化することを選択できます。この階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。次のセクション About を参照してください <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
   <block id="bab29573e33c31960ca3e23e51a0db21" category="section-title">アーカイブストレージからデータをリストア</block>
   <block id="7fe9efb1a5fafb19fa9b6e7fc992c504" category="paragraph"><block ref="e235420362596a5fcbb7fdd4a3380e91" category="inline-link-macro-rx"></block>。</block>
   <block id="3c466b40e15796ebb4120cf801b8cb93" category="paragraph"><block ref="072e0f84c1263277af127585d1cb18c3" category="inline-link-macro-rx"></block>。</block>
-  <block id="a9dc8bb5efaac75ae86c6a34933da8e4" category="paragraph">これらの階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
   <block id="bdb79327f3712ed9f0d2910964ca17d6" category="paragraph">[+]
 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">オブジェクトへのバックアップの制限事項</block>
@@ -4981,8 +4976,6 @@ ifdef：aws []</block>
   <block id="e0488eb5e46e8b3559f678fb3375fe83" category="list-text"><block ref="f39da789221971f7f372bd122012c224" category="inline-link-macro-rx"></block>。</block>
   <block id="82b1ab2145f9360167878fb0aab9d78e" category="paragraph">オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルを特定の日数後にパブリッククラウドアーカイブストレージにアーカイブできます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="28af018ba458f766dcff23f60abd6827" category="paragraph">を参照してください <block ref="25e09e861cb627cbcd0c16e5c08ee6d8" category="inline-link-macro-rx"></block> 古いバックアップファイルのアーカイブの詳細については、を参照してください。</block>
-  <block id="5a1f79c0f67abb568ef997350bce7081" category="paragraph">オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。についてのセクションを参照してください <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="12d9e3e6bca9c44523088ebe2b508205" category="paragraph">必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <block ref="679b21076509c1a4c895226f7171e8ce" category="inline-xref-macro-rx"></block></block>
   <block id="9274d8b34594d54c9ded6bce60335530" category="paragraph">無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします <block ref="45d31e67fc33e9fa27a1cf49eda4f564" category="inline-link-macro-rx"></block> トライアルが終了する前に、請求は行われません。</block>
   <block id="9513e83b962e2a3ffa6edc4b46feac25" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="62b97dd999de3571d07e2528cb6b6363" category="inline-link-rx"></block>。</block>
   <block id="323d3770e08ff241402a0c3bcc2b9fed" category="summary">バックアップの詳細の表示、すべてのジョブのステータスの監視、クローンの削除、監査データの削除、コネクタの詳細の更新、CA証明書の設定を行うことができます。 およびホストを管理します。</block>
@@ -5018,4 +5011,8 @@ ifdef：aws []</block>
   <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">DPボリュームのバックアップ後にそのボリュームへのSnapMirror関係を解除する場合は、SnapMirror関係を削除するか、SnapMirrorの方向を逆にしないかぎり、そのボリュームにファイルをリストアすることはできません。</block>
   <block id="97a40c9bbf6946a2928acd09286296b8" category="paragraph">Podmanで実行されているBlueXPコネクタ（RHEL 8または9で実行している場合はBlueXPコネクタを手動で作成）を使用している場合、単一ファイルのリストアとディレクトリのリストアの参照とリストア機能はサポートされません。Podmanを使用している場合は、他のすべてのタイプのリストア処理がサポートされているため、この問題が解決されるまで、次の他の方法を使用してデータをリストアできます。</block>
   <block id="210a764f3461866061c80320620c0eec" category="admonition">ONTAPデータのリストアに関する制限事項については、を参照してください <block ref="15bd83aed33bf3bd63f2e9166e3e91ba" category="inline-link-macro-rx"></block>。</block>
+  <block id="6002f3d623233bc3d9235d8c5956cd60" category="paragraph">これらの階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。アーカイブストレージからのデータのリストアについては、このページのセクションを参照してください。</block>
+  <block id="6fbe1cea473e2020956491cc962bda52" category="paragraph">ソースクラスタで ONTAP 9.10.1 以降が実行されている場合は、コストをさらに最適化するために、特定の日数（通常は 30 日以上）後に _Cool _To Azure Archive_storage からバックアップを階層化することを選択できます。この階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。アーカイブストレージからのデータのリストアについては、このページのセクションを参照してください。</block>
+  <block id="1cc47ef834e284795bab8becbe58ccfb" category="paragraph">オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。アーカイブストレージからのデータのリストアについては、このページのセクションを参照してください。</block>
+  <block id="d8e36d6c03fc165135350c7550f92b0a" category="paragraph">必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。</block>
 </blocks>
