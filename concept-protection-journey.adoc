@@ -233,8 +233,7 @@ NOTE: クラウドへのバックアップ関係に使用できるのはバッ�
 
 BlueXPには複数の導入モードが用意されており、ビジネスやセキュリティの要件に合わせてBlueXPを使用できます。_Standard mode__はBlueXP SaaSレイヤを活用してすべての機能を提供しますが、_restricted mode_and_private mode__は接続が制限されている組織で使用できます。
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["BlueXPの導入モードの詳細については、こちらをご覧ください"^]。
-https://www.netapp.tv/details/30567["BlueXPの導入モードに関するビデオをご覧ください"]。
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["BlueXPの導入モードの詳細については、こちらをご覧ください"^]です。https://media.netapp.com/video-detail/078912eb-f081-5bd3-8342-bdd2d5c85d44/netapp-bluexp-backup-and-recovery-deployment-modes["BlueXPの導入モードに関するビデオをご覧ください"^]です。
 
 
 
