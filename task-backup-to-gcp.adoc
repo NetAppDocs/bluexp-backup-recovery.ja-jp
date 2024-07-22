@@ -26,7 +26,11 @@ Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリューム�
 [role="quick-margin-list"]
 * GCPでCloud Volumes ONTAP 9.8以降を実行している（ONTAP 9.8P13以降を推奨）。
 * バックアップを保存するストレージスペースの有効な GCP サブスクリプションがあります。
-* Google Cloud Project に、事前定義された Storage Admin ロールを持つサービスアカウントがあります。
+* Google Cloud Projectに、権限セットが制限されたカスタムロールを持つサービスアカウントがあります。
++
+
+NOTE: BlueXPのバックアップとリカバリでGoogle Cloud StorageバケットにアクセスするためのサービスアカウントにStorage Adminロールが不要になりました。
+
 * に登録しておきます https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplaceバックアップ製品"^]またはを購入したことが必要です link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["アクティブ化されます"^] ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス
 
 
@@ -46,7 +50,14 @@ Google CloudとBlueXPの両方のライセンス要件を確認する必要が�
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化>バックアップボリューム*をクリックします。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] ONTAPボリュームでバックアップをアクティブ化します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] バックアップターゲットとしてGoogle Cloudを準備
+[role="quick-margin-para"]
+Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。
+
+[role="quick-margin-para"]
+必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <<バックアップターゲットとしてGoogle Cloud Storageを準備します,Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。>>
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"] ONTAPボリュームでのバックアップのアクティブ化
 [role="quick-margin-para"]
 セットアップウィザードに従って、使用するレプリケーションポリシーとバックアップポリシー、およびバックアップするボリュームを選択します。
 
@@ -64,8 +75,11 @@ image:diagram_cloud_backup_cvo_google.png["BlueXPのバックアップおよび�
 
 サポートされるONTAPのバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
 サポートされる GCP リージョン:: BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
-GCP サービスアカウント:: 事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["サービスアカウントの作成方法について説明します"^]。
+GCP サービスアカウント:: Google Cloud Projectにカスタムロールを持つサービスアカウントが必要です。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["サービスアカウントの作成方法について説明します"^]です。
 
+
+
+NOTE: BlueXPのバックアップとリカバリでGoogle Cloud StorageバケットにアクセスするためのサービスアカウントにStorage Adminロールが不要になりました。
 
 
 
@@ -224,7 +238,7 @@ image:screenshot_backup_to_gcp.png["は、作業環境ウィザードのBlueXP�
 
 
 
-TIP: バックアップ設定の変更またはレプリケーションの追加については、を参照してください link:../task-manage-backups-ontap.html["ONTAP バックアップを管理します"]。
+TIP: バックアップ設定の変更またはレプリケーションの追加については、を参照してください link:task-manage-backups-ontap.html["ONTAP バックアップを管理します"]。
 
 .結果
 システムでBlueXPのバックアップとリカバリが有効になっている。これらのCloud Volumes ONTAPシステムでボリュームを作成したら、BlueXPのバックアップとリカバリとを起動します link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["保護する各ボリュームでバックアップをアクティブ化します"]。
@@ -244,7 +258,105 @@ image:screenshot_backup_cvo_enable.png["作業環境を選択すると表示さ�
 
 
 
-TIP: バックアップ設定の変更またはレプリケーションの追加については、を参照してください link:../task-manage-backups-ontap.html["ONTAP バックアップを管理します"]。
+TIP: バックアップ設定の変更またはレプリケーションの追加については、を参照してください link:task-manage-backups-ontap.html["ONTAP バックアップを管理します"]。
+
+
+
+== バックアップターゲットとしてGoogle Cloud Storageを準備します
+
+バックアップターゲットとしてGoogle Cloud Storageを準備するには、次の手順を実行します。
+
+* 権限を設定します。
+* （オプション）独自のバケットを作成します。（必要に応じて、サービスによってバケットが作成されます）。
+* （オプション）データ暗号化用の顧客管理キーを設定します
+
+
+
+
+=== 権限を設定します
+
+カスタムロールを使用する特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
+
+.手順
+. を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["新しいロールを作成します"^] 次の権限が必要です。
++
+[source, json]
+----
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
+----
+. Google Cloud コンソールで、 https://console.cloud.google.com/iam-admin/serviceaccounts["[ サービスアカウント ] ページに移動します"^]。
+. クラウドプロジェクトを選択します。
+. [サービスアカウントの作成]*を選択し、必要な情報を入力します。
++
+.. * サービスアカウントの詳細 * ：名前と説明を入力します。
+.. *このサービスアカウントにプロジェクトへのアクセス権を付与*:作成したカスタムロールを選択します。
+.. 「 Done （完了）」を選択します。
+
+
+. に進みます https://console.cloud.google.com/storage/settings["GCP Storage Settings （ GCP ストレージ設定）"^] サービスアカウントのアクセスキーを作成します。
++
+.. プロジェクトを選択し、* Interoperability *を選択します。まだ行っていない場合は、*相互運用性アクセスを有効にする*を選択します。
+.. [サービスアカウントのアクセスキー]*で、*[サービスアカウントのキーを作成する]*を選択し、作成したサービスアカウントを選択して*[キーの作成]*をクリックします。
++
+あとでバックアップサービスを設定するときに、BlueXPのバックアップとリカバリでキーを入力する必要があります。
+
+
+
+
+
+
+
+=== 独自のバケットを作成します
+
+デフォルトでは、サービスによってバケットが作成されます。独自のバケットを使用する場合は、バックアップアクティブ化ウィザードを開始する前にバケットを作成し、ウィザードでバケットを選択できます。
+
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["独自のバケットの作成の詳細については、こちらをご覧ください"^]。
+
+
+
+=== データ暗号化用の顧客管理暗号化キー（CMEK）を設定します
+
+Googleが管理するデフォルトの暗号化キーを使用する代わりに、お客様が管理する独自のキーを使用してデータを暗号化できます。クロスリージョンキーとクロスプロジェクトキーの両方がサポートされているため、CMEKキーのプロジェクトとは異なるバケット用のプロジェクトを選択できます。
+
+お客様が管理する独自のキーを使用する場合は、次の手順を実行します。
+
+* アクティベーションウィザードでこの情報を追加できるように、キーリングとキー名が必要です。 https://cloud.google.com/kms/docs/cmek["お客様が管理する暗号化キーの詳細については、こちらをご覧ください"^]。
+* これらの必要な権限がコネクタの役割に含まれていることを確認する必要があります。
++
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* プロジェクトでGoogleの「Cloud Key Management Service（KMS）」APIが有効になっていることを確認する必要があります。を参照してください https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloudドキュメント：APIの有効化"] を参照してください。
+
+
+* CMEKの考慮事項：*
+
+* HSM（ハードウェアバックアップ）キーとソフトウェア生成キーの両方がサポートされています。
+* 新しく作成またはインポートしたCloud KMSキーは両方サポートされます。
+* リージョンキーのみがサポートされています。グローバルキーはサポートされていません。
+* 現在、「対称暗号化/復号化」の目的のみがサポートされています。
+* BlueXPのバックアップとリカバリによって、ストレージアカウントに関連付けられたサービスエージェントには、「CryptoKey encrypter/Decrypter（roles/cloudkms.cryptoKeyEncrypterDecrypter）」IAMロールが割り当てられます。
+
 
 
 

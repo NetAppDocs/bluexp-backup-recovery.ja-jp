@@ -33,22 +33,25 @@ NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Sel
 [role="quick-margin-para"]
 Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをGoogle CloudストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがGoogle Cloudに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] ライセンス要件を確認
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] コネクタのネットワークの準備
+[role="quick-margin-para"]
+コネクタに必要なネットワーク接続があることを確認します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] ライセンス要件を確認
 [role="quick-margin-para"]
 Google CloudとBlueXPの両方のライセンス要件を確認する必要があります。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] ONTAPクラスタを準備
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] ONTAPクラスタを準備
 [role="quick-margin-para"]
 BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをGoogle Cloudに接続できるようにします。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] バックアップターゲットとしてGoogle Cloudを準備します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] バックアップターゲットとしてGoogle Cloudを準備
 [role="quick-margin-para"]
 Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。また、オンプレミスのONTAPクラスタでGoogle Cloudバケットに対するデータの読み取りと書き込みができるように、権限を設定する必要があります。
 
-[role="quick-margin-para"]
 必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] ONTAPボリュームでバックアップをアクティブ化します
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"] ONTAPボリュームでのバックアップのアクティブ化
 [role="quick-margin-para"]
 作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化>バックアップボリューム*をクリックします。次に、セットアップウィザードに従って、使用するレプリケーションポリシーとバックアップポリシー、およびバックアップするボリュームを選択します。
 
@@ -268,7 +271,7 @@ Cloud Volumes ONTAPまたはオンプレミスのシステムにレプリケー�
 
 === 権限を設定します
 
-バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
+カスタムロールを使用する特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。
 
 .手順
 . を参照してください https://console.cloud.google.com["Google Cloud Console の略"^]をクリックし、 * Roles * ページに移動します。

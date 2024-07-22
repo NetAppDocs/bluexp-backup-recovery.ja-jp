@@ -18,6 +18,48 @@ BlueXPのバックアップとリカバリの新機能をご紹介します。
 
 
 
+== 2024年7月22日
+
+
+
+=== 1GB未満のボリュームをリストア
+
+このリリースでは、ONTAPで作成した1GB未満のボリュームをリストアできるようになりました。ONTAPを使用して作成できる最小ボリュームサイズは20MBです。
+
+
+
+=== DataLockのコストを削減する方法のヒント
+
+DataLock機能は、指定された期間、バックアップファイルが変更または削除されないように保護します。これは、ランサムウェア攻撃からファイルを保護するのに役立ちます。
+
+DataLockの詳細および関連コストを軽減する方法のヒントについては、を参照してください link:concept-cloud-backup-policies.html["オブジェクトへのバックアップポリシーの設定"]。
+
+
+
+=== AWS IAM Roles Anywhere統合
+
+Amazon Web Services（AWS）Identity and Access Management（IAM）Roles Anywhereサービスを使用すると、workloads_on_awsにIAMロールを使用してAWS APIに安全にアクセスできるようになります。これは、workloads_on_awsにIAMロールを使用する場合と同じ方法です。IAM Roles Anywhereの秘密鍵インフラストラクチャとAWSトークンを使用する場合、長期的なAWSアクセスキーとシークレットキーは必要ありません。これにより、クレデンシャルをより頻繁にローテーションすることができ、セキュリティが向上します。
+
+このリリースでは、AWS IAM Roles Anywhereサービスのサポートがテクノロジプレビューになります。
+
+これは、およびのバックアップに適用され link:task-backup-to-s3.html["AWSへのCloud Volumes ONTAPのバックアップ"] link:task-backup-onprem-to-aws.html["オンプレミスのONTAPデータのAWSへのバックアップ"]ます。
+
+を参照してください https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXPのバックアップとリカバリ：2024年7月リリースブログ"]。
+
+
+
+=== FlexGroupフォルダまたはディレクトリのリストアを利用できるようになりました
+
+以前は、FlexVolボリュームはリストアできましたが、FlexGroupのフォルダやディレクトリはリストアできませんでした。ONTAP 9.15.1 p2では、[参照してリストア]オプションを使用してFlexGroupフォルダをリストアできます。
+
+このリリースでは、FlexGroupフォルダのリストアがテクノロジプレビューとしてサポートされます。
+
+詳細については、を参照してください link:task-restore-backups-ontap.html#restore-folders-and-files-using-browse-restore["参照と復元を使用したフォルダとファイルの復元"]。
+
+手動で有効にする方法については、を参照してください https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXPのバックアップとリカバリ：2024年7月リリースブログ"]。
+
+
+
 == 2024年5月17日
 
 

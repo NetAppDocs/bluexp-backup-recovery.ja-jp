@@ -179,7 +179,6 @@
   <block id="fa9aedfbd090cc455f29e39672cf1f08" category="inline-image-macro">作業環境を選択した後に使用できる[バックアップとリカバリの有効化]ボタンを示すスクリーンショット。</block>
   <block id="b8ec7451d278a232ac753f3d02c39cb2" category="paragraph"><block ref="b8ec7451d278a232ac753f3d02c39cb2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5ee1bd11e1cae9e48854c491affa72a6" category="inline-link-macro">ONTAP バックアップを管理します</block>
-  <block id="2804562bc1e662a5b5b8ecf3b0be67c6" category="admonition">バックアップ設定の変更またはレプリケーションの追加については、を参照してください <block ref="5cd1a7d7fa9fd41e0b8e095748eb7b5f" category="inline-link-macro-rx"></block>。</block>
   <block id="4ade5af203d6e65a0d4f2dfba9bb43b8" category="section-title">ONTAPボリュームでバックアップをアクティブ化します</block>
   <block id="af43ab28ad6de731176affb2dfc547c6" category="paragraph">オンプレミスの作業環境からいつでも直接バックアップをアクティブ化できます。</block>
   <block id="7f9b427c90d1c0aabd6984733725db51" category="paragraph">ウィザードでは、次の主な手順を実行します。</block>
@@ -1329,7 +1328,6 @@ Cloud Volumes ONTAP</block>
   <block id="f75114a933eef4dfbad580f177284e12" category="paragraph">BlueXPのバックアップとリカバリでは、選択したバックアップに基づいて新しいボリュームが作成されます。</block>
   <block id="860f07d2ed109437af4b64fd8713b385" category="paragraph">アーカイブストレージにあるバックアップファイルからボリュームをリストアする場合は、アーカイブ階層とリストアの優先順位によって数分から数時間かかることがあります。［*ジョブ監視*］タブをクリックすると、リストアの進行状況を確認できます。</block>
   <block id="310dbba96c4cb79d0f5f822051257fc8" category="section-title">ブラウズおよびリストアを使用して'フォルダとファイルをリストアします</block>
-  <block id="27816218998e04ffd3077d0806e7798b" category="paragraph">ONTAP のバックアップから数ファイルしかリストアしない場合は、ボリューム全体をリストアするのではなく、フォルダまたは個々のファイルをリストアするように選択できます。フォルダとファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
   <block id="6b2e325b80840b0a9d8b16c541de5ba2" category="admonition">フォルダまたは個 々 のファイルは、現時点ではオブジェクトストレージ内のバックアップファイルからのみリストアできます。現在のところ、ローカルSnapshotコピーまたはセカンダリ作業環境（レプリケートされたボリューム）にあるバックアップファイルからのファイルとフォルダのリストアはサポートされていません。</block>
   <block id="2cfe9659cdef6b61005a35e5ad1c7305" category="paragraph">複数のファイルを選択した場合は、選択したデスティネーションボリュームにすべてのファイルがリストアされます。したがって、ファイルを別のボリュームにリストアする場合は、リストアプロセスを複数回実行する必要があります。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォルダ内のすべてのファイルおよびサブフォルダをリストアできます。9.13.0より前のバージョンのONTAP を使用している場合は、そのフォルダのファイルのみがリストアされます。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
@@ -1718,7 +1716,6 @@ Cloud Volumes ONTAP</block>
   <block id="35abe2d136b4990eddee4a79d5635e4e" category="paragraph">Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをGoogle CloudストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがGoogle Cloudに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。</block>
   <block id="efc9a74c13e86547b20ec65d6f0f8292" category="paragraph">Google CloudとBlueXPの両方のライセンス要件を確認する必要があります。</block>
   <block id="4fe600ffd12f47bf3dd1572a88dd9c01" category="paragraph">BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをGoogle Cloudに接続できるようにします。</block>
-  <block id="52f2d33185b5d0760fde801c7c14e04f" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> バックアップターゲットとしてGoogle Cloudを準備します</block>
   <block id="061189bcae2d45b758f44b801f0cafa0" category="paragraph">Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。また、オンプレミスのONTAPクラスタでGoogle Cloudバケットに対するデータの読み取りと書き込みができるように、権限を設定する必要があります。</block>
   <block id="16ae299379e5fdbc7715a4c6e2533475" category="paragraph">オンプレミスのONTAPシステムからGoogle Cloud Storageへのバックアップを構成する場合は、どちらの接続方法を使用するかを選択します。</block>
   <block id="7f43aa219ca8f8b1e73ade5230b138c6" category="list-text">*パブリック接続*-パブリックGoogleエンドポイントを使用して、ONTAPシステムをGoogle Cloud Storageに直接接続します。</block>
@@ -1770,7 +1767,6 @@ Cloud Volumes ONTAP</block>
   <block id="762a67559f5acebc5dcf7651fb787c33" category="list-text">（オプション）独自のバケットを作成します。（必要に応じて、サービスによってバケットが作成されます）。</block>
   <block id="49946dab2b6f0e2a3905021f6c7f13af" category="list-text">（オプション）データ暗号化用の顧客管理キーを設定します</block>
   <block id="9a11eb5da5d06e3593dc6b41553d97e5" category="section-title">権限を設定します</block>
-  <block id="490d27127d1be5dafeff633874e98723" category="paragraph">バックアップを設定するときは、特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。</block>
   <block id="fc08b36bdc07ed26699904e7366b7a75" category="inline-link">新しいロールを作成します</block>
   <block id="57fabc4b9bda4ca1a792eb3e9b91c146" category="list-text"><block ref="d366e10b62e06826a8148ba57999a9a3" category="inline-link-rx"></block> 次の権限が必要です。</block>
   <block id="ab6fcc124e86604f6bab5da13aaea51a" category="inline-link">[ サービスアカウント ] ページに移動します</block>
@@ -4196,8 +4192,6 @@ ONTAP S3の略</block>
   <block id="b3bc75275539de4c7c9d62e8364e4698" category="paragraph">SnapCenter Plug-in for Oracleを各Oracleデータベースホストにインストールし、データベースホストを追加し、ホスト上のデータベースを検出して、ポリシーを割り当ててバックアップを作成する必要があります。</block>
   <block id="30436b64a4369e46b473bc1b1401fd34" category="list-text">データベースホストでSSHが有効になっている場合は、次のいずれかの方法でプラグインをインストールできます。</block>
   <block id="19818bd6e255e679bcd2b558dcd8be72" category="list-text">UIからSSHオプションを使用してプラグインをインストールし、ホストを追加します。 <block ref="eef94e573988b9bcf7576ada9279c21d" category="inline-xref-macro-rx"></block>。</block>
-  <block id="f5a95c52f600ae7a2606dd65afc76a31" category="list-text">スクリプトを使用してプラグインをインストールし、手動オプションを使用してUIからホストを追加します。 <block ref="2d45e41162034e715ba3307387fe903d" category="inline-xref-macro-rx"></block>。</block>
-  <block id="18410e518914ad15f77ada9d10f41c85" category="list-text">SSHが無効になっている場合は、プラグインを手動でインストールし、UIからmanualオプションを使用してホストを追加します。 <block ref="ca0ca6018928b52917635161072180d8" category="inline-xref-macro-rx"></block>。</block>
   <block id="00346be4bfc4c310cf2dbead933dff7c" category="list-text">作業環境とコネクタを作成しておきます。</block>
   <block id="513394674a73a0db659bc29e8dbd568e" category="list-text">コネクタがOracleデータベースホストに接続されていることを確認します。</block>
   <block id="322ab258ca9672995a0fa0734c392bce" category="list-text">データ保護処理用に、アプリケーションホストにroot以外の（sudo）アカウントが存在することを確認します。</block>
@@ -4881,7 +4875,6 @@ ifdef：aws []</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLockとRansomware Protectionのオプション</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3権限</block>
   <block id="1ddec8739d8c1b2f7db7d9f2fe4b6069" category="example-title">StorageGRID S3権限</block>
-  <block id="5f77078b118458f75a8520575b6a518e" category="list-text">DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。この機能は、[詳細設定]オプションを使用してあとで有効または無効にすることができます。</block>
   <block id="2ed85c9d8759c48194524d439a552ff0" category="section-title">アーカイブストレージのオプション</block>
   <block id="e5c31b44cc452f945aec38b328ab97da" category="section-title">既存のクラウドバックアップポリシーを編集する</block>
   <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">クラウドへの新しいバックアップポリシーを追加する</block>
@@ -5015,4 +5008,54 @@ ifdef：aws []</block>
   <block id="6fbe1cea473e2020956491cc962bda52" category="paragraph">ソースクラスタで ONTAP 9.10.1 以降が実行されている場合は、コストをさらに最適化するために、特定の日数（通常は 30 日以上）後に _Cool _To Azure Archive_storage からバックアップを階層化することを選択できます。この階層のデータは、必要なときにすぐにアクセスすることはできず、取得コストが高くなるため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。アーカイブストレージからのデータのリストアについては、このページのセクションを参照してください。</block>
   <block id="1cc47ef834e284795bab8becbe58ccfb" category="paragraph">オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。アーカイブストレージからのデータのリストアについては、このページのセクションを参照してください。</block>
   <block id="d8e36d6c03fc165135350c7550f92b0a" category="paragraph">必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。</block>
+  <block id="0b9052c66b4ef4c91263dcf2c8581f33" category="list-text">DataLockとRansomwareによる保護は、DataLockとRansomwareによる保護が有効なバックアップポリシーを使用した新しいボリュームバックアップに適用されます。これらの機能は、[詳細設定]オプションを使用してあとで有効または無効にすることができます。</block>
+  <block id="ccbf8c45039ba817be81bbf5fa2a7521" category="section-title">DataLockのコストを削減する方法のヒント</block>
+  <block id="fe678e2fcc09672ea124b748f97633cc" category="paragraph">DataLock機能をアクティブにしたまま、ランサムウェアスキャン機能を有効または無効にすることができます。追加料金を回避するために、定期的なランサムウェアスキャンを無効にすることができます。これにより、セキュリティ設定をカスタマイズし、クラウドプロバイダからのコストを回避できます。</block>
+  <block id="ad67d474e8005ade444d72671d5b14f2" category="paragraph">スケジュールされたランサムウェアスキャンが無効になっていても、必要に応じてオンデマンドスキャンを実行できます。</block>
+  <block id="d3ee7c87ac2ae18b1e773ebabea0ee2e" category="paragraph">さまざまな保護レベルを選択できます。</block>
+  <block id="af7638f7a1ad25e7f7541cb09e590ba7" category="list-text">* DataLock_without_ransomwareスキャン*：デスティネーションストレージのバックアップデータを、ガバナンスモードまたはコンプライアンスモードのいずれかで保護します。</block>
+  <block id="55edcf1a7d70eb272dbcec4fb91942d6" category="list-text">*ガバナンスモード*:管理者は、保護されたデータの上書きや削除を柔軟に行うことができます。</block>
+  <block id="fcf9f3f8233ccccdace8c9f5e7a9ea42" category="list-text">*準拠モード*：保持期間が終了するまで完全に消去できません。これにより、規制の厳しい環境で最も厳しいデータセキュリティ要件を満たすことができます。データのライフサイクル中は上書きや変更を行うことができないため、バックアップコピーを最も強力に保護できます。</block>
+  <block id="615fc78dc97f95f4ed9be1fd5668d1c4" category="admonition">Microsoft Azureでは、代わりにロックとロック解除モードが使用されます。</block>
+  <block id="42b2f7bad0fae50cc138173e28666296" category="list-text">* DataLock_with_ransomwareスキャン*：データのセキュリティを強化します。この機能は、バックアップコピーの変更を検出するのに役立ちます。何らかの試行が行われると、新しいバージョンのデータが慎重に作成されます。スキャン周波数は1、2、3、4、5に変更できます。 六日又は七日スキャンを7日ごとに設定すると、コストが大幅に削減されます。</block>
+  <block id="cb48f77184f9795e5ccef662bca48410" category="paragraph">DataLockコストを軽減するためのその他のヒントについては、を参照してください。 <block ref="6bf14a4871219441054a20f511413643" category="inline-link-rx"></block></block>
+  <block id="6a401c7d1c81a127fcd1224768c6edaf" category="inline-link">BlueXPのバックアップ/リカバリ用Total Cost of Ownership（TCO；総所有コスト）試算ツール</block>
+  <block id="e62bcce3f6b56efa6b52ab5d87b9850f" category="paragraph">さらに、にアクセスして、DataLockに関連するコストの見積もりを取得できます<block ref="53f0527bd2dbcfab03738578b80110f5" category="inline-link-rx"></block>。</block>
+  <block id="ec0522344cdf94ed9ff238d26e67e7d4" category="list-text">スクリプトを使用してプラグインをインストールし、手動オプションを使用してUIからホストを追加します。<block ref="cd0002a5ce0991e4ff737bdcb461a17b" category="inline-xref-macro-rx"></block>です。</block>
+  <block id="3fcdf51146a0f2de312a4a1a6ba1f507" category="list-text">SSHが無効になっている場合は、プラグインを手動でインストールし、UIからmanualオプションを使用してホストを追加します。<block ref="df2b89845fbeb0321ae65da8f07b18ce" category="inline-xref-macro-rx"></block>です。</block>
+  <block id="a331fd828c6eb830ffdf677817c5f035" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> コネクタのネットワークの準備</block>
+  <block id="2d04634b3cbe9bddda24c70e3fe058c1" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> ライセンス要件を確認</block>
+  <block id="c5b3c5fbdaa1657e6943a110d8413405" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> ONTAPクラスタを準備</block>
+  <block id="0bec69ffb331a84c17da2695bd9890f4" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> バックアップターゲットとしてGoogle Cloudを準備</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">7</block>
+  <block id="0e41efd085d01e393e196b57625ec5fb" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block> ONTAPボリュームでのバックアップのアクティブ化</block>
+  <block id="ed63cc305ac61371afe05971b5fa71c3" category="paragraph">カスタムロールを使用する特定の権限を持つサービスアカウントのストレージアクセスキーを指定する必要があります。サービスアカウントを使用すると、BlueXPのバックアップとリカバリで、バックアップの格納に使用されるCloud Storageバケットを認証してアクセスできます。キーは、 Google Cloud Storage がリクエストを発行しているユーザーを認識できるようにするために必要です。</block>
+  <block id="c3440827f50a036dae81cd2e84081afc" category="list-text">Google Cloud Projectに、権限セットが制限されたカスタムロールを持つサービスアカウントがあります。</block>
+  <block id="110c0a25d695ec4a8714d64d458cdc24" category="admonition">BlueXPのバックアップとリカバリでGoogle Cloud StorageバケットにアクセスするためのサービスアカウントにStorage Adminロールが不要になりました。</block>
+  <block id="3959d8bcb4c6224d3d44d552e82f0df6" category="paragraph">Google Cloudバケットを作成および管理するためのコネクタの権限を設定します。</block>
+  <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">Google Cloud環境でONTAPバックアップを受信できるようにする方法をご紹介します。</block>
+  <block id="ea64f83c7a3c2712595bc9229113d35b" category="paragraph">必要に応じて、Google Cloudのデフォルトの暗号化キーを使用する代わりに、データ暗号化用に独自のカスタム管理キーを設定できます。 <block ref="4513dc5134abe27f5500c4191aea3d5e" category="inline-xref-macro-rx"></block></block>
+  <block id="e2220c538d5ed850f5ecb8375389dad3" category="list-text">Google Cloud Projectにカスタムロールを持つサービスアカウントが必要です。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block>です。</block>
+  <block id="f6b23a9e657d0c84ca0f004a895e6b12" category="admonition">バックアップ設定の変更またはレプリケーションの追加については、を参照してください <block ref="437ca1df9d07fa739678476083489c0d" category="inline-link-macro-rx"></block>。</block>
+  <block id="031305d7be8e01cb27587340a16572f8" category="paragraph">ONTAPボリュームのバックアップから少数のファイルのみをリストアする必要がある場合は、ボリューム全体をリストアするのではなく、フォルダまたは個 々 のファイルをリストアするように選択できます。フォルダとファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
+  <block id="87eb849ca11537b79f083ee5fbad6738" category="list-text">ONTAP 9.15.1 p2では、[参照してリストア]オプションを使用してFlexGroupフォルダをリストアできます。</block>
+  <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">[参照とリストア]オプションを使用してFlexGroupディレクトリをリストアするには、ONTAPのバージョンが9.15.1 p2以上である必要があります。</block>
+  <block id="ba874eb3ffbdba518b95ce26bc81a861" category="section-title">2024年7月22日</block>
+  <block id="9d5f0e2f1682000ac365243e21301823" category="section-title">1GB未満のボリュームをリストア</block>
+  <block id="a429eb8c690c0a48131f4ae1267eafd1" category="paragraph">このリリースでは、ONTAPで作成した1GB未満のボリュームをリストアできるようになりました。ONTAPを使用して作成できる最小ボリュームサイズは20MBです。</block>
+  <block id="f959c5a51fb8f2a9e9c0063bbb8adb63" category="paragraph">DataLock機能は、指定された期間、バックアップファイルが変更または削除されないように保護します。これは、ランサムウェア攻撃からファイルを保護するのに役立ちます。</block>
+  <block id="4822bd9fd85c6d5438ecd9963b5c6897" category="paragraph">DataLockの詳細および関連コストを軽減する方法のヒントについては、を参照してください <block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block>。</block>
+  <block id="79cfacda817c1e599649823ffa32c8d7" category="section-title">AWS IAM Roles Anywhere統合</block>
+  <block id="bebfb016f9defe9a78fff65f418f213b" category="paragraph">Amazon Web Services（AWS）Identity and Access Management（IAM）Roles Anywhereサービスを使用すると、workloads_on_awsにIAMロールを使用してAWS APIに安全にアクセスできるようになります。これは、workloads_on_awsにIAMロールを使用する場合と同じ方法です。IAM Roles Anywhereの秘密鍵インフラストラクチャとAWSトークンを使用する場合、長期的なAWSアクセスキーとシークレットキーは必要ありません。これにより、クレデンシャルをより頻繁にローテーションすることができ、セキュリティが向上します。</block>
+  <block id="24c6cf6b2747b390a5d9eb672e1d54d4" category="paragraph">このリリースでは、AWS IAM Roles Anywhereサービスのサポートがテクノロジプレビューになります。</block>
+  <block id="75a3bff844d1c7ffb01e7ef22ab82b4d" category="inline-link-macro">AWSへのCloud Volumes ONTAPのバックアップ</block>
+  <block id="4e6ae608536b374d1b71a28785ef9a8b" category="inline-link-macro">オンプレミスのONTAPデータのAWSへのバックアップ</block>
+  <block id="ff4c4976afafd2cd191e5316fe16ee05" category="paragraph">これは、およびのバックアップに適用され <block ref="36745b46d10b0daef886af9c3561dc82" category="inline-link-macro-rx"></block> <block ref="28610eddc6cc2d865303aa5fe254d6ff" category="inline-link-macro-rx"></block>ます。</block>
+  <block id="ddc7fe4301c8a4aa6a14e1843c25f30b" category="inline-link">BlueXPのバックアップとリカバリ：2024年7月リリースブログ</block>
+  <block id="f1db3a8ee789ee9607754f5f8a9871b1" category="paragraph">を参照してください<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
+  <block id="5ab4d79a28b46b39467c24096b99316f" category="section-title">FlexGroupフォルダまたはディレクトリのリストアを利用できるようになりました</block>
+  <block id="a821e6c079044462f6ffc9a01ed28fc9" category="paragraph">以前は、FlexVolボリュームはリストアできましたが、FlexGroupのフォルダやディレクトリはリストアできませんでした。ONTAP 9.15.1 p2では、[参照してリストア]オプションを使用してFlexGroupフォルダをリストアできます。</block>
+  <block id="cd4619af82dfe7627dc934e29e85a6e9" category="paragraph">このリリースでは、FlexGroupフォルダのリストアがテクノロジプレビューとしてサポートされます。</block>
+  <block id="9b7af6cb2e410e55ce793003b7110047" category="paragraph">詳細については、を参照してください <block ref="07023d18b01371174abc5a157da41b99" category="inline-link-macro-rx"></block>。</block>
+  <block id="707304f314bfa71975e8ffb352535092" category="paragraph">手動で有効にする方法については、を参照してください<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
 </blocks>
