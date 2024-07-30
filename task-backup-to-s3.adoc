@@ -331,7 +331,7 @@ FlexVolボリュームとFlexGroupボリュームのどちらを保護するか�
 [NOTE]
 ====
 * バックアップをアクティブ化できるのは、一度に1つのFlexGroupボリュームだけです。
-* 選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock Complianceモードのボリュームには、ONTAP 9.14以降が必要です）。
+* 選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。
 
 
 ====

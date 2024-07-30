@@ -203,7 +203,6 @@
   <block id="e16bee3ecafb1ee1c54b43ad85dd8215" category="inline-link-macro">作業環境内の追加ボリュームのバックアップをアクティブ化</block>
   <block id="bb3015339c2686a35dc74324b8e4e4ea" category="paragraph">FlexVolボリュームとFlexGroupボリュームのどちらを保護するかを選択できますが、作業環境でバックアップをアクティブ化するときは、これらのボリュームを組み合わせて選択することはできません。方法を参照してください <block ref="d59114f3cd03b41fa3f830654247699f" category="inline-link-macro-rx"></block> （FlexVolまたはFlexGroup）初期ボリュームのバックアップの設定が完了したら、</block>
   <block id="e9dfd7a5bc1d9c55d3cafeb50c863440" category="list-text">バックアップをアクティブ化できるのは、一度に1つのFlexGroupボリュームだけです。</block>
-  <block id="809c75c03a253c08bfaa32177821bc49" category="list-text">選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock Complianceモードのボリュームには、ONTAP 9.14以降が必要です）。</block>
   <block id="cc54d40dc91fd9f2adf463d5e6a20e64" category="paragraph">選択したボリュームにSnapshotポリシーまたはレプリケーションポリシーがすでに適用されている場合は、あとで選択したポリシーで既存のポリシーが上書きされます。</block>
   <block id="60956fee8c3d9f3ef0f2f7652f27143f" category="list-text">[Select Volumes]ページで、保護するボリュームを選択します。</block>
   <block id="faf9e3428a892363316a8c1e34a4551b" category="list-text">必要に応じて、行をフィルタして、特定のボリュームタイプや形式などのボリュームのみを表示し、選択を容易にします。</block>
@@ -3718,7 +3717,6 @@ _/subscriptions/｛subscription_id｝/resourceGroups/｛resource_group｝/provid
   <block id="b1864ef3e1c982ea79e143744ce2e778" category="paragraph"><block ref="5168b6a061fd7575c70ed688cdecff09" category="inline-link-macro-rx"></block>。</block>
   <block id="f544f31f90a28ae74fb308a67205664e" category="paragraph">バックアップのAzureデスティネーションがCanvasの作業環境として存在する場合は、ONTAPクラスタをAzure Blobオブジェクトストレージにドラッグできます。</block>
   <block id="311000e4ce9d283fb43e8211781ee9e3" category="list-text">[バックアップとリカバリ]バーで*[ボリューム]*を選択します。[ボリューム]タブで、*[操作]* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> アイコンをクリックし、（オブジェクトストレージへのレプリケーションまたはバックアップがまだ有効になっていない）単一のボリュームに対して*[バックアップのアクティブ化]*を選択します。</block>
-  <block id="e89b128dbf2037e11616e345055bbd03" category="list-text">選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。（SnapLock Complianceモードのボリュームは現在サポートされていません。ONTAP 9.14以降が必要です。）</block>
   <block id="27b4942f728bb0b1085c78fb754f1dc1" category="list-text">*カスケード*：情報はプライマリからセカンダリへ、およびセカンダリからオブジェクトストレージへと流れます。</block>
   <block id="af14ed236e1187cb69e6b99e4332efba" category="list-text">*プロバイダ*：[Microsoft Azure]*を選択します。</block>
   <block id="e90f61567d45b4aa5a1f884395480afd" category="paragraph">新しいストレージアカウントを作成するか、既存のストレージアカウントを選択します。</block>
@@ -3963,7 +3961,6 @@ ONTAP S3の略</block>
   <block id="d461a54e93e8dcbd189b38f0ff2865bc" category="list-text">FlexVol 読み書き可能ボリューム</block>
   <block id="bab09e9304b5c4bff1eb4287ce6071b7" category="list-text">FlexGroup ボリューム（ONTAP 9.12.1以降が必要）</block>
   <block id="53356882cec477de26a5ac4371a30b82" category="list-text">SnapLock Enterpriseボリューム（ONTAP 9.11.1以降が必要）</block>
-  <block id="718dfdf9ba4cd59f98163d4d75844472" category="list-text">SnapLock Complianceボリューム（ONTAP 9.14以降が必要）</block>
   <block id="913b0ac6158d64b39b9d1e539ad326d3" category="list-text">SnapMirrorデータ保護（DP）デスティネーションボリューム</block>
   <block id="9e767927964c6ec4f221f081786309ff" category="inline-link-macro">バックアップとリストアの制限事項</block>
   <block id="7c28f64a5610cc1e75581e2ea3dc7138" category="paragraph">の項を参照してください <block ref="ac80a7f05dc0391b19d593c75503912d" category="inline-link-macro-rx"></block> を参照してください。</block>
@@ -5057,4 +5054,5 @@ ifdef：aws []</block>
   <block id="9b7af6cb2e410e55ce793003b7110047" category="paragraph">詳細については、を参照してください <block ref="07023d18b01371174abc5a157da41b99" category="inline-link-macro-rx"></block>。</block>
   <block id="707304f314bfa71975e8ffb352535092" category="paragraph">手動で有効にする方法については、を参照してください<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
   <block id="0459722050fe78ea88f3bdcad4866ce0" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>です。</block>
+  <block id="8678ec2b63284b1fce3f9da35c37df05" category="list-text">選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。</block>
 </blocks>
