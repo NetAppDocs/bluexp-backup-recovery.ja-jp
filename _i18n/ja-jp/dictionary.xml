@@ -4028,7 +4028,6 @@ ifdef：aws []</block>
   <block id="e2220c538d5ed850f5ecb8375389dad3" category="list-text">Google Cloud Projectにカスタムロールを持つサービスアカウントが必要です。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block>です。</block>
   <block id="f6b23a9e657d0c84ca0f004a895e6b12" category="admonition">バックアップ設定の変更またはレプリケーションの追加については、を参照してください <block ref="437ca1df9d07fa739678476083489c0d" category="inline-link-macro-rx"></block>。</block>
   <block id="031305d7be8e01cb27587340a16572f8" category="paragraph">ONTAPボリュームのバックアップから少数のファイルのみをリストアする必要がある場合は、ボリューム全体をリストアするのではなく、フォルダまたは個 々 のファイルをリストアするように選択できます。フォルダとファイルは元の作業環境の既存のボリューム、または同じクラウドアカウントを使用している別の作業環境にリストアできます。また、フォルダやファイルをオンプレミスのONTAP システム上のボリュームにリストアすることもできます。</block>
-  <block id="87eb849ca11537b79f083ee5fbad6738" category="list-text">ONTAP 9.15.1 p2では、[参照してリストア]オプションを使用してFlexGroupフォルダをリストアできます。</block>
   <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">[参照とリストア]オプションを使用してFlexGroupディレクトリをリストアするには、ONTAPのバージョンが9.15.1 p2以上である必要があります。</block>
   <block id="ba874eb3ffbdba518b95ce26bc81a861" category="section-title">2024年7月22日</block>
   <block id="9d5f0e2f1682000ac365243e21301823" category="section-title">1GB未満のボリュームをリストア</block>
@@ -4055,4 +4054,7 @@ ifdef：aws []</block>
   <block id="a53c24ea75123fb92d916ca3c6592e08" category="paragraph">SAP HANAデータベースを起動する方法については、を参照してください<block ref="d89e94a6aaf703375bdbc4104c3e8227" category="inline-link-rx"></block>。</block>
   <block id="a9e237979cbdc38b90d3a128b7a087d1" category="inline-link">オンプレミスのONTAPデータをAmazon S3にバックアップ</block>
   <block id="5ab37a7c23f6f643a1684bd78480a163" category="paragraph">BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。詳細については、およびを参照してください<block ref="6bde8133d7092193dd76584d1547b993" category="inline-link-rx"></block><block ref="54f3812958e7ffc22b3859734114af6b" category="inline-link-rx"></block> 。</block>
+  <block id="15f09261e873aa1d63f5dcc04347b79b" category="list-text">ONTAP 9.15.1では、[参照してリストア]オプションを使用してFlexGroupフォルダをリストアできます。この機能はテクノロジプレビューモードです。</block>
+  <block id="db0f3d3c6912a5ee817314070056f087" category="inline-link">BlueXPのバックアップとリカバリ：2024年7月リリースブログ</block>
+  <block id="ec53b6836352750173251f0c57f2ed93" category="paragraph">で説明されている特別なフラグを使用してテストできます<block ref="33c6d5d03ae6e02d266d11d3de66dc86" category="inline-link-rx"></block>。</block>
 </blocks>
