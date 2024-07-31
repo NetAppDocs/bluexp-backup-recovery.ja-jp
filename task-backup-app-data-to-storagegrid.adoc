@@ -21,7 +21,7 @@ BlueXPは、データロックとランサムウェア対策をサポートし�
 .作業を開始する前に
 StorageGRID にデータをバックアップするときは、オンプレミスのコネクタが必要です。新しいコネクタをインストールするか、現在選択されているコネクタがオンプレミスにあることを確認する必要があります。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。
 
-詳細については、を参照してください link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["StorageGRID のコネクタを作成します"]。
+詳細については、を参照してください link:task-backup-onprem-private-cloud.html#create-or-switch-connectors["StorageGRID のコネクタを作成します"]。
 
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。

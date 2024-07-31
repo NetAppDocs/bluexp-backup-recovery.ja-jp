@@ -40,4 +40,4 @@ SAP HANAデータベースは任意のホストにリストアできます。
 
 この処理では、指定したホスト上の選択したバックアップのストレージエクスポートのみが実行されます。ファイルシステムを手動でマウントし、データベースを起動する必要があります。ボリュームを利用したあと、ストレージ管理者はONTAP クラスタからボリュームを削除できます。
 
-SAP HANAデータベースを起動する方法については、を参照してください。 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system copy workflow with SnapCenter 』"^] および https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667：『Overview of SAP system clone workflow with SnapCenter 』"^]。
+SAP HANAデータベースを起動する方法については、を参照してください https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：『Automating SAP HANA System Copy and Clone Operations with SnapCenter 』"^]。

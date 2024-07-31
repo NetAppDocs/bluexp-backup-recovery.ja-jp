@@ -467,7 +467,7 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.ht
 
 クラスタでONTAP 9.12.1以降が実行されている場合、AWS China Beijing（cn-north-1）リージョンとNingxia（cn-northwest-1）リージョンがバックアップファイルのデスティネーションとしてサポートされるようになりました。
 
-BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Amazon S3 への Cloud Volumes ONTAP データのバックアップ"] および https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["オンプレミスのONTAP データをAmazon S3にバックアップします"] を参照してください。
+BlueXPコネクタに割り当てるIAMポリシーでは、all_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります（例：「arn：aws-cn：s3：：：netapp-backup-*」）。詳細については、およびを参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"] https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["オンプレミスのONTAPデータをAmazon S3にバックアップ"] 。
 
 
 
