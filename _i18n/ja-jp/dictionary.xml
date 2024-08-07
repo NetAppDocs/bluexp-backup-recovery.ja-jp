@@ -446,7 +446,6 @@
   <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">アクセスキーとシークレットキーを選択します。</block>
   <block id="3daba77ab92b57915950a36f17f965c3" category="summary">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="ba48140a3394818b661e6fd497e203a7" category="doc">BlueXPのバックアップとリカバリについて説明します</block>
-  <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="af4d8d7b56820e969dfbdcfe2654b5b3" category="paragraph">このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護されたデータに対してのみ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、BlueXPのバックアップとリカバリの対費用効果が非常に高くなります。</block>
   <block id="abb095c3ca764fa12daa893d7e619ae1" category="paragraph">必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAPデータをバックアップする場合は、バックアップからフォルダまたは1つ以上の_files_を同じ作業環境または異なる作業環境にリストアすることもできます。</block>
   <block id="723a81a7ee0b42134a46c1aaa0d99371" category="inline-link">BlueXPのバックアップとリカバリの詳細については、こちらをご覧ください</block>
@@ -454,12 +453,10 @@
   <block id="56387194e2baefbedf3b4e19ea5780fe" category="paragraph">バックアップとリカバリは、次の目的で使用できます。</block>
   <block id="02fe91ecafd3cfc37675f0776294605f" category="inline-link-macro">詳細な機能については、こちらをご覧ください</block>
   <block id="aa581d4a856d4e4b679f430d75b6675b" category="list-text">Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
-  <block id="0ddf34ad5270eddf503a40460693fa5f" category="list-text">Kubernetes永続ボリュームのバックアップとリストア <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
   <block id="45c2b60e32092bd4af125e86d14c3a15" category="list-text">アプリケーション向けのBlueXPバックアップ/リカバリを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
   <block id="9a35f280a97314e38ce32e5edca1e284" category="list-text">VMware向けBlueXPバックアップ/リカバリを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 <block ref="7d3aa28b08d11afec4b666dd6503d425" category="inline-link-macro-rx"></block>。</block>
   <block id="6176afad6a7761beffa9af008f2ae633" category="inline-link">簡単なデモをご覧ください</block>
   <block id="a9840ddd0211114f18d80718c08ddb05" category="paragraph"><block ref="a9840ddd0211114f18d80718c08ddb05" category="inline-link-rx"></block></block>
-  <block id="1e14638586b04b893f971a1bfe703c2c" category="admonition">BlueXP Connectorがクラウドの行政機関やインターネットアクセスのないサイト（ダークサイト）に導入されている場合、BlueXPのバックアップとリカバリでサポートされるのはONTAP システムからのバックアップとリストアの処理のみです。このような導入方法を使用する場合、BlueXPのバックアップとリカバリでは、Kubernetesのクラスタ、アプリケーション、仮想マシンからのバックアップとリストアの処理はサポートされません。</block>
   <block id="33022c637d4dd3f13525c167e5f29568" category="section-title">BlueXPのバックアップとリカバリの仕組み</block>
   <block id="2c01915166cf9b144d2e31c6d6a7a336" category="paragraph">Cloud Volumes ONTAP またはオンプレミスのONTAP システムでBlueXPのバックアップとリカバリを有効にすると、データのフルバックアップが実行されます。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。</block>
   <block id="06548d8c3dd532a955281943d00e4ae0" category="paragraph">次の図は、コンポーネント間の関係を示しています。</block>
@@ -747,7 +744,6 @@
   <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">AWSおよびAzureの商用リージョンにインストールされているCloud Volumes ONTAP システムから、Amazon S3またはAzure Blobにデータをバックアップできるようになりました。これには、商用地域のLinuxホストに「制限モード」でコネクタをインストールし、そこにCloud Volumes ONTAPシステムを展開する必要があります。を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> および<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
   <block id="1442489a4cf0ea56df2e53ec47c70ec8" category="section-title">ジョブモニタに複数の機能拡張が追加されました</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">詳細フィルタの使用方法を参照してください</block>
-  <block id="7397c46a6bf6fde87c1217e8c8bbab15" category="list-text">[Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 <block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>。</block>
   <block id="81ddb60f2f70b21c8b419a542095feca" category="list-text">ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのCloud Volumes ONTAP システムおよびオンプレミスのONTAP システムでは、現時点ではユーザが開始したジョブのみが表示されます。</block>
   <block id="4378789701cd2498a252a52806a1f3a4" category="section-title">2023年2月6日</block>
   <block id="86763912a3fb720760d95338a077e264" category="section-title">古いバックアップファイルをStorageGRID システムからAzureアーカイブストレージに移動する機能</block>
@@ -850,7 +846,6 @@
   <block id="f4f4c174196d45dbc07ae62740f92b92" category="section-title">ジョブ監視ページが更新されました</block>
   <block id="213f79d27d3a76a68080f2d948105d7e" category="inline-link">ジョブ監視ページ</block>
   <block id="ff977b3bda8bd49c8895b8e27c7ac01a" category="paragraph">には、次の更新が行われています<block ref="34f4049f89ba8890765cc171e2590532" category="inline-link-rx"></block>：</block>
-  <block id="5b839de8a8e7b5f30407c5dc2cfdabd2" category="list-text">「ワークロード」の列を使用して、ページをフィルタして、ボリューム、アプリケーション、仮想マシン、Kubernetesの各バックアップサービスのジョブを表示できます。</block>
   <block id="a2ed310c63a1aba1225315fe5f7f60ee" category="list-text">特定のバックアップジョブの詳細を表示するには、「ユーザ名」と「ジョブタイプ」の列を新たに追加します。</block>
   <block id="bcce731a4ced178ba1457a0965f1a878" category="list-text">[ジョブの詳細]ページには、メインジョブを完了するために実行中のすべてのサブジョブが表示されます。</block>
   <block id="4f4a2e17ef7aa2669f99a3748377015f" category="list-text">このページは15分ごとに自動的に更新されるため、常に最新のジョブステータスの結果が表示されます。また、[*更新*]ボタンをクリックすると、ページをすぐに更新できます。</block>
@@ -880,111 +875,49 @@
   <block id="736c2dbf2aa9f4b08b97a4f719b3cf5e" category="section-title">ドラッグアンドドロップして、StorageGRID システムへのクラウドバックアップを有効にします</block>
   <block id="392d70ca39f31f10bd637936769788df" category="inline-link">StorageGRID</block>
   <block id="72e4241b97e5dcf5222db5c1346cd6e5" category="paragraph">状況に応じて<block ref="0675f343561e34593b3974118982449f" category="inline-link-rx"></block> バックアップ先がキャンバス上の作業環境として存在する場合、オンプレミスのONTAP 作業環境をデスティネーションにドラッグしてクラウドバックアップセットアップウィザードを開始できます。</block>
-  <block id="9a74da9a403d14281a0f36eb46d4a5f1" category="summary">BlueXPのバックアップとリカバリは、Kubernetesクラスタデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
-  <block id="e2f1efe5640ea5b571a12b8487b6eb13" category="doc">BlueXPのバックアップとリカバリを使用してKubernetesクラスタのデータを保護します</block>
-  <block id="6e7fd38454983cfd290f28fb74c54476" category="paragraph">必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">の機能</block>
-  <block id="6433f8932ae76610af96dec0c0c9c0f2" category="paragraph">バックアップ機能：</block>
-  <block id="ecfaadba4e7588b9cdb2345e8670ce6b" category="list-text">永続ボリュームの独立したコピーを低コストのオブジェクトストレージにバックアップできます。</block>
   <block id="978691ecd52f4541232e2bc2d3a0519b" category="list-text">クラスタ内のすべてのボリュームに単一のバックアップポリシーを適用するか、または一意のリカバリポイント目標が設定されたボリュームに異なるバックアップポリシーを割り当てます。</block>
   <block id="2e266f5c456f5f6206428071c74410a6" category="list-text">バックアップデータは、転送中の AES-256 ビット暗号化と TLS 1.2 HTTPS 接続によって保護されます。</block>
   <block id="31225c51d46e8620e15eeda9d9aede1c" category="list-text">単一ボリュームで最大 4 、 000 個のバックアップがサポートされます。</block>
-  <block id="3c77ad4a7d2217a191b34d3699314f25" category="paragraph">リストア機能：</block>
-  <block id="9a6874c177c74fe5275869dd8581e827" category="list-text">特定の時点からデータをリストアします。</block>
-  <block id="6760340bfc2e15a2c7f1f5c3634edefd" category="list-text">ボリュームをソースシステムまたは別のシステムにリストアします。</block>
-  <block id="54abac4b0e4ba613b4a723ce5bc4fb9c" category="list-text">元の ACL を維持したまま、指定した場所にデータを直接配置して、ブロックレベルでデータをリストアします。</block>
-  <block id="496f4c7caaf6394b68357411d30ae9d4" category="section-title">サポートされている Kubernetes 作業環境とオブジェクトストレージプロバイダ</block>
-  <block id="c90dfb5e576578f01331da30a158e073" category="paragraph">BlueXPのバックアップとリカバリでは、Kubernetesボリュームを次の作業環境から次のパブリック/プライベートクラウドプロバイダのオブジェクトストレージにバックアップできます。</block>
   <block id="da3ad9d6a0eca9d57ad9063ff8690ab6" category="cell">ソースの作業環境</block>
   <block id="49930e1d4376887999c072bd91775525" category="cell">バックアップファイルの保存先
 
 
 ifdef：aws []</block>
-  <block id="a8ce277cc149cf4efa0020015556d48a" category="cell">AWS の Kubernetes クラスタ</block>
   <block id="8889077573d45691231050324d93b6a9" category="cell">Amazon S3
 
 endif：：aws[]
 
 
 ifdef：Azure []</block>
-  <block id="feaf86685447a9b29164a18d87a69812" category="cell">Azure の Kubernetes クラスタ</block>
   <block id="0959a2f5eff65303771c49363a01d789" category="cell">Azure Blob の略
 
 endif：：azure[]
 
 
 ifdef ::gcp[]</block>
-  <block id="7f6251364178ee7f1986855ac72962ca" category="cell">Google の Kubernetes クラスタ</block>
   <block id="c0b279eeed106351906f95aa546f2ffa" category="cell">Google クラウドストレージ
 
 endif：GCP []</block>
-  <block id="235e72da2b8c2c7946c5e4d97f57203a" category="paragraph">Kubernetes バックアップファイルから次の作業環境にボリュームをリストアできます。</block>
   <block id="85970a97aacb509bbf4ce9364724b494" category="cell">バックアップファイルの場所</block>
-  <block id="ac51f0beea0b94bb3165f831f8ba7138" category="cell">デスティネーションの作業環境
-
-ifdef：aws []</block>
   <block id="270fcb785810d0206945029bb05f4e97" category="cell">Amazon S3</block>
-  <block id="0e356152192db3a04cabbf69108987ee" category="cell">AWS の Kubernetes クラスタ
-
-endif：：aws[]
-
-
-ifdef：Azure []</block>
   <block id="52745271323ee9ea30e3a37d0338d118" category="cell">Azure Blob の略</block>
-  <block id="d2a3f8d6a8141baac1e6e97dced3c44b" category="cell">Azure の Kubernetes クラスタ
-
-endif：：azure[]
-
-
-ifdef ::gcp[]</block>
   <block id="833c2c211a541e50ad94433664e4b5c1" category="cell">Google クラウドストレージ</block>
-  <block id="9d8c053ff2930ede65f48ab99ec40a69" category="cell">Google の Kubernetes クラスタ
-
-endif：GCP []</block>
   <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">コスト</block>
-  <block id="c20bf6179aa59c858f9381e945ee4e06" category="paragraph">BlueXPのバックアップとリカバリの使用に関連するコストには、リソース料金とサービス料金の2種類があります。</block>
   <block id="d14d70754e8322b819c6bc86af6beefd" category="paragraph">* リソース料金 *</block>
-  <block id="94255d2f4b988fede96dd0295f2cd384" category="paragraph">クラウド内のオブジェクトストレージの容量については、リソースの料金がクラウドプロバイダに支払われます。BlueXPのバックアップとリカバリではソースボリュームのストレージ効率化が維持されるため、クラウドプロバイダのオブジェクトストレージのコストであるdata_after_ ONTAP 効率化（重複排除と圧縮を適用したあとのデータ量が少ない場合）を支払う必要があります。</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">* サービス料金 *</block>
-  <block id="359c0dbc971ac04d59ada27f4a5d4363" category="paragraph">サービス料金はネットアップにお支払いいただき、バックアップの作成時とリストア時のコストの両方を負担させていただきます。保護するデータの料金は、オブジェクトストレージにバックアップされるボリュームのソースの使用済み論理容量（ ONTAP 効率化）で計算されます。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">ライセンス</block>
-  <block id="f2aa0b1f27920178d6eb63e002305119" category="paragraph">バックアップサービスの料金を支払う方法は 2 つあります。1 つ目は、クラウドプロバイダを利用して月額料金を支払う方法です。2 つ目の選択肢は、ネットアップから直接ライセンスを購入することです。を参照してください <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> 詳細については、を参照してください</block>
-  <block id="ebb426971dcd3cbd35e4aca31be3aa04" category="paragraph">BlueXPのバックアップとリカバリには、従量課金制（PAYGO）とお客様所有のライセンスを使用（BYOL）の2つのライセンスオプションがあります。ライセンスをお持ちでない場合は、 30 日間の無償トライアルをご利用いただけます。</block>
-  <block id="a4db2be5fc9fed95c3b899dc47229d5d" category="section-title">無償トライアルをご利用ください</block>
-  <block id="150d0b73810898f0438b1126fa9d43d2" category="paragraph">30 日間の無償トライアルを使用すると、残りの無料試用日数が通知されます。無償トライアルが終了すると、バックアップは作成されなくなります。サービスを引き続き使用するには、サービスに登録するかライセンスを購入する必要があります。</block>
-  <block id="853139cb08e7b4134237475a52139c44" category="paragraph">サービスが無効になってもバックアップファイルは削除されません。バックアップを削除しないかぎり、バックアップで使用する容量のオブジェクトストレージのコストは引き続きクラウドプロバイダから請求されます。</block>
   <block id="d1517db071086971f3453ded8278c7a1" category="section-title">従量課金制のサブスクリプション</block>
-  <block id="dce00f14733365140afddf22db7649f1" category="paragraph">BlueXPのバックアップとリカバリは、従量課金制モデルで従量課金制のライセンスを提供します。クラウドプロバイダの市場に登録した後は、バックアップされたデータに対して GB 単位の支払いを行います。つまり、前払いによる支払いはありません。クラウドプロバイダから月額料金で請求されます。</block>
-  <block id="a287e316989c25a2ee988a3e9950bf89" category="paragraph">無償トライアルを利用されている場合や、お客様が独自のライセンスを使用（ BYOL ）されている場合も、サブスクリプションを設定する必要があります。</block>
-  <block id="54a99e6398e2bfa4f64af1dd12d262b1" category="list-text">登録すると、無料トライアルの終了後にサービスが中断されることがなくなります。</block>
-  <block id="b3f388e1a16fd3e59bedb612f48c8ad3" category="paragraph">試用期間が終了すると、バックアップしたデータの量に応じて 1 時間ごとに課金されます。</block>
-  <block id="b594600c67397c7ded920bf1b801d79a" category="list-text">BYOL ライセンスで許可されている数を超えるデータをバックアップした場合、データバックアップは従量課金制サブスクリプションを使用して続行されます。</block>
-  <block id="17403bdd002bcdd45adff108b0e9e235" category="paragraph">たとえば、 10 TB の BYOL ライセンスがある場合、 10 TB を超える容量はすべて、 PAYGO サブスクリプションによって課金されます。</block>
-  <block id="0f00cbe3f53cc394d366dd2245df4f68" category="paragraph">お客様は、無料トライアル期間中、または BYOL ライセンスを超えていない場合は、従量課金制サブスクリプションから料金を請求されることはありません。</block>
   <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">従量課金制サブスクリプションの設定方法について説明します</block>
   <block id="4fea63f3003bca68c0d871a18bd18f49" category="paragraph"><block ref="da925d164976c4809988045a567b800b" category="inline-link-macro-rx"></block>。</block>
   <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">お客様所有のライセンスを使用</block>
-  <block id="dc44bc957ba607de4720d510c011e96f" category="paragraph">BYOL は、期間ベース（ 12 カ月、 24 カ月、 36 カ月）の _ と _ の容量ベースで、 1 TB 単位での増分に基づいています。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量である 10TB を支払うことになります。</block>
   <block id="065c13346a6a1b4ec88ebda80e48a910" category="inline-link">BlueXPアカウント</block>
   <block id="4235965736b9e1e3dd699fde8f6f73ac" category="paragraph">サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。Backup BYOL ライセンス環境 では、に関連付けられているすべてのソースシステムがライセンスされます<block ref="804faa4f81a5cffbc00a90ef504a2fbd" category="inline-link-rx"></block>。</block>
   <block id="1f23a1287c99cea5c2f4f1d45746f1e0" category="paragraph"><block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
-  <block id="0d6f5383e996791018e1939beb66c2af" category="paragraph">KubernetesシステムでBlueXPのバックアップとリカバリを有効にすると、サービスによってデータのフルバックアップが実行されます。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。</block>
-  <block id="ca40824cdffa55341f62ec1a50b529d3" category="admonition">クラウドプロバイダ環境からバックアップファイルの管理や変更を直接行うと、ファイルが破損してサポートされない構成になる可能性があります。</block>
   <block id="60d1f390b363130bf24d5d9d598fdaf5" category="paragraph">次の図は、各コンポーネント間の関係を示しています。</block>
-  <block id="d5b72a6b741bef977ea5c4ebce9653f0" category="paragraph"><block ref="d5b72a6b741bef977ea5c4ebce9653f0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="bff292a0ddf8b8d46b8403039c6c25e1" category="section-title">サポートされるストレージクラスまたはアクセス階層</block>
   <block id="835c5a1c186b36b36520e07b3f4c2655" category="list-text">AWS では、バックアップは _Standard_storage クラスから開始し、 30 日後に _Standard-Infrequent Access_storage クラスに移行します。</block>
   <block id="e67ee777fcc3a50a658558b590d76549" category="list-text">Azure では、バックアップは _COOL アクセス層に関連付けられます。</block>
-  <block id="c17dd0fb046b57a7b501825f3f2579a4" category="list-text">GCP では、バックアップはデフォルトで _Standard_storage クラスに関連付けられています。</block>
-  <block id="0f1ea22cd0984db20cd17e018271788e" category="section-title">クラスタごとにカスタマイズ可能なバックアップスケジュールと保持設定</block>
-  <block id="811898b692403a66473297c6489ec820" category="paragraph">作業環境でBlueXPのバックアップとリカバリを有効にすると、最初に選択したすべてのボリュームが定義したデフォルトのバックアップポリシーを使用してバックアップされます。Recovery Point Objective （ RPO ；目標復旧時点）が異なるボリュームに対して異なるバックアップポリシーを割り当てる場合は、そのクラスタに追加のポリシーを作成し、そのポリシーを他のボリュームに割り当てることができます。</block>
-  <block id="43de18506d5bc12f553b69d0b83da7da" category="paragraph">すべてのボリュームについて、毎時、毎日、毎週、および毎月のバックアップを組み合わせて選択できます。</block>
-  <block id="5a86b6d60f717e520ba76b93bf1a3243" category="paragraph">カテゴリまたは間隔のバックアップの最大数に達すると、古いバックアップは削除されるため、常に最新のバックアップが保持されます。</block>
   <block id="8c9b6b8729507556572552d0d8f472e3" category="section-title">サポートされるボリューム</block>
-  <block id="4de720d4ad95ece2e413602c7afc9f5a" category="paragraph">BlueXPのバックアップとリカバリでは永続ボリューム（PV）がサポートされます。</block>
-  <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">制限</block>
-  <block id="b2c42e88cb6710c9293d1ce23cdc3cd1" category="list-text">ポリシーにボリュームが割り当てられていない場合にバックアップポリシーを作成または編集するときは、バックアップの保持数を 1018 以下にする必要があります。回避策 では、ポリシーを作成するバックアップの数を減らすことができます。その後、ポリシーを編集して、ポリシーにボリュームを割り当てたあとで最大 4 、 000 個のバックアップを作成できます。</block>
-  <block id="c1ee18400a70ff161d19420ead84a6ff" category="list-text">Kubernetes ボリュームでは、 * 今すぐバックアップ * ボタンを使用したアドホックボリュームのバックアップはサポートされていません。</block>
   <block id="3e6a014c15570f7f51f7fcdad349babc" category="summary">ポリシーとバックアップを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。</block>
   <block id="d2107ef674d9474576deedf431042a37" category="doc">アプリケーションの保護を管理します</block>
   <block id="29df1904737a953fe664af42457666a3" category="paragraph">アプリケーションの保護を管理するには、ポリシーの表示、バックアップの表示、データベースレイアウト、ポリシー、リソースグループへの変更の確認、すべての処理の監視をBlueXP UIから実行します。</block>
@@ -2365,7 +2298,6 @@ NetApp StorageGRID</block>
   <block id="4e1290c8ff92d5a27a050ca094bd7f4d" category="section-title">作業環境でBlueXPのバックアップとリカバリを非アクティブ化します</block>
   <block id="b5412d7989235296fcffa07cbdc14f4a" category="paragraph">作業環境でBlueXPのバックアップとリカバリを無効にすると、システム上の各ボリュームのバックアップとボリュームのリストアも無効になります。既存のバックアップは削除されません。この作業環境からバックアップ・サービスの登録を解除することはありません。基本的には、すべてのバックアップおよびリストア処理を一定期間停止できます。</block>
   <block id="8764d766d622ae40812776b15d742a79" category="inline-xref">バックアップを削除します</block>
-  <block id="6b835d6089538592ebe659b782576e6b" category="paragraph">クラウドから引き続き課金されます が提供する容量のオブジェクトストレージコストのプロバイダ バックアップは自分以外で使用します <block ref="d6fb12a3c9af7e6cc6f4c849e2a2aac6" category="inline-xref-macro-rx"></block>。</block>
   <block id="a9805696126ef48bc68224dc06136bbd" category="list-text">_ バックアップ設定ページ _ で、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> バックアップを無効にする作業環境で、 * バックアップを非アクティブ化 * を選択します。</block>
   <block id="d7f98311e57aa2a4ccfddddac24288ac" category="inline-image-macro">作業環境のバックアップを非アクティブ化ボタンのスクリーンショット。</block>
   <block id="bb2736f3c3db9ab842e20bc45c391086" category="paragraph"><block ref="bb2736f3c3db9ab842e20bc45c391086" category="inline-image-macro-rx" type="image"></block></block>
@@ -2418,13 +2350,11 @@ NetApp StorageGRID</block>
   <block id="b6c768315d9228aa5e18b2250a18a10e" category="listing-title">応答。</block>
   <block id="c39d07aa3697a8b5b1eb9963f6cd194c" category="listing-title">「status」が「completed」になるまで監視します。</block>
   <block id="19ec08da81a826d919d64ab860845c04" category="section-title">API リファレンス</block>
-  <block id="90b83ba6de990dc4b3237c3a114e7b68" category="paragraph">BlueXPの各バックアップとリカバリAPIのドキュメントは、から入手できます<block ref="09e8c3aae0da31a3bb4ba59e7440e87c" category="inline-link-rx"></block>。</block>
   <block id="4ab7d99363507ea7d2dfa59860eae018" category="summary">Cloud Volumes ONTAP システムからGoogle Cloudストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="3618be0c223951c8ad19bcd0eb9d03c4" category="doc">Cloud Volumes ONTAPデータをGoogle Cloud Storageにバックアップします</block>
   <block id="2ec8fbded5e88799ebd7fdba2189b818" category="paragraph">Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="420f5c27f3e2bcd031d764f5cda9d052" category="list-text">GCPでCloud Volumes ONTAP 9.8以降を実行している（ONTAP 9.8P13以降を推奨）。</block>
   <block id="1bb2c0187913772397ee94ba85aff22c" category="list-text">バックアップを保存するストレージスペースの有効な GCP サブスクリプションがあります。</block>
-  <block id="721df1cfc096c8fe936071e3747d828d" category="list-text">Google Cloud Project に、事前定義された Storage Admin ロールを持つサービスアカウントがあります。</block>
   <block id="9f64ffde2c75d703f129378f565a0e11" category="list-text">に登録しておきます<block ref="1a2c27167c7e8ce27ef7c637d8f92515" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="a7c7886675f758752089ea0caddfb19c" category="inline-link-macro-rx"></block> ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス</block>
   <block id="0ef0534049f6e4c235970cfab1429510" category="paragraph">コネクタがすでにGCPリージョンにデプロイされている場合は、すべて準備が完了しています。そうでない場合は、Cloud Volumes ONTAPデータをGoogle Cloud Storageにバックアップするために、GCPにBlueXPコネクタをインストールする必要があります。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
   <block id="1bf8b46ae208ff07eda2feab04911c53" category="paragraph">ソースシステムとデスティネーションシステムがONTAPのバージョンとネットワークの要件を満たしていることを確認します。</block>
@@ -2435,7 +2365,6 @@ NetApp StorageGRID</block>
   <block id="fa0e57d14b046871ace0930dbea76b89" category="list-text">BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
   <block id="4ce60442c0b2156c43c785528827a3ab" category="list-text">GCP サービスアカウント</block>
   <block id="68cc6348671b24995e53975d0fd5d303" category="inline-link">サービスアカウントの作成方法について説明します</block>
-  <block id="1cd233a36e1f7dc77f3653908663d446" category="list-text">事前定義された Storage Admin ロールを持つサービスアカウントが Google Cloud Project に必要です。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block>。</block>
   <block id="b5c9fa9bce15f0de1507e8a190b390e9" category="inline-link">作業環境ウィザードの[Details &amp; Credentials]ページからサブスクライブできます。</block>
   <block id="2de9d70ab4a441dd019daa1623e4e1aa" category="paragraph">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、Google MarketplaceでBlueXPサブスクリプションを購入して、Cloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です<block ref="1a9048fea9c114882abdde44d164e6a2" category="inline-link-rx"></block> BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
   <block id="eff86eb019454391cfc891cdd043177d" category="paragraph">BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 <block ref="62ce7cf96b97e2e1aa800b0e35162d2f" category="inline-link-macro-rx"></block>。</block>
@@ -2532,7 +2461,6 @@ NetApp StorageGRID</block>
   <block id="661d052ba9e14a07c1387ef54569e445" category="summary">開始またはスケジュールされたローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始またはスケジュールされたリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
   <block id="1ca3bd8f6dc961579b0cb3fd37bec744" category="paragraph">開始したローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始したリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
   <block id="06bf7dd6f0ab94d87f59e43fc93b6d3c" category="section-title">ジョブモニタでのジョブステータスの表示</block>
-  <block id="7413106917b419812ee4fa6eba953c99" category="paragraph">[ジョブ監視]タブでは、Snapshot、レプリケーション、オブジェクトストレージへのバックアップ、およびリストア処理のすべてと現在のステータスのリストを表示できます。これには、Cloud Volumes ONTAP 、オンプレミスONTAP 、アプリケーション、仮想マシン、Kubernetesシステムからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。</block>
   <block id="402bab7d605cd8ea629df214c4351f69" category="paragraph">ステータスは次のいずれかになります。</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="c9413dd7682a45da9ecc9efa8cea47d7" category="list-text">実行中です</block>
@@ -2558,7 +2486,6 @@ NetApp StorageGRID</block>
   <block id="b6441fcd20a5b43301d45b703dcaa833" category="list-text">ボリューム（Cloud Volumes ONTAPとオンプレミスのONTAPボリューム）</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">アプリケーション</block>
   <block id="76b0fa668c1cd016096eb9bc1bfde44a" category="list-text">仮想マシン</block>
-  <block id="30136395f01879792198317c11831ea4" category="list-text">Kubernetes</block>
   <block id="dd9313799fa929f642611d4d86e9e772" category="list-text">特定の「SVM」内のデータを検索できるのは、最初に作業環境を選択した場合のみです。</block>
   <block id="17b4d0b2054bd5ed8d8b6430dc8f6936" category="list-text">[保護タイプ]フィルタを使用して検索できるのは、[保護]の[タイプ]を選択した場合のみです。</block>
   <block id="63a6a88c066880c5ac42394a22803ca6" category="inline-image-macro">更新</block>
@@ -2666,25 +2593,6 @@ NetApp StorageGRID</block>
   <block id="e84bd2928737b9826c8c54b6f73863db" category="list-text">アーカイブストレージにあるバックアップではサポートされません。</block>
   <block id="b5f44cc87942dc7d5bfe6c4b26750821" category="list-text">FlexGroupボリュームは、クラウドバックアップの作成元のソースシステムでONTAP 9.12.1以降が実行されている場合にのみサポートされます。</block>
   <block id="82f72f137722b68957ddade43e2defd1" category="list-text">SnapLockボリュームは、クラウドバックアップの作成元のソースシステムでONTAP 9.11.0以降が実行されている場合にのみサポートされます。</block>
-  <block id="c8b8b4fdeb24aa620ef9c52c25526cea" category="summary">バックアップは、特定の時点のデータをリストアできるように、クラウドアカウントのオブジェクトストアに格納されます。Kubernetes の永続ボリューム全体を、保存したバックアップファイルからリストアできます。</block>
-  <block id="904598583b73c753a7e66bd948fa91d8" category="doc">バックアップファイルからの Kubernetes データのリストア</block>
-  <block id="407693ec35be41d206dfff6d6302ca57" category="paragraph">永続ボリュームは、（新しいボリュームとして）同じ作業環境または同じクラウドアカウントを使用している別の作業環境にリストアできます。</block>
-  <block id="eb44d853b15fc4a7d1e4ecb8635a4318" category="section-title">Kubernetes バックアップファイルからのボリュームのリストア</block>
-  <block id="0d547969bfaddaa4d8899f36a0bf6cfb" category="paragraph">バックアップファイルから永続ボリュームを復元すると、BlueXPはバックアップのデータを使用して_new_volumeを作成します。データは、同じ Kubernetes クラスタ内のボリューム、またはソースの Kubernetes クラスタと同じクラウドアカウントにある別の Kubernetes クラスタにリストアできます。</block>
-  <block id="9e51c0639d22c4c11b03e788221b4ec7" category="paragraph">開始する前に、リストアするボリュームの名前と、新規にリストアされたボリュームの作成に使用するバックアップファイルの日付を確認しておく必要があります。</block>
-  <block id="f7c8f83692a4eab213a0cf7d3c7c9133" category="list-text">[*Kubernetes *] タブをクリックすると、 [Kubernetes Dashboard] が表示されます。</block>
-  <block id="b7af34a4e3b220774dbc0e1ab60525ba" category="inline-image-macro">Kubernetes ダッシュボードのスクリーンショットで、バックアップ対象のすべての Kubernetes クラスタとボリュームのリストを示しています。</block>
-  <block id="f27dc7aa48ba95864dcbd7f9f3031d81" category="paragraph"><block ref="f27dc7aa48ba95864dcbd7f9f3031d81" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4839487d9ef803363d306e16866e5123" category="list-text">リストアするボリュームを選択し、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block>をクリックし、*詳細とバックアップリスト*をクリックします。</block>
-  <block id="530c317db5924ab0beef599328be3a8f" category="paragraph">そのボリュームのすべてのバックアップファイルと、ソースボリューム、デスティネーションの場所、およびバックアップの詳細が表示されます。</block>
-  <block id="94c0f1a02bc8bbc1ffc72208379e9cbb" category="inline-image-macro">1 つのソースボリュームで使用可能なすべてのバックアップのスクリーンショット。</block>
-  <block id="d19a6624c6d3013d9c1c387c1cca7812" category="paragraph"><block ref="d19a6624c6d3013d9c1c387c1cca7812" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="41ed1c773e4734a04537ac15afe456ba" category="list-text">日付 / タイムスタンプに基づいてリストアする特定のバックアップファイルを選択し、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block>をクリックし、次に * Restore * を実行します。</block>
-  <block id="d2c7593817a9530481299a2331058867" category="list-text">Select Destination_page で、ボリュームをリストアする _Kubernetes cluster_where を選択します。 _ Namespace _ 、 _ Storage Class_ 、および new_Persistent ボリューム name _ 。</block>
-  <block id="b60080c20a146d7e430f622fdf96d88e" category="inline-image-macro">永続ボリュームのリストア先に関する情報のスクリーンショット。</block>
-  <block id="b0a429e0b4e29ba8c4663344e7f975b7" category="paragraph"><block ref="b0a429e0b4e29ba8c4663344e7f975b7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="deebe20d8ec4d92056f6c34b725c7b9e" category="list-text">リストア * をクリックすると、 Kubernetes ダッシュボードに戻り、リストア処理の進捗状況を確認できます。</block>
-  <block id="7d91e132484d9507cb6d69fd88250e33" category="paragraph">BlueXPは、選択したバックアップに基づいて、Kubernetesクラスタに新しいボリュームを作成します。可能です <block ref="81f106b2aba35048d2bf0e6225895d07" category="inline-link-macro-rx"></block> 必要に応じて。</block>
   <block id="0ec24d208e5df8843f6524b944c450f6" category="summary">オンプレミスのONTAP からAWSにデータストアをバックアップできます。</block>
   <block id="1d5ad62b9217b4a3f085f517534f40bb" category="doc">データストアをAmazon Web Servicesにバックアップする</block>
   <block id="75f480f92315c62b407d8ae1ad890f29" category="paragraph">1つ以上のデータストアをAmazon Web Servicesにバックアップしてアーカイブすることで、ストレージ効率を高め、クラウドへの移行を促進できます。</block>
@@ -2694,61 +2602,8 @@ NetApp StorageGRID</block>
   <block id="095a532bc2c4eed2ec2c64b6008b497f" category="list-text">AWS Secret Keyフィールドで、データ暗号化のパスワードを指定します。</block>
   <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">アーカイブ層は1回限りのアクティビティであり、あとで設定することはできないため、設定することを推奨します。</block>
   <block id="c756b6b1ba6b752239a8d49eda5ad2a4" category="doc">BlueXPのバックアップとリカバリに関するドキュメント</block>
-  <block id="6bf80475cfcaeeaa5036e79e644302f5" category="summary">GKE Kubernetes クラスタ上の永続ボリュームから Google Cloud ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="9cb5c4f70a9ab55a2786587a76bd9009" category="doc">Kubernetes の永続ボリュームのデータを Google Cloud ストレージにバックアップする</block>
-  <block id="a2d56436fc6737079209e6c74380c5fb" category="list-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 前提条件を確認する</block>
-  <block id="d4f4c5ccc817cf84f5825246d829cabe" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。</block>
-  <block id="4dc2b6ffe2a8551a28338aad583b68af" category="list-text">Trident がクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以降である必要があります。</block>
-  <block id="02543ab70b7092fcd0b9252d0337c79a" category="list-text">バックアップする永続ボリュームの作成に使用されるすべての PVC で、「 snapshotPolicy 」が「 default 」に設定されている必要があります。</block>
-  <block id="f97ff4c8e3feb5c1c023b5056582794b" category="list-text">クラスタは、そのバックエンドストレージに GCP 上の Cloud Volumes ONTAP を使用している必要があります。</block>
-  <block id="19591c0673cc7e18e4bade20109403dd" category="list-text">Cloud Volumes ONTAP システムで ONTAP 9.7P5 以降が実行されている必要があります。</block>
-  <block id="5f067c743468abbb0d1c132bc57f2dd4" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 既存のKubernetesクラスタでBlueXPのバックアップとリカバリを有効にします</block>
-  <block id="15290d6f131f18fd0426a19c82dc1328" category="paragraph">作業環境を選択し、右パネルでバックアップ/リカバリサービスの横にある*有効化*をクリックして、セットアップ・ウィザードに従います。</block>
   <block id="afa3805a28538274aaae2473f6106629" category="inline-image-macro">作業環境を選択すると表示されるBlueXPのバックアップとリカバリの[有効化]ボタンのスクリーンショット。</block>
   <block id="a2271679a96260c288cd66073902da0e" category="paragraph"><block ref="a2271679a96260c288cd66073902da0e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e9aed7f72ad99049c1fe7cb8f8c14d97" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> バックアップポリシーを定義</block>
-  <block id="b3b50b4bf9a41f22a738c1d815497548" category="paragraph">デフォルトポリシーでは、毎日ボリュームがバックアップされ、各ボリュームの最新の 30 個のバックアップコピーが保持されます。毎時、毎日、毎週、または毎月のバックアップに変更するか、システム定義のポリシーの中からオプションを追加する 1 つを選択します。保持するバックアップコピーの数を変更することもできます。</block>
-  <block id="b24b5a98983ccdcc666e25e669bfe788" category="inline-image-macro">BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、バックアップスケジュールと保持期間を選択できます。</block>
-  <block id="fca3c4957d64cf60890e21812fc96491" category="paragraph"><block ref="fca3c4957d64cf60890e21812fc96491" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e101ae46f3bbeba331227038200d11a5" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> バックアップするボリュームを選択します</block>
-  <block id="916de09e13f9b94e688ab4e6175f2885" category="paragraph">Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。バックアップファイルは、 Cloud Volumes ONTAP システムと同じ GCP サブスクリプションとリージョンを使用して Google Cloud Storage バケットに格納されます。</block>
-  <block id="ef15478cabaf21c4a3c8477e93312cee" category="paragraph">Kubernetes の永続ボリュームを Google Cloud ストレージにバックアップする前に、次の要件を確認し、サポートされている構成であることを確認してください。</block>
-  <block id="e7abaddb0f4517d0be715be9b3734101" category="paragraph"><block ref="e7abaddb0f4517d0be715be9b3734101" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="efe4ad90c097b3e944ddb0e73553dce4" category="paragraph">プライベートエンドポイントはオプションです。</block>
-  <block id="722cdb9316b3fa8ce17714d9c3e2710c" category="list-text">Kubernetes クラスタの要件</block>
-  <block id="39a875b1e9ef9f5447dff029a4e31641" category="inline-link">Kubernetes クラスタの検出方法を参照してください</block>
-  <block id="a4208eced8af02553d8e5579f39b9b33" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="44c761dee3b53dae29ddd56ac5dddd4f" category="inline-link-rx"></block>。</block>
-  <block id="f39cf0371a8569a37618b2abf7fb11bd" category="inline-link">Trident のインストール方法</block>
-  <block id="68fe2e383aebea35afdffc7be08dfbdd" category="inline-link">Trident バージョンをアップグレードする方法</block>
-  <block id="dac5248f5cebf44974062c72a96f3814" category="list-text">Trident はクラスタにインストールされている必要があります。 Trident のバージョンは 21.1 以上である必要があります。を参照してください<block ref="c1b63d6997bc4d668191e151cb9b8092" category="inline-link-rx"></block> または<block ref="23a633d2f31911781b4c35e0d8f7c8b9" category="inline-link-rx"></block>。</block>
-  <block id="c3793afe37c8ef86193b630f9ff4e7b9" category="list-text">Cloud Volumes ONTAP システムはKubernetesクラスタと同じGCPリージョンに配置し、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。</block>
-  <block id="7e750612c420301512a8e94f7491def1" category="paragraph">オンプレミス環境の Kubernetes クラスタはサポートされていません。Cloud Volumes ONTAP システムを使用するクラウド環境では、 Kubernetes クラスタのみがサポートされます。</block>
-  <block id="17fc7550015fcf3581b1f6f07cc675a6" category="list-text">バックアップする永続ボリュームの作成に使用されるすべての Persistent Volume Claim オブジェクトで、「 snapshotPolicy 」が「 default 」に設定されている必要があります。</block>
-  <block id="4f5e2f4b7c2b9f766c6a0e6a47209826" category="paragraph">これは、を追加することによって、個 々 のPVCに対して行うことができます<block ref="0a236e7685e50a59df980d0a30929d6c" prefix=" " category="inline-code"></block> アノテーションの下：</block>
-  <block id="1dc4571cc4066dc7fc593e3ebc1c0596" category="paragraph">これは、特定のバックエンドストレージに関連付けられているすべてのPVCに対して実行できます<block ref="0a236e7685e50a59df980d0a30929d6c" prefix=" " category="inline-code"></block> フィールドのデフォルト値は、です<block ref="9c15d32711e9ef8c6f76deda35452e13" prefix=" " category="inline-code"></block> ファイル：</block>
-  <block id="7527dcedb498a9e111f7eb26b4f075a6" category="list-text">ライセンス要件</block>
-  <block id="12a896df7cf6cd5b5e5dcf4a46c0cebc" category="inline-link">GCPマーケットプレイス</block>
-  <block id="15535e291980746e2353acd6a4780f1c" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、を使用したサブスクリプションです<block ref="92655de6fae7d07ed3897ce19d51b88d" category="inline-link-rx"></block> は、BlueXPのバックアップとリカバリを有効にする前に必要です。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
-  <block id="c5c6fa9af350eaec4534adb8d69aca21" category="paragraph">BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
-  <block id="6915f674cf40aa424300174329d7645b" category="section-title">BlueXPのバックアップとリカバリを有効にする</block>
-  <block id="a87e646eef7b4c62c6f10238632178fc" category="paragraph">BlueXPのバックアップとリカバリは、Kubernetes作業環境からいつでも直接実行できます。</block>
-  <block id="49912178a2257abdcbca7d537c5669ea" category="list-text">作業環境を選択し、右パネルのバックアップ/リカバリサービスの横にある*有効化*をクリックします。</block>
-  <block id="506e60ff86ebf80d50e436f97c87f732" category="list-text">バックアップポリシーの詳細を入力し、 * Next * をクリックします。</block>
-  <block id="cb339a7e65724e22a8247ef1adb0fdd0" category="paragraph">バックアップスケジュールを定義して、保持するバックアップの数を選択できます。</block>
-  <block id="bdcfb39d9698b9bf1953d5efe44d1d43" category="inline-image-macro">BlueXPのバックアップとリカバリの設定を示すスクリーンショットで、スケジュールとバックアップの保持を選択できます。</block>
-  <block id="7ef4f9c84de50739290a8a747d41cb8d" category="paragraph"><block ref="7ef4f9c84de50739290a8a747d41cb8d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="306de5feec419d9490fc107fb34f6a00" category="list-text">バックアップする永続ボリュームを選択します。</block>
-  <block id="d87a3e208e2210f8107f397021993b8d" category="list-text">すべてのボリュームをバックアップするには、タイトル行（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
-  <block id="a1eb634b81be113bee0e21e6a20c118c" category="inline-image-macro">バックアップする永続ボリュームの選択のスクリーンショット。</block>
-  <block id="e89d53cec577b746e47f09500583b69a" category="paragraph"><block ref="e89d53cec577b746e47f09500583b69a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3fb6883a0a5a320f9907b96ada5ed98d" category="list-text">現在および将来のすべてのボリュームでバックアップを有効にする場合は、「今後のボリュームを自動的にバックアップします…一時保持」チェックボックスをオンのままにします。この設定を無効にした場合は、将来のボリュームのバックアップを手動で有効にする必要があります。</block>
-  <block id="0331809832826b1a244aca026a9b2d64" category="list-text">[バックアップをアクティブ化]*をクリックすると、選択した各ボリュームの初期バックアップの作成がBlueXPのバックアップとリカバリによって開始されます。</block>
-  <block id="672d5169919efa7cbd903c5d4f8738a2" category="paragraph">バックアップファイルは、 Cloud Volumes ONTAP システムと同じ GCP サブスクリプションとリージョンを使用して Google Cloud Storage バケットに格納されます。</block>
-  <block id="64473bedc40f6c977064e8725195f361" category="paragraph">Kubernetes ダッシュボードが表示され、バックアップの状態を監視できます。</block>
-  <block id="0ad648b845988c92aa984e9622fbd14b" category="inline-link-macro">ボリュームのバックアップを開始および停止したり、バックアップを変更したりできます スケジュール</block>
-  <block id="c1517582a429538e0dd5adc774e4d5a5" category="inline-link-macro">バックアップファイルからボリューム全体をリストアする</block>
-  <block id="687ea0908739e5e54201ce20b273affd" category="paragraph">可能です <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。
-また可能です <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> GCP 内の同じ Kubernetes クラスタまたは別の Kubernetes クラスタ（同じリージョン内）上の新しいボリュームです。</block>
   <block id="90262b49b516aea0770d54c5389860ab" category="list-text">「年次」スナップショットをソースシステムから削除するかどうかを変更します</block>
   <block id="0b1dbe1ca2e686301ad63250cc03207d" category="section-title">クラスタレベルのバックアップの設定を表示します</block>
   <block id="ed0a9603eb52469e5089b682941c8579" category="paragraph">それぞれの作業環境について、クラスタレベルのバックアップ設定を確認することができます。</block>
@@ -3077,85 +2932,6 @@ NetApp StorageGRID</block>
 <block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
 <block ref="ab2445e139747cf732d46d877cc62a64" category="inline-link-rx"></block>
 <block ref="9c225a8772c7b3c40b62701739b123cf" category="inline-link-rx"></block></block>
-  <block id="1a006728799e11c8bf2ea45db7259826" category="summary">Kubernetes システムのバックアップは、バックアップスケジュールの変更、ボリュームのバックアップの有効化 / 無効化、バックアップの削除などによって管理できます。</block>
-  <block id="d9d975cbc0da4e37b5b7d60e338ad9df" category="doc">Kubernetes システムのバックアップの管理</block>
-  <block id="ac90263e404aa8dd4e258ec3b2975718" category="admonition">バックアップファイルをクラウドプロバイダ環境から直接管理したり変更したりしないでください。ファイルが破損し、サポートされていない構成になる可能性があります。</block>
-  <block id="c727171c72af7df4510010076d3f4a4d" category="section-title">バックアップしているボリュームを表示します</block>
-  <block id="32af6cda127186cbeba5ef50a94b558f" category="paragraph">BlueXPのバックアップとリカバリで現在バックアップされているすべてのボリュームのリストを表示できます。</block>
-  <block id="f0ab8f9188e480be35faa3f7a2514a8b" category="list-text">Kubernetes システムの永続ボリュームのリストを表示するには、 * Kubernetes * タブをクリックします。</block>
-  <block id="3aae0000d94bd57f0c950ff30a179de4" category="paragraph"><block ref="3aae0000d94bd57f0c950ff30a179de4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f53acd42cafa9ffd85119f579f947919" category="paragraph">特定のクラスタの特定のボリュームを検索する場合は、クラスタおよびボリュームに基づいてリストを絞り込むか、検索フィルタを使用できます。</block>
-  <block id="9ca89f775b6f7d88132d44fae69c705c" category="section-title">ボリュームのバックアップの有効化と無効化</block>
-  <block id="8da82d73bd7d63ccd8ed491932ec4f8f" category="paragraph">ボリュームのバックアップコピーが不要で、バックアップの格納コストを抑える必要がない場合は、ボリュームのバックアップを停止できます。新しいボリュームがバックアップ中でない場合は、バックアップリストに追加することもできます。</block>
-  <block id="c0623fe63fcf79277cd81628e75c5bd7" category="list-text">[*Kubernetes *] タブで、 [* バックアップ設定 * ] を選択します。</block>
-  <block id="18b34ebf5042da0c5320c1b1148cd8d4" category="paragraph"><block ref="18b34ebf5042da0c5320c1b1148cd8d4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b1f8a1f93af0a13c4859f88d0991cd9d" category="list-text">_ バックアップ設定ページ _ で、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> Kubernetesクラスタで、* Manage Persistent Volumes *を選択します。</block>
-  <block id="c916a97a0b13c55b8ea0dd494ec85b92" category="inline-image-macro">[バックアップ設定]ページの[永続ボリュームの管理]ボタンを示すスクリーンショット。</block>
-  <block id="41f9aa314eb0473aa273dfc35c1c8d0f" category="paragraph"><block ref="41f9aa314eb0473aa273dfc35c1c8d0f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f3f9bf3f7291a5ed0552bbb7de61f88d" category="list-text">変更するボリュームのチェックボックスを選択し、ボリュームのバックアップを開始するか停止するかに応じて、 [Activate * （アクティブ化 * ） ] または [* Deactivate * （非アクティブ化 * ） ] をクリックします。</block>
-  <block id="8e074e924c73e9c00480607c80481d60" category="inline-image-macro">ボリュームの管理ページでは、ボリュームを選択または選択解除できます。</block>
-  <block id="497968cf7f565b72a034d69215ab9754" category="paragraph"><block ref="497968cf7f565b72a034d69215ab9754" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c7a220fc58ccea879a68f706ca98ac0c" category="list-text">[ 保存（ Save ） ] をクリックして、変更をコミットします。</block>
-  <block id="275b9b785d71f45bb8f134005ece056a" category="paragraph">*注：*ボリュームのバックアップを停止した場合、バックアップが使用する容量のオブジェクトストレージのコストは引き続きクラウドプロバイダに課金されます <block ref="e2e48247dd6dcee2daca407937463dc9" category="inline-xref-macro-rx"></block>。</block>
-  <block id="370b82ce2e3ba80cd6ec552891697236" category="section-title">既存のバックアップポリシーを編集する</block>
-  <block id="c1c11398c43b17a4b4b5aec0ebc127fd" category="paragraph"><block ref="c1c11398c43b17a4b4b5aec0ebc127fd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="262877b0306497525d0e366df4d2474e" category="list-text">[Backup Settings_] ページで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 設定を変更する作業環境で、 [ * ポリシーの管理 * ] を選択します。</block>
-  <block id="3ad00689ff442496b4f3e808374bf8f1" category="paragraph"><block ref="3ad00689ff442496b4f3e808374bf8f1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="efeb40b26ff74b3c83e036fb275a2f83" category="list-text">[ ポリシーの管理 ] ページで、作業環境で変更するバックアップポリシーの [ ポリシーの編集 ] をクリックします。</block>
-  <block id="569b2af8f1329fa7cf54d0aebd92e0ff" category="paragraph"><block ref="569b2af8f1329fa7cf54d0aebd92e0ff" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3e61b62f0171bcabe03877de4863391d" category="list-text">[ ポリシーの編集 ] ページで、スケジュールとバックアップの保持を変更し、 [ 保存 ] をクリックします。</block>
-  <block id="0c9dff3add1f9fae4f849681d81cd5f4" category="paragraph"><block ref="0c9dff3add1f9fae4f849681d81cd5f4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ba8ccbfb49367bf7bb51cf013e8b6c51" category="section-title">新しいボリュームに割り当てるバックアップポリシーの設定</block>
-  <block id="5ad8317affe241712710257a19515f6a" category="paragraph">KubernetesクラスタでBlueXPのバックアップとリカバリを初めてアクティブ化したときに、新しく作成したボリュームにバックアップポリシーを自動的に割り当てるオプションを選択しなかった場合は、あとで_Backup Settings_pageでこのオプションを選択できます。新しく作成したボリュームにバックアップポリシーを割り当てると、すべてのデータを確実に保護できます。</block>
-  <block id="46fb0ddeabbcb2b9784add28928cfe7a" category="paragraph">ボリュームに適用するポリシーがすでに存在している必要があります。</block>
-  <block id="dea20afb5b2be9f8aa54b7e45d98e7f9" category="paragraph">また、新しく作成したボリュームが自動的にバックアップされないようにするには、この設定を無効にします。その場合は、後でバックアップする特定のボリュームのバックアップを手動で有効にする必要があります。</block>
-  <block id="1c161354c6da9cce8d6d66c83e6117e3" category="inline-image-macro">Kubernetesクラスタを選択したあとに使用可能なバックアップ設定ボタンを示すスクリーンショット。</block>
-  <block id="81362333b4667057105418e2c797fb4d" category="paragraph"><block ref="81362333b4667057105418e2c797fb4d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d611fbcee8116241337f06ec4995ff9c" category="list-text">_ バックアップ設定ページ _ で、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> ボリュームが存在するKubernetesクラスタで、* Auto Backup New Volumes *を選択します。</block>
-  <block id="0df9e5badb79d5d28ed3c82762cc6d09" category="inline-image-macro">[バックアップ設定]ページで[新しいボリュームの自動バックアップ]オプションを選択したスクリーンショット。</block>
-  <block id="949b473773535ea19f7817cd4c272bc1" category="paragraph"><block ref="949b473773535ea19f7817cd4c272bc1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f3e4b6c3b2f014829f853146224b7663" category="list-text">[今後の永続ボリュームを自動的にバックアップする...]チェックボックスをオンにし、新しいボリュームに適用するバックアップポリシーを選択して、[保存]をクリックします。</block>
-  <block id="014386141b63dc0c43377cb37936b250" category="inline-image-macro">Kubernetesクラスタ上の今後すべてのボリュームに割り当てるバックアップポリシーの選択方法を示すスクリーンショット</block>
-  <block id="891b6416962c7710069b6bd6d9d86a07" category="paragraph"><block ref="891b6416962c7710069b6bd6d9d86a07" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3877a9846e783c8af0a4e454f688cc19" category="paragraph">このバックアップポリシーは、このKubernetesクラスタで作成されるすべての新しいボリュームに適用されます。</block>
-  <block id="27351098af334d7abafb46d4967b074d" category="section-title">各ボリュームのバックアップリストを表示します</block>
-  <block id="1fdfb3383ed1d7c609308bb6c6a7f806" category="paragraph">このページでは、次のタスクも実行できます。</block>
-  <block id="fc356b64c0d53ea5b432b24f76ca4a9c" category="list-text">ボリュームのすべてのバックアップファイルを削除します</block>
-  <block id="4d45abbfe708caa773c2c4b48e3d20f4" category="list-text">ボリュームの個々のバックアップファイルを削除する</block>
-  <block id="d61c8b520e74a4f2dd852f8b3808597f" category="list-text">ボリュームのバックアップレポートをダウンロードします</block>
-  <block id="a31e819f81a93a6405d44fed462a2751" category="list-text">[*Kubernetes *] タブで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> をソースボリュームとして選択し、 * Details &amp; Backup List * を選択します。</block>
-  <block id="f5eb3eb2a1b4f33d237d1c47fab57b63" category="inline-image-macro">1つのボリュームで使用できる[Details &amp; Backup List]ボタンを示すスクリーンショット。</block>
-  <block id="9c3d211479947fe5a4243acecfe00203" category="paragraph"><block ref="de207573efa181ef2924818974bfa495" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="84eac2d3d50278311efb3d6bb37f4984" category="paragraph">すべてのバックアップファイルのリストが、ソースボリューム、デスティネーションの場所、およびバックアップの詳細とともに表示されます。</block>
-  <block id="e25a9f6fb169550c2eb662453971516f" category="paragraph"><block ref="e25a9f6fb169550c2eb662453971516f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="27966c807d6bf6667ade7b1d6b710a1d" category="section-title">バックアップを削除する</block>
-  <block id="9c79e4332bcfe48e0f080b72ba41edda" category="paragraph">BlueXPのバックアップとリカバリでは、単一のバックアップファイルを削除したり、ボリュームのすべてのバックアップを削除したり、Kubernetesクラスタ内のすべてのボリュームのすべてのバックアップを削除したりできます。すべてのバックアップを削除するのは、不要になった場合やソースボリュームを削除したあとにすべてのバックアップを削除する場合などです。</block>
-  <block id="d59a13b57c5e2706923c61e62bee2e46" category="admonition">バックアップがある作業環境またはクラスタを削除する場合は、システムを削除する前に * バックアップを削除する必要があります。システムを削除しても、BlueXPのバックアップとリカバリでバックアップが自動的に削除されることはなく、システムの削除後にバックアップを削除する機能は現在UIでサポートされていません。残りのバックアップについては、引き続きオブジェクトストレージのコストが発生します。</block>
-  <block id="d0ad55175c44685f6aa4cd374ac1bff7" category="section-title">作業環境のすべてのバックアップファイルを削除する</block>
-  <block id="9deb468544543a3419cb99ce41c296f1" category="paragraph">作業環境のすべてのバックアップを削除しても、この作業環境のボリュームの以降のバックアップは無効になりません。作業環境ですべてのボリュームのバックアップの作成を停止するには、バックアップを非アクティブ化します <block ref="ce1fd88f94c2377048d288b01d10506e" category="inline-xref-macro-rx"></block>。</block>
-  <block id="5359ff75b6995e199397935a4e5bb69f" category="list-text">をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> すべてのバックアップを削除する Kubernetes クラスタで、 * すべてのバックアップを削除 * を選択します。</block>
-  <block id="749877571899cdb524c800a67b079f94" category="paragraph"><block ref="749877571899cdb524c800a67b079f94" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3fadeb8e4179314dfc4b298dbce33425" category="section-title">ボリュームのすべてのバックアップファイルを削除する</block>
-  <block id="a8ba6304562632a6eb4762aebfe0d175" category="paragraph">ボリュームのすべてのバックアップを削除すると、そのボリュームの以降のバックアップも無効になります。</block>
-  <block id="56f92efb533e616de6001a66d8aeb084" category="inline-xref">ボリュームのバックアップの作成を再開します</block>
-  <block id="d2ad1da6ad2f6901b037159165028912" category="paragraph">可能です <block ref="14977a695b05dfa7b0cad6887e2a74bd" category="inline-xref-macro-rx"></block> ［ Manage Backups （バックアップの管理） ］ ページからいつでもアクセスできます。</block>
-  <block id="782b223a2a5766a12495d35a0f0fc4a1" category="paragraph">すべてのバックアップファイルのリストが表示されます。</block>
-  <block id="671a8ec3b0e0be16a18e3cabd94db9f4" category="paragraph"><block ref="671a8ec3b0e0be16a18e3cabd94db9f4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="38d78b4223b3120827e7a57816380ce8" category="list-text">[ * アクション * &gt; * すべてのバックアップを削除 * ] をクリックします。</block>
-  <block id="e815c39be987e9a4b5a9a0c186d3fc56" category="inline-image-macro">ボリュームのすべてのバックアップファイルを削除する方法を示すスクリーンショット。</block>
-  <block id="59eec54d4e906684cedbb6b2ace16fad" category="paragraph"><block ref="59eec54d4e906684cedbb6b2ace16fad" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a40a15299d34998d96861a0913b53dd3" category="list-text">確認ダイアログボックスで、ボリューム名を入力し、 * 削除 * をクリックします。</block>
-  <block id="ddea11cff6fa01bc8e628f8e9f2d9a06" category="section-title">ボリュームの単一のバックアップファイルを削除する</block>
-  <block id="bc8811beeb7d95772df193fb41703264" category="paragraph">バックアップファイルは 1 つだけ削除できます。この機能は、 ONTAP 9.8 以降のシステムでボリューム・バックアップを作成した場合にのみ使用できます。</block>
-  <block id="dc07ffce14bb56b632ef6edf19e63c6a" category="list-text">をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 削除するボリュームバックアップファイルに対して、 * 削除 * をクリックします。</block>
-  <block id="26e2f9552c31cf93eeea870fca67be87" category="paragraph"><block ref="26e2f9552c31cf93eeea870fca67be87" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="51b8fa30afd3cba0c43cc578588792fd" category="section-title">作業環境でのBlueXPのバックアップとリカバリの無効化</block>
-  <block id="268d802389e270ab5e24c75f3d0e2c74" category="paragraph">作業環境でBlueXPのバックアップとリカバリを無効にすると、システム上の各ボリュームのバックアップが無効になり、またボリュームをリストアする機能も無効になります。既存のバックアップは削除されません。この作業環境からバックアップ・サービスの登録を解除することはありません。基本的には、すべてのバックアップおよびリストア処理を一定期間停止できます。</block>
-  <block id="003cdf45d813a5ff455583d4774780c6" category="list-text">_ バックアップ設定ページ _ で、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> バックアップを無効にする作業環境または Kubernetes クラスタで、 * バックアップを非アクティブ化 * を選択します。</block>
-  <block id="28b1e5b15add5c8ab1001a76115ac105" category="paragraph"><block ref="28b1e5b15add5c8ab1001a76115ac105" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="85bb57d16d278aef3a547cf5cc9bfeb0" category="section-title">作業環境のBlueXPバックアップおよびリカバリの登録を解除します</block>
-  <block id="da8d73509c0c2153651e6a7ca8760c5b" category="paragraph">バックアップ機能の使用が不要になり、作業環境でのバックアップに対する課金を停止する場合は、作業環境のBlueXPバックアップ/リカバリの登録を解除できます。通常、この機能は、 Kubernetes クラスタを削除する予定でバックアップサービスをキャンセルする場合に使用します。</block>
-  <block id="d7ef8273ae288cb0855a1cb9a0487d3e" category="list-text">_ バックアップ設定ページ _ で、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> バックアップサービスの登録を解除する Kubernetes クラスタで、 * 登録解除 * を選択します。</block>
   <block id="cb5dba0d5921ec827475517cb727a7bf" category="summary">BlueXPのバックアップとリカバリサービスは、ONTAPボリュームデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。3-2-1戦略では、ソースデータのコピーを2つの異なるストレージシステムに3つ、クラウドに1つ保持できます。</block>
   <block id="bc39ba232ce3e420cfc81091a144f3e0" category="doc">BlueXPのバックアップとリカバリを使用してONTAPボリュームのデータを保護します</block>
   <block id="80281310e7f1753680348f039d61ece0" category="paragraph">アクティブ化後、バックアップとリカバリによってブロックレベルの永久増分バックアップが作成され、別のONTAPクラスタとクラウド内のオブジェクトストレージに格納されます。ソースボリュームに加えて、次の機能があります。</block>
@@ -3307,28 +3083,6 @@ ONTAP S3の略</block>
   <block id="3b4f7847e0c80a6665d11cb27ec353f5" category="list-text">2 回目以降のバックアップは増分バックアップとなるため、影響はありません。</block>
   <block id="418dfdb508c036c09d2c850937665491" category="list-text">ボリュームの作成時に階層化ポリシーが割り当てられていた場合、この問題は表示されません。</block>
   <block id="07a8b64a61304fc06f0c8447c2981919" category="list-text">を割り当てる前に、バックアップによる影響を考慮してください<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block> ボリュームへの階層化ポリシー。データはすぐに階層化されるため、BlueXPのバックアップとリカバリでは、ローカル階層ではなくクラウド階層からデータが読み取られます。バックアップの同時処理は、クラウドオブジェクトストレージへのネットワークリンクを共有するため、ネットワークリソースが最大限まで使用されなくなった場合にパフォーマンスが低下する可能性があります。この場合、複数のネットワークインターフェイス（ LIF ）をプロアクティブに設定して、この種類のネットワークの飽和を軽減することができます。</block>
-  <block id="a9719b40ac1cc40ef3fda03d4222bfe1" category="summary">EKS Kubernetes クラスタ上の永続ボリュームから Amazon S3 ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="3b6e95e672031eae644a9bc637b96e34" category="doc">Kubernetes の永続ボリュームのデータを Amazon S3 にバックアップします</block>
-  <block id="e3cbbf46a38a7810b06b73af7fc91cf1" category="list-text">クラスタのバックエンドストレージに AWS で Cloud Volumes ONTAP が使用されている必要があります。</block>
-  <block id="4959ab34e6f20ad5ca2abb7f8cd1121a" category="list-text">BlueXP Connectorに権限を付与するIAMロールには、最新のからのS3権限が含まれています<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>。</block>
-  <block id="810ff1f59b608a3fc8af53aa3c03422d" category="paragraph"><block ref="810ff1f59b608a3fc8af53aa3c03422d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6da925233b9932574b8fe9e01984bc5b" category="paragraph">Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。S3 バケットは、 Cloud Volumes ONTAP システムと同じ AWS アカウントおよびリージョンに自動的に作成され、バックアップファイルが格納されます。</block>
-  <block id="afcc40ad784e1e6906127f77c09356b1" category="paragraph">Kubernetes の永続ボリュームを S3 にバックアップする前に、次の要件を読み、サポートされている構成になっていることを確認してください。</block>
-  <block id="7411cd39afe6df9a82e44e18423ac4fe" category="paragraph"><block ref="7411cd39afe6df9a82e44e18423ac4fe" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d160dbae93e3bd1b19adc45c1a288b6a" category="paragraph">VPC エンドポイントはオプションです。</block>
-  <block id="4ea687180e3b5ed4365ac5795d915faf" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="7a47df0de69aaae590cb7a4afe438e24" category="inline-link-rx"></block>。</block>
-  <block id="cb064ad5855a7d173c8bf2a8df10527c" category="list-text">Cloud Volumes ONTAP システムはKubernetesクラスタと同じAWSリージョンに配置する必要があり、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。</block>
-  <block id="7c36992346a7985f1357ea11d9bee4ed" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスの場合は、AWS Marketplaceでサブスクリプションを購入してCloud Volumes ONTAP とBlueXPのバックアップとリカバリを導入できます。必要です<block ref="9296c8c8fbdfd99d4e3518357794ba73" category="inline-link-rx"></block> BlueXPのバックアップとリカバリを有効にする前に、BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
-  <block id="bd416abf433c7b177026beb68bf7befe" category="paragraph">Cloud Volumes ONTAP データとオンプレミスの ONTAP データの両方をバックアップできる年間契約の場合は、から登録する必要があります<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> 次に<block ref="630dd2aae912349621adf70336b8d324" category="inline-link-rx"></block>。</block>
-  <block id="48dbfaa34a943b8e7eec563cecc421fa" category="list-text">BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
-  <block id="1b132f8325705f3dc0afb743012c7e89" category="list-text">AWS Backup 権限が必要です</block>
-  <block id="ddb2145ba96507afdc3bec7ae412c714" category="list-text">BlueXPに権限を付与するIAMロールには、最新ののS3権限が含まれている必要があります<block ref="ff3f0e305ab9e473aa2748fcb96c0189" category="inline-link-rx"></block>。</block>
-  <block id="bf882df1c9cc332899e615e1a7a670e7" category="paragraph">次に、このポリシーの特定の S3 権限を示します。</block>
-  <block id="1febcfde465ce9cfbf21c08aa17b6a2b" category="paragraph">バックアップのAmazon S3デスティネーションがCanvas上の作業環境として存在する場合は、KubernetesクラスタをAmazon S3作業環境にドラッグしてセットアップウィザードを開始できます。</block>
-  <block id="b0596f424c9b8f319e89883a3a7d2158" category="paragraph"><block ref="b0596f424c9b8f319e89883a3a7d2158" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="75ccf6489a928d9483390a3aff8508e4" category="paragraph">S3 バケットは、 Cloud Volumes ONTAP システムと同じ AWS アカウントおよびリージョンに自動的に作成され、バックアップファイルが格納されます。</block>
-  <block id="314873f7f9cbbfc51c38cb71e24aeb24" category="paragraph">可能です <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。
-また可能です <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> AWS の同じまたは別の Kubernetes クラスタ（同じリージョン内）上の新しいボリュームとして。</block>
   <block id="0ad47815ac126d3e59945dd94620559b" category="summary">インターネットにアクセスできないサイト（「プライベートモード」）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。</block>
   <block id="5e8c098d325749413b23d5eba5837aad" category="doc">ダークサイトでBlueXPのバックアップとリカバリのデータをリストア</block>
   <block id="39be554c0f9c606fc89e879c11dfe9e9" category="paragraph">BlueXPのバックアップとリカバリをクラウドプロバイダやインターネットにアクセスできる独自のホストシステムに導入されているSaaS環境で使用する場合は、BlueXPのバックアップとリカバリの重要な設定データがすべてクラウドにバックアップされて保護されます。コネクタ付きの問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的にリストアされます。</block>
@@ -3406,22 +3160,10 @@ ONTAP S3の略</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">リストアするバックアップに対応する* Restore *をクリックします。</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> リストアする仮想マシンに対応して、*リストア*をクリックします。</block>
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">仮想マシンのリストアに使用するバックアップを選択します。</block>
-  <block id="b56d3b8789da77177b36c40271c2f56a" category="summary">AKS Kubernetes クラスタ上の永続ボリュームから Azure BLOB ストレージへのデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="0ac13b02a6ba476a62c040dff30366e9" category="doc">Kubernetes の永続ボリュームのデータを Azure BLOB ストレージにバックアップする</block>
-  <block id="161bfedea918a2206e107c928981572c" category="list-text">クラスタのバックエンドストレージに Azure 上の Cloud Volumes ONTAP が使用されている必要があります。</block>
   <block id="091c3b75fcc63b578a3277a3c06221b8" category="list-text">に登録しておきます<block ref="b82eb11d49725bb5c7ee9cfd96e7991d" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="a7c7886675f758752089ea0caddfb19c" category="inline-link-macro-rx"></block> ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス</block>
-  <block id="fc1884cf63980b9b5ae00209f05a3be3" category="paragraph">Select Volumes （ボリュームの選択）ページで、バックアップするボリュームを特定します。バックアップファイルは、 Cloud Volumes ONTAP システムと同じ Azure サブスクリプションとリージョンを使用して BLOB コンテナに格納されます。</block>
-  <block id="065e936a81a03d8084991529f2ecb28e" category="paragraph">Kubernetes 永続ボリュームを BLOB ストレージにバックアップする前に、次の要件を読み、サポートされている構成であることを確認してください。</block>
-  <block id="2e296c588565e76c03b76150123be87b" category="paragraph"><block ref="2e296c588565e76c03b76150123be87b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="190883b84e441e0bd227971c892ce575" category="list-text">KubernetesクラスタがBlueXP作業環境として検出されました。<block ref="7327129ba68875466d1d1f22b67d23f4" category="inline-link-rx"></block>。</block>
-  <block id="3bc0e9b1baf3af2c3c4d977a88c7633d" category="list-text">Cloud Volumes ONTAP システムはKubernetesクラスタと同じAzureリージョンに配置する必要があり、ONTAP 9.7P5以降を実行している必要があります（ONTAP 9.8P11以降を推奨）。</block>
   <block id="9748f351c4d16d0c4d18b2ae55b47a99" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="c9aff78f9846421ce008e556f4151f92" category="inline-link-rx"></block>。</block>
   <block id="bdaf195e79571aa760a337bc03bd82b0" category="paragraph">また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。</block>
   <block id="455aadf3bd22f71973763b3cdc7db550" category="list-text">サポートされている Azure リージョン</block>
-  <block id="8cb55f46ef474f5ba921cfab3f13a0f9" category="list-text">BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
-  <block id="5cf322cefc810d29bf6edaec8079e4f8" category="paragraph">バックアップファイルは、 Cloud Volumes ONTAP システムと同じ Azure サブスクリプションとリージョンを使用して BLOB コンテナに格納されます。</block>
-  <block id="89ce585822673d5d7686dea8a0c5e90d" category="paragraph">可能です <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。
-また可能です <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> Azure 内の同じまたは別の Kubernetes クラスタ（同じリージョン内）に新しいボリュームとして配置する必要があります。</block>
   <block id="864720dc2dde0915fefa08788be26fb4" category="paragraph">BlueXPのバックアップ/リカバリレポートを使用すると、組織で定義されたポリシーに従って重要なデータを確実に保護し、コンプライアンスニーズを監査できます。</block>
   <block id="3763c7668e8aeb422b9407d01d4e6481" category="paragraph">BlueXPのバックアップとリカバリレポートを使用すると、次のことを実現できます。</block>
   <block id="1f9ab6f8211cd0f71cb927f72e9fb635" category="list-text">*運用の可視性*:データ保護、バックアップ成功率、およびバックアップウィンドウとビジネスニーズとの整合性に関するサービスレベルアグリーメントを監視します。</block>
@@ -3431,7 +3173,6 @@ ONTAP S3の略</block>
   <block id="b9388c240794b8c3c4269e032a040c26" category="section-title">レポートの範囲</block>
   <block id="d4e9fdb94405dbff49a3feb26599c37d" category="paragraph">BlueXPのバックアップとリカバリのレポートには、次の情報が表示されます。</block>
   <block id="3836890870b8ddc941f0e578f70711aa" category="list-text">*コネクタの場所*：オンプレミスまたはクラウド</block>
-  <block id="4dfad254c5822c7c53407757d42fec0e" category="list-text">*ソース*：Cloud Volumes ONTAPボリューム、オンプレミスのONTAPボリューム、アプリケーション、Kubernetes永続ボリューム</block>
   <block id="dd4543716a6056c2ae27a8132114fdf7" category="list-text">*デスティネーション*：任意のクラウドプロバイダ、NetApp StorageGRID、ONTAP S3</block>
   <block id="e692b7fe3cb28b404bc6ca3af827d329" category="list-text">* ONTAPバージョン*：9.13.0</block>
   <block id="cb43048793076d3b50ea5dc6ba1e276c" category="section-title">バックアップインベントリレポートを作成します</block>
@@ -3455,7 +3196,6 @@ ONTAP S3の略</block>
   <block id="9c45376ca047b231750db710316d88f1" category="list-text">（オプション）*[Download CSV]*を選択して、レポートの内容を.csv形式でエクスポートします。</block>
   <block id="a28d17eeb154e6438fb5bb2ee152ad16" category="section-title">Data Protection Job Activityレポートを作成します</block>
   <block id="d1a5e05b6fa32d7e732631d7be6bb196" category="paragraph">プロアクティブな監視により、エコシステム内のすべてのリソースの監視に必要な労力を軽減できます。ONTAP 9.13.0以降では、Snapshot、バックアップ、クローニング、リストアの各処理に関する情報がデータ保護ジョブアクティビティレポートに表示されるようになりました。この情報は、SLAを監視したり、バックアップとリカバリの速度を追跡したりする際に使用できます。</block>
-  <block id="dae5b12aa472c177c1e2583718010f3e" category="paragraph">レポート『環境BlueXP Backup and Recovery Operations for Cloud Volumes ONTAP、オンプレミス、アプリケーション、Kubernetes data』</block>
   <block id="a85e760999107df75174b2541f8ad4e5" category="paragraph">Data Protection Job Activityレポートには、次の情報などが表示されます。</block>
   <block id="63a675511a9f5c9715e777ac4620c78c" category="list-text">ジョブ・タイプ（バックアップまたはリストア）</block>
   <block id="82cf382f9069c5ed2ac1e0548f6d3d23" category="list-text">リソース名（ボリュームまたはアプリケーション）</block>
@@ -3468,7 +3208,6 @@ ONTAP S3の略</block>
   <block id="51592292613d18b00665bf8dafc7b3fc" category="list-text">ONTAPボリュームのバックアップジョブとリストアジョブの数</block>
   <block id="d83a881b3706cd9ae49054eabbc7dce2" category="list-text">アプリケーションのバックアップジョブとリストアジョブの数</block>
   <block id="3add170b591596e1f5c3e21fe9e57baa" category="list-text">仮想マシンのバックアップジョブとリストアジョブの数</block>
-  <block id="92a452f673c02a374b7cc5cf0a868c6a" category="list-text">Kubernetesのバックアップジョブとリストアジョブの数</block>
   <block id="07536cd20b01777dd415a36c226a1f4a" category="list-text">毎日のジョブアクティビティ</block>
   <block id="a0a7952e2e9dc6eba09660f59b4d73a2" category="list-text">[データ保護ジョブアクティビティ]*を選択します。</block>
   <block id="c8b12aebf67be0b5d9913d39f23e9c8a" category="list-text">（オプション）ジョブステータス、ジョブタイプ（バックアップまたはリストア）、およびリソースで結果をフィルタリングします。</block>
@@ -3637,13 +3376,6 @@ ONTAP S3の略</block>
   <block id="d1444f985888131065bf58d488e5a34f" category="sidebar">オンプレミスアプリケーションのデータをリストア</block>
   <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">仮想マシンのデータのバックアップとリストア</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">仮想マシンのデータをリストアします</block>
-  <block id="702d7e374825b419a7f093f9bbc1462f" category="sidebar">Kubernetes データのバックアップとリストア</block>
-  <block id="03cd7edbcf35d1e551d967affc4db763" category="sidebar">Kubernetes のデータを保護</block>
-  <block id="99a23b0161b640f1b97ea3af13d03c00" category="sidebar">Amazon S3 にバックアップします</block>
-  <block id="bbfae0fee0edb262f9192397663e2daf" category="sidebar">Azure Blob にバックアップ</block>
-  <block id="adaaf019398836f6a1361e1e363a6562" category="sidebar">Google Cloud にバックアップ</block>
-  <block id="0db08849969b0dfb5d043b27de16d4d9" category="sidebar">Kubernetes のバックアップを管理</block>
-  <block id="17e5b396f3c069ca62608e4b9e3c1767" category="sidebar">Kubernetes バックアップからリストア</block>
   <block id="68b1e52936c426875b2780e91e195546" category="sidebar">REST API で自動化</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">参照</block>
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">サポート対象の AWS アーカイブストレージ階層</block>
@@ -3749,7 +3481,6 @@ ONTAP S3の略</block>
   <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024年2月1日</block>
   <block id="a409179aac0b12213b3fa77e0a22bd61" category="list-text">代替保存場所への仮想マシンのリストアのサポート</block>
   <block id="9c75b0f26dddf07ed827e32aaf28bee9" category="list-text">データストアの保護解除のサポート</block>
-  <block id="196996ba80340493c0f9064d3dd14aa5" category="summary">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPデータ、Kubernetesの永続ボリューム、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
   <block id="2d67cd05b64a3416bc8bae12b4ef5685" category="section-title">2024年3月12日</block>
   <block id="e713d6072685bf32f36150e9f76ce0c1" category="section-title">クラウドバックアップからオンプレミスのONTAPボリュームへの「迅速なリストア」が可能</block>
   <block id="5a9ee632cba573d0f7355f7d12d908ca" category="paragraph">クラウドストレージからオンプレミスのONTAPデスティネーションボリュームへのボリュームの_クイックリストア_を実行できるようになりました。以前は、Cloud Volumes ONTAPシステムにのみクイックリストアを実行できました。迅速なリストアは、ボリュームへのアクセスをできるだけ早く提供する必要があるディザスタリカバリ環境に最適です。迅速なリストアは、フルボリュームリストアよりもはるかに高速です。クラウドSnapshotからONTAPデスティネーションボリュームにメタデータをリストアします。ソースは、AWS S3、Azure Blob、Google Cloud Services、NetApp StorageGRIDのいずれかです。</block>
@@ -3880,7 +3611,6 @@ ifdef：aws []</block>
   <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">クラウドへの新しいバックアップポリシーを追加する</block>
   <block id="6c08aad63d31acac8bc5248c2bfd34f2" category="paragraph">クラスタがONTAP 9.11.1以降を使用している場合は、_DataLockとランサムウェアによる攻撃からバックアップを保護するように設定できます。_DataLock_バックアップファイルが変更または削除されないように保護し、_Ransomware Protection_バックアップファイルをスキャンしてバックアップファイル内のランサムウェア攻撃の証拠を探します。</block>
   <block id="427911e9853111f28c07f559c3b84c6a" category="paragraph">インターネットアクセスのないサイト（_プライベートモード_）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。</block>
-  <block id="32c221fc8d86ea3baab547e849f9a06f" category="sidebar">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
   <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">データ保護の適用範囲に関するレポートを作成</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">ONTAP データをクラウドにバックアップ</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">ONTAP バックアップファイルを管理します</block>
@@ -3894,11 +3624,6 @@ ifdef：aws []</block>
   <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">ONTAP ボリュームのデータをリストアします</block>
   <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">オンプレミスのOracleアプリケーションデータをリストア</block>
   <block id="6002846df6663ea571e55d74bd085335" category="sidebar">オンプレミスのSQL Serverアプリケーションデータをリストア</block>
-  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Kubernetesボリュームデータをリストア</block>
-  <block id="4001622cdabc59603efa5eed8e44df9e" category="sidebar">Kubernetes のデータをクラウドにバックアップ</block>
-  <block id="a856f192005c2a27d642572c6eabcaf3" category="sidebar">KubernetesクラスタをAmazon S3にバックアップ</block>
-  <block id="d8aa0af6f24f3e5cbb56b502233a7241" category="sidebar">KubernetesクラスタをAzure Blobにバックアップ</block>
-  <block id="f91d920c6ff7bb789d8210aebe92e10e" category="sidebar">KubernetesクラスタをGoogle Cloudにバックアップ</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">ブログとコミュニティ</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">ネットアップコミュニティ</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXPのバックアップとリカバリに関するブログ</block>
@@ -4057,4 +3782,15 @@ ifdef：aws []</block>
   <block id="15f09261e873aa1d63f5dcc04347b79b" category="list-text">ONTAP 9.15.1では、[参照してリストア]オプションを使用してFlexGroupフォルダをリストアできます。この機能はテクノロジプレビューモードです。</block>
   <block id="db0f3d3c6912a5ee817314070056f087" category="inline-link">BlueXPのバックアップとリカバリ：2024年7月リリースブログ</block>
   <block id="ec53b6836352750173251f0c57f2ed93" category="paragraph">で説明されている特別なフラグを使用してテストできます<block ref="33c6d5d03ae6e02d266d11d3de66dc86" category="inline-link-rx"></block>。</block>
+  <block id="c3c6e4a6aae93a5f74481ebf97978ef0" category="inline-link">BlueXP  自動化</block>
+  <block id="0f8c9f6fbf382807cf7621969080da27" category="paragraph">各BlueXP  バックアップおよびリカバリAPIのドキュメントは、から入手でき<block ref="6243299927dfb47f398f3c9ace0f2622" category="inline-link-rx"></block>ます。</block>
+  <block id="f28e0fdb1b1025e0f373378d9cfd8c2a" category="paragraph">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
+  <block id="b90ca35879f08d6916f74d266e8cd33f" category="admonition">BlueXP Connectorがクラウドの行政機関やインターネットアクセスのないサイト（ダークサイト）に導入されている場合、BlueXPのバックアップとリカバリでサポートされるのはONTAP システムからのバックアップとリストアの処理のみです。このような導入方法を使用する場合、BlueXP  のバックアップおよびリカバリでは、アプリケーションまたは仮想マシンからのバックアップおよびリストア処理はサポートされません。</block>
+  <block id="63f5170239a1886a3e80e83f7774d118" category="paragraph">[ジョブ監視]タブでは、Snapshot、レプリケーション、オブジェクトストレージへのバックアップ、およびリストア処理のすべてと現在のステータスのリストを表示できます。これには、Cloud Volumes ONTAP、オンプレミスのONTAP、アプリケーション、仮想マシンからの運用が含まれます。各処理またはジョブには、一意の ID とステータスがあります。</block>
+  <block id="cc13b22821f0cc453a0483d3a7d31b37" category="list-text">*ソース*：Cloud Volumes ONTAPボリューム、オンプレミスのONTAPボリューム、またはアプリケーション</block>
+  <block id="63806504828a9ba74d3191cf67a6cd96" category="paragraph">このレポートは、Cloud Volumes ONTAP、オンプレミス、アプリケーションデータのBlueXP  バックアップ/リカバリ処理に適用されます。</block>
+  <block id="5720ea78e3ba68d0ee3ae1dcad5cffd1" category="list-text">[Job Monitoring]ページには高度なフィルタ機能が追加され、バックアップジョブとリストアジョブを時間、ワークロード（ボリューム、アプリケーション、または仮想マシン）、ジョブタイプ、 ステータス、作業環境、Storage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。<block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>です。</block>
+  <block id="0d80ea71f9929ca6943ff4f16a27de3e" category="list-text">[ワークロード]の列では、ページをフィルタして、ボリューム、アプリケーション、および仮想マシンのバックアップサービスのジョブを表示できます。</block>
+  <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
+  <block id="e117f11185531a360eff8bfed09af453" category="sidebar">BlueXP  バックアップ/リカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPのデータ、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
 </blocks>

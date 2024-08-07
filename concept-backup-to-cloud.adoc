@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。 
 ---
 = BlueXPのバックアップとリカバリについて説明します
@@ -14,7 +14,7 @@ summary: BlueXPのバックアップとリカバリサービスは、オンプ�
 
 
 [role="lead"]
-BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。
+BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。
 
 このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護されたデータに対してのみ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、BlueXPのバックアップとリカバリの対費用効果が非常に高くなります。
 
@@ -25,7 +25,6 @@ https://bluexp.netapp.com/cloud-backup["BlueXPのバックアップとリカバ�
 バックアップとリカバリは、次の目的で使用できます。
 
 * Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 link:concept-ontap-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
-* Kubernetes永続ボリュームのバックアップとリストア link:concept-kubernetes-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
 * アプリケーション向けのBlueXPバックアップ/リカバリを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 link:concept-protect-app-data-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
 * VMware向けBlueXPバックアップ/リカバリを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 link:concept-protect-vm-data.html["詳細な機能については、こちらをご覧ください"]。
 
@@ -33,7 +32,7 @@ https://bluexp.netapp.com/cloud-backup["BlueXPのバックアップとリカバ�
 https://www.youtube.com/watch?v=DF0knrH2a80["簡単なデモをご覧ください"^]
 
 
-TIP: BlueXP Connectorがクラウドの行政機関やインターネットアクセスのないサイト（ダークサイト）に導入されている場合、BlueXPのバックアップとリカバリでサポートされるのはONTAP システムからのバックアップとリストアの処理のみです。このような導入方法を使用する場合、BlueXPのバックアップとリカバリでは、Kubernetesのクラスタ、アプリケーション、仮想マシンからのバックアップとリストアの処理はサポートされません。
+TIP: BlueXP Connectorがクラウドの行政機関やインターネットアクセスのないサイト（ダークサイト）に導入されている場合、BlueXPのバックアップとリカバリでサポートされるのはONTAP システムからのバックアップとリストアの処理のみです。このような導入方法を使用する場合、BlueXP  のバックアップおよびリカバリでは、アプリケーションまたは仮想マシンからのバックアップおよびリストア処理はサポートされません。
 
 
 

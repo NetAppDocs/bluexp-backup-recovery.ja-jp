@@ -560,7 +560,7 @@ AWSおよびAzureの商用リージョンにインストールされているClo
 
 === ジョブモニタに複数の機能拡張が追加されました
 
-* [Job Monitoring]ページには高度なフィルタリング機能が追加され、時間、ワークロード（ボリューム、アプリケーション、仮想マシン、またはKubernetes）ごとにバックアップジョブとリストアジョブを検索できるようになりました。 ジョブタイプ、ステータス、作業環境、およびStorage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。  https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["詳細フィルタの使用方法を参照してください"]。
+* [Job Monitoring]ページには高度なフィルタ機能が追加され、バックアップジョブとリストアジョブを時間、ワークロード（ボリューム、アプリケーション、または仮想マシン）、ジョブタイプ、 ステータス、作業環境、Storage VM。任意のリソース（「application_3」など）を検索するフリーテキストを入力することもできます。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["詳細フィルタの使用方法を参照してください"]です。
 * ONTAP 9.13.0以降を実行しているCloud Volumes ONTAP システムでは、BlueXPのバックアップ/リカバリのUIとAPIでユーザが開始したバックアップ処理とリストア処理と、システムが開始したジョブ（進行中のバックアップ処理など）が[ジョブ監視]タブで利用できるようになりました。以前のバージョンのCloud Volumes ONTAP システムおよびオンプレミスのONTAP システムでは、現時点ではユーザが開始したジョブのみが表示されます。
 
 
@@ -789,7 +789,7 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backup-settings
 
 には、次の更新が行われています https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["ジョブ監視ページ"]：
 
-* 「ワークロード」の列を使用して、ページをフィルタして、ボリューム、アプリケーション、仮想マシン、Kubernetesの各バックアップサービスのジョブを表示できます。
+* [ワークロード]の列では、ページをフィルタして、ボリューム、アプリケーション、および仮想マシンのバックアップサービスのジョブを表示できます。
 * 特定のバックアップジョブの詳細を表示するには、「ユーザ名」と「ジョブタイプ」の列を新たに追加します。
 * [ジョブの詳細]ページには、メインジョブを完了するために実行中のすべてのサブジョブが表示されます。
 * このページは15分ごとに自動的に更新されるため、常に最新のジョブステータスの結果が表示されます。また、[*更新*]ボタンをクリックすると、ページをすぐに更新できます。

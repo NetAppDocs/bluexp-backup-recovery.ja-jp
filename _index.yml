@@ -1,10 +1,10 @@
 ---
 indexpage:
   title: BlueXPのバックアップとリカバリに関するドキュメント
-  summary: BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPデータ、Kubernetesの永続ボリューム、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。
-  keywords: bluexp, bluexp backup recovery, ontap, kubernetes, virtual machines, vm,
-    on-premises, data protection
-  lead: BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP データ、Kubernetesの永続的ボリューム、データベース、仮想マシンに効率的でセキュアな対費用効果の高いデータ保護を提供します。
+  summary: BlueXP  バックアップ/リカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPのデータ、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。
+  keywords: bluexp, bluexp backup recovery, ontap, virtual machine, vm, on-premises,
+    data protection
+  lead: BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。
   tiles:
   - title: はじめに
     links:
@@ -90,19 +90,6 @@ indexpage:
       url: task-restore-sql-data.html
     - title: 仮想マシンのデータをリストアします
       url: task-restore-vm-data.html
-    - title: Kubernetesボリュームデータをリストア
-      url: task-restore-backups-kubernetes.html
-  - title: Kubernetes のデータをクラウドにバックアップ
-    links:
-    - title: KubernetesクラスタをAmazon S3にバックアップ
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: KubernetesクラスタをAzure Blobにバックアップ
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: KubernetesクラスタをGoogle Cloudにバックアップ
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
   - title: ブログとコミュニティ
     links:
     - title: ネットアップコミュニティ

@@ -136,23 +136,6 @@ sidebar:
       url: "/task-manage-vm-data-in-cloud.html"
     - title: 仮想マシンのデータをリストアします
       url: "/task-restore-vm-data.html"
-  - title: Kubernetes データのバックアップとリストア
-    entries:
-    - title: Kubernetes のデータを保護
-      url: "/concept-kubernetes-backup-to-cloud.html"
-    - title: Amazon S3 にバックアップします
-      flavor: aws
-      url: "/task-backup-kubernetes-to-s3.html"
-    - title: Azure Blob にバックアップ
-      flavor: azure
-      url: "/task-backup-kubernetes-to-azure.html"
-    - title: Google Cloud にバックアップ
-      flavor: gcp
-      url: "/task-backup-kubernetes-to-gcp.html"
-    - title: Kubernetes のバックアップを管理
-      url: "/task-manage-backups-kubernetes.html"
-    - title: Kubernetes バックアップからリストア
-      url: "/task-restore-backups-kubernetes.html"
   - title: REST API で自動化
     url: "/api-backup-restore.html"
   - title: 参照
