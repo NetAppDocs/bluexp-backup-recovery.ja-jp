@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-ontap-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, bluexp, bluexp backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, bluexp, bluexp backup and recovery, protection 
 summary: BlueXPのバックアップとリカバリサービスは、ONTAPボリュームデータの保護と長期アーカイブのためのバックアップとリストア機能を提供します。3-2-1戦略では、ソースデータのコピーを2つの異なるストレージシステムに3つ、クラウドに1つ保持できます。 
 ---
 = BlueXPのバックアップとリカバリを使用してONTAPボリュームのデータを保護します

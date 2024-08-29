@@ -2528,7 +2528,6 @@ NetApp StorageGRID</block>
   <block id="3b2352f9f987ea3f850c59d97818e5b2" category="cell">BlueXPのバックアップとリカバリのアドホックSnapshot作成ジョブが失敗する</block>
   <block id="7dfd6144b0880ea61dc9ca44cde23608" category="cell">BlueXPのバックアップとリカバリのアドホックレプリケーションジョブの失敗</block>
   <block id="44fb2635a11260b2cc484928766b933c" category="cell">BlueXPのバックアップとリカバリのレプリケーションが一時停止するジョブが失敗する</block>
-  <block id="ebc078a09fc4b31b91b35b54aa44f5c4" category="cell">BlueXPのバックアップ/リカバリレプリケーションのブレーキジョブの失敗</block>
   <block id="c55e60943b328ba5333135136a72eed3" category="cell">BlueXPのバックアップ/リカバリレプリケーションの再同期ジョブが失敗する</block>
   <block id="5e67cebd99d17acfd6723171138a26c0" category="cell">BlueXPのバックアップとリカバリのレプリケーションが停止するジョブが失敗する</block>
   <block id="148858fe75d91455e16176a0e57a23a4" category="cell">BlueXPのバックアップ/リカバリレプリケーションの逆再同期ジョブが失敗する</block>
@@ -3793,4 +3792,5 @@ ifdef：aws []</block>
   <block id="0d80ea71f9929ca6943ff4f16a27de3e" category="list-text">[ワークロード]の列では、ページをフィルタして、ボリューム、アプリケーション、および仮想マシンのバックアップサービスのジョブを表示できます。</block>
   <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
   <block id="e117f11185531a360eff8bfed09af453" category="sidebar">BlueXP  バックアップ/リカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPのデータ、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
+  <block id="0760245e68680af16b611d238a130354" category="cell">BlueXP  バックアップ/リカバリレプリケーションの中断ジョブの失敗</block>
 </blocks>
