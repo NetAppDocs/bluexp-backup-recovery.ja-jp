@@ -3331,7 +3331,6 @@ ONTAP S3の略</block>
   <block id="7b4a4728ec382d2f88c1ebd2db0a0027" category="list-text">[ 設定 ] で、 [*Identity*] を選択します。</block>
   <block id="013bd8775ccd54f42d086e5e2e52fcde" category="list-text">[ * Review + update * ] をクリックし、 [ * Update * ] をクリックします。</block>
   <block id="91290ff1408f6a65a206632246cf7a18" category="paragraph">Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、Azureサブスクリプション、キーボールト名、およびキーが必要です。<block ref="50f2f49feb0afd07f1969b5faf2ca775" category="inline-link-rx"></block>。</block>
-  <block id="7bd09fb790fc1d94719af4adc4a6e47e" category="paragraph">BlueXPのバックアップとリカバリでは、_Azureアクセスポリシー_が権限モデルとしてサポートされます。現時点では、_Azure Role-Based Access Control_（Azure RBAC）権限モデルはサポートされていません。</block>
   <block id="7ca1af679f0ba86814f2ad58a578cb7c" category="inline-link">Azure で Cloud Volumes ONTAP を起動します</block>
   <block id="4c75b99552d91f14eb977c2ed794730f" category="paragraph">を参照してください<block ref="8198e799bf373d0d471ff3f551725308" category="inline-link-rx"></block> を Cloud Volumes ONTAP 参照してください。</block>
   <block id="4f2a0931f8313551f535951dc36ca589" category="inline-xref">既存システムでBlueXPのバックアップとリカバリを有効にする</block>
@@ -3793,4 +3792,6 @@ ifdef：aws []</block>
   <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。</block>
   <block id="e117f11185531a360eff8bfed09af453" category="sidebar">BlueXP  バックアップ/リカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAPのデータ、データベース、仮想マシン（VM）に対して、効率的でセキュアな対費用効果の高いデータ保護を提供します。</block>
   <block id="0760245e68680af16b611d238a130354" category="cell">BlueXP  バックアップ/リカバリレプリケーションの中断ジョブの失敗</block>
+  <block id="3da2387f3963d6425b4b1d6b322f70c3" category="inline-link">Azure Key Vault Managed HSMとは</block>
+  <block id="d02466e22d28fb26badb969e9549aef1" category="paragraph">BlueXP  のバックアップとリカバリでは、_Azureアクセスポリシー_、_Azureロールベースアクセス制御_（Azure RBAC）権限モデル、および_Managed Hardware Security Model_（HSM）<block ref="c4dbe37ac52a9ba2f5defa0c652294d5" category="inline-link-rx"></block>がサポートされます（を参照）。</block>
 </blocks>

@@ -191,7 +191,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 
 Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、Azureサブスクリプション、キーボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
 
-BlueXPのバックアップとリカバリでは、_Azureアクセスポリシー_が権限モデルとしてサポートされます。現時点では、_Azure Role-Based Access Control_（Azure RBAC）権限モデルはサポートされていません。
+BlueXP  のバックアップとリカバリでは、_Azureアクセスポリシー_、_Azureロールベースアクセス制御_（Azure RBAC）権限モデル、および_Managed Hardware Security Model_（HSM） https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["Azure Key Vault Managed HSMとは"]がサポートされます（を参照）。
 
 
 
