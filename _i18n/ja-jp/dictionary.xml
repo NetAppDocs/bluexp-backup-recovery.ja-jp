@@ -637,7 +637,6 @@
   <block id="f63476943179d5dd83527cd0b9c7ade4" category="section-title">最初に標準ストレージに書き込むのではなく、バックアップデータを即座にアーカイブ可能</block>
   <block id="cc702ed839181d5a4eb3655eba656f65" category="paragraph">これで、データを標準のクラウドストレージに書き込む代わりに、バックアップファイルをすぐにアーカイブストレージに送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープバックアップ環境に取って代わるユーザに特に役立ちます。</block>
   <block id="52cc7bb26d5185a2c3b92b71a3d6e319" category="section-title">SnapLockボリュームのバックアップとリストアのサポートの追加</block>
-  <block id="4cb4cd292be9258bfc850d1aa644d9f6" category="paragraph">バックアップとリカバリで、SnapLockコンプライアンスまたはSnapLockエンタープライズ保護モードを使用して設定されたFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。</block>
   <block id="115e674b1dc0942f53bc91e279bbd7eb" category="inline-link">ONTAPデータの保護に関する詳細情報</block>
   <block id="5ea7c922bf64f9c4520ccdf833e34e39" category="paragraph"><block ref="287ce1c3ffcd9fd04ac3fb9608fef690" category="inline-link-rx"></block>。</block>
   <block id="ca8395d0f02816c74d48e7e263466096" category="section-title">2023年8月1日</block>
@@ -1639,10 +1638,6 @@ Cloud Volumes ONTAP</block>
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">DataLockとは</block>
   <block id="dc52d5a83e31ec66da3344056a4e4e39" category="paragraph">古いバックアップは、バックアップポリシーの保持期間が終了した後ではなく、DataLockの保持期間が終了した後に削除されることに注意してください。</block>
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">この機能の例をいくつか見てみましょう。</block>
-  <block id="f88d31c8fba76a471a02f0b65a9ac963" category="list-text">月単位のバックアップスケジュールを、保持期間が12の場合、各バックアップは、削除される12カ月（14日を足したもの）だけロックされます。</block>
-  <block id="4f326e1a4453cc79600c1df4374d2c22" category="list-text">30日ごと、7週間ごと、12カ月ごとのバックアップを作成するバックアップポリシーを作成すると、ロックされた保持期間が3つになります。「30日ごと」のバックアップを44日間（30日と14日のバッファ）保持し、「7週間ごと」のバックアップを9週間（7週間と14日）保持し、「12カ月ごと」のバックアップを12カ月（さらに14日）保持します。</block>
-  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">保持期間が24回の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされると考えられることがあります。ただし、最低30日未満のため、各バックアップは44日間（30日と14日のバッファ）ロックされ、保持されます。</block>
-  <block id="c88e14329d462b276ba5448f60ca13e0" category="paragraph">この最後の例では、各バックアップファイルが44日間ロックされた場合、保持期間が時間あたり24回、保持ポリシーよりも多くのバックアップファイルが作成されます。通常、BlueXPのバックアップとリカバリで25番目のバックアップファイルが作成されると、最大保持数が24に維持されるように最も古いバックアップが削除されます（ポリシーに基づく）。この場合、DataLockの保持設定は、バックアップポリシーの保持設定よりも優先されます。これにより、バックアップファイルがオブジェクトストアに長期間保存されるため、ストレージのコストに影響する可能性があります。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">ランサムウェアからの保護</block>
   <block id="2d2e8adaf3e8251b54baf420588cfb9d" category="paragraph">ランサムウェア防御は、バックアップファイルをスキャンしてランサムウェア攻撃の兆候を探します。ランサムウェア攻撃の検出は、チェックサム比較を使用して実行されます。ランサムウェアの可能性が以前のバックアップファイルではなく新しいバックアップファイルで特定された場合、その新しいバックアップファイルはランサムウェア攻撃の兆候を示さない最新のバックアップファイルに置き換えられます。（ランサムウェア攻撃を受けていると特定されたファイルは、置き換えられてから1日後に削除されます）。</block>
   <block id="c545a26c4ed6190e3a8c71826161a528" category="paragraph">スキャンは、クラウドストレージに初めて書き込まれたとき、*次の*バックアップファイルが書き込まれたときに、バックアップファイルに対しては実行されません。たとえば、火曜日に週次バックアップのスケジュールが設定されている場合は、火曜日に14日にバックアップが作成されます。火曜日にもう1つバックアップが作成されます。ランサムウェアスキャンは、現時点で14日目からバックアップファイルで実行されています。</block>
@@ -3032,10 +3027,7 @@ ONTAP S3の略</block>
   <block id="37e76b4487b7832f9128b16818135e42" category="paragraph">BlueXPのバックアップとリカバリは、従量課金制モデルで従量課金制のライセンスを提供します。クラウドプロバイダの市場に登録すると、バックアップしたデータに対して1 GiB単位で料金が発生し、前払いによる支払いが発生しなくなります。クラウドプロバイダから月額料金で請求されます。</block>
   <block id="9757bd87f9a5ff6758600430092b3955" category="paragraph">PAYGOサブスクリプションに最初にサインアップしたときに、30日間の無償トライアルを利用できます。</block>
   <block id="421539f25601331f9f5f1e59cdb43e21" category="section-title">年間契約</block>
-  <block id="bc74d224d8eebb9d1f7a6a0cca3c6a3d" category="paragraph">AWSを使用する場合は、1年、2年、3年の2年間契約を選択できます。</block>
   <block id="e9318a32b2a89c8bc9343f1169144931" category="list-text">Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、このライセンスに基づいて Cloud Volumes ONTAP ボリュームのバックアップが無制限になることも含まれます（バックアップ容量はライセンスにはカウントされません）。</block>
-  <block id="a31db27d8aef7db23d51910ceb960041" category="paragraph">Azureをご利用の場合は、1年、2年、3年の2年間契約をご用意しています。</block>
-  <block id="1f4752c64c2bf1f4ec37455cfd1541c6" category="paragraph">GCPを使用している場合は、ネットアップにプライベートオファーをリクエストし、BlueXPのバックアップとリカバリのアクティブ化中にGoogle Cloud Marketplaceからサブスクリプションを登録する際にプランを選択できます。</block>
   <block id="cf6d8dee9b177c1138ae0ee4e07dc2f3" category="inline-link-macro">年間契約の設定方法について説明します</block>
   <block id="cc0eb7dbb8893977120a22b09b8c4ca0" category="paragraph"><block ref="f5d5ae39791d9eaf9e8591b7cfcc3b96" category="inline-link-macro-rx"></block>。</block>
   <block id="4755986530a007b5ad8c149510339cdd" category="inline-link">NetApp SnapMirror Cloudテクノロジ</block>
@@ -3067,7 +3059,6 @@ ONTAP S3の略</block>
   <block id="6afa359ae2adeabaa8893b6d6e04b569" category="inline-link-macro">ボリュームのオンデマンドバックアップを作成する</block>
   <block id="c1855e2778d4090a158417283de29dbc" category="admonition">データ保護ボリュームのバックアップの保持期間は、ソースの SnapMirror 関係の定義と同じです。API を使用して必要に応じてこの値を変更できます。</block>
   <block id="01ec9d3adb6b85775aeeda0d6d533e54" category="section-title">バックアップファイルの保護設定</block>
-  <block id="230cb0e580e943163f3909777583f34f" category="paragraph">バックアップの保持期間は、バックアップスケジュールの保持期間と同じに14日を足したものです。たとえば、_WEEKLY_BACKUPに_5_Copiesを適用すると、各バックアップファイルが5週間ロックされます。_6_個のコピーを保持したMonthly _バックアップは、各バックアップ・ファイルを6か月ロックします。</block>
   <block id="4df1a85d32abc942958400f1bc79add0" category="paragraph">バックアップデスティネーションがAmazon S3、Azure Blob、NetApp StorageGRID の場合、現在サポートされています。その他のストレージプロバイダの送信先は今後のリリースで追加される予定です。</block>
   <block id="668420eb25c0657fa1ed103061b132a1" category="admonition">アーカイブストレージにバックアップを階層化する場合は、DataLockを有効にできません。</block>
   <block id="648e07eb3f255382cd68dd1ee61b6561" category="section-title">古いバックアップファイル用のアーカイブストレージ</block>
@@ -3526,7 +3517,6 @@ ifdef ::gcp[]</block>
   <block id="64063115b259542737cce343064e3233" category="list-text">*クイックリストア*：リストアされたボリュームとデータはすぐに使用可能になります。高速リストアプロセスではデータへのアクセスが通常より遅くなる可能性があるため、ハイパフォーマンスが必要なボリュームではこのオプションを使用しないでください。</block>
   <block id="406385bac6b7601aab1eff5d8a317cc3" category="paragraph">検索結果には、検索対象のファイルを含むローカルボリュームのSnapshotコピーとリモートでレプリケートされたボリュームが含まれていることが示されます。リストアは、クラウドバックアップファイルから、Snapshotコピーから、またはレプリケートされたボリュームから選択できます。</block>
   <block id="6b1625dd335c098ed2ca98e2429bd8b5" category="paragraph">これらの機能はどちらもバックアップファイルを保護するため、ランサムウェア攻撃がバックアップに試みられた場合にデータをリカバリするための有効なバックアップファイルを常に保持できます。また、バックアップを一定期間ロックして保持する必要がある規制要件にも対応すると便利です。[DataLock and Ransomware Protection]オプションを有効にすると、BlueXPのバックアップとリカバリのアクティブ化でプロビジョニングされるクラウドバケットでオブジェクトのロックとオブジェクトのバージョン管理が有効になります。</block>
-  <block id="b03c01f8cf077f9dee5804db15487474" category="paragraph">DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。これは_不変ストレージ_とも呼ばれます。この機能では、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。 バックアップファイルがロック（および保持）される期間は、DataLock保持期間と呼ばれます。定義したバックアップポリシーのスケジュールと保持設定に加え、14日間のバッファに基づいて設定されます。30日未満のDataLock保持ポリシーは、最小30日に切り上げられます。</block>
   <block id="d1fe7d408368bfebc413888300892008" category="list-text">バックアップポリシーでアーカイブストレージを設定している場合、DataLockとランサムウェアからの保護機能は使用できません。</block>
   <block id="7bdfdec65541ae8037e909dd7d0643dd" category="paragraph">AWS、Azure、Googleのクラウドストレージを使用している場合は、一定の日数が経過したら、古いバックアップファイルを低コストのアーカイブストレージクラスまたはアクセス階層に移動できます。また、標準のクラウドストレージに書き込まれることなく、バックアップファイルをすぐにアーカイブストレージに送信することもできます。「Archive after days」に「* 0 *」と入力するだけで、バックアップファイルをアーカイブストレージに直接送信できます。これは、クラウドバックアップからデータにアクセスする必要がほとんどないユーザや、テープの解決策にバックアップを取って代わるユーザに特に役立ちます。</block>
   <block id="8e867c14e8b5b20149da48500624662f" category="list-text">すべてのデータブロックをアーカイブクラウドストレージに送信するために「0」を選択した場合でも、メタデータブロックは常に標準のクラウドストレージに書き込まれます。</block>
@@ -3794,4 +3784,14 @@ ifdef：aws []</block>
   <block id="0760245e68680af16b611d238a130354" category="cell">BlueXP  バックアップ/リカバリレプリケーションの中断ジョブの失敗</block>
   <block id="3da2387f3963d6425b4b1d6b322f70c3" category="inline-link">Azure Key Vault Managed HSMとは</block>
   <block id="d02466e22d28fb26badb969e9549aef1" category="paragraph">BlueXP  のバックアップとリカバリでは、_Azureアクセスポリシー_、_Azureロールベースアクセス制御_（Azure RBAC）権限モデル、および_Managed Hardware Security Model_（HSM）<block ref="c4dbe37ac52a9ba2f5defa0c652294d5" category="inline-link-rx"></block>がサポートされます（を参照）。</block>
+  <block id="fe796f1ffea18cd2a88640b34b7f0cb3" category="paragraph">DataLockは、バックアップファイルが一定期間変更または削除されないように保護します。これは_不変ストレージ_とも呼ばれます。この機能では、オブジェクトストレージプロバイダのテクノロジを「オブジェクトロック」に使用します。バックアップ・ファイルがロック（および保持）される期間をDataLockの保持期間と呼びます定義したバックアップポリシーのスケジュールと保持設定に加え、最大31日間のバッファに基づいて設定されます。31日未満のDataLock保持ポリシーは、最小31日に切り上げられます。</block>
+  <block id="43885e8086b7b4ee79571e89e8dbf796" category="list-text">保持期間を12回に設定した月次バックアップスケジュールを作成すると、各バックアップが12カ月間ロックされ（さらに最大31日間のバッファ）、削除されます。</block>
+  <block id="69bdcf216a01f07d336a8529971a218c" category="list-text">30日ごと、7週間ごと、12カ月ごとのバックアップを作成するバックアップポリシーを作成すると、ロックされた保持期間が3つになります。「30日」のバックアップは44日間（30日+最大31日のバッファ）保持され、「7週間」のバックアップは9週間（7週間+最大31日のバッファ）保持され、「12か月」のバックアップは12か月（最大31日のバッファ）保持されます。</block>
+  <block id="c395960914e1c3b46d1af972702771a1" category="list-text">保持期間が24回の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされると考えられることがあります。ただし、最小30日未満であるため、各バックアップは44日間ロックされ、保持されます（30日+最大31日のバッファ）。</block>
+  <block id="6a3efe56245054dfcaa2b2515d7d3ea7" category="paragraph">この最後のケースでは、各バックアップファイルが30日間ロックされている場合(および最大31日間のバッファ)、通常は毎時/24保持ポリシーで保持されるバックアップファイル数よりも多くのバックアップファイルが作成されることがわかります。通常、BlueXPのバックアップとリカバリで25番目のバックアップファイルが作成されると、最大保持数が24に維持されるように最も古いバックアップが削除されます（ポリシーに基づく）。この場合、DataLockの保持設定は、バックアップポリシーの保持設定よりも優先されます。これにより、バックアップファイルがオブジェクトストアに長期間保存されるため、ストレージのコストに影響する可能性があります。</block>
+  <block id="92e4e78220fae3f6988f7215aa66d0a3" category="paragraph">AWSをご利用の場合は、1年、2年、3年の2年間契約をご用意しています。</block>
+  <block id="ed20f9f9ce04512430634d23ddd27d79" category="paragraph">Azureでは、1年、2年、3年の2年間契約を用意しています。</block>
+  <block id="f88ca0c86817c46ef8ec699cdf83665c" category="paragraph">GCPを使用する場合は、NetAppにプライベートオファーをリクエストし、BlueXP  のバックアップとリカバリのアクティブ化中にGoogle Cloud Marketplaceからサブスクライブするときにプランを選択できます。</block>
+  <block id="78505512ebd89d20931322ac265d9153" category="paragraph">バックアップの保持期間は、バックアップスケジュールの保持期間と同じで、最大31日間のバッファが追加されます。たとえば、_WEEKLY_BACKUPに_5_Copiesを適用すると、各バックアップファイルが5週間ロックされます。_6_個のコピーを保持したMonthly _バックアップは、各バックアップ・ファイルを6か月ロックします。</block>
+  <block id="741aaba68ff71f579469a40cd8f92b4f" category="paragraph">バックアップとリカバリで、SnapLock Enterprise保護モードを使用して設定されたFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。</block>
 </blocks>
