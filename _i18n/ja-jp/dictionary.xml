@@ -3648,7 +3648,6 @@ ifdef：aws []</block>
 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">オブジェクトへのバックアップの制限事項</block>
   <block id="215d6f1bc8d7005b7bb981d9a3dc7b78" category="section-title">PodmanでRHEL 8+を使用する場合の制限事項</block>
-  <block id="38c44a50a75c15410df928f63928acf8" category="section-title">単一ファイルのリストアはサポートされない</block>
   <block id="dbeaadfb952b8aa57d00264751776087" category="list-text">レプリケートされたボリュームが存在する場合は、レプリケートされたボリュームからファイルまたはフォルダをリストアします。</block>
   <block id="e647cb9e3bb11f1dcf4383ae4ae00f0f" category="list-text">検索と復元機能を使用して、クラウドバックアップからファイルまたはフォルダを復元します。</block>
   <block id="b760ac1d9088cf17812b95299a0f4c97" category="list-text">[Browse &amp; Restore]を使用してクラウドバックアップからボリュームをリストアし、必要なファイルまたはフォルダにアクセスします。</block>
@@ -3794,4 +3793,14 @@ ifdef：aws []</block>
   <block id="f88ca0c86817c46ef8ec699cdf83665c" category="paragraph">GCPを使用する場合は、NetAppにプライベートオファーをリクエストし、BlueXP  のバックアップとリカバリのアクティブ化中にGoogle Cloud Marketplaceからサブスクライブするときにプランを選択できます。</block>
   <block id="78505512ebd89d20931322ac265d9153" category="paragraph">バックアップの保持期間は、バックアップスケジュールの保持期間と同じで、最大31日間のバッファが追加されます。たとえば、_WEEKLY_BACKUPに_5_Copiesを適用すると、各バックアップファイルが5週間ロックされます。_6_個のコピーを保持したMonthly _バックアップは、各バックアップ・ファイルを6か月ロックします。</block>
   <block id="741aaba68ff71f579469a40cd8f92b4f" category="paragraph">バックアップとリカバリで、SnapLock Enterprise保護モードを使用して設定されたFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。</block>
+  <block id="edaf1dd0d1554f666d48a9fcd0c9ed77" category="section-title">タンイツファイルノリストアノサポート</block>
+  <block id="13d2a4e10589dd80e0c51d5473113c2a" category="admonition">2024年9月30日のリリースで、この制限は削除されました。</block>
+  <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">2024年9月27日</block>
+  <block id="aa6a53998d98bae73a6913ff1c2eecbc" category="section-title">参照とリストアを使用したRHEL 8または9でのPodmanのサポート</block>
+  <block id="c6bad3b272d5eeec569990b050d88123" category="paragraph">BlueXP  のバックアップとリカバリで、Podmanエンジンを使用したRed Hat Enterprise Linux（RHEL）バージョン8および9でのファイルとフォルダのリストアがサポートされるようになりました。これは、BlueXP  のバックアップとリカバリの参照とリストアの方法に適用されます。</block>
+  <block id="f5d370ee9e029c4d62db915f308e04c0" category="paragraph">BlueXP  Connectorバージョン3.9.40では、に記載されているオペレーティングシステムに加えて、コネクタソフトウェアをRHEL 8または9ホストに手動でインストールする場合、Red Hat Enterprise Linuxバージョン8および9の特定のバージョンがサポートされ<block ref="9b2a96babeed2ab711a4327ec7f34b5c" category="inline-link-rx"></block>ます。これらの新しいバージョンのRHELでは、DockerエンジンではなくPodmanエンジンが必要です。これまで、BlueXP  のバックアップとリカバリには、Podmanエンジンを使用する場合に2つの制限がありました。これらの制限は削除されました。</block>
+  <block id="6111aa812639d5e432842ceca200ea78" category="inline-link">バックアップファイルからのONTAPデータのリストアの詳細</block>
+  <block id="007a407431de4321913728dae6423904" category="paragraph"><block ref="056f97dce802386385ce3734740613e1" category="inline-link-rx"></block>です。</block>
+  <block id="3abe4a789c1c33e285d9452cca8c493b" category="section-title">カタログのインデックス作成を高速化し、検索とリストアを向上</block>
+  <block id="9353e94049314c6236b51712848f2572" category="paragraph">このリリースには、ベースラインインデックス作成をはるかに高速に完了する改善されたカタログインデックスが含まれています。インデックス作成を高速化すると、検索とリストア機能をより迅速に使用できるようになります。</block>
 </blocks>
