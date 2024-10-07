@@ -3564,8 +3564,6 @@ ifdef：aws []</block>
   <block id="216ef706f9f25f4eb179f940b530a4d5" category="admonition">これらのポリシー設定は、オブジェクトストレージへのバックアップにのみ関連します。これらの設定は、Snapshotポリシーやレプリケーションポリシーには影響しません。Snapshotとレプリケーションについても、今後同様のポリシー設定が追加される予定です。</block>
   <block id="a2e6f50bd5494a56ee0794883aeee5e5" category="section-title">バックアップスケジュールのオプション</block>
   <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">DataLockとランサムウェア対策のオプション</block>
-  <block id="5eab2e069820454037ee67f5a8712f35" category="list-text">DataLockとRansomware Protectionを使用する場合は、最初のバックアップポリシーを作成し、そのクラスタに対してBlueXPのバックアップとリカバリをアクティブ化するときに有効にすることができます。この機能は、BlueXPのバックアップとリカバリの詳細設定を使用してあとで有効にすることができます。</block>
-  <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">DataLockとRansomware Protectionは、コスト削減のためにクラスタを設定したあとに無効にすることができます。</block>
   <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">バックアップファイルが作成されたとき。</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLockとRansomware Protectionのオプション</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3権限</block>
@@ -3815,4 +3813,5 @@ ifdef：aws []</block>
   <block id="8d9ab45267715f2ac0f3956dcc48c029" category="paragraph">を参照してください<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block></block>
   <block id="78d043c8f38ceca4388c8f7251b8d0a4" category="paragraph">以前のリリースでは、BlueXPのバックアップとリカバリでGoogle Cloud Storageバケットにアクセスするためのサービスアカウントに「Storage Admin」ロールが必要でした。これで、一連の権限を減らしてサービスアカウントに割り当てるカスタムロールを作成できるようになりました。</block>
   <block id="c3fc4078f4f9169223583aa65515bc3a" category="paragraph"><block ref="dc783245fae5a9dea930533d2d02d38a" category="inline-link-rx"></block>です。</block>
+  <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">DataLockとRansomware Protectionを使用する場合は、最初のバックアップポリシーを作成し、そのクラスタに対してBlueXPのバックアップとリカバリをアクティブ化するときに有効にすることができます。ランサムウェアスキャンは、BlueXP  のバックアップとリカバリの詳細設定を使用してあとから有効または無効にすることができます。</block>
 </blocks>
