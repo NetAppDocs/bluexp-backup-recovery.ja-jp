@@ -1918,7 +1918,6 @@ NetApp StorageGRID</block>
   <block id="c9edc6898a1228f4b0c190dac5f6dd15" category="paragraph">すべてのONTAPシステムに存在するデフォルトのポリシーを使用している場合は、すべて設定されています。</block>
   <block id="28543445b2c93df38084996ffc019a63" category="section-title">独自のオブジェクトストレージコンテナを作成しますか</block>
   <block id="44f63148cdcdb30b0f9a4cc99944e0cb" category="paragraph">作業環境のオブジェクトストレージにバックアップファイルを作成すると、デフォルトでは、バックアップおよびリカバリサービスによって、設定したオブジェクトストレージアカウントにバックアップファイル用のコンテナ（バケットまたはストレージアカウント）が作成されます。AWSバケットまたはGCPバケットのデフォルトの名前は「netapp-backup-gp &lt;uuid&gt;」です。Azure BLOBストレージアカウントの名前は「netappbackup &lt;uuid&gt;」です。</block>
-  <block id="f108f3b7f4cf5d3e79e581222e60586a" category="paragraph">特定のプレフィックスを使用したり、特別なプロパティを割り当てたりする場合は、オブジェクトプロバイダアカウントでコンテナを自分で作成できます。独自のコンテナを作成する場合は、アクティブ化ウィザードを開始する前にコンテナを作成する必要があります。コンテナは、ONTAPボリュームのバックアップファイルの格納専用に使用する必要があります。それ以外の目的に使用することはできません。バックアップアクティベーションウィザードは、選択したアカウントとクレデンシャル用にプロビジョニングされたコンテナを自動的に検出し、使用するコンテナを選択できるようにします。</block>
   <block id="e7be09e6760b058dbc55a8f59678d720" category="paragraph">バケットはBlueXPまたはクラウドプロバイダから作成できます。</block>
   <block id="6d8ebd5077cde41afdccb797e756b149" category="inline-link">BlueXPでAmazon S3バケットを作成</block>
   <block id="e31328e6b19f8953d764e27dc4ec1b78" category="list-text"><block ref="e31328e6b19f8953d764e27dc4ec1b78" category="inline-link-rx"></block></block>
@@ -3814,4 +3813,5 @@ ifdef：aws []</block>
   <block id="84142ff06d4e9d4646fc2a3b18cc1d91" category="paragraph"><block ref="a21af64035213e0424a2bf24b7431646" category="inline-link-rx"></block>です。</block>
   <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">DataLockの詳細および関連コストを軽減する方法のヒントについては、を参照してください<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>。</block>
   <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">詳細については、を参照してください<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>。</block>
+  <block id="2a26ca1d77691991f2402c219881a81b" category="paragraph">特定のプレフィックスを使用したり、特別なプロパティを割り当てたりする場合は、オブジェクトプロバイダアカウントでコンテナを自分で作成できます。独自のコンテナを作成する場合は、アクティブ化ウィザードを開始する前にコンテナを作成する必要があります。BlueXP  のバックアップとリカバリでは、任意のバケットと共有バケットを使用できます。バックアップアクティベーションウィザードは、選択したアカウントとクレデンシャル用にプロビジョニングされたコンテナを自動的に検出し、使用するコンテナを選択できるようにします。</block>
 </blocks>
