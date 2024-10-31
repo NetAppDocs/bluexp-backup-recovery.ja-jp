@@ -3535,9 +3535,6 @@ ifdef：aws []</block>
   <block id="fc2e47deb6b2e0b0b69b4d23d0c52dc0" category="paragraph">*詳細バケット設定*</block>
   <block id="48aa998a6b6a592f5d7a4dccd6c981e5" category="paragraph">インターネットに完全に接続されたサイト（_標準モード_または_ SaaSモード_とも呼ばれます）でBlueXPのバックアップとリカバリを使用する場合は、BlueXPで管理しているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成できます。 また、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成できます。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
   <block id="353c8b9b4f3b8d79cf3de34b62dedb85" category="paragraph">有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダの次のいずれかのバックアップ手順を参照してください。コネクタをLinuxマシンに手動でインストールするか、特定のクラウドプロバイダに導入する必要がある場合は、いくつかの制限事項があります。</block>
-  <block id="cd7822bfaba52280932b79873329daf7" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（_restricted mode_とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。</block>
-  <block id="1b2ae8fd4fbb8aea97c2363d0b2cc03f" category="list-text">AWSの商用リージョンにインストールされているCloud Volumes ONTAP システムからAmazon S3にデータをバックアップできます。 <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="5ffa64fdc5f25941da3f4d7d719fc76d" category="list-text">Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。  <block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
   <block id="a93164b5de348a4fb06ecfebdb6861a8" category="paragraph">インターネットに接続されていないサイト（_private mode_or_dark_sitesとも呼ばれます）では、BlueXPのバックアップとリカバリを使用してボリュームデータをバックアップできます。この場合は、同じサイトのLinuxホストにBlueXP Connectorを導入する必要があります。</block>
   <block id="2a7f31b421ebd440283eff6d94322a3b" category="list-text">ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。  <block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block>。</block>
   <block id="12df54ded49a677ce2708bf5c0651425" category="list-text">ローカルのオンプレミスONTAPシステムから、ローカルのオンプレミスONTAPシステムまたはS3オブジェクトストレージ用に構成されたCloud Volumes ONTAPシステムにデータをバックアップできます。 <block ref="033f1a63473843a2d0a7ec99f2bb4e1c" category="inline-link-macro-rx"></block>。
@@ -3629,8 +3626,6 @@ ifdef：aws []</block>
   <block id="346753a5d3dc5273a067b86995fbd568" category="paragraph">Podmanエンジンを使用している場合、ランサムウェアのクラウドバックアップのスキャンはサポートされていません。クラウドバックアップにDataLock &amp; Ransomware機能を使用している場合は、ランサムウェアスキャンを無効にする必要があります。 <block ref="f4c28073f17b68c88ffe0b411369b71f" category="inline-link-macro-rx"></block>。</block>
   <block id="74fcd9275dc8f4544c3f2e6da14c3a0f" category="cell">Dockerコマンド</block>
   <block id="9865e302853628bbfe9f8357d9e7514f" category="cell">Podmanコマンド</block>
-  <block id="62fbf3095f1e89aabae3804682809c2b" category="cell"><block ref="3d14b961bb7289e76bff64ac921cba5d" prefix="" category="inline-code"></block></block>
-  <block id="bf7ecaf7643e3be49e45cd82469534f1" category="cell"><block ref="55285eccf27fa61af2e97ac2832bdc01" prefix="" category="inline-code"></block></block>
   <block id="2bd2b4226296570c863270e08d511da0" category="list-text">DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。</block>
   <block id="4b049f120edc0f4092d8d8e236ea964b" category="list-text">DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用してMySQLコンテナシェルを入力します。</block>
   <block id="d5523b519e89c779f9a7f347736d28f5" category="paragraph">このクラスタでBlueXPのバックアップとリカバリをアクティブ化するときに_DataLockとRansomware Protection_を有効にした場合、オンデマンドバックアップにもDataLockが設定され、保持期間は30日になります。ランサムウェアスキャンはアドホックバックアップではサポートされていません。 <block ref="25ebe908c09aa768262b63d88362088a" category="inline-link-macro-rx"></block>。</block>
@@ -3814,4 +3809,10 @@ ifdef：aws []</block>
   <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">DataLockの詳細および関連コストを軽減する方法のヒントについては、を参照してください<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>。</block>
   <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">詳細については、を参照してください<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>。</block>
   <block id="2a26ca1d77691991f2402c219881a81b" category="paragraph">特定のプレフィックスを使用したり、特別なプロパティを割り当てたりする場合は、オブジェクトプロバイダアカウントでコンテナを自分で作成できます。独自のコンテナを作成する場合は、アクティブ化ウィザードを開始する前にコンテナを作成する必要があります。BlueXP  のバックアップとリカバリでは、任意のバケットと共有バケットを使用できます。バックアップアクティベーションウィザードは、選択したアカウントとクレデンシャル用にプロビジョニングされたコンテナを自動的に検出し、使用するコンテナを選択できるようにします。</block>
+  <block id="3a66ab30f960deed7e2d6dbe5675eebc" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（_restricted mode_とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合、移行先のクラウドリージョンにBlueXP  Connectorをデプロイする必要があります。</block>
+  <block id="c042a7ac26c00953bd87e1129908e5c7" category="list-text">オンプレミスのONTAPシステムまたはAWSの商用リージョンにインストールされたCloud Volumes ONTAPシステムからAmazon S3にデータをバックアップできます。<block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>です。</block>
+  <block id="eb908336fca360ed35207a1e198562b2" category="list-text">Azureの商用リージョンにインストールされているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムからAzure Blobにデータをバックアップできます。<block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>です。</block>
+  <block id="ba69c078d6c88577ac4045721cf8bc4b" category="cell"><block ref="1db7b4242367cddbadaf1e041e531c76" prefix="" category="inline-code"></block></block>
+  <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
+  <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">5つ以上のボリュームのバックアップが有効になっている場合、BlueXP  バックアップおよびリカバリでは一度に5つのボリュームのみが初期化されます。これらが完了すると、5つのサブジョブの次のバッチが作成されて次のセットが開始され、すべてのボリュームが初期化されるまで続行されます。</block>
 </blocks>

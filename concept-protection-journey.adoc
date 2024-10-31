@@ -275,18 +275,18 @@ endif::gcp[]
 
 === インターネット接続が制限されているサイトのサポート
 
-BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（_restricted mode_とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合は、制限されたリージョンにBlueXP Connectorを導入する必要があります。
+BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（_restricted mode_とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合、移行先のクラウドリージョンにBlueXP  Connectorをデプロイする必要があります。
 
 ifdef::aws[]
 
-* AWSの商用リージョンにインストールされているCloud Volumes ONTAP システムからAmazon S3にデータをバックアップできます。 link:task-backup-to-s3.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"]。
+* オンプレミスのONTAPシステムまたはAWSの商用リージョンにインストールされたCloud Volumes ONTAPシステムからAmazon S3にデータをバックアップできます。link:task-backup-to-s3.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"]です。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azureの商用リージョンにインストールされているCloud Volumes ONTAP システムからAzure Blobにデータをバックアップできます。  link:task-backup-to-azure.html["Cloud Volumes ONTAP データを Azure Blob にバックアップ"]。
+* Azureの商用リージョンにインストールされているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムからAzure Blobにデータをバックアップできます。link:task-backup-to-azure.html["Cloud Volumes ONTAP データを Azure Blob にバックアップ"]です。
 
 
 endif::azure[]
