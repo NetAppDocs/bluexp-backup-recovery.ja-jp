@@ -218,6 +218,7 @@ BlueXPのバックアップとリカバリでは、次のタイプのボリュ�
 * FlexVol 読み書き可能ボリューム
 * FlexGroup ボリューム（ONTAP 9.12.1以降が必要）
 * SnapLock Enterpriseボリューム（ONTAP 9.11.1以降が必要）
+* オンプレミスボリューム用のSnapLock Compliance（ONTAP 9 .14以降が必要）
 * SnapMirrorデータ保護（DP）デスティネーションボリューム
 
 
