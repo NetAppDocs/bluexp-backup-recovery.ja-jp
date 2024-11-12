@@ -1624,9 +1624,7 @@ Cloud Volumes ONTAP</block>
   <block id="2565631610247b4b3c1e22a4efb7394f" category="paragraph">BlueXPのバックアップとリカバリは、DataLockとランサムウェア対策をボリュームのバックアップに提供します。これらの機能を使用すると、バックアップファイルをロックしてスキャンし、バックアップファイルでランサムウェアの可能性を検出できます。この設定はオプションで、クラスタのボリュームバックアップの保護を強化する場合にバックアップポリシーで定義できます。</block>
   <block id="f45d40d2c3943b450f3c1c0ff3ac37f4" category="inline-link">詳細については、DataLockとRansomwareによる保護ブログをご覧ください</block>
   <block id="9119c5c13d4a250d1b7c806e437d4713" category="paragraph"><block ref="340a0b0e8509133a13996f4ac0d4f8c7" category="inline-link-rx"></block>。</block>
-  <block id="aa254718f2c52dc147bfd8f98b0c4840" category="inline-link">Cloud Insights およびCloud Secure</block>
   <block id="86fef274eb09e789513af0922e579b5a" category="inline-link">ONTAP が提供するアンチランサムウェア防御</block>
-  <block id="105cf1dd74d7a9079245d031f91df8b0" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。ネットアップのソリューションを使用<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>、またはの一部<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> ソースボリュームを保護します。</block>
   <block id="f1f644db5655e70aeceadaa6b299010c" category="list-text">BlueXPがボリュームデータをリストアするときにバックアップファイルをスキャンしてランサムウェアを検出すると、クラウドプロバイダからバックアップファイルの内容にアクセスするための追加の出力コストが発生します。</block>
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">DataLockとは</block>
   <block id="dc52d5a83e31ec66da3344056a4e4e39" category="paragraph">古いバックアップは、バックアップポリシーの保持期間が終了した後ではなく、DataLockの保持期間が終了した後に削除されることに注意してください。</block>
@@ -3815,16 +3813,6 @@ ifdef：aws []</block>
   <block id="ba69c078d6c88577ac4045721cf8bc4b" category="cell"><block ref="1db7b4242367cddbadaf1e041e531c76" prefix="" category="inline-code"></block></block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
   <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">5つ以上のボリュームのバックアップが有効になっている場合、BlueXP  バックアップおよびリカバリでは一度に5つのボリュームのみが初期化されます。これらが完了すると、5つのサブジョブの次のバッチが作成されて次のセットが開始され、すべてのボリュームが初期化されるまで続行されます。</block>
-  <block id="46206fcd0fa4af78eefe04f1bd8d42c6" category="list-text">オンプレミスボリューム用のSnapLock Compliance（ONTAP 9 .14以降が必要）</block>
-  <block id="07c8845dbdef949b860ebfc99bd558ac" category="section-title">2024年11月6日</block>
-  <block id="a5fd9c132798873e9eb6aafb58e50034" category="section-title">SnapLock ComplianceおよびSnapLock Enterprise保護モード</block>
-  <block id="139da935670a9f985194d3241917c359" category="paragraph">BlueXP  バックアップ/リカバリで、SnapLock ComplianceまたはSnapLock Enterprise保護モードを使用して設定されたオンプレミスのFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。</block>
-  <block id="9ddb3e6714694f5c7f619d474fec8169" category="paragraph">でサポートされるボリュームの一覧を参照してください<block ref="9e68a582cc487ad29425f5a4796c9e45" category="inline-link-rx"></block>。</block>
-  <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">[ボリューム]ページでの検索とリストアプロセスのインデックス作成</block>
-  <block id="20d3b0b7cfe7a9f3dcfdb0faa9398efd" category="paragraph">検索とリストアを使用する前に、ボリュームデータのリストア元となる各ソース作業環境でインデックスの作成を有効にする必要があります。これにより、インデックス付きカタログで各ボリュームのバックアップファイルを追跡できます。[Volumes]ページにインデックスのステータスが表示されます。</block>
-  <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">Indexed：ボリュームにインデックスが作成されました。</block>
-  <block id="02e4eb80c967f3b9add2ba16a690eef2" category="list-text">実行中</block>
-  <block id="838534d879f74e7af515a7de57e72b71" category="list-text">インデックスなし</block>
-  <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">インデックスを一時停止しました</block>
-  <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">無効</block>
+  <block id="542b4404b0cd2b4cf01b81a3a97b2c20" category="inline-link">データインフラの分析情報とCloud Secure</block>
+  <block id="5212f7d39ed0f1c16c365beda23afc75" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。NetAppまたは一部のを<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>使用して<block ref="17959d7def942fae173290691e2a40ae" category="inline-link-rx"></block>ソースボリュームを保護します。</block>
 </blocks>
