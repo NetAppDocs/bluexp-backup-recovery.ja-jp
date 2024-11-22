@@ -231,6 +231,8 @@ Cloud Volumes ONTAPまたはオンプレミスのシステムにレプリケー�
 
 StorageGRID は、次の要件を満たす必要があります。を参照してください https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID のドキュメント"^] を参照してください。
 
+StorageGRIDのDataLockおよびランサムウェア対策の要件の詳細については、を参照してくださいlink:concept-cloud-backup-policies.html["オブジェクトへのバックアップポリシーのオプション"]。
+
 サポートされている StorageGRID のバージョン:: StorageGRID 10.3 以降がサポートされます。
 +
 --

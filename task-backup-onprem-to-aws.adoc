@@ -270,69 +270,7 @@ Amazon S3をバックアップターゲットとして準備するには、次�
 
 
 .手順
-. （最新のから）次の S3 権限を確認します https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXPポリシー"^]）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS のドキュメント：「 Editing IAM policies"]。
-+
-[%collapsible]
-====
-[source, json]
-----
-{
-          "Sid": "backupPolicy",
-          "Effect": "Allow",
-          "Action": [
-              "s3:DeleteBucket",
-              "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration",
-              "s3:PutBucketTagging",
-              "s3:ListBucketVersions",
-              "s3:GetObject",
-              "s3:DeleteObject",
-              "s3:PutObject",
-              "s3:ListBucket",
-              "s3:ListAllMyBuckets",
-              "s3:GetBucketTagging",
-              "s3:GetBucketLocation",
-              "s3:GetBucketPolicyStatus",
-              "s3:GetBucketPublicAccessBlock",
-              "s3:GetBucketAcl",
-              "s3:GetBucketPolicy",
-              "s3:PutBucketPolicy",
-              "s3:PutBucketOwnershipControls",
-              "s3:PutBucketPublicAccessBlock",
-              "s3:PutEncryptionConfiguration",
-              "s3:GetObjectVersionTagging",
-              "s3:GetBucketObjectLockConfiguration",
-              "s3:GetObjectVersionAcl",
-              "s3:PutObjectTagging",
-              "s3:DeleteObjectTagging",
-              "s3:GetObjectRetention",
-              "s3:DeleteObjectVersionTagging",
-              "s3:PutBucketObjectLockConfiguration",
-              "s3:DeleteObjectVersion",
-              "s3:GetObjectTagging",
-              "s3:PutBucketVersioning",
-              "s3:PutObjectVersionTagging",
-              "s3:GetBucketVersioning",
-              "s3:BypassGovernanceRetention",
-              "s3:PutObjectRetention",
-              "s3:GetObjectVersion",
-              "athena:StartQueryExecution",
-              "athena:GetQueryResults",
-              "athena:GetQueryExecution",
-              "glue:GetDatabase",
-              "glue:GetTable",
-              "glue:CreateTable",
-              "glue:CreateDatabase",
-              "glue:GetPartitions",
-              "glue:BatchCreatePartition",
-              "glue:BatchDeletePartition"
-          ],
-          "Resource": [
-              "arn:aws:s3:::netapp-backup-*"
-          ]
-      }
-----
-====
+. コネクタに必要な権限があることを確認します。詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXP  ポリシーの権限"]。
 +
 
 NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IAMポリシーのall_Resource_sectionsの下にあるAWSリソース名「arn」を「aws」から「aws-cn」に変更する必要があります `arn:aws-cn:s3:::netapp-backup-*`。

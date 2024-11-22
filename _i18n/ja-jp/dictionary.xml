@@ -3236,7 +3236,6 @@ ONTAP S3の略</block>
   <block id="0d0602824136f714807f54069c6d5a89" category="paragraph">次の 2 つの権限セットを設定する必要があります。</block>
   <block id="0d021f94d8bd70d2a5185935d6efa23e" category="list-text">S3バケットの作成と管理を行うコネクタの権限。</block>
   <block id="e1e27de3274b6be648bacdf85d89a282" category="list-text">オンプレミスの ONTAP クラスタの権限。 S3 バケットに対してデータの読み取りと書き込みを行うことができます。</block>
-  <block id="94bf6d31d85a9e7f628b488ba9a25200" category="list-text">（最新のから）次の S3 権限を確認します<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>）は、コネクタに権限を付与する IAM ロールの一部です。表示されていない場合は、を参照してください<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
   <block id="27481ab02cd2907ee58a87a01de37de2" category="list-text">サービスをアクティブ化すると、バックアップウィザードからアクセスキーとシークレットキーの入力を求められます。これらのクレデンシャルは、 ONTAP がデータをバックアップして S3 バケットにリストアできるように ONTAP クラスタに渡されます。そのためには、以下の権限を持つ IAM ユーザを作成する必要があります。</block>
   <block id="b539613501183cf10b8570ed60939fea" category="inline-link">AWS ドキュメント：「 Creating a Role to Delegate Permissions to an IAM User</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">を参照してください<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>。</block>
@@ -3619,9 +3618,6 @@ ifdef：aws []</block>
   <block id="dbeaadfb952b8aa57d00264751776087" category="list-text">レプリケートされたボリュームが存在する場合は、レプリケートされたボリュームからファイルまたはフォルダをリストアします。</block>
   <block id="e647cb9e3bb11f1dcf4383ae4ae00f0f" category="list-text">検索と復元機能を使用して、クラウドバックアップからファイルまたはフォルダを復元します。</block>
   <block id="b760ac1d9088cf17812b95299a0f4c97" category="list-text">[Browse &amp; Restore]を使用してクラウドバックアップからボリュームをリストアし、必要なファイルまたはフォルダにアクセスします。</block>
-  <block id="58cbbdff8232fafaffb4ad6a56acd87a" category="section-title">クラウドバックアップのランサムウェアスキャンはサポートされていません</block>
-  <block id="f1c936121149a4d66e8504719aa508b6" category="inline-link-macro">ランサムウェアスキャンを無効にする方法をご覧ください</block>
-  <block id="346753a5d3dc5273a067b86995fbd568" category="paragraph">Podmanエンジンを使用している場合、ランサムウェアのクラウドバックアップのスキャンはサポートされていません。クラウドバックアップにDataLock &amp; Ransomware機能を使用している場合は、ランサムウェアスキャンを無効にする必要があります。 <block ref="f4c28073f17b68c88ffe0b411369b71f" category="inline-link-macro-rx"></block>。</block>
   <block id="74fcd9275dc8f4544c3f2e6da14c3a0f" category="cell">Dockerコマンド</block>
   <block id="9865e302853628bbfe9f8357d9e7514f" category="cell">Podmanコマンド</block>
   <block id="2bd2b4226296570c863270e08d511da0" category="list-text">DockerコンテナとPodmanコンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用して、MySQL Dockerコンテナにバックアップをコピーします。</block>
@@ -3815,4 +3811,20 @@ ifdef：aws []</block>
   <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">5つ以上のボリュームのバックアップが有効になっている場合、BlueXP  バックアップおよびリカバリでは一度に5つのボリュームのみが初期化されます。これらが完了すると、5つのサブジョブの次のバッチが作成されて次のセットが開始され、すべてのボリュームが初期化されるまで続行されます。</block>
   <block id="542b4404b0cd2b4cf01b81a3a97b2c20" category="inline-link">データインフラの分析情報とCloud Secure</block>
   <block id="5212f7d39ed0f1c16c365beda23afc75" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。NetAppまたは一部のを<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>使用して<block ref="17959d7def942fae173290691e2a40ae" category="inline-link-rx"></block>ソースボリュームを保護します。</block>
+  <block id="46206fcd0fa4af78eefe04f1bd8d42c6" category="list-text">オンプレミスボリューム用のSnapLock Compliance（ONTAP 9 .14以降が必要）</block>
+  <block id="c4357ca22c7a0a7b40dcc64dcd915aad" category="paragraph">StorageGRIDのDataLockおよびランサムウェア対策の要件の詳細については、を参照してください<block ref="cb8de3051c432af9d9d024226709f28f" category="inline-link-macro-rx"></block>。</block>
+  <block id="e44dd1be7752eb1b45f88c82336a3d7d" category="inline-link">BlueXP  ポリシーの権限</block>
+  <block id="3cf1245b58a388120f82dc669e62f015" category="list-text">コネクタに必要な権限があることを確認します。詳細については、を参照してください<block ref="291c868684ffc00e2f96b2378d7b7449" category="inline-link-rx"></block>。</block>
+  <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">2024年11月22日</block>
+  <block id="3c97d3b45dd14b2958c1e0e304230aa0" category="paragraph">このBlueXP  バックアップ/リカバリリリースには、次の更新が含まれています。</block>
+  <block id="517624d736bd2a385ee8cda71584112f" category="section-title">SnapLock ComplianceおよびSnapLock Enterprise保護モード</block>
+  <block id="139da935670a9f985194d3241917c359" category="paragraph">BlueXP  バックアップ/リカバリで、SnapLock ComplianceまたはSnapLock Enterprise保護モードを使用して設定されたオンプレミスのFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。</block>
+  <block id="9ddb3e6714694f5c7f619d474fec8169" category="paragraph">でサポートされるボリュームの一覧を参照してください<block ref="9e68a582cc487ad29425f5a4796c9e45" category="inline-link-rx"></block>。</block>
+  <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">[ボリューム]ページでの検索とリストアプロセスのインデックス作成</block>
+  <block id="20d3b0b7cfe7a9f3dcfdb0faa9398efd" category="paragraph">検索とリストアを使用する前に、ボリュームデータのリストア元となる各ソース作業環境でインデックスの作成を有効にする必要があります。これにより、インデックス付きカタログで各ボリュームのバックアップファイルを追跡できます。[Volumes]ページにインデックスのステータスが表示されます。</block>
+  <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">Indexed：ボリュームにインデックスが作成されました。</block>
+  <block id="02e4eb80c967f3b9add2ba16a690eef2" category="list-text">実行中</block>
+  <block id="838534d879f74e7af515a7de57e72b71" category="list-text">インデックスなし</block>
+  <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">インデックスを一時停止しました</block>
+  <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">無効</block>
 </blocks>
