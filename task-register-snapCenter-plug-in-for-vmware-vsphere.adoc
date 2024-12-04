@@ -16,9 +16,6 @@ summary: BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録しま�
 [role="lead"]
 表示するデータストアと仮想マシンについては、BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録する必要があります。SnapCenter Plug-in for VMware vSphereホストを登録できるのは、管理者アクセス権を持つユーザだけです。
 
-
-NOTE: BlueXPでは、複数のSnapCenter Plug-in for VMware vSphereホストを登録できます。ただし、登録後にSnapCenter Plug-in for VMware vSphereホストを削除することはできません。
-
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*仮想マシン*]をクリックします。
 . [*設定*]ドロップダウンから、[* SnapCenter Plug-in for VMware vSphere*]をクリックします。
