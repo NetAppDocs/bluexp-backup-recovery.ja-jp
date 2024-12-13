@@ -3827,4 +3827,5 @@ ifdef：aws []</block>
   <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">インデックスを一時停止しました</block>
   <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">無効</block>
   <block id="8ce617f9e6329a3aea4d9a3a19e56086" category="list-text">データストアをバックアップするボリュームが[ボリューム]タブ（BlueXP [バックアップとリカバリ]-&gt;[ボリューム]）ですでに保護されている場合、[仮想マシン]タブ（BlueXP [バックアップとリカバリ]-&gt;[仮想マシン]）で同じデータストアを保護することはできません。</block>
+  <block id="569af965dbd3ebb866de69518b576d23" category="admonition">リストア処理が完了しない場合は、ジョブモニタにリストア処理が失敗したことが表示されるまで、リストアプロセスを再試行しないでください。ジョブモニタにリストア処理が失敗したことが表示される前にリストアプロセスを再試行すると、リストア処理は再び失敗します。ジョブモニタのステータスが「Failed」と表示されたら、リストアプロセスを再試行できます。</block>
 </blocks>
