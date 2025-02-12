@@ -3817,4 +3817,13 @@ ifdef：aws []</block>
   <block id="f179e47ab5bf8661b5b27f915bed468d" category="list-text"><block ref="f179e47ab5bf8661b5b27f915bed468d" category="inline-link-rx"></block></block>
   <block id="6990fc7ee6c7db5f6430ee974dfb8cfa" category="paragraph">ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。これらのコマンドでは、_admin_vserver（Storage VM）をとして使用する必要があります<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block>。</block>
   <block id="aca1b97d5bf0573ac64cc6e0f6f4dc09" category="cell">シンプルなSnapshotポリシー</block>
+  <block id="f5ccb197277a619c88128af4cd2e1114" category="list-text">BlueXP  のバックアップとリカバリCloud Volume ONTAPをAWS中国のリージョン（北京と寧夏を含む）のオブジェクトストアにバックアップしますが、最初にIDとアクセス管理（IAM）ポリシーを手動で変更する必要がある場合があります。</block>
+  <block id="cd10ae990b1a676dcb9da574833197dc" category="inline-link">AWSにコネクタをインストールする</block>
+  <block id="bfd50db7da0325053eeebfa5cb52b3a4" category="paragraph">AWSでのコネクタの作成の詳細については、を参照してください<block ref="ed99b863e2b8e641bb0c2fedb58f3636" category="inline-link-rx"></block>。</block>
+  <block id="fe99cb308e076a8fe35419694145d10e" category="inline-link">BlueXP  のバックアップとリカバリ機能に関するブログ（2023年5月）</block>
+  <block id="2753f358d85a358faa8e64a04217f62d" category="paragraph">ブログ記事の詳細については、を参照してください<block ref="a5e59c531cbb1038287f1b734bd79714" category="inline-link-rx"></block>。</block>
+  <block id="c6e0dd289d2bd12103cead1918541bfb" category="list-text">BlueXP  のバックアップとリカバリでは、Microsoft Azure中国リージョンはサポートされません。</block>
+  <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">Azureにコネクタをインストールしています</block>
+  <block id="e65cf67a9fbc4609855f67bb18ecf589" category="paragraph">Azureでのコネクタの作成の詳細については、を参照してください<block ref="eb0bd2c194a1c467beaf233333f1c26d" category="inline-link-rx"></block>。</block>
+  <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">ソースまたはデスティネーションからバックアップを作成した場合、SVM-DRとボリュームのバックアップとリカバリは完全に独立して機能します。唯一の制限事項は、SVM-DRでSnapMirrorクラウド関係がレプリケートされないことです。セカンダリサイトでSVMがオンラインになったDRシナリオでは、SnapMirrorクラウド関係を手動で更新する必要があります。</block>
 </blocks>

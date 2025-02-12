@@ -20,6 +20,19 @@ summary: 既知の制限事項には、このリリースの製品でサポー�
 
 == ONTAPのバックアップとリストアの制限事項
 
+* BlueXP  のバックアップとリカバリCloud Volume ONTAPをAWS中国のリージョン（北京と寧夏を含む）のオブジェクトストアにバックアップしますが、最初にIDとアクセス管理（IAM）ポリシーを手動で変更する必要がある場合があります。
++
+AWSでのコネクタの作成の詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html["AWSにコネクタをインストールする"^]。
+
++
+ブログ記事の詳細については、を参照してくださいhttps://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["BlueXP  のバックアップとリカバリ機能に関するブログ（2023年5月）"^]。
+
+* BlueXP  のバックアップとリカバリでは、Microsoft Azure中国リージョンはサポートされません。
++
+Azureでのコネクタの作成の詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-bluexp.html["Azureにコネクタをインストールしています"^]。
+
+
+
 
 
 === レプリケーションの制限事項
@@ -55,6 +68,7 @@ FlexVolボリュームに関する制限はありません。作業環境内の�
 +
 ** バックアップは ONTAP セカンダリからのみサポートされます。
 ** ボリュームに適用されるSnapshotポリシーは、BlueXPのバックアップとリカバリで認識されるポリシー（日次、週次、月次など）のいずれかである必要があります デフォルトの「sm_created」ポリシー（*[すべてのSnapshotをミラーリング]*に使用）は認識されず、バックアップ可能なボリュームのリストにDPボリュームは表示されません。
+** ソースまたはデスティネーションからバックアップを作成した場合、SVM-DRとボリュームのバックアップとリカバリは完全に独立して機能します。唯一の制限事項は、SVM-DRでSnapMirrorクラウド関係がレプリケートされないことです。セカンダリサイトでSVMがオンラインになったDRシナリオでは、SnapMirrorクラウド関係を手動で更新する必要があります。
 
 
 
