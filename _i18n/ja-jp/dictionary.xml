@@ -1973,58 +1973,7 @@ NetApp StorageGRID</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">詳細については、こちらをご覧ください</block>
   <block id="4d6157a62532904beb4910b24be9f6fb" category="paragraph">必要に応じて、使用しないCloud Volumes ONTAP の未割り当てのノードベースライセンスがある場合は、同じ金額、同じ有効期限のBlueXPバックアップおよびリカバリライセンスに変換できます。<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block>。</block>
   <block id="0a190b7a7b571c1c4ae19e069137c2ac" category="paragraph">BYOLライセンスの管理には、BlueXPデジタルウォレットを使用します。BlueXPデジタルウォレットから、新しいライセンスの追加、既存ライセンスの更新、ライセンスステータスの表示を行うことができます。</block>
-  <block id="78eb4db020e2c993d3997277acf3700c" category="section-title">BlueXPのバックアップとリカバリのライセンスファイルを入手します</block>
-  <block id="f73591df3bffa1bec575368324f40233" category="paragraph">BlueXPバックアップとリカバリ（Cloud Backup）のライセンスを購入したら、BlueXPのバックアップとリカバリのシリアル番号とNetApp Support Site（NSS）アカウントを入力するか、NetAppライセンスファイル（NLF）をアップロードして、BlueXPでライセンスをアクティブ化します。次の手順は、 NLF ライセンスファイルを取得する方法を示しています。</block>
-  <block id="f3cd3d23d33dfe26418bbc5243171a69" category="inline-link">プライベートモード</block>
-  <block id="4bfcf52b215e00901db793339d1f5b9e" category="paragraph">インターネットにアクセスできないオンプレミスサイトでBlueXPのバックアップとリカバリを実行している（BlueXP Connectorを<block ref="6426a8a427a5eadce24d979d317c10cc" category="inline-link-rx"></block>では、インターネットに接続されたシステムからライセンスファイルを取得する必要があります。プライベートモードのインストールでは、シリアル番号とNetApp Support Siteアカウントを使用してライセンスをアクティブ化することはできません。</block>
-  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp Support Site</block>
-  <block id="80c4b6e3dfa1d4f33033585b7c74e7e9" category="list-text">にサインインします<block ref="fcc52edac3ce57829c48ee35d97a295d" category="inline-link-rx"></block> [ システム ] 、 [ ソフトウェアライセンス ] の順にクリックします。</block>
-  <block id="df1557a9b76e8e22566ae571ed66d8d5" category="list-text">BlueXPバックアップ/リカバリライセンスのシリアル番号を入力します。</block>
-  <block id="5190e9ec018f5e661ec4b31ff1b34423" category="inline-image-macro">シリアル番号で検索したあとのライセンスの一覧を示すスクリーンショット。</block>
-  <block id="193bccfc2cf277cad00678895e527b35" category="paragraph"><block ref="193bccfc2cf277cad00678895e527b35" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a6cfac773f21906007a8ddf407596067" category="list-text">[* License Key] 列で、 [* Get NetApp License File* ] をクリックします。</block>
-  <block id="f68bf28051d836364652b5a91d1bcd3a" category="list-text">BlueXPアカウントID (これはサポートサイトではテナントIDと呼ばれます)を入力し'[*Submit*]をクリックしてライセンスファイルをダウンロードします</block>
-  <block id="56273f3344c87fabbf5196fba9816fff" category="inline-image-macro">ライセンスの取得ダイアログボックスを示すスクリーンショット。テナント ID を入力し、送信をクリックしてライセンスファイルをダウンロードします。</block>
-  <block id="7ca3a83129f844a42c263755a0fa4a32" category="paragraph"><block ref="7ca3a83129f844a42c263755a0fa4a32" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="fda78c118f583aef58210df788084452" category="section-title">BlueXPのバックアップとリカバリのBYOLライセンスをアカウントに追加します</block>
-  <block id="affa7da483903ef78f13bda66b93fbbd" category="paragraph">ネットアップアカウント用のBlueXPバックアップ/リカバリライセンスを購入したら、そのライセンスをBlueXPに追加する必要があります。</block>
-  <block id="8d080a0104c2b8b29f5fc2be913926af" category="list-text">BlueXPメニューから、「ガバナンス」&gt;「デジタルウォレット」をクリックし、「*データサービスライセンス*」タブを選択します。</block>
-  <block id="ea9a2b9ac34c9aab133f21aa5b67976e" category="list-text">[ ライセンスの追加 ] をクリックします。</block>
-  <block id="c1b2dc0798d3960e25b8a12c751f53ec" category="list-text">_ ライセンスの追加 _ ダイアログで、ライセンス情報を入力し、 * ライセンスの追加 * をクリックします。</block>
-  <block id="cb365723ea49a8e0727d9887fcd819ad" category="list-text">バックアップライセンスのシリアル番号があり、 NSS アカウントを知っている場合は、 * シリアル番号を入力 * オプションを選択してその情報を入力します。</block>
-  <block id="bae190eec3db4a0dd635ae72756acde8" category="inline-link">NSSアカウントをBlueXPに追加します</block>
-  <block id="30fc689a9c3cd4222329fe3a4c818a33" category="paragraph">お使いのNetApp Support Siteのアカウントがドロップダウンリストにない場合は、<block ref="06a3bc9d474b5d4e44d1a2733cac785a" category="inline-link-rx"></block>。</block>
-  <block id="664bf8c6e31ba8a710f5213d1874cd18" category="list-text">バックアップライセンスファイル（ダークサイトにインストールする場合に必要）がある場合は、 * ライセンスファイルのアップロード * オプションを選択し、プロンプトに従ってファイルを添付します。</block>
-  <block id="599a418db930a1edc006d10798ed2f61" category="inline-image-macro">BlueXPバックアップ/リカバリのBYOLライセンスを追加するページのスクリーンショット。</block>
-  <block id="1ea77740f669721296818b111e874615" category="paragraph"><block ref="1ea77740f669721296818b111e874615" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f914a0b78ceecabe51b4eca3467359e2" category="paragraph">BlueXPには、BlueXPのバックアップとリカバリをアクティブにするためのライセンスが追加されています。</block>
-  <block id="a7a2e296ff3e4bd717ab8d87223bae0e" category="section-title">BlueXPのバックアップとリカバリのBYOLライセンスを更新します</block>
-  <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">通知</block>
-  <block id="0553876f11122be0920f9fa9c803d152" category="inline-image-macro">BlueXPのデジタルウォレットページの有効期限が近いライセンスを示すスクリーンショット。</block>
-  <block id="3ef315abed0cef6dcc1d41cb39b4322b" category="paragraph"><block ref="3ef315abed0cef6dcc1d41cb39b4322b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3d2aca918343e87b5a15dddf47015bdd" category="paragraph">BlueXPのバックアップとリカバリのライセンスは、有効期限が切れる前に更新できるため、データのバックアップとリストアが中断されることはありません。</block>
-  <block id="7afb79d53be8b1758a25e5febc20f119" category="list-text">BlueXPの右下にあるチャットアイコンをクリックするか、サポートにお問い合わせください。特定のシリアル番号について、BlueXPバックアップ/リカバリライセンスの期間の延長や容量の追加をリクエストできます。</block>
-  <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">ライセンスの料金を支払ってNetApp Support Site に登録すると、BlueXPデジタルウォレット内のライセンスが自動的に更新され、[Data Services Licenses]ページに5~10分後に変更が反映されます。</block>
-  <block id="5810a6765696da7b12979cf90b9b287c" category="list-text">BlueXPがライセンスを自動的に更新できない場合(たとえば、ダークサイトにインストールされている場合)、ライセンスファイルを手動でアップロードする必要があります。</block>
-  <block id="b2b168bd64a341a85c749cb61bba40cb" category="inline-xref">ライセンスファイルをNetApp Support Siteから入手します</block>
-  <block id="67990bb3ffbbb0cf3899dc48f473dfb1" category="list-text">可能です <block ref="a616d03e9ddd1728142b7b9a2231868a" category="inline-xref-macro-rx"></block>。</block>
   <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">[ 詳細 ] アイコン</block>
-  <block id="858d57a70137ab2d1ecb54acde00b982" category="list-text">BlueXPデジタルウォレットページの[Data Services Licenses]タブで、をクリックします <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 更新するサービスシリアル番号の場合は、 ［ * ライセンスの更新 * ］ をクリックします。</block>
-  <block id="3ce750f001c2369e23b68f3210d9f100" category="inline-image-macro">特定のサービスの [ ライセンスの更新 ] ボタンを選択するスクリーンショット。</block>
-  <block id="9d37072f5a1b76b16e647a14826ade70" category="paragraph"><block ref="9d37072f5a1b76b16e647a14826ade70" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="41e921305ae1b027e5d364af4a2a9df2" category="list-text">_Update License_page で、ライセンスファイルをアップロードし、 * ライセンスの更新 * をクリックします。</block>
-  <block id="20ea092b61e7673402c5d7e75a4b5cef" category="paragraph">BlueXPのライセンスが更新され、BlueXPのバックアップとリカバリが引き続きアクティブになります。</block>
-  <block id="7d3786abf2ebb473a5ba70b680734525" category="section-title">BYOL ライセンスに関する考慮事項</block>
-  <block id="4a8ea1dafbb8ca5d2f3e300614ab9ebb" category="paragraph">BlueXPのバックアップとリカバリのBYOLライセンスを使用している場合、バックアップするすべてのデータのサイズが容量の上限に近づいているかライセンスの有効期限に近づいているときに、BlueXPのユーザインターフェイスに警告が表示されます。次の警告が表示されます。</block>
-  <block id="7425d5f89a4e332992c97c91d4ed6317" category="list-text">バックアップがライセンスで許可された容量の 80% に達したとき、および制限に達したときに再度実行されます</block>
-  <block id="d8ea74d0bc0e6f3c5be22312a953d7fb" category="list-text">ライセンスの有効期限が切れる 30 日前と、ライセンスの有効期限が切れたあとに再度有効になります</block>
-  <block id="379dea20c8734742bd3f9c78de134135" category="paragraph">これらの警告が表示された場合は、BlueXPインターフェイスの右下にあるチャットアイコンを使用してライセンスを更新してください。</block>
-  <block id="1c13d659a0c62fc2dcf4332ea8957263" category="paragraph">BYOLライセンスの期限が切れると、次の2つのことが起こります。</block>
-  <block id="17ffabdffcf9cad7bd6ae2054c4f6e24" category="list-text">使用しているアカウントにMarketplaceのPAYGOアカウントがある場合、バックアップサービスは引き続き実行されますが、PAYGOライセンスモデルに移行します。バックアップに使用されている容量に基づいて料金が発生します。</block>
-  <block id="5b517e301694c9f9491db430482b4297" category="list-text">使用しているアカウントにMarketplaceアカウントがない場合、バックアップサービスは引き続き実行されますが、警告は引き続き表示されます。</block>
-  <block id="631b9866a4bc7453c541fe31e96a4098" category="inline-link-macro">BlueXPのバックアップとリカバリのライセンスを更新する方法</block>
-  <block id="43b1faa261ae69df7d5f9f7ff39d989f" category="paragraph">BYOLサブスクリプションを更新すると、BlueXPによってライセンスが自動的に更新されます。BlueXPが安全なインターネット接続経由でライセンスファイルにアクセスできない場合(たとえば、ダークサイトにインストールされている場合)は、自分でファイルを取得してBlueXPに手動でアップロードできます。手順については、を参照してください <block ref="c65b28ef4f0eaa8e30036fa87c613036" category="inline-link-macro-rx"></block>。</block>
-  <block id="d279d008f3f2141ce1fc250d370bf6a9" category="paragraph">PAYGO ライセンスに切り替えられたシステムは、自動的に BYOL ライセンスに戻されます。ライセンスなしで実行されていたシステムでは、警告が表示されなくなります。</block>
   <block id="272ea43c17bb748acf948f028cd26513" category="summary">アプリケーションを保護する独自のポリシーを作成します。</block>
   <block id="8a4528cef726e4e36a30d918236162fc" category="doc">アプリケーションをバックアップするポリシーを作成する</block>
   <block id="9efea5dc57ddf655c92c407f96dd1337" category="paragraph">アプリケーションデータをクラウドにバックアップするポリシーを作成する必要があります。</block>
@@ -3604,7 +3553,6 @@ ifdef：aws []</block>
   <block id="82b1ab2145f9360167878fb0aab9d78e" category="paragraph">オンプレミスクラスタがONTAP 9.12.1以降を使用しており、StorageGRID システムが11.4以降を使用している場合は、古いバックアップファイルを特定の日数後にパブリッククラウドアーカイブストレージにアーカイブできます。現在、AWS S3 Glacier Deep ArchiveまたはAzure Archiveストレージ階層がサポートされています。 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="28af018ba458f766dcff23f60abd6827" category="paragraph">を参照してください <block ref="25e09e861cb627cbcd0c16e5c08ee6d8" category="inline-link-macro-rx"></block> 古いバックアップファイルのアーカイブの詳細については、を参照してください。</block>
   <block id="9274d8b34594d54c9ded6bce60335530" category="paragraph">無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします <block ref="45d31e67fc33e9fa27a1cf49eda4f564" category="inline-link-macro-rx"></block> トライアルが終了する前に、請求は行われません。</block>
-  <block id="9513e83b962e2a3ffa6edc4b46feac25" category="paragraph">ライセンスで許可されている期間が終了期限に近づいている場合や、ライセンスで許可されている容量が上限に達している場合は、バックアップ UI に通知されます。このステータスは、BlueXPのデジタルウォレットページとにも表示されます<block ref="62b97dd999de3571d07e2528cb6b6363" category="inline-link-rx"></block>。</block>
   <block id="6e76cf157a9da4f73d4367380e942a3f" category="paragraph">クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。 <block ref="41f5d0363680f0f70edb05636427b12e" category="inline-link-macro-rx"></block> および <block ref="60091673d77ccc83382ea728fd21045e" category="inline-link-macro-rx"></block>。</block>
   <block id="2159bd9a6e8b2b983d8bb6cc43b01d98" category="admonition">リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。の手順に従います <block ref="c917f8f516b9e0eb9478f5642522460c" category="inline-xref-macro-rx"></block> BlueXPのバックアップとリカバリを有効にし、リソースグループを選択するには、次の手順を実行します。</block>
   <block id="188fd7f75e50a8a882a75c15dcb630a1" category="section-title">2024年5月17日</block>
@@ -3726,17 +3674,6 @@ ifdef：aws []</block>
   <block id="98d90e398fc56688ddc647e5f49075ec" category="paragraph">作業環境のリストは、サービスの上部バナーで選択したBlueXP  組織（またはアカウント）、プロジェクト（またはワークスペース）、コネクタの範囲内にあります。</block>
   <block id="2d590dc5b59c3f75bf8c7f817f68b833" category="list-text">BlueXP  のバックアップとリカバリのお客様所有のライセンスを使用（BYOL）は、BlueXP  の組織またはアカウントに関連付けられているすべてのシステムで使用できるフローティングライセンスです。したがって、既存のBYOLライセンスで使用できるバックアップ容量が十分にある場合、別のBYOLライセンスを購入する必要はありません。</block>
   <block id="c626a56ce888d4e9324d2a1bcf746248" category="paragraph">BYOL BlueXP  バックアップおよびリカバリライセンスは、BlueXP  の組織またはアカウントに関連付けられているすべてのシステムで合計容量が共有されるフローティングライセンスです。ONTAPシステムの場合は、バックアップするボリュームに対してCLIコマンドを実行することで、必要な容量を概算できます。<block ref="2a47fed7b3c4b7d59e03f10c018cf5cc" prefix=" " category="inline-code"></block></block>
-  <block id="70bf2d10b395e656c03e3bc74e6d0f0d" category="paragraph">BlueXP  バックアップ/リカバリのシリアル番号が必要です。この番号は、SOから確認するか、アカウントチームにお問い合わせください。</block>
-  <block id="e53331a3231a958d20a4871d8efc35d8" category="list-text">BlueXP  アカウントIDを確認します。</block>
-  <block id="e0e8a7d90375792efecad34c0c923e32" category="inline-image-macro">BlueXP  Webコンソールの右上に表示される設定アイコン。</block>
-  <block id="cd42e1c1af0a908f68d68ae6103b5c30" category="list-text">BlueXP  コンソールの右上で、&gt;* IDおよびアクセス管理*を選択します<block ref="32173ab85f1c68a28384d1a40cf387db" category="inline-image-macro-rx" type="image"></block>。</block>
-  <block id="3bcef3f6238058ae825d608e1557c538" category="list-text">[Organization]ページで、アカウントIDを探してコピーします。</block>
-  <block id="2bd8c9344d3768dd44b910db169ef1fa" category="paragraph">アカウントIDが表示されておらず、組織IDがあるだけの場合は、組織IDの最初の8文字をコピーして_account-_に追加する必要があります。</block>
-  <block id="14da2ef10b9e4cc4d0981b05fff98072" category="paragraph">たとえば、次のように組織IDを入力します。</block>
-  <block id="2740d3013330ec13ae7693ee76bc6509" category="paragraph">ea10e1c6-80cc-4219-8e99-3c3e6b161ba5</block>
-  <block id="6ffe1a2d88424dc37ba43bdf5999183e" category="paragraph">アカウントIDは次のようになります。</block>
-  <block id="c0b58edc6437b03c81d24f7ded6f3648" category="paragraph">アカウント- ea10e1c6</block>
-  <block id="1e698178fbab1b271247235577e84a76" category="admonition">インターネットにアクセスできないプライベートモードのサイトの場合は、* account-DARKSITE1*を使用します。</block>
   <block id="525660225b8a21f3d11a20a241b06acd" category="paragraph">デフォルトでは、BlueXP  の組織管理者およびアカウント管理者は、すべての「Critical」および「Recommendation」アラートに関するEメールを受信します。他のすべてのユーザと受信者は、通知メールを受信しないようにデフォルトで設定されています。ネットアップクラウドアカウントを使用しているBlueXPユーザや、バックアップとリストアのアクティビティに注意が必要なその他の受信者にEメールを送信できます。</block>
   <block id="29360bfcdbc91d3f1514c372b4585965" category="list-text">BlueXP  アカウントのシリアル番号（BlueXP  のサポートリソースページに記載されている20桁の960xxxxxxxxxシリアル番号）を登録します。</block>
   <block id="444b74bc81e823cc1c4c704219ad8ed3" category="section-title">NetAppサポートのためのBlueXP  の登録</block>
@@ -3826,4 +3763,6 @@ ifdef：aws []</block>
   <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">Azureにコネクタをインストールしています</block>
   <block id="e65cf67a9fbc4609855f67bb18ecf589" category="paragraph">Azureでのコネクタの作成の詳細については、を参照してください<block ref="eb0bd2c194a1c467beaf233333f1c26d" category="inline-link-rx"></block>。</block>
   <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">ソースまたはデスティネーションからバックアップを作成した場合、SVM-DRとボリュームのバックアップとリカバリは完全に独立して機能します。唯一の制限事項は、SVM-DRでSnapMirrorクラウド関係がレプリケートされないことです。セカンダリサイトでSVMがオンラインになったDRシナリオでは、SnapMirrorクラウド関係を手動で更新する必要があります。</block>
+  <block id="2fb18b7eb7edfd6ac0fa8586ecbd9a12" category="inline-link">デジタルウォレットでライセンスを追加する方法</block>
+  <block id="e2a36029181f04d6208811edf66b0c62" category="paragraph"><block ref="039fd09b60dad6f86188402eac2ef738" category="inline-link-rx"></block>です。</block>
 </blocks>
