@@ -1348,9 +1348,6 @@ Cloud Volumes ONTAP</block>
   <block id="b3cf2a0723236b8965edb17a6adc8bf5" category="list-text">Google Cloudに保存されているバックアップの場合、新しいバケットとがプロビジョニングされます<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block> アカウント/プロジェクトレベルでプロビジョニングされます。</block>
   <block id="8100b28bcfd3e23e2256df4e160ffe93" category="list-text">StorageGRIDまたはONTAP S3に格納されたバックアップの場合、コネクタまたはクラウドプロバイダ環境にスペースがプロビジョニングされます。</block>
   <block id="ad13cab5dd920f50df05b097ac6ce5f3" category="paragraph">作業環境でインデックス作成がすでに有効になっている場合は ' 次のセクションに進んでデータをリストアしてください</block>
-  <block id="8c3d8e8290011affd1cc36d8fb6ca3a8" category="paragraph">作業環境でインデックス作成を有効にするには：</block>
-  <block id="77b424e494cba30c234da205f975c6ba" category="list-text">作業環境にインデックスが作成されていない場合は、リストアダッシュボードの _Search&amp;Restore_ で * 作業環境でインデックス作成を有効にする * をクリックし、作業環境で * インデックス作成を有効にする * をクリックします。</block>
-  <block id="3c672ca6b1c8663911932efdc7cb9761" category="list-text">少なくとも 1 つの作業環境にインデックスが作成されている場合は、リストアダッシュボードの _Search &amp; Restore_ で、 * インデックス設定 * をクリックし、作業環境で * インデックス作成を有効にする * をクリックします。</block>
   <block id="d76950a27877cc1b2fad2a533be5bd70" category="paragraph">すべてのサービスがプロビジョニングされ、インデックスカタログがアクティブ化されると、作業環境は「アクティブ」と表示されます。</block>
   <block id="22a8553a7fcf088b4624bfb22aca2c00" category="inline-image-macro">インデックスカタログをアクティブ化した作業環境を示すスクリーンショット。</block>
   <block id="2e6096622065e7d9092ff099425f8bf0" category="paragraph"><block ref="2e6096622065e7d9092ff099425f8bf0" category="inline-image-macro-rx" type="image"></block></block>
@@ -3162,8 +3159,6 @@ ONTAP S3の略</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">を参照してください<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>。</block>
   <block id="868fb9c55d4ddac7523d9c4697eb9d9f" category="section-title">データ暗号化用に、お客様が管理するAWSキーをセットアップ</block>
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">デフォルトのAmazon S3暗号化キーを使用してオンプレミスクラスタとS3バケット間でやり取りされるデータを暗号化する場合は、デフォルトのインストールでそのタイプの暗号化が使用されるため、すべての暗号化キーが設定されます。</block>
-  <block id="e2eb08f750d15308f8411635e75fc5e7" category="inline-link">独自のキーの使用方法を参照してください</block>
-  <block id="de4ef5a5f97836ab944189954e7907e4" category="paragraph">デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。<block ref="4f334d1f128fd0a003f5f48bc9fc4cbc" category="inline-link-rx"></block>。</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">VPCエンドポイントインターフェイスを使用して、システムにプライベート接続を設定します</block>
   <block id="d37ada70a820c5c84f992a48e05045cf" category="inline-link-macro">最初のダイアグラム</block>
   <block id="7cb65d7424b08922f4902800ae6b79d0" category="inline-link-macro">2番目の図</block>
@@ -3765,4 +3760,59 @@ ifdef：aws []</block>
   <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">ソースまたはデスティネーションからバックアップを作成した場合、SVM-DRとボリュームのバックアップとリカバリは完全に独立して機能します。唯一の制限事項は、SVM-DRでSnapMirrorクラウド関係がレプリケートされないことです。セカンダリサイトでSVMがオンラインになったDRシナリオでは、SnapMirrorクラウド関係を手動で更新する必要があります。</block>
   <block id="2fb18b7eb7edfd6ac0fa8586ecbd9a12" category="inline-link">デジタルウォレットでライセンスを追加する方法</block>
   <block id="e2a36029181f04d6208811edf66b0c62" category="paragraph"><block ref="039fd09b60dad6f86188402eac2ef738" category="inline-link-rx"></block>です。</block>
+  <block id="9126fc20b93ed61d342990460cdaaa43" category="doc">高性能な索引付け</block>
+  <block id="c31a2ae5c0b165eb1cee78223b508907" category="paragraph">BlueXP  のバックアップとリカバリでは、ソース作業環境上のデータのインデックス作成を効率化する、更新されたインデックス作成機能が導入されています。新しいインデックス作成機能には、UIの更新、データをリストアするSearch &amp; Restore方式のパフォーマンスの向上、グローバル検索機能のアップグレード、拡張性の向上が含まれています。</block>
+  <block id="135dcb5e7fddaabc736ce2d72074e3bf" category="paragraph">改善点の内訳は次のとおりです。</block>
+  <block id="2fd910d863c39557d994a40fedd27b38" category="list-text">*フォルダ統合*:更新されたバージョンでは、特定の識別子を含む名前を使用してフォルダがグループ化されるため、インデックス作成プロセスがスムーズになります。</block>
+  <block id="415e39ccfe49c5161a2a27cbc19cbaac" category="list-text">*寄木細工ファイルの圧縮*:更新されたバージョンは、各ボリュームのインデックス作成に使用されるファイルの数を減らし、プロセスを簡素化し、余分なデータベースを必要としません。</block>
+  <block id="c53ca191fcf89c8c42d05fd203ce3d03" category="list-text">*より多くのセッションでスケールアウト*：新しいバージョンでは、インデックス作成タスクを処理するためのセッションが追加され、プロセスが高速化されます。</block>
+  <block id="9ad2108ab54a2f84cdce51c70aedf218" category="list-text">*複数のインデックスコンテナのサポート*：新しいバージョンでは、複数のコンテナを使用してインデックスタスクの管理と分散を強化しています。</block>
+  <block id="4a3dba07ec28235aef40beaad924f29a" category="list-text">*インデックスの分割ワークフロー*:新しいバージョンでは、インデックス作成プロセスが2つの部分に分割され、効率が向上しています。</block>
+  <block id="4524da26c6e536d9203dad25cbe67e46" category="list-text">*同時実行性の向上*:新しいバージョンでは、ディレクトリの削除や移動を同時に行うことができるため、インデックス作成プロセスが高速化されます。</block>
+  <block id="4cd005b9bd7832f2f50d7bfa9ef8c5bd" category="paragraph-title">この機能を利用できるのは誰ですか？</block>
+  <block id="c0b0a9d9f7b65ce3e277b13bce1241d3" category="paragraph">新しいインデックス作成機能は、すべての新規顧客が利用できます。</block>
+  <block id="eb3dc66c3f5547559da4bd69622b70f1" category="paragraph-title">インデックス作成を有効にするにはどうすればよいですか。</block>
+  <block id="1928ef25d05266e1052541c930f2737c" category="paragraph">データのリストアにSearch &amp; Restore方式を使用する前に、ボリュームまたはファイルのリストア元となる各ソース作業環境で[Indexing]を有効にする必要があります。これにより、インデックスカタログはすべてのボリュームとすべてのバックアップファイルを追跡できるため、検索が迅速かつ効率的になります。</block>
+  <block id="d28994d1a9691ce26fcae71b9a05d1bc" category="paragraph">検索とリストアの実行時に[Enable Indexing]オプションを選択して、ソースの作業環境でインデックス作成を有効にします。</block>
+  <block id="6b14c6e0d643870ea727335d7739df30" category="inline-link">検索と復元を使用してONTAPデータを復元する方法</block>
+  <block id="9031cfd1bcd3de043cd6391f098dc91b" category="paragraph">詳細については、のドキュメントを参照して<block ref="7ae860a58fb7c028461eb3a0f3043711" category="inline-link-rx"></block>ください。</block>
+  <block id="2d31667baed414ccd330141663dac284" category="paragraph-title">サポートされるスケール</block>
+  <block id="b2ec30cb49afbacbac6cc89a95133887" category="paragraph">新しいインデックス作成機能では、次の機能がサポートされています。</block>
+  <block id="3201cddda2c272104ed2ef30674f361a" category="list-text">3分未満でグローバル検索を効率化</block>
+  <block id="5386e74ecf10139fea9af2308674b2f3" category="list-text">最大50億個のファイル</block>
+  <block id="ed6f4100c4fab2301cff975ad76b4882" category="list-text">クラスタあたり最大5、000個のボリューム</block>
+  <block id="1154c1f5439a3f20019e89d49f3ba075" category="list-text">ボリュームあたり最大100Kのスナップショット</block>
+  <block id="bca4b5a9086c6c17f64be092486e45ad" category="list-text">ベースラインインデックス作成の最大時間は7日未満です。実際の時間は環境によって異なります。</block>
+  <block id="783d72b35e6b2ea46fd074f6f0960e45" category="section-title">グローバル検索のパフォーマンスの向上</block>
+  <block id="66fba34c17d26bb2c0e9b396915f9a4f" category="paragraph">このリリースでは、グローバル検索のパフォーマンスも強化されています。これで、進行状況インジケータと、ファイルの数や検索にかかった時間など、より詳細な検索結果が表示されます。検索とインデックス作成用の専用コンテナにより、グローバル検索が5分以内に完了します。</block>
+  <block id="ba7df4741bd77385c236fcf981dd357a" category="paragraph">グローバル検索に関連する次の考慮事項に注意してください。</block>
+  <block id="03602fc4621dad9ee00f9e5d533ff5ea" category="list-text">新しいインデックスは、hourlyとラベル付けされたスナップショットでは実行されません。</block>
+  <block id="2bacd7c8c96302172c5d0324d784cf03" category="list-text">新しいインデックス機能は、FlexVol上のSnapshotに対してのみ機能し、FlexGroup上のSnapshotに対しては機能しません。</block>
+  <block id="9a817228de7a6ae8f0c7de31a40bf58e" category="list-text">BlueXP  のバックアップ/リカバリでは、ONTAPでNetApp Volume Encryption（NVE）とNetApp Aggregate Encryption（NAE）が有効になっているオブジェクトストレージにボリュームはバックアップされません。</block>
+  <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">NetAppボリューム暗号化の設定の概要</block>
+  <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">これらの暗号化タイプの詳細については、を参照してください<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block>。</block>
+  <block id="e00d7f7aeae26763ad3c75c98433f2e9" category="list-text">SnapMirrorポリシーのスケジュールを使用してSnapMirrorデスティネーションボリュームで長期保持のSnapshotを有効にすると、デスティネーションボリュームにSnapshotが直接作成されます。この場合、BlueXP  のバックアップとリカバリを使用してこれらのボリュームをバックアップしないでください。Snapshotはオブジェクトストレージに移動されません。</block>
+  <block id="01413f389bd4cf68af61ca2a62ee7d87" category="paragraph">デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。</block>
+  <block id="81d60e20c02d2dc4f1f049ef17d9c0f3" category="inline-link">Cloud Volumes ONTAPで独自のAmazon暗号化キーを使用する方法を参照</block>
+  <block id="88ccd2720227f5c1164c6497d4ae47f6" category="paragraph"><block ref="8ab54e2b609b251be3bd34cf7a9c9391" category="inline-link-rx"></block>です。</block>
+  <block id="76cbe937e740eca839bf63ad19034f3f" category="inline-link">BlueXP  のバックアップ/リカバリで独自のAmazon暗号化キーを使用する方法を参照</block>
+  <block id="6fdce727e6de4160eacd28b15da69c4f" category="paragraph"><block ref="a3f58d2c0ba0e72062adb488b84ae17c" category="inline-link-rx"></block>です。</block>
+  <block id="f92649b1217dc96d6552e63d3b09c966" category="paragraph">インデックス付きカタログv2の詳細については、インデックス付きカタログを有効にする方法については、以下のセクションを参照してください。</block>
+  <block id="166abda58938787377e1425ec8d5bfe0" category="paragraph">インデックスカタログは、作業環境内のすべてのボリュームとバックアップファイルに関するメタデータを格納するデータベースです。これは、検索と復元機能によって、復元するデータを含むバックアップファイルをすばやく見つけるために使用されます。</block>
+  <block id="ace26ef20d7de77728de7522bd26d7de" category="paragraph-title">インデックス付きカタログv2の機能</block>
+  <block id="c63a5bc5fc4b32b1bff45d50374410d4" category="paragraph">2025年2月にリリースされたインデックスカタログv2には、より効率的で使いやすい新機能が搭載されています。このバージョンはパフォーマンスが大幅に向上しており、すべての新規顧客に対してデフォルトで有効になっています。</block>
+  <block id="e45e80a3aa32c47a9d6ef311dd8f2980" category="paragraph">v2に関する次の考慮事項を確認してください。</block>
+  <block id="b98d519952606f96dcc615efa4f4e85c" category="list-text">インデックスカタログv2はプレビューモードで使用できます。</block>
+  <block id="951398abbe6e1c3079efe911a6951621" category="list-text">既存のお客様がCatalog v2を使用する場合は、環境のインデックスを完全に再作成する必要があります。</block>
+  <block id="eb720e0effbb1828841ea62695a758b9" category="list-text">Catalog v2は、Snapshotラベルを持つSnapshotのみにインデックスを作成します。</block>
+  <block id="2c3a11da75201509ee9fcbd0114229d0" category="list-text">BlueXP  のバックアップおよびリカバリでは、「hourly」SnapMirrorラベルが付いたSnapshotのインデックスは作成されません。「hourly」SnapMirrorラベルを使用してスナップショットのインデックスを作成する場合は、v2がプレビューモードのときに手動で有効にする必要があります。</block>
+  <block id="30de1e9ffcdc3df41ad87fe991035205" category="list-text">BlueXP  のバックアップ/リカバリでは、BlueXP  バックアップ/リカバリで保護されている作業環境に関連付けられているボリュームとスナップショットのインデックスが、カタログv2でのみ作成されます。BlueXP  プラットフォームで検出されたその他の作業環境にはインデックスは作成されません。</block>
+  <block id="cba8da890b429c54fa89c60426136832" category="paragraph">インデックスカタログv2では、次の機能がサポートされています。</block>
+  <block id="46428b76e969ff123fba9ae4f0798b31" category="paragraph-title">作業環境でのインデックス付きカタログの有効化</block>
+  <block id="e7a2b56d589698a713ae6f0ee11d094a" category="list-title">作業環境でインデックス作成を有効にする手順は次のとおりです。</block>
+  <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">次のいずれかを実行します。</block>
+  <block id="a3d610bf46189d3cbce48f595c45499f" category="list-text">作業環境にインデックスが作成されていない場合は、[Restore Dashboard]の[_Search &amp; Restore_]で*[Enable Indexing for Working Environments]*を選択します。</block>
+  <block id="4d15abe2ea84fc45daf040e94beae3f3" category="list-text">少なくとも1つの作業環境にインデックスがすでに作成されている場合は、[Restore Dashboard]の[_Search &amp; Restore_]で*[Indexing Settings]*をクリックします。</block>
+  <block id="96c51ce828ef9cc79ee2121bdd9dc630" category="list-text">作業環境で*[Enable Indexing]*を選択します。</block>
+  <block id="09d7c2dac047caa965175fead07159aa" category="section-title">2025年2月21日</block>
 </blocks>

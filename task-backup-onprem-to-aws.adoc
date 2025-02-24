@@ -374,7 +374,11 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 デフォルトのAmazon S3暗号化キーを使用してオンプレミスクラスタとS3バケット間でやり取りされるデータを暗号化する場合は、デフォルトのインストールでそのタイプの暗号化が使用されるため、すべての暗号化キーが設定されます。
 
-デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["独自のキーの使用方法を参照してください"^]。
+デフォルトのキーを使用するのではなく、お客様が管理する独自のキーをデータの暗号化に使用する場合は、BlueXPのバックアップとリカバリウィザードを開始する前に、暗号化に対応するキーをあらかじめ設定しておく必要があります。
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["Cloud Volumes ONTAPで独自のAmazon暗号化キーを使用する方法を参照"^]です。
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["BlueXP  のバックアップ/リカバリで独自のAmazon暗号化キーを使用する方法を参照"^]です。
 
 
 

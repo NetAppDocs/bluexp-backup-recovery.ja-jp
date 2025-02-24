@@ -55,6 +55,13 @@ FlexVolボリュームに関する制限はありません。作業環境内の�
 
 === オブジェクトへのバックアップの制限事項
 
+* BlueXP  のバックアップ/リカバリでは、ONTAPでNetApp Volume Encryption（NVE）とNetApp Aggregate Encryption（NAE）が有効になっているオブジェクトストレージにボリュームはバックアップされません。
++
+これらの暗号化タイプの詳細については、を参照してくださいhttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["NetAppボリューム暗号化の設定の概要"^]。
+
+
+
+* SnapMirrorポリシーのスケジュールを使用してSnapMirrorデスティネーションボリュームで長期保持のSnapshotを有効にすると、デスティネーションボリュームにSnapshotが直接作成されます。この場合、BlueXP  のバックアップとリカバリを使用してこれらのボリュームをバックアップしないでください。Snapshotはオブジェクトストレージに移動されません。
 * バックアップポリシーにボリュームが割り当てられていないときにバックアップポリシーを作成または編集する場合、保持されるバックアップの最大数は1018です。ポリシーにボリュームを割り当てたら、ポリシーを編集して最大4、000個のバックアップを作成できます。
 * DP ボリュームをバックアップする場合は、次の点に注意してください。
 +
