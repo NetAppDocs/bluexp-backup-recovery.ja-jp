@@ -55,7 +55,7 @@ FlexVolボリュームに関する制限はありません。作業環境内の�
 
 === オブジェクトへのバックアップの制限事項
 
-* BlueXP  のバックアップ/リカバリでは、ONTAPでNetApp Volume Encryption（NVE）とNetApp Aggregate Encryption（NAE）が有効になっているオブジェクトストレージにボリュームはバックアップされません。
+* データのバックアップ時に、BlueXP  のバックアップとリカバリでNetApp Volume Encryption（NVE）が維持されません。つまり、NVEボリューム上の暗号化されたデータは、データがデスティネーションに転送されている間は復号化され、暗号化は維持されません。
 +
 これらの暗号化タイプの詳細については、を参照してくださいhttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["NetAppボリューム暗号化の設定の概要"^]。
 

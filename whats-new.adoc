@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: whats-new.html 
-keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore, bluexp, bluexp backup and recovery' 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore, bluexp, bluexp backup and recovery, protection' 
 summary: BlueXPのバックアップとリカバリの新機能をご紹介します。 
 ---
 = BlueXPのバックアップとリカバリの最新情報
@@ -15,6 +15,36 @@ summary: BlueXPのバックアップとリカバリの新機能をご紹介し�
 
 [role="lead"]
 BlueXPのバックアップとリカバリの新機能をご紹介します。
+
+
+
+== 2025年3月17日
+
+このBlueXP  バックアップ/リカバリリリースには、次の更新が含まれています。
+
+
+
+=== SMB Snapshotの参照
+
+このBlueXP  のバックアップとリカバリに関する更新では、SMB環境でローカルSnapshotを参照できないという問題が解決されました。
+
+
+
+=== AWS GovCloud環境の更新
+
+このBlueXP  のバックアップとリカバリの更新で、TLS証明書エラーが原因でUIがAWS GovCloud環境に接続できない問題が修正されました。この問題は、IPアドレスではなくBlueXP  Connectorホスト名を使用することで解決されました。
+
+
+
+=== バックアップポリシー保持の制限
+
+以前は、BlueXP  のバックアップとリカバリのUIではバックアップコピー数が999個に制限されていましたが、CLIではそれより多くのコピーを実行できました。これで、1つのバックアップポリシーに最大4、000個のボリューム（バックアップポリシーに関連付けられていない1、018個のボリューム）を関連付けることができます。このアップデートには、これらの制限を超えないようにする追加の検証が含まれています。
+
+
+
+=== SnapMirrorクラウドの再同期
+
+この更新により、SnapMirror関係の削除後にサポートされていないバージョンのONTAPについては、BlueXP  バックアップおよびリカバリからSnapMirrorクラウドの再同期を開始できなくなります。
 
 
 
