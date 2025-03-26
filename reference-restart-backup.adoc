@@ -38,10 +38,10 @@ BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が�
 | コネクタの位置 | Dockerコマンド | Podmanコマンド 
 
 
-| クラウドの導入 | `docker restart cloudmanager_cbs` | `podman restart cloudmanager cbs` 
+| クラウドの導入 | `docker restart cloudmanager_cbs` | `podman restart cloudmanager_cbs` 
 
 
-| インターネットアクセスを使用した手動インストール | `docker restart cloudmanager_cbs` | `podman restart cloudmanager cbs` 
+| インターネットアクセスを使用した手動インストール | `docker restart cloudmanager_cbs` | `podman restart cloudmanager_cbs` 
 
 
 | インターネットにアクセスせずに手動でインストールします | `docker restart ds_cloudmanager_cbs_1` | `podman restart ds_cloudmanager_cbs_1` 
