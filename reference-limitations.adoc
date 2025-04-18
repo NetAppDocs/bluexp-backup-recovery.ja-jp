@@ -31,6 +31,7 @@ AWSでのコネクタの作成の詳細については、を参照してくだ�
 +
 Azureでのコネクタの作成の詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-bluexp.html["Azureにコネクタをインストールしています"^]。
 
+* BlueXP  のバックアップとリカバリでは、FlexCacheボリュームのバックアップはサポートされません。
 
 
 

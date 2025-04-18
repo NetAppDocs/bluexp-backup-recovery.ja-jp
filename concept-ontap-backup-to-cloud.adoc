@@ -221,6 +221,9 @@ BlueXPのバックアップとリカバリでは、次のタイプのボリュ�
 * SnapMirrorデータ保護（DP）デスティネーションボリューム
 
 
+
+NOTE: BlueXP  のバックアップとリカバリでは、FlexCacheボリュームのバックアップはサポートされません。
+
 の項を参照してください link:reference-limitations.html#backup-to-object-limitations["バックアップとリストアの制限事項"] を参照してください。
 
 
