@@ -14,11 +14,11 @@ summary: インターネットにアクセスできないサイト（「プラ�
 
 
 [role="lead"]
-インターネットアクセスのないサイト（_プライベートモード_）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。
+インターネットアクセスのないサイト（_プライベートモード_）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。BlueXP  Connectorホストシステムで問題が発生した場合は、新しいコネクタを導入し、重要なBlueXP  バックアップおよびリカバリデータをリストアできます。
 
-BlueXPのバックアップとリカバリをクラウドプロバイダやインターネットにアクセスできる独自のホストシステムに導入されているSaaS環境で使用する場合は、BlueXPのバックアップとリカバリの重要な設定データがすべてクラウドにバックアップされて保護されます。コネクタ付きの問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的にリストアされます。
+クラウドプロバイダ、またはインターネットにアクセスできる独自のホストシステムにBlueXP  Connectorが導入されているSaaS環境でBlueXP  のバックアップとリカバリを使用すると、BlueXP  の重要なバックアップとリカバリの設定データがすべてクラウドにバックアップされて保護されます。コネクタ付きの問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的にリストアされます。
 
-バックアップされるデータには次の2種類があります。
+バックアップされるデータには、次の2種類があります。
 
 * BlueXPバックアップおよびリカバリデータベース-すべてのボリューム、バックアップファイル、バックアップポリシー、および設定情報のリストが格納されます。
 * インデックス付きカタログ・ファイル-検索とリストア機能に使用される詳細なインデックスが含まれており、リストアするボリューム・データを検索する際に、検索を迅速かつ効率的に行うことができます。
@@ -31,11 +31,11 @@ TIP: BlueXPのバックアップ/リカバリデータベースやインデッ�
 
 
 
-== BlueXPのバックアップとリカバリのデータを新しいコネクタにリストア
+== BlueXP  のバックアップとリカバリのデータを新しいBlueXP  Connectorにリストアする
 
-オンプレミスコネクタで重大な障害が発生した場合は、新しいコネクタをインストールし、BlueXPのバックアップとリカバリのデータを新しいコネクタにリストアする必要があります。
+オンプレミスのBlueXP  Connectorで重大な障害が発生した場合は、新しいコネクタをインストールしてから、BlueXP  のバックアップとリカバリのデータを新しいコネクタにリストアする必要があります。
 
-BlueXPのバックアップとリカバリシステムを動作状態に戻すには、次の4つのタスクを実行する必要があります。
+BlueXP  バックアップ/リカバリシステムを動作状態に戻すには、次のタスクを実行する必要があります。
 
 * 新しいBlueXPコネクタを取り付けます
 * BlueXPのバックアップとリカバリデータベースをリストア
@@ -151,15 +151,20 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 
 を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します https://docs.netapp.com/us-en/bluexp-automation/index.html["BlueXP API"^]。
 
+次の情報は、BlueXP  3.9.xx以降のプライベートモードインストールに適用されます。古いバージョンの場合は、次の手順を実行します。 https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["DarkSite Cloud Backup：MySQLとインデックスカタログのバックアップとリストア"^]
+
 これらの手順は、StorageGRID にデータをバックアップするONTAP システムごとに実行する必要があります。
 
 . 次のOAuth/token APIを使用して、認証トークンを抽出します。
 +
 [source, http]
 ----
-curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":admin@netapp.com,"password":"Netapp@123","grant_type":"password"}
+curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":"admin@netapp.com","password":"Netapp@123","grant_type":"password"}
 > '
 ----
++
+IPアドレス、ユーザ名、およびパスワードはカスタム値ですが、アカウント名はカスタム値ではありません。アカウント名は常に「account-DARKSITE1」です。
+
 +
 このAPIは、次のような応答を返します。次のように、認証トークンを取得できます。
 
@@ -177,7 +182,7 @@ curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARK
 +
 このAPIは、次のような応答を返します。「resourceIdentifier」の下の値は_WorkingEnvironment ID_を示し、「AgentID」の下の値は_x-agent-id_を示します。
 
-. 作業環境に関連付けられたStorageGRID システムの詳細を使用して、バックアップとリカバリのデータベースを更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。
+. BlueXP  バックアップおよびリカバリデータベースを、作業環境に関連付けられたStorageGRIDシステムの詳細で更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。
 +
 [source, http]
 ----

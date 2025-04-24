@@ -2966,14 +2966,9 @@ ONTAP S3の略</block>
   <block id="07a8b64a61304fc06f0c8447c2981919" category="list-text">を割り当てる前に、バックアップによる影響を考慮してください<block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block> ボリュームへの階層化ポリシー。データはすぐに階層化されるため、BlueXPのバックアップとリカバリでは、ローカル階層ではなくクラウド階層からデータが読み取られます。バックアップの同時処理は、クラウドオブジェクトストレージへのネットワークリンクを共有するため、ネットワークリソースが最大限まで使用されなくなった場合にパフォーマンスが低下する可能性があります。この場合、複数のネットワークインターフェイス（ LIF ）をプロアクティブに設定して、この種類のネットワークの飽和を軽減することができます。</block>
   <block id="0ad47815ac126d3e59945dd94620559b" category="summary">インターネットにアクセスできないサイト（「プライベートモード」）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。</block>
   <block id="5e8c098d325749413b23d5eba5837aad" category="doc">ダークサイトでBlueXPのバックアップとリカバリのデータをリストア</block>
-  <block id="39be554c0f9c606fc89e879c11dfe9e9" category="paragraph">BlueXPのバックアップとリカバリをクラウドプロバイダやインターネットにアクセスできる独自のホストシステムに導入されているSaaS環境で使用する場合は、BlueXPのバックアップとリカバリの重要な設定データがすべてクラウドにバックアップされて保護されます。コネクタ付きの問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的にリストアされます。</block>
-  <block id="71610d9ba03d16f64930e18ad93ed1ff" category="paragraph">バックアップされるデータには次の2種類があります。</block>
   <block id="3f90954724de2ab33270c2e29ef44d4c" category="list-text">BlueXPバックアップおよびリカバリデータベース-すべてのボリューム、バックアップファイル、バックアップポリシー、および設定情報のリストが格納されます。</block>
   <block id="ae429398e7a8cba2d2c57d308c8ed88a" category="list-text">インデックス付きカタログ・ファイル-検索とリストア機能に使用される詳細なインデックスが含まれており、リストアするボリューム・データを検索する際に、検索を迅速かつ効率的に行うことができます。</block>
   <block id="33cc4fba89a0e27990f9826b52a31440" category="admonition">BlueXPのバックアップ/リカバリデータベースやインデックスカタログファイルにボリュームデータが含まれることはありません。</block>
-  <block id="edff5ebe6fa75b91836dac47d7940449" category="section-title">BlueXPのバックアップとリカバリのデータを新しいコネクタにリストア</block>
-  <block id="815289240ead1921d67ba2c1e806a37b" category="paragraph">オンプレミスコネクタで重大な障害が発生した場合は、新しいコネクタをインストールし、BlueXPのバックアップとリカバリのデータを新しいコネクタにリストアする必要があります。</block>
-  <block id="eced51eb44e5e285c2a52b0b05c4b03b" category="paragraph">BlueXPのバックアップとリカバリシステムを動作状態に戻すには、次の4つのタスクを実行する必要があります。</block>
   <block id="49ec960387a7762f70c9454eff39ff67" category="list-text">新しいBlueXPコネクタを取り付けます</block>
   <block id="6b7f0194ee0161c1ec6ef481e87fdaa2" category="list-text">BlueXPのバックアップとリカバリデータベースをリストア</block>
   <block id="bac8f03e2f29846dbab5b2b784213272" category="list-text">インデックス付けされたカタログファイルを復元します</block>
@@ -3013,7 +3008,6 @@ ONTAP S3の略</block>
   <block id="f2b2dd8a7061a4f2836de5feda40a45e" category="paragraph">このAPIは、次のような応答を返します。次のように、認証トークンを取得できます。</block>
   <block id="74e96d8b9d4abdf183199553dd665e53" category="list-text">テナンシー/外部/リソースAPIを使用して、作業環境IDとX-Agent-IDを抽出します。</block>
   <block id="69473e9fe37da40f59b6a4abb9d0b124" category="paragraph">このAPIは、次のような応答を返します。「resourceIdentifier」の下の値は_WorkingEnvironment ID_を示し、「AgentID」の下の値は_x-agent-id_を示します。</block>
-  <block id="dc79d96009c6f59868049e029c8bb68e" category="list-text">作業環境に関連付けられたStorageGRID システムの詳細を使用して、バックアップとリカバリのデータベースを更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。</block>
   <block id="119ce87fb0068eaf943265dcfa7867a2" category="section-title">BlueXPのバックアップとリカバリの設定を確認</block>
   <block id="e828f5871c88d64ebf2a764153246360" category="list-text">各ONTAP 作業環境を選択し、右パネルのバックアップ/リカバリ・サービスの横にある*バックアップの表示*をクリックします。</block>
   <block id="36c688567530141607520ff8f371abad" category="paragraph">ボリュームに対して作成されたすべてのバックアップが表示されます。</block>
@@ -3478,7 +3472,6 @@ ifdef：aws []</block>
   <block id="e5c31b44cc452f945aec38b328ab97da" category="section-title">既存のクラウドバックアップポリシーを編集する</block>
   <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">クラウドへの新しいバックアップポリシーを追加する</block>
   <block id="6c08aad63d31acac8bc5248c2bfd34f2" category="paragraph">クラスタがONTAP 9.11.1以降を使用している場合は、_DataLockとランサムウェアによる攻撃からバックアップを保護するように設定できます。_DataLock_バックアップファイルが変更または削除されないように保護し、_Ransomware Protection_バックアップファイルをスキャンしてバックアップファイル内のランサムウェア攻撃の証拠を探します。</block>
-  <block id="427911e9853111f28c07f559c3b84c6a" category="paragraph">インターネットアクセスのないサイト（_プライベートモード_）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。将来、BlueXP Connectorホストシステムを搭載した問題を使用している場合は、新しいコネクタを導入して、BlueXPの重要なバックアップとリカバリデータをリストアできます。</block>
   <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">データ保護の適用範囲に関するレポートを作成</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">ONTAP データをクラウドにバックアップ</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">ONTAP バックアップファイルを管理します</block>
@@ -3835,7 +3828,6 @@ ifdef：aws []</block>
   <block id="e933dec5f784259760ab3c9400fb8e0b" category="section-title">サードパーティ製Wasabiオブジェクトストアのサポート（プレビュー）</block>
   <block id="57a83bf4b6d8f755d141ebf2bb282ed3" category="paragraph">BlueXP  のバックアップとリカバリでは、Wasabiを中心にサードパーティのオブジェクトストアのサポートが拡張されました。この新しいプレビュー機能を使用すると、バックアップとリカバリのニーズに合わせてS3互換オブジェクトストアを活用できます。</block>
   <block id="da21b58c44ce1975cb8550ec689df5b3" category="section-title">Wasabiの使用を開始する</block>
-  <block id="f3afa8b48aa14a1da6a21d82ad964f5d" category="paragraph">この機能の使用を開始するには、BlueXP  UIでフラグを有効にする必要があります。その後、サードパーティオブジェクトストアの接続の詳細を入力し、バックアップとリカバリのワークフローに統合できます。</block>
   <block id="9b6d9b582a741bc832b2557c16d31b09" category="section-title">プレビューモードの制限事項</block>
   <block id="fdf10a1d090d444123d00414152f7943" category="paragraph">この機能のプレビュー中は、次の制限事項を考慮してください。</block>
   <block id="7ebc42140a656312f7a985f14e55f3a6" category="list-text">Bring Your Own Bucket（BYOB）はサポートされていません。</block>
@@ -3847,4 +3839,25 @@ ifdef：aws []</block>
   <block id="f98d5407ffd34a829996a4bb36d6e582" category="paragraph">このプレビューでは、すべての機能をリリースする前に、この新機能について確認し、サードパーティのオブジェクトストアとの統合に関するフィードバックをお寄せいただくことを推奨します。</block>
   <block id="c2539a9855f013822344851d0fcb1184" category="admonition">BlueXP  のバックアップとリカバリでは、FlexCacheボリュームのバックアップはサポートされません。</block>
   <block id="801c0fa0d304ca22d8afec06189bcf93" category="section-title">2025年4月16日</block>
+  <block id="0c9e9a971e295d08b39001ef71ddfca9" category="paragraph">サードパーティ製ストレージをオブジェクトストアとして使用するには、BlueXP  Connectorでフラグを有効にする必要があります。その後、サードパーティオブジェクトストアの接続の詳細を入力し、バックアップとリカバリのワークフローに統合できます。</block>
+  <block id="09c224692df6f6a3d6045847d63b5e86" category="list-text">コネクタにSSH接続します。</block>
+  <block id="d4abc9f6a0f7759f15272b587badc33b" category="list-text">BlueXP  バックアップとリカバリのCBSサーバコンテナに移動します。</block>
+  <block id="e5b842eef10876fd5aec5be48ecec9b3" category="list-text">Vimまたはその他のエディタを使用して、フォルダ内のファイルを<block ref="2245023265ae4cf87d02c8b6ba991139" prefix=" " category="inline-code"></block>開き<block ref="a4f5e59b80d929d30eba10ee00d7450d" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="14ee6952f3be48ef4395f003ecfdac2c" category="list-text">「：false」を「true」に<block ref="05e4358c747c33d991f9217e4b509fcc" prefix=" " category="inline-code"></block>変更し<block ref="05e4358c747c33d991f9217e4b509fcc" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="08c4f5aee4f8b6cabdcd558ad1452ad2" category="list-text">変更を保存します。</block>
+  <block id="4b891dca63ef1ab4f9daab8d3bd76368" category="list-text">コンテナを終了します。</block>
+  <block id="3dc3e984a5412f225aea00167c9309bf" category="list-text">BlueXP  バックアップおよびリカバリCBSサーバコンテナを再起動します。</block>
+  <block id="15c66d710af89e601163f082e2d62e63" category="paragraph">コンテナが再びオンになったら、BlueXP  バックアップとリカバリのUIを開きます。バックアップを開始するか、バックアップ戦略を編集すると、新しいプロバイダ「S3 Compatible」が、AWS、Microsoft Azure、Google Cloud、StorageGRID、ONTAP S3の他のバックアッププロバイダとともにリストされます。</block>
+  <block id="78097a3e132faf1442e6668a39b8040c" category="inline-link-macro">サードパーティ製オブジェクトストアのサポート</block>
+  <block id="b1da0655bbf0fa38d6ccffac2f8f51db" category="admonition">BlueXP  のバックアップとリカバリでは、プレビューオプションとしてサードパーティのオブジェクトストアのサポートが拡張されました。このプレビュー機能を使用すると、バックアップとリカバリのニーズに応じてS3互換オブジェクトストアを活用できます。このプレビュー機能の有効化の詳細については、を参照してください<block ref="01bf6a646623e07aa807ece43107b9ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="b60143d8607e2a12a97d5dc98902b3a3" category="paragraph">インターネットアクセスのないサイト（_プライベートモード_）でBlueXPのバックアップとリカバリを使用すると、BlueXPのバックアップとリカバリの設定データがバックアップが格納されているStorageGRIDまたはONTAP S3バケットにバックアップされます。BlueXP  Connectorホストシステムで問題が発生した場合は、新しいコネクタを導入し、重要なBlueXP  バックアップおよびリカバリデータをリストアできます。</block>
+  <block id="400d95f0927e7eaac4a93498115f8b4f" category="paragraph">クラウドプロバイダ、またはインターネットにアクセスできる独自のホストシステムにBlueXP  Connectorが導入されているSaaS環境でBlueXP  のバックアップとリカバリを使用すると、BlueXP  の重要なバックアップとリカバリの設定データがすべてクラウドにバックアップされて保護されます。コネクタ付きの問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的にリストアされます。</block>
+  <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">バックアップされるデータには、次の2種類があります。</block>
+  <block id="7aa13416e899895bea151695a08fc22d" category="section-title">BlueXP  のバックアップとリカバリのデータを新しいBlueXP  Connectorにリストアする</block>
+  <block id="11c11cb03c79f4af018caa66bf0c66d4" category="paragraph">オンプレミスのBlueXP  Connectorで重大な障害が発生した場合は、新しいコネクタをインストールしてから、BlueXP  のバックアップとリカバリのデータを新しいコネクタにリストアする必要があります。</block>
+  <block id="6c9913da2722f6c96e97b9d6aa37bb46" category="paragraph">BlueXP  バックアップ/リカバリシステムを動作状態に戻すには、次のタスクを実行する必要があります。</block>
+  <block id="da2ba8762d0dcb78945a22c9a375fffa" category="inline-link">DarkSite Cloud Backup：MySQLとインデックスカタログのバックアップとリストア</block>
+  <block id="bb10a63044b830cc42091d93b78fd668" category="paragraph">次の情報は、BlueXP  3.9.xx以降のプライベートモードインストールに適用されます。古いバージョンの場合は、次の手順を実行します。<block ref="2da286ce66fc5078574abb0f7864085c" category="inline-link-rx"></block></block>
+  <block id="e29798cefe7dc354983bc30c2c9fccdf" category="paragraph">IPアドレス、ユーザ名、およびパスワードはカスタム値ですが、アカウント名はカスタム値ではありません。アカウント名は常に「account-DARKSITE1」です。</block>
+  <block id="2decbd35e1c4f4abc73df06a5256970a" category="list-text">BlueXP  バックアップおよびリカバリデータベースを、作業環境に関連付けられたStorageGRIDシステムの詳細で更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。</block>
 </blocks>
