@@ -3003,7 +3003,6 @@ ONTAP S3の略</block>
   <block id="8a817b57889a6e642ad7fb06e7b26c80" category="section-title">StorageGRID 環境の詳細を設定</block>
   <block id="95405ad3ad814456093255e6d36ee69e" category="inline-link">BlueXP API</block>
   <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">を使用して元のコネクタセットアップを行ったときの、ONTAP の作業環境に関連付けられているStorageGRID システムの詳細を追加します<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>。</block>
-  <block id="ed28e31454bb8c9849e6271a030b2762" category="paragraph">これらの手順は、StorageGRID にデータをバックアップするONTAP システムごとに実行する必要があります。</block>
   <block id="3f1b9decb18d57a001f26c7273adeddc" category="list-text">次のOAuth/token APIを使用して、認証トークンを抽出します。</block>
   <block id="f2b2dd8a7061a4f2836de5feda40a45e" category="paragraph">このAPIは、次のような応答を返します。次のように、認証トークンを取得できます。</block>
   <block id="74e96d8b9d4abdf183199553dd665e53" category="list-text">テナンシー/外部/リソースAPIを使用して、作業環境IDとX-Agent-IDを抽出します。</block>
@@ -3858,6 +3857,7 @@ ifdef：aws []</block>
   <block id="6c9913da2722f6c96e97b9d6aa37bb46" category="paragraph">BlueXP  バックアップ/リカバリシステムを動作状態に戻すには、次のタスクを実行する必要があります。</block>
   <block id="da2ba8762d0dcb78945a22c9a375fffa" category="inline-link">DarkSite Cloud Backup：MySQLとインデックスカタログのバックアップとリストア</block>
   <block id="bb10a63044b830cc42091d93b78fd668" category="paragraph">次の情報は、BlueXP  3.9.xx以降のプライベートモードインストールに適用されます。古いバージョンの場合は、次の手順を実行します。<block ref="2da286ce66fc5078574abb0f7864085c" category="inline-link-rx"></block></block>
-  <block id="e29798cefe7dc354983bc30c2c9fccdf" category="paragraph">IPアドレス、ユーザ名、およびパスワードはカスタム値ですが、アカウント名はカスタム値ではありません。アカウント名は常に「account-DARKSITE1」です。</block>
   <block id="2decbd35e1c4f4abc73df06a5256970a" category="list-text">BlueXP  バックアップおよびリカバリデータベースを、作業環境に関連付けられたStorageGRIDシステムの詳細で更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。</block>
+  <block id="241380d8d42b823d8bd7c25c9fc3014f" category="paragraph">StorageGRIDにデータをバックアップするシステムごとに、これらの手順を実行する必要があります。</block>
+  <block id="cd6c5272ababe8075a9145908c571172" category="paragraph">IPアドレス、ユーザ名、およびパスワードはカスタム値ですが、アカウント名はカスタム値ではありません。アカウント名は常に「account-DARKSITE1」です。また、ユーザ名にはEメール形式の名前を使用する必要があります。</block>
 </blocks>
