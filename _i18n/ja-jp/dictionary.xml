@@ -3860,4 +3860,106 @@ ifdef：aws []</block>
   <block id="2decbd35e1c4f4abc73df06a5256970a" category="list-text">BlueXP  バックアップおよびリカバリデータベースを、作業環境に関連付けられたStorageGRIDシステムの詳細で更新します。StorageGRID の完全修飾ドメイン名と、次に示すアクセスキーおよびストレージキーを入力してください。</block>
   <block id="241380d8d42b823d8bd7c25c9fc3014f" category="paragraph">StorageGRIDにデータをバックアップするシステムごとに、これらの手順を実行する必要があります。</block>
   <block id="cd6c5272ababe8075a9145908c571172" category="paragraph">IPアドレス、ユーザ名、およびパスワードはカスタム値ですが、アカウント名はカスタム値ではありません。アカウント名は常に「account-DARKSITE1」です。また、ユーザ名にはEメール形式の名前を使用する必要があります。</block>
+  <block id="89f166f25960d4442ee3cf41fb712de0" category="doc">ボリューム移行のためのSnapMirrorからクラウドへの再同期</block>
+  <block id="f3afa2391337e5c71f0a9b02dedc2753" category="paragraph">SnapMirrorからクラウドへの再同期機能は、NetApp環境でのボリューム移行時のデータ保護と継続性を合理化します。SnapMirror論理レプリケーション（LRSE）を使用して、オンプレミスのNetApp環境から別の環境、またはCloud Volumes ONTAPやCloud Volumes Serviceなどのクラウドベースのソリューションにボリュームを移行する場合、SnapMirrorからクラウドへの再同期により、既存のクラウドバックアップに影響を与えずに運用できます。</block>
+  <block id="9de9a72e99be1fee8dc0790411738dd4" category="paragraph">この機能により、時間とリソースを大量に消費するベースライン再処理が不要になり、移行後もバックアップ処理を継続できます。この機能は、FlexVolとFlexGroupの両方をサポートするワークロードマイグレーションシナリオで役立ちます。ONTAPバージョン9.16.1以降で使用できます。</block>
+  <block id="9c69774894ac0ae0f2bbae9b12964cfe" category="paragraph">SnapMirrorからクラウドへの再同期は、環境全体でバックアップの継続性を維持することで運用効率を高め、ハイブリッドクラウドやマルチクラウドのデータ管理の複雑さを軽減します。</block>
+  <block id="5746bb5eeaa153936151cb52823109e6" category="inline-link">SnapMirrorを使用したボリュームのクラウドへの再同期</block>
+  <block id="3a55cfa97f4682f930352f0f81220899" category="paragraph">再同期処理の実行方法の詳細については、を参照してください<block ref="207dcf1aaf014b22c1836348f392f25c" category="inline-link-rx"></block>。</block>
+  <block id="d7aa9347c7a241e0b5959147e0834507" category="section-title">サードパーティ製MinIOオブジェクトストアのサポート（プレビュー）</block>
+  <block id="74f850f0e7d77a9dfb658a6664c11580" category="paragraph">BlueXP  のバックアップとリカバリでは、MinIOを中心にサードパーティのオブジェクトストアもサポートされるようになりました。この新しいプレビュー機能を使用すると、バックアップとリカバリのニーズに合わせてS3互換オブジェクトストアを活用できます。</block>
+  <block id="fba2533d6fb852f662ab27cb8831c6c2" category="paragraph">このプレビュー版では、すべての機能がリリースされる前に、サードパーティのオブジェクトストアとの強固な統合を確保したいと考えています。この新しい機能について検討し、サービスの強化に役立つフィードバックを提供することをお勧めします。</block>
+  <block id="3d1e2e322f867e2abdc8070d562a4fe2" category="admonition">この機能は本番環境では使用しないでください。</block>
+  <block id="992cf3dc32e72bdb90286b4c5941d343" category="paragraph">*プレビューモードの制限*</block>
+  <block id="252d166070160d49f855fee5ec9639fc" category="paragraph">この機能はプレビュー中ですが、次のような制限があります。</block>
+  <block id="2a42543b31a44385d9801b2e6d715417" category="list-text">ポリシーでDataLockを有効にすることはできません。</block>
+  <block id="bd38f0d8ed5d82f6a34eef6f60e82afc" category="list-text">ポリシーでアーカイブモードを有効にすることはできません。</block>
+  <block id="7f4d22b3de45045172408ddd711a85a1" category="paragraph">* はじめに *</block>
+  <block id="5955ccac697a810563b00d68d2e643a8" category="paragraph">このプレビュー機能を使用するには、BlueXP  コネクタでフラグを有効にする必要があります。その後、バックアップセクションで*サードパーティ互換*オブジェクトストアを選択して、MinIOのサードパーティオブジェクトストアの接続の詳細を保護ワークフローに入力できます。</block>
+  <block id="3e49d780723839a4238980f0ed8f0e54" category="inline-link">BlueXP  バックアップ/リカバリのプレビュー機能を有効にする</block>
+  <block id="e4d99443f32762da8fffc177c52518aa" category="paragraph">プレビュー機能を有効にする方法については、を参照してください<block ref="918e5958ca0f0d47162ab1a4f8ffabd1" category="inline-link-rx"></block>。</block>
+  <block id="21ade0a59a521983cc4ace159928965c" category="section-title">BlueXP  のバックアップとリカバリSnapMirrorからクラウドへの再同期の仕組み</block>
+  <block id="5f6d83d4b0c669ea7f7bd4da5824cd65" category="paragraph">機器更改を完了したり、ONTAPクラスタ間でボリュームを移行したりする際には、バックアップが中断されずに継続的に機能することが重要です。BlueXP  のバックアップとリカバリSnapMirrorからクラウドへの再同期は、ボリューム移行後もクラウドバックアップの一貫性を維持することで、これを支援します。</block>
+  <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">次に例を示します。</block>
+  <block id="b9dfd7ca98edd49bd3f4a7fdd06d6b04" category="paragraph">Vol1aという名前のオンプレミスボリュームがあるとします。このボリュームには、S1、S2、S3の3つのSnapshotがあります。これらのスナップショットは、リストアポイントのようなものです。vol1は、SnapMirror to Cloud（SM-C）を使用してクラウドオブジェクトストアエンドポイントにすでにバックアップされています。ただし、これまでのところ、オブジェクトストアにバックアップされているのはS1とS2のみです。</block>
+  <block id="d6bb362713fc9bbaf305d5ff71996c0c" category="paragraph">次に、vol1を別のONTAPクラスタに移行します。これを行うには、Vol1bという新しいクラウドボリュームに対するSnapMirror論理レプリケーション（LRSE）関係を作成します。これにより、S1、S2、S3の3つのSnapshotすべてがVol1aからVol1bに転送されます。</block>
+  <block id="3bda701e519ceab26170e54382cd7422" category="paragraph">移行が完了したら、次のセットアップを完了します。</block>
+  <block id="739f62b90902f9151f57bd05f8b5cb41" category="list-text">元のSM-C関係（Vol1a→オブジェクトストア）が削除されます。</block>
+  <block id="03e29bc44ba20362fc96d07158a5764e" category="list-text">LRSE関係（Vol1a→Vol1b）も削除されます。</block>
+  <block id="917f63208cf9092b33e37fecbad0b131" category="list-text">これでVol1bがアクティブボリュームになります。</block>
+  <block id="6526b4c3e0ccd4406625779e8f929780" category="paragraph">この時点で、同じクラウドエンドポイントにVol1bのバックアップを続行します。ただし、フルバックアップを（時間とリソースをかけて）ゼロから開始する代わりに、SnapMirrorからクラウドへの再同期を使用します。</block>
+  <block id="a7207aeb7788cb3ab210fbeb3af7870a" category="paragraph">再同期の仕組みは次のとおりです。</block>
+  <block id="ab8b63838f3094c2b29261c6de23249d" category="list-text">システムは、Vol1aとオブジェクトストアの間に共通のSnapshotがあるかどうかをチェックします。この場合、両方ともS2を持ちます。</block>
+  <block id="87f6e8ca301c2bbabf7f7c871f3faaef" category="list-text">この共有スナップショットのため、システムはS2とS3間の差分変更のみを転送する必要があります。</block>
+  <block id="9c228330cd96a2b87676d562aaee89a3" category="paragraph">つまり、ボリューム全体ではなく、S2の送信後に追加された新しいデータのみがオブジェクトストアに送信されます。</block>
+  <block id="5d6616ae783c86c93ea04206e03d7bf8" category="paragraph">このプロセスにより、すでにバックアップされているデータの再送信を回避し、帯域幅を節約し、移行後もバックアップチェーンをスムーズに継続できます。</block>
+  <block id="ae950c16bf3f58791238528fefc2ccfc" category="inline-image-macro">BlueXP  バックアップとリカバリSnapMirrorからクラウドへの再同期</block>
+  <block id="82ded9bf6698fb4eacdbf0bcc767c94b" category="paragraph"><block ref="82ded9bf6698fb4eacdbf0bcc767c94b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d362ffc6c099983b4f38471b15cc8db7" category="section-title">手順に関する注意事項</block>
+  <block id="c8f1c31ff80f86ac3f0e5c6f159fae6e" category="list-text">デスティネーションONTAPクラスタでONTAPバージョン9.16.1以降が実行されている必要があります。</block>
+  <block id="4fa757b8765c2c33598a2a12a6736a4a" category="list-text">古いソースONTAPクラスタは、BlueXP  バックアップおよびリカバリを使用して保護する必要があります。</block>
+  <block id="8538f003a449f093065312ef200d9a8c" category="list-text">BlueXP  のバックアップとリカバリを使用して移行や機器更改を実行することはありません。担当者は、プロフェッショナルサービスチームまたは認定ストレージ管理者に依頼してください。</block>
+  <block id="c57f78e106fcf67deb2b45f545b5d5cd" category="list-text">NetApp移行チームは、ボリュームの移行を容易にするために、ソースとデスティネーションのONTAPクラスタ間のSnapMirror関係を作成します。</block>
+  <block id="c95c640e56df80e4ff47d4e0332f1f55" category="list-text">機器更改時の移行がSnapMirrorベースの移行に基づいていることを確認</block>
+  <block id="0fd23837527e02397f6d558e79af8f07" category="list-text">SVM-Migrate、SVM-DR、またはヘッドスワップ方式を使用した移行後のSnapMirrorからクラウドへの再同期は、現在サポートされていません。</block>
+  <block id="6dc593a28a72529a8cc11a78416ebec9" category="section-title">SnapMirrorを使用したボリュームのクラウド再同期への移行方法</block>
+  <block id="67ceb37b59ef9beeaf11cf13c81bd82a" category="paragraph">SnapMirrorからクラウドへの再同期を使用してボリュームを移行するには、次の主要な手順を実行します。それぞれについて詳しくは、以下で説明します。</block>
+  <block id="4d6ea55ab99fe3e9b60123803e0b6a86" category="list-text">*移行前のチェックリストに従う*：移行を開始する前に、NetApp機器更改チームが次の前提条件を満たしていることを確認し、データ損失を防ぎ、スムーズな移行プロセスを実現します。</block>
+  <block id="3b13662a99fc8fb9872a7e6d97f04d6c" category="list-text">*移行後のチェックリストに従う*：移行後、NetApp機器更改チームは次の手順を実行して保護を確立し、再同期の準備を行います。</block>
+  <block id="6727cb6cff6a2fa33b7f63ed1557be99" category="list-text">* SnapMirrorからクラウドへの再同期を実行*：移行後、NetApp機器更改チームがSnapMirrorからクラウドへの再同期処理を実行し、新しく移行したボリュームからクラウドへのバックアップを再開します。</block>
+  <block id="7484331568c74c6afaa6368d5b9840f2" category="inline-image-macro">SnapMirrorを使用したボリュームのクラウド再同期への移行手順</block>
+  <block id="9e2bbdca5b19270a9ef188c9e57a724f" category="paragraph"><block ref="9e2bbdca5b19270a9ef188c9e57a724f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0da49596473896920fb454c7b4adef70" category="section-title">移行前のチェックリストに従う</block>
+  <block id="8edf9aba5b36a329f95932f0cff7cce9" category="paragraph">NetApp機器更改チームは、移行を開始する前に、データ損失を回避し、スムーズな移行プロセスを実現するために、次の前提条件を満たしていることを確認します。</block>
+  <block id="c66a376643e0a75febdb68f9fda5e860" category="list-text">マイグレートするすべてのボリュームがBlueXP  のバックアップとリカバリを使用して保護されていることを確認します。</block>
+  <block id="65ca768e388254cc115e6164e083ed93" category="list-text">ボリュームインスタンスUUIDを記録します。移行を開始する前に、すべてのボリュームのインスタンスUUIDを書き留めます。これらの識別子は、あとでマッピングおよび再同期処理を実行する際に非常に重要です。</block>
+  <block id="dcf3f9a7750b00044c988ae0a71a2525" category="list-text">SnapMirror関係を削除する前に、各ボリュームの最後のSnapshotを作成して最新の状態を維持します。</block>
+  <block id="6139c1886c79ee84383ecfefb52b2bdb" category="list-text">SnapMirrorポリシーを文書化する。各ボリュームの関係に現在適用されているSnapMirrorポリシーを記録します。この設定は、あとでSnapMirrorからクラウドへの再同期プロセスで必要になります。</block>
+  <block id="a386843f9f5cc4dfdb53989254f5e6bb" category="list-text">オブジェクトストアとのSnapMirror Cloud関係を削除します。</block>
+  <block id="aab84690bad73d1c3cddfbd933bc0236" category="list-text">新しいONTAPクラスタとの標準のSnapMirror関係を作成して、新しいターゲットONTAPクラスタにボリュームを移行します。</block>
+  <block id="683dd99d889ffbb646216d8705ddb538" category="section-title">移行後のチェックリストに従う</block>
+  <block id="550260e35c58825169c5a10628a84b83" category="paragraph">移行後、NetApp機器更改チームは次の手順を実行して保護を確立し、再同期の準備を行います。</block>
+  <block id="3131c5d700378b3b5743073b991e6eb6" category="list-text">デスティネーションONTAPクラスタに移行されたすべてのボリュームの新しいボリュームインスタンスUUIDを記録します。</block>
+  <block id="a1c64acc727f1680d07c183d7417c391" category="list-text">古いONTAPクラスタで使用可能であった必要なすべてのSnapMirrorポリシーが、新しいONTAPクラスタで正しく設定されていることを確認します。</block>
+  <block id="50f9ee7e618db121270dc374787af245" category="list-text">BlueXP  キャンバスで、新しいONTAPクラスタを作業環境として追加します。</block>
+  <block id="fb1c875049b82d3e8916e16279519645" category="section-title">SnapMirrorからクラウドへの再同期</block>
+  <block id="1021b9c8250d77e53ebbe2b723308310" category="paragraph">移行後、NetApp機器更改チームがSnapMirrorからクラウドへの再同期処理を実行し、新たにマイグレートしたボリュームからクラウドのバックアップを再開します。</block>
+  <block id="f0a6e63f9874da060b9652f8a6e0aee6" category="list-text">BlueXP  の[Backup and Recovery Volumes]ページで、古いソースの作業環境の詳細が表示されていることを確認します。</block>
+  <block id="a9e0f9aeff77fc2d81cc947830a4b7a4" category="list-text">BlueXP  の[ボリュームのバックアップとリカバリ]ページで、*[バックアップ設定]*を選択します。</block>
+  <block id="f97138a90cb6e21eabb198d42ed0387e" category="list-text">メニューから*[バックアップの再同期]*を選択します。</block>
+  <block id="a57d5f068c07e5dcba448d4a6b80a903" category="list-text">[Resync Working Environment]ページで、次の手順を実行します。</block>
+  <block id="c071408d31971fbdd055d954db1883e3" category="list-text">*新しいソース作業環境*：ボリュームが移動された新しいONTAPクラスタを入力します。</block>
+  <block id="b9847141e98ed3fb845a609b99d42ac8" category="list-text">*既存のターゲットオブジェクトストア*：古いソース作業環境のバックアップを格納するターゲットオブジェクトストアを選択します。</block>
+  <block id="be98b129cb6fc9e3e142f41b28b0b223" category="list-text">[CSVテンプレートのダウンロード]*を選択して、[再同期の詳細] Excelシートをダウンロードします。このシートを使用して、マイグレートするボリュームの詳細を入力します。CSVファイルで、次の詳細を入力します。</block>
+  <block id="9e7ec0365cbe89b4593076ec85f1c3bb" category="list-text">ソースクラスタの古いボリュームインスタンスUUID</block>
+  <block id="1a8fb5bb97934f112f1bead6af1c0c3e" category="list-text">デスティネーションクラスタの新しいボリュームインスタンスUUID</block>
+  <block id="1e9a7760dd90f2ef7038fc53bc0773ea" category="list-text">新しい関係に適用するSnapMirrorポリシーを指定します。</block>
+  <block id="65a310e1b322abd34d751c86280849c5" category="list-text">[Upload Volume Mapping Details]*で[Upload]*を選択し、完成したCSVシートをBlueXP  バックアップ/リカバリUIにアップロードします。</block>
+  <block id="52fe5bc906babbd082ffb0764b349da3" category="list-text">再同期処理に必要なプロバイダとネットワークの設定情報を入力します。</block>
+  <block id="43b0700358df39b882c5da30b98d8dcd" category="list-text">[送信]*を選択して検証プロセスを開始します。</block>
+  <block id="57952d689cfe89dd52b7d4ab5690a6bf" category="paragraph">BlueXP  のバックアップとリカバリでは、再同期対象として選択した各ボリュームに共通のSnapshotが少なくとも1つ含まれているかどうかが検証されます。これにより、ボリュームでSnapMirrorからクラウドへの再同期処理を実行する準備が整います。</block>
+  <block id="8463b887dbd61aa1995dcc0260b60f9f" category="list-text">新しいソースボリュームの名前や各ボリュームの再同期ステータスなど、検証結果を確認します。</block>
+  <block id="125ba11f83659b86acb7de1fbe8050df" category="list-text">ボリュームの適性を確認します。ボリュームが再同期の対象になるかどうかがチェックされます。対応していないボリュームは、共通のSnapshotが見つからなかったことを意味します。</block>
+  <block id="4d37de81f19963c13dc2e27a80c87068" category="admonition">ボリュームがSnapMirrorからクラウドへの再同期処理の対象となるようにするには、移行前のフェーズでSnapMirror関係を削除する前に、各ボリュームの最終Snapshotを作成します。これにより、データの最新の状態が保持されます。</block>
+  <block id="a76b942eff6c38201458980a134c56db" category="list-text">再同期処理を開始するには、*[再同期]*を選択します。システムは共通のスナップショットを使用して増分変更のみを転送し、バックアップの継続性を確保します。</block>
+  <block id="6271b2e5ee34db655c152c41d48231ca" category="list-text">[Job Monitor]ページで、resynプロセスを監視します。</block>
+  <block id="14731cd6965934ba1d6c28bc96fbfc63" category="paragraph">BlueXP  のバックアップとリカバリには、新しい機能が完全にリリースされる前にテストできるプレビュー機能が用意されています。これらの機能は、バックアップとリカバリのエクスペリエンスを向上させるように設計されていますが、完全にサポートされていない場合や安定していない場合があります。</block>
+  <block id="8d74125454a4a39b93746a76a1b5e057" category="admonition">これらの機能はプレビューモードであるため、本番環境では使用しないでください。これらはテストおよびフィードバックのみを目的としています。</block>
+  <block id="5760817f42cfdcd9c310ec63890ecb27" category="section-title">プレビュー機能を有効にする</block>
+  <block id="c39776e62a21f45efc8bf60e10a03116" category="paragraph">BlueXP  のバックアップとリカバリのプレビュー機能を有効にするには、BlueXP  Connectorにフラグを設定する必要があります。このフラグを使用すると、サービスで使用可能なプレビュー機能にアクセスしてテストできます。</block>
+  <block id="580eee7d5e7e4bdf42fa292d170a7d6c" category="list-text">BlueXP  Connectorにログインします。</block>
+  <block id="85769ba297548addfe4d17f9afba9cf8" category="list-text">スーパーユーザに切り替えます。次のコマンドを実行します。</block>
+  <block id="e2f3c27d6024b2532f8b2a5d75141be2" category="paragraph"><block ref="e73620038e8b54deb176b2581c7558a7" prefix="" category="inline-code"></block></block>
+  <block id="1d75718e1e494b5b2501c494ae510c09" category="list-text">Dockerボリュームを表示し、CBSボリュームを特定します。次のコマンドを実行します。</block>
+  <block id="d15e02bf0c54e008af2e8212aa7c7d4f" category="paragraph">想定される出力：</block>
+  <block id="c24450f0e1e6fcc2fa6e6c07c79dd3a8" category="list-text">ボリュームを調べてマウントポイントを取得します。次のコマンドを実行します。</block>
+  <block id="606ba6d5810c04f45a2192f720b50a14" category="list-text">次のコマンドを実行します。</block>
+  <block id="28ef99c245e63819b305d93c19d29f91" category="list-text">Docker Volumesディレクトリに移動します。ディレクトリを、前の手順で取得したマウントポイントに変更します。</block>
+  <block id="22cb8a711fd0104b48dede469158201f" category="list-text">ファイルを見つけて編集し<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>ます。</block>
+  <block id="01a012e7a0034b3146903c769f34f576" category="list-text">正しいディレクトリに移動し、ファイルが存在することを確認します<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>。</block>
+  <block id="a8875bf0b902f4f3971e9caa99280a9f" category="list-text">目的のテキストエディタでファイルを開き<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block>、次のJSONスニペットを追加して、JSON構造が適切に維持されていることを確認します。</block>
+  <block id="5a0dfd405c0424a01f42cdb7e596d91c" category="list-text">変更をファイルに保存します。</block>
+  <block id="22188f18f00fe4800630b34c371548cc" category="list-text">BlueXP  バックアップとリカバリを再起動します。Cloud Manager CBSサービス。次のコマンドを実行します。</block>
+  <block id="71df7d09aaee8e6796df0c3d10989fbd" category="section-title">2025年5月13日</block>
+  <block id="ddfe37c06d76259ae290f107c8524b45" category="sidebar">SnapMirrorを使用してボリュームをクラウドに再同期する</block>
 </blocks>

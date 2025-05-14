@@ -38,12 +38,14 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: ライセンスをセットアップする
       url: "/task-licensing-cloud-backup.html"
-  - title: データ保護を監視
-    entries:
-    - title: データ保護の適用範囲に関するレポートを作成します
-      url: "/task-report-inventory.html"
-    - title: バックアップジョブとリストアジョブのステータスを監視します
-      url: "/task-monitor-backup-jobs.html"
+    - title: プレビュー機能を有効にする
+      url: "/task-preview-enable.html"
+    - title: データ保護を監視
+      entries:
+      - title: データ保護の適用範囲に関するレポートを作成します
+        url: "/task-report-inventory.html"
+      - title: バックアップジョブとリストアジョブのステータスを監視します
+        url: "/task-monitor-backup-jobs.html"
   - title: ONTAP データのバックアップとリストア
     entries:
     - title: ONTAP ボリュームのデータを保護
@@ -78,6 +80,8 @@ sidebar:
       url: "/task-backup-onprem-to-ontap-s3.html"
     - title: オンプレミスの ONTAP を StorageGRID にバックアップ
       url: "/task-backup-onprem-private-cloud.html"
+    - title: SnapMirrorを使用してボリュームをクラウドに再同期する
+      url: "/task-migrate-volumes-snapmirror-cloud-resync.html"
     - title: ONTAP バックアップを管理します
       url: "/task-manage-backups-ontap.html"
     - title: ONTAP バックアップからリストアする

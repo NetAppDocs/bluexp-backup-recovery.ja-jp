@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task-preview-enable.html 
+keywords: cloud backup, bluexp backup and recovery, backup, restore, preview, enable, object storage, third-party, MinIO, S3-compatible 
+summary: 開始またはスケジュールされたローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始またはスケジュールされたリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。 
+---
+= BlueXP  バックアップ/リカバリのプレビュー機能を有効にする
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP  のバックアップとリカバリには、新しい機能が完全にリリースされる前にテストできるプレビュー機能が用意されています。これらの機能は、バックアップとリカバリのエクスペリエンスを向上させるように設計されていますが、完全にサポートされていない場合や安定していない場合があります。
+
+
+IMPORTANT: これらの機能はプレビューモードであるため、本番環境では使用しないでください。これらはテストおよびフィードバックのみを目的としています。
+
+
+
+== プレビュー機能を有効にする
+
+BlueXP  のバックアップとリカバリのプレビュー機能を有効にするには、BlueXP  Connectorにフラグを設定する必要があります。このフラグを使用すると、サービスで使用可能なプレビュー機能にアクセスしてテストできます。
+
+.手順
+. BlueXP  Connectorにログインします。
+. スーパーユーザに切り替えます。次のコマンドを実行します。
++
+`sudo su`
+
+. Dockerボリュームを表示し、CBSボリュームを特定します。次のコマンドを実行します。
++
+[listing]
+----
+podman volume ls | grep cbs
+----
++
+想定される出力：
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. ボリュームを調べてマウントポイントを取得します。次のコマンドを実行します。
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
+. 次のコマンドを実行します。
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+想定される出力：
+
++
+[listing]
+----
+Mountpoint:
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Docker Volumesディレクトリに移動します。ディレクトリを、前の手順で取得したマウントポイントに変更します。
++
+[listing]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+
+----
+. ファイルを見つけて編集し `production-customer.json`ます。
+. 正しいディレクトリに移動し、ファイルが存在することを確認します `production-customer.json`。
+. 目的のテキストエディタでファイルを開き `production-customer.json`、次のJSONスニペットを追加して、JSON構造が適切に維持されていることを確認します。
++
+[listing]
+----
+{
+   "feature-flags":
+    {
+        "volumes-dashboard-v2": true
+     }
+}
+----
+. 変更をファイルに保存します。
+. BlueXP  バックアップとリカバリを再起動します。Cloud Manager CBSサービス。次のコマンドを実行します。
++
+[listing]
+----
+podman restart cloudmanager_cbs
+----
+
