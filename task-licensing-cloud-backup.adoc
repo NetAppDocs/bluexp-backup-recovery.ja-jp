@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual, netapp intelligent services 
 summary: BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制または年間マーケットプレイスサブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（Bring Your Own License）を購入します。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。 
 ---
 = BlueXPのバックアップとリカバリのライセンスをセットアップ
@@ -14,7 +14,7 @@ summary: BlueXPバックアップ/リカバリのライセンスを取得する�
 
 
 [role="lead"]
-BlueXPバックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから従量課金制（PAYGO）またはマーケットプレイスの年間サブスクリプションを購入するか、ネットアップからお客様所有のライセンスを使用（BYOL）する必要があります。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。
+BlueXP  バックアップ/リカバリのライセンスを取得するには、クラウドプロバイダから* NetAppインテリジェントサービス*の従量課金制（PAYGO）または年間マーケットプレイスサブスクリプションを購入するか、NetAppからお客様所有のライセンスを使用（BYOL）を購入します。作業環境でBlueXPのバックアップとリカバリをアクティブ化したり、本番環境のデータのバックアップを作成したり、バックアップデータを本番システムにリストアしたりするには、有効なライセンスが必要です。
 
 さらに読む前に、いくつかのメモを記入してください。
 
@@ -30,7 +30,7 @@ link:concept-ontap-backup-to-cloud.html#cost["BlueXPのバックアップとリ�
 
 == 30 日間の無償トライアルをご利用いただけます
 
-クラウドプロバイダのマーケットプレイスで従量課金制サブスクリプションに登録すると、BlueXPバックアップ/リカバリの30日間無償トライアルを利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAPシステムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無償トライアルを開始すると、残り20日間の無償トライアルを利用できます。
+クラウドプロバイダのマーケットプレイスで* NetAppインテリジェントサービス*の従量課金制サブスクリプションにサインアップすると、30日間のBlueXP  バックアップ/リカバリの無償トライアルを利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAPシステムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無償トライアルを開始すると、残り20日間の無償トライアルを利用できます。
 
 無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXPのバックアップとリカバリの使用を中止する場合は、をクリックします link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["作業環境からBlueXPバックアップおよびリカバリの登録を解除します"] トライアルが終了する前に、請求は行われません。
 
@@ -38,7 +38,7 @@ link:concept-ontap-backup-to-cloud.html#cost["BlueXPのバックアップとリ�
 
 == BlueXPのバックアップとリカバリのPAYGOサブスクリプションを利用
 
-従量課金制の場合、クラウドプロバイダにオブジェクトストレージのコストとネットアップのバックアップライセンスのコストを1時間単位で支払うことになります。無償トライアルを利用されている場合や、お客様が独自のライセンスを使用（ BYOL ）されている場合も、サブスクリプションを設定する必要があります。
+従量課金制の場合、クラウドプロバイダにオブジェクトストレージのコストとネットアップのバックアップライセンスのコストを1時間単位で支払うことになります。無償トライアルを利用している場合や、お客様所有のライセンスを使用している場合（BYOL）でも、マーケットプレイスで* NetAppインテリジェントサービス*に登録する必要があります。
 
 * 登録することで、無償トライアルの終了後にサービスが中断されることがなくなります。トライアルが終了すると、バックアップしたデータの量に応じて1時間ごとに課金されます。
 * BYOLライセンスで許可されている数を超えるデータをバックアップした場合は、従量課金制サブスクリプションを通じてデータのバックアップとリストアの処理を継続できます。たとえば、 BYOL ライセンスが 10TiB の場合、 10TiB を超える容量はすべて PAYGO サブスクリプションによって課金されます。
@@ -61,21 +61,21 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 ifdef::aws[]
 
-* AWS https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* AWS： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["価格設定の詳細については、NetAppインテリジェントサービスのマーケットプレイスサービスを参照してください。"^]
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* Azure： https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["価格設定の詳細については、NetAppインテリジェントサービスのマーケットプレイスサービスを参照してください。"^]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Google Cloud https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["価格の詳細については、BlueXP Marketplaceのサービスを参照してください"^]。
+* Google Cloud： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["価格設定の詳細については、NetAppインテリジェントサービスのマーケットプレイスサービスを参照してください。"^]
 
 
 endif::gcp[]
