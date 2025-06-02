@@ -4,7 +4,7 @@ permalink: task-manage-backups-ontap.html
 keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup, bluexp 
 summary: Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップの管理では、バックアップスケジュールの変更、新しいバックアップポリシーの作成、ボリュームバックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行うことができます。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。 
 ---
-= ONTAPシステムのバックアップを管理します
+= BlueXP バックアップとリカバリを使用して ONTAP システムのバックアップを管理します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP システムとオンプレミスONTAP システム
 
 
 [role="lead"]
-Cloud Volumes ONTAPシステムとオンプレミスのONTAPシステムのバックアップを管理するには、バックアップスケジュールの変更、ボリュームバックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行います。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。
+BlueXP バックアップとリカバリを使用すると、バックアップ スケジュールの変更、ボリューム バックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行って、Cloud Volumes ONTAP およびオンプレミスの ONTAP システムのバックアップを管理できます。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。
 
 
 CAUTION: ストレージシステム上で直接、またはクラウドプロバイダ環境からバックアップファイルを管理または変更しないでください。ファイルが破損し、サポートされていない構成になる可能性があります。

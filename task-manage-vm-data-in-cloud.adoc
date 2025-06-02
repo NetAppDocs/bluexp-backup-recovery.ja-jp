@@ -4,7 +4,7 @@ permalink: task-manage-vm-data-in-cloud.html
 keywords: manage backups, virtual machines, view datastores, view virtual machines, edit 
 summary: データストアと仮想マシンを表示し、SnapCenter Plug-in for VMware vSphereインスタンスを編集できます。 
 ---
-= データストアと仮想マシンのデータの保護を管理します
+= BlueXP バックアップとリカバリを使用してデータストアと仮想マシンのデータの保護を管理します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: データストアと仮想マシンを表示し、SnapCenter Plug-in f
 
 
 [role="lead"]
-データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、リソースグループの変更内容に応じて、BlueXP UIで更新内容を確認できます。
+BlueXP バックアップおよびリカバリを使用してデータをバックアップおよび復元する前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、リソースグループの変更内容に応じて、BlueXP UIで更新内容を確認できます。
 
 
 

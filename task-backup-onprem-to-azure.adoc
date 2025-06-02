@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-azure.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
 summary: オンプレミスのONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= オンプレミスのONTAPデータをAzure Blobストレージにバックアップ
+= BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを Azure Blob ストレージにバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: オンプレミスのONTAP システムからAzure BLOBストレージ�
 
 
 [role="lead"]
-オンプレミスのONTAPシステムからセカンダリストレージシステムおよびAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、オンプレミスの ONTAP システムからセカンダリ ストレージ システムと Azure Blob ストレージへのボリューム データのバックアップを開始します。
 
 
 NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Selectシステムが含まれます。
@@ -221,7 +221,7 @@ AzureとBlueXPの両方のライセンス要件を確認する必要がありま
 
 *サポートされている地域*
 
-すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+Azure Government リージョンを含むすべてのリージョンで、オンプレミス システムから Azure Blob へのバックアップを作成できます。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 

@@ -4,12 +4,12 @@ permalink: task-migrate-volumes-snapmirror-cloud-resync.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, cloud, snapmirror, migrate, volume migration, resync, 
 summary: オンプレミスのONTAPシステムからセカンダリストレージシステムおよびGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= SnapMirrorを使用したボリュームのクラウドへの再同期
+= SnapMirrorを使用してボリュームをBlueXPバックアップとリカバリによるクラウド再同期に移行します
 :allow-uri-read: 
 
 
 [role="lead"]
-SnapMirrorからクラウドへの再同期機能は、NetApp環境でのボリューム移行時のデータ保護と継続性を合理化します。SnapMirror論理レプリケーション（LRSE）を使用して、オンプレミスのNetApp環境から別の環境、またはCloud Volumes ONTAPやCloud Volumes Serviceなどのクラウドベースのソリューションにボリュームを移行する場合、SnapMirrorからクラウドへの再同期により、既存のクラウドバックアップに影響を与えずに運用できます。
+BlueXP バックアップおよびリカバリの SnapMirror to Cloud Resync 機能は、NetApp 環境でのボリューム移行中のデータ保護と継続性を効率化します。SnapMirror論理レプリケーション（LRSE）を使用して、オンプレミスのNetApp環境から別の環境、またはCloud Volumes ONTAPやCloud Volumes Serviceなどのクラウドベースのソリューションにボリュームを移行する場合、SnapMirrorからクラウドへの再同期により、既存のクラウドバックアップに影響を与えずに運用できます。
 
 この機能により、時間とリソースを大量に消費するベースライン再処理が不要になり、移行後もバックアップ処理を継続できます。この機能は、FlexVolとFlexGroupの両方をサポートするワークロードマイグレーションシナリオで役立ちます。ONTAPバージョン9.16.1以降で使用できます。
 

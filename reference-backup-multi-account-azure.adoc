@@ -4,7 +4,7 @@ permalink: reference-backup-multi-account-azure.html
 keywords: microsoft azure, azure, regions, blob, multiple accounts, multiple regions, backup 
 summary: BlueXPのバックアップとリカバリでは、ソースCloud Volumes ONTAP ボリュームが配置されているアカウントとは別のAzureアカウントにバックアップファイルを作成できます。 
 ---
-= Azure でマルチアカウントアクセスのバックアップを設定する
+= BlueXP バックアップとリカバリを使用して、Azure でのマルチアカウント アクセスのバックアップを構成する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

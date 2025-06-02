@@ -4,7 +4,7 @@ permalink: reference-azure-backup-tiers.html
 keywords: microsoft azure, azure, cool, access tier, archive 
 summary: BlueXPのバックアップとリカバリでは、1つのAzureアーカイブアクセス階層とほとんどのリージョンがサポートされます。 
 ---
-= Azure のアーカイブ階層およびリストアの読み出し時間
+= BlueXP バックアップとリカバリによる Azure アーカイブ層と復元取得時間
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

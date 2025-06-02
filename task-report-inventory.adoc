@@ -4,7 +4,7 @@ permalink: task-report-inventory.html
 keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory, bluexp 
 summary: BlueXPのバックアップ/リカバリレポートを使用すると、組織で定義されたポリシーに従って重要なデータを確実に保護し、コンプライアンスプロセスの監査を効率的にサポートできます。バックアップインベントリレポートでは、特定のアカウント、作業環境、またはSVMインベントリのすべてのバックアップを表示できます。 
 ---
-= データ保護の適用範囲に関するレポートを作成します
+= BlueXP バックアップおよびリカバリによるデータ保護範囲のレポート
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: BlueXPのバックアップ/リカバリレポートを使用すると�
 
 
 [role="lead"]
-BlueXPのバックアップ/リカバリレポートを使用すると、組織で定義されたポリシーに従って重要なデータを確実に保護し、コンプライアンスニーズを監査できます。
+BlueXP のバックアップおよびリカバリ レポートを使用すると、組織の定義済みポリシーに従って重要なデータが保護されていることを確認し、コンプライアンスのニーズに合わせた監査を提供できます。
 
 BlueXPのバックアップとリカバリレポートを使用すると、次のことを実現できます。
 

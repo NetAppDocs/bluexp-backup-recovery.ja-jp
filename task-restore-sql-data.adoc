@@ -4,7 +4,7 @@ permalink: task-restore-sql-data.html
 keywords: restore, Azure, Amazon Web services, Microsoft SQL Server database 
 summary: SQL Server データベースをクラウドからオンプレミスの SnapCenter サーバにリストアできます。 
 ---
-= SQL Server データベースをリストアする
+= BlueXP バックアップとリカバリを使用して SQL Server データベースを復元する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: SQL Server データベースをクラウドからオンプレミスの
 
 
 [role="lead"]
-SQL Serverデータベースは元の場所にリストアすることも、別の場所にリストアすることもできます。
+BlueXP バックアップおよびリカバリを使用して、SQL Server データベースを元の場所または別の場所に復元できます。
 
 
 NOTE: Single File Restore（SFR；単一ファイルのリストア）、ログバックアップのリカバリ、および可用性グループの再シードはサポートされていません。

@@ -4,7 +4,7 @@ permalink: task-backup-app-data-to-aws.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: アプリケーションデータをONTAP からAWSにバックアップするには、いくつかの手順を実行します。 
 ---
-= オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
+= BlueXP のバックアップとリカバリを使用してオンプレミスのアプリケーション データを Amazon Web Services にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: アプリケーションデータをONTAP からAWSにバックアッ�
 
 
 [role="lead"]
-いくつかの手順を実行して、ONTAP からAmazon Web Servicesにアプリケーションデータをバックアップします。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、アプリケーション データを ONTAP から Amazon Web Services にバックアップします。
 
-BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.11.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。
+BlueXP バックアップおよびリカバリは、データ ロックとランサムウェア保護をサポートします。ONTAPクラスタがONTAP 9.11.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。
 
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。

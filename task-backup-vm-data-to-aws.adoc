@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-aws.html
 keywords: back up, backup, backup datastore, aws, Amazon Web Services, backup datastores 
 summary: オンプレミスのONTAP からAWSにデータストアをバックアップできます。 
 ---
-= データストアをAmazon Web Servicesにバックアップする
+= BlueXP バックアップとリカバリを使用してデータストアを Amazon Web Services にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: オンプレミスのONTAP からAWSにデータストアをバック�
 
 
 [role="lead"]
-1つ以上のデータストアをAmazon Web Servicesにバックアップしてアーカイブすることで、ストレージ効率を高め、クラウドへの移行を促進できます。
+BlueXP バックアップおよびリカバリを使用して 1 つ以上のデータストアを Amazon Web Services にバックアップおよびアーカイブし、ストレージ効率とクラウド移行を向上させることができます。
 
 データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択できます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。
 

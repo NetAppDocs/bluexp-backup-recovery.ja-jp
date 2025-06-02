@@ -4,7 +4,7 @@ permalink: task-manage-backup-settings-ontap.html
 keywords: cloud backup, cloud backup service, storage keys, network bandwidth, auto backup, delete yearly snapshot, export snapshots, ransomware scans, scans 
 summary: ONTAPシステムごとに、BlueXPのバックアップとリカバリをアクティブ化するときに設定した、クラスタレベルのオブジェクトへのバックアップ設定の多くを変更できます。「デフォルト」バックアップ設定として適用される一部の設定を変更することもできます。これには、ストレージキーの変更、オブジェクトストレージへのバックアップ転送率、履歴Snapshotコピーをバックアップファイルとしてエクスポートするかどうかなどが含まれます。作業環境に対してランサムウェアスキャンを有効または無効にすることもできます。 
 ---
-= [Advanced Settings]ページでのオブジェクトストレージへのバックアップオプションの管理
+= BlueXP バックアップとリカバリの詳細設定ページでオブジェクト ストレージへのバックアップ オプションを管理します。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

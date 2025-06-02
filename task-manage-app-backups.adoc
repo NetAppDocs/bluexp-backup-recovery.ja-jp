@@ -4,7 +4,7 @@ permalink: task-manage-app-backups.html
 keywords: manage, Azure, Amazon Web services, Oracle database, Microsoft SQL Server database, backups, policy, monitor, jobs, monitor jobs, SAP HANA database 
 summary: ポリシーとバックアップを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。 
 ---
-= アプリケーションの保護を管理します
+= BlueXPのバックアップとリカバリでアプリケーションの保護を管理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: ポリシーとバックアップを表示できます。データベ�
 
 
 [role="lead"]
-アプリケーションの保護を管理するには、ポリシーの表示、バックアップの表示、データベースレイアウト、ポリシー、リソースグループへの変更の確認、すべての処理の監視をBlueXP UIから実行します。
+ポリシーの表示、バックアップの表示、データベース レイアウト、ポリシー、リソース グループへの変更の表示、BlueXP UI からのすべての操作の監視により、BlueXP バックアップおよびリカバリでのアプリケーションの保護を管理できます。
 
 
 

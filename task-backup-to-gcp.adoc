@@ -4,7 +4,7 @@ permalink: task-backup-to-gcp.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: Cloud Volumes ONTAP システムからGoogle Cloudストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= Cloud Volumes ONTAPデータをGoogle Cloud Storageにバックアップします
+= BlueXP のバックアップとリカバリを使用して、Cloud Volumes ONTAP データを Google Cloud Storage にバックアップします。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP システムからGoogle Cloudストレージへの
 
 
 [role="lead"]
-Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+BlueXP のバックアップとリカバリのいくつかの手順を完了して、Cloud Volumes ONTAP システムから Google Cloud Storage へのボリューム データのバックアップを開始します。
 
 
 
@@ -74,7 +74,7 @@ Google Cloud Storageへのボリュームのバックアップを開始する前
 image:diagram_cloud_backup_cvo_google.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 サポートされるONTAPのバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
-サポートされる GCP リージョン:: BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。
+サポートされる GCP リージョン:: BlueXP のバックアップとリカバリは、すべての GCP リージョンでサポートされています。
 GCP サービスアカウント:: Google Cloud Projectにカスタムロールを持つサービスアカウントが必要です。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["サービスアカウントの作成方法について説明します"^]です。
 
 

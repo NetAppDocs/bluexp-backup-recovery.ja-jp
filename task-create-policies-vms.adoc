@@ -4,7 +4,7 @@ permalink: task-create-policies-vms.html
 keywords: create policy, protection policies, predefined policies, custom policies 
 summary: データストアをバックアップするポリシーを作成します 
 ---
-= データストアをバックアップするポリシーを作成します
+= BlueXP バックアップとリカバリを使用してデータストアをバックアップするポリシーを作成する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: データストアをバックアップするポリシーを作成し�
 
 
 [role="lead"]
-ポリシーを作成するか、BlueXPで使用可能な次の定義済みポリシーのいずれかを使用できます。
+ポリシーを作成するか、BlueXP バックアップおよびリカバリで使用できる次の定義済みポリシーのいずれかを使用することができます。
 
 .作業を開始する前に
 * 事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。

@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-gcp.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, gcp, google cloud 
 summary: オンプレミスのONTAPシステムからセカンダリストレージシステムおよびGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= オンプレミスのONTAPデータをGoogle Cloud Storageにバックアップ
+= BlueXP のバックアップとリカバリを使用してオンプレミスの ONTAP データを Google Cloud Storage にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: オンプレミスのONTAPシステムからセカンダリストレー
 
 
 [role="lead"]
-オンプレミスのプライマリONTAPシステムからセカンダリストレージシステムおよびGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+BlueXP のバックアップとリカバリのいくつかの手順を完了して、オンプレミスのプライマリ ONTAP システムからセカンダリ ストレージ システムと Google Cloud Storage へのボリューム データのバックアップを開始します。
 
 
 NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Selectシステムが含まれます。
@@ -156,7 +156,7 @@ bigquery.tables.create
 
 *サポートされている地域*
 
-すべての地域で、オンプレミスシステムからGoogle Cloud Storageへのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+すべてのリージョンでオンプレミス システムから Google Cloud Storage へのバックアップを作成できます。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 

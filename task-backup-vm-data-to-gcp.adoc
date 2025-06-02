@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-gcp.html
 keywords: back up, backup, backup datastore, gcp, google cloud platform, backup datastores 
 summary: オンプレミスのONTAP からGoogle Cloud Platformにデータストアをバックアップ 
 ---
-= データストアをGoogle Cloud Platformにバックアップする
+= BlueXP のバックアップとリカバリを使用してデータストアを Google Cloud Platform にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: オンプレミスのONTAP からGoogle Cloud Platformにデータス�
 
 
 [role="lead"]
-SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで、1つ以上のデータストアをGoogle Cloud Platformにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
+VMware vSphere ホスト用の SnapCenter プラグインを BlueXP バックアップおよびリカバリと統合することで、1 つ以上のデータストアを Google Cloud Platform にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
 
 .作業を開始する前に
 すべてのが満たされていることを確認します link:concept-protect-vm-data.html["要件"] データストアをクラウドにバックアップする前に、

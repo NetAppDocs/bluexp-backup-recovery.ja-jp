@@ -4,7 +4,7 @@ permalink: task-backup-to-s3.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, cloud backup 
 summary: Cloud Volumes ONTAP システムからAmazon S3へのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= Cloud Volumes ONTAP データを Amazon S3 にバックアップします
+= BlueXP バックアップとリカバリを使用して、Cloud Volumes ONTAP データを Amazon S3 にバックアップします。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP システムからAmazon S3へのボリュームデ
 
 
 [role="lead"]
-Cloud Volumes ONTAP システムからAmazon S3へのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、Cloud Volumes ONTAP システムから Amazon S3 へのボリューム データのバックアップを開始します。
 
 
 
@@ -176,7 +176,7 @@ NOTE: AWS Chinaリージョンでバックアップを作成する場合は、IA
 BlueXPバージョン3.9.23以降を使用してCloud Volumes ONTAP 作業環境を作成した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。
 
 --
-サポートされている AWS リージョン:: BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]（AWS GovCloudリージョンを含む）。
+サポートされている AWS リージョン:: BlueXP のバックアップとリカバリは、AWS GovCloud リージョンを含むすべての AWS リージョンでサポートされています。
 別の AWS アカウントでバックアップを作成する場合の必須のセットアップです:: デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別のAWSアカウントを使用する場合は、次の作業を行う必要があります。
 +
 --

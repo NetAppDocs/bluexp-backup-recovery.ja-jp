@@ -4,7 +4,7 @@ permalink: concept-cloud-backup-policies.html
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: BlueXPのバックアップとリカバリでは、オンプレミスのONTAP システムとCloud Volumes ONTAP システムのさまざまな設定を使用してバックアップポリシーを作成できます。 
 ---
-= オブジェクトへのバックアップポリシーのオプション
+= BlueXP バックアップおよびリカバリにおけるオブジェクトへのバックアップ ポリシー オプション
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -60,7 +60,7 @@ BlueXPのバックアップとリカバリは、DataLockとランサムウェア
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["詳細については、DataLockとRansomwareによる保護ブログをご覧ください"^]。
 
-この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。NetAppまたは一部のを https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^]使用して https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["データインフラの分析情報とCloud Secure"^]ソースボリュームを保護します。
+この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。いくつかの https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["ONTAP が提供するアンチランサムウェア防御"^]ソースボリュームを保護します。
 
 [CAUTION]
 ====

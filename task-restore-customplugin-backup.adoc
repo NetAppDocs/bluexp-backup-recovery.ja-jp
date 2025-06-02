@@ -4,7 +4,7 @@ permalink: task-restore-customplugin-backup.html
 keywords: restore, mount application backups, MongoDB, MySQL, PostgreSQL 
 summary: SAP HANAデータベースをクラウドからオンプレミスのSnapCenterサーバにリストアできます。 
 ---
-= MongoDB、MySQL、PostgreSQLデータベースのリストア
+= BlueXP のバックアップとリカバリを使用して MongoDB、MySQL、PostgreSQL データベースを復元します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: SAP HANAデータベースをクラウドからオンプレミスのSna
 
 
 [role="lead"]
-MongoDB、MySQL、PostgreSQLのデータベースを任意のホストにリストアできます。
+BlueXP バックアップおよびリカバリを使用すると、MongoDB、MySQL、PostgreSQL データベースを任意のホストに復元できます。
 
 * 手順 *
 

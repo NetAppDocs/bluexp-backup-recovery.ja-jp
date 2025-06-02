@@ -4,7 +4,7 @@ permalink: reference-aws-backup-tiers.html
 keywords: aws, amazon, s3, storage classes, archive 
 summary: BlueXPのバックアップとリカバリは、2つのS3アーカイブストレージクラスとほとんどのリージョンをサポートしています。 
 ---
-= AWS S3 アーカイブストレージクラスおよびリストアの読み出し時間
+= AWS S3 アーカイブストレージクラスと BlueXP バックアップおよびリカバリによる復元取得時間
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

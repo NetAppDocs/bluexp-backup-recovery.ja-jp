@@ -4,7 +4,7 @@ permalink: reference-google-backup-tiers.html
 keywords: google, storage classes, archive 
 summary: BlueXPのバックアップとリカバリは、1つのGoogleアーカイブストレージクラスとほとんどのリージョンでサポートされます。 
 ---
-= Googleアーカイブストレージクラスとリストアの読み出し時間
+= BlueXP バックアップとリカバリによる Google アーカイブ ストレージ クラスと復元取得時間
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

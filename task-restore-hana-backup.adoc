@@ -4,7 +4,7 @@ permalink: task-restore-hana-backup.html
 keywords: restore, mount application backups, SAP HANA database 
 summary: SAP HANAデータベースをクラウドからオンプレミスのSnapCenterサーバにリストアできます。 
 ---
-= SAP HANAデータベースをリストア
+= BlueXP バックアップとリカバリを使用して SAP HANA データベースを復元する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: SAP HANAデータベースをクラウドからオンプレミスのSna
 
 
 [role="lead"]
-SAP HANAデータベースは任意のホストにリストアできます。
+BlueXPのバックアップとリカバリを使用すると、SAP HANAデータベースを任意のホストに復元できます。
 
 * 手順 *
 

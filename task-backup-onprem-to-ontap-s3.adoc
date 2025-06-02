@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-ontap-s3.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, ontap s3 
 summary: いくつかの手順を実行して、プライマリオンプレミスONTAPシステムからボリュームデータのバックアップを開始します。バックアップは、セカンダリONTAPストレージシステム（レプリケートされたボリューム）、S3サーバとして設定されたONTAPシステムのバケット（バックアップファイル）、またはその両方に送信できます。 
 ---
-= オンプレミスのONTAPデータをONTAP S3にバックアップ
+= BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを ONTAP S3 にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: いくつかの手順を実行して、プライマリオンプレミ�
 
 
 [role="lead"]
-いくつかの手順を実行して、プライマリオンプレミスONTAPシステムからボリュームデータのバックアップを開始します。バックアップは、セカンダリONTAPストレージシステム（レプリケートされたボリューム）、S3サーバとして設定されたONTAPシステムのバケット（バックアップファイル）、またはその両方に送信できます。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、プライマリオンプレミス ONTAP システムからボリューム データのバックアップを開始します。バックアップは、セカンダリONTAPストレージシステム（レプリケートされたボリューム）、S3サーバとして設定されたONTAPシステムのバケット（バックアップファイル）、またはその両方に送信できます。
 
 オンプレミスのプライマリONTAPシステムは、FAS、AFF、ONTAP Selectのいずれかです。セカンダリONTAPシステムには、オンプレミスのONTAPまたはCloud Volumes ONTAPシステムを使用できます。オブジェクトストレージは、オンプレミスのONTAPシステムでも、Simple Storage Service（S3）オブジェクトストレージサーバを有効にしたCloud Volumes ONTAPシステムでもかまいません。
 

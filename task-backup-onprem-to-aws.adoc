@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-aws.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3, govcloud, government 
 summary: オンプレミスのONTAPシステムからAmazon S3クラウドストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= オンプレミスの ONTAP データを Amazon S3 にバックアップ
+= BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを Amazon S3 にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: オンプレミスのONTAPシステムからAmazon S3クラウドスト
 
 
 [role="lead"]
-オンプレミスのONTAPシステムからセカンダリストレージシステムおよびAmazon S3クラウドストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、オンプレミスの ONTAP システムからセカンダリ ストレージ システムと Amazon S3 クラウド ストレージへのボリューム データのバックアップを開始します。
 
 
 NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Selectシステムが含まれます。
@@ -144,7 +144,7 @@ AWSとBlueXPの両方のライセンス要件を確認する必要がありま�
 
 *サポートされている地域*
 
-すべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]AWS GovCloud リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
+AWS GovCloud リージョンを含むすべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます。サービスのセットアップ時にバックアップを保存するリージョンを指定します。
 
 
 

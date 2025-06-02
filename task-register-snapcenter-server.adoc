@@ -4,7 +4,7 @@ permalink: task-register-snapcenter-server.html
 keywords: SnapCenter Server, register 
 summary: SnapCenter サーバを登録するには、いくつかの手順を実行します。 
 ---
-= SnapCenter サーバを登録します
+= BlueXP バックアップおよびリカバリ用に SnapCenter Server を登録する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: SnapCenter サーバを登録するには、いくつかの手順を実
 
 
 [role="lead"]
-SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が実行されているホストを登録できます。BlueXPには複数のSnapCenter サーバホストを登録できます。
+SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が実行されているホストを登録できます。BlueXP バックアップおよびリカバリに複数の SnapCenter Server ホストを登録できます。
 
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。

@@ -4,7 +4,7 @@ permalink: task-backup-to-azure.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= Cloud Volumes ONTAPのデータをAzure BLOBストレージにバックアップ
+= BlueXP バックアップとリカバリを使用して、Cloud Volumes ONTAP データを Azure Blob ストレージにバックアップします。
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP システムからAzure BLOBストレージへの�
 
 
 [role="lead"]
-Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+Cloud Volumes ONTAP システムから Azure Blob ストレージへのボリューム データのバックアップを開始するには、BlueXP バックアップとリカバリのいくつかの手順を完了します。
 
 
 
@@ -77,7 +77,7 @@ Azure Blob Storage へのボリュームのバックアップを開始する前�
 image:diagram_cloud_backup_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
 
 サポートされるONTAPのバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
-サポートされている Azure リージョン:: BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP がサポートされている場合"^]Azure Government リージョンを含む。
+サポートされている Azure リージョン:: BlueXP のバックアップとリカバリは、Azure Government リージョンを含むすべての Azure リージョンでサポートされています。
 +
 --
 BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実にレプリケートする場合は、BlueXPのバックアップとリカバリをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。

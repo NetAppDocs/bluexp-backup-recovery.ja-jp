@@ -4,7 +4,7 @@ permalink: task-restore-oracle-data.html
 keywords: restore, Azure, Amazon Web services, Oracle database 
 summary: Oracle データベースをクラウドからオンプレミスの SnapCenter サーバにリストアできます。 
 ---
-= Oracle データベースをリストアします
+= BlueXP バックアップとリカバリで Oracle データベースを復元する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Oracle データベースをクラウドからオンプレミスの Sna
 
 
 [role="lead"]
-Oracleデータベースは元の場所にリストアすることも、別の場所にリストアすることもできます。RACデータベースの場合、バックアップが作成されたオンプレミスノードにデータがリストアされます。
+BlueXP バックアップおよびリカバリを使用して、Oracle データベースを元の場所または別の場所に復元できます。RACデータベースの場合、バックアップが作成されたオンプレミスノードにデータがリストアされます。
 
 制御ファイルのリストアを含むフルデータベースのみがサポートされます。アーカイブログが AFS 内にない場合は、リカバリに必要なアーカイブログが格納されている場所を指定する必要があります。
 

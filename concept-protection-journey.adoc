@@ -4,7 +4,7 @@ permalink: concept-protection-journey.html
 keywords: backing up, restoring, recovery, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, storage grid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
 summary: BlueXPのバックアップとリカバリサービスでは、ソースボリュームのコピーを最大3つ作成してデータを保護できます。ボリュームでこのサービスを有効にするときに選択できるオプションは多数あるため、準備ができるように選択内容を確認する必要があります。 
 ---
-= 保護対策を計画しましょう
+= BlueXP バックアップとリカバリで保護の旅を計画しましょう
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

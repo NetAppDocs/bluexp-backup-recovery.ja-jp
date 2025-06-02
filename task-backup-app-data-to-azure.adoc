@@ -4,7 +4,7 @@ permalink: task-backup-app-data-to-azure.html
 keywords: backing up, back up, backup, backup application data, Microsoft Azure, Azure, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: アプリケーションデータをONTAP からAzureにバックアップするには、いくつかの手順を実行します。 
 ---
-= オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ
+= BlueXP のバックアップとリカバリを使用してオンプレミスのアプリケーション データを Microsoft Azure にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: アプリケーションデータをONTAP からAzureにバックアッ
 
 
 [role="lead"]
-いくつかの手順を実行して、ONTAP からMicrosoft Azureにアプリケーションデータをバックアップします。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、アプリケーション データを ONTAP から Microsoft Azure にバックアップします。
 
-BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.12.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。
+BlueXP バックアップおよびリカバリは、データ ロックとランサムウェア保護をサポートします。ONTAPクラスタがONTAP 9.12.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。
 
 .手順
 . BlueXP UIで、[*保護*>*バックアップとリカバリ*>*アプリケーション*]をクリックします。

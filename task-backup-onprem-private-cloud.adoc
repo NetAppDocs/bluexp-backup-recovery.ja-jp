@@ -4,7 +4,7 @@ permalink: task-backup-onprem-private-cloud.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
 summary: オンプレミスのONTAP システムからNetApp StorageGRID システムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。 
 ---
-= オンプレミスの ONTAP データを StorageGRID にバックアップ
+= BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを StorageGRID にバックアップします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: オンプレミスのONTAP システムからNetApp StorageGRID シス�
 
 
 [role="lead"]
-オンプレミスのプライマリONTAPシステムからセカンダリストレージシステムおよびNetApp StorageGRIDシステムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。
+BlueXP バックアップとリカバリのいくつかの手順を完了して、オンプレミスのプライマリ ONTAP システムからセカンダリ ストレージ システムおよび NetApp StorageGRID システムのオブジェクト ストレージへのボリューム データのバックアップを開始します。
 
 
 NOTE: 「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Selectシステムが含まれます。
@@ -239,6 +239,10 @@ StorageGRIDのDataLockおよびランサムウェア対策の要件の詳細に�
 DataLockとRansomware Protectionをバックアップに使用するには、StorageGRID システムでバージョン11.6.0.3以降が実行されている必要があります。
 
 古いバックアップをクラウドアーカイブストレージに階層化するには、StorageGRID システムでバージョン11.3以降が実行されている必要があります。また、StorageGRID システムがBlueXPキャンバスで検出されている必要があります。
+
+アーカイブ ストレージを使用するには、管理ノードの IP アクセスが必要です。
+
+ゲートウェイ IP アクセスは常に必要です。
 
 --
 S3 クレデンシャル:: StorageGRID ストレージへのアクセスを制御するS3テナントアカウントを作成しておく必要があります。 https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["詳細については、StorageGRID のドキュメントを参照してください"^]。

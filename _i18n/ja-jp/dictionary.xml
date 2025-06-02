@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
   <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">データストアをバックアップするポリシーを作成します</block>
-  <block id="b4866a33463f80d02c65e0910ff4b146" category="paragraph">ポリシーを作成するか、BlueXPで使用可能な次の定義済みポリシーのいずれかを使用できます。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">作業を開始する前に</block>
   <block id="43852dc1e0c3229284688eb4c01dfef0" category="list-text">事前定義されたポリシーを編集しない場合は、ポリシーを作成する必要があります。</block>
   <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">オブジェクトストアからアーカイブストレージにバックアップを移動するには、ONTAP 9.10.1以降を実行し、Amazon Web ServicesまたはMicrosoft Azureをクラウドプロバイダとして使用する必要があります。</block>
@@ -34,8 +33,6 @@
   <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">データストアに関連付けられているポリシーを編集または削除することはできません。</block>
   <block id="23959c4b9349bcd5e832610f8a4c21b5" category="summary">アプリケーションデータをONTAP からAWSにバックアップするには、いくつかの手順を実行します。</block>
   <block id="a398d70f425729872aae3dc2d3e8feb1" category="doc">オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ</block>
-  <block id="301968c8dabe6b72a7e8efa9bd0258d1" category="paragraph">いくつかの手順を実行して、ONTAP からAmazon Web Servicesにアプリケーションデータをバックアップします。</block>
-  <block id="a7abc6648bf0f980d7382b0d6c64a0e0" category="paragraph">BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.11.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
   <block id="0bd54f980c8a7dce1758331f8faad8aa" category="list-text">BlueXP UIで、[*保護*&gt;*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
   <block id="c33fc98cec373e6cbd63a467d0d4c31d" category="inline-image-macro">アイコンをクリックして操作を選択します</block>
   <block id="f3f150537e8aa89ec04ac4e8202bd62f" category="list-text">をクリックします <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> アプリケーションに対応して、 * バックアップのアクティブ化 * をクリックします。</block>
@@ -134,8 +131,6 @@
   <block id="613541ab07dc059cf2673b90bd75200e" category="list-text">Cloud Volumes ONTAP システムでONTAP 9.12.1以降のソフトウェアを実行している場合は、作業環境に権限を付与するIAMロールに、BlueXPの最新のバックアップとリカバリに特化した新しいS3権限のセットを含める必要があります<block ref="35d63ba18c6cc65ea408ab719bcabf7f" category="inline-link-rx"></block>。</block>
   <block id="992f6f150ac0b46aba4a6eeb1d21d085" category="paragraph">BlueXPバージョン3.9.23以降を使用してCloud Volumes ONTAP 作業環境を作成した場合、これらの権限はすでにIAMロールに含まれている必要があります。そうでない場合は、不足している権限を追加する必要があります。</block>
   <block id="af7680d24e7ce67fad6006c6fc467b53" category="list-text">サポートされている AWS リージョン</block>
-  <block id="93aa1523e92b241e9be754ad452f4026" category="inline-link">Cloud Volumes ONTAP がサポートされている場合</block>
-  <block id="79f4595ef857cd7fe8a1592a47b43578" category="list-text">BlueXPのバックアップとリカバリは、すべてのAWSリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>（AWS GovCloudリージョンを含む）。</block>
   <block id="5203ff4556ed5037a1fa6c4dbbdecaa2" category="list-text">別の AWS アカウントでバックアップを作成する場合の必須のセットアップです</block>
   <block id="7ed26bbb75f4d5a15f22c2e06ce64775" category="list-text">デフォルトでは、 Cloud Volumes ONTAP システムに使用されるアカウントと同じアカウントを使用してバックアップが作成されます。バックアップに別のAWSアカウントを使用する場合は、次の作業を行う必要があります。</block>
   <block id="172483accc796d1a4b4deb4fe01ad8d4" category="list-text">権限「s3：PutBucketPolicy」と「s3：PutOwnershipControls」が、BlueXPコネクタに権限を付与するIAMロールに含まれていることを確認します。</block>
@@ -275,7 +270,6 @@
   <block id="15b310151036ae6be2ff233527ab8752" category="list-text">また可能です <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> AWS の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムに接続できます。</block>
   <block id="210360badd0de9b811d995dd73e39d33" category="summary">オンプレミスのONTAP からAzureへデータストアをバックアップ</block>
   <block id="32d2b45dd98e36ad888d7156b4532053" category="doc">データストアをMicrosoft Azureにバックアップする</block>
-  <block id="26000c50c37289d13041f03c670085a3" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで、1つ以上のデータストアをMicrosoft Azureにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択するオプションが表示されます。サポートされるアーカイブ層はAzure Archive Blob Storageです。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">要件</block>
   <block id="5019db204cdfcff4225102866ab1c6bb" category="paragraph">すべてのが満たされていることを確認します <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> データストアをクラウドにバックアップする前に、</block>
@@ -291,7 +285,6 @@
   <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">アーカイブ階層を選択します。</block>
   <block id="fb902a35540ad53bda044609815ee278" category="summary">オンプレミスのONTAP システムからNetApp StorageGRID システムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="861cb48bf82afb2d1addc6ef6c8ff905" category="doc">オンプレミスの ONTAP データを StorageGRID にバックアップ</block>
-  <block id="1c217460a8591d40515e5ac52003a8a3" category="paragraph">オンプレミスのプライマリONTAPシステムからセカンダリストレージシステムおよびNetApp StorageGRIDシステムのオブジェクトストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="0c0bf2caafe0a0bcf95f58c110265658" category="admonition">「オンプレミスのONTAPシステム」には、FAS、AFF、ONTAP Selectシステムが含まれます。</block>
   <block id="5c37edf1ec718afd1ab9a5a51043e0ce" category="paragraph">これらの手順を実行すると、すぐに作業を開始できます。各手順の詳細については、このトピックの以降のセクションを参照してください。</block>
   <block id="8679d305959a742634fdc19258f41c4e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 使用する接続方法を特定します</block>
@@ -440,7 +433,6 @@
   <block id="1b023ff169abba0d2ae3b5eda4b0662e" category="list-text">また可能です <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> オンプレミスのONTAP システムへの移行をサポート</block>
   <block id="cf12172bd966bafd91b1daeef9357fe8" category="summary">オンプレミスのONTAP からStorageGRID へデータストアをバックアップ</block>
   <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="doc">データストアをStorageGRID にバックアップする</block>
-  <block id="9f7b95641e24cb882e149de39743a97c" category="paragraph">SnapCenter Plug-in for VMware vSphereホストをBlueXPに統合することで、1つ以上のデータストアをStorageGRID にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="6c5cc1315b69c8256bbc33cf47a5a7ab" category="list-text">「* StorageGRID *」を選択します。</block>
   <block id="cf4e6e70123f43cdec5ffd93f792c083" category="list-text">ストレージサーバのIPを指定します。</block>
   <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">アクセスキーとシークレットキーを選択します。</block>
@@ -566,7 +558,6 @@
   <block id="2ea260929e27ffcb623c8aa35689bd18" category="paragraph"><block ref="2ea260929e27ffcb623c8aa35689bd18" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a5233c6b5d691a32f2faf916f0baebe1" category="summary">SAP HANAデータベースをクラウドからオンプレミスのSnapCenterサーバにリストアできます。</block>
   <block id="4916c64add300658e04310a106e04012" category="doc">SAP HANAデータベースをリストア</block>
-  <block id="b3b5981b5c14115139a4ba794d8c793a" category="paragraph">SAP HANAデータベースは任意のホストにリストアできます。</block>
   <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">* 手順 *</block>
   <block id="4b214d6e7bd95c0516f3f50fc89a0e3e" category="list-text">[Filter by]*フィールドで、フィルタ* Type *を選択し、ドロップダウンから* HANA *を選択します。</block>
   <block id="356a014d650e5ff75127d5c7f8512c9b" category="list-text">リストアするデータベースに対応する *View Details* をクリックし、 *Restore* をクリックします。</block>
@@ -912,7 +903,6 @@ endif：GCP []</block>
   <block id="8c9b6b8729507556572552d0d8f472e3" category="section-title">サポートされるボリューム</block>
   <block id="3e6a014c15570f7f51f7fcdad349babc" category="summary">ポリシーとバックアップを表示できます。データベース、ポリシー、またはリソースグループの変更に応じて、BlueXP UIから更新できます。</block>
   <block id="d2107ef674d9474576deedf431042a37" category="doc">アプリケーションの保護を管理します</block>
-  <block id="29df1904737a953fe664af42457666a3" category="paragraph">アプリケーションの保護を管理するには、ポリシーの表示、バックアップの表示、データベースレイアウト、ポリシー、リソースグループへの変更の確認、すべての処理の監視をBlueXP UIから実行します。</block>
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">ポリシーを表示します</block>
   <block id="0265cbdb76704489ac9a7bbcaed7a2fd" category="paragraph">すべてのポリシーを表示できます。これらの各ポリシーについて、関連するすべてのアプリケーションの詳細を表示すると表示されます。</block>
   <block id="d4073377354088504201b6621befe095" category="list-text">[*バックアップとリカバリ*&gt;*アプリケーション*]をクリックします。</block>
@@ -994,8 +984,6 @@ endif：GCP []</block>
   <block id="f4139147b1b7b2fc4471626b33811546" category="list-text">[インポート]*をクリックして証明書をインポートし、*[証明書のインポートウィザード]*の手順に従います。</block>
   <block id="2eeb194bf5c17f3408edda6fb4570318" category="summary">アプリケーションデータをONTAP からAzureにバックアップするには、いくつかの手順を実行します。</block>
   <block id="007849ce4500e0ef940d682709a64c87" category="doc">オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ</block>
-  <block id="0dbcf5d30fb23b988f7e09251180eac1" category="paragraph">いくつかの手順を実行して、ONTAP からMicrosoft Azureにアプリケーションデータをバックアップします。</block>
-  <block id="4bca56bf446030b30e5509102dc7d31d" category="paragraph">BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.12.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
   <block id="0338fa74556c30bb5b0f61729477209e" category="list-text">クラウドプロバイダとして「* Microsoft Azure *」を選択します。</block>
   <block id="438d3dd7620068789776c4fbc687ceda" category="list-text">新しいリソースグループを作成するか、既存のリソースグループを使用してください。</block>
   <block id="781f77907a41ec1aaf0e6cc139a20b81" category="summary">いくつかの手順を実行して、プライマリオンプレミスONTAPシステムからボリュームデータのバックアップを開始します。バックアップは、セカンダリONTAPストレージシステム（レプリケートされたボリューム）、S3サーバとして設定されたONTAPシステムのバケット（バックアップファイル）、またはその両方に送信できます。</block>
@@ -1079,7 +1067,6 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="b48f15b0e66b74c9f84a29d71cafc3f7" category="list-text">*既存のSnapshotコピーをバックアップファイルとしてオブジェクトストレージにエクスポート*：この作業環境に、選択したバックアップスケジュールラベル（daily、weeklyなど）と一致するボリュームのローカルSnapshotコピーがある場合は、この追加のプロンプトが表示されます。ボリュームを最大限に保護するために、履歴Snapshotをすべてオブジェクトストレージにバックアップファイルとしてコピーする場合は、このチェックボックスをオンにします。</block>
   <block id="682f8e921eb37ddb3e47689c62db0a2e" category="list-text">必要に応じて、Snapshotポリシーのラベルをレプリケーションポリシーおよびバックアップポリシーのラベルと自動的に同期する*チェックボックスをオンにします。これにより、レプリケーションポリシーとバックアップポリシーのラベルに一致するラベルを持つSnapshotが作成されます。ポリシーが一致しない場合、バックアップは作成されません。</block>
   <block id="20eb5016fbcfaf2283e9ddb8b1028b60" category="summary">BlueXPのバックアップとリカバリでは、1つのAzureアーカイブアクセス階層とほとんどのリージョンがサポートされます。</block>
-  <block id="834584c768066ae32da6d93ce603642d" category="doc">Azure のアーカイブ階層およびリストアの読み出し時間</block>
   <block id="f714412b5bd41c3d4daeaaefe95b9062" category="section-title">BlueXPのバックアップとリカバリでサポートされるAzure Blobアクセス階層</block>
   <block id="8fb345995433b95f0008d77ee6840097" category="paragraph">バックアップファイルが最初に作成されるときは、 _Cool _ アクセス層に保存されます。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、必要に応じてすぐにアクセスできます。</block>
   <block id="caf604f4a0dfbf1c3594c2a85bd12f8d" category="paragraph">このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、Azureアカウントでコンテナをセットアップするときにライフサイクルルールを設定しないでください。</block>
@@ -1103,7 +1090,6 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="198c941b68b959d876c1fe884654eb0f" category="paragraph">Azure Archive の読み出しオプションの詳細については、を参照してください<block ref="932993244834a73e92c6a33c0a2e980e" category="inline-link-rx"></block>。</block>
   <block id="b9f0ffe30c24fa412122cf8fe6926b64" category="summary">ONTAPボリュームのデータのバックアップは、バックアップを作成した場所、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージに格納されたバックアップなどから実行できます。これらのバックアップ先から特定の時点のデータをリストアできます。ONTAPボリューム全体をバックアップファイルからリストアすることも、少数のファイルのみをリストアする必要がある場合は、フォルダまたは個 々 のファイルをリストアすることもできます。</block>
   <block id="bb03c52ec2a68c9eed4513c8ecf6c24d" category="doc">バックアップファイルからONTAPデータを復元します</block>
-  <block id="d3d3d7f1f9c466e1fcd09795d11d7fda" category="paragraph">ONTAPボリュームのデータは、バックアップを作成した場所（Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージに格納されたバックアップ）からバックアップできます。これらのバックアップ先から特定の時点のデータをリストアできます。ONTAPボリューム全体をバックアップファイルからリストアすることも、少数のファイルのみをリストアする必要がある場合は、フォルダまたは個 々 のファイルをリストアすることもできます。</block>
   <block id="2af55e36133bee199e6856aa4e468486" category="list-text">元の作業環境、同じクラウドアカウントを使用している別の作業環境、またはオンプレミスの ONTAP システムに * ボリューム * を（新しいボリュームとして）リストアできます。</block>
   <block id="7ada527d1dd84b409531cc41597f383e" category="list-text">*フォルダ*を元の作業環境内のボリューム、同じクラウドアカウントを使用している別の作業環境内のボリューム、またはオンプレミスのONTAP システム上のボリュームにリストアできます。</block>
   <block id="49b3fb49db06a6317743033ac39be690" category="list-text">* files * は、元の作業環境内のボリューム、同じクラウドアカウントを使用している別の作業環境内のボリューム、またはオンプレミスの ONTAP システム上のボリュームにリストアできます。</block>
@@ -1121,7 +1107,6 @@ Cloud Volumes ONTAPシステムにはONTAP 9.9.1以降が必要です。</block>
   <block id="d879bbb4f68f76e08e2778efe314b107" category="paragraph">ご覧のように、リストアダッシュボードでは、 * 参照と復元 * と * 検索と復元 * の 2 つの異なる方法でバックアップファイルからデータを復元できます。</block>
   <block id="6b0b2f1ade447e93ec60561aec84daae" category="section-title">参照と復元と検索と復元を比較します</block>
   <block id="7fca796fb2e827602e2cedf3a042e67f" category="paragraph">一般的に、先週または月から特定のボリューム、フォルダ、またはファイルを復元する必要がある場合には、_Browse &amp;Restore_(参照と復元)を使用してください。また、ファイルの名前と場所、およびファイルが正常な状態で最後に作成された日付を確認できます。_検索と復元_は、通常、ボリューム、フォルダ、またはファイルを復元する必要があるときに適していますが、正確な名前、保存されているボリューム、または最後に良好な状態になった日付は覚えていません。</block>
-  <block id="d111236cacc86fadca19453883d94b63" category="paragraph">次の表に、2つの方法の機能比較を示します。</block>
   <block id="1181e345cf6d2eaef5900c975d430d7d" category="cell">参照と復元</block>
   <block id="7d0014a7ab187c6931fc2183a6074420" category="cell">検索とリストア</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">ファイルが削除または名前変更されており、元のファイル名がわからない場合は、はファイルリカバリを処理しません</block>
@@ -1230,7 +1215,6 @@ Cloud Volumes ONTAP</block>
   <block id="f75114a933eef4dfbad580f177284e12" category="paragraph">BlueXPのバックアップとリカバリでは、選択したバックアップに基づいて新しいボリュームが作成されます。</block>
   <block id="860f07d2ed109437af4b64fd8713b385" category="paragraph">アーカイブストレージにあるバックアップファイルからボリュームをリストアする場合は、アーカイブ階層とリストアの優先順位によって数分から数時間かかることがあります。［*ジョブ監視*］タブをクリックすると、リストアの進行状況を確認できます。</block>
   <block id="310dbba96c4cb79d0f5f822051257fc8" category="section-title">ブラウズおよびリストアを使用して'フォルダとファイルをリストアします</block>
-  <block id="6b2e325b80840b0a9d8b16c541de5ba2" category="admonition">フォルダまたは個 々 のファイルは、現時点ではオブジェクトストレージ内のバックアップファイルからのみリストアできます。現在のところ、ローカルSnapshotコピーまたはセカンダリ作業環境（レプリケートされたボリューム）にあるバックアップファイルからのファイルとフォルダのリストアはサポートされていません。</block>
   <block id="2cfe9659cdef6b61005a35e5ad1c7305" category="paragraph">複数のファイルを選択した場合は、選択したデスティネーションボリュームにすべてのファイルがリストアされます。したがって、ファイルを別のボリュームにリストアする場合は、リストアプロセスを複数回実行する必要があります。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">ONTAP 9.13.0以降を使用している場合は、フォルダとそのフォルダ内のすべてのファイルおよびサブフォルダをリストアできます。9.13.0より前のバージョンのONTAP を使用している場合は、そのフォルダのファイルのみがリストアされます。サブフォルダまたはサブフォルダ内のファイルはリストアされません。</block>
   <block id="c2d4eb2ee4a0b78ea11dd0bb39d93ab0" category="list-text">バックアップファイルにDataLockおよびRansomware保護が設定されている場合、フォルダレベルのリストアはONTAP のバージョンが9.13.1以降の場合にのみサポートされます。以前のバージョンのONTAP を使用している場合は、バックアップファイルからボリューム全体をリストアし、必要なフォルダとファイルにアクセスできます。</block>
@@ -1314,7 +1298,6 @@ Cloud Volumes ONTAP</block>
   <block id="8e735e680b7368147fd11864544dafdc" category="list-text">Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。<block ref="66e7a06283e2f9b1945c2e3b539d5c17" category="inline-link-rx"></block>。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。</block>
   <block id="97b5e4c408de2e312a0b1fc4e2535f1f" category="list-text">特定のAzure Synapse WorkspaceおよびData Lakeストレージアカウントの権限を、BlueXPに権限を付与するユーザーロールに追加する必要があります。 <block ref="3f613adb79f1db61c1db3e20329cd95a" category="inline-link-macro-rx"></block>。</block>
   <block id="5e9173bd9c8f0ab39bf36d1493a829f5" category="paragraph">以前に設定したコネクタでBlueXPのバックアップとリカバリをすでに使用している場合は、ここでBlueXPユーザロールにAzure Synapse WorkspaceとData Lake Storageアカウントの権限を追加する必要があります。検索と復元に必要です。</block>
-  <block id="7e7595ef438d9d19d857be29daa1e8d2" category="list-text">インターネットへのHTTP通信には、*プロキシサーバーなしでコネクターを設定する必要があります。コネクタにHTTPプロキシサーバを設定している場合は、検索と置換機能を使用できません。</block>
   <block id="2bb068da3540e8034049c29306ef2a17" category="list-text">Google Cloudの要件：</block>
   <block id="a6e5e96ba9eebf564c1d0ef4d770658f" category="list-text">特定のGoogle BigQuery権限は、BlueXPに権限を付与するユーザーロールに追加する必要があります。 <block ref="1401fe87dc595535076f05f545f8275e" category="inline-link-macro-rx"></block>。</block>
   <block id="9f9ef58971e6366fd2a1899555c147d8" category="paragraph">以前に設定したコネクタでBlueXPのバックアップとリカバリをすでに使用している場合は、ここでBlueXPユーザロールにBigQuery権限を追加する必要があります。検索と復元に必要です。</block>
@@ -1385,7 +1368,6 @@ Cloud Volumes ONTAP</block>
   <block id="d14bf8992a1c345a8a09efff78f3763f" category="paragraph">リストアしたボリュームに対しては、を実行できます <block ref="62168a5d0f839a246ab4456ea89ba04c" category="inline-link-macro-rx"></block> 必要に応じて。</block>
   <block id="1acc14b78e8cae9a53f9e9322c795a80" category="summary">Oracle データベースをクラウドからオンプレミスの SnapCenter サーバにリストアできます。</block>
   <block id="3d20155cd1c7d94c87e13305eebbe0a3" category="doc">Oracle データベースをリストアします</block>
-  <block id="822c8fbde1e65209f07f97e6791263d6" category="paragraph">Oracleデータベースは元の場所にリストアすることも、別の場所にリストアすることもできます。RACデータベースの場合、バックアップが作成されたオンプレミスノードにデータがリストアされます。</block>
   <block id="093c813823c463b6495f1ab6601f3c1a" category="paragraph">制御ファイルのリストアを含むフルデータベースのみがサポートされます。アーカイブログが AFS 内にない場合は、リカバリに必要なアーカイブログが格納されている場所を指定する必要があります。</block>
   <block id="c4b2754c24325b7485882003d0c5d85a" category="admonition">single File Restore（SFR；単一ファイルリストア）はサポートされません。</block>
   <block id="8377760bcd9824d8b414e96454b1f639" category="list-text">[ * フィルター条件 * ] フィールドで、フィルター * タイプ * を選択し、ドロップダウンから [* Oracle* ] を選択します。</block>
@@ -1426,7 +1408,6 @@ Cloud Volumes ONTAP</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">説明</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">データストアと仮想マシンを表示し、SnapCenter Plug-in for VMware vSphereインスタンスを編集できます。</block>
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">データストアと仮想マシンのデータの保護を管理します</block>
-  <block id="11cda0a1f9099558841d0f78195d8cf6" category="paragraph">データをバックアップおよびリストアする前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、リソースグループの変更内容に応じて、BlueXP UIで更新内容を確認できます。</block>
   <block id="5bea9354a7049a7e639553b703f18e84" category="paragraph">デフォルトの組み込みポリシーをすべて表示できます。これらの各ポリシーについて、詳細を表示すると、関連付けられているすべてのポリシーと仮想マシンが表示されます。</block>
   <block id="1c281da53a696408c46b6da9d44b27e7" category="paragraph">関連付けられているポリシーと仮想マシンが一覧表示されます。</block>
   <block id="8ed12ef54cb1d9b3b955b96ba5173201" category="section-title">データストアと仮想マシンを表示します</block>
@@ -1451,8 +1432,6 @@ Cloud Volumes ONTAP</block>
   <block id="6a45c59dd3a525bee9f5d9c555c1ff8a" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> SnapCenter Plug-in for VMware vSphereホストに対応し、*[登録解除]*をクリックします。</block>
   <block id="82725bf31262afb73c02d0bbce2d3389" category="paragraph">BlueXPのすべてのバックアップ処理とリカバリ処理用のジョブが作成されます。すべてのジョブと、各タスクの一部として実行されるすべてのサブタスクを監視できます。</block>
   <block id="1ea06868db269f34b7f5ba14e699c11f" category="summary">オンプレミスのONTAPシステムからセカンダリストレージシステムおよびGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="8e4bf073edf59649a0f460fa772a07bb" category="doc">オンプレミスのONTAPデータをGoogle Cloud Storageにバックアップ</block>
-  <block id="0565cf043978c615b1f8f7cad9c764d4" category="paragraph">オンプレミスのプライマリONTAPシステムからセカンダリストレージシステムおよびGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="b7d972f6553934b1eea5e57436b58de2" category="paragraph">オンプレミスのONTAPクラスタをパブリックインターネット経由でGoogle Cloud Storageに直接接続するか、VPNまたはGoogle Cloud Interconnectを使用してプライベートIPアドレスを使用するプライベートGoogle Accessインターフェイスを介してトラフィックをルーティングするかを選択します。</block>
   <block id="35abe2d136b4990eddee4a79d5635e4e" category="paragraph">Google Cloud Platform VPCにコネクタがすでに導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをGoogle CloudストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがGoogle Cloudに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。</block>
   <block id="efc9a74c13e86547b20ec65d6f0f8292" category="paragraph">Google CloudとBlueXPの両方のライセンス要件を確認する必要があります。</block>
@@ -1493,7 +1472,6 @@ Cloud Volumes ONTAP</block>
   <block id="ae255c932e32a6c376f50fc830a4ce81" category="list-text">BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
   <block id="a6dcd23c3ac238175abaf161ac1ebec0" category="list-text">バックアップを格納するオブジェクトストレージスペース用の Google サブスクリプションが必要です。</block>
   <block id="aa53d9bf733cf902deff6bd1db6e91b4" category="paragraph">*サポートされている地域*</block>
-  <block id="5e04c7ce8120dee91a67c3f89dc435ef" category="paragraph">すべての地域で、オンプレミスシステムからGoogle Cloud Storageへのバックアップを作成できます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
   <block id="0eea81ab62a2c595f6d2522576d79218" category="list-text">ファンアウトバックアップアーキテクチャの場合は、_primary_systemで次の設定を行います。</block>
   <block id="7b307bacc542e7b2e66c81d6fb1e034f" category="list-text">カスケードバックアップアーキテクチャの場合は、_secondary_systemで次の設定を行います。</block>
   <block id="3ef411ac53cdbf757b909d3733a52078" category="list-text">ONTAPクラスタは、バックアップおよびリストア処理のために、インタークラスタLIFからGoogle Cloud Storageへのポート443経由でHTTPS接続を開始します。</block>
@@ -1966,7 +1944,6 @@ NetApp StorageGRID</block>
   <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">[ 詳細 ] アイコン</block>
   <block id="272ea43c17bb748acf948f028cd26513" category="summary">アプリケーションを保護する独自のポリシーを作成します。</block>
   <block id="8a4528cef726e4e36a30d918236162fc" category="doc">アプリケーションをバックアップするポリシーを作成する</block>
-  <block id="9efea5dc57ddf655c92c407f96dd1337" category="paragraph">アプリケーションデータをクラウドにバックアップするポリシーを作成する必要があります。</block>
   <block id="7783ec9741a5d8100dae820693d57a26" category="list-text">オブジェクトストアからアーカイブストレージにバックアップを移動する場合は、必要なバージョンのONTAPを使用していることを確認します。</block>
   <block id="fa150600eb6c4639a0aefa969e7b726b" category="list-text">Amazon Web Servicesを使用している場合は、ONTAP 9.10.1以降を使用している必要があります</block>
   <block id="4f4531e8c58b9c676a23551cf59b1c06" category="list-text">Microsoft Azureを使用している場合は、ONTAP 9.10.1以降を使用している必要があります</block>
@@ -1976,7 +1953,6 @@ NetApp StorageGRID</block>
   <block id="81fedcf72bda3098b5ab523c2f40b979" category="list-text">（オプション）コストを最適化するために一定の日数が経過したバックアップをオブジェクトストアからアーカイブストレージに移動する場合は、「*ティアBackup to Archival *」チェックボックスを選択します。</block>
   <block id="4a938aa86ba9c09b265a5dc95f09a99c" category="summary">ONTAP からGCPにアプリケーションデータをバックアップするには、いくつかの手順を実行します。</block>
   <block id="e7626d40bde0cb9f25e876222f0bb5fc" category="doc">オンプレミスのアプリケーションデータをStorageGRID にバックアップ</block>
-  <block id="6d5571dc24e5e0915d6576d87e5ac094" category="paragraph">アプリケーションデータをONTAP からStorageGRID にバックアップするには、いくつかの手順を実行します。</block>
   <block id="ba4b1fdd90381666d97a2e59fb00966e" category="paragraph">BlueXPは、データロックとランサムウェア対策をサポートしています。ONTAPクラスタがONTAP 9.11.1以降で実行されている場合、StorageGRIDシステムは11.6.0.3以降です。アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
   <block id="3c129ae4117659984e8ff0ffd5717f67" category="paragraph">StorageGRID にデータをバックアップするときは、オンプレミスのコネクタが必要です。新しいコネクタをインストールするか、現在選択されているコネクタがオンプレミスにあることを確認する必要があります。コネクタは、インターネットに接続するかどうかに関係なく、サイトにインストールできます。</block>
   <block id="59a3f2ec9c1e69a907655f1e19a09af2" category="inline-link-macro">StorageGRID のコネクタを作成します</block>
@@ -1991,8 +1967,6 @@ NetApp StorageGRID</block>
   <block id="22c52a6e95d8c684b8eb086270330ab0" category="list-text">ドロップダウンからStorageGRIDを選択するか、StorageGRIDクラスタを追加します。</block>
   <block id="b69c04cbc4cab46d7ef82b0687e311c1" category="list-text">ドロップダウンからStorageGRIDクラスタを選択するか、クラスタを追加します。</block>
   <block id="bdf7101606af29df0cbed18a5171b7c0" category="summary">Cloud Volumes ONTAP システムとオンプレミスONTAP システムのバックアップの管理では、バックアップスケジュールの変更、新しいバックアップポリシーの作成、ボリュームバックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行うことができます。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。</block>
-  <block id="d04ac75da006cef6da314dc3097ce2f8" category="doc">ONTAPシステムのバックアップを管理します</block>
-  <block id="22167ead98802172cb14bf487326a7c1" category="paragraph">Cloud Volumes ONTAPシステムとオンプレミスのONTAPシステムのバックアップを管理するには、バックアップスケジュールの変更、ボリュームバックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行います。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。</block>
   <block id="f60a029ad87a896d979011a7be077ccc" category="admonition">ストレージシステム上で直接、またはクラウドプロバイダ環境からバックアップファイルを管理または変更しないでください。ファイルが破損し、サポートされていない構成になる可能性があります。</block>
   <block id="dd6f4e2c97bf14c09a3cb569f35cae7c" category="section-title">作業環境内のボリュームのバックアップステータスを表示します</block>
   <block id="1ede887179a4e037eadaa01d9f069324" category="paragraph">[Volumes Backup]ダッシュボードでは、現在バックアップされているすべてのボリュームのリストを確認できます。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。現在バックアップされていない作業環境内のボリュームを表示することもできます。</block>
@@ -2197,7 +2171,6 @@ NetApp StorageGRID</block>
   <block id="6b8f75608c780411342a488cc1ed6a77" category="paragraph"><block ref="6b8f75608c780411342a488cc1ed6a77" category="inline-image-macro-rx" type="image"></block></block>
   <block id="16d050cc0c345f23a8c1f9d1557ac107" category="list-text">確認ダイアログボックスで、 * 登録解除 * をクリックします。</block>
   <block id="65e3ba6149c87f14c99c67806cbe8899" category="doc">MongoDB、MySQL、PostgreSQLデータベースのリストア</block>
-  <block id="eb92df223c0140de30f9a1bfb050ab30" category="paragraph">MongoDB、MySQL、PostgreSQLのデータベースを任意のホストにリストアできます。</block>
   <block id="b89cd7529d8b58accf14d298da485e40" category="list-text">[Filter by]*フィールドで、フィルタ* Type *を選択し、ドロップダウンから* MongoDB *、* MySQL *、または* PostgreSQL *を選択します。</block>
   <block id="cc30b9dac3532c6eec37a8e45c7aab0b" category="summary">Web UIから利用できるBlueXPのバックアップとリカバリ機能は、RESTful APIからも利用できます。</block>
   <block id="77d4d9afc8b5a0160c070fc2f71692a4" category="doc">BlueXPのバックアップとリカバリ用API</block>
@@ -2233,8 +2206,6 @@ NetApp StorageGRID</block>
   <block id="c39d07aa3697a8b5b1eb9963f6cd194c" category="listing-title">「status」が「completed」になるまで監視します。</block>
   <block id="19ec08da81a826d919d64ab860845c04" category="section-title">API リファレンス</block>
   <block id="4ab7d99363507ea7d2dfa59860eae018" category="summary">Cloud Volumes ONTAP システムからGoogle Cloudストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="3618be0c223951c8ad19bcd0eb9d03c4" category="doc">Cloud Volumes ONTAPデータをGoogle Cloud Storageにバックアップします</block>
-  <block id="2ec8fbded5e88799ebd7fdba2189b818" category="paragraph">Cloud Volumes ONTAP システムからGoogle Cloud Storageへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="420f5c27f3e2bcd031d764f5cda9d052" category="list-text">GCPでCloud Volumes ONTAP 9.8以降を実行している（ONTAP 9.8P13以降を推奨）。</block>
   <block id="1bb2c0187913772397ee94ba85aff22c" category="list-text">バックアップを保存するストレージスペースの有効な GCP サブスクリプションがあります。</block>
   <block id="9f64ffde2c75d703f129378f565a0e11" category="list-text">に登録しておきます<block ref="1a2c27167c7e8ce27ef7c637d8f92515" category="inline-link-rx"></block>またはを購入したことが必要です <block ref="a7c7886675f758752089ea0caddfb19c" category="inline-link-macro-rx"></block> ネットアップが提供するBlueXPバックアップ/リカバリのBYOLライセンス</block>
@@ -2244,7 +2215,6 @@ NetApp StorageGRID</block>
   <block id="805ec627e54267e3f12d2e51de9e2a1a" category="inline-image-macro">BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。</block>
   <block id="0466afdcc96844324ad464c4a732e684" category="paragraph"><block ref="0466afdcc96844324ad464c4a732e684" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2faa0205939423bf83f1e331a7844f83" category="list-text">サポートされる GCP リージョン</block>
-  <block id="fa0e57d14b046871ace0930dbea76b89" category="list-text">BlueXPのバックアップとリカバリは、すべてのGCPリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
   <block id="4ce60442c0b2156c43c785528827a3ab" category="list-text">GCP サービスアカウント</block>
   <block id="68cc6348671b24995e53975d0fd5d303" category="inline-link">サービスアカウントの作成方法について説明します</block>
   <block id="b5c9fa9bce15f0de1507e8a190b390e9" category="inline-link">作業環境ウィザードの[Details &amp; Credentials]ページからサブスクライブできます。</block>
@@ -2288,15 +2258,12 @@ NetApp StorageGRID</block>
   <block id="89fe5b7ba0cd5b88dbe5243d8ab34b3c" category="paragraph">入力したGoogleアクセスキーとシークレットキーで指定されたサービスアカウントにGoogle Cloud Storageバケットが作成され、バックアップファイルがそこに保存されます。</block>
   <block id="6bf39a60f8a045efaafd2bcde95bf33e" category="inline-link">バケットのデフォルトのストレージクラスを変更する</block>
   <block id="04ca2ad9f852ecfebfab4bc41605f1b4" category="paragraph">バックアップは、デフォルトで_Standard_storageクラスに関連付けられています。低コストのNearlineクラス、_Coldline_クラス、または_Archive_storageクラスを使用できます。ただし、ストレージクラスの設定には、BlueXPのバックアップとリカバリのUIではなく、Googleを使用します。Google のトピックを参照してください<block ref="d037ca255a8eefed8e879939d65bfbbd" category="inline-link-rx"></block> を参照してください。</block>
-  <block id="2b36d2f46a4c7d47c05352e78b2ebe53" category="doc">オンプレミスアプリケーションのデータをGoogle Cloud Platformにバックアップ</block>
-  <block id="f45093e474e81b002e0fc86bd669de92" category="paragraph">いくつかの手順を実行して、ONTAP からGoogle Cloud Platformにアプリケーションデータをバックアップします。</block>
   <block id="fa860b204216c5fc8423fbeb3cc0cb75" category="list-text">クラウドプロバイダとして「* Google Cloud Platform *」を選択します。</block>
   <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="list-text">バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project を選択します。</block>
   <block id="fa0f3e6189a17df2b37f1f89872dbee4" category="list-text">Google Cloud Access Keyフィールドで、キーを指定します。</block>
   <block id="3ee34b7fd8f9ec35694f9ada246e9a7b" category="list-text">Google Cloud Secret Keyフィールドで、パスワードを指定します。</block>
   <block id="86ec2a14bbb020ef6f3317be9dc1ae88" category="summary">SQL Server データベースをクラウドからオンプレミスの SnapCenter サーバにリストアできます。</block>
   <block id="25cc2482c6aabbea855686d0229477f9" category="doc">SQL Server データベースをリストアする</block>
-  <block id="9bfef37a59ea84d9474c85061ccb5c6d" category="paragraph">SQL Serverデータベースは元の場所にリストアすることも、別の場所にリストアすることもできます。</block>
   <block id="cc2de7a3d6d06ec140e204ae05b8a500" category="admonition">Single File Restore（SFR；単一ファイルのリストア）、ログバックアップのリカバリ、および可用性グループの再シードはサポートされていません。</block>
   <block id="77fc9c04c5d3905b02c1cb2816c3ff56" category="list-text">[ * フィルター条件 * ] フィールドで、フィルター * タイプ * を選択し、ドロップダウンから * SQL* を選択します。</block>
   <block id="f99dd373d02a7eb7954d187b270ff262" category="list-text">「 * 詳細表示 * 」をクリックすると、使用可能なすべてのバックアップが表示されます。</block>
@@ -2320,8 +2287,6 @@ NetApp StorageGRID</block>
   <block id="21b391aa8b20883f254b17bcbc33d986" category="paragraph">アプリケーション向けのBlueXPバックアップ/リカバリ機能は、オンプレミスのONTAP プライマリからクラウドプロバイダに至るまで、アプリケーションと整合性のあるSnapshotを保護するためのデータ保護機能を提供します。</block>
   <block id="a2d862330d4e63170bca9d0f51144971" category="paragraph">Oracle、Microsoft SQL、SAP HANA、MongoDB、MySQL、 オンプレミスのONTAPシステムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、StorageGRIDに至るまで、PostgreSQLアプリケーションのデータをバックアップできます。</block>
   <block id="c676db7c97a4870687fb3952bca7fd13" category="paragraph">アプリケーションのBlueXPのバックアップとリカバリの詳細については、以下を参照してください。</block>
-  <block id="3a462fe0425c18b634a1f644c1b6e5b0" category="inline-link">BlueXPのバックアップ/リカバリ機能とSnapCenter を使用した、アプリケーション対応のバックアップ</block>
-  <block id="d924f26cc49b9ff35abdb19f684eccab" category="list-text"><block ref="d924f26cc49b9ff35abdb19f684eccab" category="inline-link-rx"></block></block>
   <block id="76109d2d3d69c8e04ec269dd87686a6d" category="inline-link">BlueXPの「Backup and Recovery for Applications」ポッドキャスト</block>
   <block id="9625f33662597cf8b3ea82c555eb6da7" category="list-text"><block ref="9625f33662597cf8b3ea82c555eb6da7" category="inline-link-rx"></block></block>
   <block id="74875374e8fd3aa0344d8296bbfda0a1" category="paragraph">クラウドプロバイダへのアプリケーションデータのバックアップを開始する前に、次の要件を読み、サポートされる構成があることを確認してください。</block>
@@ -2341,7 +2306,6 @@ NetApp StorageGRID</block>
   <block id="ddc4eff2345788fc606fb71155e77e08" category="inline-image-macro">BlueXPのバックアップ/リカバリとオンプレミスアプリケーションおよびバックアップファイルが配置されているデスティネーションストレージとの通信方法を示す図。</block>
   <block id="5900ca7e734dbd4ebfc5c92beb6901ad" category="paragraph"><block ref="5900ca7e734dbd4ebfc5c92beb6901ad" category="inline-image-macro-rx" type="image"></block></block>
   <block id="661d052ba9e14a07c1387ef54569e445" category="summary">開始またはスケジュールされたローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始またはスケジュールされたリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
-  <block id="1ca3bd8f6dc961579b0cb3fd37bec744" category="paragraph">開始したローカルSnapshot、レプリケーション、オブジェクトストレージへのバックアップジョブ、および開始したリストアジョブのステータスを監視できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
   <block id="06bf7dd6f0ab94d87f59e43fc93b6d3c" category="section-title">ジョブモニタでのジョブステータスの表示</block>
   <block id="402bab7d605cd8ea629df214c4351f69" category="paragraph">ステータスは次のいずれかになります。</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
@@ -2474,7 +2438,6 @@ NetApp StorageGRID</block>
   <block id="82f72f137722b68957ddade43e2defd1" category="list-text">SnapLockボリュームは、クラウドバックアップの作成元のソースシステムでONTAP 9.11.0以降が実行されている場合にのみサポートされます。</block>
   <block id="0ec24d208e5df8843f6524b944c450f6" category="summary">オンプレミスのONTAP からAWSにデータストアをバックアップできます。</block>
   <block id="1d5ad62b9217b4a3f085f517534f40bb" category="doc">データストアをAmazon Web Servicesにバックアップする</block>
-  <block id="75f480f92315c62b407d8ae1ad890f29" category="paragraph">1つ以上のデータストアをAmazon Web Servicesにバックアップしてアーカイブすることで、ストレージ効率を高め、クラウドへの移行を促進できます。</block>
   <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択できます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。</block>
   <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Amazon Web Services *を選択してクラウドプロバイダとして設定します。</block>
   <block id="0b6515b0d85be4c32021431c5119a675" category="list-text">AWS Access Keyフィールドで、データ暗号化のキーを指定します。</block>
@@ -2563,7 +2526,6 @@ NetApp StorageGRID</block>
   <block id="547e2a5eac8fbdbb2c8f7a56f61c8cbe" category="paragraph">これで、ストレージアカウント（サブスクリプション 1 ）は、サブスクリプション 2 で実行されている Cloud Volumes ONTAP システムにアクセスできます。</block>
   <block id="4bd946b57d99bd5b3f564041e093db5c" category="list-text">Cloud Volumes ONTAP システムでBlueXPのバックアップとリカバリの有効化をもう一度実行すると、成功します。</block>
   <block id="4061ec52da23891b0496adb9ffaad83d" category="summary">BlueXPのバックアップとリカバリは、2つのS3アーカイブストレージクラスとほとんどのリージョンをサポートしています。</block>
-  <block id="4757c134887b4b01e3ff6492a880fb07" category="doc">AWS S3 アーカイブストレージクラスおよびリストアの読み出し時間</block>
   <block id="8ba1ec37eb572aa700e5b902d0837eaa" category="section-title">BlueXPのバックアップとリカバリでサポートされるS3アーカイブストレージクラス</block>
   <block id="c3da09e0a65b048cdbca120f1e6b23c9" category="paragraph">バックアップファイルが最初に作成されるときは、 S3_Standard_storage に格納されています。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、すぐにアクセスすることもできます。30 日経過すると、バックアップは S3_Standard - Infrequent Access_storage クラスに移行してコストを削減します。</block>
   <block id="186ff50c3b4a485263b55bbfc446288c" category="paragraph">このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、AWSアカウントでバケットをセットアップするときにライフサイクルルールを設定しないでください。</block>
@@ -2599,7 +2561,6 @@ NetApp StorageGRID</block>
   <block id="61d2487e95a87f4488738d2a68c3f065" category="inline-link">これらのストレージクラスに関する Amazon FAQ</block>
   <block id="e65bc43817a0ccba6c96b51583aeb5d2" category="paragraph">Amazon S3 Glacier と S3 Glacier Deep Archive の読み出しオプションの詳細については、を参照してください<block ref="b0992f5e2227a70d04a7c3b83b2ca245" category="inline-link-rx"></block>。</block>
   <block id="167ad7df13dea30d4df6fa06947396fe" category="summary">BlueXPのバックアップとリカバリは、1つのGoogleアーカイブストレージクラスとほとんどのリージョンでサポートされます。</block>
-  <block id="1d1f829431c9386d582ffb5743db4e57" category="doc">Googleアーカイブストレージクラスとリストアの読み出し時間</block>
   <block id="0718118055dc2edc791fa29a90a786fe" category="section-title">BlueXPのバックアップとリカバリでサポートされるGoogleアーカイブストレージクラス</block>
   <block id="ba9d8863610ca6cf8a9d81a9d08b4ff0" category="paragraph">バックアップファイルが最初に作成されるときは、_Standard_storageに保存されます。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、すぐにアクセスすることもできます。</block>
   <block id="c2e5d30cd0abf0804ca8396b9b1f8c56" category="paragraph">このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、Googleアカウントでバケットをセットアップするときにライフサイクルルールを設定しないでください。</block>
@@ -2613,7 +2574,6 @@ NetApp StorageGRID</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*取得時間*：アーカイブからバックアップファイルを取得して標準ストレージに保存する時間。これは、「水和」時間と呼ばれることもあります。他のクラウドプロバイダが提供する「最低目的」のストレージソリューションとは異なり、データには数ミリ秒でアクセスできます。</block>
   <block id="53abd7822662a93e6bc58b003f475f63" category="summary">SnapCenter サーバを登録するには、いくつかの手順を実行します。</block>
   <block id="aa7d3e24c9aefdb463576ad781882e4a" category="doc">SnapCenter サーバを登録します</block>
-  <block id="534f2e4b7106b8520d0ec26b959d75eb" category="paragraph">SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が実行されているホストを登録できます。BlueXPには複数のSnapCenter サーバホストを登録できます。</block>
   <block id="0e4fb16657a8e26179d9104487074adc" category="list-text">[* SnapCenter サーバーの登録 * ] をクリックします。</block>
   <block id="12f2045076b291561318e5d9855f26de" category="list-text">次の情報を指定します。</block>
   <block id="a2b72916d92415d160f146588d422003" category="list-text">SnapCenter Server フィールドで、 SnapCenter サーバホストの FQDN または IP アドレスを指定します。</block>
@@ -2647,8 +2607,6 @@ NetApp StorageGRID</block>
   <block id="6403145bf43147af29b8d8774cbc49b2" category="list-text">オンデマンドまたは毎時ポリシーのみのデータベース</block>
   <block id="2f9bbcca9b6763c9b97b7fc28f8b1855" category="list-text">NVMe上にあるOracleデータベース</block>
   <block id="49f2fa5360686148867b942e73c164ea" category="summary">オンプレミスのONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="c6f935fce64d135ae3250df1beb9c2aa" category="doc">オンプレミスのONTAPデータをAzure Blobストレージにバックアップ</block>
-  <block id="b26f7b31288fff69c8d3c7065e19c5d4" category="paragraph">オンプレミスのONTAPシステムからセカンダリストレージシステムおよびAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="e357379ef349802fe3a5b7a0ea16b622" category="paragraph">オンプレミスのONTAPクラスタをパブリックインターネット経由でAzureに直接接続するか、VPNまたはAzure ExpressRouteを使用してプライベートVPCエンドポイントインターフェイス経由でAzureにトラフィックをルーティングするかを選択します。</block>
   <block id="57baa3c287eb66f99ca7a7281024c30a" category="paragraph">Azure VNetまたはオンプレミスにコネクタがすでに導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをAzure BLOBストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタがAzureに接続できるように、コネクタのネットワーク設定をカスタマイズする必要があります。</block>
   <block id="de10f64287fc6b9bf60177f070c9f5f0" category="paragraph">AzureとBlueXPの両方のライセンス要件を確認する必要があります。</block>
@@ -2701,7 +2659,6 @@ NetApp StorageGRID</block>
   <block id="e59cc93e05cd1a09fee0d3400cb6594b" category="inline-link">Azure Marketplaceで提供されるNetApp BlueXPサービス</block>
   <block id="1ec47f8d2867e62133816fe5c965e4ea" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です<block ref="2fad159ac15feeefc5347d9f8b6dbeab" category="inline-link-rx"></block>。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
   <block id="39476a4d8825e098719d72ca18619ed8" category="list-text">バックアップを配置するオブジェクトストレージスペース用の Azure サブスクリプションが必要です。</block>
-  <block id="ff3e862b2a18f8bce76ed20224f2e575" category="paragraph">すべての地域で、オンプレミスシステムから Azure Blob へのバックアップを作成できます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>Azure Government リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
   <block id="e205929749fe8da699042c6ba176c09f" category="list-text">ONTAP クラスタは、バックアップおよびリストア処理用に、クラスタ間 LIF から Azure Blob Storage へのポート 443 経由の HTTPS 接続を開始します。</block>
   <block id="2f36514c20e3b8e4fc3d4015ec8492d3" category="list-text">ONTAP では、コネクタからクラスタ管理 LIF へのインバウンド接続が必要です。コネクタは Azure VNet 内に配置できます。</block>
   <block id="4ac800b4e5d934f314da963c023ec8e3" category="list-text">ノードとクラスタ間 LIF からオブジェクトストアにアクセスできます。</block>
@@ -2733,8 +2690,6 @@ NetApp StorageGRID</block>
   <block id="a106a6840e265cdb3aa38c21a38e1b4e" category="paragraph">入力したリソースグループにBLOBストレージアカウントが作成され、バックアップファイルがそこに格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。</block>
   <block id="7e97cb9cfa6da264730476207742c975" category="list-text">また可能です <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> Azure 内の Cloud Volumes ONTAP システムやオンプレミスの ONTAP システムへの接続に使用できます。</block>
   <block id="ef8c31bba1fe5a62e7a6cfedbb9d29da" category="summary">NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーによって、バックアップのタイプ、バックアップアーキテクチャ、ストレージシステム、バックアップ頻度が決まります。</block>
-  <block id="defb6c38e16057d80b8b116a92ab8665" category="doc">ONTAPボリュームのバックアップポリシーを管理します。</block>
-  <block id="7ee9b8ccc530c51b1215b5f1266eee5e" category="paragraph">NetAppのデフォルトのバックアップポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。ポリシーは、バックアップの頻度、バックアップが作成される時間、および保持されるバックアップファイルの数を制御します。</block>
   <block id="ce2a08fb730f789e2b1cd4e7afc9f682" category="paragraph">アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードの実行前または実行中にポリシーを作成できます。</block>
   <block id="c5e61d7841bf9a1c1ef625157d503535" category="paragraph">デフォルトのバックアップポリシーについては、を参照してください。 <block ref="26e6d65b3efbcdaf9fdb0f41b6ffe1ab" category="inline-link-macro-rx"></block>。</block>
   <block id="9c2cf3d903ec11e031aac200337d550f" category="cell">Snapshotポリシーの格納場所</block>
@@ -3008,7 +2963,6 @@ ONTAP S3の略</block>
   <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">[検索と復元]ページで、いくつかのカタログ検索を実行して、インデックス付けされたカタログの復元が正常に完了したことを確認します。</block>
   <block id="06ac0cb7b7615ba7b7f08032fcc97c6a" category="summary">BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録します。</block>
   <block id="437ae89009b207d1aafce3d11e58f524" category="doc">SnapCenter Plug-in for VMware vSphereホストを登録</block>
-  <block id="8d69a4a1581a5dfb55d085bec9816e72" category="paragraph">表示するデータストアと仮想マシンについては、BlueXPでSnapCenter Plug-in for VMware vSphereホストを登録する必要があります。SnapCenter Plug-in for VMware vSphereホストを登録できるのは、管理者アクセス権を持つユーザだけです。</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">[* SnapCenter Plug-in for VMware vSphere*の登録]をクリックします。</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">SnapCenter Plug-in for VMware vSphereフィールドで、SnapCenter Plug-in for VMware vSphereホストのFQDNまたはIPアドレスを指定します。</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">[ポート]フィールドで、SnapCenter Plug-in for VMware vSphereホストが実行されているポート番号を指定します。</block>
@@ -3017,7 +2971,6 @@ ONTAP S3の略</block>
   <block id="a2635d75789f249837881cc5136979e1" category="paragraph">* 終了後 *</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">[バックアップとリカバリ]*&gt;*[仮想マシン]*をクリックして、登録済みのSnapCenter Plug-in for VMware vSphereホストを使用して保護されているすべてのデータストアと仮想マシンを表示します。</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">仮想マシンはクラウドからオンプレミスのSnapCenter にリストアできます。</block>
-  <block id="ffa1e37a2c6478ff157a0a7d25a607e9" category="doc">仮想マシンのデータをクラウドからリストア</block>
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">複数のデータストアにまたがる仮想マシンはリストアできません。</block>
   <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">すべてのが満たされていることを確認します <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 仮想マシンをクラウドからリストアする前に、</block>
   <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">BlueXP UIで、*[保護]*&gt;*[バックアップとリカバリ]*&gt;*[仮想マシン]*&gt;* SnapCenter Plug-in for VMware vSphere *をクリックし、SnapCenter Plug-in for VMware vSphereホストを選択します。</block>
@@ -3030,7 +2983,6 @@ ONTAP S3の略</block>
   <block id="9748f351c4d16d0c4d18b2ae55b47a99" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。<block ref="c9aff78f9846421ce008e556f4151f92" category="inline-link-rx"></block>。</block>
   <block id="bdaf195e79571aa760a337bc03bd82b0" category="paragraph">また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。</block>
   <block id="455aadf3bd22f71973763b3cdc7db550" category="list-text">サポートされている Azure リージョン</block>
-  <block id="864720dc2dde0915fefa08788be26fb4" category="paragraph">BlueXPのバックアップ/リカバリレポートを使用すると、組織で定義されたポリシーに従って重要なデータを確実に保護し、コンプライアンスニーズを監査できます。</block>
   <block id="3763c7668e8aeb422b9407d01d4e6481" category="paragraph">BlueXPのバックアップとリカバリレポートを使用すると、次のことを実現できます。</block>
   <block id="1f9ab6f8211cd0f71cb927f72e9fb635" category="list-text">*運用の可視性*:データ保護、バックアップ成功率、およびバックアップウィンドウとビジネスニーズとの整合性に関するサービスレベルアグリーメントを監視します。</block>
   <block id="8d1b84001f281cc291dc64f6b86aabe5" category="list-text">*コンプライアンスと監査*:内部および外部の監査プロセスで運用レポートと在庫レポートを使用して、コンプライアンスを継続的に監視します。</block>
@@ -3078,7 +3030,6 @@ ONTAP S3の略</block>
   <block id="a0a7952e2e9dc6eba09660f59b4d73a2" category="list-text">[データ保護ジョブアクティビティ]*を選択します。</block>
   <block id="c8b12aebf67be0b5d9913d39f23e9c8a" category="list-text">（オプション）ジョブステータス、ジョブタイプ（バックアップまたはリストア）、およびリソースで結果をフィルタリングします。</block>
   <block id="1dc2ad9cca2244507b67e5dd79a50439" category="summary">オンプレミスのONTAPシステムからAmazon S3クラウドストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="5b22e9dc0aac2861a10f4140014d93c3" category="paragraph">オンプレミスのONTAPシステムからセカンダリストレージシステムおよびAmazon S3クラウドストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
   <block id="e41af01898aa01f20e528d19fdda2ec8" category="paragraph">オンプレミスのONTAP クラスタをパブリックインターネット経由でAWS S3に直接接続するか、VPNとAWS Direct Connectのどちらを使用してトラフィックをAWS S3にルーティングするかを選択します。</block>
   <block id="2caab6b4309c96fb35f222d679c93f7e" category="paragraph">AWS VPCまたはオンプレミスにすでにコネクタが導入されている場合は、すべて設定されます。そうでない場合は、ONTAPデータをAWS S3ストレージにバックアップするためのBlueXPコネクタを作成する必要があります。また、コネクタのネットワーク設定をカスタマイズして AWS S3 に接続できるようにする必要があります。</block>
   <block id="398e6504d026007c7ca4939af70b96c3" category="paragraph">BlueXPでONTAPクラスタを検出し、クラスタが最小要件を満たしていることを確認し、ネットワーク設定をカスタマイズしてクラスタをAWS S3に接続できるようにします。</block>
@@ -3115,7 +3066,6 @@ ONTAP S3の略</block>
   <block id="f02fabcd80f3df012a3b734db72a8a04" category="inline-link">AWS Marketplaceで提供されるNetApp BlueXPサービス</block>
   <block id="7eb75a0482cc00856d6f59785ed2196a" category="list-text">BlueXPのバックアップとリカバリのPAYGOライセンスを購入するには、のサブスクリプションが必要です<block ref="72b5d28b0fc68220ca561b42693848df" category="inline-link-rx"></block>。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。</block>
   <block id="ae9c838ce5564e10aa34395e48e9527e" category="list-text">バックアップを格納するオブジェクトストレージスペース用の AWS サブスクリプションが必要です。</block>
-  <block id="ae026b849c4275f68e7902a73ecf0632" category="paragraph">すべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>AWS GovCloud リージョンを含む。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
   <block id="66aa360897a3e9eeca6d5cd1ad876df5" category="list-text">クラスタには、コネクタからクラスタ管理 LIF へのインバウンド HTTPS 接続が必要です。</block>
   <block id="b3351de0bd12665c9ae1483f66b4c092" category="list-text">クラスタ間 LIF は、バックアップ対象のボリュームをホストする各 ONTAP ノードに必要です。これらのクラスタ間 LIF がオブジェクトストアにアクセスできる必要があります。</block>
   <block id="ba19de110cf302cad348741e35238b97" category="paragraph">クラスタは、バックアップおよびリストア処理のために、インタークラスタ LIF から Amazon S3 ストレージへのポート 443 経由のアウトバウンド HTTPS 接続を開始します。ONTAP は、オブジェクトストレージとの間でデータの読み取りと書き込みを行います。オブジェクトストレージが開始されることはなく、応答するだけです。</block>
@@ -3173,15 +3123,12 @@ ONTAP S3の略</block>
   <block id="fab7b62aef677a7dfc0c2e880e574c3e" category="paragraph">入力したS3アクセスキーとシークレットキーで指定されたサービスアカウントにS3バケットが作成され、バックアップファイルがそこに格納されます。ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。</block>
   <block id="87f7d3321134d426b2518c004c972cc2" category="summary">オンプレミスのONTAP からGoogle Cloud Platformにデータストアをバックアップ</block>
   <block id="eb1ab874b09a7eab583845e8576be828" category="doc">データストアをGoogle Cloud Platformにバックアップする</block>
-  <block id="8016908361c8a89e5b37a2ac87b22faa" category="paragraph">SnapCenter Plug-in for VMware vSphereホストとBlueXPを統合することで、1つ以上のデータストアをGoogle Cloud Platformにバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
   <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">Google Cloud Platform *を選択して、クラウドプロバイダとして構成します。</block>
   <block id="99b6a376880ac28b047f54b783efb2b9" category="summary">Cloud Volumes ONTAP システムからAzure BLOBストレージへのボリュームデータのバックアップを開始するには、いくつかの手順を実行します。</block>
-  <block id="0ac5da5698976e512fb0207d330744f6" category="doc">Cloud Volumes ONTAPのデータをAzure BLOBストレージにバックアップ</block>
   <block id="dee9e3e2aeabf737fa6d44063b734525" category="list-text">AzureでCloud Volumes ONTAP 9.8以降を実行している（ONTAP 9.8P13以降を推奨）。</block>
   <block id="7d43c1b3e8a80ec6b8eab793bca8c4ad" category="paragraph">Azureリージョンにすでにコネクタがデプロイされている場合は、準備は完了です。そうでない場合は、AzureにBlueXPコネクタをインストールして、Cloud Volumes ONTAPのデータをAzure Blobストレージにバックアップする必要があります。コネクタは、完全なインターネットアクセス(「標準モード」)または制限されたインターネット接続(「制限モード」)を備えたサイトにインストールできます。</block>
   <block id="1c46604b0617edfe2e838caa6b0d4817" category="paragraph">Azure Blob Storage へのボリュームのバックアップを開始する前に、次の要件を確認し、サポートされている構成であることを確認してください。</block>
   <block id="b8cc9261de49179da667ae55f7d16d20" category="paragraph"><block ref="b8cc9261de49179da667ae55f7d16d20" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a54679f8abf71edeb14ceece70928820" category="list-text">BlueXPのバックアップとリカバリは、Azureのすべてのリージョンでサポートされます<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>Azure Government リージョンを含む。</block>
   <block id="c893816e7a773a744b9ed4b6a86aa940" category="paragraph">BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実にレプリケートする場合は、BlueXPのバックアップとリカバリをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="5befa7486c8d00eaafce2041341f9c2e" category="list-text">別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ</block>
   <block id="a2ff0bc78d093861138e916ba1b7cc8b" category="inline-link-macro">Azure ポータルにログインして、 2 つのサブスクリプションをリンクできます</block>
@@ -3322,7 +3269,6 @@ ONTAP S3の略</block>
   <block id="b1314bfff132a050766ce5d32ac976de" category="section-title">データストアの保護の解除</block>
   <block id="24e973d26bb253c7b5fb8a764db6860a" category="paragraph">以前に保護されていたデータストアの保護を解除できます。クラウドバックアップを削除する場合や、クラウドへのバックアップを中止する場合は、データストアの保護を解除できます。データストアは、保護が解除されたあとに再度保護することができます。</block>
   <block id="2c86bcd8467882ddafa5699064a113a9" category="list-text">をクリックします <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> をクリックし、*[保護解除]*をクリックします。</block>
-  <block id="331f8541bc1d88d7b3a99d070122fc1c" category="paragraph">仮想マシンのデータをクラウドからオンプレミスのvCenterにリストアできます。仮想マシンは、バックアップが作成された場所とまったく同じ場所にリストアすることも、別の場所にリストアすることもできます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
   <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">別の場所にリストアする場合は、次の手順を実行します。</block>
   <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">ソースvCenterとデスティネーションvCenterがリンクモードであることを確認します。</block>
   <block id="b9d3026a416c9548a1ce214ae1cac290" category="list-text">ソースクラスタとデスティネーションクラスタの詳細が両方のSnapCenter Plug-in for VMware vSphereホストのBlueXPキャンバスとリンクモードのvCenterで追加されていることを確認します。</block>
@@ -3403,7 +3349,6 @@ ifdef ::gcp[]</block>
   <block id="17c54e9ba828968f120b82b8cd07abfa" category="inline-link-macro">オブジェクトへのバックアップポリシーの設定</block>
   <block id="0bc441f660cc6026f623b6cab169011c" category="list-text">オブジェクトへのバックアップポリシーの場合は、DataLockとRansomware Protectionを設定します。DataLockとランサムウェア対策の詳細については、 <block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block>。</block>
   <block id="c017d92a691d34eeedab98c2b0d24a2a" category="summary">ONTAPシステムごとに、BlueXPのバックアップとリカバリをアクティブ化するときに設定した、クラスタレベルのオブジェクトへのバックアップ設定の多くを変更できます。「デフォルト」バックアップ設定として適用される一部の設定を変更することもできます。これには、ストレージキーの変更、オブジェクトストレージへのバックアップ転送率、履歴Snapshotコピーをバックアップファイルとしてエクスポートするかどうかなどが含まれます。作業環境に対してランサムウェアスキャンを有効または無効にすることもできます。</block>
-  <block id="ea44ae5b51bb08fddcc53530d06a69a1" category="doc">[Advanced Settings]ページでのオブジェクトストレージへのバックアップオプションの管理</block>
   <block id="ced47daa04f0ab245996945ce084fb6a" category="admonition">これらの設定は、オブジェクトストレージへのバックアップでのみ使用できます。これらの設定は、Snapshotまたはレプリケーションの設定には影響しません。将来的には、同様のSnapshotとレプリケーションのクラスタレベルのレプリケーション設定が追加される予定です。</block>
   <block id="c7097337eab210464618620268aa80bc" category="paragraph">[Advanced Settings]ページでは、次のオプションを変更できます。</block>
   <block id="6d1da260b80b103438f3aedda67c1b8e" category="list-text">[Max Transfer Rate]オプションを使用して、バックアップをオブジェクトストレージにアップロードするために割り当てられるネットワーク帯域幅の変更
@@ -3686,8 +3631,6 @@ ifdef：aws []</block>
   <block id="eb908336fca360ed35207a1e198562b2" category="list-text">Azureの商用リージョンにインストールされているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムからAzure Blobにデータをバックアップできます。<block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>です。</block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
   <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">5つ以上のボリュームのバックアップが有効になっている場合、BlueXP  バックアップおよびリカバリでは一度に5つのボリュームのみが初期化されます。これらが完了すると、5つのサブジョブの次のバッチが作成されて次のセットが開始され、すべてのボリュームが初期化されるまで続行されます。</block>
-  <block id="542b4404b0cd2b4cf01b81a3a97b2c20" category="inline-link">データインフラの分析情報とCloud Secure</block>
-  <block id="5212f7d39ed0f1c16c365beda23afc75" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。NetAppまたは一部のを<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>使用して<block ref="17959d7def942fae173290691e2a40ae" category="inline-link-rx"></block>ソースボリュームを保護します。</block>
   <block id="46206fcd0fa4af78eefe04f1bd8d42c6" category="list-text">オンプレミスボリューム用のSnapLock Compliance（ONTAP 9 .14以降が必要）</block>
   <block id="c4357ca22c7a0a7b40dcc64dcd915aad" category="paragraph">StorageGRIDのDataLockおよびランサムウェア対策の要件の詳細については、を参照してください<block ref="cb8de3051c432af9d9d024226709f28f" category="inline-link-macro-rx"></block>。</block>
   <block id="e44dd1be7752eb1b45f88c82336a3d7d" category="inline-link">BlueXP  ポリシーの権限</block>
@@ -3963,4 +3906,93 @@ ifdef：aws []</block>
   <block id="782af9afc0728a9389fd837476a88107" category="inline-link">価格設定の詳細については、NetAppインテリジェントサービスのマーケットプレイスサービスを参照してください。</block>
   <block id="6d641e087ca9cbb2e0778a492ac1066a" category="list-text">Azure：<block ref="211ed702bd160a1aa192248c846136e5" category="inline-link-rx"></block></block>
   <block id="80720981863bfe0c9cc6702701d24f18" category="list-text">Google Cloud：<block ref="5aa99f120ab43d5669622268ca1e3fd1" category="inline-link-rx"></block></block>
+  <block id="540f825e896e533b68a7c908366cab6f" category="doc">BlueXP バックアップおよびリカバリにおけるオブジェクトへのバックアップ ポリシー オプション</block>
+  <block id="ff76fcf5a77bc3d2d6fcc0bc89e691e8" category="paragraph">この機能では、ソースボリュームは保護されません。保護されるのは、ソースボリュームのバックアップのみです。いくつかの<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>ソースボリュームを保護します。</block>
+  <block id="dd8880b4f59210ef9057ade8974ae6e1" category="doc">BlueXP のバックアップとリカバリでオンプレミスのアプリケーション データを保護します</block>
+  <block id="d43f91d720bdc702da17a91373c66bc1" category="doc">BlueXP バックアップとリカバリで保護の旅を計画しましょう</block>
+  <block id="3fdf5c3e5388ce90a37a4ca89e13b9c1" category="doc">AWS S3 アーカイブストレージクラスと BlueXP バックアップおよびリカバリによる復元取得時間</block>
+  <block id="d1bef4123b9b553377dec07d51e6f364" category="doc">BlueXP バックアップとリカバリによる Azure アーカイブ層と復元取得時間</block>
+  <block id="4065cba16ae5fb2de62b3e17fb5bfdbd" category="doc">BlueXP バックアップとリカバリを使用して、Azure でのマルチアカウント アクセスのバックアップを構成する</block>
+  <block id="607fa5c64e5b074d69b6e276f485f5f7" category="doc">BlueXP バックアップとリカバリによる Google アーカイブ ストレージ クラスと復元取得時間</block>
+  <block id="bf23ff2e6c4769fb762df9ae2c3207f9" category="doc">BlueXP のバックアップとリカバリに関する既知の制限</block>
+  <block id="f65fc1bd2b82bd5e6d220cd1f78f776d" category="doc">BlueXP のバックアップとリカバリを使用してオンプレミスのアプリケーション データを Amazon Web Services にバックアップします</block>
+  <block id="e8df8bd60a7fb153f027e8464649cb28" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、アプリケーション データを ONTAP から Amazon Web Services にバックアップします。</block>
+  <block id="dae64a28bb076b36ab1c9aa580605900" category="paragraph">BlueXP バックアップおよびリカバリは、データ ロックとランサムウェア保護をサポートします。ONTAPクラスタがONTAP 9.11.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
+  <block id="c451a5ac4212c3c0e2006be724728826" category="doc">BlueXP のバックアップとリカバリを使用してオンプレミスのアプリケーション データを Microsoft Azure にバックアップします</block>
+  <block id="e36e1aa9fe93be990593423953b8c0d4" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、アプリケーション データを ONTAP から Microsoft Azure にバックアップします。</block>
+  <block id="851ed6c1c3e26f517481171c15262687" category="paragraph">BlueXP バックアップおよびリカバリは、データ ロックとランサムウェア保護をサポートします。ONTAPクラスタがONTAP 9.12.1以降で実行されていて、アーカイブストレージを設定していない場合は、上書き、削除、ランサムウェアの脅威からバックアップを保護できます。</block>
+  <block id="8e2ac7dcc8a0c0d6608fae9c87b3fb29" category="doc">BlueXP のバックアップとリカバリを使用して、オンプレミスのアプリケーション データを Google Cloud Platform にバックアップします。</block>
+  <block id="5080948e73b2b115a6695b2dcff2ce4d" category="paragraph">BlueXP のバックアップとリカバリでいくつかの手順を完了して、アプリケーション データを ONTAP から Google Cloud Platform にバックアップします。</block>
+  <block id="fda137de1b5bc43b13317a424711d1e6" category="doc">BlueXP バックアップおよびリカバリを使用してオンプレミスのアプリケーション データを StorageGRID にバックアップします</block>
+  <block id="194484d10cfc49eac7b71220ac0dca66" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、アプリケーション データを ONTAP から StorageGRID にバックアップします。</block>
+  <block id="8cb7156f6b4a6d375ab0fc3f5b7531f4" category="doc">BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを StorageGRID にバックアップします</block>
+  <block id="e60868416e61654787b5c5c78f635d55" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、オンプレミスのプライマリ ONTAP システムからセカンダリ ストレージ システムおよび NetApp StorageGRID システムのオブジェクト ストレージへのボリューム データのバックアップを開始します。</block>
+  <block id="de84af939f41492b1264ce8c3df573a9" category="paragraph">アーカイブ ストレージを使用するには、管理ノードの IP アクセスが必要です。</block>
+  <block id="a99287c7990930f58a55c1e2dba88d64" category="paragraph">ゲートウェイ IP アクセスは常に必要です。</block>
+  <block id="ec499d74ffee301ac24c73d0642b04a9" category="doc">BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを Amazon S3 にバックアップします</block>
+  <block id="5201ae0a8dd968743b9235731fe305a3" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、オンプレミスの ONTAP システムからセカンダリ ストレージ システムと Amazon S3 クラウド ストレージへのボリューム データのバックアップを開始します。</block>
+  <block id="e20dcdabdc6586c6d1c2519661bfa097" category="paragraph">AWS GovCloud リージョンを含むすべてのリージョンで、オンプレミスシステムから Amazon S3 へのバックアップを作成できます。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
+  <block id="5b383bb3dcd5218c037a97639e5483fd" category="doc">BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを Azure Blob ストレージにバックアップします</block>
+  <block id="050a8a0826b4f6a434806b42a94148be" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、オンプレミスの ONTAP システムからセカンダリ ストレージ システムと Azure Blob ストレージへのボリューム データのバックアップを開始します。</block>
+  <block id="a2dc9a4fb704e8ca875a1a77d909ba7d" category="paragraph">Azure Government リージョンを含むすべてのリージョンで、オンプレミス システムから Azure Blob へのバックアップを作成できます。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
+  <block id="23bedde7ddc61aac291af3e114a05acb" category="doc">BlueXP のバックアップとリカバリを使用してオンプレミスの ONTAP データを Google Cloud Storage にバックアップします</block>
+  <block id="60a2c829d4e3dac67d35b9042f9a1d83" category="paragraph">BlueXP のバックアップとリカバリのいくつかの手順を完了して、オンプレミスのプライマリ ONTAP システムからセカンダリ ストレージ システムと Google Cloud Storage へのボリューム データのバックアップを開始します。</block>
+  <block id="ad6104adc661a5f0a3b5810ddf2ab7de" category="paragraph">すべてのリージョンでオンプレミス システムから Google Cloud Storage へのバックアップを作成できます。サービスのセットアップ時にバックアップを保存するリージョンを指定します。</block>
+  <block id="b40ebd0d6f7b3caa0ab8a49e9b6580eb" category="doc">BlueXP バックアップとリカバリを使用してオンプレミスの ONTAP データを ONTAP S3 にバックアップします</block>
+  <block id="a0ca4610c0721031e104e0191b6e74ce" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、プライマリオンプレミス ONTAP システムからボリューム データのバックアップを開始します。バックアップは、セカンダリONTAPストレージシステム（レプリケートされたボリューム）、S3サーバとして設定されたONTAPシステムのバケット（バックアップファイル）、またはその両方に送信できます。</block>
+  <block id="6229d867edeee086ad40575645ba334a" category="doc">BlueXP バックアップとリカバリを使用して、Cloud Volumes ONTAP データを Azure Blob ストレージにバックアップします。</block>
+  <block id="a85cfaa752aead0610179df62c49ff8f" category="paragraph">Cloud Volumes ONTAP システムから Azure Blob ストレージへのボリューム データのバックアップを開始するには、BlueXP バックアップとリカバリのいくつかの手順を完了します。</block>
+  <block id="e3dfa9e948ac98dc0ed6533458de6302" category="list-text">BlueXP のバックアップとリカバリは、Azure Government リージョンを含むすべての Azure リージョンでサポートされています。</block>
+  <block id="99ec02dbe3f6d200e522bff2097ecea5" category="doc">BlueXP のバックアップとリカバリを使用して、Cloud Volumes ONTAP データを Google Cloud Storage にバックアップします。</block>
+  <block id="8cf3385b1fe0a1b02c857ec21a5af34c" category="paragraph">BlueXP のバックアップとリカバリのいくつかの手順を完了して、Cloud Volumes ONTAP システムから Google Cloud Storage へのボリューム データのバックアップを開始します。</block>
+  <block id="f85b702786ab1255b6f75943db831fc4" category="list-text">BlueXP のバックアップとリカバリは、すべての GCP リージョンでサポートされています。</block>
+  <block id="c25fcc0471a0ad6baa101316e2663a17" category="doc">BlueXP バックアップとリカバリを使用して、Cloud Volumes ONTAP データを Amazon S3 にバックアップします。</block>
+  <block id="b87144d361b33d6a0a21d405c6312414" category="paragraph">BlueXP バックアップとリカバリのいくつかの手順を完了して、Cloud Volumes ONTAP システムから Amazon S3 へのボリューム データのバックアップを開始します。</block>
+  <block id="f3085be06b9d9d6b20b4bd87df2778a9" category="list-text">BlueXP のバックアップとリカバリは、AWS GovCloud リージョンを含むすべての AWS リージョンでサポートされています。</block>
+  <block id="c93d3d91ecbdac64376390c3ba8bc184" category="doc">BlueXP バックアップとリカバリを使用してデータストアを Amazon Web Services にバックアップします</block>
+  <block id="76565212c97f433cfecbe932104085e1" category="paragraph">BlueXP バックアップおよびリカバリを使用して 1 つ以上のデータストアを Amazon Web Services にバックアップおよびアーカイブし、ストレージ効率とクラウド移行を向上させることができます。</block>
+  <block id="42147c935afda5dae590fcd753802ecb" category="doc">BlueXP のバックアップとリカバリを使用してデータストアを Microsoft Azure にバックアップします</block>
+  <block id="829b723e3ad2e396d5f3854821073440" category="paragraph">VMware vSphere ホスト用の SnapCenter プラグインを BlueXP バックアップおよびリカバリと統合することで、1 つ以上のデータストアを Microsoft Azure にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="71d48965d44330ce6aadd0b2b300d4eb" category="doc">BlueXP のバックアップとリカバリを使用してデータストアを Google Cloud Platform にバックアップします</block>
+  <block id="2f72baaa9b16a3efb71880ce33e1e357" category="paragraph">VMware vSphere ホスト用の SnapCenter プラグインを BlueXP バックアップおよびリカバリと統合することで、1 つ以上のデータストアを Google Cloud Platform にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="fddd1f44da7e6a1400bf9653382b2b1f" category="doc">BlueXP バックアップとリカバリを使用してデータストアを StorageGRID にバックアップします</block>
+  <block id="225430adf0449b2d30fd18f6f78a6546" category="paragraph">SnapCenter Plug-in for VMware vSphere ホストを BlueXP バックアップおよびリカバリと統合することで、1 つ以上のデータストアを StorageGRID にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。</block>
+  <block id="07884344156bef203d4774b9b4e05bcc" category="doc">BlueXP バックアップとリカバリを使用してアプリケーションをバックアップするポリシーを作成する</block>
+  <block id="d79f0e7ae4ba23da95a77d37ef807fda" category="paragraph">BlueXP バックアップとリカバリを使用してアプリケーション データをクラウドにバックアップするポリシーを作成する必要があります。</block>
+  <block id="314324dd700b367f5f0641abc565a4c9" category="doc">BlueXP バックアップとリカバリを使用して ONTAP ボリュームのバックアップ ポリシーを管理します</block>
+  <block id="c1457fdbc4513f3e6535d346fa3caed9" category="paragraph">BlueXP バックアップおよびリカバリでは、NetApp が提供するデフォルトのバックアップ ポリシーを使用してバックアップを作成するか、カスタム ポリシーを作成します。ポリシーは、バックアップの頻度、バックアップが作成される時間、および保持されるバックアップファイルの数を制御します。</block>
+  <block id="8a5896c4e6a37d3bfd0a4d10525d455e" category="doc">BlueXP バックアップとリカバリを使用してデータストアをバックアップするポリシーを作成する</block>
+  <block id="8b41f2faa6254d67c032254c242c1e67" category="paragraph">ポリシーを作成するか、BlueXP バックアップおよびリカバリで使用できる次の定義済みポリシーのいずれかを使用することができます。</block>
+  <block id="e1e81448e2561a2712c3735e71195fc7" category="doc">BlueXPのバックアップとリカバリでアプリケーションの保護を管理</block>
+  <block id="b71af8b06690342b6fef970d56904e2a" category="paragraph">ポリシーの表示、バックアップの表示、データベース レイアウト、ポリシー、リソース グループへの変更の表示、BlueXP UI からのすべての操作の監視により、BlueXP バックアップおよびリカバリでのアプリケーションの保護を管理できます。</block>
+  <block id="d990d9847e15eb4896a00d368560b8ad" category="doc">BlueXP バックアップとリカバリの詳細設定ページでオブジェクト ストレージへのバックアップ オプションを管理します。</block>
+  <block id="11300907cdd8e6d0b8aa90b3da5cf26c" category="doc">BlueXP バックアップとリカバリを使用して ONTAP システムのバックアップを管理します</block>
+  <block id="9fff28df5b2afc9a4445f62a9a7d03b0" category="paragraph">BlueXP バックアップとリカバリを使用すると、バックアップ スケジュールの変更、ボリューム バックアップの有効化/無効化、バックアップの一時停止、バックアップの削除などを行って、Cloud Volumes ONTAP およびオンプレミスの ONTAP システムのバックアップを管理できます。これには、Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージ内のバックアップファイルなど、すべてのタイプのバックアップが含まれます。</block>
+  <block id="c11cdf4fffd5c6ff6663cf2dc509a570" category="doc">BlueXP バックアップとリカバリを使用してデータストアと仮想マシンのデータの保護を管理します</block>
+  <block id="65ff10ea9ed405e2e5c060d29e45b7db" category="paragraph">BlueXP バックアップおよびリカバリを使用してデータをバックアップおよび復元する前に、ポリシー、データストア、および仮想マシンを表示できます。データベース、ポリシー、リソースグループの変更内容に応じて、BlueXP UIで更新内容を確認できます。</block>
+  <block id="bdb8c867c3ff79b007318c8f82976f3a" category="doc">SnapMirrorを使用してボリュームをBlueXPバックアップとリカバリによるクラウド再同期に移行します</block>
+  <block id="e350a5e7d03f5504d39a4bbc422bd97d" category="paragraph">BlueXP バックアップおよびリカバリの SnapMirror to Cloud Resync 機能は、NetApp 環境でのボリューム移行中のデータ保護と継続性を効率化します。SnapMirror論理レプリケーション（LRSE）を使用して、オンプレミスのNetApp環境から別の環境、またはCloud Volumes ONTAPやCloud Volumes Serviceなどのクラウドベースのソリューションにボリュームを移行する場合、SnapMirrorからクラウドへの再同期により、既存のクラウドバックアップに影響を与えずに運用できます。</block>
+  <block id="210680da0c0fd8e6e8f29ef8ee1c009d" category="doc">BlueXP のバックアップとリカバリのバックアップおよび復元ジョブのステータスを監視します</block>
+  <block id="96989715cc38ac4aa88b081ea5b8a435" category="paragraph">BlueXP バックアップおよびリカバリを使用すると、ローカル スナップショット、レプリケーション、および開始したオブジェクト ストレージ ジョブへのバックアップの状態を監視し、開始したジョブを復元できます。完了したジョブ、実行中のジョブ、または失敗したジョブを確認して、問題の診断と修正を行うことができます。BlueXP通知センターを使用すると、通知がEメールで送信されるように設定できるため、システムにログインしていないときでも重要なシステムアクティビティに関する通知を受け取ることができます。BlueXPタイムラインでは、UIまたはAPIを使用して開始したすべての操作の詳細を確認できます。</block>
+  <block id="a6e7f2673ad6cfe07dd0ae3d08d696db" category="doc">BlueXP バックアップおよびリカバリを使用して VMware vSphere ホスト用の SnapCenter プラグインを登録する</block>
+  <block id="b4461c65f875da7d1703c38013cd268d" category="paragraph">データストアと仮想マシンを表示するには、BlueXP バックアップおよびリカバリで VMware vSphere ホスト用の SnapCenter プラグインを登録する必要があります。SnapCenter Plug-in for VMware vSphereホストを登録できるのは、管理者アクセス権を持つユーザだけです。</block>
+  <block id="c3aa07f7af7e219d8ccc9a65c3e0d10f" category="doc">BlueXP バックアップおよびリカバリ用に SnapCenter Server を登録する</block>
+  <block id="c9501309ae9b56dd0b1a5452f134800f" category="paragraph">SnapCenterAdminロールのユーザだけが、SnapCenter サーバ4.6以降が実行されているホストを登録できます。BlueXP バックアップおよびリカバリに複数の SnapCenter Server ホストを登録できます。</block>
+  <block id="c10b87f212d66f823cdd75424654a2b4" category="doc">BlueXP バックアップおよびリカバリによるデータ保護範囲のレポート</block>
+  <block id="29f7fc3c7a2eefe32f668d0920450bba" category="paragraph">BlueXP のバックアップおよびリカバリ レポートを使用すると、組織の定義済みポリシーに従って重要なデータが保護されていることを確認し、コンプライアンスのニーズに合わせた監査を提供できます。</block>
+  <block id="dcd13e0917f086ba1dc3c89ba6b4188c" category="doc">BlueXP バックアップとリカバリを使用して、バックアップ ファイルから ONTAP データを復元します</block>
+  <block id="ff48e96315b11d9dbcdabececcd0120a" category="paragraph">ONTAPボリュームのデータは、バックアップを作成した場所（Snapshotコピー、レプリケートされたボリューム、オブジェクトストレージに格納されたバックアップ）からバックアップできます。これらのバックアップ先から特定の時点のデータをリストアできます。BlueXP バックアップおよびリカバリを使用すると、バックアップ ファイルから ONTAP ボリューム全体を復元したり、少数のファイルのみを復元する必要がある場合は、フォルダーまたは個々のファイルを復元したりできます。</block>
+  <block id="395730a64ca01ee6442fde01925dc46f" category="paragraph">この表は、2 つの方法の機能の比較を示しています。</block>
+  <block id="0f2760fbfab4c50aa7c84e3487e45bf3" category="admonition">フォルダまたは個 々 のファイルは、現時点ではオブジェクトストレージ内のバックアップファイルからのみリストアできます。現在、ローカル スナップショット コピーまたはセカンダリ作業環境 (複製されたボリューム) にあるバックアップ ファイルからのファイルとフォルダーの復元はサポートされていません。</block>
+  <block id="70971bc2d4ca475176f349e0daf2779d" category="list-text">インターネットへのHTTP通信には、*プロキシサーバーなしでコネクターを設定する必要があります。コネクタに HTTP プロキシ サーバーを構成している場合は、検索と復元機能は使用できません。</block>
+  <block id="f16a485aa0b0240f4f70b7aa1b30edc6" category="doc">BlueXP のバックアップとリカバリを使用して MongoDB、MySQL、PostgreSQL データベースを復元します</block>
+  <block id="56eadfd0578c6c3a8c02078246fda6fc" category="paragraph">BlueXP バックアップおよびリカバリを使用すると、MongoDB、MySQL、PostgreSQL データベースを任意のホストに復元できます。</block>
+  <block id="01e44bda1d12dfcaa984ecf22aceae0b" category="doc">BlueXP バックアップとリカバリを使用して SAP HANA データベースを復元する</block>
+  <block id="b4803946c3dd9549f4dd127b2d9ec17b" category="paragraph">BlueXPのバックアップとリカバリを使用すると、SAP HANAデータベースを任意のホストに復元できます。</block>
+  <block id="da0cb47c1050b54b38c52ef5086656f1" category="doc">BlueXP バックアップとリカバリで Oracle データベースを復元する</block>
+  <block id="77ff7f221f1aa4ef7c57310829772e42" category="paragraph">BlueXP バックアップおよびリカバリを使用して、Oracle データベースを元の場所または別の場所に復元できます。RACデータベースの場合、バックアップが作成されたオンプレミスノードにデータがリストアされます。</block>
+  <block id="01287111d0b9a0ad4340087443c247ed" category="doc">BlueXP バックアップとリカバリを使用して SQL Server データベースを復元する</block>
+  <block id="d640d79008b735ca2dc6f9998f6e6b0c" category="paragraph">BlueXP バックアップおよびリカバリを使用して、SQL Server データベースを元の場所または別の場所に復元できます。</block>
+  <block id="e2ff8a804078a87e79588e39359c1c3c" category="doc">BlueXP バックアップとリカバリを使用してクラウドから仮想マシンのデータを復元します</block>
+  <block id="231e73289131d2027069457c140a2c22" category="paragraph">BlueXP バックアップとリカバリを使用すると、仮想マシンのデータをクラウドからオンプレミスの vCenter に復元できます。仮想マシンは、バックアップが作成された場所とまったく同じ場所にリストアすることも、別の場所にリストアすることもできます。アーカイブポリシーを使用して仮想マシンをバックアップした場合は、アーカイブリストアの優先順位を設定できます。</block>
 </blocks>
