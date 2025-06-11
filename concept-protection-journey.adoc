@@ -200,9 +200,7 @@ NOTE: クラウドへのバックアップ関係に使用できるのはバッ�
 * https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["BlueXPからGoogle Cloud Storageバケットを作成"]
 
 
-*注：*現時点では、StorageGRIDシステムまたはONTAP S3へのバックアップを作成するときに、独自のS3バケットを使用することはできません。
-
-「netapp-backup-xxxxxx」以外のバケットプレフィックスを使用する場合は、コネクタIAMロールのS3権限を変更する必要があります。詳細については、AWS S3へのバックアップを作成する方法を参照してください。
+「netapp-backup-xxxxxx」以外のバケットプレフィックスを使用する場合は、コネクタIAMロールのS3権限を変更する必要があります。
 
 *詳細バケット設定*
 
@@ -214,7 +212,7 @@ NOTE: クラウドへのバックアップ関係に使用できるのはバッ�
 ** 「smc_push_to_archive：true」タグのオブジェクトを_Glacier Flexible Retrieval_（旧S3 Glacier）に移動します。
 
 
-* DataLockとランサムウェア対策は、クラスタでONTAP 9.11.1以降のソフトウェアを使用している場合はAWSストレージ、ONTAP 9.12.1以降のソフトウェアを使用している場合はAzureストレージでサポートされます。
+* DataLock とランサムウェア保護は、クラスターで ONTAP 9.11.1 以降のソフトウェアを使用している場合は AWS ストレージでサポートされ、ONTAP 9.12.1 以降のソフトウェアを使用している場合は Azure ストレージでサポートされます。
 +
 ** AWSの場合、30日間の保持期間を使用してバケットのオブジェクトロックを有効にする必要があります。
 ** Azureの場合は、バージョンレベルの変更不可をサポートするストレージクラスを作成する必要があります。
