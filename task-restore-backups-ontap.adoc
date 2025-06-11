@@ -768,29 +768,13 @@ v2に関する次の考慮事項を確認してください。
 
 
 .作業環境でのインデックス付きカタログの有効化
-この機能を有効にすると、BlueXPのバックアップとリカバリによって、ボリュームのSVMでSnapDiff v3が有効になり、次の処理が実行されます。
+Indexed Catalog v2を使用する場合、本サービスは個別のバケットをプロビジョニングしません。代わりに、AWS、Azure、Google Cloud Platform、StorageGRID、またはONTAP S3に保存されているバックアップについては、コネクタまたはクラウドプロバイダー環境上にスペースをプロビジョニングします。
 
-ifdef::aws[]
+v2 リリースより前にインデックス カタログを有効にした場合、作業環境で次のことが起こります。
 
 * AWSに格納されたバックアップについては、新しいS3バケットとがプロビジョニングされます https://aws.amazon.com/athena/faqs/["Amazon Athena インタラクティブクエリーサービス"^] および https://aws.amazon.com/glue/faqs/["AWS グルーサーバレスデータ統合サービス"^]。
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Azureに保存されているバックアップの場合、Azure Synapseワークスペースとデータレイクファイルシステムをワークスペースデータを格納するコンテナとしてプロビジョニングします。
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloudに保存されているバックアップの場合、新しいバケットとがプロビジョニングされます https://cloud.google.com/bigquery["Google Cloud BigQueryサービス"^] アカウント/プロジェクトレベルでプロビジョニングされます。
-
-
-endif::gcp[]
-
 * StorageGRIDまたはONTAP S3に格納されたバックアップの場合、コネクタまたはクラウドプロバイダ環境にスペースがプロビジョニングされます。
 
 

@@ -588,7 +588,6 @@
   <block id="f8d2cf753b5dfff0bf9e240741162b9c" category="cell">インターネットにアクセスせずに手動でインストールします</block>
   <block id="7bbc18e8c81866c16ae2fa4ae7b4faa7" category="cell"><block ref="04dcde0112f87c65139657970e95733e" prefix="" category="inline-code"></block></block>
   <block id="993e951005a20173ae0c8c379739a8f1" category="summary">BlueXPのバックアップとリカバリの新機能をご紹介します。</block>
-  <block id="fd3d1ba9a2328492349b6ebea92fe728" category="doc">BlueXPのバックアップとリカバリの最新情報</block>
   <block id="fb2530f9293a4ba59cfd3ca6492bb972" category="section-title">2023年10月23日</block>
   <block id="f1d5b892646c28fdb747b890f0787976" category="section-title">バックアップのアクティブ化中の3-2-1バックアップポリシーの作成</block>
   <block id="1a169799fb63ccdda2e672c25d0ab2d2" category="paragraph">これまでは、Snapshot、レプリケーション、またはバックアップを開始する前にカスタムポリシーを作成する必要がありました。BlueXPのバックアップとリカバリのUIを使用して、バックアップのアクティブ化プロセスでポリシーを作成できるようになりました。</block>
@@ -1317,7 +1316,6 @@ Cloud Volumes ONTAP</block>
   <block id="3909c405c5c3e8aaab7d2079c933cb0f" category="paragraph">ご覧のように、名前の一部を知っておくだけで、BlueXPのバックアップとリカバリでは、検索に一致するすべてのバックアップファイルが検索されます。</block>
   <block id="e54aa3261321d2266c275e4f0837c144" category="section-title">各作業環境でインデックスカタログを有効にします</block>
   <block id="721f0292b89494d52fd3ab7655e44491" category="paragraph">検索とリストアを使用する前に、ボリュームまたはファイルのリストア元となる各ソース作業環境でインデックス作成を有効にする必要があります。これにより、インデックスカタログですべてのボリュームとすべてのバックアップファイルを追跡できるため、検索をすばやく効率的に実行できます。</block>
-  <block id="cde27c2ee36cb857ffdbfe24fb0f0fef" category="paragraph">この機能を有効にすると、BlueXPのバックアップとリカバリによって、ボリュームのSVMでSnapDiff v3が有効になり、次の処理が実行されます。</block>
   <block id="1bf27db2b6cddc0bbfeb50bd92d954d2" category="inline-link">Amazon Athena インタラクティブクエリーサービス</block>
   <block id="304514e0e009199a95060650dbf9337e" category="inline-link">AWS グルーサーバレスデータ統合サービス</block>
   <block id="7f55f1ead15a67b08eea9e732f6ed59d" category="list-text">AWSに格納されたバックアップについては、新しいS3バケットとがプロビジョニングされます<block ref="d5a117e0ffd0e43cc6657792905f20d6" category="inline-link-rx"></block> および<block ref="101f211ea2a04b6a9a7d1de9342390c3" category="inline-link-rx"></block>。</block>
@@ -4007,4 +4005,8 @@ ifdef：aws []</block>
   <block id="4d1f1dc63841491797cde0fde7dec31d" category="list-text">ボリューム、フォルダー、またはファイルを復元する宛先の場所を選択し、[復元] を選択します。</block>
   <block id="dc98364e6680ec201dcd1e55df5cf2e1" category="paragraph">ボリューム、フォルダ、またはファイルがリストアされ、リストアダッシュボードに戻り、リストア処理の進捗状況を確認できます。また、*ジョブ監視*タブを選択して、復元の進行状況を確認することもできます。</block>
   <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">2025 年 6 月 9 日</block>
+  <block id="0a849c115a4741e75692ddd548e07b4d" category="paragraph">保護を有効にするとき、または復元プロセスを開始するときに、このオプションを有効または無効にすることができます。</block>
+  <block id="9bbf67835dcc255a2362d9d5043708ad" category="paragraph">Indexed Catalog v2を使用する場合、本サービスは個別のバケットをプロビジョニングしません。代わりに、AWS、Azure、Google Cloud Platform、StorageGRID、またはONTAP S3に保存されているバックアップについては、コネクタまたはクラウドプロバイダー環境上にスペースをプロビジョニングします。</block>
+  <block id="c2da3976b7bba43b7d1d45f7a32a43bd" category="paragraph">v2 リリースより前にインデックス カタログを有効にした場合、作業環境で次のことが起こります。</block>
+  <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">BlueXP バックアップとリカバリの新機能</block>
 </blocks>
