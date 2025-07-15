@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP backup and recoveryの概要で仮想マシンのワークロードを保護する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを使用して仮想マシンのワークロードを保護します。BlueXPBlueXP backup and recoveryは、VM、データストア、VMDK に対して、高速でスペース効率が高く、クラッシュ整合性と VM 整合性を備えたバックアップおよびリストア操作を提供します。
+
+データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。
+
+[]
+====
+*注意* BlueXP backup and recoveryのワークロードを切り替えるには、 link:br-start-switch-ui.html["さまざまなBlueXP backup and recoveryワークロードに切り替える"] 。
+
+====
+仮想マシンのワークロードを保護する手順については、次のトピックを参照してください。
+
+* link:prev-vmware-policy-create.html["VMwareワークロードのポリシーを作成する"]
+* link:prev-vmware-backup-aws.html["VMware データストアを Amazon Web Services にバックアップする"]
+* link:prev-vmware-backup-azure.html["VMware データストアを Microsoft Azure にバックアップする"]
+* link:prev-vmware-backup-gcp.html["VMware データストアを Google Cloud Platform にバックアップする"]
+* link:prev-vmware-backup-storagegrid.html["VMwareデータストアをStorageGRIDにバックアップする"]
+* link:prev-vmware-restore.html["VMwareワークロードの復元"]
+* link:prev-vmware-manage.html["VMware ワークロードの保護を管理する"]
+

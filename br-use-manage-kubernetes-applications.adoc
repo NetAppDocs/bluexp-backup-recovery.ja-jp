@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: BlueXP backup and recoveryを使用すると、ワークロードのホスト情報、データベース情報、インスタンス情報を管理できます。インベントリの保護設定を表示、編集、削除できます。 
+---
+= Kubernetes アプリケーションを管理する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを使用すると、Kubernetes アプリケーションと関連リソースを管理できます。Kubernetesアプリケーションの保護設定を作成、表示、編集、削除できます。
+
+.必要なBlueXPロール
+組織管理者またはSnapCenter管理者。link:reference-roles.html["BlueXP backup and recoveryのアクセス ロールについて学ぶ"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+
+
+== Kubernetes アプリケーションを編集する
+
+アプリケーションに関連付けられているリソースが変更された場合は、既存の Kubernetes アプリケーションの設定を変更できます。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *アプリケーション* を選択します。
+. アプリケーションのリストで、編集するアプリケーションを選択し、関連する [アクション] メニューを選択します。
+. 「 * 編集 * 」を選択します。
+. 名前や含まれるリソースなど、アプリケーション定義に必要な変更を加えます。
+. 完了したら、[次へ] を選択します。
+. 保護設定に必要な変更を加えます。
+. 完了したら、[完了] を選択します。
+
+
+
+
+== Kubernetes アプリケーションの保護を解除する
+
+アプリケーションを保護しなくなった場合は、保護を解除できます。アプリケーションの保護を解除すると、 BlueXP backup and recoveryはアプリケーションの保護を停止しますが、関連するすべてのバックアップとスナップショットは有効期限が切れるまで保持されます。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *アプリケーション* を選択します。
+. アプリケーションのリストで、保護を解除するアプリケーションを選択し、関連する [アクション] メニューを選択します。
+. *保護解除*を選択します。
+. 通知を読み、準備ができたら「保護解除」を選択します。
+
+
+
+
+== Kubernetes アプリケーションを削除する
+
+不要になったアプリケーションは削除できます。アプリケーションを削除すると、 BlueXP backup and recoveryはアプリケーションの保護を停止し、必要に応じて関連するすべてのバックアップとスナップショットを削除します。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *アプリケーション* を選択します。
+. アプリケーションのリストで、削除するアプリケーションを選択し、関連する [アクション] メニューを選択します。
+. 「 * 削除」を選択します。
+. 必要に応じて、「*スナップショットとバックアップの削除*」を有効にして、アプリケーションのすべてのスナップショットとバックアップを削除します。
++
+
+CAUTION: これを実行すると、これらのスナップショットとバックアップを使用してアプリケーションを復元できなくなります。
+
+. 操作を確認し、「削除」を選択します。
+

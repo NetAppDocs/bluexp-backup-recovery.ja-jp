@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-clusters.html 
+keywords: discover, backup and recovery, snapcenter, kubernetes, k8s, clusters, applications, inventory 
+summary: BlueXP backup and recoveryを使用すると、Kubernetes クラスターを検出して管理できるため、クラスターによってホストされているリソースを保護できます。 
+---
+= Kubernetes クラスタを管理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを使用すると、Kubernetes クラスターを検出して管理できるため、クラスターによってホストされているリソースを保護できます。
+
+.必要なBlueXPロール
+組織管理者またはSnapCenter管理者。link:reference-roles.html["BlueXP backup and recoveryのアクセス ロールについて学ぶ"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+
+
+== Kubernetes クラスターの情報を編集する
+
+名前を変更する必要がある場合は、クラスターを編集できます。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *クラスター*を選択します。
+. クラスターのリストで、編集するクラスターを選択し、関連する [アクション] メニューを選択します。
+. *クラスターの編集*を選択します。
+. クラスター名に必要な変更を加えます。
+. 「 Done （完了）」を選択します。
+
+
+
+
+== Kubernetes クラスターを削除する
+
+Kubernetes クラスターでホストされているリソースを保護する必要がなくなった場合は、 BlueXP backup and recoveryからクラスターを削除できます。クラスターを削除しても、クラスター自体やそのリソースは削除されません。BlueXP インベントリからクラスターが削除されるだけです。クラスターを削除する前に、保護を無効にし、関連するアプリケーションをBlueXP backup and recoveryから削除する必要があります。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *クラスター*を選択します。
+. クラスターのリストで、編集するクラスターを選択し、関連する [アクション] メニューを選択します。
+. *クラスターの削除*を選択します。
+. 確認ダイアログボックスの情報を確認し、「削除」を選択します。
+

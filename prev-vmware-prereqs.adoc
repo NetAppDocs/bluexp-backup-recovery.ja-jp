@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-prereqs.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP backup and recoveryにおける仮想マシン ワークロードの前提条件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを使用して仮想マシンのワークロードを保護する前に、次の前提条件を満たしていることを確認してください。
+
+* VMware vSphere 4.6P1以降用のSnapCenter プラグイン
++
+** SnapCenter Plug-in for VMware vSphere 4.7P1以降を使用して、オンプレミスのセカンダリストレージからデータストアをバックアップする必要があります。
+
+
+* ONTAP 9.8以降
+* BlueXP
+* NFSデータストアとVMFSデータストアがサポートされます。VVOLはサポートされません。
+* VMFS をサポートするには、 SnapCenter Plug-in for VMware vSphereが4.9 以降で実行されている必要があります。SnapCenter Plug-in for VMware vSphereホストを以前のバージョンから4.9リリースにアップグレードした場合は、VMFSデータストアのバックアップを作成してください。
+* VMware vSphere 4.6P1向けSnapCenter プラグインでは、少なくとも1つのバックアップを作成しておく必要があります。
+* SnapCenter Plug-in for VMware vSphereで、BlueXPの仮想マシンポリシーと同じラベルまたは同じラベルの日単位、週単位、または月単位のポリシーが少なくとも1つ適用されます。
+* 組み込みのポリシーの場合は、スケジュール階層はSnapCenter Plug-in for VMware vSphereとクラウドのデータストアで同じである必要があります。
+* FlexGroup ボリュームのバックアップとリストアはサポートされていないため、データストアにFlexGroup ボリュームがないことを確認してください。
+* 必要なリソースグループで「*_ recent *」を無効にします。リソースグループに対して「*_ recent *」が有効になっている場合、これらのリソースグループのバックアップをクラウドへのデータ保護に使用できず、それ以降はリストア処理に使用できません。
+* 仮想マシンのリストア先のデータストアに、VMDK、VMX、VMSDなどのすべての仮想マシンファイルのコピーを格納できるだけの十分なスペースがあることを確認してください。
+* リストア先のデータストアに、リストア処理でエラーが発生した場合に、restore_xxx_xxxxxx_filename形式の古い仮想マシンファイルが存在しないことを確認してください。リストア処理を開始する前に古いファイルを削除してください。
+* プロキシが設定されたコネクタを展開するには、すべての発信コネクタコールがプロキシサーバ経由でルーティングされることを確認します。
+* データストアをバックアップするボリュームが[ボリューム]タブ（BlueXP [バックアップとリカバリ]->[ボリューム]）ですでに保護されている場合、[仮想マシン]タブ（BlueXP [バックアップとリカバリ]->[仮想マシン]）で同じデータストアを保護することはできません。
+
+
+次の図は、各コンポーネントとその間の準備に必要な接続を示しています。
+
+image:cloud_backup_vm.png["アーキテクチャ図"]

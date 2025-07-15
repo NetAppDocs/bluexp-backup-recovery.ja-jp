@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, bluexp, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: ワークロードの健全性を監視することで、ワークロード保護に関する問題を把握し、解決に向けた対策を講じることができます。BlueXPのバックアップとリカバリダッシュボードでは、バックアップとリストアのステータスを確認し、表示されるアラートに対処できます。保護の概要、リストアの概要、システムの概要などを確認できます。 
+---
+= BlueXP backup and recoveryダッシュボードで保護の状態を確認する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ワークロードの健全性を監視することで、ワークロード保護に関する問題を把握し、解決に向けた対策を講じることができます。BlueXPのBlueXP backup and recoveryダッシュボードで、バックアップとリストアのステータスを確認できます。システム概要、保護概要、ジョブ概要、リストア概要などを確認できます。
+
+*必須のBlueXPロール* 組織管理者、フォルダまたはプロジェクト管理者、バックアップとリカバリのスーパー管理者、バックアップとリカバリのバックアップ管理者、バックアップとリカバリの復元管理者、バックアップとリカバリのクローン管理者、またはバックアップとリカバリの閲覧者ロール。 link:reference-roles.html["バックアップとリカバリの役割と権限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+.手順
+. BlueXP backup and recoveryメニューから、*ダッシュボード* を選択します。
++
+image:screen-br-dashboard2.png["BlueXP backup and recoveryダッシュボード"]
+
+
+
+
+
+== システム全体の概要を表示する
+
+システム概要には次の情報が表示されます。
+
+* 検出されたホストまたはVMの数
+* 検出されたKubernetesクラスターの数
+* オブジェクトストレージ上のバックアップ対象の数
+* vCenterの数
+* ONTAPのストレージクラスタの数
+
+
+
+
+== 保護の概要を表示する
+
+保護の概要で次の情報を確認します。
+
+* 保護されているデータベースと保護されていないデータベースの合計数。
++
+
+TIP: 保護されたデータベースとは、バックアップポリシーが割り当てられているデータベースです。保護されていないデータベースとは、バックアップポリシーが割り当てられていないデータベースです。
+
+* 成功したバックアップ、警告のあったバックアップ、失敗したバックアップの数。
+* バックアップサービスによって検出された総容量と、保護されている容量と保護されていない容量の割合。「*i*」アイコンにマウスを合わせると詳細が表示されます。
+
+
+
+
+== 求人概要を見る
+
+ジョブの概要で、完了したジョブ、実行中のジョブ、失敗したジョブの合計数を確認します。
+
+.手順
+. 各ジョブの配布について、フィルターを変更して、過去 30 日間、過去 7 日間、過去 24 時間、過去 1 年間などの日数に基づいて、失敗、実行中、完了の概要を表示します。
+. *ジョブ監視の表示* を選択して、失敗したジョブ、実行中のジョブ、完了したジョブの詳細を表示します。
+
+
+
+
+== 復元の概要を表示する
+
+復元の概要で次の情報を確認します。
+
+* 実行された復元ジョブの合計数
+* 回復した容量の合計
+* ローカル、セカンダリ、オブジェクトストレージで実行された復元ジョブの数。グラフにマウスポインターを合わせると詳細が表示されます。
+

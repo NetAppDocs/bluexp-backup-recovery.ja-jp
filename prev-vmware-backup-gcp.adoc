@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-backup-gcp.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP のバックアップとリカバリを使用してデータストアを Google Cloud Platform にバックアップします
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+VMware vSphere ホスト用の SnapCenter プラグインを BlueXP バックアップおよびリカバリと統合することで、1 つ以上のデータストアを Google Cloud Platform にバックアップできます。これにより、VM管理者はデータのバックアップとアーカイブを簡単かつ迅速に行えるようになり、ストレージ効率を高めてクラウドへの移行を促進できます。
+
+[]
+====
+*注意* BlueXP backup and recoveryのワークロードを切り替えるには、 link:br-start-switch-ui.html["さまざまなBlueXP backup and recoveryワークロードに切り替える"] 。
+
+====
+.作業を開始する前に
+すべての要件を満たしていることを確認してくださいlink:prev-vmware-prereqs.html["仮想マシンの保護要件"]データストアをクラウドにバックアップする前に。
+
+.手順
+. BlueXP UI で、*保護* > *バックアップとリカバリ* > *仮想マシン* を選択します。
+. 選択image:icon-action.png["アクション"]バックアップするデータストアに対応し、「バックアップのアクティブ化」を選択します。
+. [ポリシーの割り当て] ページでポリシーを選択し、[次へ] を選択します。
+. 作業環境を追加します。
++
+BlueXPで検出するクラスタ管理LIFを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。
+
++
+.. SVM に対応する *作業環境の追加* を選択します。
+.. 作業環境の追加ウィザードで、次の手順を実行します。
++
+... クラスタ管理LIFのIPアドレスを指定します。
+... ONTAP クラスタユーザのクレデンシャルを指定してください。
+
+
+.. *作業環境の追加*を選択します。
+
+
+. Google Cloud Platform *を選択して、クラウドプロバイダとして構成します。
++
+.. バックアップ用に Google Cloud Storage バケットを作成する Google Cloud Project を選択します。
+.. Google Cloud Access Keyフィールドで、キーを指定します。
+.. Google Cloud Secret Keyフィールドで、パスワードを指定します。
+.. バックアップを作成するリージョンを選択します。
+.. IPスペースを指定してください。
+
+
+. 詳細を確認し、「バックアップをアクティブ化」を選択します。
+

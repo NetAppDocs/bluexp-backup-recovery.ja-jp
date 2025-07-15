@@ -1,0 +1,290 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-protect-journey.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP バックアップとリカバリで保護の旅を計画しましょう
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXPのバックアップとリカバリサービスでは、ソースボリュームのコピーを最大3つ作成してデータを保護できます。ボリュームでこのサービスを有効にするときに選択できるオプションは多数あるため、準備ができるように選択内容を確認する必要があります。
+
+[]
+====
+*注意* BlueXP backup and recoveryのワークロードを切り替えるには、 link:br-start-switch-ui.html["さまざまなBlueXP backup and recoveryワークロードに切り替える"] 。
+
+====
+次のオプションについて説明します。
+
+* 使用する保護機能（Snapshotコピー、レプリケートされたボリューム、クラウドへのバックアップ）
+* 使用するバックアップアーキテクチャ（ボリュームのカスケードバックアップまたはファンアウトバックアップ
+* デフォルトのバックアップポリシーを使用するか、カスタムポリシーを作成する必要があるか
+* 開始前にサービスでクラウドバケットを作成するか、オブジェクトストレージコンテナを作成するか
+* 使用しているBlueXP Connector導入モード（標準モード、制限モード、プライベートモード）
+
+
+
+
+== どの保護機能を使用しますか
+
+使用する機能を選択する前に、各機能の機能と提供する保護の種類について簡単に説明します。
+
+[cols="20,70"]
+|===
+| バックアップタイプ | 説明 
+
+
+| スナップショット | ソースボリューム内のボリュームのポイントインタイムイメージをSnapshotコピーとして読み取り専用で作成します。Snapshotコピーを使用して、個 々 のファイルをリカバリしたり、ボリュームの内容全体をリストアしたりできます。 
+
+
+| レプリケーション | データのセカンダリコピーを別のONTAPストレージシステムに作成し、セカンダリデータを継続的に更新します。データは最新の状態に維持され、必要なときにいつでも利用できます。 
+
+
+| クラウドバックアップ | 保護や長期アーカイブの目的で、データのバックアップをクラウドに作成します。必要に応じて、ボリューム、フォルダ、または個 々 のファイルをバックアップから同じ作業環境または異なる作業環境にリストアできます。 
+|===
+スナップショットはすべてのバックアップ方法の基礎であり、バックアップおよびリカバリサービスを使用するために必要です。Snapshotコピーは、読み取り専用のポイントインタイムボリュームイメージです。イメージにはSnapshotコピーが最後に作成されてからのファイルへの変更のみが記録されるため、ストレージスペースは最小限しか消費されず、パフォーマンスのオーバーヘッドもわずかです。次の図に示すように、ボリュームに作成されたSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルがソースボリュームに加えられた変更と同期されます。
+
+image:diagram-321-overview.png["ソースシステムに、Snapshotコピー、セカンダリストレージシステム上のレプリケートされたボリューム、およびオブジェクトストレージ内のバックアップファイルとして、バックアップファイルがどのように存在するかを示す図。"]
+
+レプリケートされたボリュームを別のONTAPストレージシステムに作成し、バックアップファイルをクラウドに作成することもできます。または、レプリケートされたボリュームまたはバックアップファイルを作成するだけで選択できます。
+
+要約すると、ONTAP作業環境内のボリュームに対して作成できる有効な保護フローは次のとおりです。
+
+* ソースボリューム-> Snapshotコピー->レプリケートされたボリューム->バックアップファイル
+* ソースボリューム-> Snapshotコピー->バックアップファイル
+* ソースボリューム-> Snapshotコピー->レプリケートされたボリューム
+
+
+
+NOTE: レプリケートされたボリュームまたはバックアップファイルの初回作成時には、ソースデータのフルコピーが含まれます。これは_ベースライン転送_と呼ばれます。以降の転送では、ソースデータの差分コピー（スナップショット）のみが含まれます。
+
+*各種バックアップ方法の比較*
+
+次の表に、3つのバックアップ方法の一般的な比較を示します。オブジェクトストレージスペースは通常、オンプレミスのディスクストレージよりも安価ですが、クラウドからデータを頻繁にリストアする可能性がある場合は、クラウドプロバイダからの出力料金によって、削減量の一部を削減できます。クラウドのバックアップファイルからデータをリストアする頻度を特定する必要があります。
+
+クラウドストレージでは、この条件に加えて、DataLockおよびRansomware Protection機能を使用する場合は追加のセキュリティオプションが提供されます。また、古いバックアップファイル用のアーカイブストレージクラスを選択することで、さらにコストを削減できます。link:prev-ontap-policy-object-options.html["DataLockとランサムウェア対策およびアーカイブストレージ設定の詳細"]です。
+
+[cols="18,18,22,18,22"]
+|===
+| バックアップタイプ | バックアップ速度 | バックアップコスト | リストア速度 | リストアコスト 
+
+
+| *スナップショット* | 高 | 低（ディスクスペース） | 高 | 低 
+
+
+| *レプリケーション* | 中 | 中（ディスクスペース） | 中 | 中（ネットワーク） 
+
+
+| *クラウドバックアップ* | 低 | 低（オブジェクトスペース） | 低 | 高額（プロバイダ料金） 
+|===
+
+
+== 使用するバックアップアーキテクチャ
+
+レプリケートされたボリュームとバックアップファイルの両方を作成する場合は、ファンアウトアーキテクチャまたはカスケードアーキテクチャを選択してボリュームをバックアップできます。
+
+ファンアウト*アーキテクチャは、Snapshotコピーをデスティネーションストレージシステムとクラウド内のバックアップオブジェクトの両方に個別に転送します。
+
+image:diagram-321-fanout-detailed.png["ボリュームのSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルを作成および更新する方法を示す図。"]
+
+カスケード*アーキテクチャでは、まずSnapshotコピーがデスティネーションストレージシステムに転送され、次にそのコピーがクラウド内のバックアップオブジェクトに転送されます。
+
+image:diagram-321-cascade-detailed.png["ボリュームのSnapshotコピーを使用して、レプリケートされたボリュームとバックアップファイルを作成および更新する方法を示す図。"]
+
+*さまざまなアーキテクチャの選択肢の比較*
+
+次の表は、ファンアウトアーキテクチャとカスケードアーキテクチャの比較を示しています。
+
+[cols="50,50"]
+|===
+| ファンアウト | カスケード 
+
+
+| ソースシステムがSnapshotコピーを2つの異なるシステムに送信するため、パフォーマンスへの影響が小さい | Snapshotコピーが1回しか送信されないため、ソースストレージシステムのパフォーマンスへの影響が少ない 
+
+
+| ポリシー、ネットワーク、ONTAPの設定はすべてソースシステムで実行されるため、セットアップが簡単です | ネットワークとONTAPの設定も、セカンダリシステムから行う必要があります。 
+|===
+
+
+== Snapshot、レプリケーション、バックアップにデフォルトのポリシーを使用するか
+
+NetAppのデフォルトポリシーを使用してバックアップを作成することも、カスタムポリシーを作成することもできます。アクティブ化ウィザードを使用してボリュームのバックアップとリカバリサービスを有効にする場合は、デフォルトのポリシーと、作業環境にすでに存在するその他のポリシー（Cloud Volumes ONTAPシステムまたはオンプレミスのONTAPシステム）を選択できます。既存のポリシーとは異なるポリシーを使用する場合は、アクティブ化ウィザードの開始前または使用中にポリシーを作成できます。
+
+* デフォルトのSnapshotポリシーは、hourly、daily、およびweeklyのSnapshotコピーを作成し、hourlyのSnapshotコピーを6個、dailyを2個、weeklyを2個保持します。
+* デフォルトのレプリケーションポリシーでは、日単位と週単位のSnapshotコピーがレプリケートされ、日単位のSnapshotコピーが7個と週単位のSnapshotコピーが52個保持されます。
+* デフォルトのバックアップポリシーでは、日単位と週単位のSnapshotコピーがレプリケートされ、日単位のSnapshotコピーが7個と週単位のSnapshotコピーが52個保持されます。
+
+
+レプリケーションまたはバックアップのカスタムポリシーを作成する場合は、ポリシーラベル（「daily」や「weekly」など）がSnapshotポリシーのラベルと一致している必要があります。一致していないと、レプリケートされたボリュームとバックアップファイルは作成されません。
+
+BlueXP  のバックアップとリカバリのUIで、Snapshot、レプリケーション、およびオブジェクトストレージへのバックアップポリシーを作成できます。詳細については、を参照してくださいlink:prev-ontap-backup-manage.html["新しいバックアップポリシーを追加しています"]。
+
+BlueXP  のバックアップとリカバリを使用してカスタムポリシーを作成するだけでなく、System ManagerまたはONTAPコマンドラインインターフェイス（CLI）を使用することもできます。
+
+* https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["System ManagerまたはONTAP CLIを使用してSnapshotポリシーを作成する"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["System ManagerまたはONTAP CLIを使用したレプリケーションポリシーの作成"^]
+
+
+*注：* System Managerを使用している場合は、レプリケーションポリシーのポリシータイプとして* Asynchronous *を選択し、オブジェクトポリシーにバックアップする場合は* Asynchronous *と* Back up to cloud *を選択します。
+
+ここでは、カスタムポリシーを作成する場合に役立つONTAP CLIコマンドの例をいくつか示します。これらのコマンドでは、_admin_vserver（Storage VM）をとして使用する必要があります `<vserver_name>`。
+
+[cols="30,70"]
+|===
+| Policy概要の略 | コマンドを実行します 
+
+
+| シンプルなSnapshotポリシー | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
+
+
+| クラウドへのシンプルなバックアップ | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+
+
+| DataLockとランサムウェア対策でクラウドにバックアップ | `snapmirror policy create -policy CloudBackupService-Enterprise -snapshot-lock-mode enterprise -vserver <vserver_name>`
+`snapmirror policy add-rule -policy CloudBackupService-Enterprise -retention-period 30days` 
+
+
+| アーカイブストレージクラスを使用したクラウドへのバックアップ | `snapmirror policy create -vserver <vserver_name> -policy <policy_name> -archive-after-days <days> -create-snapshot-on-source false -type vault`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+
+
+| 別のストレージシステムへのシンプルなレプリケーション | `snapmirror policy create -policy <policy_name> -type async-mirror -vserver <vserver_name>`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+|===
+
+NOTE: クラウドへのバックアップ関係に使用できるのはバックアップポリシーのみです。
+
+
+
+== ポリシーはどこに配置されていますか？
+
+バックアップポリシーは、使用するバックアップアーキテクチャ（ファンアウトまたはカスケード）に応じてさまざまな場所に配置されます。レプリケーションポリシーとバックアップポリシーは同じようには設計されていません。2つのONTAPストレージシステムとオブジェクトへのバックアップでは、ストレージプロバイダがデスティネーションとして使用されるためです。
+
+* Snapshotポリシーは常にプライマリストレージシステムに存在します。
+* レプリケーションポリシーは常にセカンダリストレージシステムに存在します。
+* オブジェクトへのバックアップポリシーは、ソースボリュームが配置されているシステム上に作成されます。これは、ファンアウト構成の場合はプライマリクラスタ、カスケード構成の場合はセカンダリクラスタです。
+
+
+これらの違いを表に示します。
+
+[cols="25,25,25,25"]
+|===
+| アーキテクチャ | スナップショットポリシー | レプリケーションポリシー | バックアップポリシー 
+
+
+| *ファンアウト* | プライマリ | セカンダリ | プライマリ 
+
+
+| *カスケード* | プライマリ | セカンダリ | セカンダリ 
+|===
+そのため、カスケードアーキテクチャを使用するときにカスタムポリシーを作成する場合は、レプリケートされたボリュームが作成されるセカンダリシステムにレプリケーションポリシーとオブジェクトへのバックアップポリシーを作成する必要があります。ファンアウトアーキテクチャを使用するときにカスタムポリシーを作成する場合は、複製されたボリュームが作成されるセカンダリシステムでレプリケーションポリシーを作成し、プライマリシステムでオブジェクトポリシーにバックアップする必要があります。
+
+すべてのONTAPシステムに存在するデフォルトのポリシーを使用している場合は、すべて設定されています。
+
+
+
+== 独自のオブジェクトストレージコンテナを作成しますか
+
+作業環境のオブジェクトストレージにバックアップファイルを作成すると、デフォルトでは、バックアップおよびリカバリサービスによって、設定したオブジェクトストレージアカウントにバックアップファイル用のコンテナ（バケットまたはストレージアカウント）が作成されます。AWSバケットまたはGCPバケットのデフォルトの名前は「netapp-backup-gp <uuid>」です。Azure BLOBストレージアカウントの名前は「netappbackup <uuid>」です。
+
+特定のプレフィックスを使用したり、特別なプロパティを割り当てたりする場合は、オブジェクトプロバイダアカウントでコンテナを自分で作成できます。独自のコンテナを作成する場合は、アクティブ化ウィザードを開始する前にコンテナを作成する必要があります。BlueXP  のバックアップとリカバリでは、任意のバケットと共有バケットを使用できます。バックアップアクティベーションウィザードは、選択したアカウントとクレデンシャル用にプロビジョニングされたコンテナを自動的に検出し、使用するコンテナを選択できるようにします。
+
+バケットはBlueXPまたはクラウドプロバイダから作成できます。
+
+* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["BlueXPでAmazon S3バケットを作成"^]
+* https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html["BlueXPからAzure BLOBストレージアカウントを作成します"^]
+* https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["BlueXPからGoogle Cloud Storageバケットを作成"^]
+
+
+「netapp-backup-xxxxxx」以外のバケットプレフィックスを使用する場合は、コネクタIAMロールのS3権限を変更する必要があります。
+
+*詳細バケット設定*
+
+古いバックアップファイルをアーカイブストレージに移動する場合、またはDataLockおよびRansomware Protectionを有効にしてバックアップファイルをロックし、ランサムウェアの可能性がないかスキャンする場合は、特定の構成設定でコンテナを作成する必要があります。
+
+* 現時点では、クラスタでONTAP 9.10.1以降のソフトウェアを使用している場合、独自のバケット上のアーカイブストレージはAWS S3ストレージでサポートされています。デフォルトでは、バックアップはS3_Standard_storageクラスで開始されます。適切なライフサイクルルールを使用してバケットを作成します。
++
+** バケットのスコープ全体のオブジェクトを30日後にS3_Standard-IA_に移動します。
+** 「smc_push_to_archive：true」タグのオブジェクトを_Glacier Flexible Retrieval_（旧S3 Glacier）に移動します。
+
+
+* DataLock とランサムウェア保護は、クラスターで ONTAP 9.11.1 以降のソフトウェアを使用している場合は AWS ストレージでサポートされ、ONTAP 9.12.1 以降のソフトウェアを使用している場合は Azure ストレージでサポートされます。
++
+** AWSの場合、30日間の保持期間を使用してバケットのオブジェクトロックを有効にする必要があります。
+** Azureの場合は、バージョンレベルの変更不可をサポートするストレージクラスを作成する必要があります。
+
+
+
+
+
+
+== どのBlueXP Connector導入モードを使用していますか
+
+すでにBlueXPを使用してストレージを管理している場合は、BlueXP Connectorがインストールされています。BlueXPのバックアップとリカバリで同じコネクタを使用する予定なら、準備は万端です。別のコネクタを使用する必要がある場合は、バックアップとリカバリの実装を開始する前に、コネクタをインストールする必要があります。
+
+BlueXPには複数の導入モードが用意されており、ビジネスやセキュリティの要件に合わせてBlueXPを使用できます。_Standard mode__はBlueXP SaaSレイヤを活用してすべての機能を提供しますが、_restricted mode_and_private mode__は接続が制限されている組織で使用できます。
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["BlueXPの導入モードの詳細については、こちらをご覧ください"^]です。
+
+
+
+=== 完全なインターネット接続を備えたサイトのサポート
+
+インターネットに完全に接続されたサイト（_標準モード_または_ SaaSモード_とも呼ばれます）でBlueXPのバックアップとリカバリを使用する場合は、BlueXPで管理しているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムにレプリケートされたボリュームを作成できます。 また、サポートされている任意のクラウドプロバイダのオブジェクトストレージにバックアップファイルを作成できます。link:concept-backup-to-cloud.html["サポートされているバックアップ先の完全なリストを参照してください"]です。
+
+有効なコネクタの場所のリストについては、バックアップファイルを作成するクラウドプロバイダの次のいずれかのバックアップ手順を参照してください。コネクタをLinuxマシンに手動でインストールするか、特定のクラウドプロバイダに導入する必要がある場合は、いくつかの制限事項があります。
+
+* link:prev-ontap-backup-cvo-aws.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"]
+* link:prev-ontap-backup-cvo-azure.html["Cloud Volumes ONTAP データを Azure Blob にバックアップ"]
+* link:prev-ontap-backup-cvo-gcp.html["Cloud Volumes ONTAP データを Google Cloud にバックアップ"]
+* link:prev-ontap-backup-onprem-aws.html["オンプレミスの ONTAP データを Amazon S3 にバックアップ"]
+* link:prev-ontap-backup-onprem-azure.html["オンプレミスの ONTAP データを Azure Blob にバックアップ"]
+* link:prev-ontap-backup-onprem-gcp.html["オンプレミスの ONTAP データを Google Cloud にバックアップ"]
+* link:prev-ontap-backup-onprem-storagegrid.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"]
+* link:prev-ontap-backup-onprem-ontaps3.html["オンプレミスのONTAPをONTAP S3にバックアップ"]
+
+
+
+
+=== インターネット接続が制限されているサイトのサポート
+
+BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（_restricted mode_とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合、移行先のクラウドリージョンにBlueXP  Connectorをデプロイする必要があります。
+
+ifdef::aws[]
+
+* オンプレミスのONTAPシステムまたはAWSの商用リージョンにインストールされたCloud Volumes ONTAPシステムからAmazon S3にデータをバックアップできます。link:prev-ontap-backup-cvo-aws.html["Cloud Volumes ONTAP データを Amazon S3 にバックアップします"]です。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azureの商用リージョンにインストールされているオンプレミスのONTAPシステムまたはCloud Volumes ONTAPシステムからAzure Blobにデータをバックアップできます。link:prev-ontap-backup-cvo-azure.html["Cloud Volumes ONTAP データを Azure Blob にバックアップ"]です。
+
+
+endif::azure[]
+
+
+
+=== インターネットに接続されていないサイトをサポート
+
+インターネットに接続されていないサイト（_private mode_or_dark_sitesとも呼ばれます）では、BlueXPのバックアップとリカバリを使用してボリュームデータをバックアップできます。この場合は、同じサイトのLinuxホストにBlueXP Connectorを導入する必要があります。
+
+* ローカルのオンプレミスONTAP システムからローカルのStorageGRID システムにデータをバックアップできます。link:prev-ontap-backup-onprem-storagegrid.html["オンプレミスの ONTAP データを StorageGRID にバックアップ"]です。
+* ローカルのオンプレミスONTAPシステムから、ローカルのオンプレミスONTAPシステムまたはS3オブジェクトストレージ用に構成されたCloud Volumes ONTAPシステムにデータをバックアップできます。link:prev-ontap-backup-onprem-ontaps3.html["オンプレミスのONTAPデータをONTAP S3にバックアップ"] .ifdef::aws[]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]

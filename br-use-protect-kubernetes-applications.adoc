@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: br-use-protect-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: BlueXP backup and recoveryを使用すると、ワークロードのホスト情報、データベース情報、インスタンス情報を管理できます。インベントリの保護設定を表示、編集、削除できます。 
+---
+= Kubernetes アプリケーションの追加と保護
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを使用すると、ワークロードのホスト情報、データベース情報、インスタンス情報を管理できます。インベントリの保護設定を表示、編集、削除できます。
+
+.必要なBlueXPロール
+組織管理者またはSnapCenter管理者。link:reference-roles.html["BlueXP backup and recoveryのアクセス ロールについて学ぶ"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+
+
+== 新しいKubernetesアプリケーションを追加して保護する
+
+Kubernetesアプリケーションを保護するための最初のステップは、BlueXP backup and recovery内でアプリケーションを作成することです。アプリケーションを作成すると、Kubernetesクラスター上で実行中のアプリケーションがBlueXPに認識されます。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *アプリケーション* を選択します。
+. *アプリケーションの作成*を選択します。
+. アプリケーションの名前を入力します。
+. 保護するリソースを検索するには、次のいずれかのフィールドを選択します。
++
+** 関連クラスター
+** 関連する名前空間
+** リソースタイプ
+** ラベルセレクター
+
+
+. 必要に応じて、「*クラスタースコープリソース*」を選択すると、クラスターレベルでスコープ指定され、アプリケーションに含まれていないリソースを選択できます。これらのリソースを含めると、アプリケーションの作成時にアプリケーションに追加されます。
+. 検索条件に基づいてリソースを検索するには、「*検索*」を選択します。
+. BlueXP は、検索条件に一致するリソースのリストを表示します。
+. 保護するリソースがリストに含まれている場合は、[次へ] を選択します。
+. *ポリシー* 領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。
+. *プレスクリプトとポストスクリプト*領域では、バックアップ操作の前後に実行するプレスクリプトまたはポストスクリプト実行フックを有効にして設定します。link:br-use-manage-execution-hook-templates.html["実行フックテンプレート"] 。
+. 「 * Create * 」を選択します。
+
+
+.結果
+アプリケーションが作成され、Kubernetesインベントリの*アプリケーション*タブのアプリケーションリストに表示されます。BlueXPは設定に基づいてアプリケーションの保護を有効にし、バックアップとリカバリの*モニタリング*領域で進行状況を監視できます。
+
+
+
+== 既存のKubernetesアプリケーションを保護する
+
+すでに追加した Kubernetes アプリケーションで保護ポリシーを有効にします。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *アプリケーション* を選択します。
+. アプリケーションのリストで、保護するアプリケーションを選択し、関連する [アクション] メニューを選択します。
+. [保護]*を選択します。
+. *ポリシー* 領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。
+. *プレスクリプトとポストスクリプト*領域では、バックアップ操作の前後に実行するプレスクリプトまたはポストスクリプト実行フックを有効にして設定します。実行フックの種類、使用するテンプレート、引数、ラベルセレクタを設定できます。
+. 「 Done （完了）」を選択します。
+
+
+.結果
+BlueXP は設定に基づいてアプリケーションの保護を有効にし、バックアップとリカバリの *監視* 領域で進行状況を監視できます。
+
+
+
+== Kubernetes アプリケーションを今すぐバックアップする
+
+Kubernetes アプリケーションのバックアップを手動で作成して、将来のバックアップとスナップショットのベースラインを確立したり、最新のデータが保護されていることを確認したりします。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ* > *アプリケーション* を選択します。
+. アプリケーションのリストで、バックアップするアプリケーションを選択し、関連する [アクション] メニューを選択します。
+. *今すぐバックアップ*を選択します。
+. 正しいアプリケーション名が選択されていることを確認してください。
+. ポリシーのリストから保護ポリシーを選択します。
+. [バックアップ]*を選択します。
+

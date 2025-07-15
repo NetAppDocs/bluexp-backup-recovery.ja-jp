@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: br-start-preview-setup.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: BlueXP backup and recoveryプレビューにご参加いただくことで、 BlueXP backup and recoveryサービスの改良と強化に重要な役割を担っていただけます。BlueXPBlueXP backup and recoveryプレビュー版のセットアップについては、弊社がサポートいたします。手順は以下のとおりです。 
+---
+= BlueXP backup and recoveryのプレビュー版を設定する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryのプレビュー版にご参加いただくことで、 BlueXP backup and recoveryサービスの改良と強化に重要な役割を担っていただけます。BlueXPBlueXP backup and recoveryのプレビュー版のセットアップは当社がサポートいたします。手順は以下のとおりです。
+
+. *登録*: BlueXPアカウントをまだお持ちでない場合は、登録してください。その方法は次のとおりです。
++
+.. 訪問 https://bluexp.netapp.com/["BlueXPポータル"] 。
++
+image:screen-preview-bluexp-portal.png["BlueXPポータル画面"]
+
+.. *開始*を選択します。
++
+image:screen-preview-login.png["ポータル画面にログイン"]
+
+.. 「サインアップ」を選択します。
++
+image:screen-preview-signup-profile.png["BlueXPにサインアップする画面"]
+
+.. 名前、メールアドレス、組織名、その他の詳細を入力し、[次へ] を選択します。
++
+メールアドレスを確認するためのリンクが記載されたメールが届きます。
+
+.. メール内のリンクを選択して、メールアドレスを確認してください。
+.. BlueXPポータルにログインします。
+.. 次の情報を入力してプロフィールを完成させてください。
++
+*** *組織ID*: 登録後、組織名とIDが発行されますので、ここに入力してください。
+*** *共有 ID*: 組織名と ID をNetApp製品チームと共有します。
++
+*アクセス期間*: 48 ～ 72 時間以内に、 BlueXP backup and recoveryサービスにアクセスできるようになります。
+
+
+
+
+
+. サービスを*探索*し、その機能をテストし、既存の SQL Server ワークロードと統合します。
+. *定期的な連絡を維持する*。プレビューセッション中は、 NetApp製品チームとの定期的なチェックインにご参加ください。これらのセッションは、サービスを理解し、フィードバックを提供するのに役立ちます。
++
+** *アップデートについて聞く*: プレビューに関連する最新の開発について聞くことができます。
+** *質問*すると、 BlueXPチームからすぐに回答が得られます。
+** サービスを改善するために、 NetApp製品チームに*フィードバックを提供*してください。
+** *ベストプラクティス*とサービスを効果的に使用するためのヒントを共有します。
+** *コラボレーションを促進する*: 他のユーザーと協力して経験を共有し、お互いから学びます。
+
+
+. NetApp製品チームに*フィードバック*を提供してください。
+

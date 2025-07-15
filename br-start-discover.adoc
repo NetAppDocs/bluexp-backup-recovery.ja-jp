@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: BlueXP backup and recoveryサービスを使用するには、まずワークロードを検出する必要があります。 
+---
+= BlueXP backup and recoveryで Microsoft SQL Server ワークロードを検出し、オプションでSnapCenterからインポートします。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryサービスを使用するには、まず Microsoft SQL Server ワークロードを検出する必要があります。SnapCenter がSnapCenterインストールされている場合は、オプションでSnapCenterからバックアップデータとポリシーをインポートできます。
+
+*必須のBlueXPロール* バックアップとリカバリのスーパー管理者。 link:reference-roles.html["バックアップとリカバリの役割と権限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+
+
+== Microsoft SQL Server ワークロードを検出し、オプションでSnapCenterリソースをインポートします
+
+検出中に、 BlueXP backup and recoveryは、組織内の作業環境にある Microsoft SQL Server インスタンスとデータベースを分析します。
+
+BlueXP backup and recoveryは、 Microsoft SQL Server アプリケーションを評価します。このサービスでは、現在のバックアップ保護ポリシー、スナップショットコピー、バックアップおよびリカバリオプションなど、既存の保護レベルを評価します。
+
+検出は次のように行われます。
+
+* SnapCenterがすでにある場合は、 BlueXP backup and recoveryUI を使用して、 SnapCenterリソースをBlueXP backup and recoveryにインポートします。
++
+
+NOTE: SnapCenterを既にお持ちの場合は、 SnapCenterからインポートする前に、前提条件を満たしていることを確認してください。例えば、 SnapCenterからインポートする前に、オンプレミスのすべてのSnapCenterクラスタストレージ用の作業環境をBlueXP Canvas で作成しておく必要があります。を参照して link:concept-start-prereq-snapcenter-import.html["SnapCenterからリソースをインポートするための前提条件"]
+
+* SnapCenterがまだない場合は、vCenter を手動で追加して検出を実行することで、作業環境内のワークロードを検出できます。
+
+
+
+
+=== SnapCenterがすでにインストールされている場合は、 SnapCenterリソースをBlueXP backup and recoveryにインポートします。
+
+SnapCenterが既にインストールされている場合は、以下の手順に従ってSnapCenter のリソースをBlueXP backup and recoveryにインポートしてください。BlueXPBlueXPはSnapCenterからリソース、ホスト、資格情報、スケジュールを検出するため、すべての情報を再作成する必要はありません。
+
+これは次の方法で実行できます。
+
+* 検出中に、 SnapCenterからリソースをインポートするオプションを選択します。
+* 検出後、インベントリ ページからSnapCenterリソースをインポートするオプションを選択します。
+* 検出後、[設定] メニューからSnapCenterリソースをインポートするオプションを選択します。詳細については、を参照してください link:br-start-configure.html["BlueXP backup and recoveryを構成する"]。
+
+
+これは 2 つの部分から成るプロセスです。
+
+* SnapCenter Server アプリケーションとホスト リソースをインポートする
+* 選択したSnapCenterホストリソースを管理する
+
+
+
+
+==== SnapCenter Server アプリケーションとホスト リソースをインポートする
+
+この最初のステップでは、 SnapCenterからホストリソースをインポートし、 BlueXP backup and recoveryの「インベントリ」ページに表示されます。この時点では、リソースはまだBlueXP backup and recoveryによって管理されていません。
+
+
+TIP: SnapCenterホストリソースをインポートした後、 BlueXP backup and recoveryは自動的に保護管理を引き継ぎません。保護管理を引き継ぐには、インポートしたリソースをBlueXP backup and recoveryで管理することを明示的に選択する必要があります。これにより、 BlueXP backup and recoveryによるリソースのバックアップ準備が完了します。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
+. 上部のメニューから*インベントリ*を選択します。
++
+image:screen-br-inventory.png["BlueXP backup and recoveryのインベントリのスクリーンショット"]
+
+. 上部のメニューから、[リソースの検出] を選択します。
++
+image:../media/screen-br-discover-workloads.png["ワークロードリソースの検出のスクリーンショット"]
+
+. BlueXP backup and recoveryのワークロード リソースの検出ページから、* SnapCenterからのインポート*を選択します。
++
+image:../media/screen-br-discover-import-snapcenter.png["SnapCenter Server リソースをインポートするための設定オプション"]
+
+. * SnapCenterアプリケーションの資格情報*を入力してください:
++
+.. * SnapCenter FQDN または IP アドレス*: SnapCenterアプリケーション自体の FQDN または IP アドレスを入力します。
+.. *ポート*: SnapCenter Server のポート番号を入力します。
+.. *ユーザー名* と *パスワード*: SnapCenterサーバーのユーザー名とパスワードを入力します。
+.. *コネクタ*: SnapCenter用のBlueXPコネクタを選択します。
+
+
+. * SnapCenterサーバー ホストの資格情報* を入力してください:
++
+.. *既存の認証情報*: このオプションを選択すると、既に追加済みの既存の認証情報を使用できます。認証情報の名前を選択してください。
+.. *新しい資格情報を追加*: SnapCenterホストの既存の資格情報がない場合は、新しい資格情報を追加できます。資格情報名、認証モード、ユーザー名、パスワードを入力してください。
+
+
+. *インポート* を選択してエントリを検証し、 SnapCenterサーバーを登録します。
++
+
+NOTE: SnapCenter Server がすでに登録されている場合は、既存の登録詳細を更新できます。
+
+
+
+.結果
+インベントリ ページには、MS SQL ホスト、インスタンス、データベースを含むインポートされたSnapCenterリソースが表示されます。
+
+image:../media/screen-br-inventory.png["インポートされたSnapCenterリソースを表示するインベントリ ページ"]
+
+インポートされたSnapCenterリソースの詳細を表示するには、[アクション] メニューから [詳細の表示] オプションを選択します。 image:../media/screen-br-inventory-details.png["インポートされたSnapCenterリソースとその詳細を表示するインベントリページ"]
+
+
+
+==== SnapCenterホストリソースの管理
+
+SnapCenterリソースをインポートした後、 BlueXP backup and recoveryでそれらのホストリソースを管理します。これらのリソースを管理することを選択すると、 BlueXP backup and recoveryはSnapCenterからインポートしたリソースのバックアップとリカバリが可能になります。これらのリソースはSnapCenter Serverで管理する必要がなくなります。
+
+.手順
+. SnapCenterリソースをインポートした後、上部のメニューから [インベントリ] を選択します。
+. [インベントリ] ページで、今後BlueXP backup and recoveryで管理するインポート済みのSnapCenterホストを選択します。
++
+image:../media/screen-br-inventory.png["インポートされたSnapCenterリソースを表示するインベントリ ページ"]
+
+. アクションアイコンを選択image:../media/icon-action.png["アクションオプション"] > *詳細を表示* をクリックしてワークロードの詳細を表示します。
++
+image:../media/screen-br-inventory-manage-option.png["インポートされたSnapCenterリソースと管理オプションが表示されたインベントリページ"]
+
+. インベントリ > ワークロードページから、アクションアイコンを選択しますimage:../media/icon-action.png["アクションオプション"] > *管理* をクリックして、ホストの管理ページを表示します。
+. 「 * Manage * 」を選択します。
+. [ホストの管理] ページで、既存の vCenter を使用するか、新しい vCenter を追加するかを選択します。
+. 「 * Manage * 」を選択します。
++
+インベントリ ページには、新しく管理されたSnapCenterリソースが表示されます。
+
+
+
+オプションで、[アクション] メニューから [レポートの生成] オプションを選択して、管理対象リソースのレポートを作成することもできます。
+
+
+
+==== インベントリページから検出後にSnapCenterリソースをインポートします
+
+すでにリソースを検出している場合は、[インベントリ] ページからSnapCenterリソースをインポートできます。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
+. 上部のメニューから*インベントリ*を選択します。
++
+image:../media/screen-br-inventory.png["在庫ページ"]
+
+. インベントリ ページで、* SnapCenterリソースのインポート* を選択します。
+. SnapCenterリソースをインポートするには、上記の * SnapCenterリソースのインポート* セクションの手順に従います。
+
+
+
+
+=== SnapCenterがインストールされていない場合は、vCenterを追加してリソースを検出します。
+
+SnapCenterをまだインストールしていない場合は、vCenter情報を追加し、 BlueXP backup and recoveryでワークロードを検出します。各BlueXPコネクタ内で、ワークロードを検出する作業環境を選択します。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
++
+このサービスに初めてログインする場合、 BlueXPに既に作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*リソースの検出*オプションが表示されます。
+
++
+image:screen-br-landing-discover-import-buttons.png["BlueXP blueXP のランディング ページのスクリーンショット (リソースが検出されない場合)"]
+
+. *リソースの検出*を選択します。
++
+image:screen-br-discover-workloads.png["ワークロードリソースの検出のスクリーンショット"]
+
+. 次の情報を入力してください。
++
+.. *ワークロード タイプ*: このバージョンでは、Microsoft SQL Server のみが利用可能です。
+.. *vCenter設定*: 既存のvCenterを選択するか、新しいvCenterを追加します。新しいvCenterを追加するには、vCenterのFQDNまたはIPアドレス、ユーザー名、パスワード、ポート、プロトコルを入力します。
++
+
+TIP: vCenter情報を入力する場合は、vCenter設定とホスト登録の両方の情報を入力してください。ここでvCenter情報を追加または入力した場合は、次の「詳細設定」でプラグイン情報も追加する必要があります。
+
+.. *ホスト登録*: *資格情報の追加* を選択し、検出するワークロードを含むホストに関する情報を入力します。
++
+
+TIP: vCenter サーバーではなくスタンドアロン サーバーを追加する場合は、ホスト情報のみを入力します。
+
+
+
+. [検出]*を選択します。
++
+
+TIP: このプロセスには数分かかることがあります。
+
+. 詳細設定を続行します。
+
+
+
+
+==== 検出中に詳細設定オプションを設定し、プラグインをインストールします
+
+詳細設定では、登録するすべてのサーバーにプラグインエージェントを手動でインストールできます。これにより、すべてのSnapCenterワークロードをBlueXP backup and recoveryにインポートし、そこでバックアップとリストアを管理できるようになります。BlueXPBlueXP backup and recoveryでは、プラグインのインストール手順をご案内しています。
+
+.手順
+. 「リソースの検出」ページで、右側の下矢印をクリックして「詳細設定」に進みます。
++
+image:screen-br-discover-workloads-newly-discovered2.png["新しく検出された作業環境のスクリーンショット"]
+
+. ワークロード リソースの検出ページで、次の情報を入力します。
++
+** *プラグインのポート番号を入力*: プラグインが使用するポート番号を入力します。
+** *インストール パス*: プラグインをインストールするパスを入力します。
+
+
+. SnapCenterエージェントを手動でインストールする場合は、次のオプションのチェックボックスをオンにします。
++
+** *手動インストールを使用する*: プラグインを手動でインストールするには、このボックスをオンにします。
+** *クラスター内のすべてのホストを追加*: 検出中にクラスター内のすべてのホストをBlueXP backup and recoveryに追加するには、このボックスをオンにします。
+** *オプションのインストール前チェックをスキップ*：このチェックボックスをオンにすると、オプションのインストール前チェックをスキップできます。例えば、近い将来にメモリや空き容量の要件が変更される可能性があり、プラグインを今すぐインストールしたい場合などに、このチェックボックスをオンにすることをお勧めします。
+
+
+. [検出]*を選択します。
+
+
+
+
+==== BlueXP backup and recoveryダッシュボードに進みます
+
+. BlueXP backup and recoveryダッシュボードを表示するには、上部のメニューから *ダッシュボード* を選択します。
+. データ保護の健全性を確認します。新たに検出、保護、バックアップされたワークロードに基づいて、リスクのあるワークロードまたは保護対象のワークロードの数が増加します。
++
+image:screen-br-dashboard2.png["BlueXP backup and recoveryダッシュボード"]
+
++
+link:br-use-dashboard.html["ダッシュボードに表示される内容を学ぶ"]です。
+
+

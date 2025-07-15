@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: reference-policy-differences-snapcenter.html 
+keywords: backup policy, backup policies, snapcenter, migration 
+summary: BlueXP backup and recoveryで使用されるポリシーとSnapCenterで使用されるポリシーにはいくつかの違いがあります。 
+---
+= SnapCenterのポリシーとBlueXP backup and recoveryのポリシーの比較
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapCenterで使用されるポリシーとBlueXP backup and recoveryで使用されるポリシーにはいくつかの違いがあり、 SnapCenterからリソースとポリシーをインポートした後の表示内容に影響する可能性があります。
+
+SnapCenterとBlueXP backup and recoveryでは、若干異なるポリシー スケジュールが使用されます。
+
+SnapCenter は次のスケジュール層を使用します。
+
+* *時間単位*: 任意の時間 (0 ～ 23) と任意の分 (0 ～ 60) で複数の時間と分を指定します。
+* *毎日*: 3 日ごとなど、指定した日数ごとに繰り返すオプションが含まれます。
+* *毎週*: 日曜日から月曜日まで。週の 1 日目にスナップショットを実行するか、週の複数の日にスナップショットを実行するかを選択できます。
+* *毎月*: 1 月から 12 月までの月で、毎月 7 日など特定の日に実行するオプションや、月の複数の日に実行するオプションもあります。
+
+
+BlueXP backup and recoveryでは、若干異なる次のスケジュール層が使用されます。
+
+* *時間ごと*: 15 分間隔でのみスナップショットを実行します (例: 1 時間または 60 未満の 15 分間隔)。
+* *毎日*: 1 日の時間帯 (0 ～ 23)、開始時刻 (例: 午前 10 時)、および一定時間ごとに実行するオプション。
+* *週次*: 曜日（日曜日から月曜日）で、1日または複数日に実行できます。これはSnapCenterと同じです。
+* *月次*: 月内の複数の日付の開始時刻を持つ日付 (0 ～ 30)。
+* *Yearly*: 月単位。これは SnapCenter の月単位と一致します。
+
+
+
+
+== 同じスケジュール層を持つSnapCenterの複数のポリシー
+
+SnapCenterでは、同じスケジュール階層を持つ複数のポリシーをリソースに割り当てることができます。ただし、 BlueXP backup and recoveryでは、同じスケジュール階層を使用するリソースに対して複数のポリシーを割り当てることはできません。
+
+*例*: SnapCenterで 3 つのポリシー (データ、ログ、スナップショットのログ) を使用している場合、 SnapCenterからの移行後、 BlueXP backup and recoveryでは 3 つすべてのポリシーではなく 1 つのポリシーが使用されます。
+
+
+
+== インポートされたSnapCenterの毎日のスケジュール
+
+BlueXP backup and recoveryは、 SnapCenterスケジュールを次のように調整します。
+
+* SnapCenterのスケジュールが7日以下に設定されている場合、 BlueXP backup and recoveryはスケジュールを週単位に設定します。週単位の場合は、一部のスナップショットがスキップされます。
++
+*例*： SnapCenterの毎日ポリシーで、月曜日から3日ごとに繰り返し実行されるように設定している場合、 BlueXP backup and recoveryは月曜日、木曜日、日曜日に毎週スケジュールを設定します。ただし、正確に3日ごとではないため、一部の日はスキップされます。
+
+* SnapCenterのスケジュールが7日間以上に設定されている場合、 BlueXP backup and recoveryはスケジュールを月単位に設定します。月内の一部のスナップショットはスキップされます。
++
+*例*： SnapCenterの毎日ポリシーで、毎月2日から10日ごとに繰り返し実行されるように設定している場合、 BlueXP backup and recovery（移行後）は、毎月2日、12日、22日にスケジュールを月次に設定します。翌月は一部の日がスキップされます。
+
+
+
+
+
+== インポートされたSnapCenterの時間別スケジュール
+
+繰り返し間隔が 1 時間を超えるSnapCenter の時間別ポリシーは、BlueXP backup and recoveryでは日次ポリシーに変換されます。
+
+繰り返し間隔が 24 の倍数ではない時間単位のポリシー (たとえば 5、7 など) では、1 日にいくつかのスナップショットがスキップされます。
+
+*例*： SnapCenterの時間単位ポリシーで、午前1時から5時間ごとに繰り返し実行するように設定している場合、 BlueXP backup and recovery（移行後）では、スケジュールが毎日、午前1時、午前6時、午前11時、午後4時、午後9時に5時間間隔で設定されます。一部の時間はスキップされ、午後9時以降は5時間ごとに午前2時に実行されるはずですが、実際には常に午前1時に実行されます。
+
+
+
+== SnapCenterポリシーからのログ保持
+
+SnapCenterに複数のポリシーを持つリソースがある場合、 BlueXP backup and recoveryは次の優先順位を使用してログ保持値を割り当てます。
+
+* SnapCenterの「ログ バックアップ ポリシーによる完全バックアップ」と「ログのみ」ポリシーの場合、 BlueXP backup and recoveryでは、ログのみのポリシーの保持値が使用されます。
+* SnapCenterの「ログのみの完全バックアップ」および「完全バックアップとログ」ポリシーの場合、 BlueXP backup and recoveryではログのみの保持値が使用されます。
+* SnapCenterの「フル バックアップとログ」と「フル バックアップ」の場合、 BlueXP backup and recoveryでは「フル バックアップとログ」の保持値が使用されます。
+* SnapCenterに完全バックアップのみがある場合、 BlueXP backup and recoveryではログ バックアップは有効になりません。
+
+
+
+
+== SnapCenterポリシーからの保持数
+
+SnapCenterで複数のソース ボリューム、複数の宛先ボリューム、および複数のSnapMirror関係を持つセカンダリ保護が有効になっているリソースがある場合、 BlueXP backup and recoveryでは最初のポリシーの保持カウントのみが使用されます。
+
+*例*: 保持数が 5 のSnapCenterポリシーと、保持数が 10 の別のポリシーがある場合、 BlueXP backup and recoveryでは保持数 5 が使用されます。
+
+
+
+== SnapCenterポリシーからのSnapMirrorラベル
+
+SnapCenterのすべてのポリシーのSnapMirrorラベルは、階層が変更されても移行後もそのまま残ります。
+
+*例*： SnapCenterの時間単位ポリシーが、BlueXP backup and recoveryでは日単位に変更される場合があります。ただし、 SnapMirrorのラベルは移行後も同じままです。

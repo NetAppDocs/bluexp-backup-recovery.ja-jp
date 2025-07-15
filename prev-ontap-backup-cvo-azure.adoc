@@ -1,0 +1,468 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-cvo-azure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP バックアップとリカバリを使用して、Cloud Volumes ONTAP データを Azure Blob ストレージにバックアップします。
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP システムから Azure Blob ストレージへのボリューム データのバックアップを開始するには、BlueXP バックアップとリカバリのいくつかの手順を完了します。
+
+[]
+====
+*注意* BlueXP backup and recoveryのワークロードを切り替えるには、 link:br-start-switch-ui.html["さまざまなBlueXP backup and recoveryワークロードに切り替える"] 。
+
+====
+
+
+== 構成がサポートされていることを確認します
+
+Azure Blob Storage へのボリュームのバックアップを開始する前に、次の要件を確認し、サポートされている構成であることを確認してください。
+
+次の図は、各コンポーネントとそれらの間の接続を示しています。
+
+必要に応じて、パブリック接続またはプライベート接続を使用して、レプリケートされたボリュームのセカンダリONTAPシステムに接続することもできます。
+
+image:diagram_cloud_backup_cvo_azure.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションストレージとどのように通信するかを示す図。"]
+
+サポートされるONTAPのバージョン:: ONTAP 9.8以上、ONTAP 9.8P13以降が推奨されます。
+サポートされている Azure リージョン:: BlueXP のバックアップとリカバリは、Azure Government リージョンを含むすべての Azure リージョンでサポートされています。
++
+--
+BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実にレプリケートする場合は、BlueXPのバックアップとリカバリをアクティブ化したあとにこの設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
+
+--
+別の Azure サブスクリプションでバックアップを作成するために必要なセットアップ:: デフォルトでは、バックアップは Cloud Volumes ONTAP システムと同じサブスクリプションを使用して作成されます。
+
+
+
+
+== ライセンス要件を確認
+
+BlueXPのバックアップとリカバリのPAYGOライセンスを使用している場合は、BlueXPのバックアップとリカバリを有効にする前に、Azure Marketplaceでサブスクリプションを購入する必要があります。BlueXPのバックアップとリカバリの課金は、このサブスクリプションを通じて行われます。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["作業環境ウィザードの[Details  Credentials]ページからサブスクライブできます。"^]。
+
+BlueXPのバックアップとリカバリのBYOLライセンスの場合は、ライセンスの期間と容量にわたってサービスを使用できるネットアップのシリアル番号が必要です。link:br-start-licensing.html["BYOL ライセンスの管理方法について説明します"]です。コネクタとCloud Volumes ONTAP システムをダークサイト（「プライベートモード」）に導入する場合は、BYOLライセンスを使用する必要があります。
+
+また、バックアップを格納するストレージスペースには、 Microsoft Azure サブスクリプションが必要です。
+
+
+
+== BlueXPコネクタを準備します
+
+コネクタは、フルまたは制限されたインターネットアクセス(「標準」または「制限」モード)を持つAzureリージョンにインストールできます。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["詳細については、BlueXPの導入モードを参照してください"^]。
+
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["コネクタについて説明します"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Azureで標準モードでコネクタを導入する（フルインターネットアクセス）"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-restricted-mode.html["制限モードでのコネクタの取り付け（制限されたアウトバウンドアクセス）"^]
+
+
+
+
+=== コネクタの権限を確認または追加します
+
+BlueXPのバックアップとリカバリの検索とリストア機能を使用するには、コネクタがAzure Synapse WorkspaceとData Lake Storageアカウントにアクセスできるように、コネクタのロールに特定の権限が必要です。以下の権限を確認し、ポリシーを変更する必要がある場合は手順に従います。
+
+.を開始する前に
+* Azure Synapse Analytics Resource Provider（"Microsoft.Synapse"）をサブスクリプションに登録する必要があります。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["このリソースプロバイダをサブスクリプションに登録する方法については、を参照してください"^]。リソースプロバイダを登録するには、Subscription * Owner *または* Contributor *である必要があります。
+* コネクタとAzure Synapse SQLサービス間の通信には、ポート1433が開いている必要があります。
+
+
+.手順
+. Connector 仮想マシンに割り当てられているロールを特定します。
++
+.. Azureポータルで、仮想マシンサービスを開きます。
+.. Connector 仮想マシンを選択します。
+.. [ 設定 ] で、 [*Identity*] を選択します。
+.. [Azure role assignments]*を選択します。
+.. Connector 仮想マシンに割り当てられているカスタムロールをメモしておきます。
+
+
+. カスタムロールを更新します。
++
+.. Azure ポータルで、 Azure サブスクリプションを開きます。
+.. [Access control（IAM）]>[Roles]*を選択します。
+.. カスタムロールの省略記号（*...*）を選択し、*[編集]*を選択します。
+.. [json]*を選択し、次の権限を追加します。
++
+[%collapsible]
+====
+[source, json]
+----
+"Microsoft.Storage/storageAccounts/listkeys/action",
+"Microsoft.Storage/storageAccounts/read",
+"Microsoft.Storage/storageAccounts/write",
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write",
+"Microsoft.Network/networkInterfaces/read",
+"Microsoft.Resources/subscriptions/locations/read",
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/virtualNetworks/subnets/read",
+"Microsoft.Resources/subscriptions/resourceGroups/read",
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+"Microsoft.Resources/subscriptions/resourceGroups/write",
+"Microsoft.Authorization/locks/*",
+"Microsoft.Network/privateEndpoints/write",
+"Microsoft.Network/privateEndpoints/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+"Microsoft.Network/virtualNetworks/join/action",
+"Microsoft.Network/privateDnsZones/A/write",
+"Microsoft.Network/privateDnsZones/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+"Microsoft.Synapse/workspaces/write",
+"Microsoft.Synapse/workspaces/read",
+"Microsoft.Synapse/workspaces/delete",
+"Microsoft.Synapse/register/action",
+"Microsoft.Synapse/checkNameAvailability/action",
+"Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/read",
+"Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
+"Microsoft.Synapse/workspaces/operationResults/read",
+"Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
+----
+====
++
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["ポリシーの完全な JSON 形式を表示します"^]
+
+.. [レビュー+更新]*を選択し、*[更新]*を選択します。
+
+
+
+
+
+
+=== データ暗号化にお客様が管理するキーを使用するために必要な情報
+
+Microsoft が管理するデフォルトの暗号化キーを使用する代わりに、アクティベーションウィザードで、お客様が管理する独自のキーを使用してデータを暗号化できます。この場合、Azureサブスクリプション、キーボールト名、およびキーが必要です。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法を参照してください"^]。
+
+BlueXP  のバックアップとリカバリでは、_Azureアクセスポリシー_、_Azureロールベースアクセス制御_（Azure RBAC）権限モデル、および_Managed Hardware Security Model_（HSM） https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["Azure Key Vault Managed HSMとは"]がサポートされます（を参照）。
+
+
+
+=== Azure BLOBストレージアカウントを作成します
+
+デフォルトでは、サービスによってストレージアカウントが作成されます。独自のストレージアカウントを使用する場合は、バックアップアクティブ化ウィザードを開始する前にストレージアカウントを作成し、ウィザードでそれらのストレージアカウントを選択できます。
+
+link:prev-ontap-protect-journey.html["独自のストレージアカウントの作成について詳しくは、こちらをご覧ください"]です。
+
+
+
+== ボリュームをレプリケートするためのONTAPネットワークの要件を確認します
+
+BlueXPのバックアップとリカバリを使用してセカンダリONTAPシステムにレプリケートされたボリュームを作成する場合は、ソースシステムとデスティネーションシステムが次のネットワーク要件を満たしていることを確認してください。
+
+
+
+==== オンプレミスのONTAPネットワークの要件
+
+* クラスタが社内にある場合は、社内ネットワークからクラウドプロバイダ内の仮想ネットワークへの接続が必要です。これは通常、 VPN 接続です。
+* ONTAP クラスタは、サブネット、ポート、ファイアウォール、およびクラスタの追加要件を満たしている必要があります。
++
+Cloud Volumes ONTAPまたはオンプレミスのシステムにレプリケートできるため、オンプレミスのONTAPシステムのピアリング要件を確認してください。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["クラスタピアリングの前提条件については、 ONTAP のドキュメントを参照してください"^]。
+
+
+
+
+
+==== Cloud Volumes ONTAPネットワークの要件
+
+* インスタンスのセキュリティグループに、必要なインバウンドおよびアウトバウンドのルールが含まれている必要があります。具体的には、 ICMP とポート 11104 および 11105 のルールが必要です。これらのルールは、事前定義されたセキュリティグループに含まれています。
+
+
+* 異なるサブネットにある 2 つの Cloud Volumes ONTAP システム間でデータをレプリケートするには、サブネットを一緒にルーティングする必要があります（これがデフォルト設定です）。
+
+
+
+
+== Cloud Volumes ONTAPでBlueXPのバックアップとリカバリを有効にする
+
+BlueXPのバックアップとリカバリは簡単に有効にできます。手順は、既存のCloud Volumes ONTAPシステムと新規のシステムのどちらを使用しているかによって多少異なります。
+
+*新しいシステムでBlueXPのバックアップとリカバリを有効にする*
+
+作業環境ウィザードでは、BlueXPのバックアップとリカバリがデフォルトで有効になります。このオプションは必ず有効にしておいてください。
+
+を参照してください https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure で Cloud Volumes ONTAP を起動します"^] を Cloud Volumes ONTAP 参照してください。
+
+
+NOTE: リソースグループの名前を選択する場合は、Cloud Volumes ONTAP を導入する際に* BlueXPのバックアップとリカバリを無効にしてください。
+
+.手順
+. BlueXPのキャンバスで*[Add Working Environment]*を選択し、クラウドプロバイダを選択して*[Add New]*を選択します。Cloud Volumes ONTAPの作成*を選択します。
+. クラウドプロバイダとして* Microsoft Azure *を選択し、単一のノードまたはHAシステムを選択します。
+. Azure 資格情報の定義ページで、資格情報の名前、クライアント ID、クライアント シークレット、ディレクトリ ID を入力し、[続行] を選択します。
+. [詳細と資格情報] ページに入力し、Azure Marketplace サブスクリプションが設定されていることを確認して、[続行] を選択します。
+. [サービス]ページで、サービスを有効のままにして*[続行]*を選択します。
+. ウィザードの各ページを設定し、システムを導入します。
+
+
+.結果
+システムでBlueXPのバックアップとリカバリが有効になっている。これらのCloud Volumes ONTAPシステムでボリュームを作成したら、 BlueXP backup and recoveryを起動し、 link:prev-ontap-backup-manage.html["保護する各ボリュームでバックアップをアクティブ化します"] 。
+
+*既存のシステムでBlueXPのバックアップとリカバリを有効にする*
+
+BlueXPのバックアップとリカバリは、いつでも作業環境から直接実行できます。
+
+.手順
+. BlueXPのキャンバスで、作業環境を選択し、右側のパネルでバックアップとリカバリサービスの横にある*[有効化]*を選択します。
++
+バックアップのAzure BlobデスティネーションがCanvas上に作業環境として存在する場合は、クラスタをAzure Blob Working環境にドラッグしてセットアップウィザードを開始できます。
+
+. ウィザードの各ページに必要な情報を入力して、BlueXPのバックアップとリカバリを導入します。
+. バックアップを開始する場合は、に進みます <<ONTAPボリュームでバックアップをアクティブ化します>>。
+
+
+
+
+== ONTAPボリュームでバックアップをアクティブ化します
+
+オンプレミスの作業環境からいつでも直接バックアップをアクティブ化できます。
+
+ウィザードでは、次の主な手順を実行します。
+
+* <<バックアップするボリュームを選択します>>
+* <<バックアップ戦略を定義します>>
+* <<選択内容を確認します>>
+
+
+また可能です <<APIコマンドを表示します>> レビューステップでは、コードをコピーして、将来の作業環境のバックアップアクティベーションを自動化できます。
+
+
+
+=== ウィザードを開始します
+
+.手順
+. 次のいずれかの方法でバックアップとリカバリのアクティブ化ウィザードにアクセスします。
++
+** BlueXPキャンバスで、作業環境を選択し、右パネルのバックアップとリカバリサービスの横にある*[有効化]>[ボリュームのバックアップ]*を選択します。
++
+バックアップのAzureデスティネーションがCanvasの作業環境として存在する場合は、ONTAPクラスタをAzure Blobオブジェクトストレージにドラッグできます。
+
+** [バックアップとリカバリ]バーで*[ボリューム]*を選択します。[ボリューム]タブで、*[操作]* image:icon-action.png["アクションアイコン"] アイコンをクリックし、（オブジェクトストレージへのレプリケーションまたはバックアップがまだ有効になっていない）単一のボリュームに対して*[バックアップのアクティブ化]*を選択します。
+
+
++
+ウィザードの[Introduction]ページには、ローカルSnapshot、レプリケーション、バックアップなどの保護オプションが表示されます。この手順で2番目のオプションを選択した場合は、1つのボリュームが選択された状態で[Define Backup Strategy]ページが表示されます。
+
+. 次のオプションに進みます。
++
+** BlueXPコネクタをすでにお持ちの場合は、これで準備は完了です。[次へ]*を選択します。
+** BlueXPコネクタをまだお持ちでない場合は、*[Add a Connector]*オプションが表示されます。を参照してください <<BlueXPコネクタを準備します>>。
+
+
+
+
+
+
+=== バックアップするボリュームを選択します
+
+保護するボリュームを選択します。保護されたボリュームとは、Snapshotポリシー、レプリケーションポリシー、オブジェクトへのバックアップポリシーのうち1つ以上のポリシーが設定されているボリュームです。
+
+FlexVolボリュームとFlexGroupボリュームのどちらを保護するかを選択できますが、作業環境でバックアップをアクティブ化するときは、これらのボリュームを組み合わせて選択することはできません。方法を見るlink:prev-ontap-backup-manage.html["作業環境内の追加ボリュームのバックアップをアクティブ化"] (FlexVolまたはFlexGroup) 初期ボリュームのバックアップを構成した後。
+
+[NOTE]
+====
+* バックアップをアクティブ化できるのは、一度に1つのFlexGroupボリュームだけです。
+* 選択するボリュームのSnapLock設定は同じである必要があります。すべてのボリュームでSnapLock Enterpriseが有効になっているかSnapLockが無効になっている必要があります。
+
+
+====
+.手順
+選択したボリュームにスナップショットまたはレプリケーション ポリシーがすでに適用されている場合は、後で選択したポリシーによって既存のポリシーが上書きされます。
+
+. [Select Volumes]ページで、保護するボリュームを選択します。
++
+** 必要に応じて、行をフィルタして、特定のボリュームタイプや形式などのボリュームのみを表示し、選択を容易にします。
+** 最初のボリュームを選択したら、[All FlexVol Volumes]を選択できます。(FlexGroupボリュームは一度に 1 つだけ選択できます。)既存のFlexVolボリュームをすべてバックアップするには、最初に1つのボリュームをオンにしてから、タイトル行のボックスをオンにします。
+** 個々のボリュームをバックアップするには、各ボリュームのボックスをオンにします。
+
+
+. 「 * 次へ * 」を選択します。
+
+
+
+
+=== バックアップ戦略を定義します
+
+バックアップ戦略を定義するには、次のオプションを設定します。
+
+* ローカルスナップショット、レプリケーション、オブジェクトストレージへのバックアップなど、バックアップオプションのいずれかまたはすべてが必要な場合
+* アーキテクチャ
+* ローカルスナップショットポリシー
+* レプリケーションのターゲットとポリシー
++
+
+NOTE: 選択したボリュームのスナップショットおよびレプリケーション ポリシーがこの手順で選択したポリシーと異なる場合、既存のポリシーは上書きされます。
+
+* オブジェクトストレージ情報（プロバイダ、暗号化、ネットワーク、バックアップポリシー、エクスポートオプション）へのバックアップ。
+
+
+.手順
+. [Define backup strategy]ページで、次のいずれかまたはすべてを選択します。デフォルトでは、3つすべてが選択されています。
++
+** *ローカル スナップショット*: オブジェクト ストレージへのレプリケーションまたはバックアップを実行する場合は、ローカル スナップショットを作成する必要があります。
+** *レプリケーション*：別のONTAPストレージシステムにレプリケートされたボリュームを作成します。
+** *バックアップ*：ボリュームをオブジェクトストレージにバックアップします。
+
+
+. *アーキテクチャ*:レプリケーションとバックアップを選択した場合は'次のいずれかの情報フローを選択します
++
+** *カスケード*：情報は、プライマリストレージシステムからセカンダリストレージ、およびセカンダリストレージからオブジェクトストレージに流れます。
+** *ファンアウト*：プライマリストレージシステムからセカンダリ_および_に、プライマリストレージからオブジェクトストレージに情報が流れます。
++
+これらのアーキテクチャの詳細については、 link:prev-ontap-protect-journey.html["保護対策を計画しましょう"] 。
+
+
+
+. *ローカル スナップショット*: 既存のスナップショット ポリシーを選択するか、新しいスナップショット ポリシーを作成します。
++
+
+TIP: スナップショットをアクティブ化する前にカスタムポリシーを作成するには、 link:br-use-policies-create.html["ポリシーを作成する"] 。
+
++
+ポリシーを作成するには、*[新しいポリシーの作成]*を選択し、次の手順を実行します。
+
++
+** ポリシーの名前を入力します。
+** 通常は異なる頻度のスケジュールを最大 5 つ選択します。
+** 「 * Create * 」を選択します。
+
+
+. *レプリケーション*：次のオプションを設定します。
++
+** *レプリケーションターゲット*：デスティネーションの作業環境とSVMを選択します。必要に応じて、レプリケートするボリュームの名前に追加するデスティネーションアグリゲートとプレフィックスまたはサフィックスを選択します。
+** *レプリケーションポリシー*：既存のレプリケーションポリシーを選択するか作成します。
++
+
+TIP: レプリケーションをアクティブ化する前にカスタムポリシーを作成するには、 link:br-use-policies-create.html["ポリシーを作成する"] 。
+
++
+ポリシーを作成するには、*[新しいポリシーの作成]*を選択し、次の手順を実行します。
+
++
+*** ポリシーの名前を入力します。
+*** 通常は異なる頻度のスケジュールを最大 5 つ選択します。
+*** 「 * Create * 」を選択します。
+
+
+
+
+. *オブジェクトにバックアップ*：*バックアップ*を選択した場合は、次のオプションを設定します。
++
+** *プロバイダ*：[Microsoft Azure]*を選択します。
+** *プロバイダ設定*：プロバイダの詳細を入力します。
++
+バックアップを保存するリージョンを入力します。これは、 Cloud Volumes ONTAP システムが配置されているリージョンとは異なるリージョンにすることもできます。
+
++
+新しいストレージアカウントを作成するか、既存のストレージアカウントを選択します。
+
++
+バックアップの格納に使用するAzureサブスクリプションを入力します。これは、 Cloud Volumes ONTAP システムとは異なるサブスクリプションにすることもできます。
+
++
+Blobコンテナを管理する独自のリソースグループを作成するか、リソースグループのタイプとグループを選択します。
+
++
+
+TIP: バックアップファイルが変更または削除されないように保護する場合は、ストレージアカウントが変更不可のストレージで作成され、30日間の保持期間を使用していることを確認してください。
+
++
+
+TIP: コストをさらに最適化するために古いバックアップファイルをAzure Archive Storageに階層化する場合は、ストレージアカウントに適切なライフサイクルルールが設定されていることを確認してください。
+
+** *暗号化キー*：新しいAzureストレージアカウントを作成した場合は、プロバイダから提供された暗号化キー情報を入力します。データの暗号化を管理するために、デフォルトのAzure暗号化キーを使用するか、Azureアカウントからお客様が管理する独自のキーを選択するかを選択します。
++
+独自の顧客管理キーを使用する場合は、キー コンテナーとキー情報を入力します。  https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["独自のキーの使用方法について説明します"^] 。
+
+
+
++
+
+NOTE: 既存のMicrosoftストレージアカウントを選択した場合、暗号化情報はすでに使用可能なため、ここで入力する必要はありません。
+
++
+** *ネットワーク*：IPspace、およびプライベートエンドポイントを使用するかどうかを選択します。プライベートエンドポイントはデフォルトで無効になっています。
++
+... バックアップするボリュームが配置されている ONTAP クラスタ内の IPspace 。この IPspace のクラスタ間 LIF には、アウトバウンドのインターネットアクセスが必要です。
+... 必要に応じて、以前に構成した Azure プライベート エンドポイントを使用するかどうかを選択します。  https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Azureプライベートエンドポイントの使用について説明します"^] 。
+
+
+** *バックアップポリシー*：既存のオブジェクトへのバックアップストレージポリシーを選択します。
++
+
+TIP: バックアップをアクティブ化する前にカスタムポリシーを作成するには、 link:br-use-policies-create.html["ポリシーを作成する"] 。
+
++
+ポリシーを作成するには、*[新しいポリシーの作成]*を選択し、次の手順を実行します。
+
++
+*** ポリシーの名前を入力します。
+*** オブジェクトへのバックアップポリシーの場合は、DataLockとRansomware Protectionを設定します。DataLockとランサムウェア保護の詳細については、以下を参照してください。 link:prev-ontap-policy-object-options.html["オブジェクトへのバックアップポリシーの設定"] 。
+*** 通常は異なる頻度のスケジュールを最大 5 つ選択します。
+*** 「 * Create * 」を選択します。
+
+
+** *既存のスナップショット コピーをバックアップ コピーとしてオブジェクト ストレージにエクスポートします*: この作業環境のボリュームに、この作業環境用に選択したバックアップ スケジュール ラベル (たとえば、毎日、毎週など) と一致するローカル スナップショット コピーがある場合は、この追加プロンプトが表示されます。ボリュームを最大限に保護するために、履歴Snapshotをすべてオブジェクトストレージにバックアップファイルとしてコピーする場合は、このチェックボックスをオンにします。
+
+
+. 「 * 次へ * 」を選択します。
+
+
+
+
+=== 選択内容を確認します
+
+これにより、選択内容を確認し、必要に応じて調整を行うことができます。
+
+.手順
+. [Review]ページで、選択内容を確認します。
+. 必要に応じて、Snapshotポリシーのラベルをレプリケーションポリシーおよびバックアップポリシーのラベルと自動的に同期する*チェックボックスをオンにします。これにより、レプリケーションポリシーとバックアップポリシーのラベルに一致するラベルを持つSnapshotが作成されます。
+. [バックアップのアクティブ化]*を選択します。
+
+
+.結果
+BlueXPのバックアップとリカバリで、ボリュームの初期バックアップが作成されます。レプリケートされたボリュームとバックアップファイルのベースライン転送には、プライマリストレージシステムのデータのフルコピーが含まれます。以降の転送には、Snapshotコピーに含まれるプライマリストレージデータの差分コピーが含まれます。
+
+レプリケートされたボリュームが、プライマリボリュームと同期されるデスティネーションクラスタに作成されます。
+
+入力したリソースグループにBLOBストレージコンテナが作成され、バックアップファイルがそこに格納されます。
+
+BlueXPのバックアップとリカバリでは、コストを最適化するために、デフォルトでLocal Redundancy（LRS）を使用してBlobコンテナがプロビジョニングされます。異なるゾーン間でデータを確実に複製する場合は、この設定をZone redundancy（ZRS）に変更できます。Microsoftの手順を参照してください https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["ストレージアカウントの複製方法の変更"^]。
+
+ボリュームバックアップダッシュボードが表示され、バックアップの状態を監視できます。
+
+バックアップと復元ジョブのステータスを監視することもできます。 link:br-use-monitor-tasks.html["ジョブ監視ページ"] 。
+
+
+
+=== APIコマンドを表示します
+
+バックアップとリカバリのアクティブ化ウィザードで使用するAPIコマンドを表示し、必要に応じてコピーすることができます。これは、将来の作業環境でバックアップを自動的にアクティブ化する場合に必要になることがあります。
+
+.手順
+. バックアップとリカバリのアクティブ化ウィザードで、*[API要求の表示]*を選択します。
+. コマンドをクリップボードにコピーするには、*コピー*アイコンを選択します。
+
+
+
+
+== 次の手順
+
+* できますlink:prev-ontap-backup-manage.html["バックアップファイルとバックアップポリシーを管理"]。バックアップの開始と停止、バックアップの削除、バックアップスケジュールの追加と変更などが含まれます。
+* できますlink:prev-ontap-policy-object-advanced-settings.html["クラスタレベルのバックアップの設定を管理します"]。これには、クラウドストレージへのアクセスにONTAP で使用するストレージキーの変更、オブジェクトストレージへのバックアップのアップロードに使用できるネットワーク帯域幅の変更、将来のボリュームに対する自動バックアップ設定の変更などが含まれます。
+* また、 link:prev-ontap-restore.html["ボリューム、フォルダ、または個々のファイルをバックアップファイルからリストアする"] AWS のCloud Volumes ONTAPシステム、またはオンプレミスのONTAPシステムに接続します。
+

@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: br-limitations.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: BlueXP backup and recoveryサービスをご利用いただくには、まずデータの検出が必要です。検出の過程で、 BlueXP backup and recoveryは組織内の作業環境にあるすべてのボリュームとファイルを分析します。 
+---
+= Microsoft SQL Server ワークロードのBlueXP backup and recoveryに関する既知の制限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の制限事項では、このリリースの製品でサポートされていない、または正しく相互運用されないプラットフォーム、デバイス、または機能が特定されます。これらの制限事項をよく確認してください。
+
+
+
+== 標準展開モードのみ
+
+BlueXP backup and recoveryバージョンは、制限モードやプライベート モードではなく、標準展開モードでのみ動作します。
+
+
+
+== Windows クラスタ名の制限
+
+Windows クラスター名にアンダースコア (_) 文字を含めることはできません。
+
+
+
+== SnapCenterの移行に関する問題
+
+SnapCenterからBlueXP backup and recoveryへのリソースの移行には、次の制限があります。
+
+SnapCenterポリシーをBlueXP backup and recoveryポリシーに移行する方法の詳細については、以下を参照してください。 link:reference-policy-differences-snapcenter.html["SnapCenterのポリシーとBlueXP backup and recoveryのポリシーの比較"] 。
+
+
+
+=== リソースグループの制限
+
+リソース グループ内のすべてのリソースが保護されており、そのうちの 1 つのリソースがリソース グループ外でも保護されている場合、 SnapCenterからの移行はブロックされます。
+
+*回避策*: リソースをリソース グループ内またはそれ自体で保護し、両方で保護しないでください。
+
+
+
+=== 同じスケジュール層を使用する複数のポリシーを持つリソースはサポートされていません
+
+同じスケジュール階層（例：時間単位、日単位、週単位など）を使用する複数のポリシーをリソースに割り当てることはできません。BlueXPBlueXP backup and recoveryでは、 SnapCenterからこれらのリソースをインポートしません。
+
+*回避策*: 同じスケジュール層を使用するポリシーを 1 つだけリソースにアタッチします。
+
+
+
+=== 時間単位のポリシーは時間の開始時に開始する必要があります
+
+SnapCenterポリシーが毎時間繰り返す設定になっているものの、毎時開始時に間隔が空いていない場合、 BlueXP backup and recoveryはリソースをインポートしません。例えば、1:30、2:30、3:30などのスケジュールが設定されたポリシーはサポートされませんが、1:00、2:00、3:00などのスケジュールが設定されたポリシーはサポートされます。
+
+*回避策*: 毎時 0 分から 1 時間間隔で繰り返すポリシーを使用します。
+
+
+
+=== 1 つのリソースに日次ポリシーと月次ポリシーの両方を適用することはサポートされていません
+
+SnapCenterポリシーが日間隔と月間隔の両方で繰り返される場合、 BlueXP backup and recoveryではポリシーがインポートされません。
+
+たとえば、日次ポリシー (7 日以下または 7 日以上) をリソースにアタッチし、同じリソースに月次ポリシーもアタッチすることはできません。
+
+*回避策*: 毎日または毎月の間隔を使用するポリシーを使用しますが、両方を使用するポリシーは使用しません。
+
+
+
+=== オンデマンド バックアップ ポリシーは移行されません
+
+BlueXP backup and recoveryでは、 SnapCenterからオンデマンド バックアップ ポリシーがインポートされません。
+
+
+
+=== ログのみのバックアップ ポリシーは移行されません
+
+BlueXP backup and recoveryは、 SnapCenterからログのみのバックアップポリシーをインポートしません。SnapCenterSnapCenterにログのみのバックアップが含まれている場合、 BlueXP backup and recoveryはリソースをインポートしません。
+
+*回避策*: ログのみのバックアップ以外のバックアップを使用するSnapCenterのポリシーを使用します。
+
+
+
+=== ホストマッピング
+
+SnapCenterには、リソースをホストにマッピングするストレージクラスタまたはSVMの機能がありませんが、 BlueXP backup and recoveryにはこの機能があります。オンプレミスのONTAPクラスタまたはSVMは、BlueXP backup and recoveryのプレビュー版ではホストにマッピングされません。また、 BlueXPはSVMをサポートしていません。
+
+*回避策*： SnapCenterからリソースをインポートする前に、オンプレミスのSnapCenterに登録されているすべてのオンプレミスONTAPストレージシステムについて、BlueXP backup and recoveryで作業環境を作成します。その後、そのクラスタのリソースをSnapCenterからBlueXP backup and recoveryにインポートします。
+
+
+
+=== 15分間隔ではないスケジュール
+
+特定の時間に開始して数分ごとに繰り返すSnapCenterポリシー スケジュールがあり、その分数が 15 分間隔ではない場合、 BlueXP backup and recoveryではスケジュールがインポートされません。
+
+*回避策*: SnapCenterを使用して、ポリシーが 15 分間隔で繰り返されるように調整します。
+
+
+
+=== ログバックアップの保持
+
+SnapCenterでは、リソースにアタッチされた複数のポリシーにわたって複数の保持値を設定できます。ただし、 BlueXP backup and recoveryのプレビュー版では、リソースにアタッチされたすべてのポリシーに対して単一の保持値しかサポートされません。

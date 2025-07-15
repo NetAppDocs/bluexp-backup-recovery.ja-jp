@@ -1,0 +1,145 @@
+---
+sidebar: sidebar 
+permalink: concept-start-prereq.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
+summary: BlueXP backup and recoveryを開始するには、運用環境、 BlueXPコネクタ、 BlueXPアカウントの準備状況を確認してください。BlueXPのBlueXP backup and recoveryを使用するには、以下の前提条件を満たす必要があります。 
+---
+= BlueXP backup and recoveryの前提条件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを開始するには、運用環境、 BlueXPコネクタ、 BlueXPアカウントの準備状況を確認してください。BlueXPのBlueXP backup and recoveryを使用するには、以下の前提条件を満たす必要があります。
+
+
+
+== ONTAP 9.8以降
+
+オンプレミスのONTAPインスタンスでONTAP One ライセンスを有効にする必要があります。
+
+
+
+== オブジェクトストレージへのバックアップ
+
+オブジェクト ストレージをバックアップ ターゲットとして使用するには、AWS S3、Microsoft Azure Blob、 StorageGRID、またはONTAPのアカウントと、適切なアクセス権限が設定されている必要があります。
+
+* link:prev-ontap-protect-overview.html["ONTAP ボリュームのデータを保護"]
+* link:br-use-mssql-protect-overview.html["Microsoft SQL Server データベースを保護する"]
+* link:prev-vmware-protect-overview.html["仮想マシンのワークロードを保護する"]
+
+
+
+
+== BlueXP  の場合
+
+* BlueXPユーザーは、Microsoft SQL Serverワークロードに対する操作を実行するために必要なロールと権限を持っている必要があります。検出するには、 BlueXP backup and recoveryのスーパー管理者ロールが必要です。link:reference-roles.html["BlueXP backup and recovery機能へのロールベースのアクセス"] BlueXP backup and recoveryで操作を実行するために必要な役割と権限の詳細については、 を参照してください。
+* オンプレミスのONTAPクラスターまたはCloud Volumes ONTAPに接続するアクティブなBlueXPコネクタを少なくとも1つ備えたBlueXP組織。以下の*初期プレビュー設定プロセス*を参照してください。
+* NetAppオンプレミスONTAPまたはCloud Volumes ONTAPクラスターを備えた少なくとも 1 つのBlueXP作業環境。
+* BlueXPコネクタ
++
+およびを参照してください https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["BlueXP  Connectorの設定方法"] https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["BlueXPの標準の要件"^]。
+
++
+** プレビュー バージョンでは、コネクタに Ubuntu 22.04 LTS オペレーティング システムが必要です。
+
+
+
+
+
+
+=== BlueXPをセットアップします
+
+次のステップは、 BlueXPとBlueXP backup and recoveryサービスを設定することです。
+
+確認 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["BlueXPの標準の要件"^]：
+
+
+
+=== BlueXPコネクタの作成
+
+このサービスを試すには、 NetApp製品チームにお問い合わせください。BlueXP Connectorを使用すると、サービスに適した機能が含まれます。
+
+サービスを使用する前にBlueXP  でコネクタを作成するには、説明されているBlueXP  のマニュアルを参照して https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["BlueXPコネクタの作成方法"^]ください。
+
+.BlueXPコネクタをインストールする場所
+復元操作を完了するには、コネクタを次の場所にインストールできます。
+
+ifdef::aws[]
+
+* Amazon S3 の場合、コネクタはオンプレミスで展開できます。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure Blob の場合、コネクタはオンプレミスでデプロイできます。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+* StorageGRIDの場合、コネクタはインターネット アクセスの有無にかかわらず、お客様の敷地内に展開する必要があります。
+* ONTAP S3の場合、コネクタは社内環境（インターネットアクセスの有無にかかわらず）またはクラウドプロバイダ環境に導入できます。
+
+
+
+NOTE: 「オンプレミスのONTAPシステム」への参照には、 FASとAFFシステムが含まれます。
+
+
+
+== Microsoft SQL Server ホスト要件
+
+SQL Server ワークロードにBlueXP backup and recoveryを使用するには、次のホスト システム、スペース、およびサイズの前提条件が必要です。
+
+[cols="33,66a"]
+|===
+| 項目 | 要件 
+
+
+| オペレーティングシステム  a| 
+Microsoft Windows サポートされているバージョンの最新情報については、  https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperability Matrix Tool"^] 。
+
+
+
+| Microsoft SQL Server のバージョン  a| 
+バージョン 2012 以降は、VMware 仮想マシン ファイル システム (VMFS) および VMware 仮想マシン ディスク (VMDK) NFS でサポートされています。
+
+
+
+| SnapCenter Serverのバージョン  a| 
+SnapCenterからBlueXP backup and recoveryに既存のデータをインポートする場合は、 SnapCenter Server バージョン 5.0 以上が必要です。
+
+
+NOTE: SnapCenterがすでにある場合は、まずSnapCenterからインポートする前に前提条件を満たしていることを確認してください。を参照して link:concept-start-prereq-snapcenter-import.html["SnapCenterからリソースをインポートするための前提条件"]
+
+
+
+| SQL Server ホスト上のプラグインの最小 RAM  a| 
+1 GB
+
+
+
+| SQL Server ホスト上のプラグインの最小インストールおよびログ領域  a| 
+5 GB
+
+十分なディスク容量を割り当て、ログフォルダによるストレージ消費量を監視してください。必要なログ容量は、実行されるバックアップの数とデータ保護操作の頻度によって異なります。十分な容量がない場合、操作のログは作成されません。
+
+
+
+| 必要なソフトウェアパッケージ  a| 
+* ASP.NET Core ランタイム 8.0.12 ホスティング バンドル (およびそれ以降のすべての 8.0.x パッチ)
+* PowerShell Core 7.4.2
+
+
+サポートされているバージョンの最新情報については、を参照して https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperability Matrix Tool"^]ください。
+
+|===

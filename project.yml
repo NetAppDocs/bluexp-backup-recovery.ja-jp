@@ -30,139 +30,128 @@ sidebar:
     entries:
     - title: 新機能
       url: "/whats-new.html"
-    - title: 既知の制限
-      url: "/reference-limitations.html"
+    - title: Microsoft SQL Server ワークロードの既知の制限
+      url: "/br-limitations.html"
+    - title: ONTAPボリュームワークロードの既知の制限
+      url: "/br-reference-limitations.html"
   - title: はじめに
     entries:
     - title: BlueXPのバックアップとリカバリについて説明します
       url: "/concept-backup-to-cloud.html"
-    - title: ライセンスをセットアップする
-      url: "/task-licensing-cloud-backup.html"
-    - title: プレビュー機能を有効にする
-      url: "/task-preview-enable.html"
-    - title: データ保護を監視
+    - title: BlueXP backup and recoveryの前提条件
+      url: "/concept-start-prereq.html"
+    - title: BlueXPのバックアップとリカバリのライセンスをセットアップ
+      url: "/br-start-licensing.html"
+    - title: BlueXP backup and recoveryを使用する前にバックアップ先を設定します
+      url: "/br-start-setup.html"
+    - title: BlueXP backup and recoveryにログイン
+      url: "/br-start-login.html"
+    - title: バックアップターゲットの検出
+      url: "/br-start-discover-backup-targets.html"
+    - title: さまざまなBlueXP backup and recoveryワークロードに切り替える
+      url: "/br-start-switch-ui.html"
+    - title: BlueXP backup and recoveryの一般設定を構成する
+      url: "/br-start-configure.html"
+  - title: BlueXP backup and recoveryを使用する
+    entries:
+    - title: ダッシュボードで保護の状態を確認する
+      url: "/br-use-dashboard.html"
+    - title: バックアップとリストアを管理するポリシーを作成する
+      url: "/br-use-policies-create.html"
+    - title: ONTAPボリュームのワークロードを保護する
       entries:
-      - title: データ保護の適用範囲に関するレポートを作成します
-        url: "/task-report-inventory.html"
-      - title: バックアップジョブとリストアジョブのステータスを監視します
-        url: "/task-monitor-backup-jobs.html"
-  - title: ONTAP データのバックアップとリストア
-    entries:
-    - title: ONTAP ボリュームのデータを保護
-      url: "/concept-ontap-backup-to-cloud.html"
-    - title: 保護対策を計画しましょう
-      url: "/concept-protection-journey.html"
-    - title: ONTAPボリュームのポリシーを管理します。
-      url: "/task-create-policies-ontap.html"
-    - title: オブジェクトへのバックアップポリシーのオプション
-      url: "/concept-cloud-backup-policies.html"
-    - title: "[Advanced Settings]でオブジェクトへのバックアップオプションを管理します。"
-      url: "/task-manage-backup-settings-ontap.html"
-    - title: Cloud Volumes ONTAP を Amazon S3 にバックアップします
-      flavor: aws
-      url: "/task-backup-to-s3.html"
-    - title: Cloud Volumes ONTAP を Azure Blob にバックアップ
-      flavor: azure
-      url: "/task-backup-to-azure.html"
-    - title: Cloud Volumes ONTAP を Google Cloud にバックアップ
-      flavor: gcp
-      url: "/task-backup-to-gcp.html"
-    - title: オンプレミスの ONTAP から Amazon S3 へのバックアップ
-      flavor: aws
-      url: "/task-backup-onprem-to-aws.html"
-    - title: オンプレミスの ONTAP を Azure Blob にバックアップ
-      flavor: azure
-      url: "/task-backup-onprem-to-azure.html"
-    - title: オンプレミスの ONTAP から Google Cloud へのバックアップ
-      flavor: gcp
-      url: "/task-backup-onprem-to-gcp.html"
-    - title: オンプレミスのONTAPをONTAP S3にバックアップ
-      url: "/task-backup-onprem-to-ontap-s3.html"
-    - title: オンプレミスの ONTAP を StorageGRID にバックアップ
-      url: "/task-backup-onprem-private-cloud.html"
-    - title: SnapMirrorを使用してボリュームをクラウドに再同期する
-      url: "/task-migrate-volumes-snapmirror-cloud-resync.html"
-    - title: ONTAP バックアップを管理します
-      url: "/task-manage-backups-ontap.html"
-    - title: ONTAP バックアップからリストアする
-      url: "/task-restore-backups-ontap.html"
-  - title: オンプレミスのアプリケーションデータのバックアップとリストア
-    entries:
-    - title: オンプレミスアプリケーションのデータを保護
-      url: "/concept-protect-app-data-to-cloud.html"
-    - title: SnapCenter サーバを登録します
-      url: "/task-register-snapcenter-server.html"
-    - title: アプリケーションをバックアップするポリシーを作成する
-      url: "/task-create-policies-apps.html"
-    - title: オンプレミスアプリケーションのデータをAmazon Web Servicesにバックアップ
-      flavor: aws
-      url: "/task-backup-app-data-to-aws.html"
-    - title: オンプレミスアプリケーションのデータをMicrosoft Azureにバックアップ
-      flavor: azure
-      url: "/task-backup-app-data-to-azure.html"
-    - title: オンプレミスアプリケーションのデータをGoogle Cloudにバックアップ
-      flavor: gcp
-      url: "/task-backup-app-data-to-gcp.html"
-    - title: オンプレミスのアプリケーションデータをStorageGRID にバックアップ
-      url: "/task-backup-app-data-to-storagegrid.html"
-    - title: アプリケーションの保護を管理します
-      url: "/task-manage-app-backups.html"
-    - title: オンプレミスアプリケーションのデータをリストア
+      - title: ONTAPボリュームワークロードの保護の概要
+        url: "/prev-ontap-protect-overview.html"
+      - title: ONTAPボリュームの保護を計画する
+        url: "/prev-ontap-protect-journey.html"
+      - title: ONTAPボリュームのポリシーを管理します。
+        url: "/prev-ontap-policy-manage.html"
+      - title: ONTAPボリュームのオブジェクトへのバックアップポリシーオプション
+        url: "/prev-ontap-policy-object-options.html"
+      - title: オブジェクトへのバックアップポリシーの詳細設定オプションを管理する
+        url: "/prev-ontap-policy-object-advanced-settings.html"
+      - title: Cloud Volumes ONTAP を Amazon S3 にバックアップします
+        url: "/prev-ontap-backup-cvo-aws.html"
+      - title: Cloud Volumes ONTAP を Azure Blob にバックアップ
+        url: "/prev-ontap-backup-cvo-azure.html"
+      - title: Cloud Volumes ONTAP を Google Cloud にバックアップ
+        url: "/prev-ontap-backup-cvo-gcp.html"
+      - title: オンプレミスの ONTAP から Amazon S3 へのバックアップ
+        url: "/prev-ontap-backup-onprem-aws.html"
+      - title: オンプレミスの ONTAP を Azure Blob にバックアップ
+        url: "/prev-ontap-backup-onprem-azure.html"
+      - title: オンプレミスの ONTAP から Google Cloud へのバックアップ
+        url: "/prev-ontap-backup-onprem-gcp.html"
+      - title: オンプレミスのONTAPをONTAP S3にバックアップ
+        url: "/prev-ontap-backup-onprem-ontaps3.html"
+      - title: オンプレミスの ONTAP を StorageGRID にバックアップ
+        url: "/prev-ontap-backup-onprem-storagegrid.html"
+      - title: SnapMirrorを使用したボリュームのクラウドへの再同期
+        url: "/prev-ontap-migrate-resync.html"
+      - title: ONTAP バックアップを管理します
+        url: "/prev-ontap-backup-manage.html"
+      - title: ONTAP バックアップからリストアする
+        url: "/prev-ontap-restore.html"
+    - title: Microsoft SQL Server ワークロードを保護する (プレビュー)
       entries:
-      - title: Oracle データベースをリストアします
-        url: "/task-restore-oracle-data.html"
-      - title: SQL Server データベースをリストアする
-        url: "/task-restore-sql-data.html"
-      - title: SAP HANAデータベースをリストア
-        url: "/task-restore-hana-backup.html"
-      - title: MongoDB、MySQL、PostgreSQLデータベースのリストア
-        url: "/task-restore-customplugin-backup.html"
-  - title: 仮想マシンのデータのバックアップとリストア
-    entries:
-    - title: 仮想マシンのデータを保護
-      url: "/concept-protect-vm-data.html"
-    - title: SnapCenter Plug-in for VMware vSphereホストを登録
-      url: "/task-register-snapCenter-plug-in-for-vmware-vsphere.html"
-    - title: データストアをバックアップするポリシーを作成します
-      url: "/task-create-policies-vms.html"
-    - title: データストアをAmazon Web Servicesにバックアップする
-      flavor: aws
-      url: "/task-backup-vm-data-to-aws.html"
-    - title: データストアをMicrosoft Azureにバックアップする
-      flavor: azure
-      url: "/task-backup-vm-data-to-azure.html"
-    - title: データストアをGoogle Cloud Platformにバックアップする
-      flavor: gcp
-      url: "/task-backup-vm-data-to-gcp.html"
-    - title: データストアをStorageGRID にバックアップする
-      url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: データストアと仮想マシンのデータの保護を管理します
-      url: "/task-manage-vm-data-in-cloud.html"
-    - title: 仮想マシンのデータをリストアします
-      url: "/task-restore-vm-data.html"
-  - title: REST API で自動化
-    url: "/api-backup-restore.html"
-  - title: 参照
-    entries:
-    - title: サポート対象の AWS アーカイブストレージ階層
-      url: "/reference-aws-backup-tiers.html"
-    - title: サポートされている Azure アーカイブアクセス層
-      url: "/reference-azure-backup-tiers.html"
-    - title: サポートされているGoogleアーカイブストレージ階層
-      url: "/reference-google-backup-tiers.html"
-    - title: Azure でマルチアカウントアクセスのバックアップを設定する
-      flavor: azure
-      url: "/reference-backup-multi-account-azure.html"
-    - title: ダークサイトでBlueXPのバックアップ/リカバリデータベースをリストア
-      url: "/reference-backup-cbs-db-in-dark-site.html"
+      - title: Microsoft SQL Server ワークロードの保護の概要
+        url: "/br-use-mssql-protect-overview.html"
+      - title: SnapCenterからインポートする場合の追加項目を構成する
+        url: "/concept-start-prereq-snapcenter-import.html"
+      - title: Microsoft SQL Server ワークロードの検出
+        url: "/br-start-discover.html"
+      - title: Microsoft SQL Server ワークロードのバックアップ
+        url: "/br-use-mssql-backup.html"
+      - title: Microsoft SQL Server ワークロードを復元する
+        url: "/br-use-mssql-restore.html"
+      - title: Microsoft SQL Server ワークロードのクローン作成
+        url: "/br-use-mssql-clone.html"
+      - title: Microsoft SQL Server のインベントリを管理する
+        url: "/br-use-manage-inventory.html"
+      - title: Microsoft SQL Server スナップショットを管理する
+        url: "/br-use-manage-snapshots.html"
+      - title: Microsoft SQL Server レポートを作成する
+        url: "/br-use-reports.html"
+    - title: 仮想マシンのワークロードを保護する
+      entries:
+      - title: 仮想マシンのワークロードの保護の概要
+        url: "/prev-vmware-protect-overview.html"
+      - title: 仮想マシンのワークロードを保護するための前提条件
+        url: "/prev-vmware-prereqs.html"
+      - title: SnapCenter Plug-in for VMware vSphereホストを登録
+        url: "/prev-vmware-register-snapcenter.html"
+      - title: VMwareデータストアをバックアップするためのポリシーを作成する
+        url: "/prev-vmware-policy-create.html"
+      - title: データストアをAmazon Web Servicesにバックアップする
+        url: "/prev-vmware-backup-aws.html"
+      - title: データストアをMicrosoft Azureにバックアップする
+        url: "/prev-vmware-backup-azure.html"
+      - title: データストアをGoogle Cloud Platformにバックアップする
+        url: "/prev-vmware-backup-gcp.html"
+      - title: データストアをStorageGRID にバックアップする
+        url: "/prev-vmware-backup-storagegrid.html"
+      - title: データストアと仮想マシンのデータの保護を管理します
+        url: "/prev-vmware-manage.html"
+      - title: VMwareデータストアを復元する
+        url: "/prev-vmware-restore.html"
+    - title: ジョブの監視
+      url: "/br-use-monitor-tasks.html"
     - title: BlueXPのバックアップとリカバリを再開します
       url: "/reference-restart-backup.html"
-  - title: 知識とサポート
+  - title: REST API で自動化
+    url: "/br-api-backup-restore.html"
+  - title: 参照
     entries:
-    - title: サポートに登録します
-      url: "/task-support-registration.html"
-    - title: ヘルプを表示します
-      url: "/task-get-help.html"
+    - title: SnapCenterのポリシーとBlueXP backup and recoveryの比較
+      url: "/reference-policy-differences-snapcenter.html"
+    - title: BlueXP backup and recoveryの役割と権限
+      url: "/reference-roles.html"
+    - title: サポート対象の AWS アーカイブストレージ階層
+      url: "/prev-reference-aws-archive-storage-tiers.html"
+    - title: サポートされている Azure アーカイブ ストレージ層
+      url: "/prev-reference-azure-archive-storage-tiers.html"
+    - title: サポートされている Google Cloud アーカイブ ストレージ層
+      url: "/prev-reference-gcp-archive-storage-tiers.html"
   - title: 法的通知
     url: "/legal-notices.html"
 product-family:

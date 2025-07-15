@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-snapshots.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Microsoft SQL ServerアプリケーションのデータをオンプレミスのONTAPシステムからAmazon Web Services、Microsoft Azure、Google Cloud Platform、 StorageGRIDにバックアップすることで、データを確実に保護できます。3-2-1バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。戦略を実装することで、ソースデータの3つのコピーを2つの異なるストレージシステムに、1つのコピーをクラウドに保存できます。 
+---
+= BlueXP backup and recoveryを使用して Microsoft SQL Server スナップショットを管理します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryから Microsoft SQL Server スナップショットを削除することで、スナップショットを管理できます。
+
+
+
+== Snapshot を削除します
+
+削除できるのはローカル スナップショットのみです。
+
+*必要なBlueXPロール* 組織管理者、フォルダーまたはプロジェクト管理者、バックアップおよびリカバリのスーパー管理者、バックアップおよびリカバリのバックアップ管理者ロール。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+.手順
+. BlueXP backup and recoveryで、*インベントリ*を選択します。
+. ワークロードを選択し、[表示] を選択します。
+. *データベース*タブを選択します。
+. スナップショットを削除するデータベースを選択します。
+. [アクション] メニューから、[保護の詳細を表示] を選択します。
++
+image:screen-br-inventory-sql-protection-details.png["保護の詳細を表示"]
+
+. 削除するローカル スナップショットを選択します。
++
+
+TIP: その行の *場所* 列のローカル スナップショット アイコンは青色で表示される必要があります。
+
+. *アクション*を選択しますimage:icon-action.png["アクションアイコン"]アイコンをクリックし、*ローカル スナップショットの削除*を選択します。
+. 確認ダイアログボックスで、[削除] を選択します。
+

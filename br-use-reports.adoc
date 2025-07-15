@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: br-use-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: BlueXP backup and recoveryでは、バックアップ数、成功したバックアップ数、失敗したバックアップ数など、バックアップのステータスを表示するレポートを作成できます。また、バックアップの種類、バックアップに使用されたストレージシステム、バックアップ時刻など、各バックアップの詳細も表示できます。 
+---
+= BlueXP backup and recoveryで Microsoft SQL Server ワークロードのレポートを作成する
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryでは、Microsoft SQL Server ワークロードのレポートを作成して、バックアップの数、成功したバックアップの数、失敗したバックアップの数など、バックアップのステータスを確認できます。また、バックアップの種類、バックアップに使用されたストレージシステム、バックアップの時刻など、各バックアップの詳細も表示できます。
+
+
+
+== レポートを作成します
+
+*必須のBlueXPロール* 組織管理者、フォルダまたはプロジェクト管理者、バックアップとリカバリのスーパー管理者、バックアップとリカバリのバックアップ管理者、バックアップとリカバリの復元管理者、バックアップとリカバリのクローン管理者。 link:reference-roles.html["バックアップとリカバリの役割と権限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+. BlueXP backup and recoveryメニューから、[レポート] タブを選択します。
+. [レポートの作成]*を選択します。
++
+image:../media/screen-br-reports.png["新しいレポートのスクリーンショットを作成する"]
+
+. レポート範囲の詳細を入力します:
++
+** *レポート名*: レポートの一意の名前を入力します。
+** *レポート タイプ*: アカウント別またはワークロード (Microsoft SQL Server) 別にレポートを作成するかどうかを選択します。
+** *ホストを選択*: ワークロードで選択した場合は、レポートを生成するホストを選択します。
+** *内容を選択*: レポートにすべてのバックアップの概要を含めるか、各バックアップの詳細を含めるかを選択します。(「アカウント別」を選択した場合)
+
+
+. レポート範囲を入力: レポートに過去 1 日、過去 7 日間、過去 30 日間、前四半期、または過去 1 年間のデータを含めるかどうかを選択します。
+. レポートの配信詳細を入力してください。レポートをメールで配信する場合は、「*メールでレポートを送信*」にチェックを入れてください。レポートの送信先メールアドレスを入力してください。
++
+設定ページでメール通知を設定します。メール通知の設定の詳細については、 link:br-use-settings-advanced.html["セツテイノセツテイ"] 。
+
+

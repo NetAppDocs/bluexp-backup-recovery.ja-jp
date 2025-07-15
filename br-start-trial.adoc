@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: br-start-trial.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: BlueXP backup and recoveryの無料トライアルを開始または終了します。無料トライアルは、クラウドプロバイダーのマーケットプレイスでNetApp Intelligent Services の従量課金制サブスクリプションにサインアップしてから 30 日間ご利用いただけます。 
+---
+= BlueXP backup and recoveryの無料トライアルを開始
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+クラウドプロバイダのマーケットプレイスで* NetAppインテリジェントサービス*の従量課金制サブスクリプションにサインアップすると、30日間のBlueXP  バックアップ/リカバリの無償トライアルを利用できます。無料トライアルは、マーケットプレイスのリストに登録した時点から開始されます。Cloud Volumes ONTAPシステムの導入時にマーケットプレイスのサブスクリプション料金を支払ってから、10日後にBlueXPバックアップ/リカバリの無償トライアルを開始すると、残り20日間の無償トライアルを利用できます。
+
+無料トライアルが終了すると、中断することなく自動的にPAYGOサブスクリプションに切り替えられます。BlueXP backup and recoveryの使用を継続しない場合は、無料トライアルを終了してください。
+
+BlueXPにログインすると、 BlueXP backup and recoveryの無料トライアルを開始できます。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
+. このサービスに初めてログインする場合、すでにBlueXPの作業環境があり、無料トライアルをまだ開始していない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*無料トライアルを開始する*オプションが表示されます。
++
+image:screen-br-landing-unified-start-trial.png["BlueXP blueXP のランディングページのスクリーンショット（無料トライアルなしのバックアップとリカバリ）"]
+
+
+
+
+
+== 次の手順
+
+無料トライアルを開始すると、ワークロードを検出し、ワークロードをバックアップするためのポリシーを作成できます。
+
+このサービスに初めてログインし、すでにBlueXPに作業環境があり、無料トライアルを開始したがリソースが見つからない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*リソースの検出*オプションが表示されます。
+
+ワークロードの検出の詳細については、以下を参照してください。 link:br-start-discover.html["ワークロードを検出"] 。
+
+image:screen-br-landing-unified.png["BlueXP blueXP バックアップとリカバリのランディングページのスクリーンショット"]
+
+
+
+== 無償トライアルを終了する
+
+無料トライアルはいつでも終了できます。無料トライアルを終了した場合、サービス料金は発生しません。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
++
+image:screen-br-landing-unified.png["BlueXP blueXP バックアップとリカバリのランディングページのスクリーンショット"]
+
+. 「新しいBlueXP backup and recoveryへようこそ」ランディング ページから、*詳細の表示 - 無料トライアル* を選択するか、ページの右上隅から *無料トライアル* を選択します。
++
+image:screen-br-landing-unified-end-trial.png["BlueXP blueXP バックアップ＆リカバリ無料トライアルのランディングページのスクリーンショット"]
+
+. *無料トライアルを終了*を選択します。
+. 無料トライアルの終了の確認ダイアログボックスで、「*トライアルの終了*」と入力します。
+. [終了]*を選択します。
+

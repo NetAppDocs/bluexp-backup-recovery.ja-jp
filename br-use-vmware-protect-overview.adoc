@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP backup and recoveryの概要による VMware ワークロードの保護
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryを使用して VMware ワークロードを保護します。BlueXPBlueXP backup and recoveryは、VM、データストア、VMDK に対して、高速でスペース効率が高く、クラッシュ整合性と VM 整合性を備えたバックアップおよびリストア操作を提供します。
+
+データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。
+
+[]
+====
+*注意* この機能は、BlueXP backup and recoveryUIの以前のバージョンを使用します。BlueXPのBlueXP backup and recoveryUIのバージョンを切り替えるには、以下を参照してください。 link:br-start-switch-ui.html["以前のBlueXP backup and recoveryUIに切り替える"] 。
+
+====
+以前のBlueXP backup and recoveryUI の使用方法については、次のトピックを参照してください。

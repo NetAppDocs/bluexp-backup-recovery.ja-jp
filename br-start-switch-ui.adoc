@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: br-start-switch-ui.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: BlueXP backup and recoveryワークロードを切り替えることができます。一部のワークロードでは異なるUIが使用されます。 
+---
+= さまざまなBlueXP backup and recoveryワークロードに切り替える
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryワークロードを切り替えることができます。一部のワークロードでは異なるUIが使用されます。
+
+*どの UI を使用しているかはどのようにしてわかりますか?*
+
+Microsoft SQL Server ワークロードのタスクバーは次のようになります。 image:screen-br-menu-unified.png["BlueXP backup and recoveryの新しい UI スクリーンショット"]
+
+ONTAPボリュームと VMware ワークロードのメニュー バーは次のようになります。 image:screen-br-menu-legacy.png["BlueXP backup and recoveryの以前の UI スクリーンショット"]
+
+
+
+== 別のワークロードに切り替える
+
+BlueXP backup and recoveryUI で別のワークロードに切り替えることができます。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
+. ページの右上隅から、[*ワークロードの切り替え*] ドロップダウン リストを選択します。
+. 切り替えるワークロードを選択します。 image:screen-br-menu-switch-ui.png["BlueXP backup and recoveryのスイッチワークロードのスクリーンショット"]
++
+ページが更新され、選択したワークロードが適切な UI に表示されます。
+
+

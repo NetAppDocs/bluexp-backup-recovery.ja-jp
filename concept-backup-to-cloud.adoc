@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。 
+summary: BlueXP backup and recoveryサービスは、オンプレミスとクラウドの両方で、 NetAppデータベースとインスタンスに対して効率的、安全、かつコスト効率に優れたデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。 
 ---
 = BlueXPのバックアップとリカバリについて説明します
 :hardbreaks:
@@ -14,60 +14,232 @@ summary: BlueXPのバックアップとリカバリサービスは、オンプ�
 
 
 [role="lead"]
-BlueXPのバックアップとリカバリサービスは、オンプレミスとクラウドの両方で、NetApp ONTAP のデータ、データベース、仮想マシンを効率的かつセキュアに、対費用効果の高い方法で保護します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。
-
-このサービスは、ブロックレベルの永久増分レプリケーションを実行し、すべてのストレージ効率を維持します。これにより、レプリケートされて格納されるデータの量が大幅に削減されます。さらに、保護されたデータに対してのみ料金が発生し、利用可能な最も低コストのストレージ階層が使用されるため、BlueXPのバックアップとリカバリの対費用効果が非常に高くなります。
-
-必要に応じて、バックアップから同じ作業環境または別の作業環境に全面的に _ ボリューム _ をリストアできます。ONTAPデータをバックアップする場合は、バックアップからフォルダまたは1つ以上の_files_を同じ作業環境または異なる作業環境にリストアすることもできます。
-
-https://bluexp.netapp.com/cloud-backup["BlueXPのバックアップとリカバリの詳細については、こちらをご覧ください"^]。
-
-バックアップとリカバリは、次の目的で使用できます。
-
-* Cloud Volumes ONTAP システムとオンプレミスのONTAP システムからONTAP ボリュームのデータをバックアップおよびリストアします。 link:concept-ontap-backup-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
-* アプリケーション向けのBlueXPバックアップ/リカバリを使用して、オンプレミスのONTAP システムからアプリケーションと整合性のあるSnapshotをバックアップします。 link:concept-protect-app-data-to-cloud.html["詳細な機能については、こちらをご覧ください"]。
-* VMware向けBlueXPバックアップ/リカバリを使用して、データストアをクラウドにバックアップし、仮想マシンをオンプレミスのvCenterにリストアします。 link:concept-protect-vm-data.html["詳細な機能については、こちらをご覧ください"]。
+BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、および VMware ワークロードに対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。
 
 
-https://www.youtube.com/watch?v=DF0knrH2a80["簡単なデモをご覧ください"^]
+NOTE: MICROSOFT SQL SERVER ワークロードの保護に関するドキュメントは、テクノロジ プレビューとして提供されます。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
 
 
-TIP: BlueXP Connectorがクラウドの行政機関やインターネットアクセスのないサイト（ダークサイト）に導入されている場合、BlueXPのバックアップとリカバリでサポートされるのはONTAP システムからのバックアップとリストアの処理のみです。このような導入方法を使用する場合、BlueXP  のバックアップおよびリカバリでは、アプリケーションまたは仮想マシンからのバックアップおよびリストア処理はサポートされません。
+
+== BlueXP backup and recoveryでできること
+
+BlueXP backup and recoveryを使用して、次の目標を達成します。
+
+* ONTAPボリュームのワークロード:
++
+** ローカル スナップショットを作成し、セカンダリ ストレージに複製し、オンプレミスのONTAPまたはCloud Volumes ONTAPONTAPからパブリック クラウド アカウントまたはプライベート クラウド アカウントのオブジェクト ストレージに ONTAP ボリュームをバックアップします。
+** 別のONTAPクラスターとクラウド内のオブジェクト ストレージに保存されるブロック レベルの永久増分バックアップを作成します。
+
+
+* Microsoft SQL Server ワークロード (プレビュー):
++
+** オンプレミスのONTAPまたはCloud Volumes ONTAPシステムから Microsoft SQL Server インスタンスとデータベースをバックアップします。
+** Microsoft SQL Server データベースを同じホストまたは別のホストに復元することで、データの回復に柔軟性がもたらされます。
+
+
+* VMware ワークロード:
++
+** データストアを Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、 StorageGRIDにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereに復元します。
+** BlueXP backup and recoveryを使用して、仮想マシンのデータをクラウドからオンプレミスの vCenter に復元します。仮想マシンは、バックアップが作成された場所とまったく同じ場所にリストアすることも、別の場所にリストアすることもできます。
+
+
+
+
+
+
+== BlueXP backup and recoveryを使用する利点
+
+BlueXP backup and recoveryには、次のような利点があります。
+
+* **効率的**： BlueXP backup and recoveryは、ブロックレベルの永久増分レプリケーションを実行するため、複製および保存されるデータの量が大幅に削減されます。これにより、ネットワークトラフィックとストレージコストを最小限に抑えることができます。
+* **安全**: BlueXP backup and recoveryでは、転送中および保存中のデータが暗号化され、安全な通信プロトコルを使用してデータが保護されます。
+* **コスト効率が高い**: BlueXP backup and recoveryでは、クラウド アカウントで利用可能な最も低コストのストレージ層が使用されるため、コストの削減に役立ちます。
+* **自動化**: BlueXP backup and recoveryでは、事前定義されたスケジュールに基づいて自動的にバックアップが生成され、データが確実に保護されます。
+* **柔軟性**: BlueXP backup and recoveryにより、同じ作業環境または別の作業環境にデータを復元できるため、データのリカバリに柔軟性がもたらされます。
+
+
+
+
+== コスト
+
+NetAppは試用版のご利用に対して料金を請求しません。ただし、ストレージやデータ転送コストなど、ご利用のクラウドリソースに関連するコストはお客様のご負担となります。
+
+ONTAPシステムでBlueXP backup and recoveryのオブジェクトへのバックアップ機能を使用する場合、次の 2 種類のコストが発生します。
+
+* リソース料金
+* サービス料金
+
+
+スナップショット コピーまたは複製ボリュームの作成には、スナップショット コピーと複製ボリュームを保存するために必要なディスク領域以外は料金はかかりません。
+
+* リソース料金 *
+
+リソース料金は、オブジェクトストレージの容量、クラウドへのバックアップファイルの書き込みと読み取りのために、クラウドプロバイダに支払われます。
+
+* オブジェクトストレージへのバックアップについては、クラウドプロバイダにオブジェクトストレージのコストを支払います。
++
+BlueXP backup and recoveryではソース ボリュームのストレージ効率が維持されるため、 ONTAP効率後のデータ (重複排除と圧縮が適用された後の少量のデータ) に対してクラウド プロバイダーのオブジェクト ストレージ コストを支払うことになります。
+
+* 検索とリストアを使用してデータをリストアする場合、クラウドプロバイダによって特定のリソースがプロビジョニングされ、検索要求でスキャンされるデータ量には1TiBあたりのコストが関連付けられます。（これらのリソースは参照と復元には必要ありません）。
++
+ifdef::aws[]
+
++
+** AWSでは、 https://aws.amazon.com/athena/faqs/["Amazon Athena"^] および https://aws.amazon.com/glue/faqs/["AWS 接着剤"^] リソースは新しいS3バケットに導入される。
++
+endif::aws[]
+
+
+
++
+ifdef::azure[]
+
++
+** Azureのでは https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapseワークスペース"^] および https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure Data Lake Storageの略"^] データの格納と分析を行うためにストレージアカウントにプロビジョニングします。
++
+endif::azure[]
+
+
+
+
+
+ifdef::gcp[]
+
+* Googleでは新しいバケットがデプロイされ、  https://cloud.google.com/bigquery["Google Cloud BigQueryサービス"^]アカウント/プロジェクトレベルでプロビジョニングされます。endif::gcp[]
++
+** アーカイブオブジェクトストレージに移動されたバックアップファイルからボリュームデータをリストアする場合は、クラウドプロバイダからGiB単位の読み出し料金と要求単位の料金を別途請求します。
+** ボリューム データの復元プロセス中にバックアップ ファイルをランサムウェアに対してスキャンする予定の場合 (クラウド バックアップに対して DataLock と Ransomware Protection を有効にしている場合)、クラウド プロバイダーから追加の送信コストも発生します。
+
+
+
+
+* サービス料金 *
+
+サービス料金はNetAppに支払われ、オブジェクトストレージへの_create_backupsと、それらのバックアップからのto_restore_volumes（ファイル）のコストの両方をカバーします。オブジェクト ストレージにバックアップされるONTAPボリュームのソース論理使用容量 ( ONTAP効率前) によって計算された、オブジェクト ストレージで保護するデータに対してのみ料金を支払います。この容量はフロントエンドテラバイト（ FETB ）とも呼ばれます。
+
+バックアップ サービスの支払い方法は 3 つあります。
+
+* 1 つ目は、クラウドプロバイダを利用して月額料金を支払う方法です。
+* 2つ目のオプションは、年間契約を取得することです。
+* 3 つ目のオプションは、ネットアップからライセンスを直接購入することです。読む<<ライセンス,ライセンス>>詳細についてはセクションをご覧ください。
+
+
+
+
+== ライセンス
+
+BlueXP backup and recoveryは無料トライアルとしてご利用いただけます。ライセンスキーなしでも、一定期間ご利用いただけます。
+
+BlueXPのバックアップとリカバリには、次の消費モデルがあります。
+
+* *お客様独自のライセンスの持ち込み (BYOL)*: NetAppから購入したライセンスは、どのクラウド プロバイダーでも使用できます。
+* *従量課金制 (PAYGO)*: クラウド プロバイダーのマーケットプレイスからの時間単位のサブスクリプション。
+* * Annual *：クラウドプロバイダの市場から年間契約。
+
+
+Backupライセンスは、オブジェクトストレージからのバックアップとリストアにのみ必要です。Snapshotコピーとレプリケートされたボリュームを作成するためのライセンスは必要ありません。
+
+*ライセンスはご持参ください*
+
+BYOL は期間ベース (1 年、2 年、または 3 年) であり、1 TiB 単位で容量ベースになります。ネットアップに料金を支払って、 1 年分のサービスを使用し、最大容量を指定した場合は「 10TiB 」とします。
+
+サービスを有効にするためにBlueXPのデジタルウォレットページに入力したシリアル番号が表示されます。いずれかの制限に達すると、ライセンスを更新する必要があります。バックアップBYOLライセンスは、BlueXP  の組織またはアカウントに関連付けられているすべてのソースシステムに適用されます。
+
+link:br-start-licensing.html["ライセンスの設定方法を学ぶ"]です。
+
+*従量課金制サブスクリプション*
+
+BlueXPのバックアップとリカバリは、従量課金制モデルで従量課金制のライセンスを提供します。クラウドプロバイダの市場に登録すると、バックアップしたデータに対して1 GiB単位で料金が発生し、前払いによる支払いが発生しなくなります。クラウドプロバイダから月額料金で請求されます。
+
+PAYGOサブスクリプションに最初にサインアップしたときに、30日間の無償トライアルを利用できます。
+
+*年間契約*
+
+ifdef::aws[]
+
+AWS を使用する場合、1 年、2 年、または 3 年の 2 つの年間契約が利用可能です。
+
+* Cloud Volumes ONTAP データとオンプレミスの ONTAP データをバックアップできる「クラウドバックアップ」プラン。
+* Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、このライセンスに対して課金されるCloud Volumes ONTAPボリュームの無制限のバックアップが含まれます (バックアップ容量はライセンスに対してカウントされません)。endif::aws[]
+
+
+ifdef::azure[]
+
+Azure を使用する場合、1 年、2 年、または 3 年の 2 つの年間契約が利用可能です。
+
+* Cloud Volumes ONTAP データとオンプレミスの ONTAP データをバックアップできる「クラウドバックアップ」プラン。
+* Cloud Volumes ONTAP とBlueXPのバックアップとリカバリをバンドルできる「CVO Professional」プランこれには、このライセンスに対して課金されるCloud Volumes ONTAPボリュームの無制限のバックアップが含まれます (バックアップ容量はライセンスに対してカウントされません)。endif::azure[]
+
+
+ifdef::gcp[]
+
+GCP を使用する場合は、 NetAppからプライベート オファーをリクエストし、 BlueXP backup and recoveryのアクティベーション中に Google Cloud Marketplace からサブスクライブするときにプランを選択できます。endif::gcp[]
+
+
+
+== サポートされているデータソース、作業環境、バックアップ対象
+
+.サポートされているワークロード データ ソース
+このサービスは、次のアプリケーション ベースのワークロードを保護します。
+
+* ONTAPボリューム
+* 物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS (プレビュー) 用の Microsoft SQL Server インスタンスとデータベース
+* VMware データストア
+* 詳細は近日公開予定
+
+
+.サポートされている作業環境
+* ONTAPバージョン 9.8 以降を搭載したオンプレミスのONTAP SAN (iSCSI プロトコル) および NAS (NFS および CIFS プロトコルを使用)
+* AWS 向けCloud Volumes ONTAP 9.8 以上 (SAN および NAS を使用)
+
+
+* Microsoft Azure 用のCloud Volumes ONTAP 9.8 以上 (SAN および NAS を使用)
+* Amazon FSx for NetApp ONTAP
+
+
+.サポートされているバックアップターゲット
+* Amazon Web Services（AWS）S3
+* Microsoft Azure Blob
+* StorageGRID
+* ONTAP S3の略
+
+
+
+
+== BlueXP backup and recoveryでは、 Microsoft SQL Server用のSnapCenterプラグインを使用します。
+
+BlueXP backup and recoveryは、 Microsoft SQL Server をホストするサーバーに Microsoft SQL Server 用プラグインをインストールします。このプラグインは、Microsoft SQL Server データベースおよびインスタンスのアプリケーション対応データ保護管理を可能にするホスト側コンポーネントです。
 
 
 
 == BlueXPのバックアップとリカバリの仕組み
 
-Cloud Volumes ONTAP またはオンプレミスのONTAP システムでBlueXPのバックアップとリカバリを有効にすると、データのフルバックアップが実行されます。ボリューム Snapshot はバックアップイメージに含まれません。初期バックアップ後は、追加のバックアップはすべて差分になります。つまり、変更されたブロックと新しいブロックのみがバックアップされます。これにより、ネットワークトラフィックを最小限に抑えることができます。
+BlueXP backup and recoveryを有効にすると、データの完全バックアップが実行されます。最初のバックアップ以降は、増分バックアップが実行されます。これにより、ネットワークトラフィックを最小限に抑えることができます。
 
 次の図は、コンポーネント間の関係を示しています。
 
-image:diagram_cloud_backup_general.png["BlueXPのバックアップおよびリカバリが、ソースシステム上のボリュームおよびバックアップファイルが配置されているデスティネーションオブジェクトストレージとどのように通信するかを示す図。"]
+image:diagram-br-321-aff-a.png["BlueXP backup and recoveryが3-2-1保護戦略を使用する様子を示す図"]
+
+
+NOTE: セカンダリ ストレージからオブジェクト ストレージだけでなく、プライマリ ストレージからオブジェクト ストレージへの接続もサポートされています。
 
 
 
-=== バックアップの保管場所
+=== オブジェクトストア内のバックアップの保存場所
 
-バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスタ/作業環境ごとに1つのオブジェクトストアがあり、BlueXPではこのオブジェクトストアの名前を次のように指定します。 `netapp-backup-clusteruuid`。このオブジェクトストアは削除しないでください。
+バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスターまたは作業環境ごとに 1 つのオブジェクト ストアがあり、 BlueXPオブジェクト ストアに次のように名前が付けられます。  `netapp-backup-clusteruuid` 。このオブジェクトストアは削除しないでください。
 
 ifdef::aws[]
 
-* AWSでは、BlueXPによってが有効になります https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 ブロックのパブリックアクセス機能"^] を S3 バケットに配置します。
+* AWSでは、 BlueXPは https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 ブロックのパブリックアクセス機能"^] S3バケットで。endif::aws[]
 
-
-endif::aws[]
 
 ifdef::azure[]
 
-* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["BLOB データへのパブリックアクセスをブロックします"] デフォルトでは
+* Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP  https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["BLOB データへのパブリックアクセスをブロックします"]デフォルトでは、endif::azure[]
 
-
-endif::azure[]
 
 ifdef::gcp[]
-
-* GCPでは、Google Cloud Storageバケット用のストレージアカウントを持つ新規または既存のプロジェクトを使用します。
-
 
 endif::gcp[]
 
@@ -76,25 +248,21 @@ endif::gcp[]
 
 
 
-NOTE: BlueXP  のバックアップとリカバリでは、プレビューオプションとしてサードパーティのオブジェクトストアのサポートが拡張されました。このプレビュー機能を使用すると、バックアップとリカバリのニーズに応じてS3互換オブジェクトストアを活用できます。このプレビュー機能の有効化の詳細については、を参照してくださいlink:whats-new.html["サードパーティ製オブジェクトストアのサポート"]。
-
-
-
-=== バックアップが作成されるタイミング
-
-* 毎時バックアップは、毎時 5 分に開始されます。
-* 日次バックアップは、毎日午前 0 時を過ぎた直後に開始されます。
-* 週次バックアップは、日曜日の朝の午前 0 時を過ぎた直後に開始されます
-* 月単位のバックアップは、毎月 1 日の午前 0 時を過ぎた直後に開始されます。
-* 年単位のバックアップは、年の最初の日の午前0時を過ぎた直後に開始されます。
-
-
-開始時間は、各ソース ONTAP システムで設定されているタイムゾーンに基づきます。UIからユーザが指定した時間にバックアップ処理をスケジュールすることはできません。詳細については、システムエンジニアにお問い合わせください。
-
-
 
 === バックアップコピーはネットアップアカウントに関連付けられています
 
-バックアップコピーはに関連付けられます https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["ネットアップアカウント"^] BlueXPコネクタが配置されています。
+バックアップコピーは、  https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["BlueXPアカウント"^] BlueXPコネクタが存在します。
 
-同じネットアップアカウントに複数のコネクタがある場合は、各コネクタに同じバックアップのリストが表示されます。バックアップには、 Cloud Volumes ONTAP インスタンスとオンプレミスの ONTAP インスタンスに関連付けられたバックアップが含まれます。
+同じBlueXPアカウントに複数のコネクタがある場合、各コネクタには同じバックアップ リストが表示されます。
+
+
+
+== BlueXP backup and recoveryに役立つ用語
+
+保護に関連するいくつかの用語を理解しておくと役立つかもしれません。
+
+* *保護*: BlueXP backup and recoveryにおける保護とは、保護ポリシーを使用して、スナップショットと不変のバックアップが別のセキュリティ ドメインに定期的に実行されるようにすることを意味します。
+
+
+* *ワークロード*: BlueXP backup and recoveryのワークロードには、Microsoft SQL Server インスタンスとデータベース、VMware データストア、またはONTAPボリュームが含まれます。
+

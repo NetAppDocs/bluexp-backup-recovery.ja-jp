@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-backup-aws.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP backup and recoveryでデータストアを Amazon Web Services にバックアップする
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP バックアップおよびリカバリを使用して 1 つ以上のデータストアを Amazon Web Services にバックアップおよびアーカイブし、ストレージ効率とクラウド移行を向上させることができます。
+
+データストアがアーカイブポリシーに関連付けられている場合は、アーカイブ階層を選択できます。サポートされているアーカイブ階層は、GlacierとGlacier Deepです。
+
+[]
+====
+*注意* BlueXP backup and recoveryのワークロードを切り替えるには、 link:br-start-switch-ui.html["さまざまなBlueXP backup and recoveryワークロードに切り替える"] 。
+
+====
+.作業を開始する前に
+すべての要件を満たしていることを確認してくださいlink:prev-vmware-prereqs.html["仮想マシンの保護要件"]データストアをクラウドにバックアップする前に。
+
+.手順
+. BlueXP UI で、*保護* > *バックアップとリカバリ* > *仮想マシン* を選択します。
+. 選択image:icon-action.png["アクション"]バックアップするデータストアに対応し、[*バックアップのアクティブ化*] をクリックします。
+. [ポリシーの割り当て] ページでポリシーを選択し、[次へ] を選択します。
+. 作業環境を追加します。
++
+BlueXPで検出するクラスタ管理LIFを設定します。いずれかのデータストアの作業環境を追加したら、同じONTAP クラスタにある他のすべてのデータストアでその環境を再利用できます。
+
++
+.. SVM に対応する *作業環境の追加* を選択します。
+.. 作業環境の追加ウィザードで、次の手順を実行します。
++
+... クラスタ管理LIFのIPアドレスを指定します。
+... ONTAP クラスタユーザのクレデンシャルを指定してください。
+
+
+.. *作業環境の追加*を選択します。
+
+
+. Amazon Web Services *を選択してクラウドプロバイダとして設定します。
++
+.. AWS アカウントを指定します。
+.. AWS Access Keyフィールドで、データ暗号化のキーを指定します。
+.. AWS Secret Keyフィールドで、データ暗号化のパスワードを指定します。
+.. バックアップを作成するリージョンを選択します。
+.. 作業環境として追加したクラスタ管理LIFのIPアドレスを指定します。
+.. アーカイブ階層を選択します。
++
+アーカイブ層は1回限りのアクティビティであり、あとで設定することはできないため、設定することを推奨します。
+
+
+
+. 詳細を確認し、「バックアップをアクティブ化」を選択します。
+

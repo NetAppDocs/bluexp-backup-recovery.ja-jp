@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: br-start-login.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXPを使用して、 BlueXP backup and recoveryサービスにログインします。 
+---
+= BlueXP backup and recoveryにログイン
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp BlueXPを使用して、 BlueXP backup and recoveryサービスにログインします。
+
+BlueXP backup and recoveryでは、ロールベースのアクセス制御 (RBAC) を使用して、各ユーザーの特定のアクションへのアクセスを制御します。
+
+各ロールで実行できるアクションの詳細については、を参照してくださいlink:reference-roles.html["BlueXP backup and recoveryユーザー ロール"]。
+
+BlueXP  にログインするには、NetAppサポートサイトのクレデンシャルを使用するか、Eメールアドレスとパスワードを使用してNetAppクラウドログインにサインアップします。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["ログインの詳細については、こちらをご覧ください"^]です。
+
+.手順
+. Webブラウザを開き、に移動します https://console.bluexp.netapp.com/["BlueXPコンソール"^]。
++
+NetApp BlueXPのログインページが表示されます。
+
+. BlueXPにログインします。
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
++
+** このサービスに初めてログインし、まだ作業環境をお持ちでない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディングページが表示され、「作業環境を追加」オプションが表示されます。BlueXP https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["BlueXP標準モードの使用開始"^] 。
++
+image:screen-br-landing-no-we.png["BlueXP blueXP のランディング ページのスクリーンショット (作業環境なしのバックアップとリカバリ)"]
+
+** このサービスに初めてログインし、 BlueXPにすでに作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*リソースの検出*オプションが表示されます。
++
+image:screen-br-landing-unified.png["BlueXP blueXP バックアップとリカバリのランディングページのスクリーンショット"]
+
+
+
+. まだ行っていない場合は、[*検出と管理*] オプションを選択します。
++
+Microsoft SQL Serverのワークロードについては、以下を参照してください。 link:br-start-discover.html["Microsoft SQL Server ワークロードの検出"] 。
+
+

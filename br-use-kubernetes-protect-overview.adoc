@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: br-use-kubernetes-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: オンプレミスのONTAPシステムから Amazon Web Services、Microsoft Azure、Google Cloud Platform、 StorageGRIDに至るまで、Kubernetes アプリケーションとアプリケーション データを保護し、データを確実に保護できます。 
+---
+= Kubernetes ワークロードの管理の概要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryでKubernetesワークロードを管理することで、Kubernetesクラスターとアプリケーションを一元的に管理・保護できます。Kubernetesクラスターでホストされているリソースとアプリケーションを管理できます。また、Kubernetesワークロードの保護設定も管理できます。
+
+
+NOTE: このドキュメントはテクノロジプレビュー版です。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
+
+Kubernetes ワークロードの管理に関連する次のタスクを実行できます。
+
+* link:br-start-discover.html#discover-kubernetes-workloads["Kubernetes ワークロードを発見する"]です。
+* link:br-use-manage-kubernetes-clusters.html["Kubernetes クラスタを管理"]です。
+* link:br-use-protect-kubernetes-applications.html["Kubernetes アプリケーションの追加と保護"]です。
+* link:br-use-manage-kubernetes-applications.html["Kubernetes アプリケーションを管理する"]です。
+* link:br-use-restore-kubernetes-applications.html["Kubernetesアプリケーションの復元"]です。
+

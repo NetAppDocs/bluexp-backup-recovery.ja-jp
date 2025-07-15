@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-clone-overview.html 
+keywords: backing up, restoring, back up, backup, clone, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 開発、テスト、または保護の目的で、Microsoft SQL Server アプリケーションのクローンを作成できます。MicrosoftSQL Server ワークロードのインスタントスナップショットまたは既存のスナップショットからクローンを作成できます。 
+---
+= BlueXP backup and recoveryによる Microsoft SQL Server のワークロードの概要のクローン作成
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recovery機能を使用して、Microsoft SQL Server アプリケーションデータを、開発、テスト、または保護目的で、同一または別の VM にクローンできます。Microsoft SQL Server ワークロードのインスタントスナップショットまたは既存のスナップショットからクローンを作成できます。
+
+* クローンを作成する
+* クローンを更新する
+* クローンを分割する
+* クローンを削除する
+

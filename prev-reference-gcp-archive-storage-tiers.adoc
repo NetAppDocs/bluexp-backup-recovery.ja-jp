@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-gcp-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: BlueXPのバックアップとリカバリは、1つのGoogleアーカイブストレージクラスとほとんどのリージョンでサポートされます。 
+---
+= BlueXP backup and recoveryでサポートされている Google アーカイブ ストレージ層
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXPのバックアップとリカバリは、1つのGoogleアーカイブストレージクラスとほとんどのリージョンでサポートされます。
+
+[]
+====
+*注意* BlueXP backup and recoveryUIのバージョンを切り替えるには、 link:br-start-switch-ui.html["以前のBlueXP backup and recoveryUIに切り替える"] 。
+
+====
+
+
+== BlueXPのバックアップとリカバリでサポートされるGoogleアーカイブストレージクラス
+
+バックアップファイルが最初に作成されるときは、_Standard_storageに保存されます。この階層は、アクセス頻度の低いデータを格納するために最適化されていますが、すぐにアクセスすることもできます。
+
+オンプレミスクラスタでONTAP 9.12.1以降を使用している場合は、コストをさらに最適化するために、BlueXPのバックアップとリカバリのUIで、古いバックアップを_Archive_storageに階層化することができます。この階層のデータには高い読み出しコストが必要なため、アーカイブされたバックアップファイルからデータをリストアする頻度を考慮する必要があります。アーカイブストレージからのデータのリストアについては、このページのセクションを参照してください。
+
+このタイプのライフサイクルルールを使用してBlueXPのバックアップとリカバリを設定する場合は、Googleアカウントでバケットをセットアップするときにライフサイクルルールを設定しないでください。
+
+https://cloud.google.com/storage/docs/storage-classes["Googleのストレージクラスについて説明します"^]。
+
+
+
+== アーカイブストレージからデータをリストア
+
+古いバックアップファイルをアーカイブストレージに保存すると、標準ストレージよりもはるかに低コストですが、リストア処理のためにアーカイブストレージ内のバックアップファイルからデータにアクセスすると、所要時間が若干長くなり、コストが増大します。
+
+Google Archiveからデータを復元するのにどのくらいのコストがかかりますか。:: 地域別のGoogle Cloud Storageの詳細な価格設定については、を参照してください https://cloud.google.com/storage/pricing["Google Cloud Storageの価格設定ページ"^]。
+Google Archiveにアーカイブされているオブジェクトをリストアするのにどれくらいの時間がかかりますか。:: リストアの合計時間は、次の 2 つの要素で構成されます。
++
+--
+* *取得時間*：アーカイブからバックアップファイルを取得して標準ストレージに保存する時間。これは、「水和」時間と呼ばれることもあります。他のクラウドプロバイダが提供する「最低目的」のストレージソリューションとは異なり、データには数ミリ秒でアクセスできます。
+* * リストア時間 * ： Standard ストレージのバックアップファイルからデータをリストアする時間。アーカイブ層を使用しない場合、この時間は標準ストレージから直接実行される通常のリストア処理と同じです。
+
+
+--
+

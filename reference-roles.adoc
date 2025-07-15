@@ -1,0 +1,287 @@
+---
+sidebar: sidebar 
+permalink: reference-roles.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, roles, permissions, access control, role-based access control, rbac 
+summary: BlueXP backup and recoveryでは、ロールを使用して各ユーザーの特定の機能とアクションへのアクセスを制御します。 
+---
+= BlueXP backup and recovery機能へのロールベースのアクセス
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryでは、ロールを使用して、各ユーザーの特定の機能およびアクションへのアクセスを制御します。
+
+このサービスは、BlueXP backup and recoveryに固有の次のロールを使用します。
+
+* *バックアップとリカバリのスーパー管理者*: BlueXP backup and recoveryであらゆるアクションを実行します。
+* *バックアップ管理者*: BlueXP backup and recoveryで、ローカル スナップショットへのバックアップ、セカンダリ ストレージへの複製、オブジェクト ストレージへのバックアップ アクションを実行します。
+* *管理者の復元*: BlueXP backup and recoveryを使用してワークロードを復元します。
+* *クローン管理者*: BlueXP backup and recoveryを使用してアプリケーションとデータをクローンします。
+* *バックアップおよびリカバリ ビューアー*: BlueXP backup and recoveryの情報を表示しますが、アクションは実行しません。
+
+
+BlueXPのすべてのアクセスロールの詳細については、  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["BlueXP  のセットアップと管理に関するドキュメント"^] 。
+
+次の表は、BlueXP backup and recoveryロールが実行できるアクションを示しています。
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| 特徴とアクション | バックアップとリカバリのスーパー管理者 | バックアップ管理者 | 管理者を復元 | クローン管理者 | ビューアー 
+
+
+| ホストの追加、編集、削除 | はい。 | いいえ  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| プラグインをインストールする | はい。 | いいえ  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| 資格情報を追加する（ホスト、インスタンス、vCenter） | はい。 | いいえ  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| ダッシュボードとすべてのタブを表示 | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+| 無償トライアルを開始 | はい。 | いいえ  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| ワークロードの検出を開始 | いいえ | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+| ライセンス情報を表示 | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+| ライセンスを有効化 | はい。 | いいえ  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| ホストを表示 | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+6+| *スケジュール*: 
+
+
+| スケジュールをアクティブ化 | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+| スケジュールを中断 | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+6+| *ポリシーと保護*: 
+
+
+| 保護プランを見る | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+| 保護を作成、変更、または削除する | はい。 | はい。  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| ワークロードの復元 | はい。 | いいえ  a| 
+はい。
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| クローンの作成、クローンの分割、クローンの削除 | はい。 | いいえ  a| 
+いいえ
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+| ポリシーの作成、変更、または削除 | はい。 | はい。  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+6+| *レポート*: 
+
+
+| レポートを表示します | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+| レポートを作成します | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+いいえ
+
+
+
+| レポートの削除 | はい。 | いいえ  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+6+| * SnapCenterからインポートしてホストを管理する*: 
+
+
+| インポートされたSnapCenterデータを表示する | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+| SnapCenterからデータをインポートする | はい。 | はい。  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| ホストの管理（移行） | はい。 | はい。  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+6+| *設定を構成する*: 
+
+
+| ログディレクトリを構成する | はい。 | はい。  a| 
+はい。
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+| インスタンス資格情報の関連付けまたは削除 | はい。 | はい。  a| 
+はい。
+ a| 
+いいえ
+ a| 
+いいえ
+
+
+
+6+| *バケツ*: 
+
+
+| バケットを表示します | はい。 | はい。  a| 
+はい。
+ a| 
+はい。
+ a| 
+はい。
+
+
+
+| バケットを作成、編集、または削除する | はい。 | はい。  a| 
+いいえ
+ a| 
+いいえ
+ a| 
+いいえ
+
+|===

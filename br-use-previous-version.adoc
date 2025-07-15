@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: br-use-previous-version.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 以前のバージョンのBlueXP backup and recoveryでは、 VMware ワークロードやONTAPワークロードなど、いくつかのワークロード タイプを保護できます。 
+---
+= 以前のバージョンのBlueXP backup and recoveryを使用する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+以前のバージョンのBlueXP backup and recoveryでは、 VMware ワークロードやONTAPワークロードなど、いくつかのワークロード タイプを保護できます。
+
+新しいBlueXP backup and recoveryUIと以前のBlueXP backup and recoveryUIを切り替えることができます。新しいUIはすべてのユーザーがご利用いただけますが、新しいUIでまだ利用できないワークロードをバックアップする必要がある場合は、以前のUIに戻すことができます。
+
+*各 UI でどのワークロードをバックアップできますか?*
+
+[cols="40,30,30"]
+|===
+| ワークロード | 新しい UI | 以前のUI 
+
+
+| Microsoft SQL Serverのワークロード | 利用可能 | 使用不可 
+
+
+| VMwareワークロード | まだ利用できません | 利用可能 
+
+
+| ボリューム | まだ利用できません | 利用可能 
+
+
+| Kubernetes ワークロード | まだ利用できません | 使用不可 
+|===
+*どの UI を使用しているかはどのようにしてわかりますか?*新しい UI では、以前の UI とは異なるメニュー構造が使用されています。
+
+新しい UI: image:screen-br-menu-unified.png["BlueXP backup and recoveryの新しい UI スクリーンショット"]
+
+以前の UI: image:screen-br-menu-legacy.png["BlueXP backup and recoveryの以前の UI スクリーンショット"]
+
+
+
+== 別のワークロードに切り替える
+
+BlueXP backup and recoveryUI で別のワークロードに切り替えることができます。
+
+.手順
+. BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。
+. ページの右上隅から、[*ワークロードの切り替え*] ドロップダウン リストを選択します。
+. 切り替えるワークロードを選択します。 image:screen-br-menu-switch-ui.png["BlueXP backup and recoveryのスイッチワークロードのスクリーンショット"]
++
+ページが更新され、選択したワークロードが適切な UI に表示されます。
+
+
