@@ -12,7 +12,7 @@ SnapMirrorからクラウドへの再同期機能は、NetApp環境でのボリ�
 
 SnapMirrorからクラウドへの再同期は、環境全体でバックアップの継続性を維持することで運用効率を高め、ハイブリッドクラウドやマルチクラウドのデータ管理の複雑さを軽減します。
 
-再同期処理の実行方法の詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-migrate-volumes-snapmirror-cloud-resync.html["SnapMirrorを使用したボリュームのクラウドへの再同期"]。
+再同期処理の実行方法の詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-migrate-resync.html["SnapMirrorを使用したボリュームのクラウドへの再同期"]。
 
 
 
@@ -40,5 +40,3 @@ IMPORTANT: この機能は本番環境では使用しないでください。
 * はじめに *
 
 このプレビュー機能を使用するには、BlueXP  コネクタでフラグを有効にする必要があります。その後、バックアップセクションで*サードパーティ互換*オブジェクトストアを選択して、MinIOのサードパーティオブジェクトストアの接続の詳細を保護ワークフローに入力できます。
-
-プレビュー機能を有効にする方法については、を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-preview-enable.html["BlueXP  バックアップ/リカバリのプレビュー機能を有効にする"]。

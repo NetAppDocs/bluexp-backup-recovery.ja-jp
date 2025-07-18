@@ -249,11 +249,11 @@ endif::gcp[]
 
 
 
-=== バックアップコピーはネットアップアカウントに関連付けられています
+=== バックアップコピーはBlueXP組織に関連付けられます
 
-バックアップコピーは、  https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["BlueXPアカウント"^] BlueXPコネクタが存在します。
+バックアップ コピーは、 BlueXPコネクタが存在するBlueXP組織に関連付けられます。  https://docs.netapp.com/us-en/bluexp-setup-admin/concept-identity-and-access-management.html["BlueXP  のアイデンティティ管理とアクセス管理の詳細"^] 。
 
-同じBlueXPアカウントに複数のコネクタがある場合、各コネクタには同じバックアップ リストが表示されます。
+同じBlueXP組織内に複数のコネクタがある場合、各コネクタには同じバックアップ リストが表示されます。
 
 
 

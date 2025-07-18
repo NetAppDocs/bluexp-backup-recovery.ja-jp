@@ -15,13 +15,13 @@
 
 インデックスカタログはすべてのボリュームとバックアップ ファイルを追跡できるため、検索が迅速かつ効率的になります。
 
-詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["検索と復元を使用してONTAPデータを復元する方法"]。
+詳細については、を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["検索と復元のインデックスを有効にする"]。
 
 
 
 === Azure プライベート リンク エンドポイントとサービス エンドポイント
 
-BlueXP バックアップ＆リカバリは通常、クラウドプロバイダーとプライベートエンドポイントを確立し、様々な保護タスクを処理します。今回のリリースでは、BlueXP バックアップ＆リカバリによるプライベートエンドポイントの自動作成を有効または無効にできるオプション設定が導入されました。これは、プライベートエンドポイントの作成プロセスをより細かく制御したい場合に役立ちます。
+通常、 BlueXP backup and recoveryでは、保護タスクを処理するためにクラウド プロバイダーとのプライベート エンドポイントを確立します。今回のリリースでは、BlueXP バックアップ＆リカバリによるプライベートエンドポイントの自動作成を有効または無効にできるオプション設定が導入されました。これは、プライベートエンドポイントの作成プロセスをより細かく制御したい場合に役立ちます。
 
 保護を有効にするとき、または復元プロセスを開始するときに、このオプションを有効または無効にすることができます。
 
@@ -39,4 +39,4 @@ BlueXP バックアップ＆リカバリは通常、クラウドプロバイダ�
 
 作業環境のオブジェクトストレージにバックアップファイルを作成すると、BlueXP バックアップ＆リカバリはデフォルトで、ユーザーが設定したオブジェクトストレージアカウント内にバックアップファイル用のコンテナ（バケットまたはストレージアカウント）を作成します。以前は、この設定をオーバーライドして、Amazon S3、Azure Blob Storage、Google Cloud Storage 用の独自のコンテナを指定できました。今回のリリースでは、独自の StorageGRID オブジェクトストレージコンテナを使用できるようになりました。
 
-を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["独自のオブジェクトストレージコンテナを作成する"]
+を参照してください https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html["独自のオブジェクトストレージコンテナを作成する"]

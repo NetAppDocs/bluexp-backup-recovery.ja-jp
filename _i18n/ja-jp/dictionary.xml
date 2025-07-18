@@ -332,7 +332,6 @@
   <block id="33bfcd052df4f75c25d08493f7b03ba3" category="inline-link">BLOB データへのパブリックアクセスをブロックします</block>
   <block id="800de79585a9dadbf8cf5d2e105d09bb" category="list-text">StorageGRID では、オブジェクトストアバケットに既存のストレージアカウントが使用されます。</block>
   <block id="3e8d942114ddd71bc4d36aca5db8bb0a" category="list-text">ONTAP S3では、S3バケット用の既存のユーザアカウントが使用されます。</block>
-  <block id="fab27e4b9f13b45f921fe1c7f42ffac1" category="section-title">バックアップコピーはネットアップアカウントに関連付けられています</block>
   <block id="c9df4195a305212ffd7b56d24f67129d" category="summary">ネットアップでは、さまざまな方法でBlueXPをサポートしています。ナレッジベース（ KB ）記事やコミュニティフォーラムなど、 24 時間 365 日利用可能な幅広いセルフサポートオプションをご用意しています。サポート登録には、 Web チケット処理によるリモートテクニカルサポートが含まれます。</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">ヘルプを表示します</block>
   <block id="7c5661ab6b39ee901cea00a6e7020a49" category="paragraph">ネットアップでは、BlueXPとその クラウド サービス をさまざまな方法でサポートしています。ナレッジベース（ KB ）記事やコミュニティフォーラムなど、 24 時間 365 日利用可能な幅広いセルフサポートオプションをご用意しています。サポート登録には、 Web チケット処理によるリモートテクニカルサポートが含まれます。</block>
@@ -2238,7 +2237,6 @@ ifdef：aws []</block>
   <block id="bebfb016f9defe9a78fff65f418f213b" category="paragraph">Amazon Web Services（AWS）Identity and Access Management（IAM）Roles Anywhereサービスを使用すると、workloads_on_awsにIAMロールを使用してAWS APIに安全にアクセスできるようになります。これは、workloads_on_awsにIAMロールを使用する場合と同じ方法です。IAM Roles Anywhereの秘密鍵インフラストラクチャとAWSトークンを使用する場合、長期的なAWSアクセスキーとシークレットキーは必要ありません。これにより、クレデンシャルをより頻繁にローテーションすることができ、セキュリティが向上します。</block>
   <block id="24c6cf6b2747b390a5d9eb672e1d54d4" category="paragraph">このリリースでは、AWS IAM Roles Anywhereサービスのサポートがテクノロジプレビューになります。</block>
   <block id="75a3bff844d1c7ffb01e7ef22ab82b4d" category="inline-link-macro">AWSへのCloud Volumes ONTAPのバックアップ</block>
-  <block id="4e6ae608536b374d1b71a28785ef9a8b" category="inline-link-macro">オンプレミスのONTAPデータのAWSへのバックアップ</block>
   <block id="ddc7fe4301c8a4aa6a14e1843c25f30b" category="inline-link">BlueXPのバックアップとリカバリ：2024年7月リリースブログ</block>
   <block id="f1db3a8ee789ee9607754f5f8a9871b1" category="paragraph">を参照してください<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
   <block id="5ab4d79a28b46b39467c24096b99316f" category="section-title">FlexGroupフォルダまたはディレクトリのリストアを利用できるようになりました</block>
@@ -2280,11 +2278,7 @@ ifdef：aws []</block>
   <block id="0ca08a23718c0a91743dd6c0146ca353" category="paragraph">Cloud Volumes ONTAPで次の主要なワークフローを有効にするには、NetAppサポートサイトのクレデンシャルをBlueXP  組織に関連付ける必要があります。</block>
   <block id="c81c8e01f5d906ae1ab0c5c606f06b05" category="paragraph">NSSクレデンシャルとBlueXP  組織の関連付けは、BlueXP  ユーザログインに関連付けられたNSSアカウントとは異なります。</block>
   <block id="8166996cb4a59c147200d89a061bb49c" category="paragraph">これらのNSSクレデンシャルは、特定のBlueXP  組織IDに関連付けられています。BlueXP  組織に属するユーザは、*[サポート]&gt;[NSS管理]*からこれらのクレデンシャルにアクセスできます。</block>
-  <block id="447432dc1956c6ca8ef783da40afa0ba" category="paragraph">これはに適用され<block ref="36745b46d10b0daef886af9c3561dc82" category="inline-link-macro-rx"></block>ます。これはに適用され<block ref="28610eddc6cc2d865303aa5fe254d6ff" category="inline-link-macro-rx"></block>ます。</block>
   <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">DataLockとRansomware Protectionを使用する場合は、最初のバックアップポリシーを作成し、そのクラスタに対してBlueXPのバックアップとリカバリをアクティブ化するときに有効にすることができます。ランサムウェアスキャンは、BlueXP  のバックアップとリカバリの詳細設定を使用してあとから有効または無効にすることができます。</block>
-  <block id="84142ff06d4e9d4646fc2a3b18cc1d91" category="paragraph"><block ref="a21af64035213e0424a2bf24b7431646" category="inline-link-rx"></block>です。</block>
-  <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">DataLockの詳細および関連コストを軽減する方法のヒントについては、を参照してください<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>。</block>
-  <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">詳細については、を参照してください<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>。</block>
   <block id="2a26ca1d77691991f2402c219881a81b" category="paragraph">特定のプレフィックスを使用したり、特別なプロパティを割り当てたりする場合は、オブジェクトプロバイダアカウントでコンテナを自分で作成できます。独自のコンテナを作成する場合は、アクティブ化ウィザードを開始する前にコンテナを作成する必要があります。BlueXP  のバックアップとリカバリでは、任意のバケットと共有バケットを使用できます。バックアップアクティベーションウィザードは、選択したアカウントとクレデンシャル用にプロビジョニングされたコンテナを自動的に検出し、使用するコンテナを選択できるようにします。</block>
   <block id="3a66ab30f960deed7e2d6dbe5675eebc" category="paragraph">BlueXPのバックアップとリカバリは、インターネット接続が制限されているサイト（_restricted mode_とも呼ばれます）でボリュームデータをバックアップするために使用できます。この場合、移行先のクラウドリージョンにBlueXP  Connectorをデプロイする必要があります。</block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
@@ -2296,7 +2290,6 @@ ifdef：aws []</block>
   <block id="3c97d3b45dd14b2958c1e0e304230aa0" category="paragraph">このBlueXP  バックアップ/リカバリリリースには、次の更新が含まれています。</block>
   <block id="517624d736bd2a385ee8cda71584112f" category="section-title">SnapLock ComplianceおよびSnapLock Enterprise保護モード</block>
   <block id="139da935670a9f985194d3241917c359" category="paragraph">BlueXP  バックアップ/リカバリで、SnapLock ComplianceまたはSnapLock Enterprise保護モードを使用して設定されたオンプレミスのFlexVolボリュームとFlexGroupボリュームの両方をバックアップできるようになりました。このサポートを実行するには、クラスタでONTAP 9.14以降が実行されている必要があります。ONTAPバージョン9.11.1以降では、SnapLock Enterpriseモードを使用したFlexVolボリュームのバックアップがサポートされています。以前のONTAPリリースでは、SnapLock保護ボリュームのバックアップはサポートされません。</block>
-  <block id="9ddb3e6714694f5c7f619d474fec8169" category="paragraph">でサポートされるボリュームの一覧を参照してください<block ref="9e68a582cc487ad29425f5a4796c9e45" category="inline-link-rx"></block>。</block>
   <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">[ボリューム]ページでの検索とリストアプロセスのインデックス作成</block>
   <block id="20d3b0b7cfe7a9f3dcfdb0faa9398efd" category="paragraph">検索とリストアを使用する前に、ボリュームデータのリストア元となる各ソース作業環境でインデックスの作成を有効にする必要があります。これにより、インデックス付きカタログで各ボリュームのバックアップファイルを追跡できます。[Volumes]ページにインデックスのステータスが表示されます。</block>
   <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">Indexed：ボリュームにインデックスが作成されました。</block>
@@ -2357,7 +2350,6 @@ ifdef：aws []</block>
   <block id="1928ef25d05266e1052541c930f2737c" category="paragraph">データのリストアにSearch &amp; Restore方式を使用する前に、ボリュームまたはファイルのリストア元となる各ソース作業環境で[Indexing]を有効にする必要があります。これにより、インデックスカタログはすべてのボリュームとすべてのバックアップファイルを追跡できるため、検索が迅速かつ効率的になります。</block>
   <block id="d28994d1a9691ce26fcae71b9a05d1bc" category="paragraph">検索とリストアの実行時に[Enable Indexing]オプションを選択して、ソースの作業環境でインデックス作成を有効にします。</block>
   <block id="6b14c6e0d643870ea727335d7739df30" category="inline-link">検索と復元を使用してONTAPデータを復元する方法</block>
-  <block id="9031cfd1bcd3de043cd6391f098dc91b" category="paragraph">詳細については、のドキュメントを参照して<block ref="7ae860a58fb7c028461eb3a0f3043711" category="inline-link-rx"></block>ください。</block>
   <block id="2d31667baed414ccd330141663dac284" category="paragraph-title">サポートされるスケール</block>
   <block id="b2ec30cb49afbacbac6cc89a95133887" category="paragraph">新しいインデックス作成機能では、次の機能がサポートされています。</block>
   <block id="3201cddda2c272104ed2ef30674f361a" category="list-text">3分未満でグローバル検索を効率化</block>
@@ -2442,7 +2434,6 @@ ifdef：aws []</block>
   <block id="9de9a72e99be1fee8dc0790411738dd4" category="paragraph">この機能により、時間とリソースを大量に消費するベースライン再処理が不要になり、移行後もバックアップ処理を継続できます。この機能は、FlexVolとFlexGroupの両方をサポートするワークロードマイグレーションシナリオで役立ちます。ONTAPバージョン9.16.1以降で使用できます。</block>
   <block id="9c69774894ac0ae0f2bbae9b12964cfe" category="paragraph">SnapMirrorからクラウドへの再同期は、環境全体でバックアップの継続性を維持することで運用効率を高め、ハイブリッドクラウドやマルチクラウドのデータ管理の複雑さを軽減します。</block>
   <block id="5746bb5eeaa153936151cb52823109e6" category="inline-link">SnapMirrorを使用したボリュームのクラウドへの再同期</block>
-  <block id="3a55cfa97f4682f930352f0f81220899" category="paragraph">再同期処理の実行方法の詳細については、を参照してください<block ref="207dcf1aaf014b22c1836348f392f25c" category="inline-link-rx"></block>。</block>
   <block id="d7aa9347c7a241e0b5959147e0834507" category="section-title">サードパーティ製MinIOオブジェクトストアのサポート（プレビュー）</block>
   <block id="74f850f0e7d77a9dfb658a6664c11580" category="paragraph">BlueXP  のバックアップとリカバリでは、MinIOを中心にサードパーティのオブジェクトストアもサポートされるようになりました。この新しいプレビュー機能を使用すると、バックアップとリカバリのニーズに合わせてS3互換オブジェクトストアを活用できます。</block>
   <block id="fba2533d6fb852f662ab27cb8831c6c2" category="paragraph">このプレビュー版では、すべての機能がリリースされる前に、サードパーティのオブジェクトストアとの強固な統合を確保したいと考えています。この新しい機能について検討し、サービスの強化に役立つフィードバックを提供することをお勧めします。</block>
@@ -2454,7 +2445,6 @@ ifdef：aws []</block>
   <block id="7f4d22b3de45045172408ddd711a85a1" category="paragraph">* はじめに *</block>
   <block id="5955ccac697a810563b00d68d2e643a8" category="paragraph">このプレビュー機能を使用するには、BlueXP  コネクタでフラグを有効にする必要があります。その後、バックアップセクションで*サードパーティ互換*オブジェクトストアを選択して、MinIOのサードパーティオブジェクトストアの接続の詳細を保護ワークフローに入力できます。</block>
   <block id="3e49d780723839a4238980f0ed8f0e54" category="inline-link">BlueXP  バックアップ/リカバリのプレビュー機能を有効にする</block>
-  <block id="e4d99443f32762da8fffc177c52518aa" category="paragraph">プレビュー機能を有効にする方法については、を参照してください<block ref="918e5958ca0f0d47162ab1a4f8ffabd1" category="inline-link-rx"></block>。</block>
   <block id="21ade0a59a521983cc4ace159928965c" category="section-title">BlueXP  のバックアップとリカバリSnapMirrorからクラウドへの再同期の仕組み</block>
   <block id="5f6d83d4b0c669ea7f7bd4da5824cd65" category="paragraph">機器更改を完了したり、ONTAPクラスタ間でボリュームを移行したりする際には、バックアップが中断されずに継続的に機能することが重要です。BlueXP  のバックアップとリカバリSnapMirrorからクラウドへの再同期は、ボリューム移行後もクラウドバックアップの一貫性を維持することで、これを支援します。</block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">次に例を示します。</block>
@@ -2596,16 +2586,13 @@ ifdef：aws []</block>
   <block id="109a536d105313ba22a3a245fbe42d66" category="paragraph">新規のお客様の場合、すべての新規環境では Indexed Catalog v2 がデフォルトで有効になっています。既存のお客様の場合は、環境のインデックスを再作成することで Indexed Catalog v2 を活用できます。</block>
   <block id="ed568c90c2ab6e924749399e3a2572f7" category="paragraph">データのリストアにSearch &amp; Restore方式を使用する前に、ボリュームまたはファイルのリストア元となる各ソース作業環境で[Indexing]を有効にする必要があります。検索と復元を実行するときは、「*インデックスを有効にする*」オプションを選択します。</block>
   <block id="53b903d5c7d704138f78087fb044d909" category="paragraph">インデックスカタログはすべてのボリュームとバックアップ ファイルを追跡できるため、検索が迅速かつ効率的になります。</block>
-  <block id="b135d75112998c5959ea2e656baaca04" category="paragraph">詳細については、を参照してください<block ref="7ae860a58fb7c028461eb3a0f3043711" category="inline-link-rx"></block>。</block>
   <block id="a5e1a06a60e331b5d516136e96719929" category="section-title">Azure プライベート リンク エンドポイントとサービス エンドポイント</block>
-  <block id="a6f1ad5d9fc5adf781d978f4d43bae4c" category="paragraph">BlueXP バックアップ＆リカバリは通常、クラウドプロバイダーとプライベートエンドポイントを確立し、様々な保護タスクを処理します。今回のリリースでは、BlueXP バックアップ＆リカバリによるプライベートエンドポイントの自動作成を有効または無効にできるオプション設定が導入されました。これは、プライベートエンドポイントの作成プロセスをより細かく制御したい場合に役立ちます。</block>
   <block id="8ee64b87fd8e5fd67f5f38194c7faf59" category="paragraph">この設定を無効にすると、BlueXP のバックアップとリカバリが正常に機能するために、プライベートエンドポイントを手動で作成する必要があります。適切な接続がないと、バックアップとリカバリのタスクを正常に実行できない可能性があります。</block>
   <block id="fad4c67d1d97874133e7a367fe5038fd" category="section-title">ONTAP S3 での SnapMirror からクラウドへの再同期のサポート</block>
   <block id="8e0a943cdbcd7f9c7f29128489119715" category="paragraph">前回のリリースでは、SnapMirror to Cloud Resync（SM-C Resync）のサポートが導入されました。この機能は、NetApp環境におけるボリューム移行時のデータ保護を効率化します。今回のリリースでは、ONTAP S3に加え、WasabiやMinIOなどの他のS3互換プロバイダーでもSM-C Resyncのサポートが追加されました。</block>
   <block id="fa551b5810fe894fcd21bf7c8ffc98d1" category="section-title">StorageGRID 用の独自のバケットを用意する</block>
   <block id="f2ff9aeba193e347e07d88061902be70" category="paragraph">作業環境のオブジェクトストレージにバックアップファイルを作成すると、BlueXP バックアップ＆リカバリはデフォルトで、ユーザーが設定したオブジェクトストレージアカウント内にバックアップファイル用のコンテナ（バケットまたはストレージアカウント）を作成します。以前は、この設定をオーバーライドして、Amazon S3、Azure Blob Storage、Google Cloud Storage 用の独自のコンテナを指定できました。今回のリリースでは、独自の StorageGRID オブジェクトストレージコンテナを使用できるようになりました。</block>
   <block id="e6e5a011626c6db86099687e0a358c1f" category="inline-link">独自のオブジェクトストレージコンテナを作成する</block>
-  <block id="68c8f46b97e6aeb1e429ccce285cfda1" category="paragraph">を参照してください<block ref="7a95086a5f98875b2249d837314b5c45" category="inline-link-rx"></block></block>
   <block id="8cc135257549041a5024c6e351c58dfb" category="paragraph">「netapp-backup-xxxxxx」以外のバケットプレフィックスを使用する場合は、コネクタIAMロールのS3権限を変更する必要があります。</block>
   <block id="73c86e71b090fff443b784dff449590a" category="list-text">DataLock とランサムウェア保護は、クラスターで ONTAP 9.11.1 以降のソフトウェアを使用している場合は AWS ストレージでサポートされ、ONTAP 9.12.1 以降のソフトウェアを使用している場合は Azure ストレージでサポートされます。</block>
   <block id="18a05ed293e5a9815ac509be9947a561" category="paragraph">ご覧のとおり、復元ダッシュボードでは、バックアップ ファイルからデータを復元するための 2 つの方法、「参照と復元」と「検索と復元」が提供されています。</block>
@@ -2618,7 +2605,6 @@ ifdef：aws []</block>
   <block id="2990ab511029f6c10e696e43177d4fdd" category="list-text">データの復元に使用するバックアップ ファイルを見つけて、[復元] を選択します。</block>
   <block id="4d1f1dc63841491797cde0fde7dec31d" category="list-text">ボリューム、フォルダー、またはファイルを復元する宛先の場所を選択し、[復元] を選択します。</block>
   <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">2025 年 6 月 9 日</block>
-  <block id="0a849c115a4741e75692ddd548e07b4d" category="paragraph">保護を有効にするとき、または復元プロセスを開始するときに、このオプションを有効または無効にすることができます。</block>
   <block id="9bbf67835dcc255a2362d9d5043708ad" category="paragraph">Indexed Catalog v2を使用する場合、本サービスは個別のバケットをプロビジョニングしません。代わりに、AWS、Azure、Google Cloud Platform、StorageGRID、またはONTAP S3に保存されているバックアップについては、コネクタまたはクラウドプロバイダー環境上にスペースをプロビジョニングします。</block>
   <block id="c2da3976b7bba43b7d1d45f7a32a43bd" category="paragraph">v2 リリースより前にインデックス カタログを有効にした場合、作業環境で次のことが起こります。</block>
   <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">BlueXP バックアップとリカバリの新機能</block>
@@ -3152,16 +3138,12 @@ ifdef：aws []</block>
   <block id="eb77981f2e476b76c513faaacd09914a" category="paragraph">BlueXP backup and recoveryでKubernetesワークロードを管理することで、Kubernetesクラスターとアプリケーションを一元的に管理・保護できます。Kubernetesクラスターでホストされているリソースとアプリケーションを管理できます。また、Kubernetesワークロードの保護設定も管理できます。</block>
   <block id="dd0f352a678f8f7a3bd4045615456919" category="admonition">このドキュメントはテクノロジプレビュー版です。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="e94d9102ade906ff7fd5fc370d68c0d8" category="paragraph">Kubernetes ワークロードの管理に関連する次のタスクを実行できます。</block>
-  <block id="f0338e38e7978ec30d1f5eb9b845e843" category="inline-link-macro">Kubernetes ワークロードを発見する</block>
-  <block id="0022038e456ea404ab796f4b75f7e6ea" category="list-text"><block ref="1aaecb747e58be0aa9e10461fda65c97" category="inline-link-macro-rx"></block>です。</block>
   <block id="384b71db954a7a463c759208283e47c4" category="inline-link-macro">Kubernetes クラスタを管理</block>
   <block id="75750592598a2163e070809696d795f5" category="list-text"><block ref="4c3d4ee32af52a5715d89ae7d8ef89d4" category="inline-link-macro-rx"></block>です。</block>
   <block id="bd0d9feacbc44891c493b82f74939311" category="inline-link-macro">Kubernetes アプリケーションの追加と保護</block>
-  <block id="d0b5709d97bbe5098abd93c7e694cb77" category="list-text"><block ref="3e35e8d4173c71043e7b66d0d706f7de" category="inline-link-macro-rx"></block>です。</block>
   <block id="7ce6b1278baad78a64a18c8640136c77" category="inline-link-macro">Kubernetes アプリケーションを管理する</block>
   <block id="1c39e480280e05e6e2669259a50ce500" category="list-text"><block ref="dc144ac0d06e909a8d08dc882910af82" category="inline-link-macro-rx"></block>です。</block>
   <block id="343af147af834c1b9b9a351344e425f2" category="inline-link-macro">Kubernetesアプリケーションの復元</block>
-  <block id="1af35924e4dcf46a6e48f4acc678dff6" category="list-text"><block ref="7769ce529a2e3eb709e04d840fce1c3b" category="inline-link-macro-rx"></block>です。</block>
   <block id="57425d1304f6091f6a1ef42a0adfc0ba" category="summary">BlueXP backup and recoveryを使用すると、実行フックを管理して、アプリケーション保護操作の前後にアクションを実行できます。</block>
   <block id="e8dfbdb38e4ccb6248a9493ac24c8181" category="doc">Kubernetes ワークロードのBlueXP backup and recovery実行フック テンプレートを管理する</block>
   <block id="cf1efa56f611411b6426b3cf4ae8b4ea" category="paragraph">実行フックは、マネージドKubernetesアプリケーションのデータ保護操作と連動して実行するように設定できるカスタムアクションです。たとえば、データベースアプリケーションがある場合、実行フックを使用して、スナップショットの前にすべてのデータベーストランザクションを一時停止し、スナップショットの完了後にトランザクションを再開できます。これにより、アプリケーションと整合性のある Snapshot を作成できます。実行フックテンプレートを作成する際に、フックの種類、実行するスクリプト、そしてフックを適用するコンテナを決定するフィルターを指定できます。その後、テンプレートを使用して、実行フックをアプリケーションに関連付けることができます。</block>
@@ -3998,9 +3980,6 @@ ifdef：aws []</block>
   <block id="8a340071e94008e324032801daab45d8" category="paragraph">バックアップコピーは、BlueXPがクラウドアカウントで作成したオブジェクトストアに格納されます。クラスターまたは作業環境ごとに 1 つのオブジェクト ストアがあり、 BlueXPオブジェクト ストアに次のように名前が付けられます。 <block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block> 。このオブジェクトストアは削除しないでください。</block>
   <block id="ff20fb34d64300f8525105ebee562e00" category="list-text">AWSでは、 BlueXPは<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block> S3バケットで。endif::aws[]</block>
   <block id="1af6f75abfa248fb172917c8f8cd1975" category="list-text">Azureでは、BlueXPは、BLOBコンテナ用のストレージアカウントを持つ新規または既存のリソースグループを使用します。BlueXP <block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block>デフォルトでは、endif::azure[]</block>
-  <block id="065c13346a6a1b4ec88ebda80e48a910" category="inline-link">BlueXPアカウント</block>
-  <block id="36e79c272f0fce1f66a6c0c2474f01e9" category="paragraph">バックアップコピーは、 <block ref="804faa4f81a5cffbc00a90ef504a2fbd" category="inline-link-rx"></block> BlueXPコネクタが存在します。</block>
-  <block id="5618e21a98c314ffca80dd956757bb83" category="paragraph">同じBlueXPアカウントに複数のコネクタがある場合、各コネクタには同じバックアップ リストが表示されます。</block>
   <block id="f91faf1a13607ac0db1201bfb304b328" category="section-title">BlueXP backup and recoveryに役立つ用語</block>
   <block id="4631dd7356561dcd994558a79249bcaa" category="paragraph">保護に関連するいくつかの用語を理解しておくと役立つかもしれません。</block>
   <block id="661b3d31f95036ff86eec46ca498f96e" category="list-text">*保護*: BlueXP backup and recoveryにおける保護とは、保護ポリシーを使用して、スナップショットと不変のバックアップが別のセキュリティ ドメインに定期的に実行されるようにすることを意味します。</block>
@@ -4592,4 +4571,20 @@ ifdef：aws []</block>
   <block id="52d355afb10d30259b33c1f1c1cd46c8" category="list-text">保持期間が24回の毎時バックアップスケジュールを作成する場合、バックアップは24時間ロックされると考えられることがあります。ただし、最低30日未満のため、各バックアップは61日間（30日と31日のバッファ）ロックされ、保持されます。</block>
   <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">仮想マシンのデータをバックアップするポリシーを作成する</block>
   <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">仮想マシンのデータとデータストアを復元する</block>
+  <block id="c4b08eb240d5acefc7787d3c1f4dc211" category="paragraph">DataLockの詳細および関連コストを軽減する方法のヒントについては、を参照してください<block ref="d90fde943a025df225ab32a40384dd6a" category="inline-link-rx"></block>。</block>
+  <block id="19b4ad2674c96d56da6480ae5941dbcc" category="paragraph">これはに適用され<block ref="3511a6172016ee8cfe1d338bd0065ef8" category="inline-link-macro-rx"></block>ます。</block>
+  <block id="7409daf66203b2febe12a1f1d0810390" category="paragraph">詳細については、を参照してください<block ref="d9a7b0453d5c88d7a03a4a533a91ebbd" category="inline-link-rx"></block>。</block>
+  <block id="dd1d86ea4419b25992a75d6434e263f5" category="paragraph"><block ref="f93ca486f4a1aabddf8ac5ec83073dce" category="inline-link-rx"></block>です。</block>
+  <block id="852a449d8705172593dae97c83ea01cf" category="paragraph">でサポートされるボリュームの一覧を参照してください<block ref="7145d27b15b026f49ce31235923b6206" category="inline-link-rx"></block>。</block>
+  <block id="581f1a24c9473eb02495cf214eff5f16" category="paragraph">詳細については、のドキュメントを参照して<block ref="7032ad075c5740af58977615413f7319" category="inline-link-rx"></block>ください。</block>
+  <block id="3363af40fef96c985a6160ac6cebf40f" category="paragraph">再同期処理の実行方法の詳細については、を参照してください<block ref="26011448910fe4558756af892237733b" category="inline-link-rx"></block>。</block>
+  <block id="4818e0e89efe2955c1288f2df1d064bb" category="inline-link">検索と復元のインデックスを有効にする</block>
+  <block id="48fe5c0defd01f149e20ad998ea50bc8" category="paragraph">詳細については、を参照してください<block ref="08c33d3978c0be0f60606e54818e9704" category="inline-link-rx"></block>。</block>
+  <block id="39b551835fb0f105ce0b01ab6a4b0330" category="paragraph">通常、 BlueXP backup and recoveryでは、保護タスクを処理するためにクラウド プロバイダーとのプライベート エンドポイントを確立します。今回のリリースでは、BlueXP バックアップ＆リカバリによるプライベートエンドポイントの自動作成を有効または無効にできるオプション設定が導入されました。これは、プライベートエンドポイントの作成プロセスをより細かく制御したい場合に役立ちます。</block>
+  <block id="2211c8a4939111428200ceec5f271f42" category="paragraph">保護を有効にするとき、または復元プロセスを開始するときに、このオプションを有効または無効にすることができます。</block>
+  <block id="030908b5781e3d39669f22cf9e8c02c4" category="paragraph">を参照してください<block ref="f1ca93d1640a6fbcba487063d3fdcf11" category="inline-link-rx"></block></block>
+  <block id="b9d8a93fed4f12013570bf6f643cb331" category="section-title">バックアップコピーはBlueXP組織に関連付けられます</block>
+  <block id="d135d1b6a10879ca27887c632f4576d7" category="inline-link">BlueXP  のアイデンティティ管理とアクセス管理の詳細</block>
+  <block id="80a8421050b068560b8a6a9ede26cb9b" category="paragraph">バックアップ コピーは、 BlueXPコネクタが存在するBlueXP組織に関連付けられます。 <block ref="00bb451fd39671f4aa08ee6cf3130758" category="inline-link-rx"></block> 。</block>
+  <block id="3fe11e28eeacfe638604d387a3e527ee" category="paragraph">同じBlueXP組織内に複数のコネクタがある場合、各コネクタには同じバックアップ リストが表示されます。</block>
 </blocks>

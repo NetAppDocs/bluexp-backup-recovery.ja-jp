@@ -20,10 +20,3 @@ BlueXP backup and recoveryでKubernetesワークロードを管理すること�
 NOTE: このドキュメントはテクノロジプレビュー版です。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
 
 Kubernetes ワークロードの管理に関連する次のタスクを実行できます。
-
-* link:br-start-discover.html#discover-kubernetes-workloads["Kubernetes ワークロードを発見する"]です。
-* link:br-use-manage-kubernetes-clusters.html["Kubernetes クラスタを管理"]です。
-* link:br-use-protect-kubernetes-applications.html["Kubernetes アプリケーションの追加と保護"]です。
-* link:br-use-manage-kubernetes-applications.html["Kubernetes アプリケーションを管理する"]です。
-* link:br-use-restore-kubernetes-applications.html["Kubernetesアプリケーションの復元"]です。
-
