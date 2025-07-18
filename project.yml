@@ -120,7 +120,7 @@ sidebar:
         url: "/prev-vmware-prereqs.html"
       - title: SnapCenter Plug-in for VMware vSphereホストを登録
         url: "/prev-vmware-register-snapcenter.html"
-      - title: VMwareデータストアをバックアップするためのポリシーを作成する
+      - title: 仮想マシンのデータをバックアップするポリシーを作成する
         url: "/prev-vmware-policy-create.html"
       - title: データストアをAmazon Web Servicesにバックアップする
         url: "/prev-vmware-backup-aws.html"
@@ -132,7 +132,7 @@ sidebar:
         url: "/prev-vmware-backup-storagegrid.html"
       - title: データストアと仮想マシンのデータの保護を管理します
         url: "/prev-vmware-manage.html"
-      - title: VMwareデータストアを復元する
+      - title: 仮想マシンのデータとデータストアを復元する
         url: "/prev-vmware-restore.html"
     - title: ジョブの監視
       url: "/br-use-monitor-tasks.html"
