@@ -43,7 +43,7 @@ BlueXP backup and recoveryのこのリリースでは、 BlueXP backup and recov
 プレビューにサインアップするには、こちらに記入してください https://forms.office.com/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOojtBW63mDRDv3ZK50MaTlJUNjdENllaVTRTVFJGSDQ2MFJIREcxN0EwQi4u&route=shorturl["プレビュー登録フォーム"^] 。
 
 
-NOTE: MICROSOFT SQL SERVER ワークロードの保護に関するこのドキュメントは、テクノロジ プレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
+NOTE: Microsoft SQL Server ワークロードの保護に関するこのドキュメントは、テクノロジープレビューとして提供されています。このプレビュー提供において、 NetApp は一般提供開始前に提供内容、内容、およびスケジュールを変更する権利を留保します。
 
 このバージョンのBlueXP backup and recoveryには、次の更新が含まれています。
 
@@ -322,7 +322,7 @@ BlueXP  のバックアップとリカバリでは、ソース作業環境上�
 BlueXP backup and recoveryのこのプレビュー リリースでは、BlueXP backup and recoveryサービスでおなじみの 3-2-1 保護戦略を使用して Microsoft SQL Server ワークロードを管理できる更新されたユーザー インターフェイスが提供されます。この新バージョンでは、これらのワークロードをプライマリストレージにバックアップし、セカンダリストレージに複製し、クラウドオブジェクトストレージにバックアップすることが可能です。
 
 
-NOTE: このドキュメントはテクノロジプレビュー版です。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
+NOTE: このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
 
 このバージョンのBlueXP backup and recoveryPreview 2025 には、次の更新が含まれています。
 

@@ -341,8 +341,6 @@
   <block id="9d06990508d25d367d9158c6558eb9c8" category="list-text"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files の特長</block>
   <block id="2e0c742f4616eb27b5b7646aa790edfe" category="list-text"><block ref="2e0c742f4616eb27b5b7646aa790edfe" category="inline-link-macro-rx"></block></block>
-  <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">Cloud Volumes Service for Google Cloud</block>
-  <block id="cf14bff66a8b72d3675db8ffe0f02ee3" category="list-text"><block ref="cf14bff66a8b72d3675db8ffe0f02ee3" category="inline-link-macro-rx"></block></block>
   <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">BlueXPおよびそのストレージソリューションとサービスに固有のテクニカルサポートを受けるには、以下に記載されているサポートオプションを使用してください。</block>
   <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">セルフサポートオプションを使用します</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">次のオプションは、 1 日 24 時間、週 7 日間無料でご利用いただけます。</block>
@@ -2610,7 +2608,6 @@ ifdef：aws []</block>
   <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">BlueXP バックアップとリカバリの新機能</block>
   <block id="0a3f9b34ec4d0b6be00b165816b91f34" category="doc">BlueXP backup and recoveryのプレビューリリース</block>
   <block id="935441eb9ed33d9e6fa5111dbffa79e2" category="paragraph">BlueXP backup and recoveryのこのプレビュー リリースでは、BlueXP backup and recoveryサービスでおなじみの 3-2-1 保護戦略を使用して Microsoft SQL Server ワークロードを管理できる更新されたユーザー インターフェイスが提供されます。この新バージョンでは、これらのワークロードをプライマリストレージにバックアップし、セカンダリストレージに複製し、クラウドオブジェクトストレージにバックアップすることが可能です。</block>
-  <block id="0fa2dfbaaa2a16717a0ff0de216d77f1" category="admonition">このドキュメントはテクノロジプレビュー版です。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="38a73da2187d1ecdb4beee24980f481e" category="paragraph">このバージョンのBlueXP backup and recoveryPreview 2025 には、次の更新が含まれています。</block>
   <block id="faf3668cbd6cfbf3e64bbd3b39c4fa15" category="list-text">バックアップおよびリカバリ タスクをより直感的に管理できるように再設計されたユーザー インターフェイス。</block>
   <block id="5761e8c204fd9a3c1d366d7bd26227e4" category="list-text">プレビュー バージョンでは、Microsoft SQL Server データベースのバックアップと復元が可能になります。(他のワークロードのサポートは、今後のリリースで追加される予定です。)</block>
@@ -2626,7 +2623,6 @@ ifdef：aws []</block>
   <block id="312aa67cbd2d7a037dd47a1f882d9f0d" category="paragraph">BlueXP backup and recoveryのこのリリースでは、 BlueXP backup and recoveryサービスでお馴染みの3-2-1保護戦略を用いてMicrosoft SQL Serverワークロードを管理できる、更新されたユーザーインターフェースが提供されます。この新バージョンでは、これらのワークロードをプライマリストレージにバックアップし、セカンダリストレージに複製し、クラウドオブジェクトストレージにバックアップすることが可能です。</block>
   <block id="b8307a4d76527581a7b59e0e8b710824" category="inline-link">プレビュー登録フォーム</block>
   <block id="240b59983b641b146915b794a0fa4966" category="paragraph">プレビューにサインアップするには、こちらに記入してください<block ref="b33811e9e55ab63ce9fecada8cb8558a" category="inline-link-rx"></block> 。</block>
-  <block id="0aa114cf5979a3879018cab8149d4fc8" category="admonition">MICROSOFT SQL SERVER ワークロードの保護に関するこのドキュメントは、テクノロジ プレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="55305f14da02876048cbec8f433b6e31" category="paragraph">このバージョンのBlueXP backup and recoveryには、次の更新が含まれています。</block>
   <block id="14c22a8793139c8c0e5b2ca06437ae76" category="list-text">*3-2-1 バックアップ機能*: このバージョンではSnapCenter機能が統合されており、 BlueXP backup and recoveryユーザー インターフェイスから 3-2-1 データ保護戦略を使用してSnapCenterリソースを管理および保護できます。</block>
   <block id="ad80e2efcb583c36651da40966b7c8aa" category="list-text">* SnapCenterからのインポート*: SnapCenter のバックアップ データとポリシーをBlueXP backup and recoveryにインポートできます。</block>
@@ -3136,7 +3132,6 @@ ifdef：aws []</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">オンプレミスのONTAPシステムから Amazon Web Services、Microsoft Azure、Google Cloud Platform、 StorageGRIDに至るまで、Kubernetes アプリケーションとアプリケーション データを保護し、データを確実に保護できます。</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">Kubernetes ワークロードの管理の概要</block>
   <block id="eb77981f2e476b76c513faaacd09914a" category="paragraph">BlueXP backup and recoveryでKubernetesワークロードを管理することで、Kubernetesクラスターとアプリケーションを一元的に管理・保護できます。Kubernetesクラスターでホストされているリソースとアプリケーションを管理できます。また、Kubernetesワークロードの保護設定も管理できます。</block>
-  <block id="dd0f352a678f8f7a3bd4045615456919" category="admonition">このドキュメントはテクノロジプレビュー版です。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="e94d9102ade906ff7fd5fc370d68c0d8" category="paragraph">Kubernetes ワークロードの管理に関連する次のタスクを実行できます。</block>
   <block id="384b71db954a7a463c759208283e47c4" category="inline-link-macro">Kubernetes クラスタを管理</block>
   <block id="75750592598a2163e070809696d795f5" category="list-text"><block ref="4c3d4ee32af52a5715d89ae7d8ef89d4" category="inline-link-macro-rx"></block>です。</block>
@@ -3908,7 +3903,6 @@ ifdef：aws []</block>
   <block id="5165c2fbcef4d5b16f189feb7569b43b" category="paragraph">以前のBlueXP backup and recoveryUI の使用方法については、次のトピックを参照してください。</block>
   <block id="219b1d964760a35bc8ac924733ed0211" category="summary">BlueXP backup and recoveryサービスは、オンプレミスとクラウドの両方で、 NetAppデータベースとインスタンスに対して効率的、安全、かつコスト効率に優れたデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="21a4e084cb9eeae89f7b12a3531b652c" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、および VMware ワークロードに対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
-  <block id="febde7c28d4412c94050819c2bc00eca" category="admonition">MICROSOFT SQL SERVER ワークロードの保護に関するドキュメントは、テクノロジ プレビューとして提供されます。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="5ddad1ad8421fb041436bd24f4aea0c5" category="section-title">BlueXP backup and recoveryでできること</block>
   <block id="930ffc736eba485afa459142d19e0a4e" category="paragraph">BlueXP backup and recoveryを使用して、次の目標を達成します。</block>
   <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAPボリュームのワークロード:</block>
@@ -3960,7 +3954,6 @@ ifdef：aws []</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAPボリューム</block>
   <block id="58f149a832a0f214528ef836d6898835" category="list-text">物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS (プレビュー) 用の Microsoft SQL Server インスタンスとデータベース</block>
   <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware データストア</block>
-  <block id="713cbd93b2ba47b4561b53a841624b51" category="list-text">詳細は近日公開予定</block>
   <block id="5ab0c2c7c8110afd8e099464217e8718" category="list-title">サポートされている作業環境</block>
   <block id="60bbb47f4c25fbe48c0eaa18d9174d22" category="list-text">ONTAPバージョン 9.8 以降を搭載したオンプレミスのONTAP SAN (iSCSI プロトコル) および NAS (NFS および CIFS プロトコルを使用)</block>
   <block id="d97ad1eba4f90ab1f835497c1e04b99f" category="list-text">AWS 向けCloud Volumes ONTAP 9.8 以上 (SAN および NAS を使用)</block>
@@ -4587,4 +4580,10 @@ ifdef：aws []</block>
   <block id="d135d1b6a10879ca27887c632f4576d7" category="inline-link">BlueXP  のアイデンティティ管理とアクセス管理の詳細</block>
   <block id="80a8421050b068560b8a6a9ede26cb9b" category="paragraph">バックアップ コピーは、 BlueXPコネクタが存在するBlueXP組織に関連付けられます。 <block ref="00bb451fd39671f4aa08ee6cf3130758" category="inline-link-rx"></block> 。</block>
   <block id="3fe11e28eeacfe638604d387a3e527ee" category="paragraph">同じBlueXP組織内に複数のコネクタがある場合、各コネクタには同じバックアップ リストが表示されます。</block>
+  <block id="a2e3a30df706bb24099d5e00888df71a" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
+  <block id="6e23fbb0baad6a7a72bd41e60b71f566" category="admonition">Microsoft SQL Server ワークロードの保護に関するこのドキュメントは、テクノロジープレビューとして提供されています。このプレビュー提供において、 NetApp は一般提供開始前に提供内容、内容、およびスケジュールを変更する権利を留保します。</block>
+  <block id="1e016758a8b3495be7c3ee2b6b26aab6" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
+  <block id="b75b69427facaf94889fb25900eb710a" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
+  <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetAppボリューム</block>
+  <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
 </blocks>
