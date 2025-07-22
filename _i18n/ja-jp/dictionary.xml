@@ -4586,4 +4586,5 @@ ifdef：aws []</block>
   <block id="b75b69427facaf94889fb25900eb710a" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetAppボリューム</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
+  <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">この機能は、2025 年 5 月にリリースされたBlueXP backup and recoveryバージョン 4.0.3 以降で利用できます。</block>
 </blocks>
