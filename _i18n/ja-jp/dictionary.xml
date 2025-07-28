@@ -4551,7 +4551,6 @@ ifdef：aws []</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetAppボリューム</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
   <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">この機能は、2025 年 5 月にリリースされたBlueXP backup and recoveryバージョン 4.0.3 以降で利用できます。</block>
-  <block id="6902ada6aa5bd3c4c129d87093d48e07" category="doc">パブリック テクノロジー プレビューとしての Kubernetes ワークロード サポート</block>
   <block id="36442e954ef2484603f79c5f3abc842b" category="paragraph">BlueXP backup and recoveryのこのリリースでは、Kubernetes ワークロードの検出と管理のサポートが導入されています。</block>
   <block id="200a1ca96330b8c7561607ba3e8efa76" category="list-text">kubeconfig ファイルを共有せずに、 NetApp ONTAPを搭載した Red Hat OpenShift とオープンソースの Kubernetes クラスターを発見します。</block>
   <block id="bc97cde5f3a6fe336563401fb4b522a7" category="list-text">統合されたコントロール プレーンを使用して、複数の Kubernetes クラスターにわたるアプリケーションを検出、管理、保護します。</block>
@@ -4644,4 +4643,6 @@ ifdef：aws []</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Kubernetes ワークロードを保護する（プレビュー）</block>
   <block id="c3c3199204503d3bbd5d4dce7eabf238" category="sidebar">Kubernetes ワークロードの保護の概要</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Kubernetes ワークロードの実行フック テンプレートを管理する</block>
+  <block id="5d8fc779baf0d068c296ee5013b2224f" category="doc">Kubernetes ワークロードのサポート (プレビュー)</block>
+  <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">Kubernetesワークロードの保護の詳細については、以下を参照してください。 <block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> 。</block>
 </blocks>

@@ -1,10 +1,10 @@
-= パブリック テクノロジー プレビューとしての Kubernetes ワークロード サポート
+= Kubernetes ワークロードのサポート (プレビュー)
 :allow-uri-read: 
 
 
 
 
-=== パブリック テクノロジー プレビューとしての Kubernetes ワークロード サポート
+=== Kubernetes ワークロードのサポート (プレビュー)
 
 BlueXP backup and recoveryのこのリリースでは、Kubernetes ワークロードの検出と管理のサポートが導入されています。
 
@@ -16,3 +16,5 @@ BlueXP backup and recoveryのこのリリースでは、Kubernetes ワークロ�
 * Kubernetes 上で実行されているコンテナと仮想マシンを操作します。
 * 実行フックとテンプレートを使用して、アプリケーション整合性のあるバックアップを作成します。
 
+
+Kubernetesワークロードの保護の詳細については、以下を参照してください。  https://docs.netapp.com/us-en/bluexp-backup-recovery/br-use-kubernetes-protect-overview.html["Kubernetes ワークロードの保護の概要"] 。
