@@ -57,7 +57,7 @@ indexpage:
     - title: Kubernetes ワークロードを発見する
       url: br-start-discover-kubernetes.html
     - title: Kubernetes アプリケーションの追加と保護
-      url: link:br-use-protect-kubernetes-applications.html
+      url: br-use-protect-kubernetes-applications.html
     - title: Kubernetes クラスタを管理
       url: br-use-manage-kubernetes-clusters.html
     - title: Kubernetes アプリケーションを管理する
