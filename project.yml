@@ -133,6 +133,22 @@ sidebar:
         url: "/prev-vmware-manage.html"
       - title: 仮想マシンのデータとデータストアを復元する
         url: "/prev-vmware-restore.html"
+    - title: Kubernetes ワークロードを保護する（プレビュー）
+      entries:
+      - title: Kubernetes ワークロードの保護の概要
+        url: "/br-use-kubernetes-protect-overview.html"
+      - title: Kubernetes ワークロードを発見する
+        url: br-start-discover-kubernetes.html
+      - title: Kubernetes アプリケーションの追加と保護
+        url: "/br-use-protect-kubernetes-applications.html"
+      - title: Kubernetesアプリケーションの復元
+        url: "/br-use-restore-kubernetes-applications.html"
+      - title: Kubernetes クラスタを管理
+        url: "/br-use-manage-kubernetes-clusters.html"
+      - title: Kubernetes アプリケーションを管理する
+        url: "/br-use-manage-kubernetes-applications.html"
+      - title: Kubernetes ワークロードの実行フック テンプレートを管理する
+        url: "/br-use-manage-execution-hook-templates.html"
     - title: ジョブの監視
       url: "/br-use-monitor-tasks.html"
     - title: BlueXPのバックアップとリカバリを再開します

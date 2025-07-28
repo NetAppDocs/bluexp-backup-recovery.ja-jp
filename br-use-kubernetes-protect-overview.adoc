@@ -14,9 +14,27 @@ summary: オンプレミスのONTAPシステムから Amazon Web Services、Micr
 
 
 [role="lead"]
-BlueXP backup and recoveryでKubernetesワークロードを管理することで、Kubernetesクラスターとアプリケーションを一元的に管理・保護できます。Kubernetesクラスターでホストされているリソースとアプリケーションを管理できます。また、Kubernetesワークロードの保護設定も管理できます。
+BlueXP backup and recoveryでKubernetesワークロードを管理することで、Kubernetesクラスタとアプリケーションの検出、管理、保護をすべて1か所で行うことができます。Kubernetesクラスタでホストされているリソースとアプリケーションを管理できます。また、単一のインターフェースを使用して、Kubernetesワークロードに保護ポリシーを作成し、関連付けることもできます。
+
+次の図は、Kubernetes ワークロードのバックアップとリカバリのコンポーネントと基本アーキテクチャ、およびデータの異なるコピーを異なる場所に保存する方法を示しています。
+
+image:../media/backup-recovery-architecture-diagram.png["Kubernetes ワークロードのバックアップとリカバリのアーキテクチャ図"]
+
+BlueXP backup and recoveryは、 Kubernetes ワークロードの管理に次の利点をもたらします。
+
+* 複数の Kubernetes クラスターで実行されるアプリケーションを保護するための単一のコントロールプレーン。これらのアプリケーションには、Kubernetes クラスターで実行されるコンテナや仮想マシンが含まれます。
+* NetApp SnapMirrorとのネイティブ統合により、すべてのバックアップおよびリカバリ ワークフローのストレージ オフロード機能が有効になります。
+* Kubernetes アプリケーションの永久増分バックアップにより、復旧ポイント目標 (RPO) と復旧時間目標 (RTO) が低下します。
+
 
 
 NOTE: このドキュメントはテクノロジープレビューとして提供されています。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
 
 Kubernetes ワークロードの管理に関連する次のタスクを実行できます。
+
+* link:br-start-discover.html#discover-kubernetes-workloads["Kubernetes ワークロードを発見する"] 。
+* link:br-use-manage-kubernetes-clusters.html["Kubernetes クラスタを管理"]です。
+* link:br-use-protect-kubernetes-applications.html["Kubernetes アプリケーションの追加と保護"] 。
+* link:br-use-manage-kubernetes-applications.html["Kubernetes アプリケーションを管理する"]です。
+* link:br-use-restore-kubernetes-applications.html["Kubernetesアプリケーションの復元"] 。
+

@@ -20,6 +20,9 @@ BlueXP backup and recoveryを使用すると、Kubernetes クラスターを検�
 組織管理者またはSnapCenter管理者。link:reference-roles.html["BlueXP backup and recoveryのアクセス ロールについて学ぶ"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
 
 
+NOTE: Kubernetesクラスターを発見するには、以下を参照してください。 link:br-start-discover.html["Kubernetes ワークロードを発見する"] 。
+
+
 
 == Kubernetes クラスターの情報を編集する
 
@@ -29,7 +32,7 @@ BlueXP backup and recoveryを使用すると、Kubernetes クラスターを検�
 . BlueXP backup and recoveryで、*インベントリ* > *クラスター*を選択します。
 . クラスターのリストで、編集するクラスターを選択し、関連する [アクション] メニューを選択します。
 . *クラスターの編集*を選択します。
-. クラスター名に必要な変更を加えます。
+. クラスター名に必要な変更を加えます。クラスター名は、検出プロセス中にHelmコマンドで使用した名前と一致する必要があります。
 . 「 Done （完了）」を選択します。
 
 

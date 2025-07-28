@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-kubernetes.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Kubernetes 
+summary: BlueXP backup and recoveryサービスを使用するには、まずワークロードを検出する必要があります。 
+---
+= BlueXP backup and recoveryで Kubernetes ワークロードを発見
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recoveryサービスを使用するには、まず Kubernetes ワークロードを検出する必要があります。
+
+*必須のBlueXPロール* バックアップとリカバリのスーパー管理者。 link:reference-roles.html["バックアップとリカバリの役割と権限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+
+
+== Kubernetes ワークロードを発見する
+
+バックアップおよびリカバリのインベントリでは、環境内で実行されているKubernetesワークロードを検出できます。ワークロードを検出すると、 BlueXP backup and recoveryにKubernetesクラスターが追加され、クラスターにアプリケーションを追加して、クラスターでホストされているリソースを保護できるようになります。
+
+.手順
+. 次のいずれかを実行します。
++
+** Kubernetes ワークロードを初めて検出する場合は、 BlueXP backup and recoveryで、Kubernetes ワークロード タイプの下の *検出と管理* を選択します。
+** Kubernetes ワークロードをすでに検出している場合は、 BlueXP backup and recoveryで、*インベントリ* > *ワークロード* を選択し、*リソースの検出* を選択します。
+
+
+. *Kubernetes* ワークロード タイプを選択します。
+. クラスター名を入力し、クラスターで使用するコネクタを選択します。
+. 表示されるコマンド ラインの指示に従います。
++
+** Trident保護名前空間を作成する
+** Kubernetesシークレットを作成する
+** Helmリポジトリを追加する
+** TridentプロテクトとTridentプロテクトコネクタを取り付ける
++
+これらの手順により、BlueXP backup and recoveryがクラスターと対話できるようになります。
+
+
+
+. 手順を完了したら、[*検出*] を選択します。
++
+クラスターがインベントリに追加されます。
+
+. 関連付けられている Kubernetes ワークロードで [*表示*] を選択すると、そのワークロードのアプリケーション、クラスター、および名前空間のリストが表示されます。
+
+
+
+
+== BlueXP backup and recoveryダッシュボードに進みます
+
+BlueXP backup and recoveryダッシュボードを表示するには、次の手順に従います。
+
+. 上部のメニューから*ダッシュボード*を選択します。
+. データ保護の健全性を確認します。新たに検出、保護、バックアップされたワークロードに基づいて、リスクのあるワークロードまたは保護対象のワークロードの数が増加します。
++
+link:br-use-dashboard.html["ダッシュボードに表示される内容を学ぶ"]です。
+
+

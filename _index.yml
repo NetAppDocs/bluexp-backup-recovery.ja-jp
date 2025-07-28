@@ -18,12 +18,6 @@ indexpage:
       url: br-start-setup.html
     - title: BlueXP backup and recoveryの設定を構成する
       url: br-start-configure.html
-  - title: バックアップと復元のポリシーを管理する
-    links:
-    - title: バックアップとリストアを管理するポリシーを作成する
-      url: br-use-policies-create.html
-    - title: ダッシュボードで保護の状態を確認する
-      url: br-use-dashboard.html
   - title: ONTAPボリュームのワークロードを保護する
     links:
     - title: ONTAPボリュームの保護ワークロードの概要
@@ -56,6 +50,20 @@ indexpage:
       url: prev-vmware-policy-create.html
     - title: 仮想マシンのワークロードを復元する
       url: prev-vmware-restore.html
+  - title: Kubernetes ワークロードを保護する（プレビュー）
+    links:
+    - title: Kubernetes ワークロードの保護の概要
+      url: br-use-kubernetes-protect-overview.html
+    - title: Kubernetes ワークロードを発見する
+      url: br-start-discover-kubernetes.html
+    - title: Kubernetes アプリケーションの追加と保護
+      url: link:br-use-protect-kubernetes-applications.html
+    - title: Kubernetes クラスタを管理
+      url: br-use-manage-kubernetes-clusters.html
+    - title: Kubernetes アプリケーションを管理する
+      url: br-use-manage-kubernetes-applications.html
+    - title: Kubernetesアプリケーションの復元
+      url: br-use-restore-kubernetes-applications.html
   - title: ブログとコミュニティ
     links:
     - title: ネットアップコミュニティ
