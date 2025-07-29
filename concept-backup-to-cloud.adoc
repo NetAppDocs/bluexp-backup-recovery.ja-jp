@@ -192,6 +192,7 @@ GCP を使用する場合は、 NetAppからプライベート オファーを�
 * ONTAPボリューム
 * 物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS (プレビュー) 用の Microsoft SQL Server インスタンスとデータベース
 * VMware データストア
+* Kubernetes ワークロード (プレビュー)
 
 
 .サポートされている作業環境
