@@ -32,11 +32,20 @@ BlueXPのバックアップとリカバリでは、次の10のカテゴリのエ
 
 
 
+== API リファレンス
+
+BlueXP backup and recoveryAPIのドキュメントは、以下から入手できます。 https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html["BlueXP backup and recoveryのためのBlueXP自動化"^] 。
+
+
+
 == はじめに
 
 BlueXPのバックアップとリカバリAPIの使用を開始するには、ユーザトークン、BlueXPアカウントID、およびBlueXPコネクタIDを取得する必要があります。
 
 API呼び出しを行うときは、Authorizationヘッダーにユーザートークンを、x-agent-idヘッダーにBlueXPコネクタIDを追加します。APIでBlueXPアカウントIDを使用する必要があります。
+
+
+NOTE: サービス アカウントを使用している場合は、ユーザー トークンの代わりにサービス アクセス トークンを使用する必要があります。 「client_id」の値 (「Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC」) は固定値であり、変更できません。この場合は、次の手順に従ってください。 https://docs.netapp.com/us-en/bluexp-automation/platform/create_service_token.html["サービスアクセストークンを作成する"^] 。
 
 .手順
 . NetApp BlueXP Webサイトからユーザートークンを取得します
@@ -180,8 +189,3 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
     ]
 }
 ----
-
-
-== API リファレンス
-
-各BlueXP  バックアップおよびリカバリAPIのドキュメントは、から入手でき https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html["BlueXP  自動化"^]ます。

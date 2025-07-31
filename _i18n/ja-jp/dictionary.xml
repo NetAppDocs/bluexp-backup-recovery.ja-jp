@@ -4646,4 +4646,74 @@ ifdef：aws []</block>
   <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">Kubernetesワークロードの保護の詳細については、以下を参照してください。 <block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> 。</block>
   <block id="d30235bcb420e82027cadb3cffab450f" category="list-text"><block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> 。</block>
   <block id="339f6d69f0298e3d4bbd943ba3211c6c" category="list-text">Kubernetes ワークロード (プレビュー)</block>
+  <block id="9c288f5720b39b68330ff6558f4d728b" category="inline-link">BlueXP backup and recoveryのためのBlueXP自動化</block>
+  <block id="b0d36ddf3864894974cfcf7f668e9b9c" category="paragraph">BlueXP backup and recoveryAPIのドキュメントは、以下から入手できます。<block ref="d997d711dd0ca8a2419efc218eebd515" category="inline-link-rx"></block> 。</block>
+  <block id="92ab15f0eb1b97b8c4bdb14a10948af8" category="inline-link">サービスアクセストークンを作成する</block>
+  <block id="7ee1b8532fd572ee3c5a1cd48ff05db9" category="admonition">サービス アカウントを使用している場合は、ユーザー トークンの代わりにサービス アクセス トークンを使用する必要があります。 「client_id」の値 (「Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC」) は固定値であり、変更できません。この場合は、次の手順に従ってください。<block ref="baaa234cb07675a6b3437f1c7177f86d" category="inline-link-rx"></block> 。</block>
+  <block id="0ad47815ac126d3e59945dd94620559b" category="summary">「プライベート モード」と呼ばれる、インターネットにアクセスできないサイトでBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。将来BlueXP Connector ホスト システムに問題が発生した場合、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
+  <block id="1590a700aeef97b74c78e0edddc666d6" category="doc">ダークサイトでBlueXP backup and recoveryの構成データを復元する</block>
+  <block id="b60143d8607e2a12a97d5dc98902b3a3" category="paragraph">インターネットにアクセスできないサイト（_プライベート モード_）でBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。  BlueXP Connector ホスト システムに問題がある場合は、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
+  <block id="701ba6e125e8ce791098165f107eb472" category="admonition">この手順はONTAPボリューム データにのみ適用されます。</block>
+  <block id="400d95f0927e7eaac4a93498115f8b4f" category="paragraph">BlueXPコネクタがクラウド プロバイダーに導入されている SaaS 環境、またはインターネットにアクセスできる独自のホスト システムにBlueXP backup and recoveryを使用すると、重要なBlueXP backup and recovery構成データはすべてクラウドにバックアップされ、保護されます。コネクタに問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的に復元されます。</block>
+  <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">バックアップされるデータには 2 種類あります。</block>
+  <block id="3f90954724de2ab33270c2e29ef44d4c" category="list-text">BlueXP backup and recoveryデータベース - すべてのボリューム、バックアップ ファイル、バックアップ ポリシー、および構成情報のリストが含まれています。</block>
+  <block id="ae429398e7a8cba2d2c57d308c8ed88a" category="list-text">インデックス カタログ ファイル - 検索と復元機能に使用される詳細なインデックスが含まれており、復元するボリューム データを探すときに、検索を非常に迅速かつ効率的に行うことができます。</block>
+  <block id="c9cfba3160309eb4416746c049e4b9da" category="paragraph">このデータは 1 日に 1 回深夜にバックアップされ、各ファイルの最大 7 つのコピーが保持されます。コネクタが複数のオンプレミスのONTAP作業環境を管理している場合、 BlueXP backup and recoveryファイルは、最初にアクティブ化された作業環境のバケットに配置されます。</block>
+  <block id="33cc4fba89a0e27990f9826b52a31440" category="admonition">BlueXP backup and recoveryデータベースやインデックス カタログ ファイルにはボリューム データは含まれません。</block>
+  <block id="7aa13416e899895bea151695a08fc22d" category="section-title">BlueXP backup and recoveryデータを新しいBlueXPコネクタに復元する</block>
+  <block id="11c11cb03c79f4af018caa66bf0c66d4" category="paragraph">オンプレミスのBlueXPコネクタに重大な障害が発生した場合は、新しいコネクタをインストールし、 BlueXP backup and recoveryデータを新しいコネクタに復元する必要があります。</block>
+  <block id="6c9913da2722f6c96e97b9d6aa37bb46" category="paragraph">BlueXP backup and recoveryシステムを動作状態に戻すには、次のタスクを実行する必要があります。</block>
+  <block id="49ec960387a7762f70c9454eff39ff67" category="list-text">新しいBlueXPコネクタをインストールする</block>
+  <block id="6b7f0194ee0161c1ec6ef481e87fdaa2" category="list-text">BlueXP backup and recoveryデータベースを復元する</block>
+  <block id="bac8f03e2f29846dbab5b2b784213272" category="list-text">インデックスカタログファイルを復元する</block>
+  <block id="f7610e9182682c46b21a456bb9f88633" category="list-text">オンプレミスのONTAPシステムとStorageGRIDシステムをすべてBlueXP UIに再検出します。</block>
+  <block id="f19661624edbf73361ae75955e672733" category="paragraph">システムが正常に動作する状態に戻ったことを確認したら、新しいバックアップ ファイルを作成することをお勧めします。</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">要件</block>
+  <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">バックアップ ファイルが保存されているStorageGRIDまたはONTAP S3 バケットから最新のデータベースとインデックスのバックアップにアクセスする必要があります。</block>
+  <block id="e53202674690c06ddcfdb1f7eb32a51c" category="list-text">BlueXP backup and recoveryMySQL データベースファイル</block>
+  <block id="0d106b3c1ec4b5f2dce1ea9aa708a3db" category="paragraph">このファイルはバケット内の次の場所にあります<block ref="004f71688c8fd4622d305c92c30ed7bf" prefix=" " category="inline-code"></block>と名付けられています<block ref="76dfdaa4fa2f1fa24f016f6559440652" prefix=" " category="inline-code"></block>。</block>
+  <block id="9187ca15364232be9ebf6b59d5bc6421" category="list-text">インデックスカタログのバックアップ zip ファイル</block>
+  <block id="a4981f0083fe431764b930206324bfe8" category="paragraph">このファイルはバケット内の次の場所にあります<block ref="9abc3fd112ebf9d8d228e5c5b3b930a4" prefix=" " category="inline-code"></block>と名付けられています<block ref="5f3198716099b7e0c9df490b9dd7b132" prefix=" " category="inline-code"></block>。</block>
+  <block id="f0f8593cf8d423b69e3ba1407f6f5b05" category="section-title">新しいオンプレミス Linux ホストに新しいコネクタをインストールする</block>
+  <block id="65432ae2b80d2de48c0eff9f34726b87" category="inline-link">バックアップデータベースを復元した後、コネクタソフトウェアを最新バージョンにアップグレードします。</block>
+  <block id="a454364b080d416ad203233987bc1148" category="paragraph">新しいBlueXPコネクタをインストールするときは、必ず元のコネクタにインストールしたものと同じソフトウェア リリースをダウンロードしてください。 BlueXP backup and recoveryデータベース構造が定期的に変更されると、新しいソフトウェア リリースが元のデータベース バックアップと互換性がなくなる可能性があります。あなたはできる<block ref="2e0a24ee8438c92516f1c39f0bf156f8" category="inline-link-rx"></block>。</block>
+  <block id="fb91cab4ff80a23255e3962dd363d180" category="inline-link">新しいオンプレミス Linux ホストにBlueXPコネクタをインストールする</block>
+  <block id="6c962f0e820a4789f1eba2c1a38f944d" category="list-text"><block ref="6c962f0e820a4789f1eba2c1a38f944d" category="inline-link-rx"></block></block>
+  <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">先ほど作成した管理者ユーザーの資格情報を使用してBlueXPにログインします。</block>
+  <block id="b47ed0a876023d6bae71fb57f4671fc8" category="list-text">バックアップ場所から新しいコネクタ ホストに MySQL バックアップをコピーします。以下では、サンプルファイル名「CBS_DB_Backup_23_05_2023.sql」を使用します。</block>
+  <block id="2bd2b4226296570c863270e08d511da0" category="list-text">Docker コンテナまたは Podman コンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用して、バックアップを MySQL Docker コンテナにコピーします。</block>
+  <block id="4b049f120edc0f4092d8d8e236ea964b" category="list-text">Docker コンテナまたは Podman コンテナのどちらを使用しているかに応じて、次のいずれかのコマンドを使用して MySQL コンテナ シェルに入ります。</block>
+  <block id="ea88528cf92a2583181519ef77cd0928" category="list-text">コンテナ シェルで、「env」をデプロイします。</block>
+  <block id="fb4d2049eb8a30a41f47794ab189550a" category="list-text">MySQL DB パスワードが必要になるので、キー「MYSQL_ROOT_PASSWORD」の値をコピーします。</block>
+  <block id="a68527cebf1aaeae64bda2645985b661" category="list-text">次のコマンドを使用して、 BlueXP backup and recoveryMySQL DB を復元します。</block>
+  <block id="391b3817ffe9fe659a3a443a7fba86f2" category="list-text">次の SQL コマンドを使用して、 BlueXP backup and recoveryMySQL DB が正しく復元されたことを確認します。</block>
+  <block id="1a411806f1f54597b7259137d2e753db" category="paragraph">パスワードを入力してください。</block>
+  <block id="3ec8f556a760c1ea438f0c8012517d09" category="paragraph">表示されるボリュームが元の環境に存在していたボリュームと同じかどうかを確認します。</block>
+  <block id="56dd14a7bf28acd20f0a0435a86d17e0" category="list-text">インデックス付きカタログのバックアップ zip ファイル (サンプル ファイル名は「Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip」を使用します) をバックアップ場所から「/opt/application/netapp/cbs」フォルダー内の新しいコネクタ ホストにコピーします。</block>
+  <block id="39ba61f148a69dbb1215b6b10c98b11a" category="list-text">次のコマンドを使用して、「Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip」ファイルを解凍します。</block>
+  <block id="3b3267745861675e9a5e88b689b4cda8" category="list-text">*ls* コマンドを実行して、フォルダー「catalogdb1」が作成され、その下にサブフォルダー「changes」と「snapshots」が作成されていることを確認します。</block>
+  <block id="47088be6cbcb439bd7241ec72edf3a91" category="section-title">ONTAPクラスタとStorageGRIDシステムを発見</block>
+  <block id="202fec1254d856dde5dee6e53f5eb9e9" category="inline-link">オンプレミスのONTAP作業環境をすべて見る</block>
+  <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block>以前の環境で利用可能でした。これには、S3 サーバーとして使用したONTAPシステムが含まれます。</block>
+  <block id="f8fe3d533b3c8ec77c886cdbfcbd8c60" category="inline-link">StorageGRIDシステムを発見</block>
+  <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block> 。</block>
+  <block id="8a817b57889a6e642ad7fb06e7b26c80" category="section-title">StorageGRID環境の詳細を設定する</block>
+  <block id="95405ad3ad814456093255e6d36ee69e" category="inline-link">BlueXP API</block>
+  <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">元のコネクタセットアップで設定されたONTAP作業環境に関連付けられたStorageGRIDシステムの詳細を、<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block> 。</block>
+  <block id="da2ba8762d0dcb78945a22c9a375fffa" category="inline-link">DarkSite クラウドバックアップ: MySQL とインデックスカタログのバックアップと復元</block>
+  <block id="bb10a63044b830cc42091d93b78fd668" category="paragraph">以下の情報は、 BlueXP 3.9.xx 以降のプライベート モードのインストールに適用されます。古いバージョンの場合は、次の手順に従います。<block ref="2da286ce66fc5078574abb0f7864085c" category="inline-link-rx"></block> 。</block>
+  <block id="241380d8d42b823d8bd7c25c9fc3014f" category="paragraph">StorageGRIDにデータをバックアップするシステムごとにこれらの手順を実行する必要があります。</block>
+  <block id="3f1b9decb18d57a001f26c7273adeddc" category="list-text">次の oauth/token API を使用して認証トークンを抽出します。</block>
+  <block id="cd6c5272ababe8075a9145908c571172" category="paragraph">IP アドレス、ユーザー名、パスワードはカスタム値ですが、アカウント名はカスタム値ではありません。アカウント名は常に「account-DARKSITE1」になります。また、ユーザー名には電子メール形式の名前を使用する必要があります。</block>
+  <block id="f2b2dd8a7061a4f2836de5feda40a45e" category="paragraph">この API は次のような応答を返します。認証トークンは以下のように取得できます。</block>
+  <block id="74e96d8b9d4abdf183199553dd665e53" category="list-text">tenancy/external/resource API を使用して、作業環境 ID と X-Agent-Id を抽出します。</block>
+  <block id="69473e9fe37da40f59b6a4abb9d0b124" category="paragraph">この API は次のような応答を返します。  「resourceIdentifier」の下の値は _WorkingEnvironment Id_ を示し、「agentId」の下の値は _x-agent-id_ を示します。</block>
+  <block id="2decbd35e1c4f4abc73df06a5256970a" category="list-text">作業環境に関連付けられたStorageGRIDシステムの詳細を使用して、 BlueXP backup and recoveryデータベースを更新します。以下に示すように、 StorageGRIDの完全修飾ドメイン名と、アクセス キーおよびストレージ キーを必ず入力してください。</block>
+  <block id="119ce87fb0068eaf943265dcfa7867a2" category="section-title">BlueXP backup and recoveryの設定を確認する</block>
+  <block id="e828f5871c88d64ebf2a764153246360" category="list-text">各ONTAP作業環境を選択し、右側のパネルのバックアップおよびリカバリ サービスの横にある [*バックアップの表示*] をクリックします。</block>
+  <block id="36c688567530141607520ff8f371abad" category="paragraph">ボリュームに対して作成されたすべてのバックアップを表示できるはずです。</block>
+  <block id="ca58572920332b0113296b57e60a56de" category="list-text">復元ダッシュボードの「検索と復元」セクションで、「*インデックス設定*」をクリックします。</block>
+  <block id="98c648bc34880f7f4d457836f8d482d7" category="paragraph">以前にインデックスカタログが有効になっていた作業環境が引き続き有効になっていることを確認します。</block>
+  <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">「検索と復元」ページから、いくつかのカタログ検索を実行して、インデックス付きカタログの復元が正常に完了したことを確認します。</block>
+  <block id="14873f48c9db88415c7c75e61a0ddd00" category="sidebar">ダークサイトで構成データを復元する</block>
 </blocks>

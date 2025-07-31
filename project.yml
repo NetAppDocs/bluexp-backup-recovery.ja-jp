@@ -87,6 +87,8 @@ sidebar:
         url: "/prev-ontap-backup-onprem-storagegrid.html"
       - title: SnapMirrorを使用したボリュームのクラウドへの再同期
         url: "/prev-ontap-migrate-resync.html"
+      - title: ダークサイトで構成データを復元する
+        url: "/reference-backup-cbs-db-in-dark-site.html"
       - title: ONTAP バックアップを管理します
         url: "/prev-ontap-backup-manage.html"
       - title: ONTAP バックアップからリストアする
