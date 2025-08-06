@@ -14,7 +14,7 @@ summary: BlueXP backup and recoveryサービスは、オンプレミスとクラ
 
 
 [role="lead"]
-BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、および VMware ワークロードに対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。
+BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。
 
 
 NOTE: このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。
@@ -187,7 +187,7 @@ GCP を使用する場合は、 NetAppからプライベート オファーを�
 == サポートされているデータソース、作業環境、バックアップ対象
 
 .サポートされているワークロード データ ソース
-このサービスは、次のアプリケーション ベースのワークロードを保護します。
+このサービスは、次のワークロードを保護します。
 
 * ONTAPボリューム
 * 物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS (プレビュー) 用の Microsoft SQL Server インスタンスとデータベース

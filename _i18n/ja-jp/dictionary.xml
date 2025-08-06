@@ -3863,7 +3863,6 @@ ifdef：aws []</block>
   <block id="66e26e427b5784b7adb6655a0b49e57f" category="paragraph">*注意* この機能は、BlueXP backup and recoveryUIの以前のバージョンを使用します。BlueXPのBlueXP backup and recoveryUIのバージョンを切り替えるには、以下を参照してください。 <block ref="906891f55c4c6af31e4cf82ce54f93d9" category="inline-link-macro-rx"></block> 。</block>
   <block id="5165c2fbcef4d5b16f189feb7569b43b" category="paragraph">以前のBlueXP backup and recoveryUI の使用方法については、次のトピックを参照してください。</block>
   <block id="219b1d964760a35bc8ac924733ed0211" category="summary">BlueXP backup and recoveryサービスは、オンプレミスとクラウドの両方で、 NetAppデータベースとインスタンスに対して効率的、安全、かつコスト効率に優れたデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
-  <block id="21a4e084cb9eeae89f7b12a3531b652c" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、および VMware ワークロードに対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
   <block id="5ddad1ad8421fb041436bd24f4aea0c5" category="section-title">BlueXP backup and recoveryでできること</block>
   <block id="930ffc736eba485afa459142d19e0a4e" category="paragraph">BlueXP backup and recoveryを使用して、次の目標を達成します。</block>
   <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAPボリュームのワークロード:</block>
@@ -3911,7 +3910,6 @@ ifdef：aws []</block>
   <block id="37265d8bc5bb9d770dbba2833c18f913" category="paragraph">GCP を使用する場合は、 NetAppからプライベート オファーをリクエストし、 BlueXP backup and recoveryのアクティベーション中に Google Cloud Marketplace からサブスクライブするときにプランを選択できます。endif::gcp[]</block>
   <block id="c8ee5c80af66e9ba0b237679d3ee2962" category="section-title">サポートされているデータソース、作業環境、バックアップ対象</block>
   <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">サポートされているワークロード データ ソース</block>
-  <block id="8e9099358934a1f0118f70592242de0e" category="paragraph">このサービスは、次のアプリケーション ベースのワークロードを保護します。</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAPボリューム</block>
   <block id="58f149a832a0f214528ef836d6898835" category="list-text">物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS (プレビュー) 用の Microsoft SQL Server インスタンスとデータベース</block>
   <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware データストア</block>
@@ -4716,4 +4714,6 @@ ifdef：aws []</block>
   <block id="047b5386a7c666d31be5990a4869e7da" category="list-text">*ディスクからディスク*: (Kubernetes ワークロードでは使用できません) プライマリ ストレージ (ディスク) からセカンダリ ストレージ (ディスク)。 ONTAPからONTAPへのデータ保護戦略では、2 つのONTAPシステム間でデータを複製し、高可用性と災害復旧を保証します。これは通常、同期レプリケーションと非同期レプリケーションの両方をサポートするSnapMirrorを使用して実現されます。この方法により、データが継続的に更新され、複数の場所で利用可能になり、データ損失に対する強力な保護が提供されます。</block>
   <block id="68348a4aedf069fed0da1ef391e470d8" category="list-text">*ディスク間のファンアウト*: (Kubernetes ワークロードでは使用できません) プライマリ ストレージ (ディスク) からセカンダリ ストレージ (ディスク) およびプライマリ ストレージ (ディスク) からセカンダリ ストレージ (ディスク)。</block>
   <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">セカンダリストレージへのレプリケーションに関する情報を提供します。ローカル スナップショット設定のスケジュール情報が、セカンダリ設定に表示されます。これらの設定は Kubernetes ワークロードでは使用できません。</block>
+  <block id="5f62fed28c117ffda0827b12f19c440d" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
+  <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">このサービスは、次のワークロードを保護します。</block>
 </blocks>
