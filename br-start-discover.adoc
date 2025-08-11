@@ -16,7 +16,7 @@ summary: BlueXP backup and recoveryサービスを使用するには、まずワ
 [role="lead"]
 BlueXP backup and recoveryサービスを使用するには、まず Microsoft SQL Server ワークロードを検出する必要があります。SnapCenter がSnapCenterインストールされている場合は、オプションでSnapCenterからバックアップデータとポリシーをインポートできます。
 
-*必須のBlueXPロール* バックアップとリカバリのスーパー管理者。 link:reference-roles.html["バックアップとリカバリの役割と権限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+*必要なBlueXPロール* このタスクには、データ サービスのバックアップおよびリカバリのスーパー管理者ロールが必要です。学ぶlink:reference-roles.html["バックアップおよびリカバリデータサービスの役割と権限"]。 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
 
 
 

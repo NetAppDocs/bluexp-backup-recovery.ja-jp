@@ -2853,7 +2853,6 @@ ifdef：aws []</block>
   <block id="c7b4d968f2d50c900d950efc28b21602" category="summary">BlueXP backup and recoveryサービスを使用するには、まずワークロードを検出する必要があります。</block>
   <block id="4ed9d079b0f878e88f1e524c5e40334b" category="doc">BlueXP backup and recoveryで Microsoft SQL Server ワークロードを検出し、オプションでSnapCenterからインポートします。</block>
   <block id="88867c168356c4e4806b5412f199a98e" category="paragraph">BlueXP backup and recoveryサービスを使用するには、まず Microsoft SQL Server ワークロードを検出する必要があります。SnapCenter がSnapCenterインストールされている場合は、オプションでSnapCenterからバックアップデータとポリシーをインポートできます。</block>
-  <block id="9b4181d03263555437f8a40593f311f0" category="paragraph">*必須のBlueXPロール* バックアップとリカバリのスーパー管理者。 <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> 。 <block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
   <block id="da39a7712232603b7b60f32ff70cea25" category="section-title">Microsoft SQL Server ワークロードを検出し、オプションでSnapCenterリソースをインポートします</block>
   <block id="b329a8668afc5358ec61c1d17bcc1160" category="paragraph">検出中に、 BlueXP backup and recoveryは、組織内の作業環境にある Microsoft SQL Server インスタンスとデータベースを分析します。</block>
   <block id="0e991171704ddccf2cbcd439d58f5def" category="paragraph">BlueXP backup and recoveryは、 Microsoft SQL Server アプリケーションを評価します。このサービスでは、現在のバックアップ保護ポリシー、スナップショットコピー、バックアップおよびリカバリオプションなど、既存の保護レベルを評価します。</block>
@@ -4716,4 +4715,6 @@ ifdef：aws []</block>
   <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">セカンダリストレージへのレプリケーションに関する情報を提供します。ローカル スナップショット設定のスケジュール情報が、セカンダリ設定に表示されます。これらの設定は Kubernetes ワークロードでは使用できません。</block>
   <block id="5f62fed28c117ffda0827b12f19c440d" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
   <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">このサービスは、次のワークロードを保護します。</block>
+  <block id="a7834976a2cbdc12ddeb76acc0345f2d" category="inline-link-macro">バックアップおよびリカバリデータサービスの役割と権限</block>
+  <block id="092238820de0395a7d97ae63a784ea7f" category="paragraph">*必要なBlueXPロール* このタスクには、データ サービスのバックアップおよびリカバリのスーパー管理者ロールが必要です。学ぶ<block ref="48e53f0dd24db48908da75d62a8f8086" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
 </blocks>
