@@ -93,7 +93,7 @@ sidebar:
         url: "/prev-ontap-backup-manage.html"
       - title: ONTAP バックアップからリストアする
         url: "/prev-ontap-restore.html"
-    - title: Microsoft SQL Server ワークロードを保護する (プレビュー)
+    - title: Microsoft SQL Server ワークロードを保護する
       entries:
       - title: Microsoft SQL Server ワークロードの保護の概要
         url: "/br-use-mssql-protect-overview.html"

@@ -2002,7 +2002,6 @@ ONTAP S3の略</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリースノート</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
-  <block id="7126662a353f79c46a7ccefe46dc4c0a" category="sidebar">ONTAP ボリュームのデータを保護</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">ONTAPボリュームのポリシーを管理します。</block>
   <block id="30f1797234e3bfa4ab1f707a8b681072" category="sidebar">Cloud Volumes ONTAP を Amazon S3 にバックアップします</block>
   <block id="32bfa5cb747a11af2fed4c8de1f2cc27" category="sidebar">Cloud Volumes ONTAP を Azure Blob にバックアップ</block>
@@ -2819,7 +2818,6 @@ ifdef：aws []</block>
   <block id="724729c4345df7c7de2c554ce4f7f786" category="list-text">*オフサイト バックアップ ターゲット*を選択します。</block>
   <block id="769233fa2b4f272aa4b358128b486914" category="list-text">ターゲットを選択し、右側の*アクション*を選択します<block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block>アイコンをクリックし、[バケットを追加] を選択します。</block>
   <block id="76de0debf81157408e19f05bd610d330" category="list-text">バケット情報を入力します。情報は、選択したバックアップ対象の種類によって異なります。</block>
-  <block id="8d7bc27ff64607a77571321ae3965845" category="list-text">*バケット名*: S3 バケットの名前を入力します。</block>
   <block id="108ee21ce887e3355a1c0a78d988d4d5" category="list-text">*AWS アカウント*: AWS アカウント名を入力します。</block>
   <block id="76dc432b87c0c80afcff5422f295447e" category="list-text">*バケットリージョン*: バケットの AWS リージョンを入力します。</block>
   <block id="f251020c4d387e4c1d1fa549b0953a19" category="list-text">*S3 オブジェクトロックを有効にする*：バケットに対してS3 オブジェクトロックを有効にするには、このオプションを選択します。S3オブジェクトロックは、指定された保持期間中、オブジェクトの削除または上書きを防止し、データ保護をさらに強化します。このオプションはバケットの作成時にのみ有効にでき、後で無効にすることはできません。</block>
@@ -2900,7 +2898,6 @@ ifdef：aws []</block>
   <block id="4f5332d3a64ad3a5f329d9e2ec4c3de0" category="list-text">インベントリ ページで、* SnapCenterリソースのインポート* を選択します。</block>
   <block id="431b458d886f32e02caf8188c638e248" category="list-text">SnapCenterリソースをインポートするには、上記の * SnapCenterリソースのインポート* セクションの手順に従います。</block>
   <block id="06110d617160ad04a95ab18c0d54c91f" category="section-title">SnapCenterがインストールされていない場合は、vCenterを追加してリソースを検出します。</block>
-  <block id="54776894c940f03c460d3c2d8f252476" category="paragraph">SnapCenterをまだインストールしていない場合は、vCenter情報を追加し、 BlueXP backup and recoveryでワークロードを検出します。各BlueXPコネクタ内で、ワークロードを検出する作業環境を選択します。</block>
   <block id="352a6864d8584f450610129e9693aa89" category="paragraph">このサービスに初めてログインする場合、 BlueXPに既に作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*リソースの検出*オプションが表示されます。</block>
   <block id="5476bc0e87bf41e9c4234e8f5bf52abc" category="inline-image-macro">BlueXP blueXP のランディング ページのスクリーンショット (リソースが検出されない場合)</block>
   <block id="908b70ecb27441933ba7b138a4c1e0d8" category="paragraph"><block ref="908b70ecb27441933ba7b138a4c1e0d8" category="inline-image-macro-rx" type="image"></block></block>
@@ -3000,7 +2997,6 @@ ifdef：aws []</block>
   <block id="eb88c9bb2befc17e9936f1161af428d8" category="list-text">このサービスに初めてログインし、まだ作業環境をお持ちでない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディングページが表示され、「作業環境を追加」オプションが表示されます。BlueXP<block ref="30695c6d0a43b7de7851a7763d30f1ac" category="inline-link-rx"></block> 。</block>
   <block id="8115ddcab77f71c9120011c71e2bdda5" category="inline-image-macro">BlueXP blueXP のランディング ページのスクリーンショット (作業環境なしのバックアップとリカバリ)</block>
   <block id="c05f807ad73b14de6c95ad74b03880c8" category="paragraph"><block ref="c05f807ad73b14de6c95ad74b03880c8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0e4cc5787e91359615f6babc0c5fff56" category="list-text">このサービスに初めてログインし、 BlueXPにすでに作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*リソースの検出*オプションが表示されます。</block>
   <block id="4ce04c546a4ab093d76ec4b9a8de035b" category="inline-image-macro">BlueXP blueXP バックアップとリカバリのランディングページのスクリーンショット</block>
   <block id="b44b68cdf58a91cca1e98ddcd111c149" category="paragraph"><block ref="b44b68cdf58a91cca1e98ddcd111c149" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bbad9a213d5f66b0be7b3560016ee386" category="list-text">まだ行っていない場合は、[*検出と管理*] オプションを選択します。</block>
@@ -3046,7 +3042,6 @@ ifdef：aws []</block>
   <block id="eb81063ae61d5b5a3059af16143055a7" category="list-text">NetAppStorageGRID。</block>
   <block id="47f2041a4743cab811755724259041e4" category="inline-link">StorageGRIDについて知る</block>
   <block id="b5cd452f34c5089a2f3997fb61574a65" category="paragraph">を参照してください<block ref="052103450ca53d187fc43494d3a3f9d8" category="inline-link-rx"></block>。</block>
-  <block id="ad5db5ccbde2cb52a48b5ffd3f643030" category="paragraph">参照<block ref="4cc24fbab710afd2e2ecf5070c4cfaad" category="inline-link-rx"></block> StorageGRIDの詳細については、こちらをご覧ください。</block>
   <block id="d9b7f314625fb7dcf35c741afe65b676" category="inline-link">Amazon S3 ドキュメント</block>
   <block id="d27e94dedc4cb00205ab2881930c33cb" category="list-text">Amazon Web サービス。を参照してください<block ref="fb6b541398f012edee7de32afd43795d" category="inline-link-rx"></block>。</block>
   <block id="ab0937fbab054ae5e46e4b1c5dc727fe" category="paragraph">AWS をバックアップ先として準備するには、次の手順を実行します。</block>
@@ -3069,7 +3064,6 @@ ifdef：aws []</block>
   <block id="74f36934b63f6a14e1bf79c693841393" category="doc">さまざまなBlueXP backup and recoveryワークロードに切り替える</block>
   <block id="b855e251d5df357e144fbf0e53db0c36" category="paragraph">*どの UI を使用しているかはどのようにしてわかりますか?*</block>
   <block id="96ec5c3621495d866bf12104959de6fc" category="inline-image-macro">BlueXP backup and recoveryの新しい UI スクリーンショット</block>
-  <block id="926dc21f549ff34bf202b4cfa52b084e" category="paragraph">Microsoft SQL Server ワークロードのタスクバーは次のようになります。 <block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="47b2e1fa9a85c125a53c3e5c9a3e0e98" category="inline-image-macro">BlueXP backup and recoveryの以前の UI スクリーンショット</block>
   <block id="db417fd26ca3425ad12946f4a0f2ff53" category="paragraph">ONTAPボリュームと VMware ワークロードのメニュー バーは次のようになります。 <block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fe22a10f6ea181611d52a0d5759f39db" category="section-title">別のワークロードに切り替える</block>
@@ -3501,12 +3495,9 @@ ifdef：aws []</block>
   <block id="8b387432a535fb4b84f9acc0531a283f" category="paragraph">ワークロードをバックアップするには、通常、バックアップおよび復元操作を管理するポリシーを作成します。詳細については、を参照してください <block ref="08bf6451e8be54326517c755d3e4cd23" category="inline-link-macro-rx"></block> 。</block>
   <block id="1fdd7075910d44e46e156b5a1b4c6ca2" category="paragraph">BlueXP backup and recoveryを使用すると、Microsoft SQL Server インスタンスとデータベースを次のソース作業環境から次のセカンダリ作業環境およびパブリックおよびプライベート クラウド プロバイダーのオブジェクト ストレージにバックアップできます。Snapshotコピーはソースの作業環境に配置されます。</block>
   <block id="01d7442dea4ae392305c30e31fbcf649" category="cell">デスティネーションオブジェクトストア（バックアップ）</block>
-  <block id="383f5853ae8b65dbff677adbb5da0335" category="cell">Amazon S3 Azure Blob NetApp StorageGRID ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[]</block>
   <block id="cd954c322fb26798ae828597e7dc20c1" category="paragraph">プライマリ ストレージまたはセカンダリ作業環境 (複製されたボリューム) またはオブジェクト ストレージ (バックアップ ファイル) にあるバックアップから、Microsoft SQL Server インスタンスとデータベースを次の作業環境に復元できます。Snapshotコピーはソースの作業環境に存在し、同じシステムにのみリストアできます。</block>
   <block id="e0893da01d668b23122f21e47097eb86" category="cell">バックアップファイルの場所から</block>
   <block id="9cbb76c809731445f75b4658afd301ea" category="cell">デスティネーションの作業環境へ</block>
-  <block id="b267cb3de509074ec74cc645c927c5ef" category="cell">AWSオンプレミスONTAPシステムのクラウドボリューム</block>
-  <block id="04e049f0d33a777a50f389c4161b07e5" category="cell">Azure のCloud Volumes ONTAPオンプレミスONTAPシステム ifdef::gcp[] endif::gcp[]</block>
   <block id="046252999ea760a859cd9ed58c250005" category="admonition">「オンプレミスのONTAPシステム」への参照には、 FASとAFFシステムが含まれます。</block>
   <block id="b1064fed29b0dc7e3aa35001b7aa5fe8" category="summary">データのバックアップは、バックアップを作成した場所（スナップショット、レプリケーション、オブジェクトストレージ内のバックアップなど）から復元できます。復元元の場所、復元ポイント、および復元するリソースの種類を確認してください。</block>
   <block id="f169e4006b0aa26595a26a8cd2b1cc2c" category="doc">BlueXP backup and recoveryを使用した Microsoft SQL ワークロードの概要の復元</block>
@@ -3698,7 +3689,6 @@ ifdef：aws []</block>
   <block id="132e6bd0e046e23aee25c117b1e9812c" category="list-text">*最大転送速度*：帯域幅使用量を制限しない場合は、「無制限」を選択します。転送速度を制限する場合は、「制限あり」を選択し、オブジェクトストレージへのバックアップアップロードに割り当てるネットワーク帯域幅を1～1,000 Mbpsの範囲で選択します。デフォルトでは、 ONTAPは作業環境のボリュームからオブジェクトストレージへのバックアップデータの転送に無制限の帯域幅を使用できます。バックアップトラフィックが通常のユーザーワークロードに影響を与えていることに気付いた場合は、転送中に使用されるネットワーク帯域幅を減らすことを検討してください。</block>
   <block id="ec9b9920140e56313d3b026541532555" category="list-text">*バックアップの再試行*：障害または中断が発生した場合にジョブを再試行するには、「*障害発生時のジョブの再試行を有効にする*」を選択します。スナップショットおよびバックアップジョブの最大再試行回数と再試行間隔を入力します。再試行回数は10回未満である必要があります。この設定は、障害または中断が発生した場合にバックアップジョブを確実に再試行したい場合に便利です。</block>
   <block id="ebc38593846bd56262189cdea41159c0" category="admonition">スナップショット頻度が 1 時間に設定されている場合、再試行回数と合わせた最大遅延は 45 分を超えてはなりません。</block>
-  <block id="dd09b9f91730a791733e66239a16e3ea" category="list-text">*ランサムウェアスキャン*: 各バケットでランサムウェアスキャンを有効にするかどうかを選択します。有効にすると、ローカルスナップショットのスナップショットロック、セカンダリストレージのスナップショットロック、オブジェクトストレージのDataLockロックが有効になります。スキャンの頻度を日数で入力してください。</block>
   <block id="aac8fe9a7b8c3de675f0a551b63cabd1" category="list-text">*バックアップ検証*：バックアップ検証を有効にするかどうか、また、すぐに実行するか後で実行するかを選択します。この機能により、バックアップの有効性と復元の確実性が確保されます。バックアップの整合性を確保するために、このオプションを有効にすることをお勧めします。デフォルトでは、セカンダリストレージが設定されている場合、バックアップ検証はセカンダリストレージから実行されます。セカンダリストレージが設定されていない場合、バックアップ検証はプライマリストレージから実行されます。</block>
   <block id="94acea0f5c2d16ea31dc3b32ac56be06" category="inline-image-macro">BlueXP backup and recoveryポリシーのバックアップ検証設定のスクリーンショット</block>
   <block id="0d3d467d9c9b1d1ac6401af1552d1ff2" category="paragraph"><block ref="0d3d467d9c9b1d1ac6401af1552d1ff2" category="inline-image-macro-rx" type="image"></block></block>
@@ -3865,12 +3855,7 @@ ifdef：aws []</block>
   <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAPボリュームのワークロード:</block>
   <block id="2565579856adf676ae32e330c247eaf5" category="list-text">ローカル スナップショットを作成し、セカンダリ ストレージに複製し、オンプレミスのONTAPまたはCloud Volumes ONTAPONTAPからパブリック クラウド アカウントまたはプライベート クラウド アカウントのオブジェクト ストレージに ONTAP ボリュームをバックアップします。</block>
   <block id="316cc7c6ce94033b53fda593f26e3d57" category="list-text">別のONTAPクラスターとクラウド内のオブジェクト ストレージに保存されるブロック レベルの永久増分バックアップを作成します。</block>
-  <block id="4d8a0cd549197211fa834c90c4bab5a0" category="list-text">Microsoft SQL Server ワークロード (プレビュー):</block>
-  <block id="37c36c7e84c21209014e4d831c24ff53" category="list-text">オンプレミスのONTAPまたはCloud Volumes ONTAPシステムから Microsoft SQL Server インスタンスとデータベースをバックアップします。</block>
-  <block id="20b0c47e8bd3af627986bc06038d8f28" category="list-text">Microsoft SQL Server データベースを同じホストまたは別のホストに復元することで、データの回復に柔軟性がもたらされます。</block>
-  <block id="3120140bc4570e99f13c74c72b6e1f0f" category="list-text">VMware ワークロード:</block>
   <block id="f159b66cf2f7365489d513e547dd48d0" category="list-text">データストアを Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、 StorageGRIDにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereに復元します。</block>
-  <block id="95a714e7d55431c33d706de1b7f77c77" category="list-text">BlueXP backup and recoveryを使用して、仮想マシンのデータをクラウドからオンプレミスの vCenter に復元します。仮想マシンは、バックアップが作成された場所とまったく同じ場所にリストアすることも、別の場所にリストアすることもできます。</block>
   <block id="44c669dcd757f74c8d868cde66bbadac" category="section-title">BlueXP backup and recoveryを使用する利点</block>
   <block id="ed058c6afaa6d55d9032558597031ccf" category="paragraph">BlueXP backup and recoveryには、次のような利点があります。</block>
   <block id="69c4a7f9c8daffe7c66421bbb98ac486" category="list-text">**効率的**： BlueXP backup and recoveryは、ブロックレベルの永久増分レプリケーションを実行するため、複製および保存されるデータの量が大幅に削減されます。これにより、ネットワークトラフィックとストレージコストを最小限に抑えることができます。</block>
@@ -3908,7 +3893,6 @@ ifdef：aws []</block>
   <block id="c8ee5c80af66e9ba0b237679d3ee2962" category="section-title">サポートされているデータソース、作業環境、バックアップ対象</block>
   <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">サポートされているワークロード データ ソース</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAPボリューム</block>
-  <block id="58f149a832a0f214528ef836d6898835" category="list-text">物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS (プレビュー) 用の Microsoft SQL Server インスタンスとデータベース</block>
   <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware データストア</block>
   <block id="5ab0c2c7c8110afd8e099464217e8718" category="list-title">サポートされている作業環境</block>
   <block id="60bbb47f4c25fbe48c0eaa18d9174d22" category="list-text">ONTAPバージョン 9.8 以降を搭載したオンプレミスのONTAP SAN (iSCSI プロトコル) および NAS (NFS および CIFS プロトコルを使用)</block>
@@ -3918,7 +3902,6 @@ ifdef：aws []</block>
   <block id="d17b3abdd113c99dd97a58c22430220e" category="list-title">サポートされているバックアップターゲット</block>
   <block id="736ca911d7d143d01bd8cbfe0d4afbca" category="list-text">Amazon Web Services（AWS）S3</block>
   <block id="6a51ed7bcacdfb13f78abc1e0f69c201" category="list-text">Microsoft Azure Blob</block>
-  <block id="0e12f7008bccad40698f9e7202f77ba4" category="section-title">BlueXP backup and recoveryでは、 Microsoft SQL Server用のSnapCenterプラグインを使用します。</block>
   <block id="97961700280df7e97434bb488aee8673" category="paragraph">BlueXP backup and recoveryは、 Microsoft SQL Server をホストするサーバーに Microsoft SQL Server 用プラグインをインストールします。このプラグインは、Microsoft SQL Server データベースおよびインスタンスのアプリケーション対応データ保護管理を可能にするホスト側コンポーネントです。</block>
   <block id="fa9b9e83c02fc7ada864618f933caa44" category="paragraph">BlueXP backup and recoveryを有効にすると、データの完全バックアップが実行されます。最初のバックアップ以降は、増分バックアップが実行されます。これにより、ネットワークトラフィックを最小限に抑えることができます。</block>
   <block id="504927eafa9845be671b630ab35b5fe6" category="paragraph">次の図は、コンポーネント間の関係を示しています。</block>
@@ -3934,10 +3917,7 @@ ifdef：aws []</block>
   <block id="661b3d31f95036ff86eec46ca498f96e" category="list-text">*保護*: BlueXP backup and recoveryにおける保護とは、保護ポリシーを使用して、スナップショットと不変のバックアップが別のセキュリティ ドメインに定期的に実行されるようにすることを意味します。</block>
   <block id="1787981ab8b4962c0ce851610d9b9e0d" category="list-text">*ワークロード*: BlueXP backup and recoveryのワークロードには、Microsoft SQL Server インスタンスとデータベース、VMware データストア、またはONTAPボリュームが含まれます。</block>
   <block id="a360a8dae91555caa28f2085f644a956" category="summary">BlueXP backup and recoveryを開始するには、運用環境、 BlueXPコネクタ、 BlueXPアカウントの準備状況を確認してください。BlueXPのBlueXP backup and recoveryを使用するには、以下の前提条件を満たす必要があります。</block>
-  <block id="44ffc77de4254c8b2a862f75b4a1e1c8" category="doc">SnapCenterからBlueXP backup and recoveryにインポートする場合の追加項目を構成する</block>
-  <block id="53a40bedbc052e39df42d72c483b947e" category="paragraph">SnapCenterからBlueXP backup and recoveryにリソースをインポートする場合は、さらにいくつかの項目を構成する必要があります。</block>
   <block id="9b71e2f071cfce0bcb6aaf05e7722154" category="section-title">SnapCenterプラグインをインストールするためのホスト要件を確認する</block>
-  <block id="58d3e1bfd4f1570a1f1d62057604194f" category="paragraph">SnapCenterからリソースをインポートするには、Microsoft SQL Server 用のSnapCenterプラグインをインストールするためのホスト要件が満たされていることを確認します。</block>
   <block id="5d81a9c26b95fdbbbd94a3fc025eed88" category="inline-link-macro">BlueXP backup and recoveryの前提条件</block>
   <block id="171be284f7e8753f0e9ef8034bb52313" category="paragraph">SnapCenterの要件については、 <block ref="2ca7c46501e7eb3e06b8a88dcdea0015" category="inline-link-macro-rx"></block> 。</block>
   <block id="b179d593632962c727f44fcbf897331d" category="section-title">ユーザーアカウント制御のリモート制限を無効にする</block>
@@ -3994,13 +3974,7 @@ ifdef：aws []</block>
   <block id="9bdb22b0d3df589ef9bf3bef73a315e8" category="paragraph">SnapCenterからリソースをインポートする場合は、 SnapCenterからインポートする前に、オンプレミスのすべてのSnapCenterクラスタストレージに対してBlueXP Canvas で作業環境を作成する必要があります。これにより、ホストリソースが正しく検出され、インポートされるようになります。</block>
   <block id="53c5b9bd181f1473f498076dceb33fdd" category="section-title">ONTAP 9.8以降</block>
   <block id="e3f0159851c2ac10a4f0d46840e5a66e" category="paragraph">オンプレミスのONTAPインスタンスでONTAP One ライセンスを有効にする必要があります。</block>
-  <block id="9e7e23a18e3bcb472db5518ed0012c3d" category="section-title">オブジェクトストレージへのバックアップ</block>
   <block id="439fbbae0adc9211b89c4a70f01d1a33" category="paragraph">オブジェクト ストレージをバックアップ ターゲットとして使用するには、AWS S3、Microsoft Azure Blob、 StorageGRID、またはONTAPのアカウントと、適切なアクセス権限が設定されている必要があります。</block>
-  <block id="1d638e05920fe33426fac4dc6285a639" category="list-text"><block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block></block>
-  <block id="b1fc7debc8c1268ce802334b7bdb29e2" category="inline-link-macro">Microsoft SQL Server データベースを保護する</block>
-  <block id="360d3e9069aa2639c44840ea21b9733e" category="list-text"><block ref="360d3e9069aa2639c44840ea21b9733e" category="inline-link-macro-rx"></block></block>
-  <block id="2db82bb341c07ce7fc40a92391daaaba" category="inline-link-macro">仮想マシンのワークロードを保護する</block>
-  <block id="89c5399d4b0ad654b2008a7c0f2b69cf" category="list-text"><block ref="89c5399d4b0ad654b2008a7c0f2b69cf" category="inline-link-macro-rx"></block></block>
   <block id="a83f1ed3639378d8a5c8766fc08ab842" category="section-title">BlueXP  の場合</block>
   <block id="44b43220cddd60410d9468a032ce4216" category="inline-link-macro">BlueXP backup and recovery機能へのロールベースのアクセス</block>
   <block id="b7ab05a2d5f81c9f2d4db3c8f5d660e2" category="list-text">オンプレミスのONTAPクラスターまたはCloud Volumes ONTAPに接続するアクティブなBlueXPコネクタを少なくとも1つ備えたBlueXP組織。以下の*初期プレビュー設定プロセス*を参照してください。</block>
@@ -4023,7 +3997,6 @@ ifdef：aws []</block>
   <block id="34c47cd4f14da734755f6694935a175d" category="list-text">Azure Blob の場合、コネクタはオンプレミスでデプロイできます。</block>
   <block id="ba780b6a1a4c1c3c2dd22e2a654e32c2" category="list-text">StorageGRIDの場合、コネクタはインターネット アクセスの有無にかかわらず、お客様の敷地内に展開する必要があります。</block>
   <block id="f11d659b2497c3836db933d95773f939" category="admonition">「オンプレミスのONTAPシステム」への参照には、 FASとAFFシステムが含まれます。</block>
-  <block id="41989c270a736ae1574390e9155c6efc" category="section-title">Microsoft SQL Server ホスト要件</block>
   <block id="38601d08e67d696e9a90a6fc1d51c86e" category="paragraph">SQL Server ワークロードにBlueXP backup and recoveryを使用するには、次のホスト システム、スペース、およびサイズの前提条件が必要です。</block>
   <block id="7d74f3b92b19da5e606d737d339a9679" category="cell">項目</block>
   <block id="43574ab73a6cbc674506ff003387dcb1" category="cell">オペレーティングシステム</block>
@@ -4423,7 +4396,6 @@ ifdef：aws []</block>
   <block id="f1112f9f4280b188704124c4fde7fe81" category="paragraph">*例*： SnapCenterの時間単位ポリシーが、BlueXP backup and recoveryでは日単位に変更される場合があります。ただし、 SnapMirrorのラベルは移行後も同じままです。</block>
   <block id="9df071c3c768f5bd5f884e64a310b318" category="paragraph">BlueXPコネクタには、BlueXPのバックアップとリカバリ機能が組み込まれています。</block>
   <block id="ce6128efcba68642ecc2958de447ef91" category="summary">BlueXP backup and recoveryでは、ロールを使用して各ユーザーの特定の機能とアクションへのアクセスを制御します。</block>
-  <block id="6c2fb66681a90d30913062c0a3488372" category="paragraph">BlueXP backup and recoveryでは、ロールを使用して、各ユーザーの特定の機能およびアクションへのアクセスを制御します。</block>
   <block id="bbb222a96a9cd90360bfb75d533ca1ea" category="paragraph">このサービスは、BlueXP backup and recoveryに固有の次のロールを使用します。</block>
   <block id="f3559c693349d6588a1f8a40f26826f0" category="list-text">*バックアップとリカバリのスーパー管理者*: BlueXP backup and recoveryであらゆるアクションを実行します。</block>
   <block id="6f5eba288494f6afeaf6da75ed8138ab" category="list-text">*バックアップ管理者*: BlueXP backup and recoveryで、ローカル スナップショットへのバックアップ、セカンダリ ストレージへの複製、オブジェクト ストレージへのバックアップ アクションを実行します。</block>
@@ -4479,7 +4451,6 @@ ifdef：aws []</block>
   <block id="d84276762fdd2cfdcb69023b2f18dc84" category="sidebar">ONTAPボリュームのワークロードのポリシーを管理する</block>
   <block id="f26fbdd7902e50c2944da4f87e43dcd8" category="sidebar">ONTAPボリュームのオブジェクトへのバックアップポリシーオプション</block>
   <block id="5f0c031ee00e37791ecbaba53c2c742b" category="sidebar">ONTAPボリュームのワークロードを復元する</block>
-  <block id="ee3b6d9f01d3e1d6661086837e453337" category="sidebar">Microsoft SQL Server ワークロードを保護する (プレビュー)</block>
   <block id="4123f76ec1b1975ee21a2043d9199aed" category="sidebar">Microsoft SQL Server ワークロードを検出し、オプションでSnapCenterリソースをインポートします</block>
   <block id="4dba655852206fd33ef2ae210d0f09ea" category="sidebar">Microsoft SQL Server ワークロードのバックアップ</block>
   <block id="a86a44463f171d5cbfffdac926d2c5f7" category="sidebar">Microsoft SQL Server ワークロードを復元する</block>
@@ -4537,7 +4508,6 @@ ifdef：aws []</block>
   <block id="a2e3a30df706bb24099d5e00888df71a" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="6e23fbb0baad6a7a72bd41e60b71f566" category="admonition">Microsoft SQL Server ワークロードの保護に関するこのドキュメントは、テクノロジープレビューとして提供されています。このプレビュー提供において、 NetApp は一般提供開始前に提供内容、内容、およびスケジュールを変更する権利を留保します。</block>
   <block id="1e016758a8b3495be7c3ee2b6b26aab6" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。プレビュー期間中は、Kubernetes 機能は本番環境のワークロードには推奨されません。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
-  <block id="b75b69427facaf94889fb25900eb710a" category="admonition">このドキュメントはテクノロジープレビューとして提供されています。このプレビューサービスでは、NetAppは、一般提供前にサービスの詳細、内容、スケジュールを変更する権利を留保します。</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetAppボリューム</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
   <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">この機能は、2025 年 5 月にリリースされたBlueXP backup and recoveryバージョン 4.0.3 以降で利用できます。</block>
@@ -4611,7 +4581,6 @@ ifdef：aws []</block>
   <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">保護ポリシーを使用して増分バックアップを構成します。</block>
   <block id="116fc6c4cddb8e42e7260e6817cd901f" category="list-text">アプリケーションとリソースを同じまたは異なるクラスターと名前空間に復元します。</block>
   <block id="f9e2b15491897c12214f857779daa042" category="list-text">BlueXPユーザーは、Microsoft SQL ServerおよびKubernetesワークロードに対する操作を実行するために必要なロールと権限を持っている必要があります。を検出するには、 BlueXP backup and recoveryのスーパー管理者ロールが必要です。<block ref="a05625c69ff931c9860060259f76b925" category="inline-link-macro-rx"></block> BlueXP backup and recoveryで操作を実行するために必要な役割と権限の詳細については、 を参照してください。</block>
-  <block id="fdbad3e808e9a1c02fc7bb3048776f74" category="section-title">Kubernetesアプリケーションを保護するため</block>
   <block id="35efe147e51e11d3e82b92163214c36a" category="paragraph">Kubernetes リソースを検出し、Kubernetes アプリケーションを保護するには、特定の要件が必要です。</block>
   <block id="b4c31e66ff0b9146f1e9eb96caaa088b" category="paragraph">BlueXPの要件については、 <block ref="254e85327e361b35a0db5eec424af630" category="inline-xref-macro-rx"></block> 。</block>
   <block id="4894ae84725aa8a3354a8774b1566f5f" category="list-text">プライマリONTAPシステム（ONTAP 9.16.1 以降）</block>
@@ -4718,4 +4687,90 @@ ifdef：aws []</block>
   <block id="4d3ca3588667d04ddbd4f318cdd7677e" category="inline-link-macro">保護ポリシーを追加する</block>
   <block id="2769be0838f5e6f63e01200eeeec1910" category="list-text">必要に応じて、「*ポリシー*」領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。ポリシーを選択しない場合、アプリケーションは保護ポリシーなしで作成されます。あなたはできる<block ref="99c823f28a98717f81cda4eb0c448db5" category="inline-link-macro-rx"></block>後で。</block>
   <block id="f58eabeb108df6c5973f0ece276c562f" category="list-text">*ポリシー* 領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。参照<block ref="3739f9f9696bd133d77df1c4736a8480" category="inline-link-macro-rx"></block>保護ポリシーの作成の詳細については、こちらをご覧ください。</block>
+  <block id="34d9ae368d6cbba40bdf79d1f39e1e89" category="doc">Microsoft SQL Server ワークロードが一般提供 (GA) でサポートされるようになりました</block>
+  <block id="49ddbb054af91ea1aaad19727754954e" category="paragraph">Microsoft SQL Server ワークロード サポートがBlueXP backup and recoveryで一般提供 (GA) されました。  ONTAP、 Cloud Volumes ONTAP、 Amazon FSx for NetApp ONTAPストレージ上で MSSQL 環境を使用している組織は、この新しいバックアップおよびリカバリ サービスを利用してデータを保護できるようになりました。</block>
+  <block id="7c4ac41d9ce169718af7b2351c645fee" category="paragraph">このリリースには、以前のプレビュー バージョンからの Microsoft SQL Server ワークロード サポートに対する次の機能強化が含まれています。</block>
+  <block id="3105f6a90b979debc6db5ea3ee990169" category="list-text">* SnapMirrorアクティブ シンク*: このバージョンでは、 SnapMirrorアクティブ シンク ( SnapMirror Business Continuity [SM-BC] とも呼ばれる) がサポートされるようになりました。これにより、サイト全体に障害が発生した場合でもビジネス サービスの運用が継続され、セカンダリ コピーを使用してアプリケーションが透過的にフェイルオーバーできるようになります。 BlueXP backup and recoveryでは、 SnapMirrorアクティブ同期および Metrocluster 構成での Microsoft SQL Server データベースの保護がサポートされるようになりました。情報は、保護の詳細ページの *ストレージと関係のステータス* セクションに表示されます。関係情報は、ポリシー ページの更新された *セカンダリ設定* セクションに表示されます。</block>
+  <block id="b1d2c2774c4d9793c46ef609a13172fd" category="inline-link">ポリシーを使用してワークロードを保護する</block>
+  <block id="eb64725cadc49178720b80c61cc9eba8" category="paragraph">参照<block ref="4e93e9cf0728d77f2cf4813604981453" category="inline-link-rx"></block>。</block>
+  <block id="4e5bd320085cb5547546d4395b10e4de" category="inline-image-macro">Microsoft SQL Server ワークロードの保護の詳細ページ</block>
+  <block id="bd23896d5be654cd74ec23ce58ada0ea" category="paragraph"><block ref="bd23896d5be654cd74ec23ce58ada0ea" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="805bbdd364c648372b69605a6ef120af" category="list-text">*マルチバケットのサポート*: 異なるクラウド プロバイダーにまたがる作業環境ごとに最大 6 つのバケットを使用して、作業環境内のボリュームを保護できるようになりました。</block>
+  <block id="90c5ef87c2f5d3bb21ccce43b514ff6d" category="list-text">*SQL Server ワークロードのライセンスと無料試用版の更新*: 既存のBlueXPバックアップおよびリカバリ ライセンス モデルを使用して、SQL Server ワークロードを保護できるようになりました。  SQL Server ワークロードには個別のライセンス要件はありません。</block>
+  <block id="c28d337bfe2f4a56d1326bd464a437d2" category="paragraph">詳細については、<block ref="fd6f24310666151c56694accafdbc751" category="inline-link-rx"></block> 。</block>
+  <block id="36586a1356d9a222252ef42596ce2fb2" category="list-text">*カスタム スナップショット名*: Microsoft SQL Server ワークロードのバックアップを管理するポリシーで、独自のスナップショット名を使用できるようになりました。ポリシー ページの *詳細設定* セクションにこの情報を入力します。</block>
+  <block id="9cb7a24c42dc26111c3616ff0bd56fed" category="inline-image-macro">BlueXP backup and recoveryポリシーのSnapMirrorおよびスナップショット形式の設定のスクリーンショット</block>
+  <block id="ce3732fd09bdb186d72d814092bdf5de" category="paragraph"><block ref="ce3732fd09bdb186d72d814092bdf5de" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b97c16ab5864b241e5900d7cd01c42c2" category="list-text">*セカンダリ ボリュームのプレフィックスとサフィックス*: ポリシー ページの *詳細設定* セクションで、カスタムのプレフィックスとサフィックスを入力できます。</block>
+  <block id="d09c6edac23c230ad6b2f62014b72cac" category="list-text">*アイデンティティとアクセス管理 (IAM)*: ユーザーの機能へのアクセスを制御できるようになりました。</block>
+  <block id="54e511b5c4fecd42c382f63aa80abb36" category="inline-link">BlueXP backup and recovery機能へのアクセス</block>
+  <block id="62b521b1b5210b36f7c8c308fcacad25" category="paragraph">参照<block ref="d7baf94aa5992a2769fe0c3ef0456828" category="inline-link-rx"></block>そして<block ref="2d1c08bd9cb33a016c7ff36698dcfab7" category="inline-link-rx"></block>。</block>
+  <block id="827015a207d3e0b7327c58d340f787a7" category="list-text">*オブジェクト ストレージから代替ホストへの復元*: プライマリ ストレージがダウンしている場合でも、オブジェクト ストレージから代替ホストに復元できるようになりました。</block>
+  <block id="2e26a760bb33d17f4e33afe630be5b52" category="list-text">*ログ バックアップ データ*: データベース保護の詳細ページにログ バックアップが表示されるようになりました。バックアップが完全バックアップかログ バックアップかを示す「バックアップ タイプ」列が表示されます。</block>
+  <block id="2bfb72338c51e52cf0223e776c0cfa1c" category="list-text">*強化されたダッシュボード*: ダッシュボードにストレージとクローンの節約が表示されるようになりました。</block>
+  <block id="eefeb5662c28859ffc0ad03be8674bb1" category="paragraph"><block ref="eefeb5662c28859ffc0ad03be8674bb1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b3a6ba86ba805f11e462a231b680cd28" category="section-title">ONTAPボリュームワークロードの強化</block>
+  <block id="3f86442e5530c33d7077c95c9c5fc625" category="list-text">* ONTAPボリュームの複数フォルダの復元*: これまでは、参照と復元機能から一度に 1 つのフォルダまたは複数のファイルを復元できました。  BlueXP backup and recoveryでは、参照と復元機能を使用して一度に複数のフォルダーを選択できるようになりました。</block>
+  <block id="1d9b07bf0176359242f87e0763ffbb4c" category="list-text">*削除されたボリュームのバックアップの表示と管理*: BlueXP backup and recoveryダッシュボードに、 ONTAPから削除されたボリュームを表示および管理するオプションが追加されました。これにより、 ONTAPに存在しなくなったボリュームのバックアップを表示および削除できるようになります。</block>
+  <block id="356ecf5525555d15dfb403799f62bc0d" category="list-text">*バックアップの強制削除*: 極端なケースでは、 BlueXP backup and recoveryがバックアップにアクセスできないようにする必要がある場合もあります。これは、たとえば、サービスがバックアップ バケットにアクセスできなくなった場合や、バックアップが DataLock で保護されているが不要になった場合に発生する可能性があります。以前は、これらを自分で削除することはできず、 NetAppサポートに連絡する必要がありました。このリリースでは、バックアップを強制的に削除するオプションを使用できます (ボリュームおよび作業環境レベル)。</block>
+  <block id="2ad14b464bc33278b17682af53ee8430" category="admonition">このオプションは慎重に使用し、極端なクリーンアップが必要な場合にのみ使用してください。 BlueXP backup and recoveryは、オブジェクト ストレージでこれらのバックアップが削除されていない場合でも、これらのバックアップにアクセスできなくなります。クラウド プロバイダーにアクセスして、バックアップを手動で削除する必要があります。</block>
+  <block id="04c7a623f8e877c84e93d77694cc5035" category="inline-link">ONTAPワークロードを保護する</block>
+  <block id="ca202cae1bb121b6ad0687a5afe91a23" category="paragraph">参照<block ref="21eafc85c1e02f8afb995baf9105bba6" category="inline-link-rx"></block>。</block>
+  <block id="84c88b39fd4f46203da512886dfca56b" category="section-title">クローンライフサイクルのサポート</block>
+  <block id="3c068270aa0287f7c64a3c9c3a4f89a7" category="list-text">オブジェクト ストレージからのクローン作成はサポートされていません。</block>
+  <block id="610c4dda883be7c31ce2aa927e41cbf3" category="list-text">オンデマンドクローンでは一括クローン操作はサポートされていません。</block>
+  <block id="48eb10e94e95a9b97e6adf2461bb2f4c" category="list-text">I グループの選択はサポートされていません。</block>
+  <block id="1a06992a918d8a2b5f17099991e12bd8" category="list-text">QOS (最大スループット) オプションの選択はサポートされていません。</block>
+  <block id="b77fefd31dcd7551887d77dc3522edc7" category="paragraph">オフサイト バックアップ ターゲットを追加するには、少なくとも 1 つのワークロードを検出する必要があります。</block>
+  <block id="78b596461a38570c8ebd277ae163ef1c" category="list-text">*バケット名*: S3 バケットの名前を入力します。  「netapp-backup」というプレフィックスは必須のプレフィックスであり、指定した名前に自動的に追加されます。</block>
+  <block id="79a4116721540b6854d628f0a61ee9ac" category="paragraph">SnapCenterがまだインストールされていない場合は、vCenter 情報を追加して、 BlueXP backup and recoveryでワークロードを検出できます。各BlueXPコネクタ内で、ワークロードを検出する作業環境を選択します。</block>
+  <block id="66833daf5f2b5967da86e470f071afae" category="paragraph">VMware 環境がある場合、これはオプションです。</block>
+  <block id="1c121840f1bbadcfc747ccf905f47c64" category="paragraph">無料トライアル期間終了後もBlueXP backup and recoveryを引き続き使用する場合は、有料サブスクリプションを設定する必要があります。  BlueXPインターフェースから請求セクションに移動し、ニーズに合ったサブスクリプション プランを選択することでこれを実行できます。  BlueXP backup and recoveryを引き続き使用したくない場合は、無料トライアルを終了できます。</block>
+  <block id="d512d1c3dcc8425bf55d8cf433aeb7fe" category="paragraph">有料プランに加入せずに無料トライアルを終了すると、無料トライアル終了から 60 日後にデータが自動的に削除されます。オプションで、システムにデータを即時に削除させることもできます。</block>
+  <block id="d1c6ee9b00d94bfbd361714e526ec8f4" category="list-text">BlueXP backup and recoveryのランディング ページから、[無料トライアルを表示] を選択します。</block>
+  <block id="90b69325140d3d93a5f83d329949a30d" category="paragraph">*レビュー担当者への質問*: ユーザーは他の BR ページにいる場合、どのようにしてランディング ページにアクセスしますか?</block>
+  <block id="e5c5290b0a5e919e86eb32abf4823612" category="list-text">データを直ちに削除するには、「無料トライアル終了後すぐにデータを削除する」を選択します。</block>
+  <block id="5d85e0c470da58b1efab48b84e308a0b" category="list-text">ボックスに「*トライアル終了*」と入力します。</block>
+  <block id="599188bc76d650bfca3dc06eda5883ba" category="list-text">確認するには*終了*を選択してください。</block>
+  <block id="66851d28f73b1d06c1c9e494e05800a7" category="paragraph">BlueXP backup and recoveryに初めてアクセスし、コネクタを追加する場合は、組織管理者またはバックアップおよびリカバリのスーパー管理者のロールが必要です。</block>
+  <block id="a413de742c15aa76362de8fbfa1bea84" category="list-text">このサービスに初めてログインする場合、すでにBlueXPの作業環境があり、無料トライアルをまだ開始していない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*無料トライアルを表示*するオプションが表示されます。</block>
+  <block id="bb62b16690f5eb4fc0e122e119a91a50" category="paragraph"><block ref="bb62b16690f5eb4fc0e122e119a91a50" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8075ed641c15c71cd286b712adcd85b1" category="list-text">このサービスに初めてログインし、 BlueXPにすでに作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*検出と管理*のオプションが表示されます。</block>
+  <block id="7149d60911c70edb03703fc8f99c14fa" category="paragraph">参照<block ref="0db19b6ddcce18b44468167f72be8ec8" category="inline-link-rx"></block>StorageGRIDの詳細については、こちらをご覧ください。</block>
+  <block id="31a6e93e3798d6e32486e85c94f4c445" category="paragraph">Microsoft SQL Server および Kubernetes (プレビュー) ワークロードのタスクバーは次のようになります。<block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9e1e4a7e3d0e29f7908164bc829cdcb" category="paragraph"><block ref="d9e1e4a7e3d0e29f7908164bc829cdcb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d71d92c939fa3dff105d8f357c507f76" category="cell">Amazon S3 ONTAP S3</block>
+  <block id="b27a33d7ae0534b6066058a1d206de6c" category="cell">Azure ブロブONTAP S3</block>
+  <block id="abd2f027d3fc68343aa027c16d5dbc39" category="cell">Amazon S3 Azure Blob NetApp StorageGRID ONTAP S3</block>
+  <block id="70698e1f6287a5fbf5ebd7a7402a40ab" category="cell">該当なし ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[]</block>
+  <block id="79275132ce20ef3de2a8b64113eb6892" category="cell">AWS オンプレミスのONTAPシステムONTAP S3 の Cloud Volumes</block>
+  <block id="b4db18c26e935cf1968a4373b28c553e" category="cell">Azure のCloud Volumes ONTAPオンプレミスのONTAPシステムONTAP S3 ifdef::gcp[] endif::gcp[]</block>
+  <block id="7a27f6aeca7faa30d91e24a0b044228e" category="cell">オンプレミスのONTAPシステムONTAP S3</block>
+  <block id="d4cd0dabcf4caa22ad92fab40844c786" category="cell">NA</block>
+  <block id="6cf0d5d70bb7be2a62ce45235fdc5421" category="admonition">このオプションは、Amazon FSx for NetApp ONTAPでは使用できません。</block>
+  <block id="cc7a1e67eff230a3c65fb315a1c8d1f0" category="list-text">* SnapMirrorとSnapVault SMAS セカンダリ リレーションシップ*: SQL Server ワークロードにSnapMirrorとSnapVault SMAS セカンダリ リレーションシップを使用します。</block>
+  <block id="febcf1de845ae5c111f7fe2fdf9a0023" category="list-text">*ランサムウェア スキャン*: 各バケットでランサムウェア スキャンを有効にするかどうかを選択します。これには、オブジェクト ストレージに対する DataLock ロックが必要です。スキャンの頻度を日単位で入力します。このオプションは、AWS および Microsoft Azure オブジェクト ストレージに適用されます。このオプションは、クラウド プロバイダーによっては追加料金が発生する場合があることに注意してください。</block>
+  <block id="3d476264ca621aa7fb53c694b7f73e38" category="list-text">* SnapMirrorとスナップショット形式*: 必要に応じて、Microsoft SQL Server ワークロードのバックアップを管理するポリシーに独自のスナップショット名を入力します。フォーマットとカスタムテキストを入力します。セカンダリ ストレージにバックアップすることを選択した場合は、 SnapMirrorボリュームのプレフィックスとサフィックスを追加することもできます。</block>
+  <block id="69fdf061d21ee7cf76fbfb7008f2338a" category="paragraph"><block ref="69fdf061d21ee7cf76fbfb7008f2338a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99d2c5cc2d55701a7753e4cd62fa26b3" category="admonition">このドキュメントの一部は、テクノロジープレビューとして提供されています。このプレビュー オファリングでは、 NetApp は一般提供開始前にオファリングの詳細、内容、およびタイムラインを変更する権利を留保します。</block>
+  <block id="3fa86600a578b85fb3e25ef2bade57f7" category="list-text">Microsoft SQL Server ワークロード:</block>
+  <block id="671ccbf99c0713f4f0b10eb83e8f6fe3" category="list-text">オンプレミスのONTAP、 Cloud Volumes ONTAP、またはAmazon FSx for NetApp ONTAPから Microsoft SQL Server インスタンスとデータベースをバックアップします。</block>
+  <block id="89cb0f021426c550658eb8d932ca5bc6" category="list-text">Microsoft SQL Server データベースを復元します。</block>
+  <block id="6d14e8c351d9540a9e7e8a55e63daee2" category="list-text">Microsoft SQL Server データベースを複製します。</block>
+  <block id="c145ca053ede6b9644628ee9fe41dffd" category="list-text">VM ワークロード:</block>
+  <block id="0f9064a4cbc973bbc5e114d0088fded1" category="list-text">BlueXP backup and recoveryを使用して、仮想マシンのデータをクラウドからオンプレミスの vCenter に復元します。</block>
+  <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">Microsoft SQL Server の場合、セカンダリONTAPターゲットまたはオブジェクト ストレージへのスナップショットのレプリケーションを開始すると料金が発生します。</block>
+  <block id="42b12d53290c6e592a4d774a432752d6" category="list-text">物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS 用の Microsoft SQL Server インスタンスとデータベース</block>
+  <block id="a0f528847ba517b6d5e9b7c895aa2879" category="section-title">BlueXP backup and recoveryはMicrosoft SQL Serverのプラグインを使用します</block>
+  <block id="9f9f536306a1c9407f83a98c118d352f" category="doc">プラグインサービスからBlueXP backup and recoveryにインポートするための前提条件</block>
+  <block id="54ea220a36be12c2cd55837d5084ccf2" category="paragraph">Microsoft SQL Server 用のSnapCenterプラグイン サービスからBlueXP backup and recoveryにリソースをインポートする場合は、さらにいくつかの項目を構成する必要があります。</block>
+  <block id="1991b7717eb9a4ce1668d0140bc90a61" category="paragraph">SnapCenter Plug-in for Microsoft SQL Server からリソースをインポートするには、 SnapCenter Plug-in for Microsoft SQL Server をインストールするためのホスト要件が満たされていることを確認します。</block>
+  <block id="05e7a5201131047cf35d26a62e1a0a4d" category="section-title">オブジェクトストレージへのバックアップの前提条件</block>
+  <block id="60909e185928e88ef4384c60b53ac74b" category="paragraph">見る<block ref="4d28092ae019690199710c13c5a3f7eb" category="inline-link-macro-rx"></block>バックアップ先の設定方法の詳細については、こちらをご覧ください。</block>
+  <block id="773be597b82b6fc623090f4ca7acad30" category="section-title">Microsoft SQL Server のワークロード要件</block>
+  <block id="727c8c2204924c94609f684e20e710ef" category="section-title">Kubernetes ワークロード要件</block>
+  <block id="845653726765e6e72b97b87ebc083420" category="doc">BlueXP backup and recovery、 IDとアクセス管理機能</block>
+  <block id="af45dce32c393d74375fcf6543060be0" category="paragraph">BlueXP backup and recoveryでは、 ID およびアクセス管理 (IAM) を使用して、各ユーザーの特定の機能およびアクションへのアクセスを制御します。</block>
+  <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">2025年8月12日</block>
+  <block id="3d5a9cd83b30ec6ec9f0802593907f05" category="sidebar">Microsoft SQL Server ワークロードを保護する</block>
 </blocks>

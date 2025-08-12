@@ -50,15 +50,18 @@ BlueXP backup and recoveryを使用すると、Microsoft SQL Server インスタ
 
 
 | AWS の Cloud Volumes ONTAP | AWS の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Amazon S3 
+オンプレミスの ONTAP システム | Amazon S3 ONTAP S3 
 
 
 | Azure の Cloud Volumes ONTAP | Azure の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Azure Blob の略 
+オンプレミスの ONTAP システム | Azure ブロブONTAP S3 
 
 
 | オンプレミスの ONTAP システム | Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Amazon S3 Azure Blob NetApp StorageGRID ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+オンプレミスの ONTAP システム | Amazon S3 Azure Blob NetApp StorageGRID ONTAP S3 
+
+
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | 該当なし ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
 |===
 .サポートされるリストア先
 プライマリ ストレージまたはセカンダリ作業環境 (複製されたボリューム) またはオブジェクト ストレージ (バックアップ ファイル) にあるバックアップから、Microsoft SQL Server インスタンスとデータベースを次の作業環境に復元できます。Snapshotコピーはソースの作業環境に存在し、同じシステムにのみリストアできます。
@@ -72,15 +75,18 @@ BlueXP backup and recoveryを使用すると、Microsoft SQL Server インスタ
 
 
 | Amazon S3 | AWS の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | AWSオンプレミスONTAPシステムのクラウドボリューム 
+オンプレミスの ONTAP システム | AWS オンプレミスのONTAPシステムONTAP S3 の Cloud Volumes 
 
 
 | Azure Blob の略 | Azure の Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | Azure のCloud Volumes ONTAPオンプレミスONTAPシステム ifdef::gcp[] endif::gcp[] 
+オンプレミスの ONTAP システム | Azure のCloud Volumes ONTAPオンプレミスのONTAPシステムONTAP S3 ifdef::gcp[] endif::gcp[] 
 
 
 | StorageGRID | Cloud Volumes ONTAP
-オンプレミスの ONTAP システム | オンプレミスの ONTAP システム 
+オンプレミスの ONTAP システム | オンプレミスのONTAPシステムONTAP S3 
+
+
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | NA 
 |===
 
 NOTE: 「オンプレミスのONTAPシステム」への参照には、 FASとAFFシステムが含まれます。

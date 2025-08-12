@@ -30,7 +30,7 @@ indexpage:
       url: prev-ontap-policy-object-options.html
     - title: ONTAPボリュームのワークロードを復元する
       url: prev-ontap-restore.html
-  - title: Microsoft SQL Server ワークロードを保護する (プレビュー)
+  - title: Microsoft SQL Server ワークロードを保護する
     links:
     - title: Microsoft SQL Server ワークロードの保護の概要
       url: br-use-mssql-protect-overview.html

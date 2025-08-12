@@ -27,7 +27,7 @@ BlueXP backup and recoveryを使用する前に、いくつかの手順を実行
 を参照してください https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["StorageGRIDについて知る"^]。
 
 +
-参照 https://docs.netapp.com/us-en/storagegrid-117/index.html["StorageGRID のドキュメント"^] StorageGRIDの詳細については、こちらをご覧ください。
+参照 https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID のドキュメント"^]StorageGRIDの詳細については、こちらをご覧ください。
 
 * Amazon Web サービス。を参照してください https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Amazon S3 ドキュメント"^]。
 +

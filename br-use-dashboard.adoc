@@ -21,7 +21,7 @@ summary: ワークロードの健全性を監視することで、ワークロ�
 .手順
 . BlueXP backup and recoveryメニューから、*ダッシュボード* を選択します。
 +
-image:screen-br-dashboard2.png["BlueXP backup and recoveryダッシュボード"]
+image:screen-br-dashboard3.png["BlueXP backup and recoveryダッシュボード"]
 
 
 

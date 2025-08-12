@@ -4,7 +4,7 @@ permalink: concept-start-prereq-snapcenter-import.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery, snapcenter, import, migration, migrate 
 summary: BlueXP backup and recoveryを開始するには、運用環境、 BlueXPコネクタ、 BlueXPアカウントの準備状況を確認してください。BlueXPのBlueXP backup and recoveryを使用するには、以下の前提条件を満たす必要があります。 
 ---
-= SnapCenterからBlueXP backup and recoveryにインポートする場合の追加項目を構成する
+= プラグインサービスからBlueXP backup and recoveryにインポートするための前提条件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,19 @@ summary: BlueXP backup and recoveryを開始するには、運用環境、 BlueX
 
 
 [role="lead"]
-SnapCenterからBlueXP backup and recoveryにリソースをインポートする場合は、さらにいくつかの項目を構成する必要があります。
+Microsoft SQL Server 用のSnapCenterプラグイン サービスからBlueXP backup and recoveryにリソースをインポートする場合は、さらにいくつかの項目を構成する必要があります。
+
+
+
+== まずBlueXP Canvasで作業環境を作成します
+
+SnapCenterからリソースをインポートする場合は、 SnapCenterからインポートする前に、オンプレミスのすべてのSnapCenterクラスタストレージに対してBlueXP Canvas で作業環境を作成する必要があります。これにより、ホストリソースが正しく検出され、インポートされるようになります。
 
 
 
 == SnapCenterプラグインをインストールするためのホスト要件を確認する
 
-SnapCenterからリソースをインポートするには、Microsoft SQL Server 用のSnapCenterプラグインをインストールするためのホスト要件が満たされていることを確認します。
+SnapCenter Plug-in for Microsoft SQL Server からリソースをインポートするには、 SnapCenter Plug-in for Microsoft SQL Server をインストールするためのホスト要件が満たされていることを確認します。
 
 SnapCenterの要件については、 link:concept-start-prereq.html["BlueXP backup and recoveryの前提条件"] 。
 
@@ -163,8 +169,3 @@ Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 
 LocalAccountTokenFilterPolicy : 1
 ----
-
-
-== まずBlueXP Canvasで作業環境を作成します
-
-SnapCenterからリソースをインポートする場合は、 SnapCenterからインポートする前に、オンプレミスのすべてのSnapCenterクラスタストレージに対してBlueXP Canvas で作業環境を作成する必要があります。これにより、ホストリソースが正しく検出され、インポートされるようになります。

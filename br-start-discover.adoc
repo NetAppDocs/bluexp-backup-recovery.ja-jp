@@ -153,7 +153,9 @@ image:../media/screen-br-inventory.png["在庫ページ"]
 
 === SnapCenterがインストールされていない場合は、vCenterを追加してリソースを検出します。
 
-SnapCenterをまだインストールしていない場合は、vCenter情報を追加し、 BlueXP backup and recoveryでワークロードを検出します。各BlueXPコネクタ内で、ワークロードを検出する作業環境を選択します。
+SnapCenterがまだインストールされていない場合は、vCenter 情報を追加して、 BlueXP backup and recoveryでワークロードを検出できます。各BlueXPコネクタ内で、ワークロードを検出する作業環境を選択します。
+
+VMware 環境がある場合、これはオプションです。
 
 .手順
 . BlueXP の左側のナビゲーションから、*保護* > *バックアップと復元* を選択します。

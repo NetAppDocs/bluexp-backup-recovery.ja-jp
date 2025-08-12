@@ -58,6 +58,45 @@ BlueXP backup and recoveryを使用すると、Microsoft SQL Server ワークロ
 
 
 
+=== ホストの管理
+
+作業環境で検出されたホストを管理できます。ホストは個別に管理することも、グループとして管理することもできます。
+
+
+TIP: 管理できるのは、「ホスト」列に「管理対象外」ステータスが表示されているホストのみです。ステータスが「管理対象」の場合、そのホストは既にBlueXP backup and recoveryによって管理されていることを意味します。
+
+BlueXP backup and recoveryでホストを管理すると、 SnapCenter はそれらのホスト上のリソースを管理しなくなります。
+
+*必要なBlueXPロール* 組織管理者、フォルダーまたはプロジェクト管理者、またはバックアップとリカバリのスーパー管理者。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+.手順
+. メニューから*インベントリ*を選択します。
++
+image:screen-br-inventory.png["BlueXP backup and recoveryのインベントリのスクリーンショット"]
+
+. 保護の詳細を表示するにはワークロードを選択します。
+. アクションアイコンを選択image:../media/icon-action.png["アクションオプション"] > *詳細を表示*。
++
+image:screen-br-inventory-sql.png["BlueXP backup and recoveryのインベントリ詳細ページのスクリーンショット"]
+
+. *ホスト*タブを選択します。
+. 1つまたは複数のホストを選択します。複数のホストを選択した場合は、「一括操作」オプションが表示され、「*管理（最大5台のホスト）」を選択できます。
+. アクションアイコンを選択image:../media/icon-action.png["アクションオプション"] > *管理*。
++
+image:screen-br-inventory-details-manage-hosts.png["ホスト管理ページ"]
+
+. ホストの依存関係を確認します。
++
+** vCenter が表示されない場合は、鉛筆アイコンを選択して vCenter の詳細を追加または編集します。
+** vCenter を追加する場合は、[vCenter の登録] を選択して vCenter も登録する必要があります。
+
+
+. 設定をテストするには、「*設定の検証*」を選択します。
+. ホストを管理するには、[*管理*] を選択します。
+
+
+
+
 === スケジュールを中断
 
 スケジュールを一時停止することで、ホストのバックアップとリストア操作を停止できます。ホストでメンテナンス作業を実行する必要がある場合などに、この操作を行うことをお勧めします。

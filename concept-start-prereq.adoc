@@ -24,13 +24,85 @@ BlueXP backup and recoveryを開始するには、運用環境、 BlueXPコネ�
 
 
 
-== オブジェクトストレージへのバックアップ
+== オブジェクトストレージへのバックアップの前提条件
 
 オブジェクト ストレージをバックアップ ターゲットとして使用するには、AWS S3、Microsoft Azure Blob、 StorageGRID、またはONTAPのアカウントと、適切なアクセス権限が設定されている必要があります。
 
-* link:prev-ontap-protect-overview.html["ONTAP ボリュームのデータを保護"]
-* link:br-use-mssql-protect-overview.html["Microsoft SQL Server データベースを保護する"]
-* link:prev-vmware-protect-overview.html["仮想マシンのワークロードを保護する"]
+見るlink:br-start-setup.html["BlueXP backup and recoveryを使用する前にバックアップ先を設定します"]バックアップ先の設定方法の詳細については、こちらをご覧ください。
+
+
+
+== Microsoft SQL Server のワークロード要件
+
+SQL Server ワークロードにBlueXP backup and recoveryを使用するには、次のホスト システム、スペース、およびサイズの前提条件が必要です。
+
+[cols="33,66a"]
+|===
+| 項目 | 要件 
+
+
+| オペレーティングシステム  a| 
+Microsoft Windows サポートされているバージョンの最新情報については、  https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperability Matrix Tool"^] 。
+
+
+
+| Microsoft SQL Server のバージョン  a| 
+バージョン 2012 以降は、VMware 仮想マシン ファイル システム (VMFS) および VMware 仮想マシン ディスク (VMDK) NFS でサポートされています。
+
+
+
+| SnapCenter Serverのバージョン  a| 
+SnapCenterからBlueXP backup and recoveryに既存のデータをインポートする場合は、 SnapCenter Server バージョン 5.0 以上が必要です。
+
+
+NOTE: SnapCenterがすでにある場合は、まずSnapCenterからインポートする前に前提条件を満たしていることを確認してください。を参照して link:concept-start-prereq-snapcenter-import.html["SnapCenterからリソースをインポートするための前提条件"]
+
+
+
+| SQL Server ホスト上のプラグインの最小 RAM  a| 
+1 GB
+
+
+
+| SQL Server ホスト上のプラグインの最小インストールおよびログ領域  a| 
+5 GB
+
+十分なディスク容量を割り当て、ログフォルダによるストレージ消費量を監視してください。必要なログ容量は、実行されるバックアップの数とデータ保護操作の頻度によって異なります。十分な容量がない場合、操作のログは作成されません。
+
+
+
+| 必要なソフトウェアパッケージ  a| 
+* ASP.NET Core ランタイム 8.0.12 ホスティング バンドル (およびそれ以降のすべての 8.0.x パッチ)
+* PowerShell Core 7.4.2
+
+
+サポートされているバージョンの最新情報については、を参照して https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperability Matrix Tool"^]ください。
+
+|===
+
+
+== Kubernetes ワークロード要件
+
+Kubernetes リソースを検出し、Kubernetes アプリケーションを保護するには、特定の要件が必要です。
+
+BlueXPの要件については、 <<BlueXP  の場合>> 。
+
+* プライマリONTAPシステム（ONTAP 9.16.1 以降）
+* Kubernetes クラスター - サポートされている Kubernetes ディストリビューションとバージョンは次のとおりです。
++
+** Anthos On-Prem (VMware) とベアメタル版 Anthos 1.16
+** Kubernetes 1.27 - 1.33
+** オープンシフト 4.10 - 4.18
+** Rancher Kubernetes Engine 2 (RKE2) v1.26.7+rke2r1、v1.28.5+rke2r1
+
+
+* NetApp Trident 24.10 以降
+* NetApp Trident Protect 25.07 以降 (Kubernetes ワークロード検出時にインストール)
+* NetApp Trident Protect Connector 25.07 以降 (Kubernetes ワークロード検出時にインストール)
++
+** Kubernetes クラスター、 Trident保護コネクタ、およびTrident保護プロキシ間の送信方向で TCP ポート 443 がフィルタリングされていないことを確認します。
+
+
 
 
 
@@ -93,78 +165,3 @@ endif::gcp[]
 
 
 NOTE: 「オンプレミスのONTAPシステム」への参照には、 FASとAFFシステムが含まれます。
-
-
-
-== Microsoft SQL Server ホスト要件
-
-SQL Server ワークロードにBlueXP backup and recoveryを使用するには、次のホスト システム、スペース、およびサイズの前提条件が必要です。
-
-[cols="33,66a"]
-|===
-| 項目 | 要件 
-
-
-| オペレーティングシステム  a| 
-Microsoft Windows サポートされているバージョンの最新情報については、  https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperability Matrix Tool"^] 。
-
-
-
-| Microsoft SQL Server のバージョン  a| 
-バージョン 2012 以降は、VMware 仮想マシン ファイル システム (VMFS) および VMware 仮想マシン ディスク (VMDK) NFS でサポートされています。
-
-
-
-| SnapCenter Serverのバージョン  a| 
-SnapCenterからBlueXP backup and recoveryに既存のデータをインポートする場合は、 SnapCenter Server バージョン 5.0 以上が必要です。
-
-
-NOTE: SnapCenterがすでにある場合は、まずSnapCenterからインポートする前に前提条件を満たしていることを確認してください。を参照して link:concept-start-prereq-snapcenter-import.html["SnapCenterからリソースをインポートするための前提条件"]
-
-
-
-| SQL Server ホスト上のプラグインの最小 RAM  a| 
-1 GB
-
-
-
-| SQL Server ホスト上のプラグインの最小インストールおよびログ領域  a| 
-5 GB
-
-十分なディスク容量を割り当て、ログフォルダによるストレージ消費量を監視してください。必要なログ容量は、実行されるバックアップの数とデータ保護操作の頻度によって異なります。十分な容量がない場合、操作のログは作成されません。
-
-
-
-| 必要なソフトウェアパッケージ  a| 
-* ASP.NET Core ランタイム 8.0.12 ホスティング バンドル (およびそれ以降のすべての 8.0.x パッチ)
-* PowerShell Core 7.4.2
-
-
-サポートされているバージョンの最新情報については、を参照して https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperability Matrix Tool"^]ください。
-
-|===
-
-
-== Kubernetesアプリケーションを保護するため
-
-Kubernetes リソースを検出し、Kubernetes アプリケーションを保護するには、特定の要件が必要です。
-
-BlueXPの要件については、 <<BlueXP  の場合>> 。
-
-* プライマリONTAPシステム（ONTAP 9.16.1 以降）
-* Kubernetes クラスター - サポートされている Kubernetes ディストリビューションとバージョンは次のとおりです。
-+
-** Anthos On-Prem (VMware) とベアメタル版 Anthos 1.16
-** Kubernetes 1.27 - 1.33
-** オープンシフト 4.10 - 4.18
-** Rancher Kubernetes Engine 2 (RKE2) v1.26.7+rke2r1、v1.28.5+rke2r1
-
-
-* NetApp Trident 24.10 以降
-* NetApp Trident Protect 25.07 以降 (Kubernetes ワークロード検出時にインストール)
-* NetApp Trident Protect Connector 25.07 以降 (Kubernetes ワークロード検出時にインストール)
-+
-** Kubernetes クラスター、 Trident保護コネクタ、およびTrident保護プロキシ間の送信方向で TCP ポート 443 がフィルタリングされていないことを確認します。
-
-
-

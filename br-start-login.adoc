@@ -22,6 +22,10 @@ BlueXP backup and recoveryでは、ロールベースのアクセス制御 (RBAC
 
 BlueXP  にログインするには、NetAppサポートサイトのクレデンシャルを使用するか、Eメールアドレスとパスワードを使用してNetAppクラウドログインにサインアップします。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["ログインの詳細については、こちらをご覧ください"^]です。
 
+*必要なBlueXPロール* 組織管理者、フォルダーまたはプロジェクト管理者、バックアップおよびリカバリのスーパー管理者、バックアップおよびリカバリの復元管理者ロール。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+BlueXP backup and recoveryに初めてアクセスし、コネクタを追加する場合は、組織管理者またはバックアップおよびリカバリのスーパー管理者のロールが必要です。
+
 .手順
 . Webブラウザを開き、に移動します https://console.bluexp.netapp.com/["BlueXPコンソール"^]。
 +
@@ -34,10 +38,11 @@ NetApp BlueXPのログインページが表示されます。
 +
 image:screen-br-landing-no-we.png["BlueXP blueXP のランディング ページのスクリーンショット (作業環境なしのバックアップとリカバリ)"]
 
-** このサービスに初めてログインし、 BlueXPにすでに作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*リソースの検出*オプションが表示されます。
+** このサービスに初めてログインする場合、すでにBlueXPの作業環境があり、無料トライアルをまだ開始していない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*無料トライアルを表示*するオプションが表示されます。
 +
-image:screen-br-landing-unified.png["BlueXP blueXP バックアップとリカバリのランディングページのスクリーンショット"]
+image:screen-br-landing-unified-trial.png["BlueXP blueXP のランディングページのスクリーンショット（無料トライアルなしのバックアップとリカバリ）"]
 
+** このサービスに初めてログインし、 BlueXPにすでに作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*検出と管理*のオプションが表示されます。
 
 
 . まだ行っていない場合は、[*検出と管理*] オプションを選択します。
