@@ -4679,7 +4679,6 @@ ifdef：aws []</block>
   <block id="047b5386a7c666d31be5990a4869e7da" category="list-text">*ディスクからディスク*: (Kubernetes ワークロードでは使用できません) プライマリ ストレージ (ディスク) からセカンダリ ストレージ (ディスク)。 ONTAPからONTAPへのデータ保護戦略では、2 つのONTAPシステム間でデータを複製し、高可用性と災害復旧を保証します。これは通常、同期レプリケーションと非同期レプリケーションの両方をサポートするSnapMirrorを使用して実現されます。この方法により、データが継続的に更新され、複数の場所で利用可能になり、データ損失に対する強力な保護が提供されます。</block>
   <block id="68348a4aedf069fed0da1ef391e470d8" category="list-text">*ディスク間のファンアウト*: (Kubernetes ワークロードでは使用できません) プライマリ ストレージ (ディスク) からセカンダリ ストレージ (ディスク) およびプライマリ ストレージ (ディスク) からセカンダリ ストレージ (ディスク)。</block>
   <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">セカンダリストレージへのレプリケーションに関する情報を提供します。ローカル スナップショット設定のスケジュール情報が、セカンダリ設定に表示されます。これらの設定は Kubernetes ワークロードでは使用できません。</block>
-  <block id="5f62fed28c117ffda0827b12f19c440d" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース (プレビュー)、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
   <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">このサービスは、次のワークロードを保護します。</block>
   <block id="a7834976a2cbdc12ddeb76acc0345f2d" category="inline-link-macro">バックアップおよびリカバリデータサービスの役割と権限</block>
   <block id="092238820de0395a7d97ae63a784ea7f" category="paragraph">*必要なBlueXPロール* このタスクには、データ サービスのバックアップおよびリカバリのスーパー管理者ロールが必要です。学ぶ<block ref="48e53f0dd24db48908da75d62a8f8086" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
@@ -4773,4 +4772,5 @@ ifdef：aws []</block>
   <block id="af45dce32c393d74375fcf6543060be0" category="paragraph">BlueXP backup and recoveryでは、 ID およびアクセス管理 (IAM) を使用して、各ユーザーの特定の機能およびアクションへのアクセスを制御します。</block>
   <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">2025年8月12日</block>
   <block id="3d5a9cd83b30ec6ec9f0802593907f05" category="sidebar">Microsoft SQL Server ワークロードを保護する</block>
+  <block id="c03ab2cafee88facbca614f17c3c08a3" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
 </blocks>
