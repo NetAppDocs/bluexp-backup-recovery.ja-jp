@@ -3649,7 +3649,6 @@ ifdef：aws []</block>
   <block id="5e4be38dc556e235a6420a92a206702f" category="inline-link-macro">ログディレクトリを構成する</block>
   <block id="c787ed2d7e5bc557b61149e67595840c" category="list-text">*ログバックアップを有効にする*: (Kubernetesワークロードでは利用できません) ログをバックアップするオプションをオンにし、ログバックアップの頻度と保持期間を設定します。これを行うには、ログバックアップが既に設定されている必要があります。を参照して <block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block></block>
   <block id="6f55153177e57b6d7eb7c4cad4a859a7" category="list-text">*プロバイダー*: (Kubernetes ワークロードのみ) Kubernetes アプリケーション リソースをホストするストレージ プロバイダーを選択します。</block>
-  <block id="71109c8bd1c0018c7479893b1fd7e6a0" category="list-text">*バックアップターゲット*: (Kubernetes ワークロードのみ) バックアップのターゲットシステムを選択します。これはスナップショットが保存されるストレージシステムです。バックアップ環境からターゲットにアクセスできることを確認してください。</block>
   <block id="747b35b746df7e37e6b643aa0c244e28" category="list-text">オプションで、スケジュールの右側にある *詳細* を選択して、 SnapMirrorラベルを設定し、スナップショットのロックを有効にします (Kubernetes ワークロードでは使用できません)。</block>
   <block id="146a0850e1031071bccdee12df305d5a" category="list-text">* SnapMirrorラベル*：ラベルは、関係の保持ルールに従って指定されたスナップショットを転送するためのマーカーとして機能します。スナップショットにラベルを追加すると、そのスナップショットはSnapMirrorレプリケーションのターゲットとしてマークされます。</block>
   <block id="8036e5e1e57026168bfeac2027f9cc84" category="list-text">*時間からのオフセット*: スナップショットを毎時0分から何分後に取得するかを入力します。例えば、「*15*」と入力すると、毎時0分15分にスナップショットが取得されます。</block>
@@ -3751,7 +3750,6 @@ ifdef：aws []</block>
   <block id="635c4235a331a9bc9e0197a493f38268" category="list-text">ラベルセレクター</block>
   <block id="de183577631c168afe44797528dcd1b6" category="list-text">BlueXP は、検索条件に一致するリソースのリストを表示します。</block>
   <block id="aa49cc3a36d2c16ec191533800daa634" category="list-text">保護するリソースがリストに含まれている場合は、[次へ] を選択します。</block>
-  <block id="e9caf784881cf54a35354c0cac59319c" category="list-text">*ポリシー* 領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。</block>
   <block id="4049c9e3b9c424f5991c5f917ad92c40" category="inline-link-macro">実行フックテンプレート</block>
   <block id="5e97a71c79e2f24deabf91daa3d20cd1" category="list-text">*プレスクリプトとポストスクリプト*領域では、バックアップ操作の前後に実行するプレスクリプトまたはポストスクリプト実行フックを有効にして設定します。<block ref="3059f3d40a47ddab4d322199b8601d95" category="inline-link-macro-rx"></block> 。</block>
   <block id="96cff17e81239eeaa49df92ce0b9e6a1" category="paragraph">アプリケーションが作成され、Kubernetesインベントリの*アプリケーション*タブのアプリケーションリストに表示されます。BlueXPは設定に基づいてアプリケーションの保護を有効にし、バックアップとリカバリの*モニタリング*領域で進行状況を監視できます。</block>
@@ -4600,7 +4598,6 @@ ifdef：aws []</block>
   <block id="dc997bda771b80d1666f7d07ffd6b7d7" category="list-text">必要に応じて、「*クラスタースコープリソース*」を選択して、クラスターレベルでスコープ指定されたリソースを選択します。これらのリソースを含めると、アプリケーションの作成時にアプリケーションに追加されます。</block>
   <block id="812f9cbafb4aa2378e7470b20baa1fef" category="list-text">必要に応じて、「*検索*」を選択し、検索条件に基づいてリソースを検索します。</block>
   <block id="cd052ad0ede3d8d23a3b065ef26168d8" category="admonition">BlueXP は検索パラメータや結果を保存しません。パラメータは、選択した Kubernetes クラスターでアプリケーションに含めることができるリソースを検索するために使用されます。</block>
-  <block id="375665cdd163819cd9ddcb1def13c5da" category="list-text">必要に応じて、「*ポリシー*」領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。ポリシーを選択しない場合、アプリケーションは保護ポリシーなしで作成されます。ポリシーは後で追加できます。</block>
   <block id="6bd8ef6649ea59b964673233a7cdd855" category="paragraph">BlueXPは設定に基づいてアプリケーションの保護を有効にし、バックアップとリカバリの*監視*エリアで進行状況を監視できます。アプリケーションの保護を有効にするとすぐに、 BlueXPはアプリケーションの完全バックアップを作成します。その後の増分バックアップは、アプリケーションに関連付けられた保護ポリシーで定義されたスケジュールに基づいて作成されます。</block>
   <block id="be9a2f94b85d3bc8821f79138f4c1385" category="paragraph">BlueXPはアプリケーションのバックアップを作成し、バックアップとリカバリの「監視」エリアに進行状況を表示します。バックアップは、アプリケーションに関連付けられた保護ポリシーに基づいて作成されます。</block>
   <block id="5a5da37e66cddefa275e61455c6ce599" category="paragraph">BlueXP backup and recoveryを使用すると、保護ポリシーで保護したアプリケーションを復元できます。アプリケーションを復元するには、少なくとも 1 つの復元ポイントが必要です。復元ポイントは、ローカル スナップショットまたはオブジェクト ストアへのバックアップ（あるいはその両方）で構成されます。アプリケーションは、ローカル アーカイブ、セカンダリ アーカイブ、またはオブジェクト ストア アーカイブを使用して復元できます。</block>
@@ -4717,4 +4714,8 @@ ifdef：aws []</block>
   <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">このサービスは、次のワークロードを保護します。</block>
   <block id="a7834976a2cbdc12ddeb76acc0345f2d" category="inline-link-macro">バックアップおよびリカバリデータサービスの役割と権限</block>
   <block id="092238820de0395a7d97ae63a784ea7f" category="paragraph">*必要なBlueXPロール* このタスクには、データ サービスのバックアップおよびリカバリのスーパー管理者ロールが必要です。学ぶ<block ref="48e53f0dd24db48908da75d62a8f8086" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
+  <block id="2cf6a2d8c1cb12d031a59d63b2674c2d" category="list-text">*バックアップ ターゲット*: (Kubernetes ワークロードのみ) Kubernetes アプリケーション リソースをホストするストレージ バケットを選択します。スナップショットはこのバケットに保存されます。バックアップ環境内でバケットにアクセスできることを確認します。</block>
+  <block id="4d3ca3588667d04ddbd4f318cdd7677e" category="inline-link-macro">保護ポリシーを追加する</block>
+  <block id="2769be0838f5e6f63e01200eeeec1910" category="list-text">必要に応じて、「*ポリシー*」領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。ポリシーを選択しない場合、アプリケーションは保護ポリシーなしで作成されます。あなたはできる<block ref="99c823f28a98717f81cda4eb0c448db5" category="inline-link-macro-rx"></block>後で。</block>
+  <block id="f58eabeb108df6c5973f0ece276c562f" category="list-text">*ポリシー* 領域で、アプリケーションを保護するための既存の保護ポリシーを選択するか、新しいポリシーを作成します。参照<block ref="3739f9f9696bd133d77df1c4736a8480" category="inline-link-macro-rx"></block>保護ポリシーの作成の詳細については、こちらをご覧ください。</block>
 </blocks>
