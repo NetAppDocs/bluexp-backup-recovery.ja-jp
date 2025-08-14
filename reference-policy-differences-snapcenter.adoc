@@ -14,7 +14,9 @@ summary: BlueXP backup and recoveryで使用されるポリシーとSnapCenter�
 [role="lead"]
 SnapCenterで使用されるポリシーとBlueXP backup and recoveryで使用されるポリシーにはいくつかの違いがあり、 SnapCenterからリソースとポリシーをインポートした後の表示内容に影響する可能性があります。
 
-SnapCenterとBlueXP backup and recoveryでは、若干異なるポリシー スケジュールが使用されます。
+
+
+== スケジュール階層
 
 SnapCenter は次のスケジュール層を使用します。
 
@@ -78,6 +80,12 @@ SnapCenterに複数のポリシーを持つリソースがある場合、 BlueXP
 * SnapCenterの「フル バックアップとログ」と「フル バックアップ」の場合、 BlueXP backup and recoveryでは「フル バックアップとログ」の保持値が使用されます。
 * SnapCenterに完全バックアップのみがある場合、 BlueXP backup and recoveryではログ バックアップは有効になりません。
 
+
+
+
+== ログバックアップの保持
+
+SnapCenter を使用すると、リソースにアタッチされた複数のポリシーにわたって複数の保持値を持つことができます。ただし、 BlueXP backup and recoveryでは、リソースに関連付けられたすべてのポリシーに対して 1 つの保持値のみがサポートされます。
 
 
 
