@@ -4,7 +4,7 @@ permalink: prev-ontap-migrate-resync.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, migrate volumes, SnapMirror to Cloud Resync, ONTAP, NetApp, NetApp ONTAP, NetApp Cloud Volumes ONTAP, NetApp Cloud Volumes Service, FlexVols, FlexGroups 
 summary: BlueXP バックアップおよびリカバリの SnapMirror to Cloud Resync 機能は、NetApp 環境でのボリューム移行中のデータ保護と継続性を効率化します。 
 ---
-= BlueXP backup and recoveryでSnapMirrorを使用してボリュームを Cloud Resync に移行する
+= SnapMirrorを使用してボリュームをBlueXPバックアップとリカバリによるクラウド再同期に移行します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -28,6 +28,20 @@ SnapMirrorからクラウドへの再同期は、環境全体でバックアッ�
 *注意* BlueXP backup and recoveryのワークロードを切り替えるには、 link:br-start-switch-ui.html["さまざまなBlueXP backup and recoveryワークロードに切り替える"] 。
 
 ====
+.作業を開始する前に
+次の前提条件が満たされていることを確認してください。
+
+* デスティネーションONTAPクラスタでONTAPバージョン9.16.1以降が実行されている必要があります。
+* 古いソースONTAPクラスターは、BlueXP backup and recoveryを使用して保護する必要があります。
+* SnapMirror to Cloud Resync 機能は、2025 年 5 月にリリースされたBlueXP backup and recoveryバージョン 4.0.3 以降で利用できます。
+* オブジェクト ストレージ内の最新のバックアップは、古いソース、新しいソース、およびオブジェクト ストア全体の共通スナップショットである必要があります。共通スナップショットは、オブジェクト ストアにバックアップされた最新のスナップショットよりも古いものにすることはできません。
+* 再同期操作を開始する前に、古いONTAPで使用されていたスナップショット ポリシーとSnapMirrorポリシーの両方を新しいONTAPクラスタに作成する必要があります。再同期プロセスでポリシーを使用する場合は、そのポリシーも作成する必要があります。再同期操作ではポリシーは作成されません。
+* 移行ボリュームのSnapMirror関係に適用されるSnapMirrorポリシーに、クラウド関係で使用されるものと同じラベルが含まれていることを確認します。問題を回避するには、ボリュームとすべてのスナップショットの正確なミラーを管理するポリシーを使用します。
+
+
+
+NOTE: SVM-Migrate、SVM-DR、またはヘッドスワップ方式を使用した移行後のSnapMirrorからクラウドへの再同期は、現在サポートされていません。
+
 
 
 == BlueXP backup and recoverySnapMirror to Cloud Resyncの仕組み
@@ -65,12 +79,9 @@ image:diagram-snapmirror-cloud-resync-migration.png["BlueXP  バックアップ
 
 == 手順に関する注意事項
 
-* デスティネーションONTAPクラスタでONTAPバージョン9.16.1以降が実行されている必要があります。
-* 古いソースONTAPクラスタは、BlueXP  バックアップおよびリカバリを使用して保護する必要があります。
 * BlueXP  のバックアップとリカバリを使用して移行や機器更改を実行することはありません。担当者は、プロフェッショナルサービスチームまたは認定ストレージ管理者に依頼してください。
 * NetApp移行チームは、ボリュームの移行を容易にするために、ソースとデスティネーションのONTAPクラスタ間のSnapMirror関係を作成します。
 * 機器更改時の移行がSnapMirrorベースの移行に基づいていることを確認
-* SVM-Migrate、SVM-DR、またはヘッドスワップ方式を使用した移行後のSnapMirrorからクラウドへの再同期は、現在サポートされていません。
 
 
 
@@ -109,6 +120,10 @@ NetApp機器更改チームは、移行を開始する前に、データ損失�
 . デスティネーションONTAPクラスタに移行されたすべてのボリュームの新しいボリュームインスタンスUUIDを記録します。
 . 古いONTAPクラスタで使用可能であった必要なすべてのSnapMirrorポリシーが、新しいONTAPクラスタで正しく設定されていることを確認します。
 . BlueXP  キャンバスで、新しいONTAPクラスタを作業環境として追加します。
++
+
+NOTE: ボリューム ID ではなく、ボリューム インスタンス UUID を使用する必要があります。ボリューム インスタンス UUID は移行全体で一貫性が保たれる一意の識別子ですが、ボリューム ID は移行後に変更される可能性があります。
+
 
 
 
@@ -120,7 +135,11 @@ NetApp機器更改チームは、移行を開始する前に、データ損失�
 . BlueXP  キャンバスで、新しいONTAPクラスタを作業環境として追加します。
 . BlueXP  の[Backup and Recovery Volumes]ページで、古いソースの作業環境の詳細が表示されていることを確認します。
 . BlueXP  の[ボリュームのバックアップとリカバリ]ページで、*[バックアップ設定]*を選択します。
-. メニューから*[バックアップの再同期]*を選択します。
++
+** バックアップ設定ページで、[すべて表示] を選択します。
+** 新しいソースの右側にある [アクション...] メニューから、*バックアップの再同期* を選択します。
+
+
 . [Resync Working Environment]ページで、次の手順を実行します。
 +
 .. *新しいソース作業環境*：ボリュームが移動された新しいONTAPクラスタを入力します。
@@ -135,17 +154,21 @@ NetApp機器更改チームは、移行を開始する前に、データ損失�
 
 
 . [Upload Volume Mapping Details]*で[Upload]*を選択し、完成したCSVシートをBlueXP  バックアップ/リカバリUIにアップロードします。
++
+
+NOTE: ボリューム ID ではなく、ボリューム インスタンス UUID を使用する必要があります。ボリューム インスタンス UUID は移行全体で一貫性が保たれる一意の識別子ですが、ボリューム ID は移行後に変更される可能性があります。
+
 . 再同期処理に必要なプロバイダとネットワークの設定情報を入力します。
 . [送信]*を選択して検証プロセスを開始します。
 +
-BlueXP  のバックアップとリカバリでは、再同期対象として選択した各ボリュームに共通のSnapshotが少なくとも1つ含まれているかどうかが検証されます。これにより、ボリュームでSnapMirrorからクラウドへの再同期処理を実行する準備が整います。
+BlueXP backup and recoveryでは、再同期対象として選択された各ボリュームが最新のスナップショットであり、少なくとも 1 つの共通スナップショットがあることが検証されます。これにより、ボリュームがSnapMirrorから Cloud Resync 操作の準備が整っていることが保証されます。
 
 . 新しいソースボリュームの名前や各ボリュームの再同期ステータスなど、検証結果を確認します。
-. ボリュームの適性を確認します。ボリュームが再同期の対象になるかどうかがチェックされます。対応していないボリュームは、共通のSnapshotが見つからなかったことを意味します。
+. ボリュームの適格性を確認します。システムはボリュームが再同期の対象となるかどうかを確認します。ボリュームが不適格な場合は、最新のスナップショットではないか、共通のスナップショットが見つからなかったことを意味します。
 +
 
 IMPORTANT: ボリュームがSnapMirrorからクラウドへの再同期処理の対象となるようにするには、移行前のフェーズでSnapMirror関係を削除する前に、各ボリュームの最終Snapshotを作成します。これにより、データの最新の状態が保持されます。
 
-. 再同期処理を開始するには、*[再同期]*を選択します。システムは共通のスナップショットを使用して増分変更のみを転送し、バックアップの継続性を確保します。
-. [Job Monitor]ページで、resynプロセスを監視します。
+. 再同期操作を開始するには、「再同期」を選択します。システムは最新の共通スナップショットを使用して増分変更のみを転送し、バックアップの継続性を保証します。
+. ジョブ モニター ページで再同期プロセスを監視します。
 
