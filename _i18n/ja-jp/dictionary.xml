@@ -2942,7 +2942,6 @@ ifdef：aws []</block>
   <block id="a4cb4d9746fef9b2063e1e5da1c75c29" category="paragraph">NetApp がプライベート オファーを共有した後、 BlueXP backup and recoveryのアクティベーション中に Google Cloud Marketplace からサブスクライブするときに年間プランを選択できます。endif::gcp[]</block>
   <block id="474d47e21fe92a33663dbddcf78590b4" category="summary">NetApp BlueXPを使用して、 BlueXP backup and recoveryサービスにログインします。</block>
   <block id="aeb10fc890c802b7dd8fae9cff0a209e" category="doc">BlueXP backup and recoveryにログイン</block>
-  <block id="24950a849c9d9aedd14419065a71d6d1" category="paragraph">BlueXP backup and recoveryでは、ロールベースのアクセス制御 (RBAC) を使用して、各ユーザーの特定のアクションへのアクセスを制御します。</block>
   <block id="666cc2b78f16f8ece01853cc11f9d11a" category="inline-link-macro">BlueXP backup and recoveryユーザー ロール</block>
   <block id="31675b9e04540d4b854fca05b62b0163" category="paragraph">各ロールで実行できるアクションの詳細については、を参照してください<block ref="e48ad5b94ef60d879078857b9c9c4497" category="inline-link-macro-rx"></block>。</block>
   <block id="8e917942a77709dfd28c155f42a97553" category="inline-link">ログインの詳細については、こちらをご覧ください</block>
@@ -3023,7 +3022,6 @@ ifdef：aws []</block>
   <block id="b855e251d5df357e144fbf0e53db0c36" category="paragraph">*どの UI を使用しているかはどのようにしてわかりますか?*</block>
   <block id="96ec5c3621495d866bf12104959de6fc" category="inline-image-macro">BlueXP backup and recoveryの新しい UI スクリーンショット</block>
   <block id="47b2e1fa9a85c125a53c3e5c9a3e0e98" category="inline-image-macro">BlueXP backup and recoveryの以前の UI スクリーンショット</block>
-  <block id="db417fd26ca3425ad12946f4a0f2ff53" category="paragraph">ONTAPボリュームと VMware ワークロードのメニュー バーは次のようになります。 <block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fe22a10f6ea181611d52a0d5759f39db" category="section-title">別のワークロードに切り替える</block>
   <block id="4373918dc26735d4da68b24b4eaf9a01" category="paragraph">BlueXP backup and recoveryUI で別のワークロードに切り替えることができます。</block>
   <block id="6796afb2b33620293536ad9e235fd848" category="list-text">ページの右上隅から、[*ワークロードの切り替え*] ドロップダウン リストを選択します。</block>
@@ -3063,7 +3061,6 @@ ifdef：aws []</block>
   <block id="c642a1d421742bab764af6e7ce29cee9" category="list-text">ONTAPのストレージクラスタの数</block>
   <block id="5b39a8b0cd985252363064e17a37e57b" category="section-title">保護の概要を表示する</block>
   <block id="7d16325b089791a7fec8a4ec1b1328d3" category="paragraph">保護の概要で次の情報を確認します。</block>
-  <block id="285e1429845071f628c6f8239a013cfa" category="list-text">保護されているデータベースと保護されていないデータベースの合計数。</block>
   <block id="c3427cdd69e34b450f0471fa4bc0f6bc" category="admonition">保護されたデータベースとは、バックアップポリシーが割り当てられているデータベースです。保護されていないデータベースとは、バックアップポリシーが割り当てられていないデータベースです。</block>
   <block id="b3887310c2624c2fea5b40d259f69d85" category="list-text">成功したバックアップ、警告のあったバックアップ、失敗したバックアップの数。</block>
   <block id="d1cc4762aa621a5e420e818f9fb01417" category="list-text">バックアップサービスによって検出された総容量と、保護されている容量と保護されていない容量の割合。「*i*」アイコンにマウスを合わせると詳細が表示されます。</block>
@@ -3562,7 +3559,6 @@ ifdef：aws []</block>
   <block id="08dde8a49187490703817f0bb0ca2c66" category="list-text">セカンダリストレージへのレプリケーションのポリシーを作成する</block>
   <block id="79553f51abb935dd34c66050ba8bd085" category="list-text">オブジェクトストレージ設定のポリシーを作成する</block>
   <block id="560d0289c18f590a486568880a11504c" category="list-text">詳細なポリシー設定を構成する</block>
-  <block id="110202b139c8c8a25346f036c902b4c8" category="list-text">ポリシーを編集する</block>
   <block id="af5b784334cc5cfd8f61f1fa34d0aca5" category="list-text">ポリシーの削除</block>
   <block id="07e3a352f6fabbcfb1aa57866d9cc826" category="list-text">BlueXP backup and recoveryメニューから、[ポリシー] を選択します。</block>
   <block id="efecaf049bb3027a5a57f92953795d16" category="inline-image-macro">ポリシーページ</block>
@@ -3582,13 +3578,10 @@ ifdef：aws []</block>
   <block id="e0b5eb9f9d2446a8058c07e393201d73" category="paragraph">スナップショットロック全般については、以下を参照してください。 <block ref="8b0c087cbf38ba7d67f735ef687ec456" category="inline-link-rx"></block> 。</block>
   <block id="678bf77479fcbfef4dc290f0d62e98ff" category="list-text">[ポリシー] ページで、[新しいポリシーの作成] を選択します。</block>
   <block id="15b12387004ff245bfdfd55c084d652c" category="inline-image-macro">新しいポリシー作成のスクリーンショット</block>
-  <block id="600dcd5a0627f86042966557f6c1d641" category="paragraph"><block ref="600dcd5a0627f86042966557f6c1d641" category="inline-image-macro-rx" type="image"></block></block>
   <block id="385b9aea2790f1bf9fe2b79fdafc5b1e" category="list-text">「ポリシー」ページで、次の情報を入力します。</block>
   <block id="dcf438c461663e08d25441c21a02eb89" category="list-text">*詳細*セクション:</block>
-  <block id="99228d8dc56ea01edce282c124fbc4db" category="list-text">このバージョンでは、デフォルトで「Microsoft SQL Server」のワークロード タイプが選択されています。</block>
   <block id="c6dc8fc5264ca3745831ad65554a2b72" category="list-text">ポリシー名を入力します。</block>
   <block id="42daba30535e3d2a9dc6be74b0a10189" category="list-text">*バックアップ アーキテクチャ* セクション: 下矢印を選択し、ファンアウト、カスケード、ディスク間などのバックアップのアーキテクチャを選択します。</block>
-  <block id="bb2503172f7a2d3bf8f64d30f8db109b" category="list-text">*ローカルスナップショット*: 選択したボリュームのローカルスナップショットです。ローカルスナップショットはデータ保護戦略の重要な要素であり、特定の時点におけるデータの状態をキャプチャします。これにより、ワークロードが実行されている本番ボリュームの読み取り専用のポイントインタイムコピーが作成されます。スナップショットは、前回のスナップショット以降のファイルの変更のみを記録するため、ストレージ容量の消費は最小限に抑えられ、パフォーマンスのオーバーヘッドもごくわずかです。ローカルスナップショットは、データの損失や破損からの復旧や、災害復旧のためのバックアップの作成に使用できます。</block>
   <block id="32726057a180b606f3393a3235c80796" category="list-text">*ディスクツーオブジェクトストア*：プライマリストレージ（ディスク）からクラウド（オブジェクトストア）へ。ONTAPシステムからAWS S3、Azure Blob Storage、 StorageGRIDなどのONTAPストレージシステムにデータを複製します。これは通常、 SnapMirror Cloudを使用して実現されます。SnapMirror Cloudは、最初のベースライン転送後に変更されたデータブロックのみを転送することで、永久増分バックアップを提供します。これは、クラウドハイパースケーラーのオブジェクトストアまたはプライベートオブジェクトストア（ StorageGRID）のいずれかです。この方法は長期的なデータ保持とアーカイブに最適で、コスト効率が高くスケーラブルなデータ保護ソリューションを提供します。</block>
   <block id="da35c57efd612e967c7ee5f6ae122173" category="admonition">ディスク間ファンアウト オプションには複数のセカンダリ設定を構成できます。</block>
   <block id="6e2bd59b02565b32b4f5f494be2d3b3c" category="paragraph">ローカル スナップショットの情報を提供します。</block>
@@ -3596,13 +3589,9 @@ ifdef：aws []</block>
   <block id="ea26bb825f76fc9d9f25830201533996" category="list-text">*スナップショット頻度*: 毎時、毎日、毎週、毎月、毎年から頻度を選択します。Kubernetesワークロードでは毎年の頻度は選択できません。</block>
   <block id="b144c9152bc25d1fc7d07fee5de2ecc6" category="list-text">*スナップショットの保持*: 保持するスナップショットの数を入力します。</block>
   <block id="5e4be38dc556e235a6420a92a206702f" category="inline-link-macro">ログディレクトリを構成する</block>
-  <block id="c787ed2d7e5bc557b61149e67595840c" category="list-text">*ログバックアップを有効にする*: (Kubernetesワークロードでは利用できません) ログをバックアップするオプションをオンにし、ログバックアップの頻度と保持期間を設定します。これを行うには、ログバックアップが既に設定されている必要があります。を参照して <block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block></block>
   <block id="6f55153177e57b6d7eb7c4cad4a859a7" category="list-text">*プロバイダー*: (Kubernetes ワークロードのみ) Kubernetes アプリケーション リソースをホストするストレージ プロバイダーを選択します。</block>
   <block id="747b35b746df7e37e6b643aa0c244e28" category="list-text">オプションで、スケジュールの右側にある *詳細* を選択して、 SnapMirrorラベルを設定し、スナップショットのロックを有効にします (Kubernetes ワークロードでは使用できません)。</block>
   <block id="146a0850e1031071bccdee12df305d5a" category="list-text">* SnapMirrorラベル*：ラベルは、関係の保持ルールに従って指定されたスナップショットを転送するためのマーカーとして機能します。スナップショットにラベルを追加すると、そのスナップショットはSnapMirrorレプリケーションのターゲットとしてマークされます。</block>
-  <block id="8036e5e1e57026168bfeac2027f9cc84" category="list-text">*時間からのオフセット*: スナップショットを毎時0分から何分後に取得するかを入力します。例えば、「*15*」と入力すると、毎時0分15分にスナップショットが取得されます。</block>
-  <block id="aab634dec47a0327e1d19e8f140b1ff5" category="list-text">*サイレントアワーを有効にする*：サイレントアワーを有効にするかどうかを選択します。サイレントアワーとは、スナップショットが作成されない時間帯のことで、バックアッププロセスに干渉されることなくメンテナンスなどの操作を行うことができます。これは、ピーク時やメンテナンス期間中のシステム負荷を軽減するのに役立ちます。</block>
-  <block id="cd0a52a7955baba5717b6d22930ce27c" category="list-text">*スナップショットのロックを有効にする*：改ざん防止スナップショットを有効にするかどうかを選択します。このオプションを有効にすると、指定された保持期間が経過するまで、スナップショットは削除または変更できなくなります。この機能は、ランサムウェア攻撃からデータを保護し、データの整合性を確保するために不可欠です。</block>
   <block id="96dbfe4652a6b876c6cb53e74da71da7" category="list-text">*スナップショットのロック期間*: スナップショットをロックする日数、月数、または年数を入力します。</block>
   <block id="71eec9b2b57a1b041e6be9fdbb7e9d77" category="section-title">セカンダリ設定（セカンダリストレージへのレプリケーション）のポリシーを作成する</block>
   <block id="334741c071e30fd510f26dae69ca8081" category="list-text">*バックアップ*: 時間ごと、日ごと、週ごと、月ごと、または年ごとの頻度を選択します。</block>
@@ -3645,16 +3634,12 @@ ifdef：aws []</block>
   <block id="2ca92844b86f2b62c13c213099bda95a" category="list-text">*コピーのみのバックアップ*: 別のバックアップ アプリケーションを使用してリソースをバックアップできるコピーのみのバックアップ (Microsoft SQL Server バックアップの一種) を選択します。</block>
   <block id="10c4d775a10f9f702a7cc573a8b32f48" category="list-text">*可用性グループの設定*: 優先するバックアップレプリカを選択するか、特定のレプリカを指定します。この設定は、SQL Server 可用性グループがあり、バックアップに使用するレプリカを制御したい場合に便利です。</block>
   <block id="132e6bd0e046e23aee25c117b1e9812c" category="list-text">*最大転送速度*：帯域幅使用量を制限しない場合は、「無制限」を選択します。転送速度を制限する場合は、「制限あり」を選択し、オブジェクトストレージへのバックアップアップロードに割り当てるネットワーク帯域幅を1～1,000 Mbpsの範囲で選択します。デフォルトでは、 ONTAPは作業環境のボリュームからオブジェクトストレージへのバックアップデータの転送に無制限の帯域幅を使用できます。バックアップトラフィックが通常のユーザーワークロードに影響を与えていることに気付いた場合は、転送中に使用されるネットワーク帯域幅を減らすことを検討してください。</block>
-  <block id="ec9b9920140e56313d3b026541532555" category="list-text">*バックアップの再試行*：障害または中断が発生した場合にジョブを再試行するには、「*障害発生時のジョブの再試行を有効にする*」を選択します。スナップショットおよびバックアップジョブの最大再試行回数と再試行間隔を入力します。再試行回数は10回未満である必要があります。この設定は、障害または中断が発生した場合にバックアップジョブを確実に再試行したい場合に便利です。</block>
   <block id="ebc38593846bd56262189cdea41159c0" category="admonition">スナップショット頻度が 1 時間に設定されている場合、再試行回数と合わせた最大遅延は 45 分を超えてはなりません。</block>
-  <block id="aac8fe9a7b8c3de675f0a551b63cabd1" category="list-text">*バックアップ検証*：バックアップ検証を有効にするかどうか、また、すぐに実行するか後で実行するかを選択します。この機能により、バックアップの有効性と復元の確実性が確保されます。バックアップの整合性を確保するために、このオプションを有効にすることをお勧めします。デフォルトでは、セカンダリストレージが設定されている場合、バックアップ検証はセカンダリストレージから実行されます。セカンダリストレージが設定されていない場合、バックアップ検証はプライマリストレージから実行されます。</block>
   <block id="94acea0f5c2d16ea31dc3b32ac56be06" category="inline-image-macro">BlueXP backup and recoveryポリシーのバックアップ検証設定のスクリーンショット</block>
   <block id="0d3d467d9c9b1d1ac6401af1552d1ff2" category="paragraph"><block ref="0d3d467d9c9b1d1ac6401af1552d1ff2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5c9b86ff3ed09d60fd7e04707b95622a" category="paragraph">さらに、次のオプションを構成します。</block>
   <block id="73abde911f425febebd71ee70b614dd9" category="list-text">*毎日*、*毎週*、*毎月*、または*毎年*の検証：バックアップ検証で*後で*を選択した場合は、バックアップ検証の頻度を選択します。これにより、バックアップの整合性が定期的にチェックされ、正常に復元できるようになります。</block>
   <block id="f1d2410a944bd4992da0594068ed18a8" category="list-text">*バックアップラベル*: バックアップのラベルを入力します。このラベルはシステム内でバックアップを識別するために使用され、バックアップの追跡と管理に役立ちます。</block>
-  <block id="76dac83462d8977a9c2b8b0dbca9541c" category="list-text">*データベース整合性チェック*：データベース整合性チェックを有効にするかどうかを選択します。このオプションは、バックアップを実行する前にデータベースが整合性のある状態であることを確認します。これは、データの整合性を確保するために非常に重要です。</block>
-  <block id="fa08c9ef233239f746696deef92ed56b" category="list-text">*ログバックアップの検証*：ログバックアップを検証するかどうかを選択します。検証サーバを選択します。ディスクツーディスクまたは3-2-1を選択した場合は、検証用の保存場所も選択してください。このオプションにより、ログバックアップが有効であり、正常に復元できることが保証されます。これは、データベースの整合性を維持するために重要です。</block>
   <block id="5974a63c4cecc4432e5393e90081c541" category="list-text">*ネットワーク*: バックアップ操作に使用するネットワークインターフェースを選択します。複数のネットワークインターフェースがあり、どのインターフェースをバックアップに使用するかを制御したい場合に便利です。</block>
   <block id="72d60858fb2b96d58274c5434a6b3440" category="list-text">*プライベートエンドポイント構成*：オブジェクトストレージにプライベートエンドポイントを使用している場合は、バックアップ操作に使用するプライベートエンドポイント構成を選択します。これは、プライベートネットワーク接続を介してバックアップが安全に転送されることを保証したい場合に便利です。</block>
   <block id="b993cc2cb4bdad71390267cbdbd3dbad" category="list-text">*通知*: バックアップ操作に関するメール通知を有効にするかどうかを選択します。これは、バックアップ操作の開始、完了、または失敗時に通知を受け取りたい場合に便利です。</block>
@@ -3802,18 +3787,13 @@ ifdef：aws []</block>
   <block id="b7b284ffcc14ef04cba0609819bc5974" category="list-text">**更新**を選択します。</block>
   <block id="a5424dd10dd2e3be3a885a1ed3c02cdb" category="summary">NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。</block>
   <block id="f796cbd79ca11e2909969222c0b6a77d" category="doc">BlueXP backup and recoveryの概要による VMware ワークロードの保護</block>
-  <block id="9c05788904434e779dc26b1d9f6d6456" category="paragraph">BlueXP backup and recoveryを使用して VMware ワークロードを保護します。BlueXPBlueXP backup and recoveryは、VM、データストア、VMDK に対して、高速でスペース効率が高く、クラッシュ整合性と VM 整合性を備えたバックアップおよびリストア操作を提供します。</block>
   <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。</block>
   <block id="af61874354a940a408aa59fc2a353b7c" category="inline-link-macro">以前のBlueXP backup and recoveryUIに切り替える</block>
-  <block id="66e26e427b5784b7adb6655a0b49e57f" category="paragraph">*注意* この機能は、BlueXP backup and recoveryUIの以前のバージョンを使用します。BlueXPのBlueXP backup and recoveryUIのバージョンを切り替えるには、以下を参照してください。 <block ref="906891f55c4c6af31e4cf82ce54f93d9" category="inline-link-macro-rx"></block> 。</block>
-  <block id="5165c2fbcef4d5b16f189feb7569b43b" category="paragraph">以前のBlueXP backup and recoveryUI の使用方法については、次のトピックを参照してください。</block>
   <block id="219b1d964760a35bc8ac924733ed0211" category="summary">BlueXP backup and recoveryサービスは、オンプレミスとクラウドの両方で、 NetAppデータベースとインスタンスに対して効率的、安全、かつコスト効率に優れたデータ保護を提供します。バックアップは自動的に生成され、パブリックまたはプライベートクラウドアカウントのオブジェクトストアに格納されます。</block>
   <block id="5ddad1ad8421fb041436bd24f4aea0c5" category="section-title">BlueXP backup and recoveryでできること</block>
   <block id="930ffc736eba485afa459142d19e0a4e" category="paragraph">BlueXP backup and recoveryを使用して、次の目標を達成します。</block>
-  <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAPボリュームのワークロード:</block>
   <block id="2565579856adf676ae32e330c247eaf5" category="list-text">ローカル スナップショットを作成し、セカンダリ ストレージに複製し、オンプレミスのONTAPまたはCloud Volumes ONTAPONTAPからパブリック クラウド アカウントまたはプライベート クラウド アカウントのオブジェクト ストレージに ONTAP ボリュームをバックアップします。</block>
   <block id="316cc7c6ce94033b53fda593f26e3d57" category="list-text">別のONTAPクラスターとクラウド内のオブジェクト ストレージに保存されるブロック レベルの永久増分バックアップを作成します。</block>
-  <block id="f159b66cf2f7365489d513e547dd48d0" category="list-text">データストアを Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、 StorageGRIDにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereに復元します。</block>
   <block id="44c669dcd757f74c8d868cde66bbadac" category="section-title">BlueXP backup and recoveryを使用する利点</block>
   <block id="ed058c6afaa6d55d9032558597031ccf" category="paragraph">BlueXP backup and recoveryには、次のような利点があります。</block>
   <block id="69c4a7f9c8daffe7c66421bbb98ac486" category="list-text">**効率的**： BlueXP backup and recoveryは、ブロックレベルの永久増分レプリケーションを実行するため、複製および保存されるデータの量が大幅に削減されます。これにより、ネットワークトラフィックとストレージコストを最小限に抑えることができます。</block>
@@ -3851,7 +3831,6 @@ ifdef：aws []</block>
   <block id="c8ee5c80af66e9ba0b237679d3ee2962" category="section-title">サポートされているデータソース、作業環境、バックアップ対象</block>
   <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">サポートされているワークロード データ ソース</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAPボリューム</block>
-  <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware データストア</block>
   <block id="5ab0c2c7c8110afd8e099464217e8718" category="list-title">サポートされている作業環境</block>
   <block id="60bbb47f4c25fbe48c0eaa18d9174d22" category="list-text">ONTAPバージョン 9.8 以降を搭載したオンプレミスのONTAP SAN (iSCSI プロトコル) および NAS (NFS および CIFS プロトコルを使用)</block>
   <block id="d97ad1eba4f90ab1f835497c1e04b99f" category="list-text">AWS 向けCloud Volumes ONTAP 9.8 以上 (SAN および NAS を使用)</block>
@@ -3859,8 +3838,6 @@ ifdef：aws []</block>
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="list-text">Amazon FSx for NetApp ONTAP</block>
   <block id="d17b3abdd113c99dd97a58c22430220e" category="list-title">サポートされているバックアップターゲット</block>
   <block id="736ca911d7d143d01bd8cbfe0d4afbca" category="list-text">Amazon Web Services（AWS）S3</block>
-  <block id="6a51ed7bcacdfb13f78abc1e0f69c201" category="list-text">Microsoft Azure Blob</block>
-  <block id="97961700280df7e97434bb488aee8673" category="paragraph">BlueXP backup and recoveryは、 Microsoft SQL Server をホストするサーバーに Microsoft SQL Server 用プラグインをインストールします。このプラグインは、Microsoft SQL Server データベースおよびインスタンスのアプリケーション対応データ保護管理を可能にするホスト側コンポーネントです。</block>
   <block id="fa9b9e83c02fc7ada864618f933caa44" category="paragraph">BlueXP backup and recoveryを有効にすると、データの完全バックアップが実行されます。最初のバックアップ以降は、増分バックアップが実行されます。これにより、ネットワークトラフィックを最小限に抑えることができます。</block>
   <block id="504927eafa9845be671b630ab35b5fe6" category="paragraph">次の図は、コンポーネント間の関係を示しています。</block>
   <block id="f4fad7bda109e5959fd31089dbb58bde" category="inline-image-macro">BlueXP backup and recoveryが3-2-1保護戦略を使用する様子を示す図</block>
@@ -3873,7 +3850,6 @@ ifdef：aws []</block>
   <block id="f91faf1a13607ac0db1201bfb304b328" category="section-title">BlueXP backup and recoveryに役立つ用語</block>
   <block id="4631dd7356561dcd994558a79249bcaa" category="paragraph">保護に関連するいくつかの用語を理解しておくと役立つかもしれません。</block>
   <block id="661b3d31f95036ff86eec46ca498f96e" category="list-text">*保護*: BlueXP backup and recoveryにおける保護とは、保護ポリシーを使用して、スナップショットと不変のバックアップが別のセキュリティ ドメインに定期的に実行されるようにすることを意味します。</block>
-  <block id="1787981ab8b4962c0ce851610d9b9e0d" category="list-text">*ワークロード*: BlueXP backup and recoveryのワークロードには、Microsoft SQL Server インスタンスとデータベース、VMware データストア、またはONTAPボリュームが含まれます。</block>
   <block id="a360a8dae91555caa28f2085f644a956" category="summary">BlueXP backup and recoveryを開始するには、運用環境、 BlueXPコネクタ、 BlueXPアカウントの準備状況を確認してください。BlueXPのBlueXP backup and recoveryを使用するには、以下の前提条件を満たす必要があります。</block>
   <block id="9b71e2f071cfce0bcb6aaf05e7722154" category="section-title">SnapCenterプラグインをインストールするためのホスト要件を確認する</block>
   <block id="5d81a9c26b95fdbbbd94a3fc025eed88" category="inline-link-macro">BlueXP backup and recoveryの前提条件</block>
@@ -3955,7 +3931,6 @@ ifdef：aws []</block>
   <block id="34c47cd4f14da734755f6694935a175d" category="list-text">Azure Blob の場合、コネクタはオンプレミスでデプロイできます。</block>
   <block id="ba780b6a1a4c1c3c2dd22e2a654e32c2" category="list-text">StorageGRIDの場合、コネクタはインターネット アクセスの有無にかかわらず、お客様の敷地内に展開する必要があります。</block>
   <block id="f11d659b2497c3836db933d95773f939" category="admonition">「オンプレミスのONTAPシステム」への参照には、 FASとAFFシステムが含まれます。</block>
-  <block id="38601d08e67d696e9a90a6fc1d51c86e" category="paragraph">SQL Server ワークロードにBlueXP backup and recoveryを使用するには、次のホスト システム、スペース、およびサイズの前提条件が必要です。</block>
   <block id="7d74f3b92b19da5e606d737d339a9679" category="cell">項目</block>
   <block id="43574ab73a6cbc674506ff003387dcb1" category="cell">オペレーティングシステム</block>
   <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link">NetApp Interoperability Matrix Tool</block>
@@ -4408,10 +4383,6 @@ ifdef：aws []</block>
   <block id="4dba655852206fd33ef2ae210d0f09ea" category="sidebar">Microsoft SQL Server ワークロードのバックアップ</block>
   <block id="a86a44463f171d5cbfffdac926d2c5f7" category="sidebar">Microsoft SQL Server ワークロードを復元する</block>
   <block id="c82b8b73ed613da47a71b640f8e94c5d" category="sidebar">Microsoft SQL Server ワークロードのクローン作成</block>
-  <block id="ab69e074c29de9ea026c02628c3ac05c" category="sidebar">仮想マシンのワークロードを保護する</block>
-  <block id="c07f32b29d23df4f4b3125c85d8b32ac" category="sidebar">仮想マシンのワークロードの保護の概要</block>
-  <block id="db9c90cd86a25bccd17673c8c8e8ea8e" category="sidebar">仮想マシンのワークロードをバックアップするポリシーを作成する</block>
-  <block id="e912f6251092fa984cd8a427a0057382" category="sidebar">仮想マシンのワークロードを復元する</block>
   <block id="09092e90e42e51dde4c6cb831f40c41e" category="sidebar">Microsoft SQL Server ワークロードの既知の制限</block>
   <block id="adc285d73b2f7cdf2384ca8c91570878" category="sidebar">ONTAPボリュームワークロードの既知の制限</block>
   <block id="ada29ec64f251f29514285defc574a33" category="sidebar">BlueXP backup and recoveryの前提条件</block>
@@ -4424,7 +4395,6 @@ ifdef：aws []</block>
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Microsoft SQL Server のインベントリを管理する</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Microsoft SQL Server スナップショットを管理する</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Microsoft SQL Server レポートを作成する</block>
-  <block id="79cf38f604ea494dd925df57b6a906b6" category="sidebar">仮想マシンのワークロードを保護する</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">仮想マシンのワークロードの保護の概要</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">仮想マシンのワークロードを保護するための前提条件</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">ジョブの監視</block>
@@ -4529,7 +4499,6 @@ ifdef：aws []</block>
   <block id="75e31fe436b541e95871c54827070e6e" category="paragraph">元の名前空間に復元することも、新しい名前空間に復元することもできます。</block>
   <block id="a9f292136fbf924f6d8d675318db6235" category="admonition">表示されるリソースは、クラスター上に現在存在するリソースです。</block>
   <block id="12c3c958b266fff57134abb1c9649419" category="list-text">オプションで、別のストレージ クラスに復元することを選択した場合は、各ソース ストレージ クラスに一致する宛先ストレージ クラスを選択します。</block>
-  <block id="cb1b8938f12c99c7787423a78f4db357" category="list-text">Kubernetes ワークロード (プレビュー):</block>
   <block id="1c1c6b4c5003945f6d28242d24286ee6" category="list-text">Kubernetes アプリケーションとリソースをすべて 1 か所で管理および保護します。</block>
   <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">保護ポリシーを使用して増分バックアップを構成します。</block>
   <block id="116fc6c4cddb8e42e7260e6817cd901f" category="list-text">アプリケーションとリソースを同じまたは異なるクラスターと名前空間に復元します。</block>
@@ -4561,9 +4530,7 @@ ifdef：aws []</block>
   <block id="b0d36ddf3864894974cfcf7f668e9b9c" category="paragraph">BlueXP backup and recoveryAPIのドキュメントは、以下から入手できます。<block ref="d997d711dd0ca8a2419efc218eebd515" category="inline-link-rx"></block> 。</block>
   <block id="92ab15f0eb1b97b8c4bdb14a10948af8" category="inline-link">サービスアクセストークンを作成する</block>
   <block id="7ee1b8532fd572ee3c5a1cd48ff05db9" category="admonition">サービス アカウントを使用している場合は、ユーザー トークンの代わりにサービス アクセス トークンを使用する必要があります。 「client_id」の値 (「Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC」) は固定値であり、変更できません。この場合は、次の手順に従ってください。<block ref="baaa234cb07675a6b3437f1c7177f86d" category="inline-link-rx"></block> 。</block>
-  <block id="0ad47815ac126d3e59945dd94620559b" category="summary">「プライベート モード」と呼ばれる、インターネットにアクセスできないサイトでBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。将来BlueXP Connector ホスト システムに問題が発生した場合、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
   <block id="1590a700aeef97b74c78e0edddc666d6" category="doc">ダークサイトでBlueXP backup and recoveryの構成データを復元する</block>
-  <block id="b60143d8607e2a12a97d5dc98902b3a3" category="paragraph">インターネットにアクセスできないサイト（_プライベート モード_）でBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。  BlueXP Connector ホスト システムに問題がある場合は、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
   <block id="701ba6e125e8ce791098165f107eb472" category="admonition">この手順はONTAPボリューム データにのみ適用されます。</block>
   <block id="400d95f0927e7eaac4a93498115f8b4f" category="paragraph">BlueXPコネクタがクラウド プロバイダーに導入されている SaaS 環境、またはインターネットにアクセスできる独自のホスト システムにBlueXP backup and recoveryを使用すると、重要なBlueXP backup and recovery構成データはすべてクラウドにバックアップされ、保護されます。コネクタに問題がある場合は、新しいコネクタを作成して作業環境を追加するだけで、バックアップの詳細が自動的に復元されます。</block>
   <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">バックアップされるデータには 2 種類あります。</block>
@@ -4688,7 +4655,6 @@ ifdef：aws []</block>
   <block id="bb62b16690f5eb4fc0e122e119a91a50" category="paragraph"><block ref="bb62b16690f5eb4fc0e122e119a91a50" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8075ed641c15c71cd286b712adcd85b1" category="list-text">このサービスに初めてログインし、 BlueXPにすでに作業環境があるものの、リソースがまだ検出されていない場合は、「新しいBlueXP backup and recoveryへようこそ」ランディング ページが表示され、*検出と管理*のオプションが表示されます。</block>
   <block id="7149d60911c70edb03703fc8f99c14fa" category="paragraph">参照<block ref="0db19b6ddcce18b44468167f72be8ec8" category="inline-link-rx"></block>StorageGRIDの詳細については、こちらをご覧ください。</block>
-  <block id="31a6e93e3798d6e32486e85c94f4c445" category="paragraph">Microsoft SQL Server および Kubernetes (プレビュー) ワークロードのタスクバーは次のようになります。<block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d9e1e4a7e3d0e29f7908164bc829cdcb" category="paragraph"><block ref="d9e1e4a7e3d0e29f7908164bc829cdcb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d71d92c939fa3dff105d8f357c507f76" category="cell">Amazon S3 ONTAP S3</block>
   <block id="b27a33d7ae0534b6066058a1d206de6c" category="cell">Azure ブロブONTAP S3</block>
@@ -4703,28 +4669,19 @@ ifdef：aws []</block>
   <block id="febcf1de845ae5c111f7fe2fdf9a0023" category="list-text">*ランサムウェア スキャン*: 各バケットでランサムウェア スキャンを有効にするかどうかを選択します。これには、オブジェクト ストレージに対する DataLock ロックが必要です。スキャンの頻度を日単位で入力します。このオプションは、AWS および Microsoft Azure オブジェクト ストレージに適用されます。このオプションは、クラウド プロバイダーによっては追加料金が発生する場合があることに注意してください。</block>
   <block id="3d476264ca621aa7fb53c694b7f73e38" category="list-text">* SnapMirrorとスナップショット形式*: 必要に応じて、Microsoft SQL Server ワークロードのバックアップを管理するポリシーに独自のスナップショット名を入力します。フォーマットとカスタムテキストを入力します。セカンダリ ストレージにバックアップすることを選択した場合は、 SnapMirrorボリュームのプレフィックスとサフィックスを追加することもできます。</block>
   <block id="69fdf061d21ee7cf76fbfb7008f2338a" category="paragraph"><block ref="69fdf061d21ee7cf76fbfb7008f2338a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="99d2c5cc2d55701a7753e4cd62fa26b3" category="admonition">このドキュメントの一部は、テクノロジープレビューとして提供されています。このプレビュー オファリングでは、 NetApp は一般提供開始前にオファリングの詳細、内容、およびタイムラインを変更する権利を留保します。</block>
-  <block id="3fa86600a578b85fb3e25ef2bade57f7" category="list-text">Microsoft SQL Server ワークロード:</block>
   <block id="671ccbf99c0713f4f0b10eb83e8f6fe3" category="list-text">オンプレミスのONTAP、 Cloud Volumes ONTAP、またはAmazon FSx for NetApp ONTAPから Microsoft SQL Server インスタンスとデータベースをバックアップします。</block>
   <block id="89cb0f021426c550658eb8d932ca5bc6" category="list-text">Microsoft SQL Server データベースを復元します。</block>
   <block id="6d14e8c351d9540a9e7e8a55e63daee2" category="list-text">Microsoft SQL Server データベースを複製します。</block>
-  <block id="c145ca053ede6b9644628ee9fe41dffd" category="list-text">VM ワークロード:</block>
-  <block id="0f9064a4cbc973bbc5e114d0088fded1" category="list-text">BlueXP backup and recoveryを使用して、仮想マシンのデータをクラウドからオンプレミスの vCenter に復元します。</block>
   <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">Microsoft SQL Server の場合、セカンダリONTAPターゲットまたはオブジェクト ストレージへのスナップショットのレプリケーションを開始すると料金が発生します。</block>
   <block id="42b12d53290c6e592a4d774a432752d6" category="list-text">物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS 用の Microsoft SQL Server インスタンスとデータベース</block>
-  <block id="a0f528847ba517b6d5e9b7c895aa2879" category="section-title">BlueXP backup and recoveryはMicrosoft SQL Serverのプラグインを使用します</block>
   <block id="9f9f536306a1c9407f83a98c118d352f" category="doc">プラグインサービスからBlueXP backup and recoveryにインポートするための前提条件</block>
   <block id="54ea220a36be12c2cd55837d5084ccf2" category="paragraph">Microsoft SQL Server 用のSnapCenterプラグイン サービスからBlueXP backup and recoveryにリソースをインポートする場合は、さらにいくつかの項目を構成する必要があります。</block>
   <block id="1991b7717eb9a4ce1668d0140bc90a61" category="paragraph">SnapCenter Plug-in for Microsoft SQL Server からリソースをインポートするには、 SnapCenter Plug-in for Microsoft SQL Server をインストールするためのホスト要件が満たされていることを確認します。</block>
   <block id="05e7a5201131047cf35d26a62e1a0a4d" category="section-title">オブジェクトストレージへのバックアップの前提条件</block>
-  <block id="60909e185928e88ef4384c60b53ac74b" category="paragraph">見る<block ref="4d28092ae019690199710c13c5a3f7eb" category="inline-link-macro-rx"></block>バックアップ先の設定方法の詳細については、こちらをご覧ください。</block>
-  <block id="773be597b82b6fc623090f4ca7acad30" category="section-title">Microsoft SQL Server のワークロード要件</block>
-  <block id="727c8c2204924c94609f684e20e710ef" category="section-title">Kubernetes ワークロード要件</block>
   <block id="845653726765e6e72b97b87ebc083420" category="doc">BlueXP backup and recovery、 IDとアクセス管理機能</block>
   <block id="af45dce32c393d74375fcf6543060be0" category="paragraph">BlueXP backup and recoveryでは、 ID およびアクセス管理 (IAM) を使用して、各ユーザーの特定の機能およびアクションへのアクセスを制御します。</block>
   <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">2025年8月12日</block>
   <block id="3d5a9cd83b30ec6ec9f0802593907f05" category="sidebar">Microsoft SQL Server ワークロードを保護する</block>
-  <block id="c03ab2cafee88facbca614f17c3c08a3" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
   <block id="94909f2ec8275797b7659a53af432b61" category="list-text">*バックアップ ターゲット*: (Kubernetes ワークロードのみ) Kubernetes アプリケーション リソースをホストするストレージ バケットを選択します。スナップショット時のアプリケーション リソース定義がこのバケットに保存されます。バックアップ環境内でバケットにアクセスできることを確認します。</block>
   <block id="5c851bd90645848b446210999f3e2a77" category="paragraph">BlueXP backup and recoveryを使用すると、バックアップ スケジュールの変更、ボリューム バックアップの有効化/無効化、バックアップの一時停止、バックアップの削除、バックアップの強制削除などを行って、 Cloud Volumes ONTAPおよびオンプレミスのONTAPシステムのバックアップを管理できます。これには、スナップショット コピー、複製されたボリューム、オブジェクト ストレージ内のバックアップ ファイルなど、すべての種類のバックアップが含まれます。  BlueXP backup and recoveryの登録を解除することもできます。</block>
   <block id="bc57a9fce0dfbc05c202b0f5a0ea83d6" category="paragraph"><block ref="bc57a9fce0dfbc05c202b0f5a0ea83d6" category="inline-image-macro-rx" type="image"></block></block>
@@ -4749,4 +4706,278 @@ ifdef：aws []</block>
   <block id="b98c88f62c4834a257b2a73ee9fbb4dd" category="list-text">ボリュームの適格性を確認します。システムはボリュームが再同期の対象となるかどうかを確認します。ボリュームが不適格な場合は、最新のスナップショットではないか、共通のスナップショットが見つからなかったことを意味します。</block>
   <block id="c856ee3b535d4aa35b19af5253f54e81" category="list-text">再同期操作を開始するには、「再同期」を選択します。システムは最新の共通スナップショットを使用して増分変更のみを転送し、バックアップの継続性を保証します。</block>
   <block id="8d2d3fb9cf8aa026f491048ab9fdf368" category="list-text">ジョブ モニター ページで再同期プロセスを監視します。</block>
+  <block id="f7919ff057187672b74306b219aadaa0" category="doc">プレビューでの VMware ワークロードの保護のサポート</block>
+  <block id="5e8801556a1a15a279f09b79ad9c4141" category="paragraph">このリリースでは、VMware ワークロードを保護するためのプレビュー サポートが追加されました。オンプレミスのONTAPシステムから VMware VM とデータストアを Amazon Web Services およびStorageGRIDにバックアップします。</block>
+  <block id="b7aad0efced7f2a5664d2d5fcafeac91" category="admonition">VMware ワークロードの保護に関するドキュメントは、テクノロジー プレビューとして提供されます。このプレビュー オファリングでは、 NetApp は一般提供開始前にオファリングの詳細、内容、およびタイムラインを変更する権利を留保します。</block>
+  <block id="302d2ff1b066da852d5f32d8e00c49e0" category="inline-link-macro">BlueXP backup and recoveryによる VMware ワークロードの保護について詳しくは、こちらをご覧ください。</block>
+  <block id="9894d07c427c9fef3be75f8d985262b2" category="paragraph"><block ref="5f2dd8c93665ae25c3f244e872639cff" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e4fadb4a8e44a20b9cae72da5f43dd1c" category="section-title">AWS、Azure、GCP向けの高パフォーマンスインデックスが一般提供開始</block>
+  <block id="d2437297e3bf3cd7adfa86f57b8629f0" category="paragraph">2025 年 2 月に、AWS、Azure、GCP 向けの高パフォーマンス インデックス (Indexed Catalog v2) のプレビューを発表しました。この機能は現在、一般公開 (GA) されています。 2025 年 6 月には、すべての新規顧客にこれをデフォルトで提供しました。このリリースでは、すべての顧客がサポートを利用できるようになります。高パフォーマンスのインデックス作成により、オブジェクト ストレージに保護されているワークロードのバックアップおよび復元操作のパフォーマンスが向上します。</block>
+  <block id="5ced283cbe92781b3a48240fd1fde5cd" category="paragraph">デフォルトで有効:</block>
+  <block id="234f6b906c6e6adf3ab5f1a4906d5366" category="list-text">新規のお客様の場合、高パフォーマンスのインデックス作成がデフォルトで有効になっています。</block>
+  <block id="3b98c4910d4638f409d4421b51847611" category="list-text">既存のお客様の場合は、UI の [復元] セクションに移動して再インデックスを有効にすることができます。</block>
+  <block id="ce498dfd4d5b300770c8609e8d1940e2" category="doc">VMware ワークロードのBlueXP backup and recoveryに関する既知の制限</block>
+  <block id="5dbc4346070765340347ff44ed21c84d" category="paragraph">BlueXP backup and recoveryの VMware ワークロードのプレビュー バージョンでは、次のアクションはサポートされていません。</block>
+  <block id="eace16d66cdd93ad876c620db7456077" category="list-text">マウント</block>
+  <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">アンマウント</block>
+  <block id="25e66e51214e8342374fa891a42988b3" category="list-text">別の場所へのリストア</block>
+  <block id="635e272d16a4b652a6ff48968baf8726" category="list-text">VMDKを復元する</block>
+  <block id="00c5709c4d9ca9f8035d5d0e33f2421e" category="list-text">VMDKをアタッチする</block>
+  <block id="097b06a0d5de05867037a2fdc678ef17" category="list-text">VMDKのデタッチ</block>
+  <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">vVol サポート</block>
+  <block id="2cc658d562a11cd1528c2219f2d25da7" category="list-text">NVMeサポート</block>
+  <block id="98dc7ecfe4c87955d5fb8b98b895eac7" category="list-text">メール統合</block>
+  <block id="7c007efb4505aa1063c750565e9e0eac" category="list-text">編集ポリシー</block>
+  <block id="2af86af91c3987a4d2353d4ec7912d76" category="list-text">保護グループを編集する</block>
+  <block id="0b781a1bfcfc82e8ce2c41a12166f555" category="list-text">ロールベースアクセス制御（RBAC）のサポート</block>
+  <block id="5d348ef49e7ed560fb940988e8d4f7eb" category="paragraph">BlueXP backup and recoveryでは、 ID およびアクセス管理を使用して、各ユーザーの特定のアクションへのアクセスを制御します。</block>
+  <block id="f9e71ed1d4200b67c1a3bd22600d9cbe" category="inline-link-macro">VMware ワークロードを発見</block>
+  <block id="8eec52ebd7892b36424f0c784c1a70dc" category="list-text">VMwareワークロードについては、<block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">Kubernetesワークロードについては、以下を参照してください。<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> 。</block>
+  <block id="02be71f5aa538142021b27f366e28734" category="paragraph">Microsoft SQL Server、VMware ワークロード ( SnapCenter Plug-in for VMware vSphereなしのプレビュー)、Kubernetes (プレビュー) ワークロードのタスクバーは次のようになります。<block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5b7ecc81df0c12b042e90d8b438b511e" category="paragraph">ONTAPボリュームおよび VMware ワークロード ( SnapCenter Plug-in for VMware vSphere を使用) のメニュー バーは次のようになります。<block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b94f4dc49b7af7496f7a6c5082dcfc50" category="list-text">保護されているデータベース、VM、データストアと保護されていないデータベース、VM、データストアの合計数。</block>
+  <block id="df2702a7744f8225fba6ed43ccaa93b7" category="list-text">ポリシーの編集（VMware Preview ワークロードでは使用できません）</block>
+  <block id="bb3ff59182a5902d30640dc3a2cc6681" category="paragraph"><block ref="bb3ff59182a5902d30640dc3a2cc6681" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8cdae3804d86d7917d39808a23bc302f" category="list-text">ワークロード タイプ: 「Microsoft SQL Server」、VMware、または Kubernetes を選択します。</block>
+  <block id="b2ba8b5a519744f308bb1fe099fca96c" category="admonition">避けるべき文字のリストについては、ホバーヒントを参照してください。</block>
+  <block id="f2ca5fbc8e99004ecb47057021601cd2" category="list-text">*ローカル スナップショット*: 選択したボリューム (Microsoft SQL Server) 上のローカル スナップショット。ローカル スナップショットは、特定の時点でのデータの状態をキャプチャする、データ保護戦略の重要なコンポーネントです。これにより、ワークロードが実行されている実稼働ボリュームの読み取り専用のポイントインタイム コピーが作成されます。スナップショットは、最後のスナップショット以降のファイルの変更のみを記録するため、最小限のストレージスペースしか消費せず、パフォーマンスのオーバーヘッドもごくわずかです。ローカル スナップショットを使用すると、データの損失や破損から回復したり、災害復旧用のバックアップを作成したりできます。</block>
+  <block id="493975af5e13fbc5d62bd5541a437be6" category="paragraph">VMware ワークロードの場合、これにより、プライマリ ストレージ システム上のデータストアまたは VMware 上のローカル スナップショットが構成されます。</block>
+  <block id="8aaf0953e5fd5d5ffafc343282223bc6" category="paragraph">VMware ワークロードの場合、これは VMware プレビューでは利用できません。</block>
+  <block id="dd3964688f448cf4c53372241aa29860" category="paragraph">VMware ワークロードの場合、これにより、プライマリ上のデータストアまたは VM 上のローカル スナップショットが構成され、プライマリ ディスク ストレージからセカンダリ ディスク ストレージにレプリケートされるとともに、プライマリからクラウド オブジェクト ストレージにレプリケートされます。</block>
+  <block id="f260fb21bc5bc536dbe37c5499027093" category="paragraph">VMware ワークロードの場合、これにより、プライマリ ストレージ上のデータストアまたは VM 上のローカル スナップショットと、プライマリ ディスク ストレージからセカンダリ ディスク ストレージ、そしてクラウド オブジェクト ストレージへのカスケードが構成されます。</block>
+  <block id="25979dfae534db8e00ebdd633f01363f" category="paragraph">VMware ワークロードの場合、これにより、プライマリ ストレージ システム上のデータストアまたは VMware にローカル スナップショットが構成され、プライマリ ディスク ストレージ システムからセカンダリ ディスク ストレージ システムにデータが複製されます。</block>
+  <block id="01bec1ecce16d176197624a69b31324a" category="paragraph">VMWare ワークロードの場合、これにより、プライマリ上のデータストアまたは VM 上のローカル スナップショットと、プライマリ ディスク ストレージからクラウド オブジェクト ストレージへのレプリケーションが構成されます。</block>
+  <block id="63b46edf6d861b9b0fa883d434749d6c" category="paragraph">VMware ワークロードの場合、これによりプライマリ ディスク ストレージがセカンダリ ディスク ストレージに構成され、プライマリ ディスク ストレージがセカンダリ ディスク ストレージに複製されます。</block>
+  <block id="606d7c15448b4efbac98875bfee945b2" category="list-text">*ログ バックアップを有効にする*: (Microsoft SQL Server ワークロードに適用されます。 (VMware または Kubernetes ワークロードでは使用できません) ログをバックアップするオプションをオンにして、ログ バックアップの頻度と保持期間を設定します。これを行うには、ログ バックアップをあらかじめ構成しておく必要があります。見る<block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block> 。</block>
+  <block id="18c07bbe1867bce1f9e6bea1effc24d5" category="list-text">*時間からのオフセット*: スナップショットを時間の開始からオフセットする分数を入力します。たとえば、「*15*」と入力すると、毎時15分にスナップショットが撮影されます。時間単位のスケジュールでのみ利用可能です。</block>
+  <block id="5dd0d85f6dc2f17f22d05e3e80ac2efe" category="list-text">*サイレント時間を有効にする*: サイレント時間を有効にするかどうかを選択します。サイレント アワーとは、スナップショットが取得されない期間であり、バックアップ プロセスによる干渉を受けずにメンテナンスやその他の操作を実行できます。これは、使用ピーク時やメンテナンス期間中のシステムの負荷を軽減するのに役立ちます。時間単位のスケジュールでのみ利用可能です。</block>
+  <block id="8697779f7f227c4dd369a6c5b02cbad6" category="list-text">*スナップショットのロックを有効にする*: 改ざん防止スナップショットを有効にするかどうかを選択します。このオプションを有効にすると、指定された保持期間が経過するまでスナップショットを削除または変更できなくなります。  SnapLockテクノロジーを使用するこの機能は、ランサムウェア攻撃からデータを保護し、データの整合性を確保するために不可欠です。</block>
+  <block id="d0d41deaff8d80d9bdf6d53eaab27a7e" category="list-text">*バックアップの再試行*: (VMware Preview ワークロードには適用されません) 障害または中断が発生した場合にジョブを再試行するには、*障害時のジョブの再試行を有効にする* を選択します。スナップショットおよびバックアップ ジョブの最大再試行回数と再試行時間間隔を入力します。再集計は10未満でなければなりません。この設定は、障害や中断が発生した場合にバックアップ ジョブが再試行されるようにする場合に役立ちます。</block>
+  <block id="d3e01ad5d4c898032205d39244a2e9c6" category="list-text">*VM 整合性スナップショットを有効にする*: (VMware ワークロードにのみ適用) VM 整合性スナップショットを有効にするかどうかを選択します。これにより、新しく作成されたスナップショットが、スナップショット作成時の仮想マシンの状態と一致することが保証されます。これは、バックアップが正常に復元され、データが一貫した状態であることを確認するのに役立ちます。これは既存のスナップショットには適用されません。</block>
+  <block id="09c246c3035ccbc9444cfad2e53204e9" category="list-text">*バックアップ検証*: (VMware Preview ワークロードには適用されません) バックアップ検証を有効にするかどうか、また、すぐに実行するか後で実行するかを選択します。この機能により、バックアップが有効であり、正常に復元できることが保証されます。バックアップの整合性を確保するには、このオプションを有効にすることをお勧めします。デフォルトでは、セカンダリ ストレージが構成されている場合、バックアップ検証はセカンダリ ストレージから実行されます。セカンダリ ストレージが構成されていない場合、バックアップ検証はプライマリ ストレージから実行されます。</block>
+  <block id="7c59502dacab0ce14cebe830c4b4457a" category="list-text">*データベース整合性チェック*: (VMware Preview ワークロードには適用されません) データベース整合性チェックを有効にするかどうかを選択します。このオプションにより、バックアップが取られる前にデータベースが一貫した状態であることが保証されます。これは、データの整合性を確保するために重要です。</block>
+  <block id="9ea086202e0c7b66ec4c31f3fc172885" category="list-text">*ログ バックアップの検証*: (VMware Preview ワークロードには適用されません) ログ バックアップを検証するかどうかを選択します。検証サーバを選択します。ディスクツーディスクまたは 3-2-1 を選択した場合は、検証の保存場所も選択します。このオプションにより、ログ バックアップが有効であり、正常に復元できることが保証されます。これは、データベースの整合性を維持するために重要です。</block>
+  <block id="1470ccbb595a6e1ea5dd612430fb52fd" category="list-text">*独立ディスク*: (VMware Preview ワークロードに適用可能) 一時データを含む独立ディスクを持つすべてのデータストアをバックアップに含めるには、これをチェックします。独立ディスクは、VMware スナップショットに含まれない VM ディスクです。</block>
+  <block id="ecee2fc394ac60057e7928bb6138339d" category="admonition">この機能は、VMware Preview ワークロードでは使用できません。</block>
+  <block id="320097c9a6942d1d00ed4b77d2bc667a" category="doc">BlueXP backup and recoveryで VMware ワークロードをバックアップ</block>
+  <block id="62a9a163cd6e3bd6fd065b8896387676" category="paragraph">データが確実に保護されるように、オンプレミスのONTAPシステムから VMware VM とデータストアを Amazon Web Services またはStorageGRIDにバックアップします。バックアップは自動的に生成され、パブリック クラウド アカウントまたはプライベート クラウド アカウントのオブジェクト ストアに保存されます。</block>
+  <block id="ca8b66f70346713494ab99731b150019" category="inline-link-macro">BlueXP backup and recoveryを使用して VMware ワークロードの保護グループを作成および管理します</block>
+  <block id="e5c3d958658557048763c573e8d1180c" category="list-text">保護グループを作成して、リソース セットのバックアップおよび復元操作を管理します。見る<block ref="6b6337992d6c9f860b0d7092a0ad98bb" category="inline-link-macro-rx"></block>詳細についてはこちらをご覧ください。</block>
+  <block id="d1d463ff9c63c3a608699538a57e53d7" category="paragraph"><block ref="d1d463ff9c63c3a608699538a57e53d7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c1d62f4779d7aef54687bd64095f6b0" category="list-text">*保護グループ*、*データストア*、または*仮想マシン*タブを選択します。</block>
+  <block id="05e315e32ce2a8854a177760a86cc15a" category="inline-image-macro">BlueXP backup and recoveryの保護グループ タブのスクリーンショット</block>
+  <block id="e20488d78125970756596ea1d902e1f6" category="paragraph"><block ref="e20488d78125970756596ea1d902e1f6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ee73fa99742e9e3aeb7d0ac2cf688922" category="list-text">バックアップする保護グループ、データストア、または仮想マシンを選択します。</block>
+  <block id="f1b66ad4f8c1237281cd067f02db83f7" category="inline-image-macro">BlueXP backup and recoveryの「今すぐバックアップ」スクリーンショット</block>
+  <block id="d3031257feb3c6cebf321c0f2d5cb776" category="paragraph"><block ref="d3031257feb3c6cebf321c0f2d5cb776" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2acfb0be8da66026203d2891fe18d378" category="admonition">バックアップに適用されるポリシーは、保護グループ、データストア、または仮想マシンに割り当てられているポリシーと同じです。</block>
+  <block id="212b757a4be8f411176f5dd51a72e22e" category="doc">BlueXP backup and recoveryで VMware ワークロードを発見</block>
+  <block id="fb025cf2880557a7d78cf995c6737f62" category="paragraph">BlueXP backup and recoveryサービスを使用するには、まずONTAPシステムで実行されている VMware データストアと VM を検出する必要があります。すでにインストールされている場合は、オプションでSnapCenter Plug-in for VMware vSphereからバックアップ データとポリシーをインポートできます。</block>
+  <block id="9b4181d03263555437f8a40593f311f0" category="paragraph">*必要なBlueXPロール* バックアップとリカバリのスーパー管理者。学ぶ<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
+  <block id="dcd2ed119bd25caa1d2e5fbbadd0e260" category="section-title">VMware ワークロードを検出し、オプションでSnapCenterリソースをインポートする</block>
+  <block id="ab2c59d9e88814e9fe89561334221761" category="paragraph">検出中に、 BlueXP backup and recoveryは組織内の VMware ワークロードを分析し、既存の保護ポリシー、スナップショット コピー、およびバックアップと復元のオプションを評価およびインポートします。</block>
+  <block id="eaa057da9e075c2c0a96c7a4826a1c68" category="paragraph">VMware NFS および VMFS データストアと VM を、オンプレミスのSnapCenter Plug-in for VMware vSphereからBlueXP backup and recoveryインベントリにインポートできます。</block>
+  <block id="b7cef5a55414592254e586c5f2bf8f92" category="admonition">このバージョンのBlueXP backup and recoveryはVMware vCenter のみをサポートし、 vVolsまたはvVols上の VM を検出しません。</block>
+  <block id="989b9ad7511f544f3c23fd3a047e87c5" category="paragraph">インポート プロセス中に、 BlueXP backup and recoveryは次のタスクを実行します。</block>
+  <block id="bd8db3845afb35c10e4abfbdf5709291" category="list-text">vCenter サーバーへの安全な SSH アクセスを有効にします。</block>
+  <block id="185cb7fdc708526b5ebd6d1314c2c6e2" category="list-text">vCenter サーバー内のすべてのリソース グループでメンテナンス モードをアクティブ化します。</block>
+  <block id="030b5183a6edda3d1aa3c64fd339918c" category="list-text">vCenter のメタデータを準備し、 BlueXPで管理対象外としてマークします。</block>
+  <block id="f3cd1cfa60b70ab3833f6ec373ec8327" category="list-text">データベース アクセスを構成します。</block>
+  <block id="ed39d64277006cf603e473c457526c25" category="list-text">VMware vCenter、データストア、および VM を検出します。</block>
+  <block id="cacf184d61110918ea81e29a46df1f55" category="list-text">SnapCenter Plug-in for VMware vSphereから既存の保護ポリシー、スナップショット コピー、バックアップおよび復元オプションをインポートします。</block>
+  <block id="a39dd2ffd9348f81422b41a3fdbc86e8" category="list-text">検出されたリソースをBlueXP backup and recoveryインベントリ ページに表示されます。</block>
+  <block id="c9c2a5297eb39b1fb7e1589b15fea1ff" category="list-text">SnapCenter Plug-in for VMware vSphereがすでにある場合は、 BlueXP backup and recoveryUI を使用して、 SnapCenterリソースを BlueXP バックアップおよびBlueXP backup and recoveryにインポートします。</block>
+  <block id="3aaaf39627c7d9743ac9c4b769a63106" category="admonition">SnapCenterプラグインがすでにある場合は、 SnapCenterからインポートする前に前提条件を満たしていることを確認してください。たとえば、 SnapCenterからインポートする前に、まずすべてのオンプレミスのSnapCenterクラスター ストレージ用の作業環境をBlueXP Canvas に作成する必要があります。見る<block ref="29f325191bf25e28eb924274ef794dd1" category="inline-link-macro-rx"></block> 。</block>
+  <block id="99c7d0784ca3abf0a66853480a0b1378" category="list-text">SnapCenterプラグインがまだインストールされていない場合でも、vCenter を手動で追加して検出を実行することで、作業環境内のワークロードを検出できます。</block>
+  <block id="e3ee523018b6799a0939043eefc9098c" category="section-title">SnapCenterプラグインがまだインストールされていない場合は、vCenterを追加してリソースを検出します。</block>
+  <block id="66aeebd47fcac65201475790eef9c5b3" category="paragraph">SnapCenter Plug-in for VMware がまだインストールされていない場合は、vCenter 情報を追加し、 BlueXP backup and recoveryでワークロードを検出します。各BlueXPコネクタ内で、ワークロードを検出する作業環境を選択します。</block>
+  <block id="7248204ed2d72c7c934127b7789c6157" category="list-text">*ワークロード タイプ*: *VMware* を選択します。</block>
+  <block id="8d2f5acbe9ae8a7ad87b9b825c0e5f29" category="list-text">*vCenter 設定*: 新しい vCenter を追加します。新しい vCenter を追加するには、vCenter FQDN または IP アドレス、ユーザー名、パスワード、ポート、プロトコルを入力します。</block>
+  <block id="1b7ab9fadabd410c692af601b6da1bd2" category="list-text">*ホスト登録*: VMware では必要ありません。</block>
+  <block id="f2c3faebcf5ded48c2cc729adbe796fe" category="section-title">SnapCenterプラグインがすでにインストールされている場合は、VMwareリソース用のSnapCenterプラグインをBlueXP backup and recoveryにインポートします。</block>
+  <block id="e1058ecbbe41acccc2ff499cee3a58df" category="paragraph">SnapCenter Plug-in for VMware がすでにインストールされている場合は、次の手順に従ってSnapCenter Plug-in リソースをBlueXP backup and recoveryにインポートします。  BlueXPサービスは、vCenter 内の ESXi ホスト、データストア、VM を検出し、プラグインからスケジュールを設定します。そのため、すべての情報を再作成する必要はありません。</block>
+  <block id="d7df5d5a7771d8964d3ad312a019f2a7" category="list-text">検出中に、 SnapCenterプラグインからリソースをインポートするオプションを選択します。</block>
+  <block id="d0a37c5f3a756f70f149387e5e024455" category="list-text">検出後、インベントリ ページからSnapCenterプラグイン リソースをインポートするオプションを選択します。</block>
+  <block id="80f2241d6b54392704c6e590eef6a3b3" category="list-text">検出後、[設定] メニューから、 SnapCenterプラグイン リソースをインポートするオプションを選択します。詳細については、 <block ref="aec7e2b36c0f4f301ce9875327a06a8d" category="inline-link-macro-rx"></block> 。これは VMware ではサポートされていません。</block>
+  <block id="e68d5688d8ed4428f4698c24ecebe981" category="paragraph">このセクションでは、次の 2 つの部分から成るプロセスについて説明します。</block>
+  <block id="bf772e2b65377c8a186a36be4307df66" category="list-text">SnapCenterプラグインからvCenterメタデータをインポートします。インポートされたvCenterリソースは、まだBlueXP backup and recoveryによって管理されていません。</block>
+  <block id="61c8373e903cff0c3b055775352486f2" category="list-text">BlueXP backup and recoveryで選択した vCenter、VM、およびデータストアの管理を開始します。管理を開始すると、 BlueXP backup and recoveryによって、インベントリ ページで vCenter が「管理対象」としてラベル付けされ、インポートしたリソースをバックアップおよびリカバリできるようになります。  BlueXP backup and recoveryで管理を開始すると、 SnapCenterプラグインでそれらのリソースを管理できなくなります。</block>
+  <block id="53624320c75e524d23062b211afde11a" category="section-title">SnapCenterプラグインからvCenterメタデータをインポートする</block>
+  <block id="fc184ffe3822cb125839cae1157c4ec4" category="paragraph">この最初のステップでは、 SnapCenterプラグインからvCenterメタデータをインポートします。この時点では、リソースはまだBlueXP backup and recoveryによって管理されていません。</block>
+  <block id="e3d7491dc31b2e27790138f49698e324" category="admonition">SnapCenterプラグインから vCenter メタデータをインポートした後、 BlueXP backup and recoveryは保護管理を自動的に引き継ぎません。そのためには、 BlueXP backup and recoveryでインポートされたリソースを管理することを明示的に選択する必要があります。これにより、BlueXP backup and recoveryによってそれらのリソースをバックアップする準備が整います。</block>
+  <block id="e225b1998b1b7ab53d184970a4487c08" category="inline-image-macro">BlueXP backup and recoveryのVMware ワークロードを示すインベントリ スクリーンショット</block>
+  <block id="65cd305beed2013bd8b486a3443f7eae" category="paragraph"><block ref="65cd305beed2013bd8b486a3443f7eae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9235637ac03ea3815dbb11128aefa80" category="list-text">インベントリ ページの上部メニューから、*リソースの検出* を選択します。</block>
+  <block id="f253b95a390137185aeebe4841189106" category="inline-image-macro">SnapCenterプラグインリソースをインポートするための設定オプション</block>
+  <block id="b97dc91e0fd7acf5e67d77d669169a2c" category="paragraph"><block ref="b97dc91e0fd7acf5e67d77d669169a2c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4fa4bcc2a1f0d681fb390d96f9891a59" category="list-text">[インポート元] フィールドで、* SnapCenter Plug-in for VMware* を選択します。</block>
+  <block id="45ff731338448b957095de0f0c3fcd1f" category="list-text">*VMware vCenter の資格情報* を入力してください:</block>
+  <block id="01a91017e242d9d1244c2d80c1caebf0" category="list-text">*vCenter IP/ホスト名*: BlueXP backup and recoveryにインポートする vCenter の FQDN または IP アドレスを入力します。</block>
+  <block id="83232179998a0e4df8a7fec8b01b073d" category="list-text">*vCenter ポート番号*: vCenter のポート番号を入力します。</block>
+  <block id="bf44275a582b218f2c18fd73a1b49f7d" category="list-text">*vCenter ユーザー名* と *パスワード*: vCenter のユーザー名とパスワードを入力します。</block>
+  <block id="b5aeca1d93828bbceb645dcae8293b41" category="list-text">*コネクタ*: vCenter のBlueXPコネクタを選択します。</block>
+  <block id="f8ccd2c36b2459b541ae637dac832e19" category="list-text">* SnapCenterプラグイン ホストの資格情報* を入力してください:</block>
+  <block id="60b1a925906e7fb4348924a6fdd9149b" category="list-text">*新しい資格情報の追加*: 既存のSnapCenterプラグイン ホスト資格情報がない場合は、新しい資格情報を追加できます。資格情報名、認証モード、ユーザー名、およびパスワードを入力します。</block>
+  <block id="7c2e72fe3815fa111632e0f221695e03" category="list-text">*インポート* を選択してエントリを検証し、 SnapCenterプラグインを登録します。</block>
+  <block id="f8af72f5d223caaa5e61fd95094871b3" category="admonition">SnapCenterプラグインがすでに登録されている場合は、既存の登録詳細を更新できます。</block>
+  <block id="b98ffbf63d72e640786eb3001968af8c" category="paragraph">明示的に管理対象として選択するまで、インベントリ ページには、BlueXP backup and recoveryで vCenter が管理対象外として表示されます。</block>
+  <block id="3139b9fe004d3f9be3e1838b9259905b" category="inline-image-macro">インポートされた vCenter が管理対象外として表示されるインベントリ ページ</block>
+  <block id="40742df8ab25c25821240bbd1bad9724" category="paragraph"><block ref="40742df8ab25c25821240bbd1bad9724" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="25c0a491dae6caf57d57d941f0eb08d9" category="section-title">SnapCenterプラグインからインポートされたリソースを管理する</block>
+  <block id="7d2e4eb456ace040abed68fc5559d320" category="paragraph">SnapCenter Plug-in for VMware から vCenter メタデータをインポートした後、 BlueXP backup and recoveryでリソースを管理します。これらのリソースを管理することを選択すると、 BlueXP backup and recoveryは、インポートしたリソースをバックアップおよびリカバリできるようになります。  BlueXP backup and recoveryで管理を開始すると、 SnapCenterプラグインでそれらのリソースを管理できなくなります。</block>
+  <block id="45ebed52f768aa21b719b17f00354080" category="paragraph">リソースを管理することを選択すると、リソース、VM、およびポリシーがSnapCenter Plug-in for VMware からインポートされます。リソース グループ、ポリシー、スナップショットはプラグインから移行され、 BlueXP backup and recoveryで管理されるようになります。</block>
+  <block id="4b8f8dd3cdfd4ddf935167b3ed112e37" category="list-text">SnapCenterプラグインから VMware リソースをインポートした後、上部のメニューから *Inventory* を選択します。</block>
+  <block id="bb036501b1cf1b1b8cfa054777bf30b6" category="list-text">[インベントリ] ページで、今後BlueXP backup and recoveryで管理するインポート済みの vCenter を選択します。</block>
+  <block id="78dcaf3b9b67d48ba4541833105cb9b7" category="inline-image-macro">インポートされた vCenter リソースを表示するインベントリ ページ</block>
+  <block id="56de8651dcd91ab7be24c38517cb21ea" category="paragraph"><block ref="56de8651dcd91ab7be24c38517cb21ea" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3bad3af408bb48efcddbf97415e11709" category="list-text">インベントリ &gt; ワークロードページから、アクションアイコンを選択します<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *管理* をクリックして、vCenter の管理ページを表示します。</block>
+  <block id="148cd597c69806c2cd61aebff1b2f683" category="inline-image-macro">BlueXPページでvCenterを管理する</block>
+  <block id="55151bba08a4065d2b9fe02c15c603f4" category="paragraph"><block ref="55151bba08a4065d2b9fe02c15c603f4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4513150785c046bfbcd37a0b9dcb7a35" category="list-text">「移行を続行しますか？」のボックスをチェックし、「移行」を選択します。</block>
+  <block id="13be03aaa1d065e4e2a3d1cb64d9f254" category="paragraph">インベントリ ページには、新しく管理された vCenter リソースが表示されます。</block>
+  <block id="f2bd66e56f219a469d86593a4260942d" category="inline-image-macro">管理対象 vCenter リソースを表示するインベントリ ページ</block>
+  <block id="2d8efbbc6ba3519accaf9cc306cb8096" category="paragraph"><block ref="2d8efbbc6ba3519accaf9cc306cb8096" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fbf0c9d029994ad43dd1b2f7c4e2e91f" category="paragraph">BlueXP backup and recoveryを使用して VMware VM とデータストアを保護します。  BlueXP backup and recoveryは、高速で、スペース効率が高く、クラッシュ整合性があり、VM 整合性のあるバックアップおよび復元操作を提供します。  VMware ワークロードを Amazon Web Services S3 またはStorageGRIDにバックアップし、VMware ワークロードをオンプレミスの VMware ホストに復元できます。</block>
+  <block id="689fc518c441a0603a46474822810422" category="paragraph">BlueXP backup and recoveryを使用して 3-2-1 戦略を実装します。この戦略では、ソース データのコピーを 2 つの異なるストレージ システムに 3 つ、クラウドに 1 つ保存します。  3-2-1 アプローチの利点は次のとおりです。</block>
+  <block id="63911c026a31240fc571d59053f4d6e5" category="paragraph">BlueXP backup and recoveryを使用して、VMware ワークロードに関連する次のタスクを実行できます。</block>
+  <block id="4c90ef6c5dc037251bf65afdeeb1ee6c" category="list-text"><block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block></block>
+  <block id="fa3a5087c48da1a523ef45fa2253ea19" category="inline-link-macro">VMware ワークロードの保護グループの作成と管理</block>
+  <block id="d56582b18b2c53315e597c8a39e49a92" category="list-text"><block ref="d56582b18b2c53315e597c8a39e49a92" category="inline-link-macro-rx"></block></block>
+  <block id="d20800ec3a640eb8116268213843541a" category="inline-link-macro">VMwareワークロードのバックアップ</block>
+  <block id="90d96ca607527070c551836800704494" category="list-text"><block ref="90d96ca607527070c551836800704494" category="inline-link-macro-rx"></block></block>
+  <block id="268753a57af5b661ea9d0957e56b2a45" category="list-text"><block ref="268753a57af5b661ea9d0957e56b2a45" category="inline-link-macro-rx"></block></block>
+  <block id="953cfdd52d2ad54416d42d4e37305d6a" category="summary">BlueXP backup and recoveryで VMware ワークロードの保護グループを作成および管理します。</block>
+  <block id="dfadb287a92482d24b34b55bed0b6dac" category="paragraph">一連のワークロードのバックアップおよび復元操作を管理するための保護グループを作成します。保護グループとは、一緒に保護する VM やデータストアなどのリソースの論理的なグループです。</block>
+  <block id="fa0338ac5f2c4b70da78d26842635d39" category="paragraph">保護グループに関連する次のタスクを実行できます。</block>
+  <block id="36a1fea6f9834cf631ec250966041abe" category="list-text">保護グループを作成します。</block>
+  <block id="df90ddd3d253f4d52c457a563325a173" category="list-text">保護の詳細を表示します。</block>
+  <block id="f710d48f4e4bcee1159eb8476c761956" category="inline-link-macro">VMwareワークロードを今すぐバックアップ</block>
+  <block id="3d5278f5bd3ffe2b4cded72fffe73d2b" category="list-text">今すぐ保護グループをバックアップします。見る<block ref="887743b22b352bdbc6f2d55fc0901200" category="inline-link-macro-rx"></block> 。</block>
+  <block id="29881d0b044ceba86593dcfef30e0573" category="list-text">保護グループのバックアップ スケジュールを一時停止および再開します。</block>
+  <block id="75fd7259089ff0f83a33c40dd073fef1" category="list-text">保護グループを削除します。</block>
+  <block id="65c7327c98e288c3f5e4a2ae048a02df" category="paragraph">保護するワークロードを保護グループにグループ化します。まとめてバックアップおよび復元するワークロードのセットの保護グループを作成できます。</block>
+  <block id="e34d18f5b9c4b93c459ba1ffd9cb5f28" category="paragraph"><block ref="e34d18f5b9c4b93c459ba1ffd9cb5f28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99ea4945ef61f5a29b7463a5d1480fe7" category="list-text">保護グループに含める VM またはデータベースを選択します。</block>
+  <block id="224efd4fdb5f19c474ab2b6ea6b4132b" category="section-title">保護グループのバックアップスケジュールを一時停止する</block>
+  <block id="8ea08fb46b36f3cd2195756f05e3b2d7" category="paragraph">保護グループを一時停止すると、保護グループのスケジュールされたバックアップが一時停止されます。保護グループ内のワークロードのバックアップを一時的に停止する場合は、保護グループを一時停止することをお勧めします。</block>
+  <block id="67671aa34b0789a08ab7d6954bfb7122" category="paragraph">保護グループを一時停止すると、保護ステータスが「メンテナンス中」に変わります。バックアップ スケジュールはいつでも再開できます。</block>
+  <block id="e18d539be2570002127583bafd748cad" category="list-text">アクションアイコンを選択<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *保護グループを一時停止します*。</block>
+  <block id="e1bdaded4d7fd6d9209905a6b9ce591a" category="list-text">確認メッセージを確認し、「一時停止」を選択します。</block>
+  <block id="35cb887f0e8f9745e2706572c1f317f3" category="section-title">保護グループのバックアップ スケジュールを再開する</block>
+  <block id="47528987ec0e2628e46f13b3689f57c4" category="paragraph">一時停止された保護グループを再開すると、保護グループのスケジュールされたバックアップが再開されます。</block>
+  <block id="210bcda1bf39432c961f91813aed7699" category="paragraph">保護グループを一時停止すると、保護ステータスは「メンテナンス中」から再開すると「保護済み」に変わります。バックアップ スケジュールはいつでも再開できます。</block>
+  <block id="d6155b3f873b51384359a4bf55b9f95a" category="list-text">アクションアイコンを選択<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *保護グループを再開します*。</block>
+  <block id="5b760b98c14fddaa18f5b88edb9ca3f6" category="list-text">確認メッセージを確認し、「再開」を選択します。</block>
+  <block id="bc36e4718e22660ffc6a870feaf65f3a" category="paragraph">システムはスケジュールを検証し、スケジュールが有効な場合は保護ステータスを「保護済み」に変更します。スケジュールが有効でない場合、システムはエラー メッセージを表示し、保護グループは再開しません。</block>
+  <block id="c7739db7f9496e0f0baeef6bd5551fb9" category="paragraph">保護グループを削除すると、保護グループとそれに関連付けられているすべてのバックアップ スケジュールが削除されます。保護グループが不要になった場合は削除することができます。</block>
+  <block id="9aac72589a1ae47f1f060cc775fa3da0" category="list-text">削除する保護グループを選択します。</block>
+  <block id="030b45f70db5214ea3237560f793e3a3" category="list-text">アクションアイコンを選択<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *削除*。</block>
+  <block id="725673b0a06edab1f72366f95cac31d6" category="list-text">関連するバックアップの削除に関する確認メッセージを確認し、削除を確定します。</block>
+  <block id="f52c624842cb06f58bfcd6e0e5601936" category="doc">BlueXP backup and recoveryで VMware ワークロードを復元</block>
+  <block id="2d6b1140fe115de3abe5ec4fcc3f96f2" category="paragraph">BlueXP backup and recoveryを使用して、スナップショット コピー、セカンダリ ストレージに複製されたワークロード バックアップ、またはオブジェクト ストレージに保存されたバックアップから VMware ワークロードを復元します。</block>
+  <block id="ce5b3e5e52619a3c4bbedee0586f057a" category="list-text">プライマリロケーション（ローカルスナップショット）からの復元</block>
+  <block id="a34a8fde09044472852b8ae530184af7" category="list-text">セカンダリストレージ上の複製されたリソースから復元する</block>
+  <block id="a1b1d3e1eb4d41f3b8f52d69b7033868" category="list-text">オブジェクトストレージバックアップからの復元</block>
+  <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">以下のポイントまでデータを復元できます:</block>
+  <block id="c149f6b4ccbdba8011de4b1e3579b42f" category="list-text">元の場所に復元する</block>
+  <block id="1c2671aa5134c1ef3727312b995fec09" category="list-text">ローカル バックアップ ファイルからワークロードを復元すると、 BlueXP backup and recoveryによって、バックアップのデータを使用して新しいリソースが作成されます。</block>
+  <block id="0f4570eee3ca580a8c827d191240eb2b" category="paragraph">[復元] ページ (検索と復元とも呼ばれます)* からは、リソースの正確な名前、リソースが存在する場所、リソースが最後に良好な状態であった日付を覚えていなくても、リソースを復元できます。フィルターを使用してスナップショットを検索できます。</block>
+  <block id="4967eb3bddc1aeeafa7fa83be9252bb4" category="section-title">復元オプション（検索と復元）からワークロード データを復元します。</block>
+  <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">復元オプションを使用して VMware ワークロードを復元します。スナップショットは、名前またはフィルターを使用して検索できます。</block>
+  <block id="09301202252afe8945e2ae06ed435714" category="paragraph"><block ref="09301202252afe8945e2ae06ed435714" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">名前検索フィールドの右側にあるドロップダウン リストから、*仮想マシン* を選択します。</block>
+  <block id="2aceb93307f82c2d88347faa7eaa4e71" category="list-text">復元するリソースの名前を入力するか、復元するリソースが配置されている vCenter、データセンター、またはデータストアでフィルタリングします。</block>
+  <block id="7dd676e6cf5a1d7d0e7086f82a5a3719" category="paragraph">検索条件に一致するスナップショットのリストが表示されます。</block>
+  <block id="f45e745d214ab653b3dcb97727b2a617" category="inline-image-macro">復元するスナップショットのリストを示すスクリーンショット。</block>
+  <block id="04e62e972aaeeaf6622cad73a1bb3594" category="paragraph"><block ref="04e62e972aaeeaf6622cad73a1bb3594" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3fca73cfa6e5a82be82156106e4db553" category="paragraph">復元場所のオプションのリストが表示されます。</block>
+  <block id="b021353eca19a8ccf460e55c72d3a26d" category="inline-image-macro">復元オプション ページを示すスクリーンショット。</block>
+  <block id="05fbf2b3792bca904b5defac8e5c919f" category="paragraph"><block ref="05fbf2b3792bca904b5defac8e5c919f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">スナップショットを復元する復元場所を選択します。</block>
+  <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">ローカル: スナップショットを元の場所に復元します。</block>
+  <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">セカンダリ ストレージ: スナップショットをセカンダリ ストレージの場所に復元します。</block>
+  <block id="dde4605b1517896bb91ab0500e44ec76" category="paragraph">セカンダリ ストレージを選択した場合は、ログのソースと宛先の場所の情報と、ログのソースとセカンダリの場所を入力します。</block>
+  <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">オブジェクト ストレージ: スナップショットをオブジェクト ストレージの場所に復元します。</block>
+  <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">オブジェクト ストレージを選択した場合は、復元する前にスナップショットを再度スキャンするかどうかを確認します。</block>
+  <block id="6517ca79d199404323c47b0aff4b5fed" category="inline-image-macro">オブジェクト ストレージの復元オプション ページを示すスクリーンショット。</block>
+  <block id="f31e0ca6ded5830ab1a1385250fcc603" category="paragraph"><block ref="f31e0ca6ded5830ab1a1385250fcc603" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="39e791cd576f013480b8ac3c88fcd655" category="list-text">*完了*または*次へ*を選択して、復元先設定ページに進みます。</block>
+  <block id="94697b58b65e2562f9eac2c0fef08c35" category="paragraph">次に、宛先設定と復元前および復元後のオプションを選択できます。</block>
+  <block id="5adf47e3ae580cc745d0e52b93597d43" category="paragraph"><block ref="5adf47e3ae580cc745d0e52b93597d43" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="23de539bf06cfaf2cd9dc515802272ce" category="section-title">目的地の選択</block>
+  <block id="5dd0bd8435aec915fe085d771534ba47" category="list-text">宛先設定と復元前および復元後のオプションを選択します。</block>
+  <block id="abfc7c0c366258e23e15cd12a5f89811" category="open-title">元の場所へのリストア</block>
+  <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">復元先の詳細ページで、次の情報を入力します。</block>
+  <block id="f841432c2e7b95f0e1480a64c27a957d" category="list-text">*クイック復元を有効にする*: クイック復元操作を実行するにはこれを選択します。復元されたボリュームとデータはすぐに利用できるようになります。クイック リストア プロセス中はデータへのアクセスが通常よりも遅くなる可能性があるため、高パフォーマンスが必要なボリュームではこれを使用しないでください。</block>
+  <block id="6ca1e0675a4f2fa0425b153f38956afe" category="list-text">*復元前オプション*: 復元操作の前に実行するスクリプトの完全なパスと、スクリプトが受け取る引数を入力します。</block>
+  <block id="ea2aae05e390bc85fbb0d97c87c463b9" category="list-text">*VM の再起動*: 復元操作が完了し、復元後のスクリプトが適用された後に VM を再起動するには、これを選択します。</block>
+  <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">*通知*セクション:</block>
+  <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*電子メール通知を有効にする*: 復元操作に関する電子メール通知を受信し、受信する通知の種類を指定するには、これを選択します。</block>
+  <block id="c8f730ad9d8597b4dfcdd623d5a511aa" category="paragraph">VMware プレビューでは利用できません。</block>
+  <block id="74b448f981801b63038a919bc9d742f8" category="paragraph">組織管理者、フォルダーまたはプロジェクト管理者、バックアップとリカバリのスーパー管理者、バックアップとリカバリの復元管理者の役割。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
+  <block id="f55a81040334ea83030ea0b7566bf724" category="paragraph">BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware ワークロード (プレビュー)、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。</block>
+  <block id="65054de523f7d3a953cb8abea5ceb422" category="admonition">VMware および Kubernetes ワークロードの保護に関するドキュメントは、テクノロジー プレビューとして提供されます。このプレビュー オファリングでは、 NetApp は一般提供開始前にオファリングの詳細、内容、およびタイムラインを変更する権利を留保します。</block>
+  <block id="3b9135fa974c68d619894497e2801b13" category="list-text">* ONTAPボリューム ワークロード*:</block>
+  <block id="3aeb29f81d221a24906f3f35115b8490" category="list-text">BlueXP backup and recoveryをSnapCenterと一緒に使用します。</block>
+  <block id="9dc83174d71dfdff6c796190c3dbb058" category="inline-link-macro">ONTAPボリュームを保護する</block>
+  <block id="abcd22928fd59d995b5a6963e1d6ab70" category="list-text">。 <block ref="9aac37a163f0c49d3343b243347ef88d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ee7710a5af5d07df880c2c007b67faa7" category="list-text">*Microsoft SQL Server ワークロード*:</block>
+  <block id="498d74104b639713e76c5fe1438ed1df" category="list-text">SnapCenterなしでBlueXP backup and recoveryを使用します。</block>
+  <block id="da8c1ac7631a3731bc377387b2ab2a43" category="list-text">。 <block ref="f095463814b2c4a573628d3f753afa9a" category="inline-link-macro-rx"></block> 。</block>
+  <block id="34cd7eb5bb582ffae3f30f17c145150f" category="list-text">*VMware ワークロード ( SnapCenter Plug-in for VMware vSphereなしの新しい UI のプレビュー)*:</block>
+  <block id="f04cfbb4bfdd3cd9036922d25ec5b48a" category="list-text">BlueXP backup and recoveryを使用して VMware VM とデータストアを保護します。</block>
+  <block id="49ce1089a31878d01e3cf0cfff6ec95e" category="list-text">VMware ワークロードを Amazon Web Services S3 またはStorageGRID (プレビュー用) にバックアップします。</block>
+  <block id="f24990c11b82173bf714c5c0ddeb194e" category="list-text">クラウドから VMware データをオンプレミスの vCenter に復元します。</block>
+  <block id="30a07a986df042c997ea1c239ea8ae65" category="list-text">SnapCenter Plug-in for VMware vSphere を使用せずにBlueXP backup and recoveryを使用します。</block>
+  <block id="5f1f4aaebaf623a5d33c8d6da504aec5" category="inline-link-macro">VMwareワークロードを保護する</block>
+  <block id="e4f723ac59f54885d902bd6a04536b55" category="list-text">。 <block ref="d745d5ccb3cf0872b9a86c3887ddad65" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3e6d14001804fbc004cf88b3856a2939" category="list-text">*VMware ワークロード ( SnapCenter Plug-in for VMware vSphereを使用)*:</block>
+  <block id="ba09cb4fb9d29df0e0fba819c4f6f57a" category="list-text">VM とデータストアを Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、 StorageGRIDにバックアップし、VM をオンプレミスのSnapCenter Plug-in for VMware vSphereに復元します。</block>
+  <block id="51b80593e638bcb66d62015b00b78c41" category="list-text">BlueXP backup and recoveryを使用して、クラウドからオンプレミスの vCenter に VM データを復元します。  VM を、バックアップが作成された場所とまったく同じ場所に復元することも、別の場所に復元することもできます。</block>
+  <block id="d3ed186e49ff2eb1e2f758a81fb48f5d" category="list-text">BlueXP backup and recoveryをSnapCenter Plug-in for VMware vSphereとともに使用します。</block>
+  <block id="90dea69f07cd41705feda176fee8105f" category="list-text">。 <block ref="4e4c09988a18e486f48f555be9441a4c" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3066f1ebade966cf5d09fd225d9c82df" category="list-text">*Kubernetes ワークロード (プレビュー)*:</block>
+  <block id="55b1b5c13e7a6ccad00374a8fbfd29d6" category="inline-link-macro">Kubernetesワークロードを保護する</block>
+  <block id="6650dc66d56f0cab512245298e4ee364" category="list-text">。 <block ref="b833c553f8b19b50a2155e8dd40c8baa" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5c1924f6230f429d87dfb7fd242478ba" category="list-text">VMware VM とデータストア</block>
+  <block id="fd986c9449acb5abd97bea849d50dc49" category="list-text">Microsoft Azure Blob (プレビューでは VMware ワークロードでは利用できません)</block>
+  <block id="2892aac222ad56500a9c836677137630" category="list-text">ONTAP S3 (プレビューでは VMware ワークロードでは利用できません)</block>
+  <block id="bfc869416b72c1003c9d7a26bf1c63e4" category="list-text">*ワークロード*: BlueXP backup and recoveryのワークロードには、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware VM とデータストア、Kubernetes クラスターとアプリケーションが含まれます。</block>
+  <block id="7126662a353f79c46a7ccefe46dc4c0a" category="inline-link-macro">ONTAPボリュームデータを保護する</block>
+  <block id="1d638e05920fe33426fac4dc6285a639" category="list-text"><block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block></block>
+  <block id="ef53d2e08e79af10a2e451632255842d" category="section-title">Microsoft SQL Server ワークロードを保護するための要件</block>
+  <block id="2435a02f2711ad9657062039419fd251" category="paragraph">Microsoft SQL Server ワークロードにBlueXP backup and recoveryを使用するには、次のホスト システム、スペース、およびサイズの前提条件が必要です。</block>
+  <block id="573531ec152a1cc1709422d00088088e" category="section-title">VMware ワークロードを保護するための要件</block>
+  <block id="4ccfae37bea4d344c283e2a68013c9c1" category="paragraph">VMware ワークロードを検出して保護するには、特定の要件が必要です。</block>
+  <block id="1269e07e6a9265be5844ea32a0494a7f" category="paragraph">*ソフトウェアサポート*</block>
+  <block id="2d5a6b46412544fb6ac242fbc736934e" category="list-text">サポートされている NFS バージョン: NFS 3 および NFS 4.1</block>
+  <block id="40f1a54f3602033103d74e381708e352" category="list-text">サポートされている VMware ESXi Server バージョン: 7.0U1 以上</block>
+  <block id="c7d133a7d1fcc4fc9f8bf51535dc3ef0" category="list-text">サポートされている VMware vCenter vSphere バージョン: 7.0U1 以上</block>
+  <block id="f3c396a6341d422a1f0e7a503896ed29" category="list-text">IPアドレス: IPv4およびIPv6</block>
+  <block id="a1712dda84152f55cce278e06e3fb2b9" category="list-text">VMware TLS: 1.2、1.3</block>
+  <block id="dc735211c86b33a749d2c86bb8b39e80" category="paragraph">*VMware ワークロードを保護するための接続とポートの要件*</block>
+  <block id="3672cca688eb0474cd3fee2add1a2067" category="cell">ポートのタイプ</block>
+  <block id="99ddf0e823c1be51589f68696f62cf56" category="cell">事前設定されたポート</block>
+  <block id="2cb2843b629d315325aac076907ec4b9" category="cell">VMware ESXi Serverのポート</block>
+  <block id="62e8cb73d81843582e583ccefca95a44" category="paragraph">443 (HTTPS)、双方向。ゲスト ファイルのリストア機能では、このポートが使用されます。</block>
+  <block id="7c1239972879fe0b69b4bb6d5c9a743e" category="cell">VMware vSphere vCenter Serverのポート</block>
+  <block id="4899207d672fe13ff2c710bcb5cec3e0" category="paragraph">vVol VM を保護する場合は、ポート 443 を使用する必要があります。</block>
+  <block id="131b9f1c14d26ba7a0cce7389e7679a9" category="cell">ストレージ クラスタまたはStorage VMのポート</block>
+  <block id="fe2ba23f2f581d1ab01848e05711292a" category="paragraph">443 (HTTPS)、双方向。 80 (HTTP)、双方向。このポートは、仮想アプライアンスとストレージ VM またはストレージ VM を含むクラスター間の通信に使用されます。</block>
+  <block id="6def2be93b1fef441b3ca8a2641cc837" category="paragraph">*VMware ワークロードを保護するためのロールベース アクセス制御 (RBAC) の要件*</block>
+  <block id="5a87933ace950bfd22e0597a2e342c27" category="paragraph">vCenter 管理者アカウントには、必要な vCenter 権限が必要です。</block>
+  <block id="444268068dcfb1a62c19cda69301e76f" category="inline-link">SnapCenter Plug-in for VMware vSphere</block>
+  <block id="2c5eb2a50ef564fa05d6cc4a6c86af8f" category="paragraph">必要なvCenter権限のリストについては、<block ref="9044a834d03d45a613d887c1c4d3ddd1" category="inline-link-rx"></block> 。</block>
+  <block id="d3cbd09d6a0974ee6a694826a8598eb6" category="section-title">Kubernetes アプリケーションを保護するための要件</block>
+  <block id="40e80975f18e076da51a2f87004f77ab" category="summary">「プライベート モード」と呼ばれる、インターネットにアクセスできないサイトでBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。将来BlueXP Connector ホスト システムに問題が発生した場合、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
+  <block id="b1e27f8c2d43223a85b44c94d6a02cc0" category="paragraph">インターネットにアクセスできないサイト（_プライベート モード_）でBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。BlueXP Connector ホスト システムに問題がある場合は、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
+  <block id="0428e48e7f58929099e52febd0558232" category="section-title">2025年8月25日</block>
+  <block id="b9d888f58b09c4007db0247286e392b5" category="section-title">2025年8月11日</block>
+  <block id="0d8cae156f9904fac41e4f76eb3502db" category="sidebar">VMware ワークロードを保護する（プレビュー）</block>
+  <block id="79d4e4bc94bda2b257f4190786069be1" category="sidebar">VMware ワークロードの保護の概要</block>
+  <block id="fe5216e8c6ca199aaa9802985fb31c17" category="sidebar">VMware ワークロードの既知の制限</block>
+  <block id="f4aa5ca6921e92380246ea7a562973a9" category="sidebar">VMware ワークロードの保護 (VMware 向けSnapCenterプラグインなしのプレビュー)</block>
+  <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">VMware ワークロードの保護 ( SnapCenter Plug-in for VMware を使用)</block>
+  <block id="5e8c098d325749413b23d5eba5837aad" category="sidebar">ダークサイトでBlueXP backup and recoveryデータを復元する</block>
 </blocks>

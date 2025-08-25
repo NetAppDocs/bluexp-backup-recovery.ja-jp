@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-vmware.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, vmware, vcenter 
+summary: BlueXP backup and recoveryサービスをご利用いただくには、まずデータの検出が必要です。検出の過程で、 BlueXP backup and recoveryは組織内の作業環境にあるすべてのボリュームとファイルを分析します。 
+---
+= VMware ワークロードのBlueXP backup and recoveryに関する既知の制限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の制限事項では、このリリースの製品でサポートされていない、または正しく相互運用されないプラットフォーム、デバイス、または機能が特定されます。これらの制限事項をよく確認してください。
+
+BlueXP backup and recoveryの VMware ワークロードのプレビュー バージョンでは、次のアクションはサポートされていません。
+
+* マウント
+* アンマウント
+* 別の場所へのリストア
+* VMDKを復元する
+* VMDKをアタッチする
+* VMDKのデタッチ
+* vVol サポート
+* NVMeサポート
+* メール統合
+* 編集ポリシー
+* 保護グループを編集する
+* ロールベースアクセス制御（RBAC）のサポート
+

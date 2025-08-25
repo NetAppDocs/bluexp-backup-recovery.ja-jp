@@ -16,7 +16,7 @@ summary: NetApp BlueXPを使用して、 BlueXP backup and recoveryサービス�
 [role="lead"]
 NetApp BlueXPを使用して、 BlueXP backup and recoveryサービスにログインします。
 
-BlueXP backup and recoveryでは、ロールベースのアクセス制御 (RBAC) を使用して、各ユーザーの特定のアクションへのアクセスを制御します。
+BlueXP backup and recoveryでは、 ID およびアクセス管理を使用して、各ユーザーの特定のアクションへのアクセスを制御します。
 
 各ロールで実行できるアクションの詳細については、を参照してくださいlink:reference-roles.html["BlueXP backup and recoveryユーザー ロール"]。
 
@@ -47,6 +47,9 @@ image:screen-br-landing-unified-trial.png["BlueXP blueXP のランディング�
 
 . まだ行っていない場合は、[*検出と管理*] オプションを選択します。
 +
-Microsoft SQL Serverのワークロードについては、以下を参照してください。 link:br-start-discover.html["Microsoft SQL Server ワークロードの検出"] 。
+** Microsoft SQL Serverのワークロードについては、以下を参照してください。 link:br-start-discover.html["Microsoft SQL Server ワークロードの検出"] 。
+** VMwareワークロードについては、link:br-use-vmware-discovery.html["VMware ワークロードを発見"] 。
+** Kubernetesワークロードについては、以下を参照してください。link:br-start-discover-kubernetes.html["Kubernetes ワークロードを発見する"] 。
+
 
 

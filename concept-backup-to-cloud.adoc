@@ -14,10 +14,10 @@ summary: BlueXP backup and recoveryサービスは、オンプレミスとクラ
 
 
 [role="lead"]
-BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware ワークロード、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。
+BlueXP backup and recoveryサービスは、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware ワークロード (プレビュー)、Kubernetes ワークロード (プレビュー) に対して、効率的で安全かつコスト効率に優れたデータ保護を提供します。
 
 
-NOTE: このドキュメントの一部は、テクノロジープレビューとして提供されています。このプレビュー オファリングでは、 NetApp は一般提供開始前にオファリングの詳細、内容、およびタイムラインを変更する権利を留保します。
+NOTE: VMware および Kubernetes ワークロードの保護に関するドキュメントは、テクノロジー プレビューとして提供されます。このプレビュー オファリングでは、 NetApp は一般提供開始前にオファリングの詳細、内容、およびタイムラインを変更する権利を留保します。
 
 
 
@@ -25,30 +25,47 @@ NOTE: このドキュメントの一部は、テクノロジープレビュー�
 
 BlueXP backup and recoveryを使用して、次の目標を達成します。
 
-* ONTAPボリュームのワークロード:
+* * ONTAPボリューム ワークロード*:
 +
 ** ローカル スナップショットを作成し、セカンダリ ストレージに複製し、オンプレミスのONTAPまたはCloud Volumes ONTAPONTAPからパブリック クラウド アカウントまたはプライベート クラウド アカウントのオブジェクト ストレージに ONTAP ボリュームをバックアップします。
 ** 別のONTAPクラスターとクラウド内のオブジェクト ストレージに保存されるブロック レベルの永久増分バックアップを作成します。
+** BlueXP backup and recoveryをSnapCenterと一緒に使用します。
+** 。 link:prev-ontap-protect-overview.html["ONTAPボリュームを保護する"] 。
 
 
-* Microsoft SQL Server ワークロード:
+* *Microsoft SQL Server ワークロード*:
 +
 ** オンプレミスのONTAP、 Cloud Volumes ONTAP、またはAmazon FSx for NetApp ONTAPから Microsoft SQL Server インスタンスとデータベースをバックアップします。
 ** Microsoft SQL Server データベースを復元します。
 ** Microsoft SQL Server データベースを複製します。
+** SnapCenterなしでBlueXP backup and recoveryを使用します。
+** 。 link:br-use-mssql-protect-overview.html["Microsoft SQL Server ワークロードを保護する"] 。
 
 
-* VM ワークロード:
+* *VMware ワークロード ( SnapCenter Plug-in for VMware vSphereなしの新しい UI のプレビュー)*:
 +
-** データストアを Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、 StorageGRIDにバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereに復元します。
-** BlueXP backup and recoveryを使用して、仮想マシンのデータをクラウドからオンプレミスの vCenter に復元します。
+** BlueXP backup and recoveryを使用して VMware VM とデータストアを保護します。
+** VMware ワークロードを Amazon Web Services S3 またはStorageGRID (プレビュー用) にバックアップします。
+** クラウドから VMware データをオンプレミスの vCenter に復元します。
+** SnapCenter Plug-in for VMware vSphere を使用せずにBlueXP backup and recoveryを使用します。
+** 。 link:br-use-vmware-protect-overview.html["VMwareワークロードを保護する"] 。
 
 
-* Kubernetes ワークロード (プレビュー):
+* *VMware ワークロード ( SnapCenter Plug-in for VMware vSphereを使用)*:
++
+** VM とデータストアを Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、 StorageGRIDにバックアップし、VM をオンプレミスのSnapCenter Plug-in for VMware vSphereに復元します。
+** BlueXP backup and recoveryを使用して、クラウドからオンプレミスの vCenter に VM データを復元します。  VM を、バックアップが作成された場所とまったく同じ場所に復元することも、別の場所に復元することもできます。
+** BlueXP backup and recoveryをSnapCenter Plug-in for VMware vSphereとともに使用します。
+** 。 link:prev-vmware-protect-overview.html["VMwareワークロードを保護する"] 。
+
+
+* *Kubernetes ワークロード (プレビュー)*:
 +
 ** Kubernetes アプリケーションとリソースをすべて 1 か所で管理および保護します。
 ** 保護ポリシーを使用して増分バックアップを構成します。
 ** アプリケーションとリソースを同じまたは異なるクラスターと名前空間に復元します。
+** SnapCenterなしでBlueXP backup and recoveryを使用します。
+** 。 link:br-use-kubernetes-protect-overview.html["Kubernetesワークロードを保護する"] 。
 
 
 
@@ -195,7 +212,7 @@ GCP を使用する場合は、 NetAppからプライベート オファーを�
 
 * ONTAPボリューム
 * 物理、VMware 仮想マシン ファイル システム (VMFS)、および VMware 仮想マシン ディスク (VMDK) NFS 用の Microsoft SQL Server インスタンスとデータベース
-* VMware データストア
+* VMware VM とデータストア
 * Kubernetes ワークロード (プレビュー)
 
 
@@ -210,16 +227,10 @@ GCP を使用する場合は、 NetAppからプライベート オファーを�
 
 .サポートされているバックアップターゲット
 * Amazon Web Services（AWS）S3
-* Microsoft Azure Blob
+* Microsoft Azure Blob (プレビューでは VMware ワークロードでは利用できません)
 * StorageGRID
-* ONTAP S3の略
+* ONTAP S3 (プレビューでは VMware ワークロードでは利用できません)
 
-
-
-
-== BlueXP backup and recoveryはMicrosoft SQL Serverのプラグインを使用します
-
-BlueXP backup and recoveryは、 Microsoft SQL Server をホストするサーバーに Microsoft SQL Server 用プラグインをインストールします。このプラグインは、Microsoft SQL Server データベースおよびインスタンスのアプリケーション対応データ保護管理を可能にするホスト側コンポーネントです。
 
 
 
@@ -273,7 +284,5 @@ endif::gcp[]
 保護に関連するいくつかの用語を理解しておくと役立つかもしれません。
 
 * *保護*: BlueXP backup and recoveryにおける保護とは、保護ポリシーを使用して、スナップショットと不変のバックアップが別のセキュリティ ドメインに定期的に実行されるようにすることを意味します。
-
-
-* *ワークロード*: BlueXP backup and recoveryのワークロードには、Microsoft SQL Server インスタンスとデータベース、VMware データストア、またはONTAPボリュームが含まれます。
+* *ワークロード*: BlueXP backup and recoveryのワークロードには、 ONTAPボリューム、Microsoft SQL Server インスタンスとデータベース、VMware VM とデータストア、Kubernetes クラスターとアプリケーションが含まれます。
 

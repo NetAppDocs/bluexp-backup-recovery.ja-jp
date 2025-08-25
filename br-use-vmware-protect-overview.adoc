@@ -14,13 +14,27 @@ summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロー
 
 
 [role="lead"]
-BlueXP backup and recoveryを使用して VMware ワークロードを保護します。BlueXPBlueXP backup and recoveryは、VM、データストア、VMDK に対して、高速でスペース効率が高く、クラッシュ整合性と VM 整合性を備えたバックアップおよびリストア操作を提供します。
+BlueXP backup and recoveryを使用して VMware VM とデータストアを保護します。  BlueXP backup and recoveryは、高速で、スペース効率が高く、クラッシュ整合性があり、VM 整合性のあるバックアップおよび復元操作を提供します。  VMware ワークロードを Amazon Web Services S3 またはStorageGRIDにバックアップし、VMware ワークロードをオンプレミスの VMware ホストに復元できます。
 
-データストアをAmazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform、StorageGRID にバックアップし、仮想マシンをオンプレミスのSnapCenter Plug-in for VMware vSphereホストにリストアできます。
+
+NOTE: このバージョンのBlueXP backup and recoveryはVMware vCenter のみをサポートし、 vVolsまたはvVols上の VM を検出しません。
+
+BlueXP backup and recoveryを使用して 3-2-1 戦略を実装します。この戦略では、ソース データのコピーを 2 つの異なるストレージ システムに 3 つ、クラウドに 1 つ保存します。  3-2-1 アプローチの利点は次のとおりです。
+
+* 複数のデータコピーを使用して、内部（内部）と外部のサイバーセキュリティの脅威に対する多層保護を実現します。
+* 複数のメディアタイプにより、1つのメディアタイプの物理的または論理的な障害が発生した場合でもフェイルオーバーを実行できます。
+* オンサイト コピーにより迅速な復元が可能になり、オンサイト コピーが侵害された場合に備えてオフサイト コピーも利用できます。
+
 
 []
 ====
-*注意* この機能は、BlueXP backup and recoveryUIの以前のバージョンを使用します。BlueXPのBlueXP backup and recoveryUIのバージョンを切り替えるには、以下を参照してください。 link:br-start-switch-ui.html["以前のBlueXP backup and recoveryUIに切り替える"] 。
+*注意* BlueXP backup and recoveryUIのバージョンを切り替えるには、 link:br-start-switch-ui.html["以前のBlueXP backup and recoveryUIに切り替える"] 。
 
 ====
-以前のBlueXP backup and recoveryUI の使用方法については、次のトピックを参照してください。
+BlueXP backup and recoveryを使用して、VMware ワークロードに関連する次のタスクを実行できます。
+
+* link:br-use-vmware-discovery.html["VMware ワークロードを発見"]
+* link:br-use-vmware-protection-groups.html["VMware ワークロードの保護グループの作成と管理"]
+* link:br-use-vmware-backup.html["VMwareワークロードのバックアップ"]
+* link:br-use-vmware-restore.html["VMwareワークロードの復元"]
+

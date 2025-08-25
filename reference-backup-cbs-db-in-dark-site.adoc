@@ -14,7 +14,7 @@ summary: 「プライベート モード」と呼ばれる、インターネッ�
 
 
 [role="lead"]
-インターネットにアクセスできないサイト（_プライベート モード_）でBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。  BlueXP Connector ホスト システムに問題がある場合は、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。
+インターネットにアクセスできないサイト（_プライベート モード_）でBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。BlueXP Connector ホスト システムに問題がある場合は、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。
 
 
 NOTE: この手順はONTAPボリューム データにのみ適用されます。

@@ -18,9 +18,9 @@ BlueXP backup and recoveryワークロードを切り替えることができま
 
 *どの UI を使用しているかはどのようにしてわかりますか?*
 
-Microsoft SQL Server および Kubernetes (プレビュー) ワークロードのタスクバーは次のようになります。image:screen-br-menu-unified.png["BlueXP backup and recoveryの新しい UI スクリーンショット"]
+Microsoft SQL Server、VMware ワークロード ( SnapCenter Plug-in for VMware vSphereなしのプレビュー)、Kubernetes (プレビュー) ワークロードのタスクバーは次のようになります。image:screen-br-menu-unified.png["BlueXP backup and recoveryの新しい UI スクリーンショット"]
 
-ONTAPボリュームと VMware ワークロードのメニュー バーは次のようになります。 image:screen-br-menu-legacy.png["BlueXP backup and recoveryの以前の UI スクリーンショット"]
+ONTAPボリュームおよび VMware ワークロード ( SnapCenter Plug-in for VMware vSphere を使用) のメニュー バーは次のようになります。image:screen-br-menu-legacy.png["BlueXP backup and recoveryの以前の UI スクリーンショット"]
 
 
 

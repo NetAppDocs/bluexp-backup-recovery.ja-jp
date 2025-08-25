@@ -42,14 +42,18 @@ indexpage:
       url: br-use-mssql-restore.html
     - title: Microsoft SQL Server ワークロードのクローン作成
       url: br-use-mssql-clone.html
-  - title: 仮想マシンのワークロードを保護する
+  - title: VMware ワークロードを保護する（プレビュー）
     links:
-    - title: 仮想マシンのワークロードの保護の概要
-      url: prev-vmware-protect-overview.html
-    - title: 仮想マシンのワークロードをバックアップするポリシーを作成する
-      url: prev-vmware-policy-create.html
-    - title: 仮想マシンのワークロードを復元する
-      url: prev-vmware-restore.html
+    - title: VMware ワークロードの保護の概要
+      url: br-use-vmware-protect-overview.html
+    - title: VMware ワークロードを発見
+      url: br-use-vmware-discovery.html
+    - title: VMware ワークロードの保護グループの作成と管理
+      url: br-use-vmware-protection-groups.html
+    - title: VMwareワークロードのバックアップ
+      url: br-use-vmware-backup.html
+    - title: VMwareワークロードの復元
+      url: br-use-vmware-restore.html
   - title: Kubernetes ワークロードを保護する（プレビュー）
     links:
     - title: Kubernetes ワークロードの保護の概要

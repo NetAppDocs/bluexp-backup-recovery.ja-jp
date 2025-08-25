@@ -29,10 +29,12 @@ sidebar:
     entries:
     - title: 新機能
       url: "/whats-new.html"
-    - title: Microsoft SQL Server ワークロードの既知の制限
-      url: "/br-limitations.html"
     - title: ONTAPボリュームワークロードの既知の制限
       url: "/br-reference-limitations.html"
+    - title: Microsoft SQL Server ワークロードの既知の制限
+      url: "/br-limitations.html"
+    - title: VMware ワークロードの既知の制限
+      url: "/br-limitations-vmware.html"
   - title: はじめに
     entries:
     - title: BlueXPのバックアップとリカバリについて説明します
@@ -113,7 +115,19 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Microsoft SQL Server レポートを作成する
         url: "/br-use-reports.html"
-    - title: 仮想マシンのワークロードを保護する
+    - title: VMware ワークロードの保護 (VMware 向けSnapCenterプラグインなしのプレビュー)
+      entries:
+      - title: VMware ワークロードの保護の概要
+        url: "/br-use-vmware-protect-overview.html"
+      - title: VMware ワークロードを発見
+        url: "/br-use-vmware-discovery.html"
+      - title: VMware ワークロードの保護グループの作成と管理
+        url: "/br-use-vmware-protection-groups.html"
+      - title: VMwareワークロードのバックアップ
+        url: "/br-use-vmware-backup.html"
+      - title: VMwareワークロードの復元
+        url: "/br-use-vmware-restore.html"
+    - title: VMware ワークロードの保護 ( SnapCenter Plug-in for VMware を使用)
       entries:
       - title: 仮想マシンのワークロードの保護の概要
         url: "/prev-vmware-protect-overview.html"
@@ -163,6 +177,8 @@ sidebar:
       url: "/reference-policy-differences-snapcenter.html"
     - title: BlueXP backup and recoveryの役割と権限
       url: "/reference-roles.html"
+    - title: ダークサイトでBlueXP backup and recoveryデータを復元する
+      url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: サポート対象の AWS アーカイブストレージ階層
       url: "/prev-reference-aws-archive-storage-tiers.html"
     - title: サポートされている Azure アーカイブ ストレージ層

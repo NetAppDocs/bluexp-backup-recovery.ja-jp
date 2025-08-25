@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp BlueXP backup and recoveryを使用して VMware ワークロードを保護します。 
+---
+= BlueXP backup and recoveryで VMware ワークロードをバックアップ
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+データが確実に保護されるように、オンプレミスのONTAPシステムから VMware VM とデータストアを Amazon Web Services またはStorageGRIDにバックアップします。バックアップは自動的に生成され、パブリック クラウド アカウントまたはプライベート クラウド アカウントのオブジェクト ストアに保存されます。
+
+* スケジュールに従ってワークロードをバックアップするには、バックアップおよび復元操作を管理するポリシーを作成します。手順については'を参照して link:br-use-policies-create.html["ポリシーの作成"] ください
+* 保護グループを作成して、リソース セットのバックアップおよび復元操作を管理します。見るlink:br-use-vmware-protection-groups.html["BlueXP backup and recoveryを使用して VMware ワークロードの保護グループを作成および管理します"]詳細についてはこちらをご覧ください。
+* 今すぐワークロードをバックアップします (今すぐオンデマンド バックアップを作成します)。
+
+
+
+
+== オンデマンドバックアップでワークロードを今すぐバックアップ
+
+オンデマンドバックアップをすぐに作成しましょう。システムに変更を加える予定があり、作業開始前にバックアップを確実に取得したい場合は、オンデマンドバックアップを実行することをお勧めします。
+
+*必要なBlueXPロール* 組織管理者、フォルダーまたはプロジェクト管理者、バックアップおよびリカバリのスーパー管理者、またはバックアップおよびリカバリのバックアップ管理者ロール。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するBlueXPのアクセスロールについて学ぶ"^] 。
+
+.手順
+. メニューから*インベントリ*を選択します。
++
+image:screen-vm-inventory-managed.png["BlueXP backup and recoveryのインベントリのスクリーンショット"]
+
+. 保護の詳細を表示するにはワークロードを選択します。
+. アクションアイコンを選択image:../media/icon-action.png["アクションオプション"] > *詳細を表示*。
+. *保護グループ*、*データストア*、または*仮想マシン*タブを選択します。
++
+image:screen-vm-inventory-protection-groups.png["BlueXP backup and recoveryの保護グループ タブのスクリーンショット"]
+
+. バックアップする保護グループ、データストア、または仮想マシンを選択します。
+. アクションアイコンを選択image:../media/icon-action.png["アクションオプション"] > *今すぐバックアップ*。
++
+image:screen-vm-inventory-backup-now.png["BlueXP backup and recoveryの「今すぐバックアップ」スクリーンショット"]
+
++
+
+NOTE: バックアップに適用されるポリシーは、保護グループ、データストア、または仮想マシンに割り当てられているポリシーと同じです。
+
+. スケジュール層を選択します。
+. *今すぐバックアップ*を選択します。
+
