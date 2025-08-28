@@ -4973,11 +4973,11 @@ ifdef：aws []</block>
   <block id="40e80975f18e076da51a2f87004f77ab" category="summary">「プライベート モード」と呼ばれる、インターネットにアクセスできないサイトでBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。将来BlueXP Connector ホスト システムに問題が発生した場合、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
   <block id="b1e27f8c2d43223a85b44c94d6a02cc0" category="paragraph">インターネットにアクセスできないサイト（_プライベート モード_）でBlueXP backup and recoveryを使用する場合、 BlueXP backup and recovery構成データは、バックアップが保存されているStorageGRIDまたはONTAP S3 バケットにバックアップされます。BlueXP Connector ホスト システムに問題がある場合は、新しいコネクタを展開して、重要なBlueXP backup and recoveryデータを復元できます。</block>
   <block id="0428e48e7f58929099e52febd0558232" category="section-title">2025年8月25日</block>
-  <block id="b9d888f58b09c4007db0247286e392b5" category="section-title">2025年8月11日</block>
   <block id="0d8cae156f9904fac41e4f76eb3502db" category="sidebar">VMware ワークロードを保護する（プレビュー）</block>
   <block id="79d4e4bc94bda2b257f4190786069be1" category="sidebar">VMware ワークロードの保護の概要</block>
   <block id="fe5216e8c6ca199aaa9802985fb31c17" category="sidebar">VMware ワークロードの既知の制限</block>
   <block id="f4aa5ca6921e92380246ea7a562973a9" category="sidebar">VMware ワークロードの保護 (VMware 向けSnapCenterプラグインなしのプレビュー)</block>
   <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">VMware ワークロードの保護 ( SnapCenter Plug-in for VMware を使用)</block>
   <block id="5e8c098d325749413b23d5eba5837aad" category="sidebar">ダークサイトでBlueXP backup and recoveryデータを復元する</block>
+  <block id="2c7a4c64b750d295df0cbadb67206302" category="paragraph">BlueXP backup and recoveryではジョブ情報が 15 日間保持され、その後は消去されてジョブ モニターに表示されなくなります。</block>
 </blocks>
